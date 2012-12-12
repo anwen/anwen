@@ -1,0 +1,37 @@
+# This requirements is for development
+
+# sudo apt-get install build-essential python-dev
+# You can: pip install -r requirements.txt
+
+
+tornado>=2.3
+# Flask
+
+markdown2
+# markdown
+
+# Jinja2
+# misaka
+# pygments
+
+### database
+
+peewee<2.0.0
+# MySQL-python
+# SQLAlchemy
+
+pymongo>=2.2.1
+mongokit>=0.8
+
+### cache support
+# python-memcached
+
+### form support
+# -e hg+https://bitbucket.org/simplecodes/wtforms#egg=WTForms
+
+### mail support
+# Flask-Mail
+# tornadomail
+
+### testing
+# nose

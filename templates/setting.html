@@ -1,0 +1,73 @@
+{% extends "userbase.html" %}
+{% block title %}
+修改设置-
+{% end %}
+{% block usermain %}
+<ul class="unstyled nav nav-tabs">
+  <li class="active">
+    <a href="/setting">
+      设置
+    </a>
+  </li>
+  <li class="">
+    <a href="/changepass">
+      修改密码
+    </a>
+  </li>
+</ul>
+<div class="mod setting-account">
+  <form id="form-setting-account" method="post" name="form-setting-account" class="form form-horizontal">
+    {{ xsrf_form_html() }}
+    <div class="control-group">
+      <label class="control-label">
+        昵称
+      </label>
+      <div class="controls">
+        <input name="name" type="text" value="{{user.user_name}}" class="input"/>
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label">
+        城市
+      </label>
+      <div class="controls">
+        <input name="city" type="text" value="{{user.user_city}}" class="input"/>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="say" class="control-label">
+        个性说明
+        <br/>
+        (
+        <a href="/markdown" target="_blank">
+          支持Markdown
+        </a>
+        )
+      </label>
+      <div class="controls">
+        <textarea id="say" name="say" rows="20" class="input-xxlarge">
+          {{user.user_say}}
+        </textarea>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label for="say" class="control-label">
+        要设置头像，请前往<a href="http://gravatar.com" target="_blank">
+          Gravatar
+        </a>
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <input type="submit" value="保存" name="dosubmit" class="btn btn-primary"/>
+      <div style="float:right">
+        <a href="/markdown" target="_blank">
+          Markdown漫游
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+{% end %}

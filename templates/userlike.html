@@ -1,0 +1,30 @@
+{% extends "userbase.html" %}
+{% block title %}
+{{user.user_name}}-喜欢的-
+{% end %}
+{% block usermain %}
+<ul class="unstyled nav nav-tabs">
+  <li class="">
+    <a href="/user/{{user.user_domain}}">
+      主页
+    </a>
+  </li>
+  <li class="active">
+    <a href="/userlike/{{user.user_domain}}">
+      喜欢
+      <span class="badge">{{likenum}}</span>
+    </a>
+  </li>
+</ul>
+<div class="user-feeds">
+  <ul class="unstyled">
+    {% for like in likes %}
+    <li> <i class="icon-{{ like.type }}"></i>
+      <a href="/share/{{ like.id }}" title="{{ escape(like.title) }}">
+        {{escape(like.title)}}
+      </a>
+    </li>
+    {% end %}
+  </ul>
+</div>
+{% end %}

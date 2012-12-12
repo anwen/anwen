@@ -1,0 +1,134 @@
+
+
+.comment,
+#addCommentContainer{
+	
+	/* Syling the comments and the comment form container */
+	
+	padding:12px;
+	position:relative;
+	background-color:#fcfcfc;
+	border:1px solid white;
+	color:#888;
+	margin-bottom:25px;
+	
+	/* CSS3 rounded corners and drop shadows */
+	
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+
+	-moz-box-shadow:2px 2px 0 #c2c2c2;
+	-webkit-box-shadow:2px 2px 0 #c2c2c2;
+	box-shadow:2px 2px 0 #c2c2c2;
+}
+
+.comment .avatar{
+
+	/*
+	/	The avatar is positioned absolutely, 
+	/	and offset outside the comment div
+	/*/
+
+	height:50px;
+	left:-70px;
+	position:absolute;
+	background:url('img/default_avatar.gif') no-repeat #fcfcfc;
+	
+	/* Centering it vertically: */
+	
+	margin-top:-25px;
+	top:50%;
+
+	-moz-box-shadow:1px 1px 0 #c2c2c2;
+	-webkit-box-shadow:1px 1px 0 #c2c2c2;
+	box-shadow:1px 1px 0 #c2c2c2;
+}
+
+.comment .avatar img{
+	display:block;
+}
+
+.comment .name{
+	font-size:20px;
+	padding-bottom:10px;
+	color:#ccc;
+}
+
+.comment .date{
+	font-size:10px;
+	padding:6px 0;
+	position:absolute;
+	right:15px;
+	top:10px;
+	color:#bbb;
+}
+
+.comment p,
+#addCommentContainer p{
+	font-size:18px;
+	line-height:1.5;
+	overflow-x:hidden;
+}
+
+#addCommentContainer input[type=text],
+#addCommentContainer textarea{
+
+	/* Styling the inputs */
+
+	display:block;
+	border:1px solid #ccc;
+	font-size:12px;
+	color:#555;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+#addCommentContainer textarea{
+}
+
+label{
+	font-size:10px;
+}
+
+label span.error{
+	color:red;
+	position:relative;
+	right:-10px;
+}
+
+#submit{
+	
+	/* The submit button */
+	
+	background-color:#58B9EB;
+	border:1px solid #40A2D4;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-family:'Myriad Pro',Arial,Helvetica,sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	padding:4px;
+	margin-top:5px;
+
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+}
+
+#submit:hover{
+	background-color:#80cdf5;
+	border-color:#52b1e2;
+}
+
+/* The styles below are only necessary for the styling of the demo page: */
+
+#commentmain{
+	position:relative;
+	margin:0 auto;
+}
+
+
+#commentbody{
+  margin:0 auto;
+  width: 100%;
+}

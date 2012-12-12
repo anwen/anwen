@@ -1,0 +1,98 @@
+{% extends "andebase.html" %}
+
+{% block body %}
+<div class="span12">
+<div id="page">
+    <form class="searchForms" method="post">
+		<fieldsets>
+      <div id="inbox">
+<div id="search_results">{{say}}</div>
+      </div>
+
+        </fieldsets>
+    </form>
+    <form class="searchForms" id="andesay" method="post">
+		<fieldsets>
+			<input type="text" onblur="if (this.value == '') {this.value = '和我聊天吧~';}" onfocus="if (this.value == '和我聊天吧~') {this.value = '';}" id="ss" name="ask0"  x-webkit-speech />
+            <input type="submit" name="dosubmit" value="说  出" class="btn-large btn-primary"/>
+        </fieldsets>
+    </form>
+    <form id="searchForm" method="post">
+      {{ xsrf_form_html() }}
+		<fieldset>
+			<input type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
+            <input type="submit" value="Submit" id="submitButton" />
+            <div id="searchInContainer">
+                <input type="radio" name="check" value="site" id="searchSite" checked />
+                <label for="searchSite" id="siteNameLabel">Search </label>
+                <input type="radio" name="check" value="web" id="searchWeb" />
+                <label for="searchWeb">Search The Web</label>
+			</div>        
+            <ul class="icons">
+                <li class="web" title="Web Search" data-searchType="web">Web</li>
+                <li class="images" title="Image Search" data-searchType="images">Images</li>
+                <li class="news" title="News Search" data-searchType="news">News</li>
+                <li class="videos" title="Video Search" data-searchType="video">Videos</li>
+            </ul>
+        </fieldset>
+    </form>
+    <div id="resultsDiv"></div>
+</div>
+
+<p class="credit"><a href="http://askender.com/ai-ender-develop-plan.html">开发计划&安德日记</a></p>
+
+</div>
+
+
+
+
+
+{% end %}
+
+{% block bottom %}
+<script type='text/javascript'>
+function getCookie(name) {
+  var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+  return r ? r[1] : undefined;
+}
+
+$(document).ready(function(){
+    $('#andesay').submit(function(e){
+        e.preventDefault();
+        ajax_search();
+    }); 
+}); 
+function ajax_search(){ 
+  $("#search_results").hide(); 
+  var search_val=$("#ss").val();
+  $("#ss").val("");
+  var argsxsrf = getCookie("_xsrf");
+
+        $.ajax({ //使用了jquery的ajax，因为我需要回调没有使用$.get
+          type: "POST",
+          //调用类型
+          url: "/ande",
+          //调用的url地址
+          //data: {"html":htmlElement,"table":tableElement,"sender":senderElement,"head":headElement,"senderid":senderidElement},  //传送的dict数据
+          data: {
+            "ask0": search_val,
+            "_xsrf": argsxsrf
+          },
+          //传送的dict数据
+          success: function(data) { //回调函数，alert返回结果
+            if (data.length>0){
+              var node = $(data);
+              node.hide();
+              $("#inbox").html(node);
+              node.slideDown();
+              // $("#search_results").html(data); 
+              $("#ss").html('');
+   }
+          }
+        });
+
+
+} 
+</script>
+  <script src="{{ static_url("js/googlesearch.js") }}"></script>
+{% end %}

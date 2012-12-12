@@ -1,0 +1,432 @@
+
+.navbar-inner1 {
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #1a94c9;
+	background-image: -moz-linear-gradient(top,#049cdb,#3a87ad);
+	background-image: -ms-linear-gradient(top,#049cdb,#3a87ad);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#049cdb),to(#3a87ad));
+	background-image: -webkit-linear-gradient(top,#049cdb,#3a87ad);
+	background-image: -o-linear-gradient(top,#049cdb,#3a87ad);
+	background-image: linear-gradient(top,#049cdb,#3a87ad);
+	background-repeat: repeat-x;
+	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#049cdb',endColorstr='#3a87ad',GradientType=0);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.25),inset 0 -1px 0 rgba(0,0,0,0.1)
+}
+
+
+.navbar {
+	color: #fff
+}
+.navbar .brand: hover {
+	text-decoration: none
+}
+.navbar .brand {
+	float: left;
+	display: block;
+	padding: 8px 20px 12px;
+	margin-left: -20px;
+	font-size: 20px;
+	font-weight: 200;
+	line-height: 1;
+	color: #fff
+}
+.nav>li>a {
+	display: block
+}
+
+
+.navbar .nav > li > a {
+  float: none;
+  padding: 9px 10px 11px;
+  line-height: 19px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar .nav > li > a:hover {
+	background-color: #3a87ad;
+	color: #eee;
+	text-decoration: none
+}
+.navbar .nav>li>a: hover {
+	text-decoration: none;
+	background-color: #eee
+}
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #3a87ad;
+}
+
+p {
+	margin: 0 0 9px;
+	font-family: tahoma,sans-serif;
+	font-size: 13px;
+	line-height: 18px
+}
+p small {
+	font-size: 11px;
+	color: #999
+}
+em {
+	font-style: italic
+}
+
+.user-show {
+	*zoom: 1;
+	*zoom: 1;
+	padding-bottom: 10px;
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+	*zoom: 1
+}
+.user-show: before,.user-show: after {
+	display: table;
+	content: ""
+}
+.user-show: after {
+	clear: both
+}
+.user-show .photo {
+	float: left;
+	margin-right: 20px
+}
+.user-show strong {
+	font-size: 22px
+}
+.user-show .operation {
+	position: absolute;
+	top: 10px;
+	right: 0
+}
+.user-show .operation a {
+	margin-left: 10px
+}
+.user-show .info {
+	overflow: hidden;
+	*zoom: 1
+}
+.user-show .info p {
+	*zoom: 1;
+	margin: 10px 0;
+	*zoom: 1
+}
+.user-show .info p: before,.user-show .info p: after {
+	display: table;
+	content: ""
+}
+.user-show .info p: after {
+	clear: both
+}
+.user-show .info p em {
+	width: 6em;
+	float: left;
+	margin-right: 10px;
+	color: #999;
+	font-style: normal;
+	font-size: 12px
+}
+.user-show .info p span {
+	display: block;
+	overflow: hidden;
+	*zoom: 1;
+	font-weight: 400
+}
+
+
+.badge {
+	padding: 1px 9px 2px;
+	font-size: 12.025px;
+	font-weight: bold;
+	white-space: nowrap;
+	color: #fff;
+	background-color: #999;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px
+}
+.badge: hover {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer
+}
+.badge-error {
+	background-color: #b94a48
+}
+.badge-error: hover {
+	background-color: #953b39
+}
+.badge-warning {
+	background-color: #f89406
+}
+.badge-warning: hover {
+	background-color: #c67605
+}
+.badge-success {
+	background-color: #468847
+}
+.badge-success: hover {
+	background-color: #356635
+}
+.badge-info {
+	background-color: #3a87ad
+}
+.badge-info: hover {
+	background-color: #2d6987
+}
+.badge-inverse {
+	background-color: #333
+}
+.badge-inverse: hover {
+	background-color: #1a1a1a
+}
+
+
+
+
+
+.user-feeds li {
+	position: relative;
+	border-bottom: 1px dotted #999;
+	padding-bottom: 20px;
+	margin-bottom: 20px
+}
+.user-feeds li: hover a.do-delete-feed {
+	visibility: visible
+}
+
+
+
+.user-feeds h3 {
+	font-size: 14px;
+	font-weight: 700;
+	margin: 5px 0;
+	padding-right: 30px;
+	line-height: 1.4
+}
+.user-feeds h3 i {
+	margin-right: 2px
+}
+.user-feeds h3 span {
+	font-size: 12px;
+	font-weight: normal;
+	color: #999
+}
+
+
+
+
+.user-feeds h3 span.bull {
+	margin: 0 5px
+}
+.user-feeds h3 span a: link,.user-feeds h3 span a: visited {
+	color: #999;
+	text-decoration: underline
+}
+.user-feeds h3 span a: hover {
+	background-color: #555;
+	color: #fff;
+	text-decoration: none
+}
+.user-feeds div.photo {
+	*zoom: 1;
+	margin-top: 10px;
+	margin-left: 18px
+}
+.user-feeds div.photo: before,.user-feeds div.photo: after {
+	display: table;
+	content: ""
+}
+.user-feeds div.photo: after {
+	clear: both
+}
+
+
+
+.user-feeds div.photo img,.user-feeds div.photo a.tag-no-thumb {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	border: 1px solid #999
+}
+.user-feeds div.photo img: hover,.user-feeds div.photo a.tag-no-thumb: hover {
+	border-color: #555
+}
+.user-feeds div.photo a.tag-no-thumb {
+	height: 48px;
+	line-height: 48px;
+	padding: 0 20px;
+	font-size: 16px;
+	font-weight: 700
+}
+.user-feeds div.photo div.detail {
+	overflow: hidden;
+	*zoom: 1
+}
+.user-feeds div.photo h4 {
+	margin: 0 0 5px;
+	padding: 0;
+	font-size: 16px
+}
+.user-feeds div.photo h4 span.bull {
+	visibility: hidden
+}
+.user-feeds div.photo strong {
+	margin-right: 10px
+}
+.user-feeds p.user {
+	color: #555;
+	margin: 5px 0;
+	margin-left: 18px
+}
+.user-feeds p.user img {
+	position: absolute;
+	top: 0;
+	right: 0
+}
+.user-feeds p.user span,.user-feeds p.user em {
+	vertical-align: bottom;
+	margin-right: 5px;
+	font-style: normal;
+	font-size: 12px
+}
+.user-feeds p.info,.user-feeds p.review {
+	font-size: 13px;
+	margin-left: 18px
+}
+.user-feeds p.info a,.user-feeds p.review a {
+	font-size: 12px;
+	white-space: nowrap;
+	margin-left: 5px
+}
+.user-feeds p.review {
+	margin-top: 5px
+}
+.user-feeds a.do-delete-feed {
+	visibility: hidden
+}
+
+
+.mod {
+	margin-bottom: 20px
+}
+.mod h2 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	line-height: normal;
+	padding-bottom: 10px
+}
+
+.list li {
+	margin-bottom: 5px
+}
+
+
+.user-feeds h3 span.bull {
+	margin: 0 5px
+}
+.user-feeds h3 span a: link,.user-feeds h3 span a: visited {
+	color: #999;
+	text-decoration: underline
+}
+.user-feeds h3 span a: hover {
+	background-color: #555;
+	color: #fff;
+	text-decoration: none
+}
+.user-feeds div.photo {
+	*zoom: 1;
+	margin-top: 10px;
+	margin-left: 18px
+}
+.user-feeds div.photo: before,.user-feeds div.photo: after {
+	display: table;
+	content: ""
+}
+.user-feeds div.photo: after {
+	clear: both
+}
+.user-feeds div.photo img,.user-feeds div.photo a.tag-no-thumb {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	border: 1px solid #999
+}
+.user-feeds div.photo img: hover,.user-feeds div.photo a.tag-no-thumb: hover {
+	border-color: #555
+}
+.user-feeds div.photo a.tag-no-thumb {
+	height: 48px;
+	line-height: 48px;
+	padding: 0 20px;
+	font-size: 16px;
+	font-weight: 700
+}
+.user-feeds div.photo div.detail {
+	overflow: hidden;
+	*zoom: 1
+}
+.user-feeds div.photo h4 {
+	margin: 0 0 5px;
+	padding: 0;
+	font-size: 16px
+}
+.user-feeds div.photo h4 span.bull {
+	visibility: hidden
+}
+.user-feeds div.photo strong {
+	margin-right: 10px
+}
+.user-feeds p.user {
+	color: #555;
+	margin: 5px 0;
+	margin-left: 18px
+}
+.user-feeds p.user img {
+	position: absolute;
+	top: 0;
+	right: 0
+}
+.user-feeds p.user span,.user-feeds p.user em {
+	vertical-align: bottom;
+	margin-right: 5px;
+	font-style: normal;
+	font-size: 12px
+}
+.user-feeds p.info,.user-feeds p.review {
+	font-size: 13px;
+	margin-left: 18px
+}
+.user-feeds p.info a,.user-feeds p.review a {
+	font-size: 12px;
+	white-space: nowrap;
+	margin-left: 5px
+}
+.user-feeds p.review {
+	margin-top: 5px
+}
+.user-feeds a.do-delete-feed {
+	visibility: hidden
+}
+
+.mod {
+	margin-bottom: 20px
+}
+.mod h2 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	line-height: normal;
+	padding-bottom: 10px
+}
+
+.list li {
+	margin-bottom: 5px
+}

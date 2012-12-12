@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block title %}
+{{ escape(share.title) }}-
+{% end %}
+{% block head %}
+<link href="{{ static_url("css/comment.css") }}" rel="stylesheet">
+{% end %}
+{% block body %}
+<div class="span12">
+	<div class="hero-unit">
+		<div id="content">
+			<div class="share">
+				<h2>
+					<a href="/share/{{ share.id }}">
+						{{ escape(share.title) }}
+					</a>
+				</h2>
+				<div class="date">
+					{{ locale.format_date(share.published, full_format=True, shorter=True) }}
+				</div>
+				<div class="body">
+					{{ share.markdown }}
+				</div>
+					{% if not current_user %}
+需要<a href="/login?next={{ url_escape(request.uri) }}" class="btn btn-primary">登录</a>后回复方可回复或收藏和个性化推荐, 如果还没有账号您可以<a href="/joinus?next={{ url_escape(request.uri) }}" class="btn btn-danger">注册</a>一个帐号。
+
+{% else %}
+					
+					<form id="likeit" class="pull-right">
+						{{ xsrf_form_html() }}
+						<input type="hidden" name="id" id="id" value="{{ share.id }}"/>
+						<input type="hidden" name="likenum" id="likenum" value="{{ share.likenum }}"/>
+						{% if current_user or share.is_liking %}
+						<input type='submit' id="like" class="btn btn-info disabled"  disabled="disabled" value='喜欢({{ share.likenum }})' />
+						{% else %}
+						<input type='submit' id="like" class="btn btn-info" value='喜欢({{ share.likenum }})' />
+						{% end %}
+					</form>
+					{% if current_user["user_id"]==share.user_id %}
+					<a href="/share?id={{ share.id }}">
+						<button class="btn btn-success" >
+							编辑本文
+						</button>
+					</a>
+					{% end %}
+{% end %}
+						<a data-toggle="modal" href="#myModal" class="btn btn-primary pull-right">
+							推荐
+						</a>
+			
+					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								&times;
+							</button>
+							<h3 id="myModalLabel">
+								为您推荐~
+							</h3>
+						</div>
+						<div class="modal-body">
+							{% for post in realsuggest %}
+							<h4>
+								<a href="/share/{{ post['id'] }}">
+									{{ post['title'] }}
+								</a>
+							</h4>
+							{% end %}
+						</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal">
+								Close
+							</button>
+						</div>
+					</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="hero-unit">
+		<div id="commentmain">
+			{% if comments %}
+{% for comment in comments %}
+			<div class="comment">
+				<div class="avatar">
+					<img src="{{comment.gravatar}}" />
+				</div>
+				<div class="name">
+					{{comment.name}}
+				</div>
+				<div class="date" title="写于{{comment.commenttime}}">
+					{{comment.commenttime}}
+				</div>
+				<p>
+					{{comment.commentbody}}
+				</p>
+			</div>
+			{% end %}
+{% end %}
+{% if current_user %}
+			<div id="addCommentContainer">
+				<form id="addCommentForm"  >
+					{{ xsrf_form_html() }}
+					<div>
+						<label for="commentbody">
+							评论：
+						</label>
+						<textarea name="commentbody" id="commentbody" rows="5" cols="40" autocomplete="off"></textarea>
+						<input type="submit" id="submit" value="提交" />
+					</div>
+					<input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
+				</form>
+			</div>
+			{% end %}
+		</div>
+	</div>
+</div>
+{% end %}
+
+{% block bottom %}
+<script src="{{ static_url("js/comment.js") }}" type="text/javascript"></script>
+{% end %}

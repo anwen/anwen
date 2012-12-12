@@ -1,0 +1,13 @@
+{
+  "endpoints": [
+    "GET    /account",
+    "POST   /account",
+    "PUT    /account",
+    "GET    /shares",
+    "POST   /shares",
+    "GET    /shares/:id",
+    "PUT    /shares/:id",
+    "DELETE /shares/:id"
+  ],
+  "version": "0.1.0"
+}

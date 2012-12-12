@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titlemore %}
+-创造和分享美好
+{% end %}
+{% block body %}
+<div class="span12">
+
+</div>
+
+{% end %}
+
+{% block bottom %}
+<script type="text/javascript">
+  //<![CDATA[
+
+  $(document).ready(function() {
+              JudgeActive();
+          });
+  function JudgeActive() {
+    var node = '{{ node if node else "" }}';
+    $("ul.nav li[id="+node+"]").addClass('active');
+
+  }
+
+  //]]></script>
+{% end %}

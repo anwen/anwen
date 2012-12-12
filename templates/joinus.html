@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}
+加入我们-
+{% end %}
+{% block body %}
+
+
+
+<div class="span8">
+  <div class="mod register">
+    <form id="joinus" method="post" name="joinus" class="joinus form form-horizontal">
+      {{ xsrf_form_html() }}
+      <fieldset>
+        <legend>
+          加入我们
+        </legend>
+        <div class="control-group">
+          <label for="email" class="control-label">
+            登录邮箱
+          </label>
+          <div class="controls">
+            <input id="email" type="text" name="email" class="input"/>
+            <span class="help-inline">请输入你的登录邮箱</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="name" class="control-label">
+            昵称
+          </label>
+          <div class="controls">
+            <input id="name" type="text" name="name" class="span2"/>
+            <span class="help-inline">请输入昵称</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="domain" class="control-label">
+            个性域名(选填)
+          </label>
+          <div class="controls">
+            <input id="domain" type="text" name="domain" class="span2"/>
+            <span class="help-inline">anwen.in/user/[个性域名]，允许字母和数字</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label for="password" class="control-label">
+            登录密码
+          </label>
+          <div class="controls">
+            <input id="password" type="password" name="password" class="input"/>
+            <span class="help-inline">请输入你的登录密码</span>
+          </div>
+        </div>
+
+
+        <div class="form-actions">
+          <input type="submit" value="注册" name="dosubmit" class="btn btn-primary sbm"/>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="span4">
+  <div class="mod side-relation">
+    <h2>
+      您可能想
+    </h2>
+    <ul>
+      <li>
+        <a href="/login">
+          登入
+        </a>
+      </li>
+      <li>
+        <a href="/forgot-password">
+          忘记密码
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- 	<a href="/googlelogin">
+Login with google
+</a>
+-->
+
+{% end %}
+
+{% block bottom %}
+<script type="text/javascript">
+  //<![CDATA[
+
+    $(function() {
+      $("input[name=email]").select();
+      $("form.joinus").submit(function() {
+          var required = ["email", "name", "domain", "password"];
+          var form = $(this).get(0);
+          for (var i = 0; i < required.length; i++) {
+              if (!form[required[i]].value) {
+                  $(form[required[i]]).select();
+                  return false;
+              }
+          }
+          return true;
+      });
+    });
+
+  //]]></script>
+{% end %}

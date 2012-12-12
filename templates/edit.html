@@ -1,0 +1,43 @@
+<html>
+<head>
+  <title>anwen-editor</title>
+  <script src="{{ static_url("epiceditor/js/epiceditor.min.js") }}"></script>
+
+</head>
+<body id="share">
+
+<script type="text/javascript">
+  //<![CDATA[
+
+var opts = {
+  container: 'share',
+  basePath: '/static/epiceditor',
+  clientSideStorage: true,
+  localStorageName: 'share',
+  parser: marked,
+  file: {
+    name: 'markdown',
+    defaultContent: '',
+    autoSave: 100
+  },
+  theme: {
+    base: '/themes/base/epiceditor.css',
+    preview: '/themes/preview/preview-dark.css',
+    editor: '/themes/editor/epic-dark.css'
+  },
+  focusOnLoad: true,
+  shortcut: {
+    modifier: 18,
+    fullscreen: 70,
+    preview: 80,
+    edit: 79
+  }
+}
+var editor = new EpicEditor(opts).load();
+
+  //]]>
+</script>
+
+</body>
+
+</html>

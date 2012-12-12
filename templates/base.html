@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% end %}{{_('Anwen')}}{% block titlemore %}{% end %}</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="description" content="{{_('Anwen')}} - 创造和分享美好">
+  <meta name="author" content="anwen">
+  <link rel="alternate" href="/feed" type="application/atom+xml" title="安问"/>
+
+  <!-- Le styles -->
+  <link href="{{ static_url("css/bootstrap.min.css") }}" rel="stylesheet">
+  <link href="{{ static_url("css/bootstrap-responsive.min.css") }}" rel="stylesheet">
+  <link href="{{ static_url("css/anwen.css") }}" rel="stylesheet">
+  {% block head %}{% end %}
+  <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js") }}"></script>
+  <![endif]-->
+
+  <!-- Le fav and touch icons -->
+  <link rel="shortcut icon" href="{{ static_url("ico/favicon.ico") }}"></head>
+
+<body>
+
+  <!-- Navbar
+================================================== -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner1">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="/">
+          {{_('Anwen')}}
+        </a>
+        {{ modules.Useradmin() }}
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li id="home">
+              <a href="/">
+                {{_('Home')}}
+              </a>
+            </li>
+            <li id="pencil">
+              <a href="/node/pencil">
+                {{_('Create')}}
+              </a>
+            </li>
+            <li id="music">
+              <a href="/node/music">
+                {{_('Music')}}
+              </a>
+            </li>
+            <li id="film">
+              <a href="/node/film">
+                {{_('Video')}}
+              </a>
+            </li>
+            <li id="book">
+              <a href="/node/book">
+                {{_('Book')}}
+              </a>
+            </li>
+            <li id="eyeopen">
+              <a href="/node/eyeopen">
+                {{_('Eyeopen')}}
+              </a>
+            </li>
+            <li id="ask">
+              <a href="/node/ask">
+                {{_('Asks')}}
+              </a>
+            </li>
+            <li id="sf">
+              <a href="/node/sf">
+                {{_('SF')}}
+              </a>
+            </li>
+            <li id="fire">
+              <a href="/node/fire">
+                {{_('Actions')}}
+              </a>
+            </li>
+            <li id="nodes">
+              <a href="/nodes">
+                {{_('Nodes')}}
+              </a>
+            </li>
+          </ul>
+
+          <!-- <form action="/search" class="navbar-search pull-right">
+          <input type="text" class="search-query" placeholder="search..." x-webkit-speech="" lang="zh-CN"/>
+        </form>
+        -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    {% block body %}{% end %}
+  </div>
+  <!--/row-->
+</div>
+
+<!-- Footer
+================================================== -->
+<footer class="footer">
+  <div class="container">
+  <p>
+    copyleft ^_^ 2012 安问 创造和分享美好 v0.0.2 自由的理想主义社区与创造平台
+    <a href="https://github.com/askender/anwen.in">
+      开源@github
+    </a>
+
+    <a href="/about" title="关于我们的一切">
+      关于我们
+    </a>
+    <a href="/help" title="提建议或咨询">
+      提建议或咨询
+    </a>
+    <a href="/changelog" title="查看行动日志">
+      行动日志
+    </a>
+  </p>
+</div>
+</footer>
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+
+<script src="{{ static_url("js/jquery.js") }}"></script>
+<script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+{% block bottom %}{% end %}
+</body>
+</html>

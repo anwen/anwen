@@ -1,0 +1,49 @@
+{% if current_user %}
+<div class="btn-group pull-right">
+  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+    <img src="{{ gravatar }}" />
+    <!-- <i class="icon-user"></i>
+  -->
+{{ escape(name) }}
+  <span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+  <li>
+    <a href="/user/{{ escape(domain) }}"> <i class="icon-user"></i>
+      我的主页
+    </a>
+    <a href="/setting">
+      <i class="icon-cog"></i>
+      修改资料
+    </a>
+  </li>
+  <li class="divider"></li>
+  <li>
+    <a href="/share">
+      <i class="icon-leaf"></i>
+      分享
+    </a>
+  </li>
+  <li class="divider"></li>
+  <li>
+    <a href="/logout?next={{ url_escape(request.uri) }}">
+      <i class="icon-off"></i>
+      退出
+    </a>
+  </li>
+</ul>
+</div>
+{% else %}
+<ul class="nav pull-right">
+<li>
+    <a href="/joinus?next={{ url_escape(request.uri) }}">
+      注册
+    </a>
+</li>
+<li>
+    <a href="/login?next={{ url_escape(request.uri) }}">
+      登录
+    </a>
+</li>
+</ul>
+{% end %}

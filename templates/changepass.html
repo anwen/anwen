@@ -1,0 +1,45 @@
+{% extends "userbase.html" %}
+{% block title %}
+修改密码-
+{% end %}
+{% block usermain %}
+
+  <ul class="unstyled nav nav-tabs">
+    <li class="">
+      <a href="/setting">
+        设置
+      </a>
+    </li>
+    <li class="active">
+      <a href="/changepass">修改密码
+      </a>
+    </li>
+  </ul>
+        <div class="mod setting-account">
+          <form id="form-setting-account" method="post" name="form-setting-account" class="form form-horizontal">
+            {{ xsrf_form_html() }}
+            <div class="control-group">
+              <label class="control-label">
+                旧密码
+              </label>
+              <div class="controls">
+                <input name="oldpass" type="password" value="" class="input"/>
+              </div>
+            </div>
+            <div class="control-group">
+              <label class="control-label">
+                新密码
+              </label>
+              <div class="controls">
+                <input name="newpass" type="password" value="" class="input"/>
+              </div>
+            </div>
+
+
+
+            <div class="form-actions">
+              <input type="submit" value="保存" name="dosubmit" class="btn btn-primary"/>
+            </div>
+          </form>
+        </div>
+{% end %}
