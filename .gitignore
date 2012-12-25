@@ -8,3 +8,4 @@ anwen-test
 /log/files/*.log
 /log/files/*.log.*
 *~
+*.log
