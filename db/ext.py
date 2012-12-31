@@ -56,7 +56,9 @@ class BaseModel(Document):
         return json.dumps(obj)
 
     def new(self, doc):
+        res = self()
         if 'id' not in doc:
             doc['id'] = self.find().count() + 1
-        self.update(doc)
-        return self.save()
+        res.update(doc)
+        res.save()
+        return res

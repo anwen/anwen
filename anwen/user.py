@@ -42,14 +42,9 @@ class JoinusHandler(BaseHandler):
     def get(self):
         if self.current_user:
             self.redirect("/")
-            return
-        self.set_cookie("checkflag", "true")
         self.render("joinus.html")
 
     def post(self):
-        if not self.request.headers.get("Cookie"):
-            self.render("require_enable_cookie.html")
-            return
         name = self.get_argument("name", '')
         password = self.get_argument("password", '')
         password = hashlib.md5(password).hexdigest()

@@ -2,6 +2,7 @@
 *.sql
 *.db
 temp
+private
 server_setting.py
 db_config_server.py
 anwen-test

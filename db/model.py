@@ -81,6 +81,7 @@ class Ande(BaseModel):
     __collection__ = 'Ande_Col'
     use_autorefs = True
     structure = {
+        'id': int,
         'user_id': int,
         'usersay': basestring,
         'andesay': basestring,
@@ -128,6 +129,7 @@ class Comment(BaseModel):
     __collection__ = 'Comment_Col'
     use_autorefs = True
     structure = {
+        'id': int,
         'user_id': int,
         'share_id': int,
         'commentbody': basestring,
@@ -166,6 +168,7 @@ class Relationship(BaseModel):
 class Hit(BaseModel):
     __collection__ = 'Hit_Col'
     structure = {
+        'id': int,
         'user_id': int,
         'share_id': int,
         'hitnum': int,

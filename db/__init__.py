@@ -6,3 +6,4 @@ Share = connection.Share
 Comment = connection.Comment
 Like = connection.Like
 Hit = connection.Hit
+Ande = connection.Ande

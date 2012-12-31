@@ -8,12 +8,13 @@ from utils.avatar import get_avatar
 from base import BaseHandler
 import options
 from db import User, Share, Comment, Like, Hit
+from pymongo import ASCENDING, DESCENDING
 
 
 class IndexHandler(BaseHandler):
     def get(self):
         page = self.get_argument("page", 1)
-        share_res = Share.find().limit(10).skip((int(page) - 1) * 10)
+        share_res = Share.find().sort('_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
 
         pagesum = (share_res.count() + 9) / 10
         print share_res.count()
@@ -26,7 +27,7 @@ class IndexHandler(BaseHandler):
                 markdown2.markdown(share.markdown))[:100]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
-        members = User.find().limit(20)
+        members = User.find().sort('_id', DESCENDING).limit(20)  # ASCENDING
         members_dict = []
         for member in members:
             member.gravatar = get_avatar(member.user_email, 25)
@@ -42,7 +43,7 @@ class NodeHandler(BaseHandler):
     def get(self, node):
         page = self.get_argument("page", 1)
         share_res = Share.find(
-            {'sharetype': node}).limit(10).skip((int(page) - 1) * 10)
+            {'sharetype': node}).sort('_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
         pagesum = (share_res.count() + 9) / 10
 
         shares = []
@@ -54,7 +55,7 @@ class NodeHandler(BaseHandler):
                 markdown2.markdown(share.markdown))[:100]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
-        members = User.find().limit(20)
+        members = User.find().sort('_id', DESCENDING).limit(20)
         members_dict = []
         for member in members:
             member.gravatar = get_avatar(member.user_email, 25)
