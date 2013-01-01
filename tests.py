@@ -5,6 +5,10 @@ import random
 import unittest
 import tornado.testing
 from json import dumps as jdump
+from json import loads as jload
+import options
+import tornado.web
+from options.url import handlers
 
 
 def random_str():
@@ -49,7 +53,8 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
     data = {}
 
     def get_app(self):
-        from hello import application
+        options.web_server['xsrf_cookies'] = False
+        application = tornado.web.Application(handlers, **options.web_server)
         return application
 
     def setUp(self):
@@ -59,18 +64,26 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
             res = self.fetch(
                 self.res_url, method='POST', body=self.jcreate_args)
             assert res.code == 201 or 200
-            # json = jload(res.body)
-            # assert_similar(json, self.create_args)
-            # try:
-            #     self.oid = json['_id']
-            # except:
-            #     pass
-
+            json = jload(res.body)
+            assert_similar(json, self.create_args)
+            try:
+                self.oid = json['_id']
+            except:
+                pass
 
     def tearDown(self):
         getattr(self, 'tear_down', lambda: None)()
+        if self.create:
+            res = self.fetch(self.res_url + self.oid, method='DELETE')
+            assert res.code == 200
+            res = self.fetch(self.res_url + self.oid, method='GET')
+            assert res.code == 404
+            super(HttpTest, self).tearDown()
 
-    def fetch_j(self, *args, **kwargs):
+    def fetch_n(self, *args, **kwargs):
+        return super(HttpTest, self).fetch(*args, **kwargs)
+
+    def fetch(self, *args, **kwargs):
         if 'headers' not in kwargs:
             kwargs.update({'headers': {'Content-Type': 'application/json'}})
         return super(HttpTest, self).fetch(*args, **kwargs)
@@ -100,6 +113,21 @@ def common_update(self, url, method='PATCH'):
     assert res.body
 
 
+def common_read(self):
+    if hasattr(self, 'oid'):
+        res = self.fetch(self.res_url + self.oid, method='GET')
+        assert res.code == 200
+        assert isinstance(jload(res.body), dict)
+        if self.create:
+            assert_similar(jload(res.body), self.create_args)
+
+    res = self.fetch(self.res_url, method='GET')
+    assert res.code == 200
+    json = jload(res.body)
+    assert isinstance(json, dict)
+    return json
+
+
 class TestIndex(HttpTest):
     create = False
 
@@ -109,22 +137,49 @@ class TestIndex(HttpTest):
         assert res.body
 
 
-class TestLogin(HttpTest):
-    res_url = '/login'
-    clist = 'name', 'password', 'email', 'domain'
+class TestUsers(HttpTest):
+    res_url = '/users/'
+    clist = 'user_email', 'user_pass'
 
     def set_up(self):
+        res = self.fetch('/joinus', method='GET')
+        assert res.code == 200
+        res = self.fetch('/login', method='GET')
+        assert res.code == 200
+        # assert 'Set-Cookie' in res.headers
+        # assert res.headers['Set-Cookie'].startswith('_xsrf=')
+        # _xsrf = res.headers['Set-Cookie'].split(';')[0].split('=')[1]
+        assert res.body
         common_setup(self)
 
     def tear_down(self):
         pass
 
     def test_read(self):
-        res = self.fetch(self.res_url, method='GET')
-        assert res.code == 200
-        assert 'Set-Cookie' in res.headers
-        assert res.headers['Set-Cookie'].startswith('_xsrf=')
-        assert res.body
+        common_read(self)
+
+    def test_update(self):
+        common_update(self, self.res_url + self.oid)
+
+
+class TestShares(HttpTest):
+    res_url = '/shares/'
+    clist = 'markdown', 'title'
+
+    def set_up(self):
+        # res = self.fetch('/share', method='GET')
+        # assert res.code == 200
+        # assert res.body
+        common_setup(self)
+
+    def tear_down(self):
+        pass
+
+    def test_read(self):
+        common_read(self)
+
+    def test_update(self):
+        common_update(self, self.res_url + self.oid)
 
 
 TEST_MODULES = [

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import time
-from bson import ObjectId
 from mongokit import Connection
 from ext import BaseModel
 
@@ -72,8 +71,8 @@ class User(BaseModel):
         if email and userpass:
             return self.find_one({'user_email': email, 'user_pass': userpass})
 
-    def delete(self):
-        pass
+    # def delete(self):
+    #     pass
 
 
 @connection.register

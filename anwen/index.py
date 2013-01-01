@@ -8,13 +8,14 @@ from utils.avatar import get_avatar
 from base import BaseHandler
 import options
 from db import User, Share, Comment, Like, Hit
-from pymongo import ASCENDING, DESCENDING
+from pymongo import DESCENDING  # ASCENDING
 
 
 class IndexHandler(BaseHandler):
     def get(self):
         page = self.get_argument("page", 1)
-        share_res = Share.find().sort('_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
+        share_res = Share.find().sort(
+            '_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
 
         pagesum = (share_res.count() + 9) / 10
         print share_res.count()
@@ -42,8 +43,8 @@ class IndexHandler(BaseHandler):
 class NodeHandler(BaseHandler):
     def get(self, node):
         page = self.get_argument("page", 1)
-        share_res = Share.find(
-            {'sharetype': node}).sort('_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
+        share_res = Share.find({'sharetype': node}).sort(
+            '_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
         pagesum = (share_res.count() + 9) / 10
 
         shares = []

@@ -7,7 +7,7 @@ import tornado.escape
 
 from utils.avatar import get_avatar
 from base import BaseHandler
-from db import User, Share, Comment, Like, Hit
+from db import User, Share
 from base import CommonResourceHandler
 
 
@@ -15,14 +15,9 @@ class LoginHandler(BaseHandler):
     def get(self):
         if self.current_user:
             self.redirect("/")
-            return
-        self.set_cookie("checkflag", "true")
         self.render("login.html")
 
     def post(self):
-        if not self.request.headers.get("Cookie"):
-            self.render("require_enable_cookie.html")
-            return
         email = self.get_argument("email", '')
         password = self.get_argument("password", '')
         password = hashlib.md5(password).hexdigest()
@@ -166,4 +161,10 @@ class UsersHandler(CommonResourceHandler):
     res = User
 
     def pre_post(self, json_arg):
-        pass
+        new_obj = self.res()
+        new_obj.update(json_arg)
+        if self.res.by_useremail(new_obj.user_email):
+            self.send_error(409)
+        else:
+            new_obj.save()
+            return new_obj

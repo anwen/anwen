@@ -24,6 +24,8 @@ handlers = [
     (r"/userlike/([^/]+)", UserlikeHandler),
     (r"/member", MemberHandler),
     (r"/users/?", UsersHandler),
+    (r'/users/([0-9a-f]{24})', UsersHandler),
+
 
     (r"/share", ShareHandler),
     (r"/sharecomment", CommentHandler),
@@ -31,6 +33,7 @@ handlers = [
     (r"/share/([^/]+)", EntryHandler),
     (r"/feed", FeedHandler),
     (r"/shares/?", SharesHandler),
+    (r"/shares/([0-9a-f]{24})", SharesHandler),
 
     (r"/login", LoginHandler),
     (r"/joinus", JoinusHandler),

@@ -7,7 +7,6 @@ from tornado.web import RequestHandler, HTTPError
 from pymongo import ASCENDING, DESCENDING
 
 from log import logger
-from db import connection
 
 
 class BaseHandler(RequestHandler):
@@ -62,6 +61,31 @@ class JSONHandler(BaseHandler):
             else:
                 return dict(obj)
         return self.write(dumps(obj, default=handler))
+
+    def get_json_arg(self, name=None, *args):
+        """Returns the value of the argument with the given name,
+        from JSON-formated body"""
+
+        headers = self.request.headers
+        if not ('Content-Type' in headers
+                and 'application/json' in headers['Content-Type']):
+            logger.warn('Content-Type is not JSON, ignored.')
+        try:
+            obj = json.loads(self.request.body)
+        except ValueError:
+            logger.warn('Request body is not JSON formatted!')
+            return None
+        if not name:
+            return obj
+        try:
+            return obj[name]
+        except KeyError:
+            if len(args) > 0:
+                return args[0]
+            else:
+                raise HTTPError(400,
+                                'Missing argument [%s]!' % name
+                                )
 
 
 def pop_spec(args, name, default=None):
@@ -172,8 +196,8 @@ class CommonResourceHandler(JSONHandler):
         if not rid:
             rids = self.get_json_arg()
             if not isinstance(rids, list):
-                pass
                 # self.res.collection.drop()
+                return
         for r in rids:
             res = self.res.by_id(r)
             if not res:

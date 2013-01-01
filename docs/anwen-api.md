@@ -41,13 +41,6 @@ Expects basic auth to get an existing customer. API will return **200**.
 
     $ curl http://anwen.in/users
 
-#### response
-
-    {
-      "username": "anwen",
-      "company": "anwen",
-    }
-
 
 ## POST /users
 
@@ -57,16 +50,7 @@ Creates new account. Required fields are username, email, password, and password
 
     $ curl http://anwen.in/users \
       -F "email=anwen.in@gmail.com" \
-      -F "username=anwen" \
-      -F "password=secret" \
-      -F "password_confirmation=secret"
-
-#### response
-
-    {
-      "username": "anwen",
-      "company": "anwen",
-    }
+      -F "password=secret"
 
 
 ## GET /users/:id
@@ -74,25 +58,12 @@ Creates new account. Required fields are username, email, password, and password
 
 ## PUT /users/:id
 
-Update your account. Pass in any number of values. Possible responses include
-`200`, or `409`.
+Update your account.
 
 #### example request
 
     $ curl -u anwen:secret http://anwen.in/account -X PUT \
       -F 'phone=42434243'
-
-#### response
-
-    {
-      "username": "anwen",
-      "first_name": "anwen",
-      "last_name": "anwen",
-      "company": "anwen",
-      "email": "anwen.in@gmail.com",
-      "phone": "42434243"
-    }
-
 
 
 # Shares

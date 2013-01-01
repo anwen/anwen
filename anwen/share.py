@@ -3,7 +3,6 @@
 import markdown2
 import time
 from random import randint
-from bson import ObjectId
 import tornado.web
 
 from utils.avatar import get_avatar
@@ -167,4 +166,10 @@ class SharesHandler(CommonResourceHandler):
     res = Share
 
     def pre_post(self, json_arg):
-        pass
+        new_obj = self.res()
+        new_obj.update(json_arg)
+        if self.res.by_slug(new_obj.slug):
+            self.send_error(409)
+        else:
+            new_obj.save()
+            return new_obj
