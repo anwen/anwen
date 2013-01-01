@@ -16,12 +16,13 @@ markdown2
 
 ### database
 
-peewee<2.0.0
 # MySQL-python
+# peewee<2.0.0
 # SQLAlchemy
 
 pymongo>=2.2.1
 mongokit>=0.8
+bson
 
 ### cache support
 # python-memcached

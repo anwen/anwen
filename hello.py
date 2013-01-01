@@ -5,7 +5,6 @@ import argparse
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
-import tornado.options
 from log import logger
 from options.url import handlers
 from anwen.uimodules import EntryModule, UseradminModule
@@ -16,16 +15,16 @@ options.web_server.update(
 application = tornado.web.Application(handlers, **options.web_server)
 
 
-def launch():
+def launch(port):
     tornado.locale.load_translations(options.web_server['locale_path'])
-    tornado.options.parse_command_line()
     http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
-    http_server.listen(options.port)
-    logger.info('Server started on %s' % options.port)
+    http_server.listen(port)
+    logger.info('Server started on %s' % port)
     tornado.ioloop.IOLoop.instance().start()
 
 
-parser = argparse.ArgumentParser(description='Anwen Server')
+parser = argparse.ArgumentParser(
+    description='Welcome to Anwen World')
 
 parser.add_argument(
     '-t', '--test',
@@ -34,6 +33,15 @@ parser.add_argument(
     const=True,
     default=False,
     help='run tests'
+)
+
+parser.add_argument(
+    '-p', '--port',
+    dest='port',
+    nargs=1,
+    action='store',
+    default=options.port,
+    help='run on the given port'
 )
 
 if __name__ == '__main__':
@@ -45,4 +53,4 @@ if __name__ == '__main__':
         sys.argv = sys.argv[:1]
         tests.main()
     else:
-        launch()
+        launch(args.port)

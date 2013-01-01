@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 debug = True
 
-port = 9999
+port = 8888
 
 db = {
     'name': 'anwen',

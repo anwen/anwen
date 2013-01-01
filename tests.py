@@ -6,9 +6,7 @@ import unittest
 import tornado.testing
 from json import dumps as jdump
 from json import loads as jload
-import options
 import tornado.web
-from options.url import handlers
 
 
 def random_str():
@@ -53,8 +51,7 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
     data = {}
 
     def get_app(self):
-        options.web_server['xsrf_cookies'] = False
-        application = tornado.web.Application(handlers, **options.web_server)
+        from hello import application
         return application
 
     def setUp(self):
