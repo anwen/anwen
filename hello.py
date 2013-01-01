@@ -53,4 +53,5 @@ if __name__ == '__main__':
         sys.argv = sys.argv[:1]
         tests.main()
     else:
-        launch(args.port)
+        port = args.port[0]
+        launch(port)
