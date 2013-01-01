@@ -1,0 +1,19 @@
+at server:
+
+cd /var/www/anwen
+git init .
+git config receive.denyCurrentBranch ignore
+git config --bool receive.denyNonFastForwards false
+cd .git/hooks
+wget http://utsl.gen.nz/git/post-update
+chmod +x post-update
+
+at local:
+git remote rm prod
+git remote add prod root@113.11.199.77:/var/www/anwen/.git
+git push prod
+
+if use mongodb on windows：
+net start MongoDB
+
+mongoexport -d dba22 -c foo -f x,y,a,b,c --csv -o ./result.csv 
