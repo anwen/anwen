@@ -38,8 +38,8 @@ parser.add_argument(
 parser.add_argument(
     '-p', '--port',
     dest='port',
-    nargs=1,
     action='store',
+    type=int,
     default=options.port,
     help='run on the given port'
 )
@@ -53,5 +53,5 @@ if __name__ == '__main__':
         sys.argv = sys.argv[:1]
         tests.main()
     else:
-        port = args.port[0]
+        port = args.port
         launch(port)

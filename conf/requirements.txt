@@ -36,3 +36,6 @@ bson
 
 ### testing
 # nose
+
+### db_import
+# pyyaml

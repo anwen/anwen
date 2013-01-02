@@ -50,6 +50,7 @@ cat /etc/mongod.conf
 chkconfig mongod on
 
 df -lh
+ls -sSh
 du -s ./*|sort -rn
 
 开机自启动Supervisord
@@ -57,3 +58,6 @@ cd /etc/init.d
 vi supervisord
 chmod +x /etc/init.d/supervisord
 update-rc.d supervisord defaults
+
+supervisord
+supervisorctl stop all reload start anwen-8000
