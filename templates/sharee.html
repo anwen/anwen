@@ -30,7 +30,7 @@
 						{{ xsrf_form_html() }}
 						<input type="hidden" name="id" id="id" value="{{ share.id }}"/>
 						<input type="hidden" name="likenum" id="likenum" value="{{ share.likenum }}"/>
-						{% if current_user or share.is_liking %}
+						{% if current_user["user_id"]==share.user_id or share.is_liking %}
 						<input type='submit' id="like" class="btn btn-info disabled"  disabled="disabled" value='喜欢({{ share.likenum }})' />
 						{% else %}
 						<input type='submit' id="like" class="btn btn-info" value='喜欢({{ share.likenum }})' />

@@ -59,6 +59,11 @@ class EntryHandler(BaseHandler):
         share.hitnum += 1
         share.save()
         share.markdown = markdown2.markdown(share.markdown)
+        user_id = int(
+            self.current_user["user_id"]) if self.current_user else None
+        share.is_liking = Like.find(
+            {'share_id': share.id, 'user_id': user_id}).count() > 0
+        print share.is_liking
         comments = Comment.find({'share_id': share.id})
         for comment in comments:
             user = User.by_sid(comment.user_id)
@@ -66,7 +71,7 @@ class EntryHandler(BaseHandler):
             comment.domain = user.user_domain
             comment.gravatar = get_avatar(user.user_email, 50)
 
-        if self.current_user:
+        if user_id:
             hit = Hit.find(
                 {'share_id': share.id},
                 {'user_id': int(self.current_user["user_id"])},
@@ -137,12 +142,12 @@ class LikeHandler(BaseHandler):
         likenum = self.get_argument("likenum", 0)
         like = Like
         like['user_id'] = self.current_user["user_id"]
-        like['share_id'] = share_id
+        like['share_id'] = int(share_id)
         like.save()
         share = Share.by_sid(share_id)
         share.likenum += 1
         share.save()
-        user = User.by_sid(share.user)
+        user = User.by_sid(share.user_id)
         user.user_leaf += 4
         user.save()
         user = User.by_sid(self.current_user["user_id"])
