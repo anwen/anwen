@@ -34,19 +34,16 @@ class ShareHandler(BaseHandler):
             share = Share.by_sid(id)
             if not share:
                 self.redirect("/404")
-            print res['markdown']
             share.update(res)
-            print share['markdown']
             share.save()
-            print share['markdown']
         else:
             share = Share
-            res['id'] = share.find().count() + 1
             res['user_id'] = int(self.current_user["user_id"])
-            share.new(res)
+            share = share.new(res)
             user = User.by_sid(self.current_user["user_id"])
             user.user_leaf += 10
             user.save()
+            print str(share.id)
         self.redirect("/share/" + str(share.id))
 
 

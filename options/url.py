@@ -27,7 +27,7 @@ handlers = [
     (r'/users/([0-9a-f]{24})', UsersHandler),
 
 
-    (r"/share", ShareHandler),
+    (r"/share/?", ShareHandler),
     (r"/sharecomment", CommentHandler),
     (r"/sharelike", LikeHandler),
     (r"/share/([^/]+)", EntryHandler),
