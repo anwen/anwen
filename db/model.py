@@ -100,6 +100,7 @@ class Share(BaseModel):
         'slug': basestring,
         'markdown': basestring,
         'sharetype': basestring,
+        'tags': basestring,
         'id': int,
         'user_id': int,
         'commentnum': int,
@@ -110,6 +111,7 @@ class Share(BaseModel):
         'updated': float,
     }
     default_values = {
+        'tags': '',
         'id': 0,
         'commentnum': 0,
         'likenum': 0,

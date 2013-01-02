@@ -14,53 +14,56 @@
     <input name="title" type="text" class="title" value="{{escape(share.title) if share else ""}}"/>
   </div>
   <div style="margin-bottom:5px">
-    <textarea name="markdown" rows="30" cols="40" class="markdown">{{escape(share.markdown) if share else ""}}
+    <textarea name="markdown" rows="30" cols="40" class="markdown">
+      {{escape(share.markdown) if share else ""}}
     </textarea>
   </div>
   <div>
 
     <div class="controls">
-      <label class="radio">
+      <label class="radio inline">
         <input type="radio" name="type" id="pencil" value="pencil" checked=""> <i class="icon-pencil"></i>
         创造
       </label>
-      <label class="radio">
+      <label class="radio inline">
         <input type="radio" name="type" id="music" value="music" checked=""> <i class="icon-music"></i>
         音乐
       </label>
-      <label class="radio">
+      <label class="radio inline">
         <input type="radio" name="type" id="film" value="film" checked="">
         <i class="icon-film"></i>
         视频
       </label>
-      <label class="radio">
+      <label class="radio inline">
         <input type="radio" name="type" id="book" value="book" checked="">
         <i class="icon-book"></i>
         读书
       </label>
-      <label class="radio">
+      <label class="radio inline">
         <input type="radio" name="type" id="eyeopen" value="eyeopen" checked="">
         <i class="icon-eyeopen"></i>
         新闻
       </label>
-
-      <label class="radio">
+      <label class="radio inline">
         <input type="radio" name="type" id="ask" value="ask" checked="">
         <i class="icon-ask"></i>
         疑问
       </label>
+      <label class="radio inline">
+        <input type="radio" name="type" id="sf" value="sf" checked="">
+        <i class="icon-sf"></i>
+        科幻
+      </label>
+      <label class="radio inline">
+        <input type="radio" name="type" id="fire" value="fire" checked="">
+        <i class="icon-fire"></i>
+        行动
+      </label>
     </div>
-    <label class="radio">
-      <input type="radio" name="type" id="sf" value="sf" checked="">
-      <i class="icon-sf"></i>
-      科幻
-    </label>
-    <label class="radio">
-      <input type="radio" name="type" id="fire" value="fire" checked="">
-      <i class="icon-fire"></i>
-      行动
-    </label>
-
+    <div style="margin-bottom:5px">
+      标签(多个标签用空格分隔):
+      <input name="tags" type="text" class="tags" value="{{escape(share.tags) if share else ""}}"/>
+    </div>
     <div class="form-actions">
       <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-primary"/>
       <div style="float:right">

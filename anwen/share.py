@@ -27,6 +27,7 @@ class ShareHandler(BaseHandler):
             'title': self.get_argument("title"),
             'markdown': self.get_argument("markdown"),
             'sharetype': self.get_argument("type"),
+            'tags': self.get_argument("tags"),
             'updated': time.time(),
         }
 
@@ -110,7 +111,7 @@ class CommentHandler(BaseHandler):
         html = markdown2.markdown(commentbody)
         comment = Comment
         comment['user_id'] = self.current_user["user_id"]
-        comment['share_id'] = share_id
+        comment['share_id'] = int(share_id)
         comment['commentbody'] = commentbody
         comment.save()
         share = Share.by_sid(share_id)
