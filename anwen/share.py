@@ -27,7 +27,7 @@ class ShareHandler(BaseHandler):
             'title': self.get_argument("title"),
             'markdown': self.get_argument("markdown"),
             'sharetype': self.get_argument("type"),
-            'tags': self.get_argument("tags", None),
+            'tags': self.get_argument("tags", ''),
             'updated': time.time(),
         }
 
