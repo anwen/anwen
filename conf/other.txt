@@ -1,4 +1,0 @@
-if use mongodb on windows：
-net start MongoDB
-
-mongoexport -d dba22 -c foo -f x,y,a,b,c --csv -o ./result.csv 

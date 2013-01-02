@@ -2,7 +2,7 @@
 
 import markdown2
 from random import randint
-
+import time
 from utils.fliter import filter_tags
 from utils.avatar import get_avatar
 from base import BaseHandler
@@ -23,6 +23,7 @@ class IndexHandler(BaseHandler):
         for share in share_res:
             user = User.by_sid(share.user_id)
             share.name = user.user_name
+            share.published = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
             share.markdown = filter_tags(
                 markdown2.markdown(share.markdown))[:100]
@@ -51,6 +52,7 @@ class NodeHandler(BaseHandler):
         for share in share_res:
             user = User.by_sid(share.user_id)
             share.name = user.user_name
+            share.published = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
             share.markdown = filter_tags(
                 markdown2.markdown(share.markdown))[:100]
