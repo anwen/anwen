@@ -61,8 +61,10 @@
       </label>
     </div>
     <div style="margin-bottom:5px">
-      标签(多个标签用空格分隔):
+      标签(选填，多个可用空格分隔):
       <input name="tags" type="text" class="tags" value="{{escape(share.tags) if share else ""}}"/>
+      别名(选填，a-zA-Z0-9_-):
+      <input name="slug" type="text" class="slug" value="{{escape(share.slug) if share else ""}}"/>
     </div>
     <div class="form-actions">
       <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-primary"/>

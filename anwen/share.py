@@ -28,6 +28,7 @@ class ShareHandler(BaseHandler):
             'title': self.get_argument("title"),
             'markdown': self.get_argument("markdown"),
             'sharetype': self.get_argument("type"),
+            'slug': self.get_argument("slug", ''),
             'tags': tags,
             'updated': time.time(),
         }
@@ -62,9 +63,10 @@ class EntryHandler(BaseHandler):
         share.save()
         share.markdown = markdown2.markdown(share.markdown)
 
-        tags = 'tags:'
+        tags = ''
 
         if share.tags:
+            tags += 'tags:'
             for i in share.tags.split(' '):
                 tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
         share.tags = tags

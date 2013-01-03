@@ -10,22 +10,27 @@ sys.path.append('..')
 from db import User, Share, Ande, Comment, Hit
 
 
-docs = ['User', 'Share', 'Comment', 'Ande', 'Hit']
+doc_list = ['User', 'Share', 'Comment', 'Ande', 'Hit']
 
 
 def make_doc():
-    docs = yaml.load(file('Share.yaml', 'r').read())
-    print type(docs)
-    for doc in docs:
-        # print doc['markdown']
-        print doc['slug']
+    if os.path.isfile('Share.yaml'):
+        docs = yaml.load(file('Share.yaml', 'r').read())
+        for i in docs:
+            filename = '../docs/shares/%s_%s.md' % (i['id'], i['slug'])
+            title = i['title']
+            markdown = i['markdown']
+            filebody = title + re.sub(r'\r\n', r'\n', markdown)
+            with open(filename, 'w') as share:
+                share.write(filebody)
+        print 'shares are markdownd'
 
 
 def run_import(name):
     if name == 'all':
-        for doc in docs:
+        for doc in doc_list:
             doc_import(doc)
-    elif name in docs:
+    elif name in doc_list:
         doc_import(name)
 
 
@@ -46,9 +51,9 @@ def doc_import(doc):
 
 def run_export(name):
     if name == 'all':
-        for doc in docs:
+        for doc in doc_list:
             doc_export(doc)
-    elif name in docs:
+    elif name in doc_list:
         doc_export(name)
     if os.path.isfile('User.yaml'):
         input_file = open('User.yaml')
@@ -58,6 +63,7 @@ def run_export(name):
         output_file.write(b)
         output_file.close()
         print 'users are safe'
+    make_doc()
 
 
 def doc_export(doc):
