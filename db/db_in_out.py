@@ -32,7 +32,7 @@ def run_import(name):
 def doc_import(doc):
     d = eval(doc)
     if d.find().count() == 0:
-        if doc == 'User' and os.path.isfile(doc + '.yaml'):
+        if doc == 'User' and not os.path.isfile(doc + '.yaml'):
             doc = '%sSafe' % doc
             print 'load usersafe'
         docs = yaml.load(file(doc + '.yaml', 'r').read())
