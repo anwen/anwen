@@ -20,7 +20,7 @@ def make_doc():
             filename = '../docs/shares/%s_%s.md' % (i['id'], i['slug'])
             title = i['title']
             markdown = i['markdown']
-            filebody = title + re.sub(r'\r\n', r'\n', markdown)
+            filebody = '%s\n========\n\n\n%s' %(title, re.sub(r'\r\n', r'\n', markdown))
             with open(filename, 'w') as share:
                 share.write(filebody)
         print 'shares are markdownd'

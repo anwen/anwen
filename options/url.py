@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from anwen.index import IndexHandler, SpecialHandler, NodeHandler, TagHandler
+from anwen.index import IndexHandler, NodeHandler, TagHandler
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
 from anwen.user import SettingHandler, ChangePassHandler, UsersHandler
@@ -14,12 +14,7 @@ from anwen.other import EditHandler, ErrHandler
 handlers = [
     (r"/", IndexHandler),
     (r"/404", ErrHandler),
-    (r"/about", SpecialHandler),
-    (r"/changelog", SpecialHandler),
-    (r"/help", SpecialHandler),
-    (r"/markdown", SpecialHandler),
-    (r"/ande-growup-log", SpecialHandler),
-    (r"/nodes", SpecialHandler),
+
     (r"/node/([^/]+)", NodeHandler),
 
     (r"/user/([^/]+)", UserhomeHandler),
@@ -38,6 +33,8 @@ handlers = [
     (r"/tag/?", TagHandler),
     (r"/tag/([^/]+)", TagHandler),
 
+
+
     (r"/login", LoginHandler),
     (r"/joinus", JoinusHandler),
     (r"/logout", LogoutHandler),
@@ -55,7 +52,8 @@ handlers = [
 
     (r"/edit", EditHandler),
 
-    # Custom 404 ErrHandler,always put this at last
-    (r'/(.*)', ErrHandler),
+    (r'/(.*)', EntryHandler),
+    # Custom 404 ErrHandler, always put this at last
+    (r'/404/?', ErrHandler),
 
 ]

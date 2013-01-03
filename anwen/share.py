@@ -53,10 +53,12 @@ class ShareHandler(BaseHandler):
 
 class EntryHandler(BaseHandler):
     def get(self, id):
+        # slug = self.request.path[1:]
         if id.isdigit():
             share = Share.by_sid(id)
         else:
-            share = Share.by_slug(str(id))
+            slug = id.split['/'] if '/' in id else id
+            share = Share.by_slug(slug)
         if not share:
             self.redirect("/404")
         share.hitnum += 1
