@@ -74,13 +74,15 @@ class EntryHandler(BaseHandler):
             self.current_user["user_id"]) if self.current_user else None
         share.is_liking = Like.find(
             {'share_id': share.id, 'user_id': user_id}).count() > 0
-        print share.is_liking
-        comments = Comment.find({'share_id': share.id})
-        for comment in comments:
+        comments = []
+        comment_res = Comment.find({'share_id': share.id})
+        for comment in comment_res:
             user = User.by_sid(comment.user_id)
             comment.name = user.user_name
+            print comment.name
             comment.domain = user.user_domain
             comment.gravatar = get_avatar(user.user_email, 50)
+            comments.append(comment)
 
         if user_id:
             hit = Hit.find(

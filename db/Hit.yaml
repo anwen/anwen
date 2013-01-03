@@ -826,3 +826,9 @@
   id: null
   share_id: 2
   user_id: 1
+- _id: 50e596f9606ec5080f94ff68
+  hitnum: 0
+  hittime: 1357222960.784405
+  id: null
+  share_id: 6
+  user_id: 1
