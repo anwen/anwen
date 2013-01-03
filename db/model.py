@@ -198,7 +198,7 @@ class Tag(BaseModel):
     }
 
     def new(self, tag, share_id):
-        res = self.find_one({'name': str(tag)})
+        res = self.find_one({'name': tag})
         if res:
             share_list = res.share_ids.split(' ')
             if share_id in share_list:
