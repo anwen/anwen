@@ -122,7 +122,7 @@ class Share(BaseModel):
     }
 
     def by_slug(self, slug):
-        return self.find_one({'slug': str(slug)})
+        return self.find_one({'slug': slug})
 
 
 @connection.register

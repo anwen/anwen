@@ -5,6 +5,7 @@ import time
 from random import randint
 import tornado.web
 
+import options
 from utils.avatar import get_avatar
 from db import User, Share, Comment, Like, Hit, Tag
 from base import CommonResourceHandler, BaseHandler
@@ -52,14 +53,20 @@ class ShareHandler(BaseHandler):
 
 
 class EntryHandler(BaseHandler):
-    def get(self, id):
+    def get(self, slug):
         # slug = self.request.path[1:]
-        if id.isdigit():
-            share = Share.by_sid(id)
+        share = None
+        if slug.isdigit():
+            share = Share.by_sid(slug)
         else:
-            slug = id.split['/'] if '/' in id else id
             share = Share.by_slug(slug)
-        if not share:
+            if not share:
+                old = 'http://blog.anwensf.com/'
+                for i in options.old_links:
+                    if slug in i:
+                        self.redirect('%s%s' % (old, i), permanent=True)
+                        break
+                        return
             self.redirect("/404")
         share.hitnum += 1
         share.save()
