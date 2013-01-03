@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}
+Tag:{{ escape(name) }} - 
+{% end %}
+{% block body %}
+<div class="span8">
+	<div class="mod user-feeds">
+		<h2>
+			Tag:{{ escape(name) }}
+		</h2>
+		<ul class="unstyled">
+			{% for share in shares %}
+			<li>
+				<h3> <i class="icon-{{ share.sharetype }}"></i>
+					<a href="/share/{{ share.id }}" title="{{ escape(share.title) }}">
+						{{ escape(share.title) }}
+					</a>
+					<span class="bull">
+						&bull;
+					</span>
+					<span>
+						<a href="/share/{{ share.id }}#comments">
+							{{ share.commentnum }}
+						</a>
+					</span>
+				</h3>
+				<p class="user clearfix">
+					<!-- 					<a href="/user/{{ share.domain }}" title="{{ share.name }}" class="pull-right">
+					<img src="{{ share.gravatar }}" width="25" height="25" alt="{{ share.name }}"/>
+				</a>
+				-->
+				<span class="who">
+					<a href="/user/{{ share.domain }}" title="{{ share.name }}">
+						{{ share.name }}
+					</a>
+				</span>
+				<span data-time='' class="date">
+					{{ share.published }}
+				</span>
+			</p>
+			<p class="info">
+				{{ escape(share.markdown) }} ...
+			</p>
+		</li>
+		{% end %}
+	</ul>
+</div>
+
+
+</div>
+<div class="span4">
+
+
+
+
+<div class="mod about">
+	<h2>
+		安问是什么
+	</h2>
+	<p>
+		一个高质量的内容社区，只分享最打动你的东西，保证内容的长久有趣，号召理想主义黑客共同开发的开源项目（包含一个人工智能子项目和推进互联网信息自由的子项目）
+	</p>
+	<p>
+		特色：多人协作分享，也能通过github提交；每一分贡献都会得到十倍以上的回报，为创造和分享者带来更多价值
+	</p>
+	<p>
+		邮箱：anwen.in@gmail.com
+	</p>
+	<p>
+		<a href="https://github.com/askender/anwen.in">
+			开源@github
+		</a>
+		<a href="/about" title="关于安问的一切">
+			关于安问
+		</a>
+	</p>
+	<p>
+		实验室：
+	</p>
+	<p>
+		<a href="/edit">
+			编辑器
+		</a>
+		<a href="/ande">
+			人工智能安德（近期恢复）
+		</a>
+	</p>
+</div>
+
+</div>
+{% end %}

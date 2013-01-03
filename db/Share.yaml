@@ -1,0 +1,413 @@
+- _id: 50e44d08606ec51c6ab042d7
+  commentnum: 0
+  hitnum: 32
+  id: 1
+  likenum: 1
+  markdown: ".....................................................................................................\r\
+    \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjQ4MzkwMjIw/v.swf\"\
+    \ allowFullScreen=\"true\" quality=\"high\" width=\"480\" height=\"400\" align=\"\
+    middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\"></embed>"
+  published: 1349427988.0
+  sharetype: film
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '史蒂夫 乔布斯Steve.Jobs在2005年对斯坦福大学Stanford毕业生的演讲(中英字幕)'
+  updated: 1357139649.461012
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042db
+  commentnum: 0
+  hitnum: 66
+  id: 5
+  likenum: 0
+  markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
+    \r\n邮箱：askender43@gmail.com\r\n\r\nQQ：527639661  QQ群：127343260\r\n\r\n[邮件列表][1]：需修改hosts或越过长城，若不能访问可在群里问\r\
+    \n\r\n[github](https://github.com/askender/anwen.in)\r\n\r\n[微博][2]\r\n\r\n[google\
+    \ plus][3]：需修改hosts或越过长城\r\n\r\nYY频道ID：19043661（几乎没怎么使用）\r\n\r\n\r\n[1]: https://groups.google.com/d/forum/our-anwen\
+    \        \"安问邮件列表\"\r\n[2]: http://weibo.com/askender\r\n[3]: https://plus.google.com/110129569739358072859"
+  published: 1349430055.0
+  sharetype: fire
+  slug: help
+  status: 0
+  tags: ''
+  title: !!python/str '提建议或咨询--欢迎联系我们'
+  updated: 1349430055.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042dc
+  commentnum: 0
+  hitnum: 34
+  id: 6
+  likenum: 0
+  markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。\r\n\r\n* Markdown\
+    \ 的语法全由一些精挑细选的符号所组成，其作用一目了然。\r\n* 它实际上是个非常简单、非常容易学习的语法。这个语法简单到每个人都可以在5分钟以内学会。应该是为数不多，你真的可以彻底学会的语言。\r\
+    \n* 更重要的是，Markdown语法所有要素，是与写作的习惯一脉相承的，套用句俗语：仅为写作而生。[1][1]\r\n\r\n\r\n比如：\r\n\r\
+    \n在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**。\r\n\r\n<pre>*强调*  **粗体**</pre>\r\n\r\n要写引用网址了，就是这么写[]再加个()，如：[豆瓣](http://www.douban.com)\
+    \  [关于安问](/about   \"可选的说明:关于安问~~~\")\r\n\r\n<pre>\r\n[豆瓣](http://www.douban.com)\r\
+    \n[关于安问](/about   \"可选的说明:关于安问~~~\")\r\n</pre>\r\n\r\n要引用大段文字，就是直接 >后面写引用\r\n\
+    >习惯是人生最大的指导。\r\n\r\n<pre>>习惯是人生最大的指导。</pre>\r\n\r\n标题：在行首插入 1 到 6 个 # ，对应到标题 1\
+    \ 到 6 阶\r\n# 标题 1\r\n## 标题 2\r\n### 标题 3\r\n\r\n<pre>\r\n# 标题 1\r\n## 标题 2\r\n\
+    ### 标题 3\r\n</pre>\r\n\r\n无序列表：在使用星号、加号或者减号来做为列表的项目标记(星号后要加空格)\r\n\r\n* 安问\r\n\
+    * 柏舟\r\n* 成长\r\n\r\n<pre>\r\n* 安问\r\n* 柏舟\r\n* 成长\r\n</pre>\r\n\r\n有序列表则是使用一般的数字接着一个英文句点作为项目标记：\r\
+    \n\r\n1. Red\r\n2. Green\r\n3. Blue\r\n\r\n<pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\
+    \n</pre>\r\n\r\n图片\r\n\r\n图片的语法和链接很像。（title 是选择性的）：\r\n\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
+    \ \"豆瓣logo\")\r\n\r\n<pre>\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
+    \ \"豆瓣logo\")\r\n</pre>\r\n\r\n####进阶\r\n\r\n参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：\r\
+    \n\r\n<pre>\r\nI get 10 times more traffic from [Google][1] than from\r\n[Yahoo][2]\
+    \ or [MSN][3].\r\n\r\n[1]: http://google.com/ \"Google\"\r\n[2]: http://search.yahoo.com/\
+    \ \"Yahoo Search\"\r\n[3]: http://search.msn.com/ \"MSN Search\"\r\n</pre>\r\n\
+    \r\n代码块\r\n\r\n<pre>\r\n```python\r\ndef hello():\r\n    return True\r\n```\r\n\
+    </pre>\r\n\r\n一切就这么简单。Markdown之所以越来越流行,是因为它足够简单。\r\n\r\n参考文献：\r\n\r\n1. [为什么Markdown+R有较大概率成为科技写作主流？][1]\r\
+    \n\r\n2. [Markdown 语法说明(简体中文版)][2]\r\n\r\n3. [Markdown Syntax Documentation][3]\r\
+    \n\r\n[1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html\r\n[2]:http://wowubuntu.com/markdown/basic.html\r\
+    \n[3]:http://daringfireball.net/projects/markdown/syntax"
+  published: 1349430103.0
+  sharetype: fire
+  slug: markdown
+  status: 0
+  tags: ''
+  title: !!python/str 'Markdown漫游指南'
+  updated: 1349430103.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042dd
+  commentnum: 0
+  hitnum: 30
+  id: 7
+  likenum: 0
+  markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
+    评论：1叶（todo）"
+  published: 1349430154.0
+  sharetype: fire
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '桉叶说明'
+  updated: 1349430154.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e1
+  commentnum: 0
+  hitnum: 99
+  id: 11
+  likenum: 0
+  markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
+    \ can hit your heart~\r\n 创造和分享，那些打动你的~\r\n\r\n[音乐](http://i.askender.com/node/music)\r\
+    \n Music which touch heart~\r\n  触及灵魂的声音\r\n\r\n[视频](http://i.askender.com/node/film)\r\
+    \n  Light and shadow fragment record every inch sensation\r\n 光影片段，记录每一寸感动\r\n\
+    \r\n[读书](http://i.askender.com/node/book)\r\n Books, book reviews or essays\r\n\
+    \ 书，书评或随笔\r\n\r\n[新闻](http://i.askender.com/node/news)\r\n  feel and change the\
+    \ world\r\n 感受并改变世界\r\n\r\n[疑问](http://i.askender.com/node/ask)\r\n Give us a\
+    \ question, we can make the universe more fun\r\n 给出一个问题，我们让这个宇宙更有趣\r\n\r\n[科幻](http://i.askender.com/node/sf)\r\
+    \n  Science Fiction is a life style, stars and ocean\r\n  科幻是一种生活方式，星辰大海\r\n\r\
+    \n[行动](http://i.askender.com/node/fire)\r\n Record move of dreamers, maybe notsogood,\
+    \ we are trying\r\n 记录梦想者的进步，或许并不完美，但至少在努力"
+  published: 1349430792.0
+  sharetype: fire
+  slug: nodes
+  status: 0
+  tags: ''
+  title: !!python/str '节点'
+  updated: 1352617450.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e2
+  commentnum: 0
+  hitnum: 45
+  id: 12
+  likenum: 0
+  markdown: !!python/str "其实豆瓣读书也挺好了，就是东西太多了，这是一个简洁的地方，分享打动你的每一篇文字\r\n\r\n《黑客与画家》《失控：机器、社会与经济的新生物学》《数学之美》\r\
+    \n\r\n《时间足够你爱》《基地》《真名实姓》《球状闪电》《天意》《与拉玛相会》《2001：太空奥德赛》《与吾同在》\r\n《一日囚》《朝闻道》《诗云》《春日泽・云梦山》《伤心者》《带上她的眼睛》\r\
+    \n《地球大炮》《废楼十三层》《圆圆的肥皂泡》\r\n\r\n《程序员的思维修炼》《要么拯救世界，要么滚回家！[英汉对照]（ Ignore Everybody:\
+    \ And 39 Other Keys To Creativity）》\r\n\r\n《牛棚杂忆》《苏菲的世界》《当我谈跑步时，我谈些什么》\r\n\r\n\
+    \r\n欢迎推荐好书或者文章，askender43@gmail.com"
+  published: 1349432059.0
+  sharetype: book
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '推荐好书和文章'
+  updated: 1351364864.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e3
+  commentnum: 0
+  hitnum: 37
+  id: 13
+  likenum: 0
+  markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
+    \ paper marbling）至今仍被少数人所掌握。创作过程极富观赏性，色彩和图案都绚丽无比，除了被震惊得说不出话来，我们还能做什么？\r\n\r\n\
+    <embed src=\"http://player.youku.com/player.php/sid/XNDQxNDExMjcy/v.swf\" allowFullScreen=\"\
+    true\" quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
+    always\" type=\"application/x-shockwave-flash\"></embed>\r\n\r\n[原文链接](http://v.youku.com/v_show/id_XNDQxNDExMjcy.html)"
+  published: 1349432118.0
+  sharetype: film
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '土耳其湿拓（Turkish paper marbling）'
+  updated: 1349432118.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e4
+  commentnum: 0
+  hitnum: 39
+  id: 14
+  likenum: 0
+  markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
+    \ 雨人\r\n* 老男孩\r\n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n*\
+    \ 机器人总动员\r\n* 了不起的狐狸爸爸\r\n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\
+    \n* 有关时间旅行的热门问题\r\n* 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频，askender43@gmail.com"
+  published: 1349432506.0
+  sharetype: film
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '电影列表'
+  updated: 1352381079.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e5
+  commentnum: 0
+  hitnum: 53
+  id: 15
+  likenum: 0
+  markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
+    \n\r\n欢迎推荐那些打动你的音乐，askender43@gmail.com\r\n\r\n安问将会发布在线电台，正版有歌词\r\n\r\n推荐几个音乐网站：\r\
+    \n\r\n* [Last.fm](http://cn.last.fm/ )\r\n* [巨鲸](http://www.top100.cn/ )\r\n*\
+    \ [虾米](http://www.xiami.com/ )\r\n* [亦歌](http://www.1g1g.com/ )\r\n* [豆瓣电台](http://douban.fm/\
+    \ )\r\n\r\n>古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen\
+    \ fm预计会收录部分音乐"
+  published: 1349432653.0
+  sharetype: music
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '一些音乐'
+  updated: 1351366879.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e6
+  commentnum: 0
+  hitnum: 48
+  id: 16
+  likenum: 0
+  markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
+    \ quality=\"high\" width=\"480\" height=\"334\" align=\"middle\"  allowScriptAccess=\"\
+    sameDomain\" allowfullscreen=\"true\" type=\"application/x-shockwave-flash\"></embed>\r\
+    \n\r\nMy prayer\r\n\r\n(独白)\r\nDear God,\r\n敬爱的上帝，\r\n\r\ni know that she’s out\
+    \ there...the one i’m suppose\r\nto share my whole life with.\r\n她，那个我想要与她共度一生的人，虽然不在这里......\r\
+    \n\r\nand in time...you’ll show her to me.\r\n但是我相信，某个时候，你将会让我见到她。\r\n\r\nwill\
+    \ you take care of her, comfort her, and protect her\r\n...until that day we meet.\r\
+    \n能不能好好照顾她，让她过得舒适，还要佑护她....\r\n..直到我们见面的那一天\r\n\r\nand let her know...my heart...is\
+    \ beating with hers\r\n还有，让她知道......我的心......为她而存\r\n\r\n(演唱部分)\r\nin a dream\
+    \ i hold you close embracing you with my hands\r\nyou gazed at me with eyes full\
+    \ of love and made me understand\r\n在梦里，我双手把你紧抱，你凝视着我，情深款款，让我明白：\r\n\r\nthat i\
+    \ was meant to share it with you my heart my mind my soul\r\nthen i open my eyes\
+    \ and all i see reality shows i’m alone\r\n我真的愿意全心全意的和你分享一切，然而当我睁开眼睛，看到的却是我还是孤单一人。\r\
+    \n\r\nbut i know someday that you’ll be by my side cause i know God’s\r\njust\
+    \ waiting till the time is right\r\n但我知道总有一天你会出现在我身边，因为上帝只是在等待合适的时间让你出现。\r\n\r\
+    \nGod will you keep her safe from the thunderstorm when the day’s cold\r\nwill\
+    \ you keep her warm when darkness falls will you please shine her the way\r\n\
+    上帝你能不能让她平安，远离风暴；当天气寒冷，你能不能让她温暖;当夜幕降临时请照亮她的路!\r\n\r\nGod will you let her know\
+    \ that i love her so when theres no one there that\r\nshe’s not alone just close\
+    \ her eyes and let her know my heart is beating with hers\r\n上帝你能不能让她知道我如此爱她；让她知道即使世界上没有其他人，\r\
+    \n她也不会孤单；让她知道只要她闭上眼睛，她就会知道我的心为她存在。\r\n\r\nso i prayed until that day (prayed until\
+    \ that day) when our hearts will beat as one\r\n(when our hearts hearts will beat\
+    \ as one) i will wait so patiently\r\n(patiently) for that day to come (for that\
+    \ day to come)\r\n我祈祷那天能出现，我们感受到彼此的心在同时跳动。我会一直耐心的等待，只为这一天的来临。\r\n\r\ni know someday\
+    \ that you’ll be by my side cause i know God’s\r\njust waiting till the time is\
+    \ right\r\n我知道总有一天你会出现在我身边，因为上帝只是在等待合适的时间让你出现。\r\n\r\nGod will you keep her safe\
+    \ from the thunderstorm when the day’s cold\r\nwill you keep her warm when darkness\
+    \ falls will you please\r\nshine her the way (shine he the way)\r\n上帝你能不能让她平安，远离风暴；当天气寒冷，你能不能让她温暖;当夜幕降临请照亮她的路。\r\
+    \n\r\nGod will you let her know that i love her so when theres no one there that\r\
+    \nshe’s’ not alone just close her eyes and let her know my heart is beating with\
+    \ hers\r\n上帝你能不能让她知道我如此爱她；让她知道即使世界上没有其他人，她也不会孤单；\r\n让她知道只要她闭上眼睛，她就会知道我的心为她 存在。\r\
+    \n\r\nis beating with hers (ooo) my heart is beating with hers (oooo)\r\nit’s\
+    \ beating with hers\r\n我的心只为她存在，一直为她存在...\r\n\r\nGod will you keep her safe from\
+    \ the thunderstorm when the day’s\r\ncold will you keep her warm when darkness\
+    \ falls will you please shine her the way\r\n上帝你能不能让她平安，远离风暴；当天气寒冷，你能不能让她温暖;当夜幕降临请照亮她的路。\r\
+    \n\r\nGod will you let her know that i love her so when theres no one there that\r\
+    \nshe’s not alone just close her eyes and let her know my heart is beating with\
+    \ hers\r\n上帝你能不能让她知道我如此爱她；让她知道即使世界上没有其他人，她也不会孤单；\r\n让她知道只要她闭上眼睛，她就会知道我的心为她存在.\r\
+    \n\r\n[另外一个版本，中英字幕](http://www.yinyuetai.com/video/296422)\r\n\r\n[Another Day\
+    \ 电影< 时间旅行者的妻子 > 中英字幕版](http://www.yinyuetai.com/video/507846)"
+  published: 1350516596.0
+  sharetype: music
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str 'My Prayer 电影版 中英字幕'
+  updated: 1350517118.0
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e7
+  commentnum: 1
+  hitnum: 94
+  id: 17
+  likenum: 0
+  markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
+    \ 安德能初步与这个世界对话\r\n* 20111025 安德能记住每一次对话，虽然目前的理解能力不够\r\n* 20111101 安德初步记住自己的生世，认识家人和朋友，并能进行简单的对话\r\
+    \n* 20111201 安德初步学会查天气，地图，时间,在使用chrome时拥有听懂语音的能力\r\n* 20120101 安德初步学会查搜索引擎和维基百科\r\
+    \n* 20120201 安德有了更多的朋友和老师，安德团队组建,开始为他记录成长日志\r\n* 20120301 安德更开放地与世界沟通，开放源代码\r\n\
+    * 20120309 安德初步建立记忆数据库\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20121108\
+    \ 安德结束多日休眠，开始[安德行动日志](http://i.askender.com/ande-growup-log)\r\n\r\n#### 安德计划\
+    \ ande-plan\r\n\r\n* 创智为知己 birth an AI for understand ourselves\r\n* 一个开源的人工智能项目\r\
+    \n* 一个自由的理想主义人工智能创造平台\r\n* 项目@github：[安德](http://i.askender.com/ande) anwen.in暂时无法访问\r\
+    \n* 构建于python,tornado,nginx,mysql,mongodb\r\n* 以MIT协议开源发布 V0.03  20121109\r\n\
+    * 正在不断开发中，欢迎大家fork or pull-request\r\n* 欢迎大家批评指正:anwen.in+ande@gmail.com\r\n\r\
+    \n\r\n#### 安德团队行动日志 ande-team-todo\r\n* 恢复安德原有能力\r\n* 列出使用的API\r\n* 恢复音乐，天气API"
+  published: 1352418858.0
+  sharetype: fire
+  slug: ande-growup-log
+  status: 0
+  tags: ''
+  title: !!python/str '安德成长日志'
+  updated: 1357139235.083851
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e0
+  commentnum: 0
+  hitnum: 57
+  id: 10
+  likenum: 0
+  markdown: !!python/str "### 阅读\r\n[给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n\r\n### 技术\r\n\r\n[程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\
+    \n\r\n[程序员能力矩阵 Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
+  published: 1349430399.0
+  sharetype: book
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '好文链接'
+  updated: 1357139346.360852
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042df
+  commentnum: 0
+  hitnum: 38
+  id: 9
+  likenum: 0
+  markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
+    \n\r\n[chat](/chat) Ajax Long-Polling\r\n\r\n学习计划：\r\n\r\n缓存（redis）、队列（celery）\r\
+    \n\r\n看到这篇文章的你，又在鼓捣什么好玩的东西呢，欢迎分享~"
+  published: 1349430251.0
+  sharetype: fire
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '学习实验'
+  updated: 1357139369.414379
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042de
+  commentnum: 0
+  hitnum: 52
+  id: 8
+  likenum: 0
+  markdown: !!python/str "### 社区\r\n[豆瓣](http://www.douban.com/) \r\n[V2EX](http://www.v2ex.com/\
+    \  \"创意工作者们的社区\") \r\n[知乎](http://www.zhihu.com/ )\r\n\r\n### 技术社区\r\n[programming.reddit](http://www.reddit.com/r/programming/\
+    \ )\r\n[Hacker News](http://news.ycombinator.com/ )\r\n[StackOverflow](http://stackoverflow.com\
+    \ )\r\n[SegmentFault](http://segmentfault.com )\r\n[德问]( http://www.dewen.org\
+    \ \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n[Python-China](http://python-china.org/ )\
+    \ \r\n[叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 读写\r\n[Google 阅读器](https://www.google.com/reader/\
+    \ ) \r\n[阅FM](http://yue.fm/ ) \r\n[Solidot](http://www.solidot.org/ \"奇客的资讯，重要的东西\"\
+    )\r\n[卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/ )\r\
+    \n[notepad.cc](http://notepad.cc/) \r\n\r\n### 视频\r\n[Vimeo](http://vimeo.com/\
+    \ 'outside the wall')\r\n\r\n### 音乐\r\n[Last.fm](http://cn.last.fm/ )\r\n[巨鲸](http://www.top100.cn/\
+    \ )\r\n[虾米](http://www.xiami.com/ )\r\n[亦歌](http://www.1g1g.com/ )\r\n[豆瓣电台](http://douban.fm/\
+    \ )\r\n[Spotify](http://www.spotify.com/us/ \"A world of music\")\r\n\r\n### 小工具\r\
+    \n[imgur:简单图片分享](http://imgur.com/ \"the simple image sharer\")\r\n\r\n### 互联网创业\r\
+    \n[36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n[17Startup](http://www.17startup.com/\
+    \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n[阮一峰](http://www.ruanyifeng.com/home.html )\r\
+    \n\r\n### 小玩意\r\n[在线键盘钢琴](http://zythum.free.bg/Piano/  “需要切换为英文输入法”)\r\n\r\n\
+    ### 持续更新中,欢迎推荐,askender43##gmail.com"
+  published: 1349430186.0
+  sharetype: fire
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '站点分享'
+  updated: 1357139412.366947
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042da
+  commentnum: 0
+  hitnum: 125
+  id: 4
+  likenum: 0
+  markdown: !!python/str "#### 正在进行中\r\n\r\n* github-public-id before 121119\r\n*\
+    \ 安德AI的恢复与整合 before 121119\r\n* 标签 before 121119\r\n* 完善invite注册登陆 before 121119\r\
+    \n* 密码找回 before 121119\r\n* 链接分享 link-blog before 121119\r\n* oauth登录 before 121119\r\
+    \n* 分享维基 before 121119\r\n* 图片上传or使用imgur:简单图片分享 before 121119\r\n* 安问音乐 before\
+    \ 121119\r\n* post-author -bug before 121119\r\n* 充实基础内容 -keep\r\n* 单元测试 -keep\r\
+    \n* 征求建议 -keep\r\n* 更多成员加入 -keep\r\n* database-auto-backup -keep\r\n* 首页按照推荐值排序\r\
+    \n* 赞成-反对\r\n* Gravatar-cache 头像上传 \r\n* ppt-js\r\n* app\r\n* 信息可视化 Information\
+    \ visualization\r\n* 消息系统\r\n\r\n#### 未来计划 -if-have-time-or-team someday\r\n*\
+    \ MongoDB\r\n* 消息系统\r\n* 文章markdown编辑器 http://oscargodson.github.com/EpicEditor/\r\
+    \n* 开放API\r\n* 线下活动策划\r\n* 评论有二级评论吗？ -计划支持多级评论和引用&@ -thanks@anti\r\n* 设置城市时建议用下拉框，否则我设置成“火星”，混乱\
+    \ -maybe提供列表，但允许自由填写 -thanks@anti\r\n\r\n#### 已经实现：\r\n\r\n#####121111\r\n* 返回顶部改为需要的时候显示(取消显示)\
+    \ -bug -thanks@anti\r\n* 完善title -bug\r\n* 首页推荐的文章处空白但有一个点号 -bug -thanks@anti\r\
+    \n* 注册时 “个性域名” 不普适 -改为选填 -bug -thanks@anti\r\n\r\n##### 121017\r\n* 没有翻页时不显示页数，并提示暂无文章\
+    \ -bug -thanks@anti\r\n* 总有一些音乐在某个时刻会击中你 打动怎么样，eagles前是不是要有标点 -post-bug -thanks@anti\r\
+    \n* 各个版块 内容未显示完全的建议用省略号 -bug -thanks@anti\r\n* 节点: 新闻 “知道真相。。”改为“探寻真相，亮出观点”；科幻\
+    \ 什么叫“星辰大海”，空泛无意义；行动 “记录梦想者的飞行轨迹”什么意思啊？“创造”单独列一个版块叫“原创区”吧 -design-bug -thanks@anti\r\
+    \n* “创造和分享，仅供学习交流，期待内容少而精”可以写到关于我们里面，其他页面不必要，至少“期待”不必要 -design-bug -thanks@anti\r\
+    \n\r\n##### 121016\r\n* 正文页的智能推荐系统初步上线\r\n* 修正多平台访问 -bug -thanks@shuji\r\n*  版面初步设计\r\
+    \n*  版本由0.0.1升级为0.0.2\r\n\r\n##### 120903\r\n* 征求建议\r\n\r\n##### 120828\r\n* 分页\r\
+    \n\r\n##### 120819\r\n* 桉叶、喜欢功能\r\n\r\n##### 120818\r\n* 架构改进\r\n* 添加文章和评论功能\r\
+    \n\r\n##### 120730\r\n* 全新安问使用tornado重新构建\r\n* 重写新的关于页面\r\n* 模板构建\r\n* chatroom\r\
+    \n\r\n##### 110101-110729\r\n* 110101安问出现\r\n* 110526团队组建，第一次会议\r\n\r\n##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in\
+    \ ), 欢迎pull-request\r\n\r\n##### Email：anwen.in@gmail.com"
+  published: 1349429901.0
+  sharetype: fire
+  slug: changelog
+  status: 0
+  tags: ''
+  title: !!python/str '安问行动日志'
+  updated: 1357139506.703888
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042d8
+  commentnum: 0
+  hitnum: 44
+  id: 2
+  likenum: 0
+  markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
+    \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjE4NjIzMzM2/v.swf\"\
+    \ quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
+    sameDomain\" allowFullscreen=\"true\" type=\"application/x-shockwave-flash\"></embed>"
+  published: 1349428859.0
+  sharetype: film
+  slug: ''
+  status: 0
+  tags: ''
+  title: !!python/str '吉米·威尔士关于维基百科诞生的演讲'
+  updated: 1357139611.79759
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042d9
+  commentnum: 1
+  hitnum: 88
+  id: 3
+  likenum: 0
+  markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
+    \n* 人生要有趣~我们将用这个平台，记录平凡但坚定的智慧和创举，分享敢于行动勇于付出的精神和理想。\r\n* 我们相信真诚的创造与分享可以让世界更漂亮。\r\
+    \n\r\n>安问工作室是一个致力于在大众文化层面传播美好的东西的非营利机构，成立于2011年3月4日。团队汇聚了一批愿意创造和分享的年轻人，旨在“用创造和分享的力量将世界变得更漂亮”。欢迎认同我们理念的人加入~\r\
+    \n\r\n* 我们会为那些真诚的贡献者实现更多的价值\r\n* 投给安问的优秀稿件都会有稿费以及更多回报\r\n* 原创文章每篇1~10元起，被阅读更多收获也更多\r\
+    \n* 推荐文章和给我们的好的建议，即使来稿未选中也有稿费\r\n* 稿酬会不断增多\r\n\r\n### 为什么要建立安问？\r\n\r\n* 面对信息爆炸，安问将致力于提供最精简最有价值的资讯，在快节奏的生活中为大家带来一方安静的网络空间和交流平台\r\
+    \n* 读更多的好书，看更多的美景，认识更多志同道合的朋友。和更多的人分享有价值有趣的东西。相互交流，分享发现\r\n\r\n### 安问名字的来源：\r\n\
+    \r\n>豺狼当道，安问狐狸——《后汉书·张纲传》\r\n\r\n* 话说东汉末年，外戚诸梁姻族满朝，大将军梁冀专权。朝廷派遣张纲等八人分道巡按各州郡，纠察收审贪官污吏。张纲衔命出洛阳，叹道：“豺狼当道，安问狐狸？”遂将车轮埋于都亭，起草弹劾梁冀的奏章。用豺狼比喻祸国殃民的人，用狐狸比喻小偷等小坏蛋，就是说国家祸国殃民的人还没除净，（却派我）去查那些小贪小污的小官。\r\
+    \n* Origin: askender.com is a website all about creating and sharing nice things.\
+    \ We provide valuable messages and passages for everyone,money for every creator\
+    \ and sharer. We believe everyone’s creativity and spirit of sharing have the\
+    \ power of promoting a better world.\r\nIf there are real evils,why should we\
+    \ kill ants?\r\n* 当然安问的名字也来源于屈原的《天问》以及奥森·斯科特·卡德（Orson Scott Card）的《安德的游戏》\r\n\r\
+    \n\r\n### 加入安问\r\n\r\n* 安问的每个开发管理者和写作者也都是安问每日的用户，分享着自己心爱的发现，也从大家的创造和分享中受益。\r\n\
+    * Google论坛&邮件列表：https://groups.google.com/d/forum/our-anwen \r\n* 邮箱：askender43@gmail.com\r\
+    \n* 安问工作室用户群：127343260\r\n* 安问工作室核心群：148673816\r\n\r\n### 安问团队介绍：\r\n\r\n* 柏舟(askender)，物理学转互联网，热爱科幻，阅读，围棋...大学刚毕业，理想没死，希望靠自己的力量改变一些什么\r\
+    \n* 刘超（kelvin），主修通信，喜欢折腾与被折腾，热爱互联网，爱好巨多，这里写不下\r\n* sailor\r\n* 郭伟楠，荆州，专业地球化学，不成形geek一枚，未修成正果松鼠一只，爱好不计其数，以科幻，米奇，古典文化最甚，琴棋书画皆略懂，鬼点子多，可家养，可外放\r\
+    \n* 都磊(石头儿)，湖北襄樊，专科毕业，计算机专业，之后参加了北大青鸟2年的培训，热爱互联网，10年4月来到上海，参加工作。目前在一家私营企业做高级软件工程师，主要是用.Net开发一些管理系统\r\
+    \n* anti,魏景亮,周潇粤,Yungstedt,盲眼A,青青子矜\r\n* ireading,A-cat,盲眼A,林子,H1K9\r\n* 月  从前的巴菲就是愤青，将不能创作的理由推给“经费、人力、胶卷和市场”。现在的巴菲只是个单纯的说书人，一支笔、一张纸、几句话，简简单单，不为其它\
+    \  “我”的总合借由潜意识转化为梦境，巴菲印刻就是将梦境造出的出版社。\r\n\r\n### 联系我们\r\n* 邮箱：askender43@gmail.com\r\
+    \n* 微博：http://weibo.com/askender\r\n* github: https://github.com/askender\r\n\r\
+    \n### 安问策划\r\n* 成为优质内容发布、阅读与分享的一个独特和独立平台，作者收入更多，读者阅读体验更好，交流互动更有意思。我们会与资源版权方深度合作，让正版资源能够以方便、低价，互动性更强的方式呈现于读者面前。\r\
+    \n* 创建一个氛围独特的优质互动社区，使网站内容的质量保持在高水平。\r\n* 研发智能推荐算法，提供更好的用户体验和用户价值实现。\r\n\r\n###\
+    \ 安问分支\r\n* 全新 安问 anwen.in（域名备案被取消，稍后恢复访问）\r\n* 多人独立博客平台：[安问网](http://askender.com/)、[安问科幻网](http://anwensf.com/),其中安问科幻网吸引高校众多科幻社团参与，立志打造有趣的科幻网站。\r\
+    \n* 人工智能Ender\r\n\r\n### 期待有新的成员加入~@@\r\n\r\n* 一个开源的分享最打动大家东西的微型社区项目\r\n* [anwen.in@github](https://github.com/askender/anwen.in)正在不断开发中，欢迎大家fork\r\
+    \n* 构建于tornado，欢迎大家批评指正，askender43@gmail.com\r\n\r\n### 补充\r\n\r\n* 我们期待提供最佳用户体验，专心将一件事做到极致\r\
+    \n* 安问是一生的故事，生命短暂，我们期待改进和迭代更新越快越好，不断提供有价值的内容和体验\r\n* 打算构建CC版权的分享维基，可以给文章pull request，协作打造精简的分享"
+  published: 1349429689.0
+  sharetype: fire
+  slug: about
+  status: 0
+  tags: ''
+  title: !!python/str '关于安问'
+  updated: 1357139561.954344
+  user_id: 1

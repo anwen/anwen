@@ -7,7 +7,7 @@ from utils.fliter import filter_tags
 from utils.avatar import get_avatar
 from base import BaseHandler
 import options
-from db import User, Share, Comment, Like, Hit
+from db import User, Share, Comment, Like, Hit, Tag
 from pymongo import DESCENDING  # ASCENDING
 
 
@@ -136,6 +136,25 @@ class SpecialHandler(BaseHandler):
                 realsuggest=realsuggest)
 
 
-class NotyetHandler(BaseHandler):
-    def get(self):
-        self.render("404.html")
+class TagHandler(BaseHandler):
+
+    def get(self, name=None):
+        if not name:
+            tags = Tag.find()
+            self.render("tag.html", tags=tags)
+        else:
+            tag = Tag.find_one({'name': name})
+            shares = []
+            for i in tag.share_ids.split(' '):
+                share = Share.by_sid(i)
+
+                user = User.by_sid(share.user_id)
+                share.name = user.user_name
+                share.published = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(share.published))
+                share.domain = user.user_domain
+                share.markdown = filter_tags(
+                    markdown2.markdown(share.markdown))[:100]
+                share.gravatar = get_avatar(user.user_email, 16)
+
+                shares.append(share)
+            self.render("tage.html", name=name, shares=shares)

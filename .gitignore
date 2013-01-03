@@ -10,3 +10,5 @@ anwen-test
 /log/files/*.log.*
 *~
 *.log
+User.yaml
+Ande.yaml

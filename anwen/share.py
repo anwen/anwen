@@ -6,9 +6,8 @@ from random import randint
 import tornado.web
 
 from utils.avatar import get_avatar
-from base import BaseHandler
-from db import User, Share, Comment, Like, Hit
-from base import CommonResourceHandler
+from db import User, Share, Comment, Like, Hit, Tag
+from base import CommonResourceHandler, BaseHandler
 
 
 class ShareHandler(BaseHandler):
@@ -23,11 +22,13 @@ class ShareHandler(BaseHandler):
     @tornado.web.authenticated
     def post(self):
         id = self.get_argument("id", None)
+        tags = self.get_argument("tags", '')
+        user_id = self.current_user["user_id"]
         res = {
             'title': self.get_argument("title"),
             'markdown': self.get_argument("markdown"),
             'sharetype': self.get_argument("type"),
-            'tags': self.get_argument("tags", ''),
+            'tags': tags,
             'updated': time.time(),
         }
 
@@ -39,12 +40,13 @@ class ShareHandler(BaseHandler):
             share.save()
         else:
             share = Share
-            res['user_id'] = int(self.current_user["user_id"])
+            res['user_id'] = user_id
             share = share.new(res)
-            user = User.by_sid(self.current_user["user_id"])
+            user = User.by_sid(user_id)
             user.user_leaf += 10
             user.save()
-            print str(share.id)
+        for i in tags.split(' '):
+            Tag.new(i, share.id)
         self.redirect("/share/" + str(share.id))
 
 
@@ -59,6 +61,13 @@ class EntryHandler(BaseHandler):
         share.hitnum += 1
         share.save()
         share.markdown = markdown2.markdown(share.markdown)
+
+        tags = 'tags:'
+
+        if share.tags:
+            for i in share.tags.split(' '):
+                tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
+        share.tags = tags
         user_id = int(
             self.current_user["user_id"]) if self.current_user else None
         share.is_liking = Like.find(

@@ -1,0 +1,12 @@
+- _id: 50e44d08606ec51c6ab042f3
+  commentbody: !!python/str '支持！'
+  commenttime: 1350504253.0
+  id: 1
+  share_id: 3
+  user_id: 3
+- _id: 50e44d08606ec51c6ab042f4
+  commentbody: !!python/str '我是大三学生，目前也在做，有个更好的想法和人数不多的团队。正在技术实现。我就说这么多。'
+  commenttime: 1354362452.0
+  id: 2
+  share_id: 17
+  user_id: 13

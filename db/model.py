@@ -181,3 +181,36 @@ class Hit(BaseModel):
         'hitnum': 0,
         'hittime': time.time,
     }
+
+
+@connection.register
+class Tag(BaseModel):
+    __collection__ = 'Tag_Col'
+    structure = {
+        'id': int,
+        'name': basestring,
+        'share_ids': basestring,
+        'hittime': float,
+    }
+    default_values = {
+        'share_ids': '',
+        'hittime': time.time,
+    }
+
+    def new(self, tag, share_id):
+        res = self.find_one({'name': str(tag)})
+        if res:
+            share_list = res.share_ids.split(' ')
+            if share_id in share_list:
+                pass
+            else:
+                res.share_ids = '%s %s' % (res.share_ids, share_id)
+        else:
+            res = self()
+            doc = {}
+            doc['id'] = self.find().count() + 1
+            doc['name'] = tag
+            doc['share_ids'] = str(share_id)
+            res.update(doc)
+            res.save()
+        return res

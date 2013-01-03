@@ -2,63 +2,46 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import time
 import yaml
 import sys
+import os
+import re
 sys.path.append('..')
 from db import User, Share, Ande, Comment, Hit
 
 
-res = User
-if res.find().count() == 0:
-    docs = yaml.load(file('anwen_user.yaml', 'r').read())
-    for doc in docs:
-        doc['user_jointime'] = time.mktime(
-            time.strptime(doc['user_jointime'], '%Y-%m-%d %H:%M:%S'))
-        doc['user_domain'] = str(doc['user_domain'])
-        res.new(doc)
-    print 'users done'
-
-res = Share
-if res.find().count() == 0:
-    docs = yaml.load(file('anwen_share.yaml', 'r').read())
-    for doc in docs:
-        doc['published'] = time.mktime(
-            time.strptime(doc['published'], '%Y-%m-%d %H:%M:%S'))
-        doc['updated'] = time.mktime(
-            time.strptime(doc['updated'], '%Y-%m-%d %H:%M:%S'))
-        res.new(doc)
-    print 'shares done'
-
-res = Ande
-if res.find().count() == 0:
-    docs = yaml.load(file('anwen_ande.yaml', 'r').read())
-    for doc in docs:
-        # doc['usersay'] = str(doc['usersay'])
-        doc['chattime'] = time.mktime(
-            time.strptime(doc['chattime'], '%Y-%m-%d %H:%M:%S'))
-        res.new(doc)
-    print 'andes done'
-
-res = Comment
-if res.find().count() == 0:
-    docs = yaml.load(file('anwen_comment.yaml', 'r').read())
-    for doc in docs:
-        doc['commenttime'] = time.mktime(
-            time.strptime(doc['commenttime'], '%Y-%m-%d %H:%M:%S'))
-        res.new(doc)
-    print 'comments done'
-
-res = Hit
-if res.find().count() == 0:
-    docs = yaml.load(file('anwen_hit.yaml', 'r').read())
-    for doc in docs:
-        doc['hittime'] = time.mktime(
-            time.strptime(doc['hittime'], '%Y-%m-%d %H:%M:%S'))
-        res.new(doc)
-    print 'hits done'
-
 docs = ['User', 'Share', 'Comment', 'Ande', 'Hit']
+
+
+def make_doc():
+    docs = yaml.load(file('Share.yaml', 'r').read())
+    print type(docs)
+    for doc in docs:
+        # print doc['markdown']
+        print doc['slug']
+
+
+def run_import(name):
+    if name == 'all':
+        for doc in docs:
+            doc_import(doc)
+    elif name in docs:
+        doc_import(name)
+
+
+def doc_import(doc):
+    d = eval(doc)
+    if d.find().count() == 0:
+        if doc == 'User' and os.path.isfile(doc + '.yaml'):
+            doc = '%sSafe' % doc
+            print 'load usersafe'
+        docs = yaml.load(file(doc + '.yaml', 'r').read())
+        for i in docs:
+            if doc == 'UserSafe':
+                i['user_email'] = ''
+                i['user_pass'] = ''
+            d.new(i)
+        print '%s done' % doc
 
 
 def run_export(name):
@@ -67,6 +50,14 @@ def run_export(name):
             doc_export(doc)
     elif name in docs:
         doc_export(name)
+    if os.path.isfile('User.yaml'):
+        input_file = open('User.yaml')
+        output_file = open('UserSafe.yaml', 'w')
+        a = re.sub(r'  user_pass: \S*\n', '', input_file.read())
+        b = re.sub(r'  user_email: \S*\n', '', a)
+        output_file.write(b)
+        output_file.close()
+        print 'users are safe'
 
 
 def doc_export(doc):
@@ -78,7 +69,13 @@ def doc_export(doc):
         i = convert(i)
         res.append(i)
     document = open(doc + '.yaml', 'w')
-    yaml.dump(res, document, canonical=False, default_flow_style=False)
+    yaml.dump(
+        res, document,
+        default_style=None, default_flow_style=False,
+        canonical=False, indent=False, width=None,
+        allow_unicode=True, line_break=None,
+        encoding='utf-8', explicit_start=None, explicit_end=None,
+        version=None, tags=None)
 
 
 def convert(input):
@@ -113,6 +110,15 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    '-d', '--doc',
+    dest='make_doc',
+    action='store_const',
+    const=True,
+    default=False,
+    help='make doc'
+)
+
+parser.add_argument(
     '-n', '--name',
     dest='name',
     action='store',
@@ -124,7 +130,8 @@ parser.add_argument(
 if __name__ == '__main__':
     args = parser.parse_args()
     if args.run_import:
-        pass
-        # run_import(args.name)
+        run_import(args.name)
     elif args.run_export:
         run_export(args.name)
+    elif args.make_doc:
+        make_doc()

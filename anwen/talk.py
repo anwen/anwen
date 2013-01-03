@@ -66,7 +66,7 @@ class MessageMixin(object):
             cls.cache = cls.cache[-self.cache_size:]
 
 
-class MessageNewHandler(BaseHandler, MessageMixin):
+class MsgNewHandler(BaseHandler, MessageMixin):
     def post(self):
         message = {
             "id": str(uuid.uuid4()),
@@ -82,7 +82,7 @@ class MessageNewHandler(BaseHandler, MessageMixin):
         send_message(message)
 
 
-class MessageUpdatesHandler(BaseHandler, MessageMixin):
+class MsgUpdatesHandler(BaseHandler, MessageMixin):
     @tornado.web.asynchronous
     def post(self):
         cursor = self.get_argument("cursor", None)
