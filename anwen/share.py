@@ -67,7 +67,7 @@ class EntryHandler(BaseHandler):
                         self.redirect('%s%s' % (old, i), permanent=True)
                         break
                         return
-            self.redirect("/404")
+                self.redirect("/404")
         share.hitnum += 1
         share.save()
         share.markdown = markdown2.markdown(share.markdown)
