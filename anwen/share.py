@@ -88,7 +88,6 @@ class EntryHandler(BaseHandler):
         for comment in comment_res:
             user = User.by_sid(comment.user_id)
             comment.name = user.user_name
-            print comment.name
             comment.domain = user.user_domain
             comment.gravatar = get_avatar(user.user_email, 50)
             comments.append(comment)
