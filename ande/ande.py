@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 
 from anwen.base import BaseHandler
-from db import connection as con
 from andesay import AndeSay
 import say
+from db import Ande
 
 
 class AndeHandler(BaseHandler):
@@ -16,22 +16,30 @@ class AndeHandler(BaseHandler):
 
     def post(self):
         usersay = self.get_argument("ask0", '')
-        # print usersay
-        # user_lang = self.get_user_lang()
+        print usersay
+        user_lang = self.get_user_lang()
         userip = self.request.remote_ip
         a = AndeSay()
-        andesay = a.get_andesay(usersay, userip)
-        andesay += '<br/>your ip:' + userip
-        andesay += '<br/>'
+        andesay, andethink = a.get_andesay(usersay, userip)
 
         user_id = ''
         if self.current_user:
             user_id = self.current_user["user_id"]
         if not user_id:
-            user_id = userip.replace('.', '')
-        Ande.create(
-            user_id='1',
-            usersay=usersay,
-            andesay=andesay, )
-        # print andesay
+            user_id = int(userip.replace('.', ''))
+
+        doc = {
+            'user_id': user_id,
+            'usersay': usersay,
+            'andesay': andesay,
+        }
+        Ande.new(doc)
+        andethink += '<br/>userip:' + userip
+        andethink += '<br/>user_lang:' + user_lang
+        andethink += '<br/>'
+        debug = True  # True False
+        print andesay
+        if debug:
+            andesay += andethink
+        print andethink
         self.write(andesay)

@@ -55,8 +55,4 @@ class AndeSay(object):
         andethink += '<br/>' + p.get_pinyin(usersay)
         #status = userfenci['words'][0]['attr']
 
-        debug = True  # True False
-        if debug:
-            andesay += andethink
-
-        return andesay
+        return andesay, andethink
