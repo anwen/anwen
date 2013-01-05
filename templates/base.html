@@ -141,5 +141,26 @@
 <!-- <script src="{{ static_url("js/jquery.js") }}"></script> -->
 <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
 {% block bottom %}{% end %}
+<script>
+    // Toggle fullscreen button:
+    $('#toggle-fullscreen').button().click(function () {
+        var button = $(this),
+            root = document.documentElement;
+        if (!button.hasClass('active')) {
+            if (root.webkitRequestFullScreen) {
+                root.webkitRequestFullScreen(
+                    window.Element.ALLOW_KEYBOARD_INPUT
+                );
+            } else if (root.mozRequestFullScreen) {
+                root.mozRequestFullScreen();
+            }
+        } else {
+            (document.webkitCancelFullScreen ||
+                document.mozCancelFullScreen ||
+                $.noop).apply(document);
+        }
+    });
+</script>
+
 </body>
 </html>
