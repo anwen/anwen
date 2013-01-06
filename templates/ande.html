@@ -6,7 +6,7 @@
     <form class="searchForms" method="post">
 		<fieldsets>
       <div id="inbox">
-<div id="search_results">{{say}}</div>
+<div id="search_results">{{sayit}}</div>
       </div>
 
         </fieldsets>
@@ -39,7 +39,34 @@
     <div id="resultsDiv"></div>
 </div>
 
-<p class="credit"><a href="http://askender.com/ai-ender-develop-plan.html">开发计划&安德日记</a></p>
+
+<p class="credit"><a data-toggle="modal" href="#myModal" class="btn btn-primary">说明</a></p>
+
+          <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h3 id="myModalLabel">
+                ~
+              </h3>
+            </div>
+            <div class="modal-body" background-color="#eee">
+              <h4>对不起，安德尚未恢复</h4>
+              <h4>不过您可以通过输入：播放歌名@@歌手来点歌.可以查询天气</h4>
+            </div>
+            <div class="modal-footer">
+              <button class="btn" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+
+
+
+<p class="credit"><a href="http://askender.com/ai-ender-develop-plan.html target='_blank' ">开发计划&安德日记</a></p>
+
+
 
 </div>
 

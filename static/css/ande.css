@@ -5,9 +5,10 @@
 
 body{
 	font-size:13px;
-	color:#eee;
+	/*color:#eee;*/
 	font-family:Arial, Helvetica, sans-serif;
-	background-color:#355664;
+	/*background-color:#355664;*/
+	background-color:#222;
 }
 
 #page{
@@ -25,7 +26,8 @@ h1{
 
 #searchForm{
 	/* The search form. */
-	background-color:#24404c;
+	/*background-color:#24404c;*/
+	background-color:#333;
 	padding:50px 50px 30px;
 	margin:80px 0;
 	position:relative;
@@ -40,7 +42,8 @@ fieldset{
 }
 .searchForms{
 	/* The search form. */
-	background-color:#24404c;
+	/*background-color:#24404c;*/
+	background-color:#ccc;
 	padding:30px 50px 30px 50px;
 	margin:40px 0;
 	position:relative;
@@ -66,7 +69,7 @@ fieldset{
 	/* The search text box. */
 	
 	border:none;
-	color:#888888;
+	/*color:#888888;*/
 	background:url("../andeimg/searchBox.png") no-repeat;
 	
 	float:left;
@@ -84,7 +87,7 @@ fieldset{
 	/* The search text box. */
 	
 	border:none;
-	color:#888888;
+	/*color:#888888;*/
 	background:url("../andeimg/searchBoxs.png") no-repeat;
 	
 	float:left;

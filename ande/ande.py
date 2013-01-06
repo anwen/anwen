@@ -4,6 +4,7 @@ from anwen.base import BaseHandler
 from andesay import AndeSay
 import say
 from db import Ande
+from markdown2 import markdown
 
 
 class AndeHandler(BaseHandler):
@@ -12,7 +13,8 @@ class AndeHandler(BaseHandler):
         _ = self.locale.translate
         msg = _(say.firstmeet())
         msg = msg + say.expression()
-        self.render("ande.html", say=msg)
+        sayit = markdown(msg)
+        self.render("ande.html", sayit=sayit)
 
     def post(self):
         usersay = self.get_argument("ask0", '')
