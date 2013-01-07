@@ -2,78 +2,76 @@
 
 {% block body %}
 <div class="span12">
-<div id="page">
+  <div id="page">
     <form class="searchForms" method="post">
-		<fieldsets>
-      <div id="inbox">
-<div id="search_results">{{sayit}}</div>
-      </div>
+      <fieldsets>
+        <div id="inbox">
+          <div id="search_results">{{sayit}}</div>
+        </div>
 
-        </fieldsets>
+      </fieldsets>
     </form>
     <form class="searchForms" id="andesay" method="post">
-		<fieldsets>
-			<input type="text" onblur="if (this.value == '') {this.value = '和我聊天吧~';}" onfocus="if (this.value == '和我聊天吧~') {this.value = '';}" id="ss" name="ask0"  x-webkit-speech />
-            <input type="submit" name="dosubmit" value="说  出" class="btn-large btn-primary"/>
-        </fieldsets>
+      <fieldsets>
+        <input type="text" onblur="if (this.value == '') {this.value = '和我聊天吧~';}" onfocus="if (this.value == '和我聊天吧~') {this.value = '';}" id="ss" name="ask0"  x-webkit-speech />
+        <input type="submit" name="dosubmit" value="说  出" class="btn-large btn-primary"/>
+      </fieldsets>
     </form>
     <form id="searchForm" method="post">
       {{ xsrf_form_html() }}
-		<fieldset>
-			<input type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
-            <input type="submit" value="Submit" id="submitButton" />
-            <div id="searchInContainer">
-                <input type="radio" name="check" value="site" id="searchSite" checked />
-                <label for="searchSite" id="siteNameLabel">Search </label>
-                <input type="radio" name="check" value="web" id="searchWeb" />
-                <label for="searchWeb">Search The Web</label>
-			</div>        
-            <ul class="icons">
-                <li class="web" title="Web Search" data-searchType="web">Web</li>
-                <li class="images" title="Image Search" data-searchType="images">Images</li>
-                <li class="news" title="News Search" data-searchType="news">News</li>
-                <li class="videos" title="Video Search" data-searchType="video">Videos</li>
-            </ul>
-        </fieldset>
+      <fieldset>
+        <input type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
+        <input type="submit" value="Submit" id="submitButton" />
+        <div id="searchInContainer">
+          <input type="radio" name="check" value="site" id="searchSite" checked />
+          <label for="searchSite" id="siteNameLabel">Search</label>
+          <input type="radio" name="check" value="web" id="searchWeb" />
+          <label for="searchWeb">Search The Web</label>
+        </div>
+        <ul class="icons">
+          <li class="web" title="Web Search" data-searchType="web">Web</li>
+          <li class="images" title="Image Search" data-searchType="images">Images</li>
+          <li class="news" title="News Search" data-searchType="news">News</li>
+          <li class="videos" title="Video Search" data-searchType="video">Videos</li>
+        </ul>
+      </fieldset>
     </form>
     <div id="resultsDiv"></div>
+  </div>
+
+  <p class="credit">
+    <a data-toggle="modal" href="#myModal" class="btn btn-primary">说明</a>
+  </p>
+
+  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="myModalLabel">~</h3>
+    </div>
+    <div class="modal-body" background-color="#eee">
+      <h4>对不起，安德尚未恢复</h4>
+      <h4>不过您可以通过输入：播放歌名@@歌手来点歌.可以查询天气</h4>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+  <div id="lyric" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    </div>
+    <div class="modal-body" background-color="#eee"></div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+  <p class="credit">
+    <a href="http://askender.com/ai-ender-develop-plan.html target='_blank' ">开发计划&安德日记</a>
+  </p>
+
 </div>
-
-
-<p class="credit"><a data-toggle="modal" href="#myModal" class="btn btn-primary">说明</a></p>
-
-          <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                &times;
-              </button>
-              <h3 id="myModalLabel">
-                ~
-              </h3>
-            </div>
-            <div class="modal-body" background-color="#eee">
-              <h4>对不起，安德尚未恢复</h4>
-              <h4>不过您可以通过输入：播放歌名@@歌手来点歌.可以查询天气</h4>
-            </div>
-            <div class="modal-footer">
-              <button class="btn" data-dismiss="modal">
-                Close
-              </button>
-            </div>
-          </div>
-
-
-
-<p class="credit"><a href="http://askender.com/ai-ender-develop-plan.html target='_blank' ">开发计划&安德日记</a></p>
-
-
-
-</div>
-
-
-
-
-
 {% end %}
 
 {% block bottom %}
@@ -121,5 +119,5 @@ function ajax_search(){
 
 } 
 </script>
-  <script src="{{ static_url("js/googlesearch.js") }}"></script>
+<script src="{{ static_url("js/googlesearch.js") }}"></script>
 {% end %}

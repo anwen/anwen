@@ -1,66 +1,6 @@
-- _id: 50e44d08606ec51c6ab042e1
-  commentnum: 0
-  hitnum: 100
-  id: 11
-  likenum: 0
-  markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
-    \ can hit your heart~\r\n 创造和分享，那些打动你的~\r\n\r\n[音乐](http://i.askender.com/node/music)\r\
-    \n Music which touch heart~\r\n  触及灵魂的声音\r\n\r\n[视频](http://i.askender.com/node/film)\r\
-    \n  Light and shadow fragment record every inch sensation\r\n 光影片段，记录每一寸感动\r\n\
-    \r\n[读书](http://i.askender.com/node/book)\r\n Books, book reviews or essays\r\n\
-    \ 书，书评或随笔\r\n\r\n[新闻](http://i.askender.com/node/news)\r\n  feel and change the\
-    \ world\r\n 感受并改变世界\r\n\r\n[疑问](http://i.askender.com/node/ask)\r\n Give us a\
-    \ question, we can make the universe more fun\r\n 给出一个问题，我们让这个宇宙更有趣\r\n\r\n[科幻](http://i.askender.com/node/sf)\r\
-    \n  Science Fiction is a life style, stars and ocean\r\n  科幻是一种生活方式，星辰大海\r\n\r\
-    \n[行动](http://i.askender.com/node/fire)\r\n Record move of dreamers, maybe notsogood,\
-    \ we are trying\r\n 记录梦想者的进步，或许并不完美，但至少在努力"
-  published: 1349430792.0
-  sharetype: fire
-  slug: nodes
-  status: 0
-  tags: ''
-  title: !!python/str '节点'
-  updated: 1352617450.0
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042da
-  commentnum: 0
-  hitnum: 127
-  id: 4
-  likenum: 0
-  markdown: !!python/str "#### 正在进行中\r\n\r\n* github-public-id before 121119\r\n*\
-    \ 安德AI的恢复与整合 before 121119\r\n* 标签 before 121119\r\n* 完善invite注册登陆 before 121119\r\
-    \n* 密码找回 before 121119\r\n* 链接分享 link-blog before 121119\r\n* oauth登录 before 121119\r\
-    \n* 分享维基 before 121119\r\n* 图片上传or使用imgur:简单图片分享 before 121119\r\n* 安问音乐 before\
-    \ 121119\r\n* post-author -bug before 121119\r\n* 充实基础内容 -keep\r\n* 单元测试 -keep\r\
-    \n* 征求建议 -keep\r\n* 更多成员加入 -keep\r\n* database-auto-backup -keep\r\n* 首页按照推荐值排序\r\
-    \n* 赞成-反对\r\n* Gravatar-cache 头像上传 \r\n* ppt-js\r\n* app\r\n* 信息可视化 Information\
-    \ visualization\r\n* 消息系统\r\n\r\n#### 未来计划 -if-have-time-or-team someday\r\n*\
-    \ MongoDB\r\n* 消息系统\r\n* 文章markdown编辑器 http://oscargodson.github.com/EpicEditor/\r\
-    \n* 开放API\r\n* 线下活动策划\r\n* 评论有二级评论吗？ -计划支持多级评论和引用&@ -thanks@anti\r\n* 设置城市时建议用下拉框，否则我设置成“火星”，混乱\
-    \ -maybe提供列表，但允许自由填写 -thanks@anti\r\n\r\n#### 已经实现：\r\n\r\n#####121111\r\n* 返回顶部改为需要的时候显示(取消显示)\
-    \ -bug -thanks@anti\r\n* 完善title -bug\r\n* 首页推荐的文章处空白但有一个点号 -bug -thanks@anti\r\
-    \n* 注册时 “个性域名” 不普适 -改为选填 -bug -thanks@anti\r\n\r\n##### 121017\r\n* 没有翻页时不显示页数，并提示暂无文章\
-    \ -bug -thanks@anti\r\n* 总有一些音乐在某个时刻会击中你 打动怎么样，eagles前是不是要有标点 -post-bug -thanks@anti\r\
-    \n* 各个版块 内容未显示完全的建议用省略号 -bug -thanks@anti\r\n* 节点: 新闻 “知道真相。。”改为“探寻真相，亮出观点”；科幻\
-    \ 什么叫“星辰大海”，空泛无意义；行动 “记录梦想者的飞行轨迹”什么意思啊？“创造”单独列一个版块叫“原创区”吧 -design-bug -thanks@anti\r\
-    \n* “创造和分享，仅供学习交流，期待内容少而精”可以写到关于我们里面，其他页面不必要，至少“期待”不必要 -design-bug -thanks@anti\r\
-    \n\r\n##### 121016\r\n* 正文页的智能推荐系统初步上线\r\n* 修正多平台访问 -bug -thanks@shuji\r\n*  版面初步设计\r\
-    \n*  版本由0.0.1升级为0.0.2\r\n\r\n##### 120903\r\n* 征求建议\r\n\r\n##### 120828\r\n* 分页\r\
-    \n\r\n##### 120819\r\n* 桉叶、喜欢功能\r\n\r\n##### 120818\r\n* 架构改进\r\n* 添加文章和评论功能\r\
-    \n\r\n##### 120730\r\n* 全新安问使用tornado重新构建\r\n* 重写新的关于页面\r\n* 模板构建\r\n* chatroom\r\
-    \n\r\n##### 110101-110729\r\n* 110101安问出现\r\n* 110526团队组建，第一次会议\r\n\r\n##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in\
-    \ ), 欢迎pull-request\r\n\r\n##### Email：anwen.in@gmail.com"
-  published: 1349429901.0
-  sharetype: fire
-  slug: changelog
-  status: 0
-  tags: log
-  title: !!python/str '安问行动日志'
-  updated: 1357223738.213272
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
-  hitnum: 91
+  hitnum: 119
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -99,7 +39,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 106
+  hitnum: 128
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -123,7 +63,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
-  hitnum: 50
+  hitnum: 61
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -176,24 +116,24 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
-  hitnum: 41
+  hitnum: 57
   id: 14
   likenum: 0
   markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
     \ 雨人\r\n* 老男孩\r\n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n*\
     \ 机器人总动员\r\n* 了不起的狐狸爸爸\r\n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\
-    \n* 有关时间旅行的热门问题\r\n* 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频，askender43@gmail.com"
+    \n* 有关时间旅行的热门问题\r\n* 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频~  anwen.in@gmail.com"
   published: 1349432506.0
   sharetype: film
   slug: movie-share
   status: 0
   tags: list
   title: !!python/str '电影列表'
-  updated: 1357223177.047461
+  updated: 1357228091.008947
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
-  hitnum: 57
+  hitnum: 71
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
@@ -212,7 +152,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
-  hitnum: 39
+  hitnum: 52
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -228,44 +168,29 @@
   title: !!python/str '土耳其湿拓（Turkish paper marbling）'
   updated: 1357223239.920834
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e0
-  commentnum: 0
-  hitnum: 59
-  id: 10
-  likenum: 0
-  markdown: !!python/str "### 阅读\r\n[给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
-    \ )\r\n\r\n### 技术\r\n\r\n[程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\
-    \n\r\n[程序员能力矩阵 Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
-    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
-  published: 1349430399.0
-  sharetype: book
-  slug: post-share
-  status: 0
-  tags: list
-  title: !!python/str '好文链接'
-  updated: 1357223380.063235
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042e2
   commentnum: 0
-  hitnum: 47
+  hitnum: 68
   id: 12
   likenum: 0
-  markdown: !!python/str "其实豆瓣读书也挺好了，就是东西太多了，这是一个简洁的地方，分享打动你的每一篇文字\r\n\r\n《黑客与画家》《失控：机器、社会与经济的新生物学》《数学之美》\r\
-    \n\r\n《时间足够你爱》《基地》《真名实姓》《球状闪电》《天意》《与拉玛相会》《2001：太空奥德赛》《与吾同在》\r\n《一日囚》《朝闻道》《诗云》《春日泽・云梦山》《伤心者》《带上她的眼睛》\r\
-    \n《地球大炮》《废楼十三层》《圆圆的肥皂泡》\r\n\r\n《程序员的思维修炼》《要么拯救世界，要么滚回家！[英汉对照]（ Ignore Everybody:\
-    \ And 39 Other Keys To Creativity）》\r\n\r\n《牛棚杂忆》《苏菲的世界》《当我谈跑步时，我谈些什么》\r\n\r\n\
-    \r\n欢迎推荐好书或者文章，askender43@gmail.com"
+  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
+    * 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 真名实姓\r\n* 球状闪电\r\n* 天意\r\n* 2001：太空奥德赛\r\n* 与吾同在\r\
+    \n* 基地\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\n* 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n\
+    * 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n\
+    ### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n\r\n* 黑客与画家\r\n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\
+    \n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好书或者文章，\
+    \ anwen.in@gmail.com"
   published: 1349432059.0
   sharetype: book
   slug: book-share
   status: 0
   tags: list
   title: !!python/str '推荐好书'
-  updated: 1357223337.781703
+  updated: 1357281143.329482
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
-  hitnum: 40
+  hitnum: 53
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
@@ -281,7 +206,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
-  hitnum: 54
+  hitnum: 73
   id: 8
   likenum: 0
   markdown: !!python/str "### 社区\r\n[豆瓣](http://www.douban.com/) \r\n[V2EX](http://www.v2ex.com/\
@@ -311,7 +236,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
-  hitnum: 32
+  hitnum: 42
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
@@ -326,7 +251,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dc
   commentnum: 0
-  hitnum: 36
+  hitnum: 45
   id: 6
   likenum: 0
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。\r\n\r\n* Markdown\
@@ -361,7 +286,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
-  hitnum: 68
+  hitnum: 85
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -379,7 +304,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
-  hitnum: 46
+  hitnum: 56
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
@@ -396,7 +321,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
-  hitnum: 35
+  hitnum: 43
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
@@ -410,4 +335,91 @@
   tags: speech  dream
   title: !!python/str '史蒂夫 乔布斯Steve.Jobs在2005年对斯坦福大学Stanford毕业生的演讲(中英字幕)'
   updated: 1357223954.264876
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e1
+  commentnum: 0
+  hitnum: 130
+  id: 11
+  likenum: 0
+  markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
+    \ can hit your heart~\r\n 创造和分享，那些打动你的~\r\n\r\n[音乐](http://i.askender.com/node/music)\r\
+    \n Music which touch heart~\r\n 触及灵魂的声音\r\n\r\n[视频](http://i.askender.com/node/film)\r\
+    \n Light and shadow fragment record every inch sensation\r\n 光影片段，记录每一寸感动\r\n\r\
+    \n[读书](http://i.askender.com/node/book)\r\n Books, book reviews or essays\r\n\
+    \ 书，书评或随笔\r\n\r\n[新闻](http://i.askender.com/node/news)\r\n feel and change the\
+    \ world\r\n 感受并改变世界\r\n\r\n[疑问](http://i.askender.com/node/ask)\r\n Give us a\
+    \ question, we can make the universe more fun\r\n 给出一个问题，我们让这个宇宙更有趣\r\n\r\n[科幻](http://i.askender.com/node/sf)\r\
+    \n Science Fiction is a life style, stars and ocean\r\n 科幻是一种生活方式，星辰大海\r\n\r\n\
+    [行动](http://i.askender.com/node/fire)\r\n Record move of dreamers, maybe notsogood,\
+    \ we are trying\r\n 记录梦想者的进步，或许并不完美，但至少在努力"
+  published: 1349430792.0
+  sharetype: fire
+  slug: nodes
+  status: 0
+  tags: ''
+  title: !!python/str '节点'
+  updated: 1357228249.675027
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e0
+  commentnum: 0
+  hitnum: 75
+  id: 10
+  likenum: 0
+  markdown: !!python/str "### 阅读\r\n[给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n[你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
+    \n### 技术\r\n\r\n[程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n\r\n[程序员能力矩阵\
+    \ Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
+  published: 1349430399.0
+  sharetype: book
+  slug: post-share
+  status: 0
+  tags: list
+  title: !!python/str '好文链接'
+  updated: 1357277185.603203
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042da
+  commentnum: 0
+  hitnum: 157
+  id: 4
+  likenum: 0
+  markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
+    \ api and doc before 130115 in 1\r\n* 安德AI的恢复与整合 before 121119 130115 in 1\r\n\
+    * 完善invite注册登陆 before 121119 130115 in 1\r\n* oauth登录 before 121119 130115 in\
+    \ 1\r\n* 密码找回 before 121119 130115 in 1\r\n* 链接分享 link-blog before 121119 130115\
+    \ in 1\r\n* 分享维基github before 121119 130115 in 1\r\n* 图片上传or使用imgur:简单图片分享 before\
+    \ 121119 130115 in 1\r\n* 安问音乐 before 121119 130115 in 1\r\n* post-author -bug\
+    \ before 121119 130115 in 1\r\n* 充实基础内容 -keep before 130115 in 1\r\n* 征求建议 -keep\
+    \ before 130115 in 1\r\n* 更多成员加入 -keep before 130115 in 1\r\n* database-auto-backup\
+    \ -keep before 130115 in 1\r\n* 首页按照推荐值排序 before 130115 in 1\r\n* 安问游戏初步 before\
+    \ 130115 in 1\r\n* 赞成-反对 before 130115 in 1\r\n* Gravatar-cache 头像上传 before 130115\
+    \ in 1\r\n* 发布清晰的远景和使命文档,以及吸引大家加入我们的文档 before 130115 in 1\r\n* ......\r\n* 移动端html5&app\
+    \ before 130315 in 1\r\n* 社区推广 新浪微博 豆瓣小站 google+ twitter facebook ...  before\
+    \ 130115 in 1\r\n* 信息可视化 Information visualization  before 130315 in 1\r\n* ppt-js\
+    \  before 130315 in 1\r\n\r\n#### 未来计划 -if-we-have-more-time someday\r\n* 线下活动策划\r\
+    \n* 评论有二级评论吗？ -计划支持多级评论&引用&@ -thanks@anti\r\n* 消息系统\r\n\r\n#### 已经实现\r\n\r\n#####\
+    \ 130103\r\n* 数据库转换为MongoDB\r\n* 使用yaml和github进行轻松的数据库导入导出（用户邮箱密码不会泄露）\r\n* 完成文章tag系统和slug别名添加\
+    \ should 121119\r\n* 文章markdown编辑器初步 http://oscargodson.github.com/EpicEditor/\r\
+    \n* github-public-id should 121119\r\n* 单元测试 -keep\r\n\r\n##### 121111\r\n* 返回顶部改为需要的时候显示(取消显示)\
+    \ -bug -thanks@anti\r\n* 完善title -bug\r\n* 首页推荐的文章处空白但有一个点号 -bug -thanks@anti\r\
+    \n* 注册时 “个性域名” 不普适 -改为选填 -bug -thanks@anti\r\n* 返回顶部改为需要的时候显示(取消显示) -bug -thanks@anti\r\
+    \n\r\n##### 121017\r\n* 没有翻页时不显示页数，并提示暂无文章 -bug -thanks@anti\r\n* 总有一些音乐在某个时刻会击中你\
+    \ 打动怎么样，eagles前是不是要有标点 -post-bug -thanks@anti\r\n* 各个版块 内容未显示完全的建议用省略号 -bug -thanks@anti\r\
+    \n* 节点: 新闻 “知道真相。。”改为“探寻真相，亮出观点”；科幻 什么叫“星辰大海”，空泛无意义；行动 “记录梦想者的飞行轨迹”什么意思啊？“创造”单独列一个版块叫“原创区”吧\
+    \ -design-bug -thanks@anti\r\n* “创造和分享，仅供学习交流，期待内容少而精”可以写到关于我们里面，其他页面不必要，至少“期待”不必要\
+    \ -design-bug -thanks@anti\r\n* 设置城市时建议用下拉框，否则我设置成“火星”，混乱 -以后可能提供列表，但允许自由填写 -thanks@anti\r\
+    \n\r\n##### 121016\r\n* 正文页的智能推荐系统初步上线\r\n* 修正多平台访问 -bug -thanks@shuji\r\n* 版面初步设计\r\
+    \n* 版本由0.0.1升级为0.0.2\r\n\r\n##### 120903\r\n* 征求建议\r\n\r\n##### 120828\r\n* 分页\r\
+    \n\r\n##### 120819\r\n* 桉叶、喜欢功能\r\n\r\n##### 120818\r\n* 架构改进\r\n* 添加文章和评论功能\r\
+    \n\r\n##### 120730\r\n* 全新安问使用tornado重新构建\r\n* 重写新的关于页面\r\n* 模板构建\r\n* chatroom\r\
+    \n\r\n##### 110101-110729\r\n* 110101安问出现\r\n* 110526团队组建，第一次会议in光谷书城\r\n\r\n\
+    ##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in ), 欢迎pull-request\r\
+    \n\r\n##### Email：anwen.in@gmail.com"
+  published: 1349429901.0
+  sharetype: fire
+  slug: changelog
+  status: 0
+  tags: log
+  title: !!python/str '安问行动日志'
+  updated: 1357227413.799963
   user_id: 1

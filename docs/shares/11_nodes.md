@@ -33,4 +33,3 @@
 [行动](http://i.askender.com/node/fire)
  Record move of dreamers, maybe notsogood, we are trying
  记录梦想者的进步，或许并不完美，但至少在努力
- 

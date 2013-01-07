@@ -3,6 +3,27 @@
 import random
 import json
 import urllib
+from tornado import httpclient
+from json import loads as jload
+
+
+def modal(id, info):
+    modal = ''.join([
+        '<div id="', id, '" class="modal hide fade" tabindex="-1" '
+        'role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'
+        '<div class="modal-header">',
+        '<button type="button" class="close" data-dismiss="modal" ',
+        'aria-hidden="true">',
+        '&times;</button>',
+        '</div>',
+        '<div class="modal-body" background-color="#eee"><pre>', info,
+        '</pre></div>',
+        '<div class="modal-footer">',
+        '<button class="btn" data-dismiss="modal">Close</button>',
+        '</div>',
+        '</div>',
+    ])
+    return modal
 
 
 def firstmeet():
@@ -25,7 +46,7 @@ def hello(usersay):
 
 
 def song(usersay):
-    song = '<br />'
+    song = ''
     if u'播放' in usersay:
         song += u'好的~'
         artist = ''
@@ -33,14 +54,66 @@ def song(usersay):
         if '@@' in songname:
             artist = songname.split('@@')[1]
             songname = songname.split('@@')[0]
-        songname = urllib.quote(songname.encode('utf-8'))
-        songbox = '<p><embed width="500" height="75" name="plugin" src="http://box.baidu.com/widget/flash/song.swf?name='
-        songbox += songname
+
+        image_url = ''.join([
+            'http://api.douban.com/music/subjects?q=',
+            urllib.quote(songname.encode('utf-8')),
+            '&alt=json&start-index=1&max-results=1',
+        ])
+        http_client = httpclient.HTTPClient()
+        try:
+            response = http_client.fetch(image_url)
+        except httpclient.HTTPError, e:
+            print "Error:", e
+        if response.code == 200:
+            res = jload(response.body)
+            music_image = res['entry'][0]['link'][2]['@href']
+            music_image = '<img src="%s" style="float:left"/>' % music_image
+            if not artist:
+                artist = res['entry'][0]['author'][0]['name']['$t']
+            song += music_image
+
+        singer = ''
         if artist:
-            songbox += '&amp;artist=' + artist
-        songbox += '" type="application/x-shockwave-flash"></p>'
+            singer = '&singer=' + urllib.quote(artist.encode('gbk'))
+        lyric_url = ''.join([
+            'http://cgi.music.soso.com/fcgi-bin/'
+            'fcg_download_lrc.q?song=',
+            urllib.quote(songname.encode('gbk')),
+            singer,
+            '&down=1',
+        ])
+        print lyric_url
+        try:
+            response = http_client.fetch(lyric_url)
+        except httpclient.HTTPError, e:
+            print "Error:", e
+
+        if response.code == 200:
+            lyric = response.body.decode('gbk')  # .encode('utf-8')
+            lyric_link = ''.join([
+                u'<a data-toggle="modal" href="#lyric">',
+                u'<span>查看歌词</span></a>',
+            ])
+            print lyric
+            lyric = modal('lyric', lyric)
+            lyric_link += lyric
+            song += lyric_link
+
+        artist_u = ''
+        if artist:
+            artist_u = '&amp;artist=' + urllib.quote(artist.encode('utf-8'))
+            artist_u = artist_u.replace(']', ']\n')
+        songbox = ''.join([
+            '<p><embed width="550" height="75" name="plugin" ',
+            'wmode="transparent" ',
+            'src="http://box.baidu.com/widget/flash/song.swf?name=',
+            urllib.quote(songname.encode('utf-8')),
+            artist_u,
+            '" type="application/x-shockwave-flash"></p>'
+        ])
         song += songbox
-    print song
+
     return song
 
 
