@@ -18,7 +18,7 @@ class AndeHandler(BaseHandler):
 
     def post(self):
         usersay = self.get_argument("ask0", '')
-        print usersay
+        # print usersay
         user_lang = self.get_user_lang()
         userip = self.request.remote_ip
         a = AndeSay()
@@ -40,8 +40,8 @@ class AndeHandler(BaseHandler):
         andethink += '<br/>user_lang:' + user_lang
         andethink += '<br/>'
         debug = True  # True False
-        print andesay
+        # print andesay
         if debug:
             andesay += andethink
-        print andethink
+        # print andethink
         self.write(andesay)
