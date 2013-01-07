@@ -95,7 +95,7 @@ def song(usersay):
                 u'<a data-toggle="modal" href="#lyric">',
                 u'<span>查看歌词</span></a>',
             ])
-            print lyric
+            # print lyric
             lyric = modal('lyric', lyric)
             lyric_link += lyric
             song += lyric_link
