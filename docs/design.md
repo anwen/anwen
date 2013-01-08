@@ -4,23 +4,6 @@
 
 目标：为分享优质内容提供方便
 
-工具：
-
-* linux
-* vim sublime-test-2
-* python
-* mongodb mysql sqlite
-* markdown2
-* html jade?
-* css twitter-bootstrap less?
-* javascript coffeescript?
-* java-andriod?
-* iOS-obj-C?
-* image icon
-* html5 websocket
-* ssh ssl https
-
-
 原则：
 
 * create-and-share
@@ -42,3 +25,18 @@
 * 视频播放
 * 聊天室
 
+工具：
+
+* linux
+* vim sublime-test-2
+* python
+* mongodb mysql sqlite
+* markdown2
+* html jade?
+* css twitter-bootstrap less?
+* javascript coffeescript?
+* java-andriod?
+* iOS-obj-C?
+* image icon
+* html5 websocket
+* ssh ssl https

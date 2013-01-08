@@ -36,7 +36,8 @@ class AndeSay(object):
 
     def get_andesay(self, usersay, userip):
         andesay = ''
-        andesay += '<br/>'
+        is_cn = is_cn(usersay)
+        is_ascii = is_ascii(usersay)
         p = Pinyin()
         userfenci = fenci(usersay)
         # userfenci = json.loads(userfenci)
@@ -45,11 +46,12 @@ class AndeSay(object):
         andesay += say.weather(usersay, userip)
         andesay += say.hello(usersay)
         andesay += say.song(usersay)
+        andesay += say.get_trans(usersay)
 
         andethink = ''
         andethink += '<br/>ande-think-trace, just for study'
         # andethink += '<br/>ande ip:' + get_ande_ip()
-        andethink += '<br/>' + is_cn(usersay)
+        andethink += '<br/>' + is_cn
         andethink += '<br/>' + is_ascii(usersay)
         andethink += '<br/>' + userfenci
         andethink += '<br/>' + p.get_pinyin(usersay)

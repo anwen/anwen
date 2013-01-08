@@ -22,8 +22,9 @@
 * 通知测试人员进行测试后，在群与邮件组进行通知
 * 通知包含新增功能与bug修复说明
 
-#### 其他
 
-* 正式版发布需要以anwen.in发布于ec2
-* 测试版可发布于国内vps
+#### 其他
+ 
+* anwen.in at ec2. This domain may be disappear
+* anwensf.com at 42qu-vps
 * 需要使用网站可用性监控

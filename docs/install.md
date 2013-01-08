@@ -1,25 +1,24 @@
-安装说明 install
+安装说明
 ========
 
 
 ## Install
 
 ```bash
-git clone https://github.com/askender/anwen.in.git
-cd anwen.in
+git clone https://github.com/anwen/anwen.git
+cd anwen
 sudo pip install -r conf/requirements.txt
+sudo apt-get install mongodb  # We turn to mongodb form sql
 ```
 
-## Start Anwen service
-### edit db/db_config.py to choose database type
 
-* if you choose mysql, you should install mysql, open mysql service and create a database which name in db_config.
-* python hello.py -h  # you can find some help
+## Start Anwen app
 
 ```bash
-python hello.py -c
+python hello.py -h  # you can find some help
 python hello.py
 ```
+
 
 ## Testing
 
