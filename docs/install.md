@@ -8,7 +8,7 @@
 git clone https://github.com/anwen/anwen.git
 cd anwen
 sudo pip install -r conf/requirements.txt
-sudo apt-get install mongodb  # We turn to mongodb form sql
+sudo apt-get install mongodb  # We turn to mongodb form sql, we may use sqlite again
 ```
 
 
