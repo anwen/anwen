@@ -1,113 +1,31 @@
-*{
-	margin:0;
-	padding:0;
-}
 
 body{
-	font-size:13px;
-	/*color:#eee;*/
-	font-family:Arial, Helvetica, sans-serif;
-	/*background-color:#355664;*/
-	background-color:#222;
-}
-
-#page{
-	/* The main container div */
-	width:620px;
-	margin:100px auto 0;
-}
-
-h1{
-	font-family:Corbel,'Myriad Pro',Arial, Helvetica, sans-serif;
-	text-indent:-9999px;
-	overflow:hidden;
-	height:90px;
-}
-
-#searchForm{
-	/* The search form. */
-	/*background-color:#24404c;*/
 	background-color:#333;
-	padding:50px 50px 30px;
-	margin:80px 0;
-	position:relative;
-
-	-moz-border-radius:16px;
-	-webkit-border-radius:16px;
-	border-radius:16px;
 }
 
-fieldset{
-	border:none;
-}
-.searchForms{
-	/* The search form. */
-	/*background-color:#24404c;*/
+
+
+.saybox{
 	background-color:#ccc;
-	padding:30px 50px 30px 50px;
-	margin:40px 0;
-	position:relative;
-
+	padding:30px 50px;
 	-moz-border-radius:16px;
 	-webkit-border-radius:16px;
 	border-radius:16px;
 }
 
-fieldset{
-	border:none;
-}
-#searchInputContainer{
-	/* This div contains the transparent search box */
-	width:420px;
-	height:36px;
-	background:url("../andeimg/searchBox.png") no-repeat;
-	float:left;
-	margin-right:12px;
-}
 
-#s{
-	/* The search text box. */
-	
-	border:none;
-	/*color:#888888;*/
-	background:url("../andeimg/searchBox.png") no-repeat;
-	
-	float:left;
-	font-family:Arial,Helvetica,sans-serif;
+.saybox .inputbox{
 	font-size:15px;
-	height:36px;
-	line-height:36px;
-	margin-right:12px;
-	outline:medium none;
-	padding:0 0 0 35px;
-	text-shadow:1px 1px 0 white;
-	width:385px;
-}
-#ss{
-	/* The search text box. */
-	
-	border:none;
-	/*color:#888888;*/
-	background:url("../andeimg/searchBoxs.png") no-repeat;
-	
-	float:left;
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:15px;
-	height:36px;
-	line-height:36px;
-	margin-right:12px;
-	outline:medium none;
-	padding:0 0 0 35px;
-	text-shadow:1px 1px 0 white;
-	width:385px;
+	height:30px;
+	line-height:30px;
+	width:80%;
 }
 
 /* The UL that contains the search type icons */
 
 .icons{
 	list-style:none;
-	margin:10px 0 0 335px;
-	height:19px;
+	height:1px;
 	position:relative;
 }
 
@@ -150,48 +68,11 @@ span.arrow{
 }
 
 
-/* The submit button */
-
-
-#submitButton{
-	background:url("../andeimg/buttons.png") no-repeat;
-	width:83px;
-	height:36px;
-	text-indent:-9999px;
-	overflow:hidden;
-	text-transform:uppercase;
-	border:none;
-	cursor:pointer;
-}
-#submitButtons{
-	background:url("../andeimg/buttonss.png") no-repeat;
-	width:83px;
-	height:36px;
-	text-indent:-9999px;
-	overflow:hidden;
-	text-transform:uppercase;
-	border:none;
-	cursor:pointer;
-}
-
-#submitButton:hover{
-	background-position:left bottom;
-}
-#submitButtons:hover{
-	background-position:left bottom;
-}
-
 /* The Search tutorialzine.com / Search the Web radio buttons */
 
 
-#searchInContainer{
-	float:left;
-	margin-top:12px;
-	width:330px;
-}
-
 label{
-	color:#DDDDDD;
+	color:#222;
 	cursor:pointer;
 	font-size:11px;
 	position:relative;
@@ -199,7 +80,6 @@ label{
 	top:-2px;
 	margin-right:10px;
 	white-space:nowrap;
-	/*float:left;*/
 }
 
 input[type=radio]{
@@ -233,7 +113,7 @@ p.notFound{
 /* Web & news results */
 
 
-.webResult{ text-shadow:1px 1px 0 #586a75;margin-bottom:50px;}
+.webResult{color:#ddd; margin-bottom:50px;}
 .webResult h2{ 
 	background-color:#5D6F7B;
 	font-size:18px;
@@ -285,8 +165,6 @@ p.notFound{
 	background-position:left bottom;
 }
 
-
-
 /* Giving Credit */
 
 p.credit{
@@ -313,12 +191,6 @@ a, a:visited {
 	text-decoration:none;
 	outline:none;
 	color:#97cae6;
-}
-
-
-
-.clear{
-	clear:both;
 }
 
 label {

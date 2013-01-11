@@ -1,74 +1,114 @@
 {% extends "andebase.html" %}
 
 {% block body %}
+<script src="{{ static_url("js/clock.js") }}"></script>
+
 <div class="span12">
   <div id="page">
-    <form class="searchForms" method="post">
+    <form class="saybox" method="post">
       <fieldsets>
-        <div id="inbox">
-          <div id="search_results">{{sayit}}</div>
+        <div id="andesay_box">
+          <div id="andesay">{{andesay}}</div>
         </div>
-
       </fieldsets>
     </form>
-    <form class="searchForms" id="andesay" method="post">
+    <form class="saybox" id="usersayform" method="post">
       <fieldsets>
-        <input type="text" onblur="if (this.value == '') {this.value = '和我聊天吧~';}" onfocus="if (this.value == '和我聊天吧~') {this.value = '';}" id="ss" name="ask0"  x-webkit-speech />
+        <input class="inputbox" type="text" onblur="if (this.value == '') {this.value = '和我聊天吧~';}" onfocus="if (this.value == '和我聊天吧~') {this.value = '';}" id="usersay" name="ask0"  x-webkit-speech />
         <input type="submit" name="dosubmit" value="说  出" class="btn-large btn-primary"/>
       </fieldsets>
     </form>
-    <form id="searchForm" method="post">
+
+
+  <p class="credit">
+    <a data-toggle="modal" href="#about" class="btn btn-primary">
+      说明
+    </a>
+  </p>
+  <div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+      </button>
+      <h3 id="myModalLabel">
+        ~
+      </h3>
+    </div>
+    <div class="modal-body" background-color="#eee">
+      <h4>
+        对不起，安德尚未恢复
+      </h4>
+      <h4>
+        不过您可以通过输入：播放歌名@@歌手来点歌.可以查询天气
+      </h4>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+  <p class="credit">
+    <a data-toggle="modal" href="#think" class="btn btn-primary">
+      think
+    </a>
+  </p>
+  <div id="think" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+        &times;
+      </button>
+      <h3 id="myModalLabel">
+        ~
+      </h3>
+    </div>
+    <div class="modal-body" id="andethink" background-color="#eee">
+{{andethink}}
+    </div>
+    <div class="modal-footer">
+      <button class="btn" data-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+
+
+    <form class="saybox" id="searchForm" method="post">
       {{ xsrf_form_html() }}
       <fieldset>
-        <input type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
-        <input type="submit" value="Submit" id="submitButton" />
+        <input class="inputbox" type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
+        <input type="submit" value="搜 索" id="submitButton" class="btn-large btn-primary" style="margin-bottom:5px" />
         <div id="searchInContainer">
-          <input type="radio" name="check" value="site" id="searchSite" checked />
-          <label for="searchSite" id="siteNameLabel">Search</label>
-          <input type="radio" name="check" value="web" id="searchWeb" />
-          <label for="searchWeb">Search The Web</label>
+          <input type="radio" name="check" value="web" id="searchWeb" checked />
+          <label for="searchWeb">
+            全网
+          </label>
+          <input type="radio" name="check" value="site" id="searchSite" />
+          <label for="searchSite" id="siteNameLabel">
+          </label>
+
+          <ul class="icons">
+            <li class="web" title="Web Search" data-searchType="web">
+              Web
+            </li>
+            <li class="images" title="Image Search" data-searchType="images">
+              Images
+            </li>
+            <li class="news" title="News Search" data-searchType="news">
+              News
+            </li>
+            <li class="videos" title="Video Search" data-searchType="video">
+              Videos
+            </li>
+          </ul>
         </div>
-        <ul class="icons">
-          <li class="web" title="Web Search" data-searchType="web">Web</li>
-          <li class="images" title="Image Search" data-searchType="images">Images</li>
-          <li class="news" title="News Search" data-searchType="news">News</li>
-          <li class="videos" title="Video Search" data-searchType="video">Videos</li>
-        </ul>
       </fieldset>
     </form>
     <div id="resultsDiv"></div>
   </div>
 
   <p class="credit">
-    <a data-toggle="modal" href="#myModal" class="btn btn-primary">说明</a>
-  </p>
-
-  <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3 id="myModalLabel">~</h3>
-    </div>
-    <div class="modal-body" background-color="#eee">
-      <h4>对不起，安德尚未恢复</h4>
-      <h4>不过您可以通过输入：播放歌名@@歌手来点歌.可以查询天气</h4>
-    </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal">Close</button>
-    </div>
-  </div>
-
-  <div id="lyric" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-    </div>
-    <div class="modal-body" background-color="#eee"></div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal">Close</button>
-    </div>
-  </div>
-
-  <p class="credit">
-    <a href="http://askender.com/ai-ender-develop-plan.html target='_blank' ">开发计划&安德日记</a>
+    <a href="http://askender.com/ai-ender-develop-plan.html  target='_blank' ">开发计划&安德日记</a>
   </p>
 
 </div>
@@ -82,42 +122,36 @@ function getCookie(name) {
 }
 
 $(document).ready(function(){
-    $('#andesay').submit(function(e){
+    $('#usersayform').submit(function(e){
         e.preventDefault();
-        ajax_search();
+        get_andesay();
     }); 
 }); 
-function ajax_search(){ 
-  $("#search_results").hide(); 
-  var search_val=$("#ss").val();
-  $("#ss").val("");
-  var argsxsrf = getCookie("_xsrf");
-
-        $.ajax({ //使用了jquery的ajax，因为我需要回调没有使用$.get
+function get_andesay(){ 
+  $("#andesay").hide(); 
+  var usersay=$("#usersay").val();
+  var xsrf = getCookie("_xsrf");
+  // $("#usersay").val("");
+        $.ajax({
           type: "POST",
-          //调用类型
-          url: "/ande",
-          //调用的url地址
-          //data: {"html":htmlElement,"table":tableElement,"sender":senderElement,"head":headElement,"senderid":senderidElement},  //传送的dict数据
+          url: "/andenew",
           data: {
-            "ask0": search_val,
-            "_xsrf": argsxsrf
+            "usersay": usersay,
+            "_xsrf": xsrf
           },
-          //传送的dict数据
-          success: function(data) { //回调函数，alert返回结果
-            if (data.length>0){
-              var node = $(data);
+          dataType: "json",
+          success: function(data) {
+            if (data.andesay.length>0){
+              var node = $(data.andesay);
               node.hide();
-              $("#inbox").html(node);
+              $("#andesay_box").html(node);
               node.slideDown();
-              // $("#search_results").html(data); 
-              $("#ss").html('');
-   }
+              $("#andethink").html(data.andethink);
+              $("#usersay").val('');
+            }
           }
         });
-
-
-} 
+  } 
 </script>
 <script src="{{ static_url("js/googlesearch.js") }}"></script>
 {% end %}

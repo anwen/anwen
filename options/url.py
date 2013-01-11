@@ -7,7 +7,7 @@ from anwen.user import SettingHandler, ChangePassHandler, UsersHandler
 from anwen.share import ShareHandler, EntryHandler, CommentHandler, LikeHandler
 from anwen.share import FeedHandler, SharesHandler
 from ande.ande import AndeHandler
-# from ande.andenew import AndeNewHandler
+from andenew.ande import AndeNewHandler
 from anwen.talk import TalkHandler, ChatSocketHandler
 from anwen.talk import MsgNewHandler, MsgUpdatesHandler
 from anwen.other import EditHandler, ErrHandler
@@ -40,7 +40,7 @@ handlers = [
     (r'/changepass', ChangePassHandler),
 
     (r'/ande', AndeHandler),
-    # (r'/andenew', AndeNewHandler),
+    (r'/andenew', AndeNewHandler),
 
     (r"/chat", TalkHandler),
     (r"/chats", TalkHandler),
@@ -52,6 +52,7 @@ handlers = [
     (r"/edit", EditHandler),
 
     (r'/(.*)', EntryHandler),
+
     # Custom 404 ErrHandler, always put this at last
     (r'/404/?', ErrHandler),
 

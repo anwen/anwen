@@ -4,7 +4,7 @@ $(document).ready(function(){
 		siteURL		: 'askender.com',	// Change this to your site
 		searchSite	: true,
 		type		: 'web',
-		append		: false,
+		append		: true,
 		perPage		: 8,			// A maximum of 8 is allowed by Google
 		page		: 0				// The start page
 	}
