@@ -5,7 +5,7 @@ from anwen.base import BaseHandler
 from brain import get_andesay
 
 
-class AndeNewHandler(BaseHandler):
+class AndeHandler(BaseHandler):
 
     @tornado.web.asynchronous
     def get(self):
@@ -18,7 +18,7 @@ class AndeNewHandler(BaseHandler):
             usersay, userip, userlang, user_id, method)
         self.render('ande.html', andesay=andesay, andethink=andethink)
 
-    @tornado.web.asynchronous
+    # @tornado.web.asynchronous
     def post(self):
         usersay = self.get_argument('usersay', '')
         userip = self.request.remote_ip

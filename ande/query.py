@@ -9,7 +9,7 @@ from tools.bingtrans import translate
 from db import Ande
 
 hellos = [u'你好', 'hello', 'hi']
-e_happys = [':)', '^_^', 'O(∩_∩)O']
+e_happys = [':)', '^_^', 'O(∩_∩)O', '(◕‿‿◕)']
 
 
 def modal(id, info):
@@ -43,16 +43,6 @@ def expression():
     return normal
 
 
-def hello(usersay):
-    hello = ''
-    for i in hellos:
-        if usersay.startswith(i):
-            sayhello = random.choice(hellos)
-            e_happy = random.choice(e_happys)
-            hello = sayhello + e_happy
-    return hello
-
-
 def is_firstmeet(userip, user_id):
     if user_id == 0:
         a = 'not good friend'
@@ -62,6 +52,31 @@ def is_firstmeet(userip, user_id):
         num = Ande.by_uid(user_id)
     is_firstmeet = '%s we say %s times' % (a, num)
     return is_firstmeet
+
+
+def first(usersay, userip, user_id, method):
+    first = ''
+    if method == 'get' and usersay == '':
+        first = hello('hi')
+    if method == 'post' and usersay == '':
+        first = say_sth()
+    return first
+
+
+def say_sth():
+    sths = ['hi~ why not say sth?', 'you seem to test me']
+    say_sth = random.choice(sths)
+    return say_sth
+
+
+def hello(usersay):
+    hello = ''
+    for i in hellos:
+        if usersay.startswith(i):
+            sayhello = random.choice(hellos)
+            e_happy = random.choice(e_happys)
+            hello = sayhello + e_happy
+    return hello
 
 
 def clock(usersay):
@@ -190,12 +205,27 @@ def weather(usersay, userip):
     return weather
 
 
-def trans(usersay):
+def trans(usersay, userlang):
     trans = ''
-    songhint = [u'翻译', u'fanyi：', 't:']
+    songhint = [u'翻译', u'fanyi：', 't:', 't ']
     for i in songhint:
         if i in usersay:
             trans += u'好的~'
             text = usersay.split(i)[1]
-            trans = translate(text, '', 'en')
+            to = 'en'
+            if is_en(text):
+                to = userlang
+            trans = translate(text, '', to)
     return trans
+
+# def is_cn(i):
+#     return 0x4e00 <= ord(i) < 0x9fa6
+
+
+# def is_en(i):
+#     return ord(i) < 128
+
+
+def is_en(i):
+    c = i.encode('utf-8')
+    return True if len(c) == len(i) else False

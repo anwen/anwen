@@ -83,9 +83,12 @@
           <label for="searchWeb">
             全网
           </label>
+
           <input type="radio" name="check" value="site" id="searchSite" />
           <label for="searchSite" id="siteNameLabel">
+            安问博客
           </label>
+
 
           <ul class="icons">
             <li class="web" title="Web Search" data-searchType="web">
@@ -134,7 +137,7 @@ function get_andesay(){
   // $("#usersay").val("");
         $.ajax({
           type: "POST",
-          url: "/andenew",
+          url: "/ande",
           data: {
             "usersay": usersay,
             "_xsrf": xsrf

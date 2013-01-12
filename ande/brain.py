@@ -3,21 +3,10 @@
 from tools.fenci import fenci
 from tools.xpinyin import Pinyin
 import query
+import ego
 from markdown2 import markdown
 from db import Ande
-
-
-def is_cn(i):
-    return 0x4e00 <= ord(i) < 0x9fa6
-
-
-def is_en(i):
-    return ord(i) < 128
-
-
-def is_en2(i):
-    c = i.encode('utf-8')
-    return True if len(c) == len(i) else False
+from tools.bingtrans import translate
 
 
 def get_ande_ip():
@@ -32,16 +21,21 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     # usersay_fencij = json.loads(usersay_fenci)  # ['words'][0]['attr']
     # usersay_pinyin = Pinyin().get_pinyin(usersay)
     # andeip = get_ande_ip()
+
+    usersay_en = translate(usersay, '', 'en')
     is_firstmeet = query.is_firstmeet(userip, user_id)
+    first = query.first(usersay, userip, user_id, method)
     hello = query.hello(usersay)
     weather = query.weather(usersay, userip)
     song = query.song(usersay)
-    trans = query.trans(usersay)
+    trans = query.trans(usersay, userlang)
     clock = query.clock(usersay)
+    wiki = query.wiki(usersay)
+    get_ego = ego.get_ego(usersay)
 
     # andesay = '%s\n%s\n%s\n%s' % (hello, weather, song, trans)
     andesay = ''.join([
-        hello, weather, song, trans, clock,
+        first, hello, weather, song, trans, clock, wiki, get_ego
     ])
 
     andethink = ''.join([
@@ -50,8 +44,8 @@ def get_andesay(usersay, userip, userlang, user_id, method):
         '\n\nuserip:', userip,
         '\n\nuserlang:', userlang,
         '\n\nuserid:', str(user_id),
-        '\n\nmethod:', method,
-        '\n\nis-firstmeet?:', is_firstmeet,
+        '\n\nis_firstmeet?:', is_firstmeet,
+        '\n\nusersay_en?:', usersay_en,
     ])
 
     doc = {

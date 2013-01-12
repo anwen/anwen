@@ -4,7 +4,7 @@ $(document).ready(function(){
 		siteURL		: 'askender.com',	// Change this to your site
 		searchSite	: true,
 		type		: 'web',
-		append		: true,
+		append		: false,
 		perPage		: 8,			// A maximum of 8 is allowed by Google
 		page		: 0				// The start page
 	}
@@ -35,16 +35,16 @@ $(document).ready(function(){
 	});
 	
 	// Adding the site domain as a label for the first radio button:
-	$('#siteNameLabel').append(' '+config.siteURL);
+	// $('#siteNameLabel').append(' '+config.siteURL);
 	
 	// Marking the Search tutorialzine.com radio as active:
-	$('#searchSite').click();	
+	$('#searchWeb').click();	
 	
 	// Marking the web search icon as active:
 	$('li.web').click();
 	
 	// Focusing the input text box:
-	$('#ss').focus();
+	$('#usersayform').focus();
 
 	$('#searchForm').submit(function(){
 		googleSearch();
