@@ -5,6 +5,7 @@ import json
 import urllib
 from tornado import httpclient
 from json import loads as jload
+from pymongo import DESCENDING  # ASCENDING
 from tools.bingtrans import translate
 from tools.g_search import g_search
 from db import Ande
@@ -233,8 +234,23 @@ def wiki(usersay):
             usersay = usersay.replace(i, '')
             usersay = usersay.replace('?', '')
             usersay = usersay.encode("utf-8")
-            print usersay
             wiki = g_search(usersay)
-            print wiki
             break
     return wiki
+
+
+def memo_last(usersay, userip):
+    memo_last = ''
+    lasthints = [u'上一句', u'前一句']
+    for i in lasthints:
+        if i in usersay:
+            usersay = usersay.replace(i, '')
+            usersay = usersay.replace('?', '')
+            # memo_last = get_last(usersay) ['usersay']
+            print userip
+            memo_last = Ande.find(
+                {'user_ip': userip}).sort('_id', DESCENDING).limit(1)
+
+            memo_last = u'你说的是:%s' % memo_last[0]['usersay']
+            break
+    return memo_last

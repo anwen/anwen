@@ -1,9 +1,23 @@
-body
-{
-	font-size:13px;
-	color:#eee;
-	font-family:Arial, Helvetica, sans-serif;
+html{
+	/* This image will be displayed fullscreen */
+	background:url('http://farm8.staticflickr.com/7218/7289572558_44c110c510_h.jpg') no-repeat center center;
+	
+	/* Ensure the html element always takes up the full height of the browser window */
+	min-height:100%;
+	
+	/* The Magic */
+	background-size:cover;
+}
+
+body{
+	/* Workaround for some mobile browsers */
+	min-height:100%;
+	font:14px/1.3 'Segoe UI',Arial, Helvetica, sans-serif;
+/*	color:#eee;
 	background-color:#355664
+*/
+	color:#eee;
+	background:transparent
 }
 
 .saybox
@@ -20,7 +34,7 @@ body
 	font-size:15px;
 	height:30px;
 	line-height:30px;
-	width:80%
+	width:90%
 }
 
 .icons
@@ -239,7 +253,6 @@ a,a:visited
 
 #page
 {
-	width:620px;
 	margin:100px auto 0
 }
 
@@ -274,40 +287,6 @@ fieldset
 	background:url(../andeimg/searchBox.png) no-repeat;
 	float:left;
 	margin-right:12px
-}
-
-#s
-{
-	border:none;
-	color:#888;
-	background:url(../andeimg/searchBox.png) no-repeat;
-	float:left;
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:15px;
-	height:36px;
-	line-height:36px;
-	margin-right:12px;
-	outline:medium none;
-	text-shadow:1px 1px 0 #FFF;
-	width:385px;
-	padding:0 0 0 35px
-}
-
-#ss
-{
-	border:none;
-	color:#888;
-	background:url(../andeimg/searchBoxs.png) no-repeat;
-	float:left;
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:15px;
-	height:36px;
-	line-height:36px;
-	margin-right:12px;
-	outline:medium none;
-	text-shadow:1px 1px 0 #FFF;
-	width:385px;
-	padding:0 0 0 35px
 }
 
 

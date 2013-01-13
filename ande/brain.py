@@ -1,12 +1,15 @@
 # -*- coding:utf-8 -*-
+"""
+the methons we use may seem fool temporarily, we will make them better
+"""
 
-from tools.fenci import fenci
-from tools.xpinyin import Pinyin
 import query
 import ego
 from markdown2 import markdown
 from db import Ande
 from tools.bingtrans import translate
+# from tools.fenci import fenci
+# from tools.xpinyin import Pinyin
 
 
 def get_ande_ip():
@@ -31,11 +34,12 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     trans = query.trans(usersay, userlang)
     clock = query.clock(usersay)
     wiki = query.wiki(usersay)
+    memo_last = query.memo_last(usersay, userip)
     get_ego = ego.get_ego(usersay)
 
     # andesay = '%s\n%s\n%s\n%s' % (hello, weather, song, trans)
     andesay = ''.join([
-        first, hello, weather, song, trans, clock, wiki, get_ego
+        first, hello, weather, song, trans, clock, wiki, memo_last, get_ego
     ])
 
     andethink = ''.join([

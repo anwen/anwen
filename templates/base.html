@@ -38,61 +38,39 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="/">
-          {{_('Anwen')}}
-        </a>
+        <a class="brand" href="/">{{_('Anwen')}}</a>
         {{ modules.Useradmin() }}
         <div class="nav-collapse collapse">
           <ul class="nav">
             <li id="home">
-              <a href="/">
-                {{_('Home')}}
-              </a>
+              <a href="/">{{_('Home')}}</a>
             </li>
             <li id="pencil">
-              <a href="/node/pencil">
-                {{_('Create')}}
-              </a>
+              <a href="/node/pencil">{{_('Create')}}</a>
             </li>
             <li id="music">
-              <a href="/node/music">
-                {{_('Music')}}
-              </a>
+              <a href="/node/music">{{_('Music')}}</a>
             </li>
             <li id="film">
-              <a href="/node/film">
-                {{_('Video')}}
-              </a>
+              <a href="/node/film">{{_('Video')}}</a>
             </li>
             <li id="book">
-              <a href="/node/book">
-                {{_('Book')}}
-              </a>
+              <a href="/node/book">{{_('Book')}}</a>
             </li>
             <li id="eyeopen">
-              <a href="/node/eyeopen">
-                {{_('Eyeopen')}}
-              </a>
+              <a href="/node/eyeopen">{{_('Eyeopen')}}</a>
             </li>
             <li id="ask">
-              <a href="/node/ask">
-                {{_('Asks')}}
-              </a>
+              <a href="/node/ask">{{_('Asks')}}</a>
             </li>
             <li id="sf">
-              <a href="/node/sf">
-                {{_('SF')}}
-              </a>
+              <a href="/node/sf">{{_('SF')}}</a>
             </li>
             <li id="fire">
-              <a href="/node/fire">
-                {{_('Actions')}}
-              </a>
+              <a href="/node/fire">{{_('Actions')}}</a>
             </li>
             <li id="nodes">
-              <a href="/nodes">
-                {{_('Nodes')}}
-              </a>
+              <a href="/nodes">{{_('Nodes')}}</a>
             </li>
           </ul>
 
@@ -104,43 +82,31 @@
     </div>
   </div>
 </div>
-
-<div class="container well">
-  <div class="row">
-    {% block body %}{% end %}
-  </div>
-  <!--/row-->
-</div>
-
+{% block body %}{% end %}
 <!-- Footer
 ================================================== -->
 <footer class="footer">
   <div class="container">
-  <p>
-    copyleft ^_^ 2012 安问 创造和分享美好 v0.0.2 自由的理想主义社区与创造平台
-    <a href="https://github.com/askender/anwen.in">
-      开源@github
-    </a>
+    <p>
+      copyleft ^_^ 2012 安问 创造和分享美好 v0.0.2 自由的理想主义社区与创造平台
+      <a href="https://github.com/askender/anwen.in">开源@github</a>
 
-    <a href="/about" title="关于我们的一切">
-      关于我们
-    </a>
-    <a href="/help" title="提建议或咨询">
-      提建议或咨询
-    </a>
-    <a href="/changelog" title="查看行动日志">
-      行动日志
-    </a>
-  </p>
-</div>
+      <a href="/about" title="关于我们的一切">关于我们</a>
+      <a href="/help" title="提建议或咨询">提建议或咨询</a>
+      <a href="/changelog" title="查看行动日志">行动日志</a>
+    </p>
+  </div>
 </footer>
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> <!-- or use local jquery -->
-<!-- <script src="{{ static_url("js/jquery.js") }}"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<!-- or use local jquery -->
+<!-- <script src="{{ static_url("js/jquery.js") }}"></script>
+-->
 <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
 {% block bottom %}{% end %}
 <script>

@@ -3,6 +3,7 @@ import time
 from mongokit import Connection
 from ext import BaseModel
 
+
 connection = Connection()
 
 
@@ -95,6 +96,7 @@ class Ande(BaseModel):
 
     def by_ip(self, ip):
         return self.find({'user_ip': ip}).count()
+
     def by_uid(self, uid):
         return self.find({'user_id': uid}).count()
 
