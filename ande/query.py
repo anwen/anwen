@@ -6,10 +6,11 @@ import urllib
 from tornado import httpclient
 from json import loads as jload
 from tools.bingtrans import translate
+from tools.g_search import g_search
 from db import Ande
 
 hellos = [u'你好', 'hello', 'hi']
-e_happys = [':)', '^_^', 'O(∩_∩)O', '(◕‿‿◕)']
+e_happys = [':)', '^_^', u'O(∩_∩)O', u'(◕‿‿◕)']
 
 
 def modal(id, info):
@@ -218,14 +219,22 @@ def trans(usersay, userlang):
             trans = translate(text, '', to)
     return trans
 
-# def is_cn(i):
-#     return 0x4e00 <= ord(i) < 0x9fa6
-
-
-# def is_en(i):
-#     return ord(i) < 128
-
 
 def is_en(i):
     c = i.encode('utf-8')
     return True if len(c) == len(i) else False
+
+
+def wiki(usersay):
+    wiki = ''
+    wikihints = [u'what is', u'who are', u'什么是', u'是什么', u'是谁', u'谁是']
+    for i in wikihints:
+        if i in usersay:
+            usersay = usersay.replace(i, '')
+            usersay = usersay.replace('?', '')
+            usersay = usersay.encode("utf-8")
+            print usersay
+            wiki = g_search(usersay)
+            print wiki
+            break
+    return wiki

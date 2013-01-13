@@ -10,8 +10,7 @@ $(document).ready(function(){
 	}
 	
 	// The small arrow that marks the active search icon:
-	var arrow = $('<span>',{className:'arrow'}).appendTo('ul.icons');
-	
+	var arrow = $('<span>',{class:'arrow'}).appendTo('ul.icons');
 	$('ul.icons li').click(function(){
 		var el = $(this);
 		
