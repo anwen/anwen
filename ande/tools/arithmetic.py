@@ -57,11 +57,11 @@ REGEX_TEST = re.compile(AI_ARITHMETIC_REGEX_TEST)
 REGEX_HANDLE = re.compile(AI_ARITHMETIC_REGEX_HANDLE)
 
 
-def test(data, bot):
+def test(data):
     return True if REGEX_TEST.search(data['usersay']) else False
 
 
-def handle(data, bot):
+def handle(data):
     try:
         exp = REGEX_HANDLE.search(data['usersay']).groups()[0]
     except:
@@ -108,3 +108,21 @@ def cal(exp):
         #    error for further investigation
         print e
         return '好复杂~不会 ╮(︶︿︶)╭'
+
+if __name__ == '__main__':
+    datas = [
+        {'usersay': '2 * 4+ 5/3 = ?'},
+        {'usersay': 'x *4+ 5/3 =?'},
+        {'usersay': '2 * 4+ 5/3= ？'},
+        {'usersay': '2 * 4+ 5/3 是多少'},
+        {'usersay': '2 * 4+ 5/3 是几'},
+        {'usersay': '2 * 4+ 5/3 等于多少'},
+        {'usersay': '2 * 4+ 5/3 等于几'},
+        {'usersay': 'sys.exit(-1)'},
+        {'usersay': 'sys.exit(-1) = ?'},
+        {'usersay': 'sin(pi/2)=?'},
+        {'usersay': 'x^(1+3)=?'},
+    ]
+
+    for data in datas:
+        print data['usersay'], handle(data)

@@ -29,16 +29,27 @@ import urllib2
 import urllib
 import re
 
-
-def test(data, bot=None):
-    return '什么是' in data['usersay']
+wikihints = [u'what is', u'who is', u'什么是', u'是什么', u'是啥', u'是谁', u'谁是']
 
 
-def handle(data, bot=None):
-    m = re.search('(?<=什么是)(.+?)(?=啊|那|呢|哈|！|。|？|\?|\s|\Z)', data['usersay'])
+def test(data):
+    for i in wikihints:
+        if i in data['usersay']:
+            return True
+    return False
+
+
+def handle(data):
+    usersay = data['usersay']
+    m = re.search('(?<=什么是)(.+?)(?=啊|那|呢|哈|！|。|？|\?|\s|\Z)', usersay)
     if m and m.groups():
         return wikipedia(m.groups()[0])
-    raise Exception
+    for i in wikihints:
+        if i in usersay:
+            usersay = usersay.replace(i, '')
+            usersay = usersay.replace('?', '')
+            usersay = usersay.encode("utf-8")
+            return wikipedia(usersay)
 
 
 def remove(s):
@@ -81,6 +92,10 @@ def wikipedia(title):
 
 
 if __name__ == '__main__':
-    for data in [{'usersay': '什么是SVM  ????'}, {'usersay': '什么是薛定谔方程啊'}]:
-        if test(data):
-            print handle(data)
+    datas = [
+        {'usersay': u'李白是谁'},
+        {'usersay': '什么是SVM  ????'},
+        {'usersay': '什么是薛定谔方程啊'},
+    ]
+    for data in datas:
+        print data['usersay'], handle(data)

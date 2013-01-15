@@ -27,24 +27,19 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # 天气
 import os
 import json
-from tornado import httpclient
+import requests
 import cPickle as pickle
 import ip
 import urllib
 
 
-def test(data, bot):
-    return '天气' in data['usersay']
+def test(data):
+    return u'天气' in data['usersay']
 
 
 def weather0(cityid):
-    http_client = httpclient.HTTPClient()
     url = 'http://www.weather.com.cn/data/cityinfo/%s.html' % cityid
-    try:
-        res = http_client.fetch(url)
-    except httpclient.HTTPError, e:
-        print "Error:", e
-    weatherinfo = json.loads(res.body)['weatherinfo']
+    weatherinfo = requests.get(url).json()['weatherinfo']
     weather = ''.join([
         '', weatherinfo['city'],
         ', ', weatherinfo['weather'],
@@ -55,50 +50,60 @@ def weather0(cityid):
 
 
 def weather1(city):
-    weather = ''
-    url = 'http://sou.qq.com/online/get_weather.php?callback=Weather&city='
-    city = urllib.quote(city.encode('utf-8'))
-    weather = json.loads(urllib.urlopen(url + city).read()[8:-2])
-    wea_0 = weather['future']['wea_0']
-    tmin_0 = weather['future']['tmin_0']
-    tmax_0 = weather['future']['tmax_0']
-    wea_1a = weather['future']['forecast'][1]['BWEA']
-    wea_1b = weather['future']['forecast'][1]['EWEA']
-    tmax_1 = weather['future']['forecast'][1]['TMAX']
-    tmin_1 = weather['future']['forecast'][1]['TMIN']
-    if wea_1a == wea_1b:
-        wea_1 = u'整天%s' % (wea_1a)
+    if city:
+        weather = ''
+        url = 'http://sou.qq.com/online/get_weather.php?callback=Weather&city='
+        city = urllib.quote(city.encode('utf-8'))
+        weather = json.loads(urllib.urlopen(url + city).read()[8:-2])
+        wea_0 = weather['future']['wea_0']
+        tmin_0 = weather['future']['tmin_0']
+        tmax_0 = weather['future']['tmax_0']
+        wea_1a = weather['future']['forecast'][1]['BWEA']
+        wea_1b = weather['future']['forecast'][1]['EWEA']
+        tmax_1 = weather['future']['forecast'][1]['TMAX']
+        tmin_1 = weather['future']['forecast'][1]['TMIN']
+        if wea_1a == wea_1b:
+            wea_1 = u'整天%s' % (wea_1a)
+        else:
+            wea_1 = u'%s转%s' % (wea_1a, wea_1b)
+        weather = u'今天天气是%s,%s到%s摄氏度' % (wea_0, tmin_0, tmax_0)
+        weather += '\n'
+        weather += u'明天天气是%s,%s到%s摄氏度' % (wea_1, tmin_1, tmax_1)
+        return weather
     else:
-        wea_1 = u'%s转%s' % (wea_1a, wea_1b)
-    weather = u'今天天气是%s,%s到%s摄氏度' % (wea_0, tmin_0, tmax_0)
-    weather += '\n'
-    weather += u'明天天气是%s,%s到%s摄氏度' % (wea_1, tmin_1, tmax_1)
-    return weather
+        return 'I don\'t know'
 
 
 def city(usersay):
     cityidDict = pickle.load(file(os.path.join(
         os.path.dirname(__file__), 'data' + os.path.sep + 'cityid'), 'r'))
     for i in cityidDict:
-        if i.encode('utf8') in usersay:
+        # if i.encode('utf8') in usersay:
+        if i in usersay:
             return i, cityidDict[i]
-    return False
+    return '', ''
 
 
 def handle(data):
     if city(data['usersay']):
         cityname, cityid = city(data['usersay'])
     else:
-        cityname = ip.get_ipinfo(data['userip'])['data']['city']
-        cityname = cityname.encode('utf8')
-        cityname, cityid = city(cityname)
+        if 'userip' in data:
+            cityname = ip.get_ipinfo(data['userip'])['data']['city']
+            cityname = cityname.encode('utf8')
+            cityname, cityid = city(cityname)
+        else:
+            return 'I don\'t know'
     return weather1(cityname)
     # return weather0(cityid)
 
 if __name__ == '__main__':
-    # print test({'usersay': '天气怎么样'}, None)
-    # print test({'usersay': '北京天气怎么样'}, None)
-    # print handle({'usersay': '北京天气怎么样'}, None)
-    data = {'usersay': '北京天气怎么样'}
-    data = {'usersay': '天气怎么样', 'userip': '127.0.0.1'}
-    print handle(data)
+    datas = [
+        {'usersay': u'今天天气怎么样'},
+        {'usersay': u'天气怎么样', 'userip': '127.0.0.1'},
+        {'usersay': u'武汉天气怎么样'},
+        {'usersay': u'武汉天气怎么样'},
+        {'usersay': u'北京天气怎么样'},
+    ]
+    for data in datas:
+        print data['usersay'], test(data), handle(data)

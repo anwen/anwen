@@ -13,11 +13,11 @@ for tool_name in tools.__all__:
     tool_modules.append(getattr(tools, tool_name))
 
 
-def by_tools(data, bot=None):
+def by_tools(data):
     for tool_module in tool_modules:
         try:
-            if tool_module.test(data, bot):
-                return tool_module.handle(data, bot)
+            if tool_module.test(data):
+                return tool_module.handle(data)
         except:
             continue
     return ''
@@ -58,32 +58,3 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     Ande.new(doc)
 
     return markdown(andesay), ''
-
-
-if __name__ == '__main__':
-    datas = [
-        {'usersay': '2 * 4+ 5/3 = ?'},
-        {'usersay': 'x *4+ 5/3 =?'},
-        {'usersay': '2 * 4+ 5/3= ？'},
-        {'usersay': '2 * 4+ 5/3 是多少'},
-        {'usersay': '2 * 4+ 5/3 是几'},
-        {'usersay': '2 * 4+ 5/3 等于多少'},
-        {'usersay': '2 * 4+ 5/3 等于几'},
-        {'usersay': 'sys.exit(-1)'},
-        {'usersay': 'sys.exit(-1) = ?'},
-        {'usersay': 'sin(pi/2)=?'},
-        {'usersay': 'x^(1+3)=?'},
-        {'usersay': '今天天气怎么样'},
-        {'usersay': '北京天气怎么样'},
-        {'usersay': '地'},
-        {'usersay': '地震了吗？'},
-        {'usersay': '最后一个问题'},
-        {'usersay': '天气怎么样'},
-        {'usersay': '北京天气怎么样'},
-        {'usersay': '李白是谁'},
-        {'usersay': '什么是SVM  ????'},
-        {'usersay': '什么是薛定谔方程啊'},
-    ]
-
-    for data in datas:
-        print data['usersay'], by_tools(data)

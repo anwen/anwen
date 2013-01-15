@@ -1,10 +1,11 @@
 #-*-coding:utf-8-*-
 __all__ = [
-    'wikipedia',
-    'earthquake',
+    # 'wikipedia',
+    # 'earthquake',
     'airpollution',
     'weather',
     'arithmetic',
-    # 'simsimi',
+    'qiubai',
+    'simsimi',
 ]
 # 一行放一个，避免merge冲突
