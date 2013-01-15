@@ -1,55 +1,51 @@
 # -*- coding:utf-8 -*-
-"""
-the methons we use may seem fool temporarily, we will make them better
-"""
 
+from markdown2 import markdown
 import query
 import ego
-from markdown2 import markdown
+import tools
 from db import Ande
-from tools.bingtrans import translate
-# from tools.fenci import fenci
-# from tools.xpinyin import Pinyin
 
 
-def get_ande_ip():
-    pass
+tool_modules = []
+for tool_name in tools.__all__:
+    __import__('ande.tools.%s' % tool_name)
+    tool_modules.append(getattr(tools, tool_name))
+
+
+def by_tools(data, bot=None):
+    for tool_module in tool_modules:
+        try:
+            if tool_module.test(data, bot):
+                return tool_module.handle(data, bot)
+        except:
+            continue
+    return ''
 
 
 def get_andesay(usersay, userip, userlang, user_id, method):
+    data = {
+        'usersay': usersay,
+        'userip': userip,
+        'userlang': userlang,
+        'user_id': user_id,
+        'method': method,
+    }
 
-    # is_cn = is_cn(usersay)
-    # is_en = is_en(usersay)
-    # usersay_fenci = fenci(usersay)
-    # usersay_fencij = json.loads(usersay_fenci)  # ['words'][0]['attr']
-    # usersay_pinyin = Pinyin().get_pinyin(usersay)
-    # andeip = get_ande_ip()
-
-    usersay_en = translate(usersay, '', 'en')
-    is_firstmeet = query.is_firstmeet(userip, user_id)
+    # usersay_en = translate(usersay, '', 'en')
+    # is_firstmeet = query.is_firstmeet(userip, user_id)
     first = query.first(usersay, userip, user_id, method)
     hello = query.hello(usersay)
-    weather = query.weather(usersay, userip)
     song = query.song(usersay)
     trans = query.trans(usersay, userlang)
     clock = query.clock(usersay)
-    wiki = query.wiki(usersay)
-    memo_last = query.memo_last(usersay, userip)
-    get_ego = ego.get_ego(usersay)
 
-    # andesay = '%s\n%s\n%s\n%s' % (hello, weather, song, trans)
+    get_tools = by_tools(data)
+    get_memo = query.search_memo(usersay, userip)
+    get_ego = ego.find_ego(usersay)
+
     andesay = ''.join([
-        first, hello, weather, song, trans, clock, wiki, memo_last, get_ego
-    ])
-
-    andethink = ''.join([
-        'ande-think-trace:',
-        '\n\nusersay:', usersay,
-        '\n\nuserip:', userip,
-        '\n\nuserlang:', userlang,
-        '\n\nuserid:', str(user_id),
-        '\n\nis_firstmeet?:', is_firstmeet,
-        '\n\nusersay_en?:', usersay_en,
+        get_tools, get_memo, get_ego, first, hello, song, trans, clock,
     ])
 
     doc = {
@@ -58,6 +54,36 @@ def get_andesay(usersay, userip, userlang, user_id, method):
         'usersay': usersay,
         'andesay': andesay,
     }
+
     Ande.new(doc)
 
-    return markdown(andesay), markdown(andethink)
+    return markdown(andesay), ''
+
+
+if __name__ == '__main__':
+    datas = [
+        {'usersay': '2 * 4+ 5/3 = ?'},
+        {'usersay': 'x *4+ 5/3 =?'},
+        {'usersay': '2 * 4+ 5/3= ？'},
+        {'usersay': '2 * 4+ 5/3 是多少'},
+        {'usersay': '2 * 4+ 5/3 是几'},
+        {'usersay': '2 * 4+ 5/3 等于多少'},
+        {'usersay': '2 * 4+ 5/3 等于几'},
+        {'usersay': 'sys.exit(-1)'},
+        {'usersay': 'sys.exit(-1) = ?'},
+        {'usersay': 'sin(pi/2)=?'},
+        {'usersay': 'x^(1+3)=?'},
+        {'usersay': '今天天气怎么样'},
+        {'usersay': '北京天气怎么样'},
+        {'usersay': '地'},
+        {'usersay': '地震了吗？'},
+        {'usersay': '最后一个问题'},
+        {'usersay': '天气怎么样'},
+        {'usersay': '北京天气怎么样'},
+        {'usersay': '李白是谁'},
+        {'usersay': '什么是SVM  ????'},
+        {'usersay': '什么是薛定谔方程啊'},
+    ]
+
+    for data in datas:
+        print data['usersay'], by_tools(data)

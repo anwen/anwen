@@ -62,3 +62,4 @@ update-rc.d supervisord defaults
 
 supervisord
 supervisorctl stop all reload start anwen-8000
+mongod --dbpath=/var/lib/ --smallfiles

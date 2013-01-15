@@ -6,8 +6,8 @@ import urllib
 from tornado import httpclient
 from json import loads as jload
 from pymongo import DESCENDING  # ASCENDING
-from tools.bingtrans import translate
-from tools.g_search import g_search
+from tool.bingtrans import translate
+from tool.g_search import g_search
 from db import Ande
 
 hellos = [u'你好', 'hello', 'hi']
@@ -168,17 +168,6 @@ def get_song(songname, artist):
         return music_image, lyric_link, songbox
 
 
-def get_ande_ip():
-    return urllib.urlopen('http://ifconfig.me/ip').read()
-
-
-def get_ipinfo(ip):
-    if ip == '127.0.0.1':
-        ip = get_ande_ip()
-    return json.loads(urllib.urlopen(
-        'http://ip.taobao.com/service/getIpInfo.php?ip=' + ip).read())
-
-
 def get_weather(city):
     url = 'http://sou.qq.com/online/get_weather.php?callback=Weather&city='
     city = urllib.quote(city.encode('utf-8'))
@@ -239,18 +228,17 @@ def wiki(usersay):
     return wiki
 
 
-def memo_last(usersay, userip):
-    memo_last = ''
+def search_memo(usersay, userip):
+    memo = ''
     lasthints = [u'上一句', u'前一句']
     for i in lasthints:
         if i in usersay:
             usersay = usersay.replace(i, '')
             usersay = usersay.replace('?', '')
-            # memo_last = get_last(usersay) ['usersay']
-            print userip
-            memo_last = Ande.find(
+            # memo = get_last(usersay) ['usersay']
+            memo = Ande.find(
                 {'user_ip': userip}).sort('_id', DESCENDING).limit(1)
 
-            memo_last = u'你说的是:%s' % memo_last[0]['usersay']
+            memo = u'你说的是:%s' % memo[0]['usersay']
             break
-    return memo_last
+    return memo
