@@ -1,14 +1,15 @@
 # -*- coding:utf-8 -*-
-import tornado.web
+# import tornado.web
 from json import dumps
 from anwen.base import BaseHandler
 from brain import get_andesay
+from markdown2 import markdown
 
 
 class AndeHandler(BaseHandler):
 
-    @tornado.web.asynchronous
     def get(self):
+        q = self.get_argument('q', '')
         usersay = self.get_argument('usersay', '')
         userip = self.request.remote_ip
         userlang = self.get_user_lang()
@@ -16,7 +17,11 @@ class AndeHandler(BaseHandler):
         method = 'get'
         andesay, andethink = get_andesay(
             usersay, userip, userlang, user_id, method)
-        self.render('ande.html', andesay=andesay, andethink=andethink)
+        if q:
+            self.write(andesay)
+        else:
+            andesay = markdown(andesay)
+            self.render('ande.html', andesay=andesay, andethink=andethink)
 
     # @tornado.web.asynchronous
     def post(self):
@@ -30,6 +35,7 @@ class AndeHandler(BaseHandler):
 
         # print andesay
         # print andethink
+        andesay = markdown(andesay)
         andesay = {
             'andesay': andesay,
             'andethink': andethink,

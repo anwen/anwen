@@ -10,8 +10,9 @@ from tool.bingtrans import translate
 from tool.g_search import g_search
 from db import Ande
 
-hellos = [u'你好', 'hello', 'hi']
-e_happys = [':)', '^_^', u'O(∩_∩)O', u'(◕‿‿◕)']
+hellos = [u'你好', u'hello', u'hi']
+s_hellos = ['你好', 'hello', 'hi']
+e_happys = [':)', '^_^', 'O(∩_∩)O', '(◕‿‿◕)']
 
 
 def modal(id, info):
@@ -75,7 +76,7 @@ def hello(usersay):
     hello = ''
     for i in hellos:
         if usersay.startswith(i):
-            sayhello = random.choice(hellos)
+            sayhello = random.choice(s_hellos)
             e_happy = random.choice(e_happys)
             hello = sayhello + e_happy
     return hello
@@ -166,34 +167,6 @@ def get_song(songname, artist):
             '" type="application/x-shockwave-flash"></p>'
         ])
         return music_image, lyric_link, songbox
-
-
-def get_weather(city):
-    url = 'http://sou.qq.com/online/get_weather.php?callback=Weather&city='
-    city = urllib.quote(city.encode('utf-8'))
-    return json.loads(urllib.urlopen(url + city).read()[8:-2])
-
-
-def weather(usersay, userip):
-    weather = ''
-    if u'天气' in usersay:
-        city = get_ipinfo(userip)['data']['city']
-        weather = get_weather(city)
-        wea_0 = weather['future']['wea_0']
-        tmin_0 = weather['future']['tmin_0']
-        tmax_0 = weather['future']['tmax_0']
-        wea_1a = weather['future']['forecast'][1]['BWEA']
-        wea_1b = weather['future']['forecast'][1]['EWEA']
-        tmax_1 = weather['future']['forecast'][1]['TMAX']
-        tmin_1 = weather['future']['forecast'][1]['TMIN']
-        if wea_1a == wea_1b:
-            wea_1 = u'整天%s' % (wea_1a)
-        else:
-            wea_1 = u'%s转%s' % (wea_1a, wea_1b)
-        weather = u'今天天气是%s,%s到%s摄氏度' % (wea_0, tmin_0, tmax_0)
-        weather += '<br />'
-        weather += u'明天天气是%s,%s到%s摄氏度' % (wea_1, tmin_1, tmax_1)
-    return weather
 
 
 def trans(usersay, userlang):

@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 
-from markdown2 import markdown
 import query
 import ego
 import tools
@@ -57,4 +56,4 @@ def get_andesay(usersay, userip, userlang, user_id, method):
 
     Ande.new(doc)
 
-    return markdown(andesay), ''
+    return andesay, ''

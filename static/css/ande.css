@@ -1,6 +1,6 @@
 html{
 	/* This image will be displayed fullscreen */
-	background:url('http://farm8.staticflickr.com/7218/7289572558_44c110c510_h.jpg') no-repeat center center;
+	/*background:url('http://farm8.staticflickr.com/7218/7289572558_44c110c510_h.jpg') no-repeat center center;*/
 	
 	/* Ensure the html element always takes up the full height of the browser window */
 	min-height:100%;
@@ -13,11 +13,9 @@ body{
 	/* Workaround for some mobile browsers */
 	min-height:100%;
 	font:14px/1.3 'Segoe UI',Arial, Helvetica, sans-serif;
-/*	color:#eee;
-	background-color:#355664
-*/
 	color:#eee;
-	background:transparent
+	background-color:#355664
+	/*background:transparent*/
 }
 
 .saybox
