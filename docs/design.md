@@ -18,6 +18,7 @@ what-is-important
 团队
 
 * 任何感兴趣的人都可参与策划&组织&创意&内容贡献&开发
+* 所有文档和代码都托管于github，欢迎任何pull-request，如果需要可以在issue中申请直接提交权限
 
 原则
 

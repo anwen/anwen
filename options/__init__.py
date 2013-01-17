@@ -12,7 +12,7 @@ web_server = {
     'template_path': 'templates',
     'static_path': 'static',
     'locale_path': 'locale',
-    'xsrf_cookies': True,
+    'xsrf_cookies': False,
     'cookie_secret': "11oETzKXQAGaYdkL5gEmGeJJFuYh7EQnp2XdTP1o/Vo=",
     'autoescape': None,
     'debug': debug,

@@ -22,6 +22,7 @@ import tornado.websocket
 import uuid
 
 from base import BaseHandler
+from db import Talk
 
 
 class TalkHandler(BaseHandler):
@@ -68,18 +69,25 @@ class MessageMixin(object):
 
 class MsgNewHandler(BaseHandler, MessageMixin):
     def post(self):
-        message = {
+        if self.current_user:
+            user_name = self.current_user["user_name"]
+            user_id = self.current_user["user_id"]
+        else:
+            user_name = 'guest'
+            user_id = 0
+        talk = {
             "id": str(uuid.uuid4()),
-            "from": "first_name",
+            "user_name": user_name,
+            "user_id": user_id,
             "body": self.get_argument("body"),
         }
-        message["html"] = self.render_string("message.html", message=message)
+        talk["html"] = self.render_string("message.html", message=talk)
         if self.get_argument("next", None):
             self.redirect(self.get_argument("next"))
         else:
-            self.write(message)
+            self.write(talk)
         # self.new_messages([message])
-        send_message(message)
+        send_message(talk)
 
 
 class MsgUpdatesHandler(BaseHandler, MessageMixin):
@@ -117,25 +125,39 @@ class ChatSocketHandler(tornado.websocket.WebSocketHandler):
     def on_message(self, message):
         logging.info("got message %r", message)
         parsed = tornado.escape.json_decode(message)
-        chat = {
+        if self.current_user:
+            user_name = self.current_user["user_name"]
+            user_id = self.current_user["user_id"]
+        else:
+            user_name = 'guest'
+            user_id = 0
+        talk = {
             "id": str(uuid.uuid4()),
-            "from": "first_name",
-            "body": parsed["body"], }
-        chat["html"] = self.render_string("message.html", message=chat)
+            "user_name": user_name,
+            "user_id": user_id,
+            "body": parsed["body"],
+        }
+        talk["html"] = self.render_string("message.html", message=talk)
         logging.info("sending message to %d waiters", len(self.waiters))
-        send_message(chat)
+        send_message(talk)
 
 
-def send_message(chat):
+def send_message(msg):
+    talk = Talk
+    doc = {
+        'user_id': msg['user_id'],
+        'body': msg['body'],
+    }
+    talk = talk.new(doc)
     for waiter in ChatSocketHandler.waiters:
         try:
-            waiter.write_message(chat)
+            waiter.write_message(msg)
         except:
             logging.error('Error sending message', exc_info=True)
 
     for callback in MessageMixin.waiters:
         try:
-            callback(chat)
+            callback(msg)
         except:
             logging.error('Error in callback', exc_info=True)
     MessageMixin.waiters = set()

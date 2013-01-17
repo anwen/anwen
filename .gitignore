@@ -4,12 +4,9 @@
 temp
 private
 server_setting.py
-db_config_server.py
-anwen-test
 /log/files/*.log
 /log/files/*.log.*
 *~
 *.log
 User.yaml
 Ande.yaml
-andenew

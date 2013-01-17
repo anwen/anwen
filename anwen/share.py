@@ -60,74 +60,75 @@ class EntryHandler(BaseHandler):
             share = Share.by_sid(slug)
         else:
             share = Share.by_slug(slug)
-            if not share:
-                old = 'http://blog.anwensf.com/'
-                for i in options.old_links:
-                    if slug in i:
-                        self.redirect('%s%s' % (old, i), permanent=True)
-                        break
-                        return
-                self.redirect("/404")
-        share.hitnum += 1
-        share.save()
-        share.markdown = markdown2.markdown(share.markdown)
+        if share:
+            share.hitnum += 1
+            share.save()
+            share.markdown = markdown2.markdown(share.markdown)
 
-        tags = ''
+            tags = ''
 
-        if share.tags:
-            tags += 'tags:'
-            for i in share.tags.split(' '):
-                tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
-        share.tags = tags
-        user_id = int(
-            self.current_user["user_id"]) if self.current_user else None
-        share.is_liking = Like.find(
-            {'share_id': share.id, 'user_id': user_id}).count() > 0
-        comments = []
-        comment_res = Comment.find({'share_id': share.id})
-        for comment in comment_res:
-            user = User.by_sid(comment.user_id)
-            comment.name = user.user_name
-            comment.domain = user.user_domain
-            comment.gravatar = get_avatar(user.user_email, 50)
-            comments.append(comment)
+            if share.tags:
+                tags += 'tags:'
+                for i in share.tags.split(' '):
+                    tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
+            share.tags = tags
+            user_id = int(
+                self.current_user["user_id"]) if self.current_user else None
+            share.is_liking = Like.find(
+                {'share_id': share.id, 'user_id': user_id}).count() > 0
+            comments = []
+            comment_res = Comment.find({'share_id': share.id})
+            for comment in comment_res:
+                user = User.by_sid(comment.user_id)
+                comment.name = user.user_name
+                comment.domain = user.user_domain
+                comment.gravatar = get_avatar(user.user_email, 50)
+                comments.append(comment)
 
-        if user_id:
-            hit = Hit.find(
-                {'share_id': share.id},
-                {'user_id': int(self.current_user["user_id"])},
-            )
-            if hit.count() == 0:
-                hit = Hit
-                hit['share_id'] = share.id
-                hit['user_id'] = int(self.current_user["user_id"])
-                hit.save()
-        else:
-            if not self.get_cookie(share.id):
-                self.set_cookie(str(share.id), "1")
-        posts = Share.find()
-        suggest = []
-        for post in posts:
-            post.score = 100 + post.id - post.user_id + post.commentnum * 3
-            post.score += post.likenum * 4 + post.hitnum * 0.01
-            post.score += randint(1, 999) * 0.001
-            if post.sharetype == share.sharetype:
-                post.score += 5
-            if self.current_user:
-                is_hitted = Hit.find(
-                    {'share_id': share._id},
+            if user_id:
+                hit = Hit.find(
+                    {'share_id': share.id},
                     {'user_id': int(self.current_user["user_id"])},
-                ).count() > 0
+                )
+                if hit.count() == 0:
+                    hit = Hit
+                    hit['share_id'] = share.id
+                    hit['user_id'] = int(self.current_user["user_id"])
+                    hit.save()
             else:
-                is_hitted = self.get_cookie(share.id)
-            if is_hitted:
-                post.score -= 50
-            suggest.append(post)
-        suggest.sort(key=lambda obj: obj.get('score'))
-        suggest = suggest[:5]
-        self.render(
-            "sharee.html", share=share, comments=comments,
-            suggest=suggest)
+                if not self.get_cookie(share.id):
+                    self.set_cookie(str(share.id), "1")
+            posts = Share.find()
+            suggest = []
+            for post in posts:
+                post.score = 100 + post.id - post.user_id + post.commentnum * 3
+                post.score += post.likenum * 4 + post.hitnum * 0.01
+                post.score += randint(1, 999) * 0.001
+                if post.sharetype == share.sharetype:
+                    post.score += 5
+                if self.current_user:
+                    is_hitted = Hit.find(
+                        {'share_id': share._id},
+                        {'user_id': int(self.current_user["user_id"])},
+                    ).count() > 0
+                else:
+                    is_hitted = self.get_cookie(share.id)
+                if is_hitted:
+                    post.score -= 50
+                suggest.append(post)
+            suggest.sort(key=lambda obj: obj.get('score'))
+            suggest = suggest[:5]
+            self.render(
+                "sharee.html", share=share, comments=comments,
+                suggest=suggest)
+        else:
+            old = 'http://blog.anwensf.com/'
+            for i in options.old_links:
+                if slug in i:
+                    self.redirect('%s%s' % (old, i), permanent=True)
+                    break
+                    return
+            self.redirect("/404")
 
 
 class CommentHandler(BaseHandler):

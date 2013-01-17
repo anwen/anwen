@@ -224,3 +224,19 @@ class Tag(BaseModel):
             res.update(doc)
             res.save()
         return res
+
+
+@connection.register
+class Talk(BaseModel):
+    __collection__ = 'Talk_Col'
+    structure = {
+        'id': int,
+        'user_id': int,
+        'body': basestring,
+        'talktime': float,
+    }
+    default_values = {
+        'user_id': 0,
+        'body': '',
+        'talktime': time.time,
+    }

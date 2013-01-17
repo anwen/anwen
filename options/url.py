@@ -49,9 +49,10 @@ handlers = [
 
     (r"/edit", EditHandler),
 
+    (r'/404/?', ErrHandler),
+
     (r'/(.*)', EntryHandler),
 
     # Custom 404 ErrHandler, always put this at last
-    (r'/404/?', ErrHandler),
 
 ]

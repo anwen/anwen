@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+# to run tests, make: 'xsrf_cookies': False  to be fixed
+
 import uuid
 import random
 import unittest

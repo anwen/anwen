@@ -8,3 +8,4 @@ Like = connection.Like
 Hit = connection.Hit
 Ande = connection.Ande
 Tag = connection.Tag
+Talk = connection.Talk
