@@ -64,6 +64,7 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
             res = self.fetch(
                 self.res_url, method='POST', body=self.jcreate_args)
             assert res.code == 201 or 200
+            assert res.body
             json = jload(res.body)
             assert_similar(json, self.create_args)
             try:
@@ -146,7 +147,7 @@ class TestUsers(HttpTest):
         assert res.code == 200
         res = self.fetch('/login', method='GET')
         assert res.code == 200
-        # assert 'Set-Cookie' in res.headers
+        assert 'Set-Cookie' in res.headers
         # assert res.headers['Set-Cookie'].startswith('_xsrf=')
         # _xsrf = res.headers['Set-Cookie'].split(';')[0].split('=')[1]
         assert res.body
@@ -167,9 +168,9 @@ class TestShares(HttpTest):
     clist = 'markdown', 'title'
 
     def set_up(self):
-        # res = self.fetch('/share', method='GET')
-        # assert res.code == 200
-        # assert res.body
+        res = self.fetch('/share', method='GET')
+        assert res.code == 200
+        assert res.body
         common_setup(self)
 
     def tear_down(self):

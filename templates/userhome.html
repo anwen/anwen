@@ -3,59 +3,42 @@
 {{user.user_name}}-主页-
 {% end %}
 {% block usermain %}
-
-  <ul class="unstyled nav nav-tabs">
-    <li class="active">
-      <a href="/user/{{user.user_domain}}">
-        主页
-      </a>
-    </li>
-    <li class="">
-      <a href="/userlike/{{user.user_domain}}">喜欢
-        <span class="badge">{{likenum}}</span>
-      </a>
-    </li>
-  </ul>
-  <div class="user-say">
-{{user.user_say}}
-  </div>
-
-
-  
+<ul class="unstyled nav nav-tabs">
+  <li class="active">
+    <a href="/user/{{user.user_domain}}">主页</a>
+  </li>
+  <li class="">
+    <a href="/userlike/{{user.user_domain}}">
+      喜欢
+      <span class="badge">{{likenum}}</span>
+    </a>
+  </li>
+</ul>
+<div class="user-say">{{user.user_say}}</div>
 {% end %}
 
 {% block userside %}
-
-  <div class="mod user-stat">
-    <ul class="unstyled">
-      <li>
-        <a href="/user/askender/follows"> <strong>0</strong> 
-          关注的人
-        </a>
-      </li>
-      <li>
-        <a href="/user/askender/fans">
-          <strong>
-            0
-          </strong>
-          粉丝
-        </a>
-      </li>
-    </ul>
-    <div>
-      <strong>
-        我 还没有关注任何人
-      </strong>
-    </div>
-    <div>
-      <strong>
-        我 还没有粉丝
-      </strong>
-    </div>
-    <div>
-      <strong>
-        我 还没有关注任何标签
-      </strong>
-    </div>
+<div class="mod user-stat">
+  <ul class="unstyled">
+    <li>
+      <a href="/user/askender/follows"> <strong>0</strong>
+        关注的人
+      </a>
+    </li>
+    <li>
+      <a href="/user/askender/fans"> <strong>0</strong>
+        粉丝
+      </a>
+    </li>
+  </ul>
+  <div>
+    <strong>我 还没有关注任何人</strong>
   </div>
+  <div>
+    <strong>我 还没有粉丝</strong>
+  </div>
+  <div>
+    <strong>我 还没有关注任何标签</strong>
+  </div>
+</div>
 {% end %}

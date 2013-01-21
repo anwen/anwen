@@ -37,14 +37,10 @@
 {% else %}
 <ul class="nav pull-right">
 <li>
-    <a href="/joinus?next={{ url_escape(request.uri) }}">
-      注册
-    </a>
+  <a href="/joinus?next={{ url_escape(request.uri) }}">注册</a>
 </li>
 <li>
-    <a href="/login?next={{ url_escape(request.uri) }}">
-      登录
-    </a>
+  <a href="/login?next={{ url_escape(request.uri) }}">登录</a>
 </li>
 </ul>
 {% end %}

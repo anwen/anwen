@@ -5,9 +5,7 @@
 {% block usermain %}
 <ul class="unstyled nav nav-tabs">
   <li class="">
-    <a href="/user/{{user.user_domain}}">
-      主页
-    </a>
+    <a href="/user/{{user.user_domain}}">主页</a>
   </li>
   <li class="active">
     <a href="/userlike/{{user.user_domain}}">
@@ -20,9 +18,7 @@
   <ul class="unstyled">
     {% for like in likes %}
     <li> <i class="icon-{{ like.type }}"></i>
-      <a href="/share/{{ like.id }}" title="{{ escape(like.title) }}">
-        {{escape(like.title)}}
-      </a>
+      <a href="/share/{{ like.id }}" title="{{ escape(like.title) }}">{{escape(like.title)}}</a>
     </li>
     {% end %}
   </ul>

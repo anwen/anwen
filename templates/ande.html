@@ -19,101 +19,67 @@
       </fieldsets>
     </form>
 
-
-  <p class="credit">
-    <a data-toggle="modal" href="#about" class="btn btn-primary">
-      说明
-    </a>
-  </p>
-  <div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-        &times;
-      </button>
-      <h3 id="myModalLabel">
-        ~
-      </h3>
-    </div>
-    <div class="modal-body" background-color="#eee">
-      <h4>
-        对不起，安德尚未恢复
-      </h4>
-      <h4>
-        不过您可以通过输入：播放歌名 来点歌.
+    <p class="credit">
+      <a data-toggle="modal" href="#about" class="btn btn-primary">说明</a>
+    </p>
+    <div id="about" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 id="myModalLabel">~</h3>
+      </div>
+      <div class="modal-body" background-color="#eee">
+        <h4>对不起，安德尚未恢复</h4>
+        <h4>
+          不过您可以通过输入：播放歌名 来点歌.
         可以查询天气,翻译
-      </h4>
+        </h4>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" data-dismiss="modal">{{_('Close')}}</button>
+      </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal">
-        {{_('Close')}}
-      </button>
-    </div>
-  </div>
-<!--   <p class="credit">
-    <a data-toggle="modal" href="#think" class="btn btn-primary">
-      {{_('Think')}}
-    </a>
-  </p> -->
+    <!--   <p class="credit">
+    <a data-toggle="modal" href="#think" class="btn btn-primary">{{_('Think')}}</a>
+  </p>
+  -->
   <div id="think" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-        &times;
-      </button>
-      <h3 id="myModalLabel">
-        ~
-      </h3>
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3 id="myModalLabel">~</h3>
     </div>
-    <div class="modal-body" id="andethink" background-color="#eee">
-{{andethink}}
-    </div>
+    <div class="modal-body" id="andethink" background-color="#eee">{{andethink}}</div>
     <div class="modal-footer">
-      <button class="btn" data-dismiss="modal">
-        {{_('Close')}}
-      </button>
+      <button class="btn" data-dismiss="modal">{{_('Close')}}</button>
     </div>
   </div>
 
+  <form class="saybox" id="searchForm" method="post">
+    {{ xsrf_form_html() }}
+    <fieldset>
+      <input class="inputbox" type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
+      <input type="submit" value="搜 索" id="submitButton" />
+      <div id="searchInContainer">
+        <input type="radio" name="check" value="web" id="searchWeb" checked />
+        <label for="searchWeb">全网</label>
 
-    <form class="saybox" id="searchForm" method="post">
-      {{ xsrf_form_html() }}
-      <fieldset>
-        <input class="inputbox" type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
-        <input type="submit" value="搜 索" id="submitButton" />
-        <div id="searchInContainer">
-          <input type="radio" name="check" value="web" id="searchWeb" checked />
-          <label for="searchWeb">
-            全网
-          </label>
+        <input type="radio" name="check" value="site" id="searchSite" />
+        <label for="searchSite" id="siteNameLabel">安问博客</label>
 
-          <input type="radio" name="check" value="site" id="searchSite" />
-          <label for="searchSite" id="siteNameLabel">
-            安问博客
-          </label>
+        <ul class="icons">
+          <li class="web" title="Web Search" data-searchType="web">Web</li>
+          <li class="images" title="Image Search" data-searchType="images">Images</li>
+          <li class="news" title="News Search" data-searchType="news">News</li>
+          <li class="videos" title="Video Search" data-searchType="video">Videos</li>
+        </ul>
+      </div>
+    </fieldset>
+  </form>
+  <div id="resultsDiv"></div>
+</div>
 
-
-          <ul class="icons">
-            <li class="web" title="Web Search" data-searchType="web">
-              Web
-            </li>
-            <li class="images" title="Image Search" data-searchType="images">
-              Images
-            </li>
-            <li class="news" title="News Search" data-searchType="news">
-              News
-            </li>
-            <li class="videos" title="Video Search" data-searchType="video">
-              Videos
-            </li>
-          </ul>
-        </div>
-      </fieldset>
-    </form>
-    <div id="resultsDiv"></div>
-  </div>
-
-  <p class="credit">
-    <a href="http://askender.com/ai-ender-develop-plan.html  target='_blank' ">开发计划&安德日记</a>
-  </p>
+<p class="credit">
+  <a href="http://askender.com/ai-ender-develop-plan.html  target='_blank' ">开发计划&安德日记</a>
+</p>
 
 </div>
 {% end %}

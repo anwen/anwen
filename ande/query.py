@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 
 import random
-import json
 import urllib
 from tornado import httpclient
 from json import loads as jload

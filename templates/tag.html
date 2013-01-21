@@ -10,16 +10,12 @@
 	<div class="hero-unit">
 		<div id="content">
 			<div class="share">
-				<h2>
-					Tags
-				</h2>
+				<h2>Tags</h2>
 
 				<ul class="unstyled">
 					{% for tag in tags %}
 					<li>
-						<a href="/tag/{{ tag.name }}" title="{{ escape(tag.name) }}">
-							{{ escape(tag.name) }}
-						</a>
+						<a href="/tag/{{ tag.name }}" title="{{ escape(tag.name) }}">{{ escape(tag.name) }}</a>
 					</li>
 					{% end %}
 				</ul>
@@ -28,7 +24,6 @@
 		</div>
 
 	</div>
-
 
 </div>
 {% end %}

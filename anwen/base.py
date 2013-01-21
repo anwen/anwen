@@ -147,9 +147,7 @@ class CommonResourceHandler(JSONHandler):
         if not rid:
             res = self._objects
         else:
-            print rid
             res = self.res.by_id(rid)
-            print res
         if not res:
             return self.set_status(404)
         else:
@@ -159,10 +157,8 @@ class CommonResourceHandler(JSONHandler):
         return res_obj
 
     def pre_post(self, json_arg):
-        new_obj = self.res()
-        new_obj.update(json_arg)
-        new_obj.save()
-        return new_obj
+        new_obj = self.res
+        return new_obj.new(json_arg)
 
     def post(self):
         res = self.pre_post(self.get_json_arg())

@@ -137,10 +137,11 @@ class CommentHandler(BaseHandler):
         share_id = self.get_argument("share_id", None)
         html = markdown2.markdown(commentbody)
         comment = Comment
-        comment['user_id'] = self.current_user["user_id"]
-        comment['share_id'] = int(share_id)
-        comment['commentbody'] = commentbody
-        comment.save()
+        doc = {}
+        doc['user_id'] = self.current_user["user_id"]
+        doc['share_id'] = int(share_id)
+        doc['commentbody'] = commentbody
+        comment.new(doc)
         share = Share.by_sid(share_id)
         share.commentnum += 1
         share.save()
