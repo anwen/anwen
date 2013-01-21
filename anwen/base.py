@@ -147,7 +147,9 @@ class CommonResourceHandler(JSONHandler):
         if not rid:
             res = self._objects
         else:
+            print rid
             res = self.res.by_id(rid)
+            print res
         if not res:
             return self.set_status(404)
         else:

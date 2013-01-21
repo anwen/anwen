@@ -5,7 +5,7 @@ from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
 from anwen.user import SettingHandler, ChangePassHandler, UsersHandler
 from anwen.share import ShareHandler, EntryHandler, CommentHandler, LikeHandler
-from anwen.share import FeedHandler, SharesHandler
+from anwen.share import FeedHandler, SharesHandler, CommentsHandler
 from ande.ande import AndeHandler
 from anwen.talk import TalkHandler, ChatSocketHandler
 from anwen.talk import MsgNewHandler, MsgUpdatesHandler
@@ -31,6 +31,10 @@ handlers = [
     (r"/shares/([0-9a-f]{24})", SharesHandler),
     (r"/tag/?", TagHandler),
     (r"/tag/([^/]+)", TagHandler),
+
+    (r"/comments/?", CommentsHandler),
+    (r"/comments/([0-9a-f]{24})", CommentsHandler),
+
 
     (r"/login", LoginHandler),
     (r"/joinus", JoinusHandler),

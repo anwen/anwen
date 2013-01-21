@@ -158,6 +158,10 @@ class CommentHandler(BaseHandler):
         self.write(newcomment)
 
 
+class CommentsHandler(CommonResourceHandler):
+    res = Comment
+
+
 class LikeHandler(BaseHandler):
     def post(self):
         share_id = self.get_argument("share_id", None)

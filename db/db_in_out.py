@@ -7,10 +7,11 @@ import sys
 import os
 import re
 sys.path.append('..')
-from db import User, Share, Ande, Comment, Hit  # todo
+from db import User, Share, Ande, Comment, Hit, Talk  # todo
+from bson import ObjectId
 
 
-doc_list = ['User', 'Share', 'Comment', 'Ande', 'Hit']
+doc_list = ['User', 'Share', 'Comment', 'Ande', 'Hit', 'Talk']
 
 
 def make_doc():
@@ -43,6 +44,7 @@ def doc_import(doc):
             print 'load usersafe'
         docs = yaml.load(file(doc + '.yaml', 'r').read())
         for i in docs:
+            i['_id'] = ObjectId(i['_id'])
             if doc == 'UserSafe':
                 i['user_email'] = ''
                 i['user_pass'] = ''

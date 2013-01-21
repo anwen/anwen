@@ -161,10 +161,5 @@ class UsersHandler(CommonResourceHandler):
     res = User
 
     def pre_post(self, json_arg):
-        new_obj = self.res()
-        new_obj.update(json_arg)
-        if self.res.by_useremail(new_obj.user_email):
+        if self.res.by_useremail(json_arg['user_email']):
             self.send_error(409)
-        else:
-            new_obj.save()
-            return new_obj
