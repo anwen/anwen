@@ -72,6 +72,8 @@ def run_export(name):
 def doc_export(doc):
     d = eval(doc)
     obj = d.find()
+    if obj.count() == 0:
+        return
     res = []
     for i in obj:
         i['_id'] = str(i['_id'])
