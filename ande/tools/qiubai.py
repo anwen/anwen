@@ -35,7 +35,7 @@ key = time.strftime('%Y-%m-%d')
 
 
 def test(data):
-    return any(w in data['message'] for w in ['糗百', '笑话'])
+    return any(w in data['usersay'] for w in [u'糗百', u'笑话'])
 
 
 def handle(data):
@@ -49,10 +49,12 @@ def handle(data):
 
 if __name__ == '__main__':
     datas = [
-        {'usersay': '糗百'},
-        {'usersay': '笑话'},
-        {'usersay': '讲个感人的故事吧'},
-        {'usersay': '给我讲个笑话吧'},
+        {'usersay': u'糗百'},
+        {'usersay': u'笑话'},
+        {'usersay': u'讲个感人的故事吧'},
+        {'usersay': u'给我讲个笑话吧'},
     ]
     for data in datas:
-        print data['usersay'], handle(data)
+        print data['usersay']
+        if test(data):
+            print handle(data)

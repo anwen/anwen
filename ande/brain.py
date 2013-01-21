@@ -15,6 +15,7 @@ for tool_name in tools.__all__:
 def by_tools(data):
     for tool_module in tool_modules:
         try:
+            print tool_module
             if tool_module.test(data):
                 return tool_module.handle(data)
         except:

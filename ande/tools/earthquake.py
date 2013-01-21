@@ -30,7 +30,7 @@ import re
 
 
 def test(data):
-    return '地震了' in data['usersay']
+    return u'地震' in data['usersay']
 
 
 def jw(a, b):

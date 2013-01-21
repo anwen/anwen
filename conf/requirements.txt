@@ -43,3 +43,6 @@ bson
 ### for ande
 # requests
 # sympy
+
+# other
+# fabric flake8 paramiko
