@@ -1,46 +1,42 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="span8">
-  <div class="mod user-show">
-    <div class="photo">
-      <a href="/user/{{user.user_domain}}">
-        <img src="{{user.gravatar}}" width="100" height="100" alt="{{user.user_domain}}"/>
-      </a>
-    </div>
-    <div class="info"> <strong><h1>
+<div class="container well">
+  <div class="row">
+    <div class="span8">
+      <div class="mod user-show">
+        <div class="photo">
           <a href="/user/{{user.user_domain}}">
-            {{user.user_name}}
+            <img src="{{user.gravatar}}" width="100" height="100" alt="{{user.user_domain}}"/>
           </a>
-        </h1>
-        <p> <em>注册日期</em> 
-          <span>
-            {{user.user_jointime}}
-          </span>
-        </p>
-        <p> <em>叶子</em> 
-          <span> <i class="icon-leaf"></i>
-            {{user.user_leaf}}
-          </span>
-        </p>
-        <p>
-        </p></strong> 
+        </div>
+        <div class="info"> <strong><h1>
+              <a href="/user/{{user.user_domain}}">{{user.user_name}}</a>
+            </h1>
+            <p> <em>注册日期</em>
+              <span>{{user.user_jointime}}</span>
+            </p>
+            <p> <em>叶子</em>
+              <span> <i class="icon-leaf"></i>
+                {{user.user_leaf}}
+              </span>
+            </p>
+            <p></p></strong> 
+        </div>
+        <div class="operation"></div>
+      </div>
+      {% block usermain %}
+{% end %}
     </div>
-    <div class="operation"></div>
+    <div class="span4">
+      {% block userside %}
+{% end %}
+    </div>
   </div>
-
-{% block usermain %}
-{% end %}
-
-</div>
-<div class="span4">
-{% block userside %}
-{% end %}
 </div>
 {% end %}
 
 {% block bottom %}
-
 <script type="text/javascript">
   //<![CDATA[
 
