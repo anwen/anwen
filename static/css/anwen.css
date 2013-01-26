@@ -1,3 +1,8 @@
+body {
+	background-color: #eee;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
 .navbar-inner1
 {
 	padding-left:20px;
@@ -385,4 +390,35 @@ em
 .user-feeds div.photo h4 span.bull,.user-feeds a.do-delete-feed
 {
 	visibility:hidden
+}
+
+.dialog
+{
+	text-align: center;
+}
+.error figure
+{
+	margin: 150px auto 50px;
+	width: 220px;
+}
+.error h1
+{
+	font-family: "lucida grande","lucida sans unicode",lucida,"Helvetica Neue",helvetica,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+	margin: 10px 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+}
+.error p
+{
+	font-family: "lucida grande","lucida sans unicode",lucida,"Helvetica Neue",helvetica,"Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 20px;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+}
+.error a
+{
+	font-weight: bold;
 }

@@ -1,19 +1,32 @@
 {% extends "base.html" %}
 {% block titlemore %}
-一个尚未被创建的地方-
+(404)一个尚未被创建的地方
 {% end %}
 {% block body %}
-<div class="container well">
-	<div class="row">
-		<div class="span12">
-			<div class="mod user-feeds">
-				<h2>一个尚未被创建的地方</h2>
-				<p>
-					<a href="/" title="{{_('Back')}}{{_('Home')}}">{{_('Back')}}{{_('Home')}}</a>
-				</p>
-			</div>
-
-		</div>
+<div class="container error">
+	<div class=" dialog">
+		<h2>一个尚未被创建的地方</h2>
+		<p>
+			可能是因为您的链接地址有误，或者该页面尚未被创建
+			<br/>
+			<a href="/" title="{{_('Back')}}{{_('Home')}}">{{_('Back')}}{{_('Home')}}</a>
+		</p>
+		<palign="center"style="background-color: #92d050;padding: 5px;color: white;font-weight: bold;border: solid 2px black;text-shadow: 0px 0px 3px black;">
+			访问
+			<a style="color: #008000;"target="_blank"href="http://yibo.iyiyun.com/Home/js/yibo404">404公益</a>
+			帮助妈妈找回走失的孩子！  愿我们生活的世界更美好 :-)
+		</p>
+		<p>
+			您可以尝试前往打开
+			<a href="/">「{{_('Anwen')}}」的首页</a>
+			，或者直接联系我们：
+			<a href="mailto:anwen.in@gmail.com">邮件</a>
+			，
+			<a href="http://weibo.com/askender">微博</a>
+			，和
+			<a href="http://site.douban.com/askender/">豆瓣小站</a>
+		</p>
+		<br/>
 	</div>
 </div>
 {% end %}

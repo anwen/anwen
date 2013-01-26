@@ -1,12 +1,18 @@
 *.pyc
+
+# private files
 *.sql
 *.db
-temp
 private
 server_setting.py
-/log/files/*.log
-/log/files/*.log.*
-*~
-*.log
 User.yaml
 Ande.yaml
+
+# tmp files
+/log/files/*.log
+/log/files/*.log.*
+*.log
+*~
+temp
+Makefile
+.gitmodules

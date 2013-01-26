@@ -11,6 +11,7 @@ from pymongo import DESCENDING  # ASCENDING
 
 
 class IndexHandler(BaseHandler):
+    # will make home-page diff form node-page  todo
     def get(self):
         page = self.get_argument("page", 1)
         share_res = Share.find().sort(
@@ -28,11 +29,13 @@ class IndexHandler(BaseHandler):
                 markdown2.markdown(share.markdown))[:100]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
+
         members = User.find().sort('_id', DESCENDING).limit(20)  # ASCENDING
         members_dict = []
         for member in members:
             member.gravatar = get_avatar(member.user_email, 25)
             members_dict.append(member)
+
         node = 'home'
         node_about = options.node_about[node]
         self.render(
@@ -58,11 +61,13 @@ class NodeHandler(BaseHandler):
                 markdown2.markdown(share.markdown))[:100]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
+
         members = User.find().sort('_id', DESCENDING).limit(20)
         members_dict = []
         for member in members:
             member.gravatar = get_avatar(member.user_email, 25)
             members_dict.append(member)
+
         node_about = options.node_about[node]
         self.render(
             "node.html", shares=shares, members=members_dict,
@@ -89,6 +94,11 @@ class TagHandler(BaseHandler):
                 share.markdown = filter_tags(
                     markdown2.markdown(share.markdown))[:100]
                 share.gravatar = get_avatar(user.user_email, 16)
-
                 shares.append(share)
             self.render("tage.html", name=name, shares=shares)
+
+
+class WelcomeHandle(BaseHandler):
+
+    def get(self):
+        self.render("welcome.html")

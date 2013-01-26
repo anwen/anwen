@@ -147,15 +147,16 @@ class CommentHandler(BaseHandler):
         share.save()
         name = tornado.escape.xhtml_escape(self.current_user["user_name"])
         gravatar = get_avatar(self.current_user["user_email"], 50)
-        newcomment = ''
-        newcomment += ' <div class="comment">'
-        newcomment += '<div class="avatar">'
-        newcomment += '<img src="' + gravatar + '" />'
-        newcomment += '</div>'
-        newcomment += '<div class="name">' + name + '</div>'
-        newcomment += '<div class="date" title="at"></div>'
-        newcomment += html
-        newcomment += '</div>'
+        newcomment = ''.join([
+            '<div class="comment">',
+            '<div class="avatar">',
+            '<img src="', gravatar,
+            '</div>',
+            '<div class="name">', name,
+            '</div>',
+            '<div class="date" title="at"></div>', html,
+            '</div>',
+        ])
         self.write(newcomment)
 
 

@@ -25,3 +25,7 @@ python hello.py
 ```bash
 python tests.py
 ```
+
+## set up a production enironment
+
+supervisor and nginx config files are available in conf/
