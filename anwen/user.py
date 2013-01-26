@@ -164,3 +164,12 @@ class UsersHandler(CommonResourceHandler):
         if self.res.by_useremail(json_arg['user_email']):
             self.send_error(409)
         return self.res.new(json_arg)
+
+    def post_get(self, user_obj):
+        if user_obj:
+            user_obj.pop('user_pass', None)
+            if 'objs' in user_obj and isinstance(user_obj['objs'], list):
+                for u in user_obj['objs']:
+                    if 'user_pass' in u:
+                        del u['user_pass']
+        return user_obj
