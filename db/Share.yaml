@@ -39,7 +39,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 233
+  hitnum: 234
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -59,7 +59,7 @@
   status: 0
   tags: !!python/str '人工智能'
   title: !!python/str '安德成长日志'
-  updated: 1357218749.918975
+  updated: 1359177355.748261
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0

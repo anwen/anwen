@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import options
 import argparse
+import signal
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
@@ -17,10 +18,11 @@ options.web_server.update(
     dict(ui_modules={"Entry": EntryModule, "Useradmin": UseradminModule},))
 application = tornado.web.Application(handlers, **options.web_server)
 
+tornado.locale.load_translations(options.web_server['locale_path'])
+http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
+
 
 def launch(port):
-    tornado.locale.load_translations(options.web_server['locale_path'])
-    http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
     http_server.listen(port)
     logger.info('Server started on %s' % port)
     tornado.ioloop.IOLoop.instance().start()
@@ -47,7 +49,38 @@ parser.add_argument(
     help='run on the given port'
 )
 
+import time
+
+
+def sig_handler(sig, frame):
+    logger.warning('Caught signal: %s', sig)
+    tornado.ioloop.IOLoop.instance().add_callback(shutdown)
+
+
+def shutdown():
+    logger.info('Stopping http server')
+    http_server.stop()  # 不接收新的 HTTP 请求
+
+    logger.info('Will shutdown in %s seconds ...',
+                options.MAX_WAIT_SECONDS_BEFORE_SHUTDOWN)
+    io_loop = tornado.ioloop.IOLoop.instance()
+
+    deadline = time.time() + options.MAX_WAIT_SECONDS_BEFORE_SHUTDOWN
+
+    def stop_loop():
+
+        now = time.time()
+        if now < deadline and (io_loop._callbacks or io_loop._timeouts):
+            io_loop.add_timeout(now + 1, stop_loop)
+        else:
+            io_loop.stop(
+            )  # 处理完现有的 callback 和 timeout 后，可以跳出 io_loop.start() 里的循环
+            logger.info('Shutdown')
+    stop_loop()
+
 if __name__ == '__main__':
+    signal.signal(signal.SIGTERM, sig_handler)
+    signal.signal(signal.SIGINT, sig_handler)
     args = parser.parse_args()
     if args.run_tests:
         import tests

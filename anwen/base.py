@@ -42,6 +42,19 @@ class BaseHandler(RequestHandler):
     #         return None
     #     return self.current_user.prefs["locale"]
 
+    def write_error(self, status_code, **kwargs):
+        if status_code == 404:
+            self.render('404.html')
+        elif status_code == 500:
+            self.render('500.html')
+        else:
+            super(RequestHandler, self).write_error(status_code, **kwargs)
+
+
+class PageNotFoundHandler(RequestHandler):
+    def get(self):
+        raise HTTPError(404)
+
 
 class JSONHandler(BaseHandler):
     """Every API handler should inherit from this class."""

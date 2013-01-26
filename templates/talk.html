@@ -9,14 +9,14 @@
   <div id="nav">
     <a href="/">{{_('Anwen')}}</a>
     {% if current_user %}
-    <a href="/joinus?next={{ url_escape(request.uri) }}">注册</a>
-
-    <a href="/login?next={{ url_escape(request.uri) }}">登录</a>
-    {% else %}
-    <a href="/user/{{ escape(domain) }}"> <b>{{ current_user["name"] }}</b>
+    <a href="/user/{{ escape(current_user["user_domain"]) }}"> <b>{{ current_user["user_name"] }}</b>
     </a>
     -
     <a href="/logout?next={{ url_escape(request.uri) }}">{{ _("Sign out") }}</a>
+    {% else %}
+    <a href="/joinus?next={{ url_escape(request.uri) }}">注册</a>
+
+    <a href="/login?next={{ url_escape(request.uri) }}">登录</a>
     {% end %}
   </div>
   <div id="body">

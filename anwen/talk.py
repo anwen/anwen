@@ -20,6 +20,7 @@ import tornado.ioloop
 import tornado.web
 import tornado.websocket
 import uuid
+from tornado.escape import json_decode
 
 from base import BaseHandler
 from db import Talk
@@ -107,7 +108,7 @@ class MsgUpdatesHandler(BaseHandler, MessageMixin):
         self.cancel_wait(self.on_new_messages)
 
 
-class ChatSocketHandler(tornado.websocket.WebSocketHandler):
+class ChatSocketHandler(tornado.websocket.WebSocketHandler, BaseHandler):
     waiters = set()
     cache = []
     cache_size = 200
@@ -122,12 +123,19 @@ class ChatSocketHandler(tornado.websocket.WebSocketHandler):
     def on_close(self):
         ChatSocketHandler.waiters.remove(self)
 
+    def current_user(self):
+        user_json = self.get_secure_cookie("user")
+        if not user_json:
+            return None
+        return json_decode(user_json)
+
     def on_message(self, message):
         logging.info("got message %r", message)
         parsed = tornado.escape.json_decode(message)
-        if self.current_user:
-            user_name = self.current_user["user_name"]
-            user_id = self.current_user["user_id"]
+        current_user = self.current_user()
+        if current_user:
+            user_name = current_user["user_name"]
+            user_id = current_user["user_id"]
         else:
             user_name = 'guest'
             user_id = 0

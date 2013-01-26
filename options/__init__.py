@@ -29,6 +29,8 @@ log = {
     }
 }
 
+MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 4
+
 node_about = {
     'home': {
         'name': 'Newest Share',

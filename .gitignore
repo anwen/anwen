@@ -13,6 +13,7 @@ Ande.yaml
 /log/files/*.log.*
 *.log
 *~
+*.swp
 temp
 Makefile
 .gitmodules
