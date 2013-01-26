@@ -6,24 +6,28 @@
 <link href="{{ static_url("css/comment.css") }}" rel="stylesheet">
 {% end %}
 {% block body %}
-<div class="span12">
-	<div class="hero-unit">
-		<div id="content">
-			<div class="share">
-				<h2>Tags</h2>
+<div class="container well">
+	<div class="row">
+		<div class="span12">
+			<div class="hero-unit">
+				<div id="content">
+					<div class="share">
+						<h2>Tags</h2>
 
-				<ul class="unstyled">
-					{% for tag in tags %}
-					<li>
-						<a href="/tag/{{ tag.name }}" title="{{ escape(tag.name) }}">{{ escape(tag.name) }}</a>
-					</li>
-					{% end %}
-				</ul>
+						<ul class="unstyled">
+							{% for tag in tags %}
+							<li>
+								<a href="/tag/{{ tag.name }}" title="{{ escape(tag.name) }}">{{ escape(tag.name) }}</a>
+							</li>
+							{% end %}
+						</ul>
+
+					</div>
+				</div>
 
 			</div>
 		</div>
 
 	</div>
-
 </div>
 {% end %}

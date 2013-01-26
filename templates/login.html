@@ -3,46 +3,49 @@
 欢迎回来-
 {% end %}
 {% block body %}
-<div class="span8">
-	<div class="mod login">
-		<form id="login" method="post" name="login" class="form form-horizontal">
-			{{ xsrf_form_html() }}
-			<fieldset>
-				<legend>欢迎登录</legend>
-				<div class="control-group">
-					<label for="email" class="control-label">登录邮箱</label>
-					<div class="controls">
-						<input type="email" name="email" id="email" class="input" required/>
-					</div>
-				</div>
-				<div class="control-group">
-					<label for="password" class="control-label">登录密码</label>
-					<div class="controls">
-						<input type="password" name="password" id="password" class="input" minlength="8"/>
-					</div>
-				</div>
-				<div class="form-actions">
-					<input type="submit" value="登录" name="dosubmit" class="btn btn-primary"/>
-					<a href="/forgot-password">忘记密码了？</a>
-					<a href="/joinus">还没有账号？</a>
-				</div>
-				<div class="control-group"></div>
-			</fieldset>
-		</form>
+<div class="container well">
+	<div class="row">
+		<div class="span8">
+			<div class="mod login">
+				<form id="login" method="post" name="login" class="form form-horizontal">
+					{{ xsrf_form_html() }}
+					<fieldset>
+						<legend>欢迎登录</legend>
+						<div class="control-group">
+							<label for="email" class="control-label">登录邮箱</label>
+							<div class="controls">
+								<input type="email" name="email" id="email" class="input" required/>
+							</div>
+						</div>
+						<div class="control-group">
+							<label for="password" class="control-label">登录密码</label>
+							<div class="controls">
+								<input type="password" name="password" id="password" class="input" minlength="8"/>
+							</div>
+						</div>
+						<div class="form-actions">
+							<input type="submit" value="登录" name="dosubmit" class="btn btn-primary"/>
+							<a href="/forgot-password">忘记密码了？</a>
+							<a href="/joinus">还没有账号？</a>
+						</div>
+						<div class="control-group"></div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="mod side-relation">
+				<h2>关于安问</h2>
+				<p>安问是</p>
+				<ul>
+					<li>
+						<a href="/about">更多介绍</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
-<div class="span4">
-	<div class="mod side-relation">
-		<h2>关于安问</h2>
-		<p>安问是</p>
-		<ul>
-			<li>
-				<a href="/about">更多介绍</a>
-			</li>
-		</ul>
-	</div>
-</div>
-
 <!-- 	<a href="/googlelogin">Login with google</a>
 -->
 
@@ -54,5 +57,5 @@
 <script>
   $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
 </script>
- -->
+-->
 {% end %}
