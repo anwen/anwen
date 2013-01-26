@@ -19,7 +19,6 @@ $(document).ready(function() {
     $("#message").select();
 
     var WebSocket = window.WebSocket || window.MozWebSocket;
-    alert(location.host);
     var url = "ws://" + location.host + "/chatsocket";
     if (WebSocket) {
         try {
