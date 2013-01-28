@@ -25,7 +25,6 @@
 
 ### 视频
 [Vimeo](http://vimeo.com/ 'outside the wall')
-[IMDb](http://www.imdb.com/ 'outside the wall')
 
 ### 音乐
 [Last.fm](http://cn.last.fm/ )
@@ -37,7 +36,6 @@
 
 ### 小工具
 [imgur:简单图片分享](http://imgur.com/ "the simple image sharer")
-[about-goagent](http://askender.com/about-goagent.html)
 
 ### 互联网创业
 [36氪](http://www.36kr.com/ "关注互联网创业") 

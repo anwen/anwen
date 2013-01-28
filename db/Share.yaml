@@ -1,6 +1,6 @@
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
-  hitnum: 233
+  hitnum: 194
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -39,7 +39,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 234
+  hitnum: 196
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -59,11 +59,11 @@
   status: 0
   tags: !!python/str '人工智能'
   title: !!python/str '安德成长日志'
-  updated: 1359177355.748261
+  updated: 1357218749.918975
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
-  hitnum: 115
+  hitnum: 95
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -116,7 +116,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
-  hitnum: 113
+  hitnum: 89
   id: 14
   likenum: 0
   markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
@@ -133,7 +133,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
-  hitnum: 126
+  hitnum: 106
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
@@ -152,7 +152,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
-  hitnum: 100
+  hitnum: 89
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -170,7 +170,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e2
   commentnum: 0
-  hitnum: 120
+  hitnum: 106
   id: 12
   likenum: 0
   markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
@@ -190,7 +190,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
-  hitnum: 107
+  hitnum: 85
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
@@ -204,9 +204,39 @@
   title: !!python/str '学习实验'
   updated: 1357223468.495826
   user_id: 1
+- _id: 50e44d08606ec51c6ab042de
+  commentnum: 0
+  hitnum: 110
+  id: 8
+  likenum: 0
+  markdown: !!python/str "### 社区\r\n[豆瓣](http://www.douban.com/) \r\n[V2EX](http://www.v2ex.com/\
+    \  \"创意工作者们的社区\") \r\n[知乎](http://www.zhihu.com/ )\r\n\r\n### 技术社区\r\n[programming.reddit](http://www.reddit.com/r/programming/\
+    \ )\r\n[Hacker News](http://news.ycombinator.com/ )\r\n[StackOverflow](http://stackoverflow.com\
+    \ )\r\n[SegmentFault](http://segmentfault.com )\r\n[德问]( http://www.dewen.org\
+    \ \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n[Python-China](http://python-china.org/ )\
+    \ \r\n[叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 读写\r\n[Google 阅读器](https://www.google.com/reader/\
+    \ ) \r\n[阅FM](http://yue.fm/ ) \r\n[Solidot](http://www.solidot.org/ \"奇客的资讯，重要的东西\"\
+    )\r\n[卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/ )\r\
+    \n[notepad.cc](http://notepad.cc/) \r\n\r\n### 视频\r\n[Vimeo](http://vimeo.com/\
+    \ 'outside the wall')\r\n\r\n### 音乐\r\n[Last.fm](http://cn.last.fm/ )\r\n[巨鲸](http://www.top100.cn/\
+    \ )\r\n[虾米](http://www.xiami.com/ )\r\n[亦歌](http://www.1g1g.com/ )\r\n[豆瓣电台](http://douban.fm/\
+    \ )\r\n[Spotify](http://www.spotify.com/us/ \"A world of music\")\r\n\r\n### 小工具\r\
+    \n[imgur:简单图片分享](http://imgur.com/ \"the simple image sharer\")\r\n\r\n### 互联网创业\r\
+    \n[36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n[17Startup](http://www.17startup.com/\
+    \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n[阮一峰](http://www.ruanyifeng.com/home.html )\r\
+    \n\r\n### 小玩意\r\n[在线键盘钢琴](http://zythum.free.bg/Piano/  “需要切换为英文输入法”)\r\n\r\n\
+    ### 持续更新中,欢迎推荐,askender43##gmail.com"
+  published: 1349430186.0
+  sharetype: fire
+  slug: site-taste
+  status: 0
+  tags: list
+  title: !!python/str '站点分享'
+  updated: 1357223586.571965
+  user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
-  hitnum: 71
+  hitnum: 61
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
@@ -219,9 +249,44 @@
   title: !!python/str '桉叶说明'
   updated: 1357223662.862296
   user_id: 1
+- _id: 50e44d08606ec51c6ab042dc
+  commentnum: 0
+  hitnum: 68
+  id: 6
+  likenum: 0
+  markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。\r\n\r\n* Markdown\
+    \ 的语法全由一些精挑细选的符号所组成，其作用一目了然。\r\n* 它实际上是个非常简单、非常容易学习的语法。这个语法简单到每个人都可以在5分钟以内学会。应该是为数不多，你真的可以彻底学会的语言。\r\
+    \n* 更重要的是，Markdown语法所有要素，是与写作的习惯一脉相承的，套用句俗语：仅为写作而生。[1][1]\r\n\r\n\r\n比如：\r\n\r\
+    \n在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**。\r\n\r\n<pre>*强调*  **粗体**</pre>\r\n\r\n要写引用网址了，就是这么写[]再加个()，如：[豆瓣](http://www.douban.com)\
+    \  [关于安问](/about   \"可选的说明:关于安问~~~\")\r\n\r\n<pre>\r\n[豆瓣](http://www.douban.com)\r\
+    \n[关于安问](/about   \"可选的说明:关于安问~~~\")\r\n</pre>\r\n\r\n要引用大段文字，就是直接 >后面写引用\r\n\
+    >习惯是人生最大的指导。\r\n\r\n<pre>>习惯是人生最大的指导。</pre>\r\n\r\n标题：在行首插入 1 到 6 个 # ，对应到标题 1\
+    \ 到 6 阶\r\n# 标题 1\r\n## 标题 2\r\n### 标题 3\r\n\r\n<pre>\r\n# 标题 1\r\n## 标题 2\r\n\
+    ### 标题 3\r\n</pre>\r\n\r\n无序列表：在使用星号、加号或者减号来做为列表的项目标记(星号后要加空格)\r\n\r\n* 安问\r\n\
+    * 柏舟\r\n* 成长\r\n\r\n<pre>\r\n* 安问\r\n* 柏舟\r\n* 成长\r\n</pre>\r\n\r\n有序列表则是使用一般的数字接着一个英文句点作为项目标记：\r\
+    \n\r\n1. Red\r\n2. Green\r\n3. Blue\r\n\r\n<pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\
+    \n</pre>\r\n\r\n图片\r\n\r\n图片的语法和链接很像。（title 是选择性的）：\r\n\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
+    \ \"豆瓣logo\")\r\n\r\n<pre>\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
+    \ \"豆瓣logo\")\r\n</pre>\r\n\r\n####进阶\r\n\r\n参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：\r\
+    \n\r\n<pre>\r\nI get 10 times more traffic from [Google][1] than from\r\n[Yahoo][2]\
+    \ or [MSN][3].\r\n\r\n[1]: http://google.com/ \"Google\"\r\n[2]: http://search.yahoo.com/\
+    \ \"Yahoo Search\"\r\n[3]: http://search.msn.com/ \"MSN Search\"\r\n</pre>\r\n\
+    \r\n代码块\r\n\r\n<pre>\r\n```python\r\ndef hello():\r\n    return True\r\n```\r\n\
+    </pre>\r\n\r\n一切就这么简单。Markdown之所以越来越流行,是因为它足够简单。\r\n\r\n参考文献：\r\n\r\n1. [为什么Markdown+R有较大概率成为科技写作主流？][1]\r\
+    \n\r\n2. [Markdown 语法说明(简体中文版)][2]\r\n\r\n3. [Markdown Syntax Documentation][3]\r\
+    \n\r\n[1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html\r\n[2]:http://wowubuntu.com/markdown/basic.html\r\
+    \n[3]:http://daringfireball.net/projects/markdown/syntax"
+  published: 1349430103.0
+  sharetype: fire
+  slug: markdown
+  status: 0
+  tags: ask
+  title: !!python/str 'Markdown漫游指南'
+  updated: 1357223689.428132
+  user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
-  hitnum: 178
+  hitnum: 149
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -239,7 +304,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
-  hitnum: 87
+  hitnum: 81
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
@@ -256,7 +321,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
-  hitnum: 75
+  hitnum: 71
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
@@ -273,7 +338,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e1
   commentnum: 0
-  hitnum: 251
+  hitnum: 212
   id: 11
   likenum: 0
   markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
@@ -295,9 +360,27 @@
   title: !!python/str '节点'
   updated: 1357228249.675027
   user_id: 1
+- _id: 50e44d08606ec51c6ab042e0
+  commentnum: 0
+  hitnum: 116
+  id: 10
+  likenum: 0
+  markdown: !!python/str "### 阅读\r\n[给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n[你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
+    \n### 技术\r\n\r\n[程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n\r\n[程序员能力矩阵\
+    \ Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
+  published: 1349430399.0
+  sharetype: book
+  slug: post-share
+  status: 0
+  tags: list
+  title: !!python/str '好文链接'
+  updated: 1357277185.603203
+  user_id: 1
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
-  hitnum: 262
+  hitnum: 230
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -339,122 +422,4 @@
   tags: log
   title: !!python/str '安问行动日志'
   updated: 1357227413.799963
-  user_id: 1
-- _id: 50fc0267606ec50580ce9fe2
-  commentnum: 1
-  hitnum: 31
-  id: 18
-  likenum: 0
-  markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
-  published: 1358692967.821446
-  sharetype: ask
-  slug: ande
-  status: 0
-  tags: !!python/str '安德'
-  title: !!python/str '机器人不太好用哎'
-  updated: 1358692967.821108
-  user_id: 26
-- _id: 50e44d08606ec51c6ab042de
-  commentnum: 0
-  hitnum: 112
-  id: 8
-  likenum: 0
-  markdown: !!python/str "### 社区\r\n[豆瓣](http://www.douban.com/) \r\n[V2EX](http://www.v2ex.com/\
-    \  \"创意工作者们的社区\") \r\n[知乎](http://www.zhihu.com/ )\r\n\r\n### 技术社区\r\n[programming.reddit](http://www.reddit.com/r/programming/\
-    \ )\r\n[Hacker News](http://news.ycombinator.com/ )\r\n[StackOverflow](http://stackoverflow.com\
-    \ )\r\n[SegmentFault](http://segmentfault.com )\r\n[德问]( http://www.dewen.org\
-    \ \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n[Python-China](http://python-china.org/ )\
-    \ \r\n[叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 读写\r\n[Google 阅读器](https://www.google.com/reader/\
-    \ ) \r\n[阅FM](http://yue.fm/ ) \r\n[Solidot](http://www.solidot.org/ \"奇客的资讯，重要的东西\"\
-    )\r\n[卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/ )\r\
-    \n[notepad.cc](http://notepad.cc/) \r\n\r\n### 视频\r\n[Vimeo](http://vimeo.com/\
-    \ 'outside the wall')\r\n[IMDb](http://www.imdb.com/ 'outside the wall')\r\n\r\
-    \n### 音乐\r\n[Last.fm](http://cn.last.fm/ )\r\n[巨鲸](http://www.top100.cn/ )\r\n\
-    [虾米](http://www.xiami.com/ )\r\n[亦歌](http://www.1g1g.com/ )\r\n[豆瓣电台](http://douban.fm/\
-    \ )\r\n[Spotify](http://www.spotify.com/us/ \"A world of music\")\r\n\r\n### 小工具\r\
-    \n[imgur:简单图片分享](http://imgur.com/ \"the simple image sharer\")\r\n[about-goagent](http://askender.com/about-goagent.html)\r\
-    \n\r\n### 互联网创业\r\n[36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n[17Startup](http://www.17startup.com/\
-    \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n[阮一峰](http://www.ruanyifeng.com/home.html )\r\
-    \n\r\n### 小玩意\r\n[在线键盘钢琴](http://zythum.free.bg/Piano/  “需要切换为英文输入法”)\r\n\r\n\
-    ### 持续更新中,欢迎推荐,askender43##gmail.com"
-  published: 1349430186.0
-  sharetype: fire
-  slug: site-taste
-  status: 0
-  tags: list site
-  title: !!python/str '站点分享'
-  updated: 1358843304.564064
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042e0
-  commentnum: 0
-  hitnum: 144
-  id: 10
-  likenum: 0
-  markdown: !!python/str "### 阅读\r\n* [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
-    \ )\r\n* [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
-    \n* [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
-    \n* [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n* [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
-    \n* [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n* [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
-    \n\r\n### 生活\r\n* [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 微小说\r\n\
-    * [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
-    \n\r\n### 技术\r\n* [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
-    \n* [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n* [程序员能力矩阵 Programmer\
-    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
-    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
-  published: 1349430399.0
-  sharetype: book
-  slug: post-share
-  status: 0
-  tags: list
-  title: !!python/str '好文链接'
-  updated: 1359171714.232047
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042dc
-  commentnum: 0
-  hitnum: 98
-  id: 6
-  likenum: 0
-  markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
-    * Markdown 的语法非常简单，全由一些精挑细选的符号所组成，其作用一目了然。\r\n* 它实际上非常简单、容易学习。大家都可以在5分钟以内学会。是为数不多，你真地可以彻底学会的语言。\r\
-    \n* 更重要的是，Markdown语法所有要素，是与写作的习惯一脉相承的，套用句俗语：仅为写作而生。[1][1]\r\n* 纯文本，故兼容性极强，可以用所有文本编辑器打开。\r\
-    \n* 格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。\r\n* Markdown标记语言写出的文字有极好的可读性。\r\n\r\
-    \n学习开始~\r\n\r\n### 标题\r\n在行首插入 1 到 6 个 # ，对应到标题 1 到 6 级。\r\n<pre>\r\n# 标题 1\r\n\
-    ## 标题 2\r\n### 标题 3\r\n</pre>\r\n# 标题 1\r\n## 标题 2\r\n### 标题 3\r\n注：# 和「标题」之间保留一个字符的空格。\r\
-    \n\r\n\r\n### 列表\r\n无序列表：使用减号、加号或者星号来做为列表的项目标记(减号后要加空格)\r\n<pre>\r\n- 安问\r\n-\
-    \ 成长\r\n</pre>\r\n- 安问\r\n- 成长\r\n\r\n有序列表则是使用一般的数字接着一个英文句点作为项目标记(句点后要加空格)\r\n\
-    <pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\n</pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\
-    \n注：普通文本后如果需要显示列表，需要空一行\r\n\r\n### 链接和图片\r\n要引用网址了，就是 [显示文本](链接地址)\r\n<pre>\r\n\
-    [豆瓣](http://www.douban.com)  \r\n[关于安问](/about   \"可选的说明:关于安问~~~\")\r\n</pre>\r\
-    \n[豆瓣](http://www.douban.com)  [关于安问](/about   \"可选的说明:关于安问~~~\")\r\n\r\n图片的语法和链接很像,\
-    \ 只是前面多了一个 ！\r\n<pre>\r\n![](http://img1.douban.com/pics/nav/lg_main_a10.png)\r\
-    \n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png  \"豆瓣logo\")\r\n</pre>\r\
-    \n![](http://img1.douban.com/pics/nav/lg_main_a10.png)\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
-    \  \"豆瓣logo\")\r\n\r\n\r\n### 引用\r\n我们写作的时候有时需要引用他人的文字，在 Markdown 中，你只需要在你希望引用的文字前面加上\
-    \ > 就好。 > 和文本之间要保留一个字符的空格。\r\n如：\r\n<pre>\r\n> 习惯是人生最大的指导。\r\n</pre>\r\n> 习惯是人生最大的指导。\r\
-    \n\r\n\r\n### 粗体和斜体\r\n<pre>\r\n在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**\r\n</pre>\r\n\
-    在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**\r\n\r\n\r\n###  换行\r\nMarkdown 的换行稍微有点特殊。换行我们分「一般换行」和「段落换行」。\
-    \  \r\n比方说，诗的换行都是「一般换行」，也就是一行紧接着一行，中间没有段落间隔。这种「一般换行」的语法是，在每句话的末尾保留两个字符的「空格」，例如你输入：\r\
-    \n\r\n朝辞白帝彩云间  \r\n千里江陵一日还  \r\n两岸猿声啼不住  \r\n轻舟已过万重山   \r\n注：上方的例子里面，每句话的末尾都有两个空格。\r\
-    \n\r\n另外一种换行是「段落换行」，常用于段落，两段文本之间会有一行的间隔，这种换行的语法没有特殊之处，只需要两段之间多加一行间隔之即可，例如你输入：\r\
-    \n\r\n朝辞白帝彩云间 ，千里江陵一日还，\r\n\r\n两岸猿声啼不住，轻舟已过万重山。\r\n\r\n\r\n#### 进阶\r\n参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：\r\
-    \n\r\n<pre>\r\nI get 10 times more traffic from [Google][1] than from\r\n[Yahoo][2]\
-    \ or [MSN][3].\r\n\r\n[1]: http://google.com/ \"Google\"\r\n[2]: http://search.yahoo.com/\
-    \ \"Yahoo Search\"\r\n[3]: http://search.msn.com/ \"MSN Search\"\r\n</pre>\r\n\
-    \r\n代码块\r\n\r\n<pre>\r\n```python\r\ndef hello():\r\n    return True\r\n```\r\n\
-    </pre>\r\n\r\n自动链接\r\n\r\nMarkdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown\
-    \ 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：\r\n\r\n    <http://anwensf.com/>\r\n会转为：\r\n\
-    <http://anwensf.com/>\r\n\r\n一切就这么简单。Markdown之所以越来越流行,是因为它足够简单。试试吧～\r\n\r\n在线编辑器\r\
-    \n\r\n-  <http://dillinger.io/>\r\n-  <http://markable.in/editor/>\r\n- <http://anwensf.com/edit>\r\
-    \n\r\n浏览器插件\r\n\r\n-  MaDe (Chrome)\r\n\r\n\r\n参考文献：\r\n\r\n1. [为什么Markdown+R有较大概率成为科技写作主流？][1]\r\
-    \n2. [Markdown 语法说明(简体中文版)][2]\r\n3. [Markdown Syntax Documentation][3]\r\n4.\
-    \ [献给写作者的 Markdown 新手指南][4]\r\n\r\n[1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html\r\
-    \n[2]:http://wowubuntu.com/markdown/basic.html\r\n[3]:http://daringfireball.net/projects/markdown/syntax\r\
-    \n[4]:http://jianshu.io/p/q81RER"
-  published: 1349430103.0
-  sharetype: fire
-  slug: markdown
-  status: 0
-  tags: ask
-  title: !!python/str 'Markdown漫游指南'
-  updated: 1359171250.633043
   user_id: 1
