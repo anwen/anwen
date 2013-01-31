@@ -1,12 +1,103 @@
 body {
-	background-color: #eee;
-	padding-top: 60px;
-	padding-bottom: 40px;
+  position: relative;
+  padding-top: 40px;
 }
+
+body > .navbar {
+  font-size: 13px;
+}
+
+/* Change the docs' brand */
+body > .navbar .brand {
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+body > .navbar .brand:hover {
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+}
+
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
+
+/* Responsive
+-------------------------------------------------- */
+/* Desktop large
+------------------------- */
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
+  /* Unfloat brand */
+  body > .navbar-fixed-top .brand {
+    float: left;
+    margin-left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+  /* Remove any padding from the body */
+  body {
+    padding-top: 0;
+  }
+
+
+  /* Examples: modal */
+  .modal-example .modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+
+  .footer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+
+
 .navbar-inner1
 {
-	padding-left:20px;
-	padding-right:20px;
 	background-color:#1a94c9;
 	background-image:linear-gradient(top,#049cdb,#3a87ad);
 	background-repeat:repeat-x;
@@ -38,8 +129,14 @@ body {
 	font-weight:200;
 	line-height:1;
 	color:#fff;
-	padding:8px 20px 12px
+
 }
+
+
+body {
+	background-color: #eee;
+}
+
 
 .nav>li>a
 {
@@ -421,6 +518,11 @@ em
 .error a
 {
 	font-weight: bold;
+}
+
+.navbar-inverse .nav-collapse .nav > li > a,
+.navbar-inverse .nav-collapse .dropdown-menu a {
+color: #fff;
 }
 
 /*.avatar img{border-radius: 50%;}*/
