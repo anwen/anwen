@@ -19,12 +19,13 @@
 	height:50px;
 	left:-70px;
 	position:absolute;
-	background:url(img/default_avatar.gif) no-repeat #fcfcfc;
 	margin-top:-25px;
 	top:50%;
+/*	background:url(img/default_avatar.gif) no-repeat #fcfcfc;
 	-moz-box-shadow:1px 1px 0 #c2c2c2;
 	-webkit-box-shadow:1px 1px 0 #c2c2c2;
 	box-shadow:1px 1px 0 #c2c2c2
+*/
 }
 
 .comment .avatar img
