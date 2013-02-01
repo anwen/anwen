@@ -832,3 +832,15 @@
   id: null
   share_id: 6
   user_id: 1
+- _id: 50fc0268606ec50581e896b6
+  hitnum: 0
+  hittime: 1358400074.666809
+  id: null
+  share_id: 18
+  user_id: 26
+- _id: 510bcb1d606ec50bbf5291f0
+  hitnum: 0
+  hittime: 1359648758.945499
+  id: null
+  share_id: 19
+  user_id: 1

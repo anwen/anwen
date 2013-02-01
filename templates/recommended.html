@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block titlemore %}
+-创造和分享美好
+{% end %}
+{% block body %}
+
+<div class="container dialog">
+
+	<div class="description"></div>
+	<form accept-charset="UTF-8" action="/welcome" class="submit-email form-inline common-remote-form" data-remote="true" id="new_invite" method="post">
+		<p>安问 目前还在内测阶段，即将登场，提交你的邮件，当我们准备好了就会通知你</p>
+		<input class="input-large" id="invite_email" name="invite[email]" placeholder="Email" size="30" type="text" />
+		<input class="btn btn-info" data-loading-text="submitting" id="commit" name="commit" type="submit" value="提交" />
+		<br/>
+		<p class='form-error-message hide icon-warning-sign'></p>
+		<p class='form-info-message hide icon-warning-sign'></p>
+	</form>
+	<div class='form-successful-message hide icon-ok'>提交成功,我们将会在公开测试时通知您。</div>
+</div>
+{% end %}

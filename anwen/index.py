@@ -98,7 +98,13 @@ class TagHandler(BaseHandler):
             self.render("tage.html", name=name, shares=shares)
 
 
-class WelcomeHandle(BaseHandler):
+class WelcomeHandler(BaseHandler):
 
     def get(self):
         self.render("welcome.html")
+
+
+class RecommendedHandler(BaseHandler):
+
+    def get(self):
+        self.render("recommended.html")
