@@ -108,3 +108,9 @@ class RecommendedHandler(BaseHandler):
 
     def get(self):
         self.render("recommended.html")
+
+
+class CollectionsHandler(BaseHandler):
+
+    def get(self):
+        self.render("collections.html")
