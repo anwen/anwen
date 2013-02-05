@@ -1,5 +1,4 @@
-at server:
-
+deploy at server:
 cd /var/www/anwen
 git init .
 git config receive.denyCurrentBranch ignore
@@ -7,7 +6,6 @@ git config --bool receive.denyNonFastForwards false
 cd .git/hooks
 wget http://utsl.gen.nz/git/post-update
 chmod +x post-update
-...
 git checkout master
 
 at local:
@@ -15,10 +13,12 @@ git remote rm prod
 git remote add prod root@113.11.199.77:/var/www/anwen/
 git push prod
 
-
-if use mongodb on windows：
+mongodb
+windows：
 I:\tools\mongo\mongod.exe --logpath I:\tools\mongo\logs\mongodb.log --logappend --dbpath I:\tools\mongo\data --directoryperdb --serviceName MongoDB --install
 net start MongoDB
+linux:
+mongod --dbpath=/var/lib/ --smallfiles --fork --logpath=/data/db/log
 
 mongoexport -d dba22 -c foo -f x,y,a,b,c --csv -o ./result.csv
 
@@ -46,7 +46,6 @@ enabled=1
 yum info mongo-10gen-server
 yum install mongo-10gen-server
 ls /usr/bin/mongo
-/etc/init.d/mongod {start|stop|status|restart|reload|force-reload|condrestart}
 cat /etc/mongod.conf
 chkconfig mongod on
 
@@ -62,7 +61,6 @@ update-rc.d supervisord defaults
 
 supervisord
 supervisorctl stop all reload start anwen-8000
-mongod --dbpath=/var/lib/ --smallfiles --fork --logpath=/data/db/log
 sympy
 requests
 
