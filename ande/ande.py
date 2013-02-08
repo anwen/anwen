@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-# import tornado.web
+
 from json import dumps
 from anwen.base import BaseHandler
 from brain import get_andesay

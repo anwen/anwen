@@ -34,6 +34,9 @@ class BaseModel(Document):
     __database__ = options.db['name']
     use_dot_notation = True
 
+    def one_by(self, key_name, key):
+        return self.find_one({key_name: key})
+
     def by_id(self, id):
         return self.find_one({'_id': ObjectId(id)})
 

@@ -8,6 +8,7 @@ from anwen.user import SettingHandler, ChangePassHandler, UsersHandler
 from anwen.share import ShareHandler, EntryHandler, CommentHandler, LikeHandler
 from anwen.share import FeedHandler, SharesHandler, CommentsHandler
 from ande.ande import AndeHandler
+from ande.videomeet import VideoMeetHandler, VideoMsgHandler
 from anwen.talk import TalkHandler, ChatSocketHandler
 from anwen.talk import MsgNewHandler, MsgUpdatesHandler
 from anwen.other import EditHandler, ErrHandler
@@ -45,6 +46,8 @@ handlers = [
     (r'/changepass', ChangePassHandler),
 
     (r'/ande', AndeHandler),
+    (r'/videomeet', VideoMeetHandler),
+    (r'/videomeet/message', VideoMsgHandler),
 
     (r"/chat", TalkHandler),
     (r"/chats", TalkHandler),
