@@ -68,7 +68,6 @@ requests
 
 supervisorctl reread
 
-
 for i in {6..9}
     do supervisorctl -c supervisord.conf restart anwen:myapp$i
 done
@@ -84,10 +83,17 @@ sudo apt-get install texlive-xetex
 
 pandoc -N --template=mytemplate.tex --variable mainfont=WenQuanYi\ Micro\ Hei\ Mono --variable fontsize=14pt --variable version=1.9 aw.md --latex-engine=xelatex --toc -o aw.pdf
 
-
-
-
 ⊙ω⊙
 
-
 haproxy -f haproxy.cfg
+
+cd ~/.ssh 
+ssh-keygen -t rsa -C 'askender43@mail.com'
+ssh-agent
+ssh-add ~/.ssh/id_rsa_aw_gh
+
+# Default github user
+Host github.com
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/id_rsa
