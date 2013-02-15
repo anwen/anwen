@@ -5,11 +5,13 @@
 ### 阅读
 * [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html )
 * [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)
+* [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)
 * [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)
 * [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)
 * [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)
 * [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)
 * [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)
+* [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)
 
 ### 生活
 * [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)

@@ -16,11 +16,14 @@
 - [Python-China](http://python-china.org/ ) 
 - [叩叮](http://codinn.com/  "联结开发者") 
 
-### 读写
+### 读
 - [Google 阅读器](https://www.google.com/reader/ ) 
 - [阅FM](http://yue.fm/ ) 
 - [Solidot](http://www.solidot.org/ "奇客的资讯，重要的东西")
 - [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/ )
+
+### 写
+- [OhLife](http://ohlife.com/ "OhLife helps you remember what's happened in your life")
 - [notepad.cc](http://notepad.cc/) 
 
 ### 视频
@@ -39,6 +42,7 @@
 - [500px is Photography](http://500px.com/)  The world's best photo sharing.
 
 ### 互联网创业
+- [创意气球 | GuruDigger](http://gurudigger.com/)
 - [36氪](http://www.36kr.com/ "关注互联网创业") 
 - [17Startup](http://www.17startup.com/ "让创业不再孤单") 
 

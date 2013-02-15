@@ -1,6 +1,6 @@
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
-  hitnum: 236
+  hitnum: 336
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -39,7 +39,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 241
+  hitnum: 323
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -63,7 +63,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
-  hitnum: 119
+  hitnum: 171
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -116,7 +116,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
-  hitnum: 116
+  hitnum: 164
   id: 14
   likenum: 0
   markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
@@ -133,7 +133,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
-  hitnum: 130
+  hitnum: 181
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
@@ -152,7 +152,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
-  hitnum: 103
+  hitnum: 153
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -170,7 +170,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e2
   commentnum: 0
-  hitnum: 123
+  hitnum: 159
   id: 12
   likenum: 0
   markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
@@ -190,7 +190,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
-  hitnum: 110
+  hitnum: 136
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
@@ -206,7 +206,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
-  hitnum: 73
+  hitnum: 98
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
@@ -221,7 +221,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
-  hitnum: 180
+  hitnum: 261
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -239,7 +239,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
-  hitnum: 89
+  hitnum: 117
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
@@ -256,7 +256,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
-  hitnum: 77
+  hitnum: 102
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
@@ -273,7 +273,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e1
   commentnum: 0
-  hitnum: 255
+  hitnum: 339
   id: 11
   likenum: 0
   markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
@@ -297,7 +297,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
-  hitnum: 267
+  hitnum: 353
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -342,7 +342,7 @@
   user_id: 1
 - _id: 50fc0267606ec50580ce9fe2
   commentnum: 1
-  hitnum: 35
+  hitnum: 84
   id: 18
   likenum: 0
   markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
@@ -354,33 +354,9 @@
   title: !!python/str '机器人不太好用哎'
   updated: 1359182204.697195
   user_id: 26
-- _id: 50e44d08606ec51c6ab042e0
-  commentnum: 0
-  hitnum: 148
-  id: 10
-  likenum: 0
-  markdown: !!python/str "### 阅读\r\n* [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
-    \ )\r\n* [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
-    \n* [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
-    \n* [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n* [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
-    \n* [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n* [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
-    \n\r\n### 生活\r\n* [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 微小说\r\n\
-    * [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
-    \n\r\n### 技术\r\n* [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
-    \n* [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n* [程序员能力矩阵 Programmer\
-    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
-    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
-  published: 1349430399.0
-  sharetype: book
-  slug: post-share
-  status: 0
-  tags: list
-  title: !!python/str '好文链接'
-  updated: 1359171714.232047
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042dc
   commentnum: 0
-  hitnum: 103
+  hitnum: 125
   id: 6
   likenum: 0
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
@@ -429,7 +405,7 @@
   user_id: 1
 - _id: 510bcb1d606ec50bbe416844
   commentnum: 0
-  hitnum: 2
+  hitnum: 60
   id: 19
   likenum: 0
   markdown: !!python/str "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
@@ -471,9 +447,107 @@
   title: music-share:Always Look on the Bright Side of Life
   updated: 1359727389.674634
   user_id: 1
+- _id: 5117186e606ec50bbf529207
+  commentnum: 0
+  hitnum: 35
+  id: 20
+  likenum: 0
+  markdown: !!python/str "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
+    \ height=\"27\" width=\"207\" quality=\"best\" wmode=\"opaque\">\r\n</embed>\r\
+    \n\r\nMagic boulevard（魔力大道）    作曲／演唱：Fran&ccedil;ois Feldman \r\n\r\n    Elle\
+    \ voit des films\r\n    Cent fois les mêmes\r\n    Les mêmes crimes\r\n    Et\
+    \ les mêmes scènes\r\n    \r\n    Elle travaille seule\r\n    Elle place les gens\r\
+    \n    Dernier fauteuil\r\n    Ou premier rang\r\n    \r\n    Les phrases d’amour\r\
+    \n    Sur grand écran\r\n    La nuit, le jour\r\n    &Ccedil;a lui fait du vent\r\
+    \n    \r\n    Elle vit comme &ccedil;a\r\n    L’amour des autres\r\n    Mais quelques\
+    \ fois\r\n    Y a l’image qui saute\r\n    \r\n    Elle vit sa vie dans le noir,\
+    \ bizarre\r\n    Pour toujours elle maquille son désespoir\r\n    Au magic’boul’vard\r\
+    \n    \r\n    Elle laisse tranquille\r\n    Les amoureux\r\n    Qui ratent le\
+    \ film\r\n    En fermant les yeux\r\n    \r\n    Elle vend ses glaces\r\n    Avec\
+    \ ses rêves\r\n    Un sourire passe\r\n    Au bord de ses lèvres\r\n    \r\n \
+    \   La demoiselle\r\n    A lampe de poche\r\n    Se voudrait belle\r\n    Pour\
+    \ faire du cinoche\r\n    \r\n    Parfois quelle chance\r\n    La salle est vide\r\
+    \n    Pour une séance\r\n    Elle devient Ingrid\r\n    \r\n    Elle vit sa vie\
+    \ dans le noir, bizarre\r\n    Pour toujours elle maquille son désespoir\r\n \
+    \   Au magic’boul’vard\r\n    \r\n    Elle voit passer\r\n    Des gens connus\r\
+    \n    Des gens glacés\r\n    Qui ne parlent plus\r\n    \r\n    Jamais la foule\r\
+    \n    Ne prend sa main\r\n    Ses larmes coulent\r\n    Avec le mot FIN\r\n\r\n\
+    \    她一部電影要看上百遍 \r\n    同樣的罪行 \r\n    同樣的場景 \r\n\r\n    \r\n    她工作的時候總是一個人 \r\
+    \n    她幫人領位 \r\n    找最後一把椅子 \r\n    或是第一排的位置 \r\n    \r\n    大銀幕上日日夜夜的愛情對白 \r\n\
+    \    就像風一般在她耳邊來去 \r\n    \r\n    她就這麼看淡了別人的愛情 \r\n    但有的時候 \r\n    一個畫面也會讓她感動\
+    \ \r\n    \r\n    她在黑暗中奇怪地生活 \r\n    在這條魔力大道上 \r\n    她永遠遮掩著她的絕望 \r\n    \r\n\
+    \    她靜靜地不去打擾那些情人們 \r\n    他們閉著眼睛 \r\n    錯過了電影畫面 \r\n    \r\n    她把夢想連同冰激淋一起出售\
+    \ \r\n    一個微笑不經意地劃過 \r\n    她的唇邊 \r\n    \r\n    拿著手電筒的她 \r\n    感覺自己很美 \r\n\
+    \    可以去做電影明星 \r\n    \r\n    有的時候劇場裡空無一人 \r\n    整個電影就是她的演出 \r\n    她就是英格麗褒曼\
+    \ \r\n    \r\n    她看著來來往往的人群 \r\n    那些她熟悉的人們 \r\n    那些冰冷的人們 \r\n    從來不說一個字\
+    \ \r\n    \r\n    從來沒有人 \r\n    與她握手 \r\n    她的眼淚於是流下來 \r\n    在銀幕上出現「劇終」的時候"
+  published: 1360468078.013347
+  sharetype: music
+  slug: music_Magic_boulevard
+  status: 0
+  tags: ''
+  title: music-share:Magic boulevard
+  updated: 1360468172.852069
+  user_id: 1
+- _id: 51171b3a606ec50bbe41685e
+  commentnum: 0
+  hitnum: 35
+  id: 21
+  likenum: 0
+  markdown: !!python/str "Stopping by Woods on a Snowy Evening    BY ROBERT FROST\r\
+    \n\r\nWhose woods these are I think I know.   \r\nHis house is in the village\
+    \ though;   \r\nHe will not see me stopping here   \r\nTo watch his woods fill\
+    \ up with snow.   \r\n\r\nMy little horse must think it queer   \r\nTo stop without\
+    \ a farmhouse near   \r\nBetween the woods and frozen lake   \r\nThe darkest evening\
+    \ of the year.   \r\n\r\nHe gives his harness bells a shake   \r\nTo ask if there\
+    \ is some mistake.   \r\nThe only other sound’s the sweep   \r\nOf easy wind and\
+    \ downy flake.   \r\n\r\nThe woods are lovely, dark and deep.   \r\nBut I have\
+    \ promises to keep,   \r\nAnd miles to go before I sleep,   \r\nAnd miles to go\
+    \ before I sleep.\r\n\r\n\r\n此诗是现代英语短篇杰作, 格律严谨，用语天然，意境含蓄。雪夜林畔小驻。\r\n\r\n\r\n1.\
+    \ <http://en.wikipedia.org/wiki/Stopping_by_Woods_on_a_Snowy_Evening>"
+  published: 1360468794.634333
+  sharetype: book
+  slug: poem_Stopping_by_Woods_on_a_Snowy_Evening
+  status: 0
+  tags: ''
+  title: poem share:Stopping by Woods on a Snowy Evening
+  updated: 1360470014.707601
+  user_id: 1
+- _id: 5117245c606ec50bbe416860
+  commentnum: 0
+  hitnum: 40
+  id: 22
+  likenum: 0
+  markdown: !!python/str "<object width=\"500\" height=\"74\"><param name=\"movie\"\
+    \ value=\"http://box.baidu.com/widget/flash/song.swf?name=Oh%20My%20Love&artist=John%20Lennon\"\
+    ></param><param name=\"wmode\" value=\"opaque\"><param name=\"allowscriptaccess\"\
+    \ value=\"always\"></param><embed src=\"http://box.baidu.com/widget/flash/song.swf?name=Oh%20My%20Love&artist=John%20Lennon\"\
+    \ type=\"application/x-shockwave-flash\" wmode=\"opaque\" allowscriptaccess=\"\
+    always\" width=\"500\" height=\"74\"></embed></object>\r\n\r\n词：Lennon, Ono  曲：Lennon,\
+    \ Ono\r\n\r\n    Oh my love for the first time in my life.\r\n    是我生命最初的爱\r\n\
+    \    My eyes are wide open.\r\n    使我不再紧闭双眼\r\n    Oh my love 4 the first time\
+    \ in my life.\r\n    是我生命最初的爱\r\n    My eyes can see.\r\n    使我清楚看见了\r\n    l\
+    \ see the wind,I see the trees.\r\n    我看见了清风，我感受了树\r\n    Everything is clear\
+    \ in my heart.\r\n    我的心如明镜\r\n    I see the clouds,I see the sky.\r\n    我看到云,我感受天空\r\
+    \n    Everything is clear in our world.\r\n    我们的世界从此风轻云淡\r\n\r\n    Oh my love\
+    \ for the first time in my life.\r\n    是我生命最初的爱\r\n    My mind is wide open.\r\
+    \n    我的意识如新生\r\n    Oh my love 4 the first time in my life.\r\n    是我生命最初的爱\r\
+    \n    My mind can feel.\r\n    我的神智不再封闭\r\n    I feel sorrow,I feel dreams.\r\n\
+    \    我看到悲伤，我感受了梦\r\n    Everything is clear in my heart.\r\n    我的心如明镜\r\n   \
+    \ I feel life,I feel love.\r\n    我感受生活,我感受爱\r\n    Everything is clear in our\
+    \ world.\r\n    我们的世界从此风轻云淡.\r\n\r\n有人评价：如果让人类选一首歌在宇宙中向所有的星球播放，我选这首《Oh My Love》，尽管违背黑暗森林法则，我还是很想在浩瀚的宇宙中听这首歌。\r\
+    \n\r\n\r\n1. <http://en.wikipedia.org/wiki/Oh_My_Love>  墙外\r\n2. <http://www.xiami.com/song/detail/id/1122173>"
+  published: 1360471132.18352
+  sharetype: music
+  slug: music_Oh_My_Love
+  status: 0
+  tags: ''
+  title: music-share:Oh My Love
+  updated: 1360485891.018391
+  user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
-  hitnum: 116
+  hitnum: 150
   id: 8
   likenum: 0
   markdown: !!python/str "### 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/\
@@ -481,16 +555,18 @@
     \ )\r\n- [Hacker News](http://news.ycombinator.com/ )\r\n- [StackOverflow](http://stackoverflow.com\
     \ )\r\n- [SegmentFault](http://segmentfault.com )\r\n- [德问]( http://www.dewen.org\
     \ \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n- [Python-China](http://python-china.org/\
-    \ ) \r\n- [叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 读写\r\n- [Google 阅读器](https://www.google.com/reader/\
+    \ ) \r\n- [叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 读\r\n- [Google 阅读器](https://www.google.com/reader/\
     \ ) \r\n- [阅FM](http://yue.fm/ ) \r\n- [Solidot](http://www.solidot.org/ \"奇客的资讯，重要的东西\"\
     )\r\n- [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/ )\r\
-    \n- [notepad.cc](http://notepad.cc/) \r\n\r\n### 视频\r\n- [Vimeo](http://vimeo.com/\
-    \ 'outside the wall')\r\n\r\n### 音乐\r\n- [Last.fm](http://cn.last.fm/ )\r\n- [巨鲸](http://www.top100.cn/\
-    \ )\r\n- [虾米](http://www.xiami.com/ )\r\n- [亦歌](http://www.1g1g.com/ )\r\n- [豆瓣电台](http://douban.fm/\
-    \ )\r\n- [Spotify](http://www.spotify.com/us/ \"A world of music\")\r\n\r\n###\
-    \ 图片\r\n- [imgur:简单图片分享](http://imgur.com/ \"the simple image sharer\")\r\n- [500px\
-    \ is Photography](http://500px.com/)  The world's best photo sharing.\r\n\r\n\
-    ### 互联网创业\r\n- [36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n- [17Startup](http://www.17startup.com/\
+    \n\r\n### 写\r\n- [OhLife](http://ohlife.com/ \"OhLife helps you remember what's\
+    \ happened in your life\")\r\n- [notepad.cc](http://notepad.cc/) \r\n\r\n### 视频\r\
+    \n- [Vimeo](http://vimeo.com/ 'outside the wall')\r\n\r\n### 音乐\r\n- [Last.fm](http://cn.last.fm/\
+    \ )\r\n- [巨鲸](http://www.top100.cn/ )\r\n- [虾米](http://www.xiami.com/ )\r\n- [亦歌](http://www.1g1g.com/\
+    \ )\r\n- [豆瓣电台](http://douban.fm/ )\r\n- [Spotify](http://www.spotify.com/us/\
+    \ \"A world of music\")\r\n\r\n### 图片\r\n- [imgur:简单图片分享](http://imgur.com/ \"\
+    the simple image sharer\")\r\n- [500px is Photography](http://500px.com/)  The\
+    \ world's best photo sharing.\r\n\r\n### 互联网创业\r\n- [创意气球 | GuruDigger](http://gurudigger.com/)\r\
+    \n- [36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n- [17Startup](http://www.17startup.com/\
     \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n- [阮一峰](http://www.ruanyifeng.com/home.html )\r\
     \n\r\n### 其他\r\n- [google whats-at-stake](https://www.google.com/intl/zh-CN/takeaction/whats-at-stake/)\r\
     \n\r\n### 小玩意\r\n- [在线键盘钢琴](http://zythum.free.bg/Piano/  “需要切换为英文输入法”)\r\n\r\n\
@@ -501,5 +577,31 @@
   status: 0
   tags: list site
   title: !!python/str '站点分享'
-  updated: 1359731460.556181
+  updated: 1360507125.769937
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e0
+  commentnum: 0
+  hitnum: 185
+  id: 10
+  likenum: 0
+  markdown: !!python/str "### 阅读\r\n* [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n* [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
+    \n* [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
+    \n* [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
+    \n* [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n* [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
+    \n* [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n* [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
+    \n* [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
+    \n\r\n### 生活\r\n* [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 微小说\r\n\
+    * [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
+    \n\r\n### 技术\r\n* [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
+    \n* [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n* [程序员能力矩阵 Programmer\
+    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
+  published: 1349430399.0
+  sharetype: book
+  slug: post-share
+  status: 0
+  tags: list
+  title: !!python/str '好文链接'
+  updated: 1360586535.698069
   user_id: 1
