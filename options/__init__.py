@@ -29,7 +29,7 @@ log = {
     }
 }
 
-MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 4
+MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 2
 
 node_about = {
     'home': {

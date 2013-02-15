@@ -6,6 +6,8 @@ git config --bool receive.denyNonFastForwards false
 cd .git/hooks
 wget http://utsl.gen.nz/git/post-update
 chmod +x post-update
+# after push
+cd ../..
 git checkout master
 
 at local:
@@ -71,3 +73,21 @@ for i in {6..9}
     do supervisorctl -c supervisord.conf restart anwen:myapp$i
 done
 nginx -s reload
+
+pandoc
+texlive-xetex
+texlive-latex-recommended
+texlive-latex-extra
+texlive-fonts-recommended
+sudo apt-get install pandoc
+sudo apt-get install texlive-xetex
+
+pandoc -N --template=mytemplate.tex --variable mainfont=WenQuanYi\ Micro\ Hei\ Mono --variable fontsize=14pt --variable version=1.9 aw.md --latex-engine=xelatex --toc -o aw.pdf
+
+
+
+
+⊙ω⊙
+
+
+haproxy -f haproxy.cfg

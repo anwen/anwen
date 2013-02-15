@@ -1,1 +1,7 @@
-pandoc -N --template=mytemplate.tex --variable mainfont=WenQuanYi\ Micro\ Hei\ Mono --variable fontsize=14pt --variable version=1.9 z-1.md --latex-engine=xelatex --toc -o anwen-z-1.pdf
+texlive
+texlive-latex-recommended
+texlive-latex-extra
+
+pandoc -N --template=mytemplate.tex -V title-meta="resume of libo" -V author-meta="askender" -V mainfont="WenQuanYi Micro Hei" -V fontsize=12pt -V version=0.1 askender.md --latex-engine=xelatex -o askender.pdf
+
+pandoc -N --template=mytemplate.tex -V mainfont=WenQuanYi\ Micro\ Hei\ Mono -V fontsize=16pt -V version=0.1 anwen_z_1.md --latex-engine=xelatex --toc -o anwen_z_1.pdf
