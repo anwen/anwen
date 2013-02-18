@@ -1,8 +1,8 @@
 from fabric.api import run, cd, env, hide
 from fabric.api import local
 
-env.user = 'ask'
-env.hosts = ['local', '58']
+# env.user = 'ask'
+# env.hosts = ['local', '58']
 # env.key_filename = ["/home/ask/.ssh"]
 
 
