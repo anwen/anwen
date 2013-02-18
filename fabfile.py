@@ -1,10 +1,10 @@
 from fabric.api import run, cd, env, hide
 from fabric.api import local
 
-
-env.user = "root"
-env.hosts = ['host1', 'explicit_user@host2', 'host3']
+env.user = 'ask'
+env.hosts = ['local', '58']
 # env.key_filename = ["/home/ask/.ssh"]
+
 
 def hello():
     print("Hello world!")
@@ -24,6 +24,7 @@ def commit():
 
 def push():
     local("git push")
+    local("git push prod")
 
 
 def prepare_deploy():
@@ -33,15 +34,11 @@ def prepare_deploy():
 
 
 def deploy():
+    # todo
     code_dir = '/home/lb/'
     with cd(code_dir):
         host_type()
         run("git pull")
-        run("touch app.wsgi")
-
-
-env.user = 'ask'
-env.hosts = ['local', '58']
 
 
 def print_user():
