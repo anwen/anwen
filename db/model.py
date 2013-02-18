@@ -207,13 +207,13 @@ class Tag(BaseModel):
         'hittime': time.time,
     }
 
-    def new(self, tag, share_id):
+    def new(self, doc):
+        tag = doc['name']
+        share_id = doc['share_ids']
         res = self.find_one({'name': tag})
         if res:
             share_list = res.share_ids.split(' ')
-            if share_id in share_list:
-                pass
-            else:
+            if share_id not in share_list:
                 res.share_ids = '%s %s' % (res.share_ids, share_id)
         else:
             res = self()

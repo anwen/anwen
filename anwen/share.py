@@ -48,7 +48,11 @@ class ShareHandler(BaseHandler):
             user.user_leaf += 10
             user.save()
         for i in tags.split(' '):
-            Tag.new(i, share.id)
+            doc = {
+                'name': i,
+                'share_ids': share.id
+            }
+            Tag.new(doc)
         self.redirect("/share/" + str(share.id))
 
 
@@ -104,7 +108,8 @@ class EntryHandler(BaseHandler):
                 post.score = 100 + post.id - post.user_id + post.commentnum * 3
                 post.score += post.likenum * 4 + post.hitnum * 0.01
                 post.score += randint(1, 999) * 0.001
-                common_tags = [i for i in post.tags.split(' ') if i in share.tags.split(' ')]
+                common_tags = [i for i in post.tags.split(
+                    ' ') if i in share.tags.split(' ')]
                 post.score += len(common_tags)
                 if post.sharetype == share.sharetype:
                     post.score += 5
