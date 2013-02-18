@@ -40,7 +40,9 @@ btn2.disabled = true;
 btn3.disabled = true;
 var pc1,pc2;
 var localstream;
-
+var sdpConstraints = {'mandatory': {
+                        'OfferToReceiveAudio':true, 
+                        'OfferToReceiveVideo':true }};
 function trace(text) {
   // This function is used for logging.
   if (text[text.length - 1] == '\n') {
@@ -95,7 +97,10 @@ function gotDescription1(desc){
   pc1.setLocalDescription(desc);
   trace("Offer from pc1 \n" + desc.sdp);
   pc2.setRemoteDescription(desc);
-  pc2.createAnswer(gotDescription2);
+  // Since the "remote" side has no media stream we need
+  // to pass in the right constraints in order for it to
+  // accept the incoming offer of audio and video.
+  pc2.createAnswer(gotDescription2, null, sdpConstraints);
 }
 
 function gotDescription2(desc){

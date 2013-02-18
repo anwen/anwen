@@ -40,12 +40,16 @@ btn3.disabled = true;
 var pc1_local, pc1_remote;
 var pc2_local, pc2_remote;
 var localstream;
+var sdpConstraints = {'mandatory': {
+                        'OfferToReceiveAudio':true, 
+                        'OfferToReceiveVideo':true }};
 
 function trace(text) {
   // This function is used for logging.
   if (text[text.length - 1] == '\n') {
     text = text.substring(0, text.length - 1);
   }
+  console.log(text);
   // console.log((performance.now() / 1000).toFixed(3) + ": " + text);
 }
 
@@ -105,7 +109,10 @@ function gotDescription1Local(desc) {
   pc1_local.setLocalDescription(desc);
   trace("Offer from pc1_local \n" + desc.sdp);
   pc1_remote.setRemoteDescription(desc);
-  pc1_remote.createAnswer(gotDescription1Remote);
+  // Since the "remote" side has no media stream we need
+  // to pass in the right constraints in order for it to
+  // accept the incoming offer of audio and video.
+  pc1_remote.createAnswer(gotDescription1Remote, null, sdpConstraints);
 }
 
 function gotDescription1Remote(desc) {
@@ -118,7 +125,10 @@ function gotDescription2Local(desc) {
   pc2_local.setLocalDescription(desc);
   trace("Offer from pc2_local \n" + desc.sdp);
   pc2_remote.setRemoteDescription(desc);
-  pc2_remote.createAnswer(gotDescription2Remote);
+  // Since the "remote" side has no media stream we need
+  // to pass in the right constraints in order for it to
+  // accept the incoming offer of audio and video.
+  pc2_remote.createAnswer(gotDescription2Remote, null, sdpConstraints);
 }
 
 function gotDescription2Remote(desc) {
@@ -174,5 +184,3 @@ function handleCandidate(candidate, dest, prefix, type) {
 </script>
 </body>
 </html>
-
-

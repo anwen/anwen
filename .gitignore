@@ -8,11 +8,9 @@
 *.swp
 
 # private files
-private
 server_setting.py
 User.yaml
 Ande.yaml
 
 # temp files
-temp
 .gitmodules

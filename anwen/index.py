@@ -11,7 +11,7 @@ from pymongo import DESCENDING  # ASCENDING
 
 
 class IndexHandler(BaseHandler):
-    # will make home-page diff form node-page  todo
+    # will make home-page different form node-page  todo
     def get(self):
         page = self.get_argument("page", 1)
         share_res = Share.find().sort(

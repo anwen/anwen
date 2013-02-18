@@ -104,6 +104,8 @@ class EntryHandler(BaseHandler):
                 post.score = 100 + post.id - post.user_id + post.commentnum * 3
                 post.score += post.likenum * 4 + post.hitnum * 0.01
                 post.score += randint(1, 999) * 0.001
+                common_tags = [i for i in post.tags.split(' ') if i in share.tags.split(' ')]
+                post.score += len(common_tags)
                 if post.sharetype == share.sharetype:
                     post.score += 5
                 if self.current_user:
