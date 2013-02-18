@@ -23,7 +23,7 @@ def commit():
 
 
 def push():
-    local("git push")
+    local("git push aw_gh")
     local("git push prod")
 
 
