@@ -139,7 +139,7 @@ class TestIndex(HttpTest):
 
 
 class TestUsers(HttpTest):
-    res_url = '/userss/'
+    res_url = '/users/'
     clist = 'user_email', 'user_pass'
 
     def set_up(self):
