@@ -58,10 +58,13 @@ if (navigator.mozGetUserMedia) {
   // Attach a media stream to an element.
   attachMediaStream = function(element, stream) {
     element.src = webkitURL.createObjectURL(stream);
+    console.log(element.src);
   };
 
   reattachMediaStream = function(to, from) {
     to.src = from.src;
+    console.log(from.src);
+    console.log(to.src);
   };
 
   // The representation of tracks in a stream is changed in M26.

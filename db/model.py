@@ -249,14 +249,10 @@ class Room(BaseModel):
         'id': int,
         'user1': basestring,
         'user2': basestring,
-        'user1_connected': bool,
-        'user2_connected': bool,
         'room_key': basestring,
         'meettime': float,
     }
     default_values = {
-        'user1_connected': False,
-        'user2_connected': False,
         'meettime': time.time,
     }
 
@@ -277,17 +273,12 @@ class Room(BaseModel):
         elif not self.user2:
             self.user2 = user
         else:
-            raise RuntimeError('room is full')
+            return False
+            # raise RuntimeError('room is full')
         self.save()
 
     def __str__(self):
-        str = '['
-        if self.user1:
-            str += "%s-%r" % (self.user1, self.user1_connected)
-        if self.user2:
-            str += ", %s-%r" % (self.user2, self.user2_connected)
-        str += ']'
-        return str
+        return "[user1:%s user2:%s]" % (self.user1, self.user2)
 
     def get_other_user(self, user):
         if user == self.user1:
@@ -303,16 +294,12 @@ class Room(BaseModel):
     def remove_user(self, user):
         if user == self.user2:
             self.user2 = None
-            self.user2_connected = False
         if user == self.user1:
             if self.user2:
                 self.user1 = self.user2
-                self.user1_connected = self.user2_connected
                 self.user2 = None
-                self.user2_connected = False
             else:
                 self.user1 = None
-                self.user1_connected = False
         if self.get_occupancy() > 0:
             self.save()
         else:

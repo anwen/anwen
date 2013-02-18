@@ -8,6 +8,9 @@ import json
 import jinja2
 import options
 import threading
+from db import Room, VideoMsg
+from log import logger
+
 
 jinja_environment = jinja2.Environment(
     loader=jinja2.FileSystemLoader(
@@ -33,8 +36,8 @@ def sanitize(key):
     return re.sub('[^a-zA-Z0-9\-]', '-', key) if key else None
 
 
-def make_client_id(room, user):
-    return room.key().id_or_name() + '/' + user
+def make_client_id(room_key, user):
+    return '%s/%s' % (room_key, user)
 
 
 def make_pc_config(stun_server, turn_server, ts_pwd):
@@ -51,6 +54,7 @@ def make_pc_config(stun_server, turn_server, ts_pwd):
 
 
 def create_channel(room, user, duration_minutes):
+    # todo
     client_id = make_client_id(room, user)
     return client_id, duration_minutes
 
@@ -73,33 +77,66 @@ def maybe_add_fake_crypto(message):
     return message
 
 
-def handle_message(room, user, message):
+def get_saved_messages(client_id):
+    return VideoMsg.find({'client_id': client_id})
+
+
+def delete_saved_messages(client_id):
+    messages = get_saved_messages(client_id)
+    for message in messages:
+        logging.info('Deleted the saved message for ' + client_id)
+
+
+def on_message(room, user, message):
+    client_id = make_client_id(room, user)
+    logging.info('message: ' + message)
+    res = {
+        'client_id': client_id,
+        'msg': message,
+    }
+    VideoMsg.new(res)
+    logging.info('Delivered message to user ' + user)
+
+
+def handle_message(room_key, user, message):
     message_obj = json.loads(message)
-    other_user = user
-    room_key = room
+    room = Room.by_room_key(room_key)
+    other_user = room.get_other_user(user) if room else None
     if message_obj['type'] == 'bye':
         # This would remove the other_user in loopback test too.
         # So check its availability before forwarding Bye message.
+        delete_saved_messages(make_client_id(room_key, user))
+        room.remove_user(user)
         logging.info('User ' + user + ' quit from room ' + room_key)
         logging.info('Room ' + room_key + ' has state ' + str(room))
-    if other_user:
+
+        if other_user and other_user != user:
+            # channel_send_message(
+            #     make_client_id(room, other_user), '{"type":"bye"}')
+            logging.info('Sent BYE to ' + other_user)
+        return 'bye'
+    if other_user or room_key == '1':
         if message_obj['type'] == 'offer':
             # Special case the loopback scenario.
-            if other_user == user:
+            if other_user == user or room_key == '1':
                 message = make_loopback_answer(message)
+                return message
             # Workaround Chrome bug.
             # Insert a=crypto line into offer from FireFox.
             # TODO(juberti): Remove this call.
             message = maybe_add_fake_crypto(message)
-        on_message(room, other_user, message)
+            message = message.replace("\"offer\"", "\"answer\"")
+        if room_key == '1':
+            return message
+        if other_user:
+            on_message(room_key, other_user, message)
+        client_id = make_client_id(room_key, user)
+        messages = get_saved_messages(client_id)
+        message = ''
+        for i in messages:
+            message = i.msg
+        logger.debug(message)
         return message
-
-def on_message(room, user, message):
-    logging.info('message: ' + message)
-    if room:
-        logging.info('Delivered message to user ' + user)
-    else:
-        logging.info('Saved message for user ' + user)
 
 
 def make_media_constraints(hd_video):
@@ -178,24 +215,35 @@ class VideoMeetHandler(BaseHandler):
         user = None
         initiator = 0
         with LOCK:
-            room = None
+            # room = None
+            room = Room.by_room_key(room_key)
             if not room and debug != "full":
                 # New room.
                 user = generate_random(8)
-                if debug != 'loopback':
-                    initiator = 0
-                else:
+                if debug == 'loopback':
                     initiator = 1
-            elif room and 1 == 1 and debug != 'full':
+                    info = 'user0 %s added to test room %s' % (user, room_key)
+                    logger.debug(info)
+                else:
+                    initiator = 0
+                    room = Room.new({'room_key': room_key})
+                    room.add_user(user)
+                    info = 'user1 %s added to new room %s' % (user, room_key)
+                    logger.debug(info)
+            elif room and room.get_occupancy() == 1 and debug != 'full':
                 # 1 occupant.
                 user = generate_random(8)
+                room.add_user(user)
+                info = 'user2 %s added to room %s' % (user, room_key)
+                logger.debug(info)
                 initiator = 1
             else:
                 # 2 occupants (full).
                 template = jinja_environment.get_template('full.html')
-                self.response.out.write(
+                self.write(
                     template.render({'room_key': room_key}))
-                logging.info('Room ' + room_key + ' is full')
+                info = 'room %s is full' % (room_key)
+                logger.debug(info)
                 return
         room_link = 'http://%s/videomeet?r=%s' % (self.request.host, room_key)
         room_link = append_url_arguments(self.request, room_link)
@@ -220,22 +268,29 @@ class VideoMeetHandler(BaseHandler):
 
         template = jinja_environment.get_template(target_page)
         self.write(template.render(template_values))
-        logging.info('User ' + user + ' added to room ' + room_key)
 
 
 class VideoMsgHandler(BaseHandler):
     def post(self):
         message = self.request.body
+        check = self.get_argument('check', None)
         room_key = self.get_argument('r')
         user = self.get_argument('u')
         logging.info('message is ' + message)
         logging.info('room_key is ' + room_key)
         logging.info('user is ' + user)
         with LOCK:
-            room = room_key
-            if room:
-                message = handle_message(room, user, message)
-                logging.info('message echo ' + message)
+            room = Room.by_room_key(room_key)
+            if check:
+                if room_key == '1':
+                    status = 'True'
+                else:
+                    status = str(room.has_user(user) and room.get_occupancy() == 2)
+                self.write(status)
+            elif room_key:
+                message = handle_message(room_key, user, message)
+                info = 'echo message %s' % message
+                logger.debug(info)
                 self.write(message)
             else:
                 logging.warning('Unknown room ' + room_key)

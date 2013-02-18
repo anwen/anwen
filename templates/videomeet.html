@@ -132,7 +132,7 @@
 
   function resetStatus() {
     if (!initiator) {
-      setStatus("Waiting for someone to join: <a href=\"{{ room_link }}\">{{ room_link }}</a>");
+      setStatus("Waiting for someone to join: <a href=\"{{ room_link }}\">{{ room_link }}</a> or <a href=\"videomeet?r=1&debug=loopback\">test yourself</a>");
     } else {
       setStatus("Initializing...");
     }
@@ -171,9 +171,9 @@
     console.log('Channel error.');
   }
 
-  // todo !!!
   function onChannelClosed() {
     console.log('Channel closed.');
+    sendMessage({type: 'bye'});
   }
 
   function openChannel(channelToken) {
@@ -221,15 +221,15 @@
     // videoTracks = localStream.getVideoTracks();
     // audioTracks = localStream.getAudioTracks();
     if (videoTracks.length > 0)
-      console.log('Using Video device: ' + videoTracks[0].label);
+      console.log('remote Video device: ' + videoTracks[0].label);
     if (audioTracks.length > 0)
-      console.log('Using Audio device: ' + audioTracks[0].label);
+      console.log('remote Audio device: ' + audioTracks[0].label);
     console.log(videoTracks.length);
     console.log(remoteVideo.currentTime);
-    if (videoTracks.length === 0 || remoteVideo.currentTime > 0) {
+    if (videoTracks.length === 0 || remoteVideo.currentTime > 0 || initiator == 1) {
       transitionToActive();
     } else {
-      setTimeout(waitForRemoteVideo, 100);
+      setTimeout(waitForRemoteVideo, 1000);
     }
   }
 
@@ -254,7 +254,6 @@
     if (webrtcDetectedBrowser == "firefox") {
       pc_config = {"iceServers":[{"url":"stun:23.21.150.121"}]};
     }
-    console.log('pc_config:'+pc_config)
     try {
       // Create an RTCPeerConnection via the polyfill (adapter.js).
       pc = new RTCPeerConnection(pc_config, pc_constraints);
@@ -285,7 +284,6 @@
     var result = sdpLine.match(pattern);
     return (result && result.length == 2)? result[1]: null;
   }
-
 
   // Set the selected codec to the first in m line.
   function setDefaultCodec(mLine, payload) {
@@ -442,8 +440,8 @@
       console.log('User Video device: ' + videoTracks[0].label);
     if (audioTracks.length > 0)
       console.log('User Audio device: ' + audioTracks[0].label);
-    console.log(videoTracks.length);
-    console.log(remoteVideo.currentTime);
+    // console.log(videoTracks.length); // 1
+    // console.log(remoteVideo.currentTime); // 0
     // Caller creates PeerConnection.
     if (initiator) maybeStart();
   }
@@ -469,6 +467,39 @@
   }
 
 
+  function onStatusOK(message) {
+    // console.log('S->C: ' + message.data);
+    console.log('S->C onStatus: ' + message);
+    if(message=='True'){
+      console.log('True');
+      initiator = 1;
+      resetStatus();
+      openChannel('{{ token }}');
+    }else{
+      console.log('False');
+      window.setTimeout(checkStatus, 1000);
+    }
+  }
+
+  function onStatusError() {
+    console.log('Channel error.');
+  }
+
+  function checkStatus() {
+    var msgString = JSON.stringify('checkStatus');
+    console.log('C->S: ' + msgString);
+    path = '/videomeet/message?r={{ room_key }}' + '&u={{ me }}&check=1';
+
+    $.ajax({
+      url: path,
+      type: "POST",
+      data: msgString,
+      success: onStatusOK,
+      error: onStatusError});
+
+  }
+
+
   function initialize() {
     console.log("Initializing; room={{ room_key }}.");
     card = document.getElementById("card");
@@ -476,6 +507,7 @@
     miniVideo = document.getElementById("miniVideo");
     remoteVideo = document.getElementById("remoteVideo");
     resetStatus();
+    checkStatus();
     openChannel('{{ token }}');
     doGetUserMedia();
   }
@@ -494,7 +526,7 @@
     stop();
     // will trigger BYE from server
     // todo !!!
-    socket.close();
+    onChannelClosed();
   }
 
   function enterFullScreen() {
