@@ -50,6 +50,23 @@ class BaseHandler(RequestHandler):
         # else:
         #     super(RequestHandler, self).write_error(status_code, **kwargs)
 
+    def write_json(self, obj):
+        """Writes the JSON-formated string of the give obj
+        to the output buffer"""
+
+        self.set_header('Content-Type', 'application/json')
+        from json import dumps
+
+        def handler(obj):
+            if hasattr(obj, 'to_json'):
+                return obj.to_json()
+            elif isinstance(obj, ObjectId):
+                return str(obj)
+            else:
+                return dict(obj)
+        s = dumps(obj, default=handler)
+        return self.write(s)
+
 
 class PageNotFoundHandler(RequestHandler):
     def get(self):

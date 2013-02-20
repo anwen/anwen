@@ -15,9 +15,9 @@ class IndexHandler(BaseHandler):
     def get(self):
         page = self.get_argument("page", 1)
         share_res = Share.find().sort(
-            '_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
+            '_id', DESCENDING).limit(11).skip((int(page) - 1) * 11)
 
-        pagesum = (share_res.count() + 9) / 10
+        pagesum = (share_res.count() + 10) / 11
         shares = []
         for share in share_res:
             user = User.by_sid(share.user_id)
@@ -26,20 +26,14 @@ class IndexHandler(BaseHandler):
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
             share.markdown = filter_tags(
-                markdown2.markdown(share.markdown))[:100]
+                markdown2.markdown(share.markdown))[:500]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
-
-        members = User.find().sort('_id', DESCENDING).limit(20)  # ASCENDING
-        members_dict = []
-        for member in members:
-            member.gravatar = get_avatar(member.user_email, 25)
-            members_dict.append(member)
 
         node = 'home'
         node_about = options.node_about[node]
         self.render(
-            "node.html", shares=shares, members=members_dict,
+            "node.html", shares=shares,
             pagesum=pagesum, page=page, node=node, node_about=node_about)
 
 
@@ -47,8 +41,8 @@ class NodeHandler(BaseHandler):
     def get(self, node):
         page = self.get_argument("page", 1)
         share_res = Share.find({'sharetype': node}).sort(
-            '_id', DESCENDING).limit(10).skip((int(page) - 1) * 10)
-        pagesum = (share_res.count() + 9) / 10
+            '_id', DESCENDING).limit(11).skip((int(page) - 1) * 11)
+        pagesum = (share_res.count() + 10) / 11
 
         shares = []
         for share in share_res:
@@ -58,7 +52,7 @@ class NodeHandler(BaseHandler):
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
             share.markdown = filter_tags(
-                markdown2.markdown(share.markdown))[:100]
+                markdown2.markdown(share.markdown))[:500]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 

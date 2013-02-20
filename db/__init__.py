@@ -11,3 +11,4 @@ Tag = connection.Tag
 Talk = connection.Talk
 Room = connection.Room
 VideoMsg = connection.VideoMsg
+Feedback = connection.Feedback

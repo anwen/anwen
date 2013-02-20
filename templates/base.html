@@ -84,11 +84,24 @@
     </div>
   </div>
 </div>
+<a id="feedbackBtn" href="javascript:void(0)" data-original-title="提交反馈"> <i class="icon icon-white icon-envelope"></i>
+  <span>Feedback</span>
+</a>
 {% block body %}{% end %}
 <!-- Footer
 ================================================== -->
 <footer class="footer">
   <div class="container">
+    <h3>安问是什么</h3>
+    <p>
+      一个高质量的内容社区，只分享最打动你的东西，保证内容的长久有趣，号召理想主义黑客共同开发的开源项目（包含一个人工智能子项目和推进互联网信息自由的子项目）
+    </p>
+    <p>特色：多人协作分享，也能通过github提交；每一分贡献都会得到十倍以上的回报，为创造和分享者带来更多价值</p>
+    <p>
+      实验室：
+      <a href="/edit">编辑器</a>
+      <a href="/ande">人工智能安德（近期恢复）</a>
+    </p>
     <p>
       copyleft ^_^ 2012 安问 创造和分享美好 v0.0.2 自由的理想主义社区与创造平台
       <a href="https://github.com/askender/anwen.in">开源@github</a>
@@ -100,6 +113,38 @@
   </div>
 </footer>
 
+<div class="feedback-overlay dialog">
+  <div class="home-overlay-close">x</div>
+  <div id="base02_wrapper">
+    <header>
+      <div id="avatar">
+        <img src="http://img3.douban.com/icon/u46626916-1.jpg" alt="askender" />
+      </div>
+    </header>
+    <section id="base02_body">
+      <div class="base02_inner">
+        <div id="feedback_wrap">
+          <form id="feedbackForm" class="form-horizontal" method="post" action="/feedback">
+            <fieldset>
+              <legend>欢迎给安问提意见和建议~</legend>
+              <p style="margin-bottom:30px;color:#999">也欢迎提交任何Bug/错误</p>
+              {% if not current_user %}
+              <p style="color:#999">请您留下Email或其他联系方式方便我们给您反馈</p>
+              {% end %}
+              <div class="controls">
+                <textarea name="content" autocomplete="off" placeholder="^,^" datatype="feedback_content" class="span5" rows="5"></textarea>
+                <span class="Validform_checktip">1-500字</span>
+              </div>
+              <div class="controls">
+                <input class="btn btn-primary btn-block" type="submit" value="提交"></div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
@@ -109,7 +154,9 @@
 <!-- or use local jquery -->
 <!-- <script src="{{ static_url("js/jquery.js") }}"></script>
 -->
+<script src="{{ static_url("js/Validform_v5.1.js") }}"></script>
 <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+<script src="{{ static_url("js/common.js") }}"></script>
 {% block bottom %}{% end %}
 <script>
     // Toggle fullscreen button:

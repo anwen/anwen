@@ -7,11 +7,12 @@ from anwen.user import UserhomeHandler, UserlikeHandler
 from anwen.user import SettingHandler, ChangePassHandler, UsersHandler
 from anwen.share import ShareHandler, EntryHandler, CommentHandler, LikeHandler
 from anwen.share import FeedHandler, SharesHandler, CommentsHandler
+from anwen.share import ImageUploadHandler
 from ande.ande import AndeHandler
 from ande.videomeet import VideoMeetHandler, VideoMsgHandler
 from anwen.talk import TalkHandler, ChatSocketHandler
 from anwen.talk import MsgNewHandler, MsgUpdatesHandler
-from anwen.other import EditHandler, ErrHandler
+from anwen.other import EditHandler, ErrHandler, FeedbackHandler
 
 handlers = [
     (r"/", IndexHandler),
@@ -26,6 +27,7 @@ handlers = [
     (r"/users/?", UsersHandler),
     (r'/users/([0-9a-f]{24})', UsersHandler),
 
+    (r"/share/image_upload", ImageUploadHandler),
     (r"/share/?", ShareHandler),
     (r"/sharecomment", CommentHandler),
     (r"/sharelike", LikeHandler),
@@ -56,8 +58,8 @@ handlers = [
     (r"/a/message/new", MsgNewHandler),
     (r"/a/message/updates", MsgUpdatesHandler),
 
+    (r"/feedback", FeedbackHandler),
     (r"/edit", EditHandler),
-
     (r'/404/?', ErrHandler),
 
     (r'/(.*)', EntryHandler),

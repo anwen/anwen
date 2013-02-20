@@ -63,6 +63,20 @@
         别名(选填，a-zA-Z0-9_-):
         <input name="slug" type="text" class="slug" value="{{escape(share.slug) if share else ""}}"/>
       </div>
+      <div id="switchImgWrap" class="btn" style="display: inline-block;">上传图片</div>
+      <div class="post_image_upload_wrap node_empty_border">
+          <div class="post_image_upload piu node_empty">
+              <a href="javascript:void(0)" class="upload_btn btn btn-info" onclick="getElementById('upload_file_hide').click()">上传图片 或 拖拽图片到这里</a>
+              <span class="message">
+                  <i></i>
+                  <p>拖拽图片到这里就会自动上传，请保证你上传图片的质量。</p>
+              </span>
+              <input type="file" name="uploadImg" id="upload_file_hide" />
+              <input type="hidden" datatype="post_Img" id="post_Img_1" name="post_Img" errormsg="啊哈？出错了" nullmsg="你还没有上传图片。" />
+              <span class="Validform_checktip postImgValidformChecktip"></span>
+              <a class="del_post_img btn" href="javascript:void(0)"><i class="icon-remove icon-white"></i> 删除</a>
+          </div>
+      </div>
       <div class="form-actions">
         <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-primary"/>
         <div style="float:right">
@@ -80,30 +94,54 @@
 {% end %}
 
 {% block bottom %}
+<script src="{{ static_url("js/jquery.filedrop.js") }}"></script>
+<script src="{{ static_url("js/share.js") }}"></script>
+
 <script type="text/javascript">
   //<![CDATA[
 $(document).ready(function() {
-            JudgeCheck();
-            JudgeInput();
-        });
-        function JudgeCheck() {
-          var sharetype = '{{share.sharetype if share else "" }}';
-          $("input[name=type][value="+sharetype+"]").attr("checked",true)
-        }
-function JudgeInput() {
-      $("input[name=title]").select();
-      $("form.compose").submit(function() {
-          var required = ["title", "markdown"];
-          var form = $(this).get(0);
-          for (var i = 0; i < required.length; i++) {
-              if (!form[required[i]].value) {
-                  $(form[required[i]]).select();
-                  return false;
-              }
-          }
-          return true;
-      });
-    }
+  JudgeCheck();
+  JudgeInput();
+  CheckImg();
+});
 
+function JudgeCheck() {
+  var sharetype = '{{share.sharetype if share else "" }}';
+  $("input[name=type][value="+sharetype+"]").attr("checked",true)
+}
+
+function JudgeInput() {
+  $("input[name=title]").select();
+  $("form.compose").submit(function() {
+      var required = ["title", "markdown"];
+      var form = $(this).get(0);
+      for (var i = 0; i < required.length; i++) {
+        if (!form[required[i]].value) {
+          $(form[required[i]]).select();
+          return false;
+        }
+      }
+      return true;
+  });
+}
+function CheckImg() {
+  var post_img = '{{ share.post_img if share else "" }}';
+  if (post_img){
+    var post_img_path = '/static/upload/img/'+post_img;
+    jQuery('.post_image_upload').css({
+        'background-size':'cover',
+        'background-image': 'url(" '+ post_img_path +' ")'
+    })
+
+    jQuery('#post_Img_1').val(''+ post_img);
+    jQuery(".imageHolder").css({
+      "background" : 'url("'+ post_img_path +' ") center center no-repeat',
+      'background-size' : 'cover'
+    })
+  }
+  jQuery('.message, .upload_btn').hide();
+  jQuery('.del_post_img, .save_post_img_btn').show();
+
+}
   //]]></script>
 {% end %}

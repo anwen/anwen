@@ -6,6 +6,11 @@
 <link href="{{ static_url("css/comment.css") }}" rel="stylesheet">
 {% end %}
 {% block body %}
+<div class="post_image_wrap">
+	<span class="post_image" style="background-image:url(/static/upload/img/{{ share.post_img }})">
+		<img src="/static/upload/img/{{ share.post_img }}" alt="" style="display:none">
+	</span>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="span12">

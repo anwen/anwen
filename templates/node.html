@@ -3,37 +3,42 @@
 {{ _(node_about['name']) }}-{{ _(node_about['about']) }}-
 {% end %}
 {% block body %}
-<div class="container well">
-  <div class="row">
-    <div class="span8">
-      <div class="mod user-feeds">
-        <h2>{{ _(node_about['name']) }}</h2>
-        <p>{{ _(node_about['about']) }}</p>
-        <ul class="unstyled">
-          {% for share in shares %}
-          <li>
-            <h3> <i class="icon-{{ share.sharetype }}"></i>
-              <a href="/share/{{ share.id }}" title="{{ escape(share.title) }}">{{ escape(share.title) }}</a>
-              <span class="bull">&bull;</span>
-              <span>
-                <a href="/share/{{ share.id }}#comments">{{ share.commentnum }}</a>
-              </span>
-            </h3>
-            <p class="user clearfix">
-              <!--          <a href="/user/{{ share.domain }}" title="{{ share.name }}" class="pull-right">
-              <img src="{{ share.gravatar }}" width="25" height="25" alt="{{ share.name }}"/>
-            </a>
-            -->
-            <span class="who">
-              <a href="/user/{{ share.domain }}" title="{{ share.name }}">{{ share.name }}</a>
+<div class="container collection-items">
+  <h3>{{ _(node_about['name']) }}</h3>
+  <p>{{ _(node_about['about']) }}</p>
+  {% for (offset,share) in enumerate(shares) %}
+  {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}
+    <div class="collection-template-mixed post-template-flex-article post-status-approved">
+      <div class="span{{ 8 if offset==0 else 4 }} collection-item">
+        <div class="item-link-wrap {{ "has" if share.get('image') else "no" }}-image">
+          <a href="/share/{{ share.id }}" class="item-link" data-action="open-post" data-action-value="">
+            {%if share.get('image') %}
+            <span class="item-image-container">
+              <span class="item-image" style="background-image:url('https://d233eq3e3p3cv0.cloudfront.net/fit/t/750/230/0*KUuozgkBuEMvEtHu.jpeg')"></span>
             </span>
-            <span data-time='' class="date">{{ share.published }}</span>
-          </p>
-          <p class="info">{{ escape(share.markdown) }} ...</p>
-        </li>
-        {% end %}
-      </ul>
+            {% end %}
+            <div class="item-content wf">
+              <h1>{{ share.title }}</h1>
+              <p class="snippet">{{ share.markdown }} ... </p>
+            </div>
+          </a>
+          <div class="meta wf">
+            <span class="author-and-collection">
+              <a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>
+                {{_('published in')}}
+              <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{ share.sharetype }}"></i>{{ share.sharetype }}</a>
+              <span class="pull-right">
+                {{ share.likenum }}{{_('like')}} {{ share.commentnum }}{{_('comment')}}
+              </span>
+            </span>
+
+          </div>
+        </div>
+      </div>
     </div>
+  
+    {{ "</div>" if offset in(1,4,7,10) else "" }}
+  {% end %}
     <div class="pagination">
       <ul>
         {% if int(page)>1 %}
@@ -68,42 +73,8 @@
         {% end %}
       </ul>
     </div>
-
-  </div>
-  <div class="span4">
-
-    <div class="mod users-head">
-      <h2>{{_('Newest')}}{{_('Member')}}</h2>
-      <div class="mod-body">
-        {% for member in members %}
-        <a href="/user/{{member.user_domain}}" title="{{member.user_name}}">
-          <img src="{{member.gravatar}}" width="25" height="25" alt="{{member.user_name}}"/>
-        </a>
-        {% end %}
-      </div>
-    </div>
-
-    <div class="mod about">
-      <h2>安问是什么</h2>
-      <p>
-        一个高质量的内容社区，只分享最打动你的东西，保证内容的长久有趣，号召理想主义黑客共同开发的开源项目（包含一个人工智能子项目和推进互联网信息自由的子项目）
-      </p>
-      <p>特色：多人协作分享，也能通过github提交；每一分贡献都会得到十倍以上的回报，为创造和分享者带来更多价值</p>
-      <p>邮箱：anwen.in@gmail.com</p>
-      <p>
-        <a href="https://github.com/askender/anwen.in">开源@github</a>
-        <a href="/about" title="关于安问的一切">关于安问</a>
-      </p>
-      <p>实验室：</p>
-      <p>
-        <a href="/edit">编辑器</a>
-        <a href="/ande">人工智能安德（近期恢复）</a>
-      </p>
-    </div>
-
-  </div>
 </div>
-</div>
+
 {% end %}
 
 {% block bottom %}

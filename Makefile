@@ -25,13 +25,6 @@ clean-pyc:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 
-docs:
-	$(MAKE) -C docs html
-
-
-install:
-	python setup.py install
-
 
 test:
 	@echo "starting test"
@@ -44,3 +37,9 @@ start:
 deploy:
 	@echo "starting deploy"
 	fab prepare_deploy
+
+docs:
+	$(MAKE) -C docs html
+
+install:
+	python setup.py install

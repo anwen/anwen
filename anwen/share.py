@@ -2,11 +2,15 @@
 
 import markdown2
 import time
+import os
+import Image
+import datetime
 from random import randint
 import tornado.web
 
 import options
 from utils.avatar import get_avatar
+from utils.img_tools import make_post_thumb
 from db import User, Share, Comment, Like, Hit, Tag
 from base import CommonResourceHandler, BaseHandler
 
@@ -14,16 +18,19 @@ from base import CommonResourceHandler, BaseHandler
 class ShareHandler(BaseHandler):
     @tornado.web.authenticated
     def get(self):
-        id = self.get_argument("id", None)
+        share_id = self.get_argument("id", None)
         share = None
-        if id:
-            share = Share.by_sid(id)
+        if share_id:
+            share = Share.by_sid(share_id)
         self.render("share.html", share=share)
 
     @tornado.web.authenticated
     def post(self):
-        id = self.get_argument("id", None)
+        # print self.request.arguments
+        share_id = self.get_argument("id", None)
         tags = self.get_argument("tags", '')
+        upload_img = self.get_argument("uploadImg", '')
+        post_img = self.get_argument("post_Img", '')
         user_id = self.current_user["user_id"]
         res = {
             'title': self.get_argument("title"),
@@ -31,11 +38,13 @@ class ShareHandler(BaseHandler):
             'sharetype': self.get_argument("type"),
             'slug': self.get_argument("slug", ''),
             'tags': tags,
+            'upload_img': upload_img,
+            'post_img': post_img,
             'updated': time.time(),
         }
 
-        if id:
-            share = Share.by_sid(id)
+        if share_id:
+            share = Share.by_sid(share_id)
             if not share:
                 self.redirect("/404")
             share.update(res)
@@ -110,6 +119,7 @@ class EntryHandler(BaseHandler):
                 post.score += randint(1, 999) * 0.001
                 common_tags = [i for i in post.tags.split(
                     ' ') if i in share.tags.split(' ')]
+                # list(set(b1) & set(b2))
                 post.score += len(common_tags)
                 if post.sharetype == share.sharetype:
                     post.score += 5
@@ -211,3 +221,46 @@ class SharesHandler(CommonResourceHandler):
         else:
             new_obj.save()
             return new_obj
+
+
+class ImageUploadHandler(BaseHandler):
+    @tornado.web.authenticated
+    def post(self):
+        img = None
+        if 'uploadImg' in self.request.files:
+            img = self.request.files['uploadImg'][0]
+            ext = os.path.splitext(img['filename'])[1].lower()
+            body = img['body']
+        if img and len(body) > 2 * 1024 * 1024:
+            msg = {"status": "o", "info": "上传的图片不能超过2M"}
+        elif ext and ext in ['.jpg', '.jpeg', '.gif', '.png', '.bmp']:
+            img_dir = 'static/upload/img'
+            now = datetime.datetime.now()
+            t = now.strftime('%Y%m%d_%H%M%S_%f')
+            img_name = '%s%s' % (t, ext)
+            img_path = '%s/%s' % (img_dir, img_name)
+            with open(img_path, 'wb') as image:
+                image.write(body)
+            im = Image.open(img_path)
+            width, height = im.size
+            if width / height > 5 or height / width > 5:
+                os.remove(img_path)  # 判断比例 删除图片
+                msg = {"status": "s", "info": "请不要上传长宽比例过大的图片"}
+            else:
+                make_post_thumb(img_path)  # 创建1200x550 750x230 365x230缩略图
+                pic_1200 = '%s_1200.jpg' % t
+                # users.save_user_avatar(user_id, avatar)#入库
+                msg = {"status": "y", "pic_1200": pic_1200}
+        else:
+            msg = '{"status": "s", "info": "目前只支持jpg/gif/png/bmp格式的图片。"}'
+        print msg
+        self.write_json(msg)
+
+    @tornado.web.authenticated
+    def delete(self):
+        img_name = self.request.body.split('img_name=')[1]
+        img_dir = 'static/upload/img'
+        for i in os.listdir(img_dir):
+            if i.startswith(img_name):
+                os.remove(img_dir + '/' + i)
+        self.write("s")

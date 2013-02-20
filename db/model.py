@@ -111,6 +111,8 @@ class Share(BaseModel):
         'markdown': basestring,
         'sharetype': basestring,
         'tags': basestring,
+        'upload_img': basestring,
+        'post_img': basestring,
         'id': int,
         'user_id': int,
         'commentnum': int,
@@ -313,6 +315,20 @@ class VideoMsg(BaseModel):
         'id': int,
         'client_id': basestring,
         'msg': basestring,
+        'time': float,
+    }
+    default_values = {
+        'time': time.time,
+    }
+
+
+@connection.register
+class Feedback(BaseModel):
+    __collection__ = 'Feedback_Col'
+    structure = {
+        'id': int,
+        'user_email': basestring,
+        'content': basestring,
         'time': float,
     }
     default_values = {

@@ -1,16 +1,10 @@
 进行中
 =======
 
-
-安问行动日志
-========
-
-
-#### 正在进行中
-
-* code-review before 130118
-* talk-demo-with-log before 130118
-* restful api and doc before 130115 in 1
+* code-review
+* restful api and doc
+* re-design
+* ...
 * 安德AI的恢复与整合 before 121119 130115 in 1
 * 完善invite注册登陆 before 121119 130115 in 1
 * oauth登录 before 121119 130115 in 1
@@ -29,18 +23,10 @@
 * 赞成-反对 before 130115 in 1
 * Gravatar-cache 头像上传 before 130115 in 1
 * 发布清晰的远景和使命文档,以及吸引大家加入我们的文档 before 130115 in 1
-* ......
 * 移动端html5&app before 130315 in 1
 * 社区推广 新浪微博 豆瓣小站 google+ twitter facebook ...  before 130115 in 1
 * 信息可视化 Information visualization  before 130315 in 1
 * ppt-js  before 130315 in 1
-* ...
 * 线下活动策划
 * 评论有二级评论吗？ -计划支持多级评论&引用&@ -thanks@anti
 * 消息系统
-
-##### change-log: anwen/docs/shares/4_changelog.md
-
-##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in ), 欢迎pull-request
-
-##### Email：anwen.in@gmail.com

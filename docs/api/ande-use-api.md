@@ -30,3 +30,5 @@ music
 - http://box.baidu.com/widget/flash/song.swf?name='name'&artist='artist'&autoPlay=true
 - http://api.douban.com/music/subjects?q=海阔天空&alt=json&start-index=1&max-results=1
 - http://cgi.music.soso.com/fcgi-bin/fcg_download_lrc.q?song=%B2%BB%B5%C3%B2%BB%B0%AE&singer=%C5%CB%E7%E2%B0%D8%26%CF%D2%D7%D3&down=1  # gbk
+
+http://webpresence.qq.com/getonline?Type=1&527639661:
