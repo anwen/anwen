@@ -1,6 +1,6 @@
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
-  hitnum: 336
+  hitnum: 358
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -39,7 +39,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 323
+  hitnum: 344
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -63,7 +63,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
-  hitnum: 171
+  hitnum: 178
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -116,7 +116,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
-  hitnum: 164
+  hitnum: 174
   id: 14
   likenum: 0
   markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
@@ -133,7 +133,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
-  hitnum: 181
+  hitnum: 189
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
@@ -152,7 +152,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
-  hitnum: 153
+  hitnum: 170
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -170,7 +170,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e2
   commentnum: 0
-  hitnum: 159
+  hitnum: 165
   id: 12
   likenum: 0
   markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
@@ -190,7 +190,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
-  hitnum: 136
+  hitnum: 139
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
@@ -206,7 +206,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
-  hitnum: 98
+  hitnum: 104
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
@@ -221,7 +221,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
-  hitnum: 261
+  hitnum: 271
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -239,7 +239,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
-  hitnum: 117
+  hitnum: 121
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
@@ -256,7 +256,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
-  hitnum: 102
+  hitnum: 106
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
@@ -273,7 +273,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e1
   commentnum: 0
-  hitnum: 339
+  hitnum: 356
   id: 11
   likenum: 0
   markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
@@ -297,7 +297,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
-  hitnum: 353
+  hitnum: 375
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -342,7 +342,7 @@
   user_id: 1
 - _id: 50fc0267606ec50580ce9fe2
   commentnum: 1
-  hitnum: 84
+  hitnum: 98
   id: 18
   likenum: 0
   markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
@@ -356,7 +356,7 @@
   user_id: 26
 - _id: 50e44d08606ec51c6ab042dc
   commentnum: 0
-  hitnum: 125
+  hitnum: 129
   id: 6
   likenum: 0
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
@@ -405,7 +405,7 @@
   user_id: 1
 - _id: 510bcb1d606ec50bbe416844
   commentnum: 0
-  hitnum: 60
+  hitnum: 74
   id: 19
   likenum: 0
   markdown: !!python/str "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
@@ -449,7 +449,7 @@
   user_id: 1
 - _id: 5117186e606ec50bbf529207
   commentnum: 0
-  hitnum: 35
+  hitnum: 51
   id: 20
   likenum: 0
   markdown: !!python/str "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
@@ -491,7 +491,7 @@
   user_id: 1
 - _id: 51171b3a606ec50bbe41685e
   commentnum: 0
-  hitnum: 35
+  hitnum: 47
   id: 21
   likenum: 0
   markdown: !!python/str "Stopping by Woods on a Snowy Evening    BY ROBERT FROST\r\
@@ -515,7 +515,7 @@
   user_id: 1
 - _id: 5117245c606ec50bbe416860
   commentnum: 0
-  hitnum: 40
+  hitnum: 59
   id: 22
   likenum: 0
   markdown: !!python/str "<object width=\"500\" height=\"74\"><param name=\"movie\"\
@@ -547,7 +547,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
-  hitnum: 150
+  hitnum: 157
   id: 8
   likenum: 0
   markdown: !!python/str "### 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/\
@@ -581,7 +581,7 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e0
   commentnum: 0
-  hitnum: 185
+  hitnum: 193
   id: 10
   likenum: 0
   markdown: !!python/str "### 阅读\r\n* [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
