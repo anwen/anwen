@@ -149,7 +149,7 @@ body
 p
 {
 	font-family: tahoma,sans-serif;
-	font-size: 13px;
+	font-size: 16px;
 	line-height: 18px;
 	margin: 0 0 9px;
 }
@@ -1083,3 +1083,37 @@ a.del_post_img:hover{background: #C06862;opacity: 0.8;color: #fff;}
 
 .no-image .item-content{height: 363px;}
 .no-image .item-content h1{font-size: 33px;line-height: 1.4;margin: 8px 0 13px;}
+
+.post_header{
+    margin-top: 20px;
+    position: relative;
+}
+
+.post_meta{
+    border-right: 1px solid #D8D8D8;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.post_author_image{
+    border-radius: 50px 50px 50px 50px;
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    overflow: hidden;
+}
+
+.post_header h1{text-align: center;}
+.post_header .post_meta {
+	position: relative;
+	margin: 0 0 25px 0; padding: 20px 0; 
+	border: 1px solid #DEDEDC; border-left: none;border-right: none; line-height: 25px;}
+.post_header .post_meta_info{overflow: hidden;color: #B3B3B1;float: right;}
+
+.post_field, .post_field p{
+    color: #444444;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 35px;
+}

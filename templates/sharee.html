@@ -13,19 +13,27 @@
 	</span>
 </div>
 {% end %}
-<div class="container">
+<div class="container post_field">
 	<div class="row">
 		<div class="span12">
 			<div>
 				<!-- class="hero-unit" -->
 				<div id="content">
 					<div class="share">
-						<h2>
-							<a href="/share/{{ share.id }}">{{ escape(share.title) }}</a>
-						</h2>
-						<div class="date">
-							{{ locale.format_date(share.published, full_format=True, shorter=True) }}
-						</div>
+
+<header class="post_header">
+    <h1 class="post_title" itemprop="name">
+    	{{ escape(share.title) }}
+    </h1>
+            
+    <div class="post_meta clearfix">
+        <div class="post_meta_info">
+            <a class="post_author" title="" href=""></a>
+            <time class="post_date">{{ locale.format_date(share.published, full_format=True, shorter=True) }}</time>
+        </div>
+    </div>
+</header>
+
 						<div class="body">{{ share.markdown }}</div>
 						<div class="tags">{{ share.tags }}</div>
 						{% if not current_user %}
