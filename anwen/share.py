@@ -31,6 +31,7 @@ class ShareHandler(BaseHandler):
         tags = self.get_argument("tags", '')
         upload_img = self.get_argument("uploadImg", '')
         post_img = self.get_argument("post_Img", '')
+        post_img = '' if post_img == 'None' else post_img
         user_id = self.current_user["user_id"]
         res = {
             'title': self.get_argument("title"),
