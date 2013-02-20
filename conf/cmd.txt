@@ -97,3 +97,5 @@ Host github.com
  HostName github.com
  User git
  IdentityFile ~/.ssh/id_rsa
+
+install python-imaging
