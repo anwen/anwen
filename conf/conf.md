@@ -10,4 +10,3 @@ rpm -ivh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 yum -y install haproxy
 scp ~/anwen/conf/haproxy.cfg aw:/etc/haproxy/haproxy.cfg
 scp ~/anwen/conf/supervisord.conf aw:/etc/supervisord.conf
-

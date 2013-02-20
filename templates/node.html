@@ -12,9 +12,9 @@
       <div class="span{{ 8 if offset==0 else 4 }} collection-item">
         <div class="item-link-wrap {{ "has" if share.get('image') else "no" }}-image">
           <a href="/share/{{ share.id }}" class="item-link" data-action="open-post" data-action-value="">
-            {%if share.get('image') %}
+            {%if share.get('post_img') %}
             <span class="item-image-container">
-              <span class="item-image" style="background-image:url('https://d233eq3e3p3cv0.cloudfront.net/fit/t/750/230/0*KUuozgkBuEMvEtHu.jpeg')"></span>
+              <span class="item-image" style="background-image:url(/static/upload/img/{{ share.post_img.replace('_1200', '_750') if offset==0 else  share.post_img.replace('_1200', '_365')}})"></span>
             </span>
             {% end %}
             <div class="item-content wf">
