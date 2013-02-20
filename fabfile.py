@@ -19,7 +19,7 @@ def test():
 
 
 def commit():
-    local("git add -Ap && git commit")
+    local("git add . && git commit")
 
 
 def push():
