@@ -10,7 +10,7 @@
   {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}
     <div class="collection-template-mixed post-template-flex-article post-status-approved">
       <div class="span{{ 8 if offset==0 else 4 }} collection-item">
-        <div class="item-link-wrap {{ "has" if share.get('image') else "no" }}-image">
+        <div class="item-link-wrap {{ "has" if share.get('post_img') else "no" }}-image">
           <a href="/share/{{ share.id }}" class="item-link" data-action="open-post" data-action-value="">
             {%if share.get('post_img') %}
             <span class="item-image-container">
