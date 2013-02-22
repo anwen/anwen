@@ -7,6 +7,7 @@ ip
 - http://ip.taobao.com/service/getIpInfo.php?ip=
 - backup:
 - http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&ip=
+- http://prettyip.meetstrange.com/
 
 weather
 - http://sou.qq.com/online/get_weather.php?callback=Weather&city=武汉
@@ -32,3 +33,4 @@ music
 - http://cgi.music.soso.com/fcgi-bin/fcg_download_lrc.q?song=%B2%BB%B5%C3%B2%BB%B0%AE&singer=%C5%CB%E7%E2%B0%D8%26%CF%D2%D7%D3&down=1  # gbk
 
 http://webpresence.qq.com/getonline?Type=1&527639661:
+

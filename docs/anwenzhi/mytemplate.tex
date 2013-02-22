@@ -4,6 +4,15 @@
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
+% \usepackage{CJKutf8}
+% \setCJKmainfont{標楷體} %設定中文為系統上的字型，而英文不去更動，使用原TeX字型
+\XeTeXlinebreaklocale "zh"             %這兩行一定要加，中文才能自動換行
+\XeTeXlinebreakskip = 0pt plus 1pt     %這兩行一定要加，中文才能自動換行
+
+% \usepackage{fontspec}
+% \setmainfont{WenQuanYi Micro Hei}
+% \setmonofont{WenQuanYi Micro Hei Mono}
+
 % use microtype if available
 \IfFileExists{microtype.sty}{\usepackage{microtype}}{}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -19,6 +28,7 @@ $endif$
   \fi
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
   \newcommand{\euro}{€}
+
 $if(mainfont)$
     \setmainfont{$mainfont$}
 $endif$
@@ -31,10 +41,10 @@ $endif$
 $if(mathfont)$
     \setmathfont{$mathfont$}
 $endif$
-\fi
 
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+% \pagestyle{empty}                   % 不设置页眉页脚            
+\pagestyle{fancy}                  % 设置页眉   
 \pagenumbering{arabic}
 \lhead{\itshape $title$}
 \chead{}
@@ -42,6 +52,9 @@ $endif$
 \lfoot{v $version$}
 \cfoot{}
 \rfoot{\thepage}
+
+
+\usepackage{ifxetex}
 
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
@@ -105,6 +118,14 @@ $endif$
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
             colorlinks=true,
+            pdfsubject={$subject-meta$},
+            pdfkeywords={$keywords-meta$},
+            pdfproducer={XeLateX with as hyperref},
+            pdfcreator={LaTeX with hyperref package @askenderlee},
+            pdfinfo={%
+              CopyrightStatus={Copyrighted},
+              CopyrightNotice={Copyleft ^,^ 2013 by askender}
+            }
             urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
             linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
             pdfborder={0 0 0}}
@@ -139,6 +160,7 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+
 $if(title)$
 \title{$title$}
 $endif$
@@ -146,6 +168,7 @@ $endif$
 \date{$date$}
 
 \begin{document}
+
 $if(title)$
 \maketitle
 $endif$
@@ -162,25 +185,7 @@ $if(toc)$
 $endif$
 $body$
 
-$if(natbib)$
-$if(biblio-files)$
-$if(biblio-title)$
-$if(book-class)$
-\renewcommand\bibname{$biblio-title$}
-$else$
-\renewcommand\refname{$biblio-title$}
-$endif$
-$endif$
-\bibliography{$biblio-files$}
 
-$endif$
-$endif$
-$if(biblatex)$
-\printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 
-$endif$
-$for(include-after)$
-$include-after$
-
-$endfor$
+$body$
 \end{document}

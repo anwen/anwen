@@ -78,7 +78,9 @@ class EntryHandler(BaseHandler):
             share.hitnum += 1
             share.save()
             share.markdown = markdown2.markdown(share.markdown)
-
+            user = User.by_sid(share.user_id)
+            share.user_name = user.user_name
+            share.user_domain = user.user_domain
             tags = ''
 
             if share.tags:
