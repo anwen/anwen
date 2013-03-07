@@ -11,6 +11,7 @@
 server_setting.py
 User.yaml
 Ande.yaml
+*.tar.gz
 
 # temp files
 .gitmodules

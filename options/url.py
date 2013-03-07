@@ -30,7 +30,7 @@ handlers = [
     (r"/share/image_upload", ImageUploadHandler),
     (r"/share/?", ShareHandler),
     (r"/sharecomment", CommentHandler),
-    (r"/sharelike", LikeHandler),
+    (r"/sharelike/([^/]+)", LikeHandler),
     (r"/share/([^/]+)", EntryHandler),
     (r"/feed", FeedHandler),
     (r"/shares/?", SharesHandler),

@@ -36,7 +36,7 @@ start:
 
 deploy:
 	@echo "starting deploy"
-	fab prepare_deploy
+	fab deploy
 
 docs:
 	$(MAKE) -C docs html

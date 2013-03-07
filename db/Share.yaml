@@ -1,6 +1,6 @@
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
-  hitnum: 358
+  hitnum: 484
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -29,6 +29,7 @@
     \n* 人工智能Ender\r\n\r\n### 期待有新的成员加入~@@\r\n\r\n* 一个开源的分享最打动大家东西的微型社区项目\r\n* [anwen.in@github](https://github.com/askender/anwen.in)正在不断开发中，欢迎大家fork\r\
     \n* 构建于tornado，欢迎大家批评指正，askender43@gmail.com\r\n\r\n### 补充\r\n\r\n* 我们期待提供最佳用户体验，专心将一件事做到极致\r\
     \n* 安问是一生的故事，生命短暂，我们期待改进和迭代更新越快越好，不断提供有价值的内容和体验\r\n* 打算构建CC版权的分享维基，可以给文章pull request，协作打造精简的分享"
+  post_img: null
   published: 1349429689.0
   sharetype: fire
   slug: about
@@ -36,10 +37,11 @@
   tags: ask
   title: !!python/str '关于安问'
   updated: 1357223775.043519
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 344
+  hitnum: 477
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -53,6 +55,7 @@
     \n* 构建于python,tornado,nginx,mysql,mongodb\r\n* 以MIT协议开源发布 V0.03  20121109\r\n\
     * 正在不断开发中，欢迎大家fork or pull-request\r\n* 欢迎大家批评指正:anwen.in+ande@gmail.com\r\n\r\
     \n\r\n#### 安德团队行动日志 ande-team-todo\r\n* 恢复安德原有能力\r\n* 列出使用的API\r\n* 恢复音乐，天气API"
+  post_img: null
   published: 1352418858.0
   sharetype: fire
   slug: ande-growup-log
@@ -60,10 +63,11 @@
   tags: !!python/str '人工智能'
   title: !!python/str '安德成长日志'
   updated: 1359181625.999205
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
-  hitnum: 178
+  hitnum: 235
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -106,6 +110,7 @@
     \ hers\r\n上帝你能不能让她知道我如此爱她；让她知道即使世界上没有其他人，她也不会孤单；\r\n让她知道只要她闭上眼睛，她就会知道我的心为她存在.\r\
     \n\r\n[另外一个版本，中英字幕](http://www.yinyuetai.com/video/296422)\r\n\r\n[Another Day\
     \ 电影< 时间旅行者的妻子 > 中英字幕版](http://www.yinyuetai.com/video/507846)"
+  post_img: null
   published: 1350516596.0
   sharetype: music
   slug: My-Prayer-cn-en-movie
@@ -113,16 +118,18 @@
   tags: MV love
   title: !!python/str 'My Prayer 电影版 中英字幕'
   updated: 1357223033.502695
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
-  hitnum: 174
+  hitnum: 244
   id: 14
   likenum: 0
   markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
     \ 雨人\r\n* 老男孩\r\n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n*\
     \ 机器人总动员\r\n* 了不起的狐狸爸爸\r\n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\
     \n* 有关时间旅行的热门问题\r\n* 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频~  anwen.in@gmail.com"
+  post_img: null
   published: 1349432506.0
   sharetype: film
   slug: movie-share
@@ -130,10 +137,11 @@
   tags: list
   title: !!python/str '电影列表'
   updated: 1357228091.008947
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
-  hitnum: 189
+  hitnum: 264
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
@@ -142,6 +150,7 @@
     \ [虾米](http://www.xiami.com/ )\r\n* [亦歌](http://www.1g1g.com/ )\r\n* [豆瓣电台](http://douban.fm/\
     \ )\r\n\r\n>古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen\
     \ fm预计会收录部分音乐"
+  post_img: null
   published: 1349432653.0
   sharetype: music
   slug: music-share
@@ -149,10 +158,11 @@
   tags: site list
   title: !!python/str '一些音乐'
   updated: 1357223192.114061
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
-  hitnum: 170
+  hitnum: 229
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -160,6 +170,7 @@
     <embed src=\"http://player.youku.com/player.php/sid/XNDQxNDExMjcy/v.swf\" allowFullScreen=\"\
     true\" quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
     always\" type=\"application/x-shockwave-flash\"></embed>\r\n\r\n[原文链接](http://v.youku.com/v_show/id_XNDQxNDExMjcy.html)"
+  post_img: null
   published: 1349432118.0
   sharetype: film
   slug: Turkish-paper-marbling
@@ -167,35 +178,17 @@
   tags: amazing
   title: !!python/str '土耳其湿拓（Turkish paper marbling）'
   updated: 1357223239.920834
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042e2
-  commentnum: 0
-  hitnum: 165
-  id: 12
-  likenum: 0
-  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
-    * 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 真名实姓\r\n* 球状闪电\r\n* 天意\r\n* 2001：太空奥德赛\r\n* 与吾同在\r\
-    \n* 基地\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\n* 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n\
-    * 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n\
-    ### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n\r\n* 黑客与画家\r\n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\
-    \n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好书或者文章，\
-    \ anwen.in@gmail.com"
-  published: 1349432059.0
-  sharetype: book
-  slug: book-share
-  status: 0
-  tags: list
-  title: !!python/str '推荐好书'
-  updated: 1357281143.329482
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
-  hitnum: 139
+  hitnum: 185
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
     \n\r\n[chat](/chat) Ajax Long-Polling\r\n\r\n学习计划：\r\n\r\n缓存（redis）、队列（celery）\r\
     \n\r\n看到这篇文章的你，又在鼓捣什么好玩的东西呢，欢迎分享~"
+  post_img: null
   published: 1349430251.0
   sharetype: fire
   slug: study-play
@@ -203,14 +196,16 @@
   tags: study play
   title: !!python/str '学习实验'
   updated: 1357223468.495826
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
-  hitnum: 104
+  hitnum: 149
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
     评论：1叶（todo）"
+  post_img: null
   published: 1349430154.0
   sharetype: fire
   slug: about-anye
@@ -218,10 +213,11 @@
   tags: ask
   title: !!python/str '桉叶说明'
   updated: 1357223662.862296
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
-  hitnum: 271
+  hitnum: 390
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -229,6 +225,7 @@
     \n\r\n[github](https://github.com/askender/anwen.in)\r\n\r\n[微博][2]\r\n\r\n[google\
     \ plus][3]：需修改hosts或越过长城\r\n\r\nYY频道ID：19043661（几乎没怎么使用）\r\n\r\n\r\n[1]: https://groups.google.com/d/forum/our-anwen\
     \        \"安问邮件列表\"\r\n[2]: http://weibo.com/askender\r\n[3]: https://plus.google.com/110129569739358072859"
+  post_img: null
   published: 1349430055.0
   sharetype: fire
   slug: help
@@ -236,16 +233,18 @@
   tags: ask
   title: !!python/str '提建议或咨询--欢迎联系我们'
   updated: 1357223707.065353
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
-  hitnum: 121
+  hitnum: 166
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
     \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjE4NjIzMzM2/v.swf\"\
     \ quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
     sameDomain\" allowFullscreen=\"true\" type=\"application/x-shockwave-flash\"></embed>"
+  post_img: null
   published: 1349428859.0
   sharetype: film
   slug: birth-of-Wikipedia-ch-en
@@ -253,16 +252,18 @@
   tags: TED speech
   title: !!python/str '吉米·威尔士关于维基百科诞生的演讲'
   updated: 1357223866.433515
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
-  hitnum: 106
+  hitnum: 159
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
     \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjQ4MzkwMjIw/v.swf\"\
     \ allowFullScreen=\"true\" quality=\"high\" width=\"480\" height=\"400\" align=\"\
     middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\"></embed>"
+  post_img: null
   published: 1349427988.0
   sharetype: film
   slug: Steve-Jobs-Stanford-speech-ch-en
@@ -270,10 +271,11 @@
   tags: speech  dream
   title: !!python/str '史蒂夫 乔布斯Steve.Jobs在2005年对斯坦福大学Stanford毕业生的演讲(中英字幕)'
   updated: 1357223954.264876
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e1
   commentnum: 0
-  hitnum: 356
+  hitnum: 491
   id: 11
   likenum: 0
   markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
@@ -287,6 +289,7 @@
     \n Science Fiction is a life style, stars and ocean\r\n 科幻是一种生活方式，星辰大海\r\n\r\n\
     [行动](http://i.askender.com/node/fire)\r\n Record move of dreamers, maybe notsogood,\
     \ we are trying\r\n 记录梦想者的进步，或许并不完美，但至少在努力"
+  post_img: null
   published: 1349430792.0
   sharetype: fire
   slug: nodes
@@ -294,10 +297,11 @@
   tags: ''
   title: !!python/str '节点'
   updated: 1357228249.675027
+  upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
-  hitnum: 375
+  hitnum: 482
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -332,6 +336,7 @@
     \n\r\n##### 110101-110729\r\n* 110101安问出现\r\n* 110526团队组建，第一次会议in光谷书城\r\n\r\n\
     ##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in ), 欢迎pull-request\r\
     \n\r\n##### Email：anwen.in@gmail.com"
+  post_img: null
   published: 1349429901.0
   sharetype: fire
   slug: changelog
@@ -339,13 +344,15 @@
   tags: log
   title: !!python/str '安问行动日志'
   updated: 1357227413.799963
+  upload_img: null
   user_id: 1
 - _id: 50fc0267606ec50580ce9fe2
   commentnum: 1
-  hitnum: 98
+  hitnum: 164
   id: 18
   likenum: 0
   markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
+  post_img: null
   published: 1358692967.821446
   sharetype: ask
   slug: ande
@@ -353,10 +360,11 @@
   tags: !!python/str '安德'
   title: !!python/str '机器人不太好用哎'
   updated: 1359182204.697195
+  upload_img: null
   user_id: 26
 - _id: 50e44d08606ec51c6ab042dc
   commentnum: 0
-  hitnum: 129
+  hitnum: 184
   id: 6
   likenum: 0
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
@@ -395,6 +403,7 @@
     \ [献给写作者的 Markdown 新手指南][4]\r\n\r\n[1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html\r\
     \n[2]:http://wowubuntu.com/markdown/basic.html\r\n[3]:http://daringfireball.net/projects/markdown/syntax\r\
     \n[4]:http://jianshu.io/p/q81RER"
+  post_img: null
   published: 1349430103.0
   sharetype: fire
   slug: markdown
@@ -402,10 +411,11 @@
   tags: ask
   title: !!python/str 'Markdown漫游指南'
   updated: 1359171250.633043
+  upload_img: null
   user_id: 1
 - _id: 510bcb1d606ec50bbe416844
   commentnum: 0
-  hitnum: 74
+  hitnum: 124
   id: 19
   likenum: 0
   markdown: !!python/str "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
@@ -439,6 +449,7 @@
     \ - what have you got to lose? 我是说——你将会失去什么？  \r\nyou know, you come from nothing,\
     \ 你知道，你本来就一无所有  \r\nyou're going back to nothing. 你会再回到虚无  \r\nwhat have you lost?\
     \ nothing 你将会失去什么？什么也没有  \r\n\r\n\r\n<http://en.wikipedia.org/wiki/Always_Look_on_the_Bright_Side_of_Life>"
+  post_img: null
   published: 1359727389.67499
   sharetype: fire
   slug: Always_Look_on_the_Bright_Side_of_Life
@@ -446,10 +457,11 @@
   tags: music
   title: music-share:Always Look on the Bright Side of Life
   updated: 1359727389.674634
+  upload_img: null
   user_id: 1
 - _id: 5117186e606ec50bbf529207
   commentnum: 0
-  hitnum: 51
+  hitnum: 113
   id: 20
   likenum: 0
   markdown: !!python/str "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
@@ -481,6 +493,7 @@
     \    可以去做電影明星 \r\n    \r\n    有的時候劇場裡空無一人 \r\n    整個電影就是她的演出 \r\n    她就是英格麗褒曼\
     \ \r\n    \r\n    她看著來來往往的人群 \r\n    那些她熟悉的人們 \r\n    那些冰冷的人們 \r\n    從來不說一個字\
     \ \r\n    \r\n    從來沒有人 \r\n    與她握手 \r\n    她的眼淚於是流下來 \r\n    在銀幕上出現「劇終」的時候"
+  post_img: null
   published: 1360468078.013347
   sharetype: music
   slug: music_Magic_boulevard
@@ -488,10 +501,11 @@
   tags: ''
   title: music-share:Magic boulevard
   updated: 1360468172.852069
+  upload_img: null
   user_id: 1
 - _id: 51171b3a606ec50bbe41685e
   commentnum: 0
-  hitnum: 47
+  hitnum: 95
   id: 21
   likenum: 0
   markdown: !!python/str "Stopping by Woods on a Snowy Evening    BY ROBERT FROST\r\
@@ -505,6 +519,7 @@
     \ promises to keep,   \r\nAnd miles to go before I sleep,   \r\nAnd miles to go\
     \ before I sleep.\r\n\r\n\r\n此诗是现代英语短篇杰作, 格律严谨，用语天然，意境含蓄。雪夜林畔小驻。\r\n\r\n\r\n1.\
     \ <http://en.wikipedia.org/wiki/Stopping_by_Woods_on_a_Snowy_Evening>"
+  post_img: null
   published: 1360468794.634333
   sharetype: book
   slug: poem_Stopping_by_Woods_on_a_Snowy_Evening
@@ -512,10 +527,11 @@
   tags: ''
   title: poem share:Stopping by Woods on a Snowy Evening
   updated: 1360470014.707601
+  upload_img: null
   user_id: 1
 - _id: 5117245c606ec50bbe416860
   commentnum: 0
-  hitnum: 59
+  hitnum: 129
   id: 22
   likenum: 0
   markdown: !!python/str "<object width=\"500\" height=\"74\"><param name=\"movie\"\
@@ -537,6 +553,7 @@
     \ I feel life,I feel love.\r\n    我感受生活,我感受爱\r\n    Everything is clear in our\
     \ world.\r\n    我们的世界从此风轻云淡.\r\n\r\n有人评价：如果让人类选一首歌在宇宙中向所有的星球播放，我选这首《Oh My Love》，尽管违背黑暗森林法则，我还是很想在浩瀚的宇宙中听这首歌。\r\
     \n\r\n\r\n1. <http://en.wikipedia.org/wiki/Oh_My_Love>  墙外\r\n2. <http://www.xiami.com/song/detail/id/1122173>"
+  post_img: null
   published: 1360471132.18352
   sharetype: music
   slug: music_Oh_My_Love
@@ -544,64 +561,105 @@
   tags: ''
   title: music-share:Oh My Love
   updated: 1360485891.018391
+  upload_img: null
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e2
+  commentnum: 0
+  hitnum: 245
+  id: 12
+  likenum: 0
+  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
+    * 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 莱博维茨的赞歌\r\n* 真名实姓\r\n* 沧浪之水\r\n* 基地\r\n* 球状闪电\r\
+    \n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\n*\
+    \ 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n* 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\
+    \n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n\r\n* 黑客与画家\r\n\
+    * 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\
+    \n\r\n不断补充中～～～\r\n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书或者文章， anwen.in@gmail.com"
+  post_img: 20130220_151116_345433_1200.jpg
+  published: 1349432059.0
+  sharetype: book
+  slug: book-share
+  status: 0
+  tags: list
+  title: !!python/str '推荐好书'
+  updated: 1361344288.093345
+  upload_img: ''
   user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
-  hitnum: 157
+  hitnum: 206
   id: 8
   likenum: 0
-  markdown: !!python/str "### 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/\
-    \  \"创意工作者们的社区\") \r\n- [知乎](http://www.zhihu.com/ )\r\n\r\n### 技术社区\r\n- [programming.reddit](http://www.reddit.com/r/programming/\
-    \ )\r\n- [Hacker News](http://news.ycombinator.com/ )\r\n- [StackOverflow](http://stackoverflow.com\
-    \ )\r\n- [SegmentFault](http://segmentfault.com )\r\n- [德问]( http://www.dewen.org\
-    \ \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n- [Python-China](http://python-china.org/\
-    \ ) \r\n- [叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 读\r\n- [Google 阅读器](https://www.google.com/reader/\
-    \ ) \r\n- [阅FM](http://yue.fm/ ) \r\n- [Solidot](http://www.solidot.org/ \"奇客的资讯，重要的东西\"\
-    )\r\n- [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/ )\r\
-    \n\r\n### 写\r\n- [OhLife](http://ohlife.com/ \"OhLife helps you remember what's\
-    \ happened in your life\")\r\n- [notepad.cc](http://notepad.cc/) \r\n\r\n### 视频\r\
-    \n- [Vimeo](http://vimeo.com/ 'outside the wall')\r\n\r\n### 音乐\r\n- [Last.fm](http://cn.last.fm/\
-    \ )\r\n- [巨鲸](http://www.top100.cn/ )\r\n- [虾米](http://www.xiami.com/ )\r\n- [亦歌](http://www.1g1g.com/\
-    \ )\r\n- [豆瓣电台](http://douban.fm/ )\r\n- [Spotify](http://www.spotify.com/us/\
-    \ \"A world of music\")\r\n\r\n### 图片\r\n- [imgur:简单图片分享](http://imgur.com/ \"\
-    the simple image sharer\")\r\n- [500px is Photography](http://500px.com/)  The\
-    \ world's best photo sharing.\r\n\r\n### 互联网创业\r\n- [创意气球 | GuruDigger](http://gurudigger.com/)\r\
-    \n- [36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n- [17Startup](http://www.17startup.com/\
-    \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n- [阮一峰](http://www.ruanyifeng.com/home.html )\r\
-    \n\r\n### 其他\r\n- [google whats-at-stake](https://www.google.com/intl/zh-CN/takeaction/whats-at-stake/)\r\
-    \n\r\n### 小玩意\r\n- [在线键盘钢琴](http://zythum.free.bg/Piano/  “需要切换为英文输入法”)\r\n\r\n\
-    ### 持续更新中,欢迎推荐, anwen.in@gmail.com"
+  markdown: !!python/str "### 阅读\r\n- [Solidot](http://www.solidot.org/) 奇客的资讯，重要的东西\r\
+    \n- [阅FM](http://yue.fm/)\r\n- [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/)\r\
+    \n\r\n### 阅读工具\r\n- [Google 阅读器](https://www.google.com/reader/ ) \r\n\r\n###\
+    \ 视频\r\n- [Vimeo](http://vimeo.com/)  需要翻越长城\r\n- [YouTube](https://www.youtube.com/)\
+    \  需要翻越长城\r\n\r\n### 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/\
+    \  \"创意工作者们的社区\") \r\n- [知乎](http://www.zhihu.com/ )\r\n\r\n### 写\r\n- [OhLife](http://ohlife.com/\
+    \ \"OhLife helps you remember what's happened in your life\")\r\n- [notepad.cc](http://notepad.cc/)\
+    \ \r\n\r\n### 音乐\r\n- [Last.fm](http://cn.last.fm/ )\r\n- [巨鲸](http://www.top100.cn/\
+    \ )\r\n- [虾米](http://www.xiami.com/ )\r\n- [亦歌](http://www.1g1g.com/ )\r\n- [豆瓣电台](http://douban.fm/\
+    \ )\r\n- [Spotify](http://www.spotify.com/us/ \"A world of music\")\r\n\r\n###\
+    \ 图片\r\n- [imgur:简单图片分享](http://imgur.com/ \"the simple image sharer\")\r\n- [500px\
+    \ is Photography](http://500px.com/)  The world's best photo sharing.\r\n\r\n\
+    ### 互联网创业\r\n- [创意气球 | GuruDigger](http://gurudigger.com/)\r\n- [36氪](http://www.36kr.com/\
+    \ \"关注互联网创业\") \r\n- [17Startup](http://www.17startup.com/ \"让创业不再孤单\") \r\n\r\
+    \n### 博客\r\n- [阮一峰](http://www.ruanyifeng.com/home.html )\r\n\r\n### 效率工具\r\n\
+    - [WorkFlowy](https://workflowy.com/)  Organize your brain\r\n\r\n### 其他\r\n-\
+    \ [google whats-at-stake](https://www.google.com/intl/zh-CN/takeaction/whats-at-stake/)\r\
+    \n\r\n### 小玩意\r\n- [在线键盘钢琴](http://zythum.free.bg/Piano/)  需要切换为英文输入法\r\n- [Pretty\
+    \ IP - By Strange](http://prettyip.meetstrange.com/)  有颜色的IP\r\n\r\n### 技术社区\r\
+    \n- [programming.reddit](http://www.reddit.com/r/programming/ )\r\n- [Hacker News](http://news.ycombinator.com/\
+    \ )\r\n- [StackOverflow](http://stackoverflow.com )\r\n- [SegmentFault](http://segmentfault.com\
+    \ )\r\n- [德问]( http://www.dewen.org \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n- [Python-China](http://python-china.org/\
+    \ ) \r\n- [叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 嘿，看看你的收藏夹，把你最爱的几个分享到这里来吧，多谢^,^\r\
+    \n\r\n### 持续更新中,欢迎推荐, anwen.in@gmail.com"
+  post_img: ''
   published: 1349430186.0
   sharetype: fire
   slug: site-taste
   status: 0
   tags: list site
   title: !!python/str '站点分享'
-  updated: 1360507125.769937
+  updated: 1361378916.108871
+  upload_img: ''
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e0
   commentnum: 0
-  hitnum: 193
+  hitnum: 267
   id: 10
   likenum: 0
-  markdown: !!python/str "### 阅读\r\n* [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
-    \ )\r\n* [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
-    \n* [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
-    \n* [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
-    \n* [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n* [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
-    \n* [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n* [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
-    \n* [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
-    \n\r\n### 生活\r\n* [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 微小说\r\n\
-    * [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
-    \n\r\n### 技术\r\n* [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
-    \n* [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n* [程序员能力矩阵 Programmer\
-    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+  markdown: !!python/str "### 阅读\r\n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n- [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
+    \n- [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
+    \n- [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
+    \n- [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n- [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
+    \n- [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n- [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
+    \n- [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
+    \n- [纪录片《Minecraft：Mojang的故事》](http://www.ruanyifeng.com/blog/2012/12/minecraft_the_story_of_mojang.html)\r\
+    \n- [提高效率的秘诀 by Aaron Swartz](http://www.yesen.org/?p=171)\r\n- [给我未来的孩子](http://yue.fm/p9pdw)\r\
+    \n- [Graph Search能成为Facebook的杀手锏么？](http://www.yesen.org/?p=211)\r\n- [打破信息的牢笼](http://www.yesen.org/?p=204)\r\
+    \n- [空气有毒：PM 2.5、健康和科学松鼠会](http://www.yesen.org/?p=156)\r\n- [沉浮于江湖–读野夫《乡关何处》](http://www.yesen.org/?p=151)\r\
+    \n- [Kindle vs iPad：电子书将何去何从？](http://www.yesen.org/?p=146)\r\n- [旅行，写作，编程](http://www.aqee.net/traveling-writing-programming/)\r\
+    \n- [《Linus Torvalds自传》摘录](http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html)\r\
+    \n- [Michael S. Hart去世了](http://www.ruanyifeng.com/blog/2011/09/michael_s_hart_passed_away.html)\r\
+    \n- [自由引导网络，我们即将到来](http://www.solidot.org/story?sid=12063)\r\n- [不会沉没的海盗湾](http://www.ruanyifeng.com/blog/2010/05/an_unsinkable_tpb.html)\r\
+    \n- [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)\r\n\r\n### 短篇小说\r\n\
+    - [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
+    \n- [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
+    \n\r\n### 视频\r\n- [自然纪录片《Mythos Wald》](http://www.biubiubiubiu.com/post/227)\r\
+    \n\r\n### 图片\r\n- [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)\r\
+    \n\r\n### 生活\r\n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n\
+    - [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\
+    \n- [程序员能力矩阵 Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
     \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
+  post_img: ''
   published: 1349430399.0
   sharetype: book
   slug: post-share
   status: 0
   tags: list
   title: !!python/str '好文链接'
-  updated: 1360586535.698069
+  updated: 1362284449.144453
+  upload_img: ''
   user_id: 1

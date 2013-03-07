@@ -28,6 +28,7 @@ class ShareHandler(BaseHandler):
     def post(self):
         # print self.request.arguments
         share_id = self.get_argument("id", None)
+        status = 1 if self.get_argument("dosubmit", None) == u'保存草稿' else 0
         tags = self.get_argument("tags", '')
         upload_img = self.get_argument("uploadImg", '')
         post_img = self.get_argument("post_Img", '')
@@ -39,6 +40,7 @@ class ShareHandler(BaseHandler):
             'sharetype': self.get_argument("type"),
             'slug': self.get_argument("slug", ''),
             'tags': tags,
+            'status': status,
             'upload_img': upload_img,
             'post_img': post_img,
             'updated': time.time(),
@@ -63,6 +65,8 @@ class ShareHandler(BaseHandler):
                 'share_ids': share.id
             }
             Tag.new(doc)
+        if status == 1:
+            self.redirect("/share/?id=" + str(share.id))
         self.redirect("/share/" + str(share.id))
 
 
@@ -90,8 +94,10 @@ class EntryHandler(BaseHandler):
             share.tags = tags
             user_id = int(
                 self.current_user["user_id"]) if self.current_user else None
-            share.is_liking = Like.find(
-                {'share_id': share.id, 'user_id': user_id}).count() > 0
+            like = Like.find_one(
+                {'share_id': share.id, 'user_id': user_id})
+            share.is_liking = bool(like.likenum % 2) if like else None
+            share.is_disliking = bool(like.dislikenum % 2) if like else None
             comments = []
             comment_res = Comment.find({'share_id': share.id})
             for comment in comment_res:
@@ -185,24 +191,49 @@ class CommentsHandler(CommonResourceHandler):
 
 
 class LikeHandler(BaseHandler):
-    def post(self):
-        share_id = self.get_argument("share_id", None)
-        likenum = self.get_argument("likenum", 0)
-        like = Like
-        like['user_id'] = self.current_user["user_id"]
-        like['share_id'] = int(share_id)
-        like.save()
-        share = Share.by_sid(share_id)
-        share.likenum += 1
-        share.save()
-        user = User.by_sid(share.user_id)
-        user.user_leaf += 4
-        user.save()
-        user = User.by_sid(self.current_user["user_id"])
-        user.user_leaf += 2
-        user.save()
-        likenum = int(likenum) + 1
-        newlikes = ':) ' + str(likenum)
+    def post(self, action):
+        share_id = int(self.get_argument("share_id", None))
+        user_id = self.current_user["user_id"]
+        doc = {
+            'user_id': user_id,
+            'share_id': share_id
+        }
+        if action == 'addlike':
+            Like.change_like(doc, 'likenum')
+            share = Share.by_sid(share_id)
+            share.likenum += 1
+            share.save()
+            user = User.by_sid(share.user_id)
+            user.user_leaf += 4
+            user.save()
+            user = User.by_sid(user_id)
+            user.user_leaf += 2
+            user.save()
+            newlikes = str(share.likenum)
+        elif action == 'dellike':
+            Like.change_like(doc, 'likenum')
+            share = Share.by_sid(share_id)
+            share.likenum -= 1
+            share.save()
+            user = User.by_sid(share.user_id)
+            user.user_leaf -= 4
+            user.save()
+            user = User.by_sid(user_id)
+            user.user_leaf -= 2
+            user.save()
+            newlikes = str(share.likenum)
+        elif action == 'adddislike':
+            Like.change_like(doc, 'dislikenum')
+            share = Share.by_sid(share_id)
+            share.dislikenum += 1
+            share.save()
+            newlikes = str(share.dislikenum)
+        elif action == 'deldislike':
+            Like.change_like(doc, 'dislikenum')
+            share = Share.by_sid(share_id)
+            share.dislikenum -= 1
+            share.save()
+            newlikes = str(share.dislikenum)
         self.write(newlikes)
 
 

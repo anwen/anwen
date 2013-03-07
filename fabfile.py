@@ -1,17 +1,45 @@
-from fabric.api import run, cd, env, hide
-from fabric.api import local
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+from fabric.api import *
 
-# env.user = 'ask'
-# env.hosts = ['local', '58']
-# env.key_filename = ["/home/ask/.ssh"]
+env.use_ssh_config = True
+# env.hosts = ['aw']
+# env.user = 'root'
+# env.key_filename = '~/.ssh/aw_rsa'
 
 
 def hello():
     print("Hello world!")
 
 
+def whoami():
+    run('whoami')
+
+
+def pwd():
+    run('pwd')
+
+
 def host_type():
     run('uname -s')
+
+
+@task
+def nginx(todo):
+    ''' nginx:todo= '''
+    # fab -H aw nginx:todo=start
+    sudo('/etc/init.d/nginx %s' % todo)
+
+
+@task
+def back_data():
+    ''' backup data from aw mongo '''
+    with cd('/var/www/anwen/db'):   # 切换到远程目录
+        run('./db_in_out.py -o')
+        run('tar czf aw_yaml.tar.gz *.yaml')  # 远程解压
+    with lcd('~/anwen/db/'):  # 切换到local
+        get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
+        local('tar zxf aw_yaml.tar.gz')
 
 
 def test():
@@ -26,14 +54,14 @@ def push():
     local("git push aw_gh")
     local("git push prod")
 
-
-def prepare_deploy():
+@task
+def deploy():
     test()
     commit()
     push()
 
 
-def deploy():
+def deploy_2():
     # todo
     code_dir = '/home/lb/'
     with cd(code_dir):

@@ -9,7 +9,7 @@
     <fieldset>
       <legend>{{"修改分享" if share else "创建分享"}}</legend>
     </fieldset>
-    <div style="margin-bottom:5px">
+    <div style="margin-bottom:5px" class="post_header" data-id="{{share.id}}">
       <input name="title" type="text" class="title" value="{{escape(share.title) if share else ""}}"/>
     </div>
     <div style="margin-bottom:5px">
@@ -79,6 +79,10 @@
       </div>
       <div class="form-actions">
         <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-primary"/>
+        <input type="submit" name="dosubmit" value="保存草稿" class="btn btn-info"/>
+        {% if share %}
+        <a href="/share/{{share.id}}" target="_blank">预览</a>
+        {% end %}
         <div style="float:right">
           <a href="/markdown" target="_blank">Markdown漫游</a>
           <a href="/edit" target="_blank">Markdown编辑器</a>

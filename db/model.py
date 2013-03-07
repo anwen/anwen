@@ -117,6 +117,7 @@ class Share(BaseModel):
         'user_id': int,
         'commentnum': int,
         'likenum': int,
+        'dislikenum': int,
         'hitnum': int,
         'status': int,
         'published': float,
@@ -127,8 +128,9 @@ class Share(BaseModel):
         'id': 0,
         'commentnum': 0,
         'likenum': 0,
+        'dislikenum': 0,
         'hitnum': 0,
-        'status': 0,
+        'status': 0,  # 0=published,1=draft,2=deleted
         'published': time.time,
         'updated': time.time,
     }
@@ -158,13 +160,27 @@ class Like(BaseModel):
     __collection__ = 'Like_Col'
     use_autorefs = True
     structure = {
+        'id': int,
         'user_id': int,
         'share_id': int,
+        'likenum': int,
+        'dislikenum': int,
         'liketime': float,
     }
     default_values = {
+        'likenum': 0,
+        'dislikenum': 0,
         'liketime': time.time,
     }
+
+    def change_like(self, doc, liketype):
+        res = self.find_one(doc) or self()
+        if 'id' not in doc:
+            doc['id'] = self.find().count() + 1
+        res.update(doc)
+        res[liketype] += 1
+        res.save()
+        return res
 
 
 @connection.register

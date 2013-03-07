@@ -21,7 +21,7 @@
 				<div id="content">
 					<div class="share">
 
-<header class="post_header">
+<header class="post_header" data-id="{{share.id}}">
     <h1 class="post_title" itemprop="name">
     	{{ escape(share.title) }}
     </h1>
@@ -30,12 +30,27 @@
         <div class="post_meta_info">
             <a class="post_author" title="{{share.user_name}}" href="/user/{{share.user_domain}}">{{share.user_name}}</a>
             <time class="post_date">{{ locale.format_date(share.published, full_format=True, shorter=True) }}</time>
+<div id="resizer">
+<span id="f_text">字号：</span>
+<span id="f_s"><a href="javascript:void(0)">小</a></span>
+<span id="f_m"><a href="javascript:void(0)">中</a></span>
+<span id="f_l"><a href="javascript:void(0)">大</a></span>
+</div>
         </div>
     </div>
 </header>
 
-						<div class="body">{{ share.markdown }}</div>
+						<div class="body entry">{{ share.markdown }}</div>
 						<div class="tags">{{ share.tags }}</div>
+<p class="some">
+	<a href="javascript:" class="spread"><i class="icon-retweet"></i>扩散</a>
+	<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}"><i class="icon-heart"></i><span>喜欢 {{ share.likenum }}</span></a>
+<!-- 	<a href="javascript:" class="do-up" rel="tooltip" data-placement="right" data-original-title="顶起来"><i class="icon-thumbs-up"></i><span>顶</span></a>
+ -->
+	<a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}" rel="tooltip" data-placement="right" data-original-title="踩下去，不会显示你的表态"><i class="icon-thumbs-down"></i><span>踩 {{ share.dislikenum }}</span></a>
+</p>
+<div>
+
 						{% if not current_user %}
 需要
 						<a href="/login?next={{ url_escape(request.uri) }}" class="btn btn-primary">登录</a>
@@ -43,22 +58,14 @@
 						<a href="/joinus?next={{ url_escape(request.uri) }}" class="btn btn-danger">注册</a>
 						一个帐号。
 {% else %}
-						<form id="likeit" class="pull-right">
-							{{ xsrf_form_html() }}
-							<input type="hidden" name="id" id="id" value="{{ share.id }}"/>
-							<input type="hidden" name="likenum" id="likenum" value="{{ share.likenum }}"/>
-							{% if current_user["user_id"]==share.user_id or share.is_liking %}
-							<input type='submit' id="like" class="btn btn-info disabled"  disabled="disabled" value='喜欢({{ share.likenum }})' />
-							{% else %}
-							<input type='submit' id="like" class="btn btn-info" value='喜欢({{ share.likenum }})' />
-							{% end %}
-						</form>
+
 						{% if current_user["user_id"]==share.user_id %}
 						<a href="/share?id={{ share.id }}">
 							<button class="btn btn-success" >编辑本文</button>
 						</a>
 						{% end %}
 {% end %}
+
 {% if not current_user or current_user["user_id"]!=share.user_id %}
 						编辑:
 						<a href="https://github.com/anwen/anwen/blob/master/docs/shares/{{ share.id }}_{{ share.slug }}.md">
@@ -69,7 +76,7 @@
 						</a>
 						{% end %}
 						<a data-toggle="modal" href="#myModal" class="btn btn-primary pull-right">推荐</a>
-
+</div>
 						<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

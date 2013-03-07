@@ -1,3 +1,8 @@
+$(document).tooltip({
+    selector: "a[rel=tooltip]"
+});
+
+
 jQuery(function(){
     //goTop
     jQuery(window).scroll(function() {
@@ -13,21 +18,6 @@ jQuery(function(){
     // 回顶端 
     jQuery('#goTop').click(function(){
         jQuery(document).stop().scrollTo(0, 400);
-    })
-
-    // 弹出overlay层
-    function OpenOverlay(){
-        var douban_id = jQuery(this).attr('href').split('/')[2],
-            douban_uid = jQuery(this).attr('title')
-        jQuery('body').addClass('home-overlay-enabled');
-        jQuery('.overlay_username').html(douban_uid);
-        jQuery('#overlay_douban_link').attr('href', 'http://www.douban.com/people/' + douban_id)
-        return false;
-    }
-
-    // 关闭overlay层
-    jQuery('.home-overlay-close ').click(function(){
-        jQuery('body').removeClass('feedback-overlay-enabled').removeClass('home-overlay-enabled');
     })
 
     //打开feedback层

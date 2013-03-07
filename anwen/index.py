@@ -12,9 +12,9 @@ from pymongo import DESCENDING  # ASCENDING
 
 class IndexHandler(BaseHandler):
     # will make home-page different form node-page  todo
-    def get(self):
+    def get(self, node='home'):
         page = self.get_argument("page", 1)
-        share_res = Share.find().sort(
+        share_res = Share.find({'status': 0}).sort(
             '_id', DESCENDING).limit(11).skip((int(page) - 1) * 11)
 
         pagesum = (share_res.count() + 10) / 11
@@ -26,11 +26,10 @@ class IndexHandler(BaseHandler):
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
             share.markdown = filter_tags(
-                markdown2.markdown(share.markdown))[:500]
+                markdown2.markdown(share.markdown))[:400]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 
-        node = 'home'
         node_about = options.node_about[node]
         self.render(
             "node.html", shares=shares,
@@ -52,19 +51,13 @@ class NodeHandler(BaseHandler):
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
             share.markdown = filter_tags(
-                markdown2.markdown(share.markdown))[:500]
+                markdown2.markdown(share.markdown))[:400]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 
-        members = User.find().sort('_id', DESCENDING).limit(20)
-        members_dict = []
-        for member in members:
-            member.gravatar = get_avatar(member.user_email, 25)
-            members_dict.append(member)
-
         node_about = options.node_about[node]
         self.render(
-            "node.html", shares=shares, members=members_dict,
+            "node.html", shares=shares,
             pagesum=pagesum, page=page, node=node, node_about=node_about)
 
 
