@@ -7,11 +7,11 @@ import sys
 import os
 import re
 sys.path.append('..')
-from db import User, Share, Ande, Comment, Hit, Talk, Tag  # todo
+from db import User, Share, Ande, Comment, Hit, Talk, Tag, Feedback, Room, VideoMsg  # todo
 from bson import ObjectId
 
 
-doc_list = ['User', 'Share', 'Comment', 'Ande', 'Hit', 'Talk', 'Tag']
+doc_list = ['User', 'Share', 'Comment', 'Ande', 'Hit', 'Talk', 'Tag', 'Feedback', 'Room', 'VideoMsg']
 
 
 def make_doc():
