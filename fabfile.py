@@ -32,6 +32,14 @@ def nginx(todo):
 
 
 @task
+def update_nginx():
+    ''' update_nginx '''
+
+    put('/home/ask/anwen/conf/nginx.conf', '/usr/local/nginx/conf/nginx.conf')
+    sudo('/etc/init.d/nginx reload')
+
+
+@task
 def back_data():
     ''' backup data from aw mongo '''
     with cd('/var/www/anwen/db'):   # 切换到远程目录
@@ -58,6 +66,7 @@ def commit():
 def push():
     local("git push aw_gh")
     local("git push prod")
+
 
 @task
 def deploy():

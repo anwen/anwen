@@ -11,6 +11,7 @@
 server_setting.py
 User.yaml
 Ande.yaml
+VideoMsg.yaml
 *.tar.gz
 
 # temp files

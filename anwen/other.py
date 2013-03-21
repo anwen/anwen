@@ -43,22 +43,16 @@ class ScoreHandler(BaseHandler):
 
     def get(self, action):
         action = self.request.path[7:]
-        print action
         share_res = Share.find()
-        # print share_res.count()
         if 'add' in action:
             do, share_id, suggestscore = action.split('!')
             share = Share.by_sid(share_id)
-            print suggestscore
             share.suggestscore = float(suggestscore)
-            print share.suggestscore
             share.save()
-        # if action == 'update':
         for share in share_res:
             share.score = 0.001 * share.hitnum + share.likenum - \
                 share.dislikenum + 0.5 * share.commentnum - \
                 share.status + share.suggestscore + 0.5 * share.id
-            print share.score, share.title
             share.save()
         # self.write_json({'objs': list(Share.find().sort('score',
         # DESCENDING))})
