@@ -120,6 +120,8 @@ class Share(BaseModel):
         'dislikenum': int,
         'hitnum': int,
         'status': int,
+        'suggestscore': float,
+        'score': float,
         'published': float,
         'updated': float,
     }
@@ -131,6 +133,8 @@ class Share(BaseModel):
         'dislikenum': 0,
         'hitnum': 0,
         'status': 0,  # 0=published,1=draft,2=deleted
+        'suggestscore': 0.0,
+        'score': 0.0,
         'published': time.time,
         'updated': time.time,
     }

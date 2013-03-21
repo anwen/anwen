@@ -72,7 +72,6 @@ class ShareHandler(BaseHandler):
 
 class EntryHandler(BaseHandler):
     def get(self, slug):
-        # slug = self.request.path[1:]
         share = None
         if slug.isdigit():
             share = Share.by_sid(slug)

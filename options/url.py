@@ -12,7 +12,7 @@ from ande.ande import AndeHandler
 from ande.videomeet import VideoMeetHandler, VideoMsgHandler
 from anwen.talk import TalkHandler, ChatSocketHandler
 from anwen.talk import MsgNewHandler, MsgUpdatesHandler
-from anwen.other import EditHandler, ErrHandler, FeedbackHandler
+from anwen.other import EditHandler, ErrHandler, FeedbackHandler, ScoreHandler
 
 handlers = [
     (r"/", IndexHandler),
@@ -58,6 +58,7 @@ handlers = [
     (r"/a/message/new", MsgNewHandler),
     (r"/a/message/updates", MsgUpdatesHandler),
 
+    (r"/score/([^/]+)", ScoreHandler),
     (r"/feedback", FeedbackHandler),
     (r"/edit", EditHandler),
     (r'/404/?', ErrHandler),

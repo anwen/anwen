@@ -1,0 +1,182 @@
+- _id: 5124b36f606ec55a228fd749
+  client_id: 23219659/86666563
+  id: 1
+  msg: '{"sdp":"v=0\r\no=- 2548434069 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE
+    audio video\r\nm=audio 1 RTP/SAVPF 111 103 104 0 8 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:1
+    IN IP4 0.0.0.0\r\na=ice-ufrag:zjrsye0PMYtdKjwr\r\na=ice-pwd:fpb2k6X1mUDr3dOZGe9048AO\r\na=ice-options:google-ice\r\na=sendrecv\r\na=mid:audio\r\na=rtcp-mux\r\na=crypto:1
+    AES_CM_128_HMAC_SHA1_80 inline:dGufAojnS0Y3IsNQ/4EF/U1C81M4Z6ClMZ3bdX7P\r\na=rtpmap:103
+    ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:111 opus/48000\r\na=rtpmap:0
+    PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:3871865100
+    cname:2yJIP9yEfQOAHvSa\r\na=ssrc:3871865100 msid:jmcBAX7mKITcZrly4rsnWiam3k6Lt2ktpoyd
+    a0\r\na=ssrc:3871865100 mslabel:jmcBAX7mKITcZrly4rsnWiam3k6Lt2ktpoyd\r\na=ssrc:3871865100
+    label:jmcBAX7mKITcZrly4rsnWiam3k6Lt2ktpoyda0\r\nm=video 1 RTP/SAVPF 100 101 102\r\nc=IN
+    IP4 0.0.0.0\r\na=rtcp:1 IN IP4 0.0.0.0\r\na=ice-ufrag:zjrsye0PMYtdKjwr\r\na=ice-pwd:fpb2k6X1mUDr3dOZGe9048AO\r\na=ice-options:google-ice\r\na=sendrecv\r\na=mid:video\r\na=rtcp-mux\r\na=crypto:1
+    AES_CM_128_HMAC_SHA1_80 inline:dGufAojnS0Y3IsNQ/4EF/U1C81M4Z6ClMZ3bdX7P\r\na=rtpmap:100
+    VP8/90000\r\na=rtpmap:101 red/90000\r\na=rtpmap:102 ulpfec/90000\r\na=ssrc:2110712685
+    cname:2yJIP9yEfQOAHvSa\r\na=ssrc:2110712685 msid:jmcBAX7mKITcZrly4rsnWiam3k6Lt2ktpoyd
+    v0\r\na=ssrc:2110712685 mslabel:jmcBAX7mKITcZrly4rsnWiam3k6Lt2ktpoyd\r\na=ssrc:2110712685
+    label:jmcBAX7mKITcZrly4rsnWiam3k6Lt2ktpoydv0\r\n","type":"answer"}'
+  time: 1361359727.598634
+- _id: 5124b36f606ec55a21c752d2
+  client_id: 23219659/86666563
+  id: 2
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    1 udp 2113937151 192.168.1.101 56960 typ host generation 0\r\n"}'
+  time: 1361359727.78488
+- _id: 5124b36f606ec55a228fd74a
+  client_id: 23219659/86666563
+  id: 3
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    1 udp 1677729535 122.82.46.36 15321 typ srflx generation 0\r\n"}'
+  time: 1361359727.792684
+- _id: 5124b36f606ec55a21c752d3
+  client_id: 23219659/86666563
+  id: 4
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    2 udp 2113937151 192.168.1.101 56960 typ host generation 0\r\n"}'
+  time: 1361359727.804617
+- _id: 5124b36f606ec55a228fd74b
+  client_id: 23219659/86666563
+  id: 5
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    2 udp 1677729535 122.82.46.36 15321 typ srflx generation 0\r\n"}'
+  time: 1361359727.808698
+- _id: 5124b36f606ec55a21c752d4
+  client_id: 23219659/86666563
+  id: 6
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    1 udp 2113937151 192.168.1.101 56960 typ host generation 0\r\n"}'
+  time: 1361359727.815904
+- _id: 5124b36f606ec55a228fd74c
+  client_id: 23219659/86666563
+  id: 7
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    1 udp 1677729535 122.82.46.36 15321 typ srflx generation 0\r\n"}'
+  time: 1361359727.819012
+- _id: 5124b36f606ec55a21c752d5
+  client_id: 23219659/86666563
+  id: 8
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    2 udp 2113937151 192.168.1.101 56960 typ host generation 0\r\n"}'
+  time: 1361359727.832238
+- _id: 5124b36f606ec55a228fd74d
+  client_id: 23219659/86666563
+  id: 9
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    2 udp 1677729535 122.82.46.36 15321 typ srflx generation 0\r\n"}'
+  time: 1361359727.836376
+- _id: 5124b371606ec55a21c752d6
+  client_id: 23219659/86666563
+  id: 10
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:1167774669
+    1 tcp 1509957375 192.168.1.101 59488 typ host generation 0\r\n"}'
+  time: 1361359729.715052
+- _id: 5124b371606ec55a228fd74e
+  client_id: 23219659/86666563
+  id: 10
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:1167774669
+    2 tcp 1509957375 192.168.1.101 59488 typ host generation 0\r\n"}'
+  time: 1361359729.715829
+- _id: 5124b371606ec55a21c752d7
+  client_id: 23219659/86666563
+  id: 12
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:1167774669
+    1 tcp 1509957375 192.168.1.101 59488 typ host generation 0\r\n"}'
+  time: 1361359729.730483
+- _id: 5124b371606ec55a228fd74f
+  client_id: 23219659/86666563
+  id: 12
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:1167774669
+    2 tcp 1509957375 192.168.1.101 59488 typ host generation 0\r\n"}'
+  time: 1361359729.731653
+- _id: 5124b380606ec55a228fd750
+  client_id: 23219659/86666563
+  id: 14
+  msg: '{"sdp":"v=0\r\no=- 1346915530 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE
+    audio video\r\nm=audio 1 RTP/SAVPF 111 103 104 0 8 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:1
+    IN IP4 0.0.0.0\r\na=ice-ufrag:9DIkIHf5FzC09WAE\r\na=ice-pwd:+3ZnDpDuE2M3L6b0hWkbvn6j\r\na=ice-options:google-ice\r\na=sendrecv\r\na=mid:audio\r\na=rtcp-mux\r\na=crypto:1
+    AES_CM_128_HMAC_SHA1_80 inline:dEXxVLhGyh/XYVdKdY2iR8TaAwQJRA8sgYIVx+hl\r\na=rtpmap:103
+    ISAC/16000\r\na=rtpmap:104 ISAC/32000\r\na=rtpmap:111 opus/48000\r\na=rtpmap:0
+    PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:2685347387
+    cname:2wekmgYIpqB3n+TI\r\na=ssrc:2685347387 msid:0q35Fr8xHvV2Q3lbwVqUFG9fTbw42zjthuWA
+    a0\r\na=ssrc:2685347387 mslabel:0q35Fr8xHvV2Q3lbwVqUFG9fTbw42zjthuWA\r\na=ssrc:2685347387
+    label:0q35Fr8xHvV2Q3lbwVqUFG9fTbw42zjthuWAa0\r\nm=video 1 RTP/SAVPF 100 101 102\r\nc=IN
+    IP4 0.0.0.0\r\na=rtcp:1 IN IP4 0.0.0.0\r\na=ice-ufrag:9DIkIHf5FzC09WAE\r\na=ice-pwd:+3ZnDpDuE2M3L6b0hWkbvn6j\r\na=ice-options:google-ice\r\na=sendrecv\r\na=mid:video\r\na=rtcp-mux\r\na=crypto:1
+    AES_CM_128_HMAC_SHA1_80 inline:dEXxVLhGyh/XYVdKdY2iR8TaAwQJRA8sgYIVx+hl\r\na=rtpmap:100
+    VP8/90000\r\na=rtpmap:101 red/90000\r\na=rtpmap:102 ulpfec/90000\r\na=ssrc:235765018
+    cname:2wekmgYIpqB3n+TI\r\na=ssrc:235765018 msid:0q35Fr8xHvV2Q3lbwVqUFG9fTbw42zjthuWA
+    v0\r\na=ssrc:235765018 mslabel:0q35Fr8xHvV2Q3lbwVqUFG9fTbw42zjthuWA\r\na=ssrc:235765018
+    label:0q35Fr8xHvV2Q3lbwVqUFG9fTbw42zjthuWAv0\r\n","type":"answer"}'
+  time: 1361359744.498169
+- _id: 5124b380606ec55a21c752d8
+  client_id: 23219659/86666563
+  id: 15
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    1 udp 2113937151 192.168.1.101 53074 typ host generation 0\r\n"}'
+  time: 1361359744.610014
+- _id: 5124b380606ec55a228fd751
+  client_id: 23219659/86666563
+  id: 16
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    1 udp 1677729535 122.82.46.36 15326 typ srflx generation 0\r\n"}'
+  time: 1361359744.617372
+- _id: 5124b380606ec55a21c752d9
+  client_id: 23219659/86666563
+  id: 17
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    2 udp 2113937151 192.168.1.101 53074 typ host generation 0\r\n"}'
+  time: 1361359744.627221
+- _id: 5124b380606ec55a228fd752
+  client_id: 23219659/86666563
+  id: 18
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:2275481920
+    2 udp 1677729535 122.82.46.36 15326 typ srflx generation 0\r\n"}'
+  time: 1361359744.631546
+- _id: 5124b380606ec55a21c752da
+  client_id: 23219659/86666563
+  id: 19
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    1 udp 2113937151 192.168.1.101 53074 typ host generation 0\r\n"}'
+  time: 1361359744.642303
+- _id: 5124b380606ec55a228fd753
+  client_id: 23219659/86666563
+  id: 20
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    1 udp 1677729535 122.82.46.36 15326 typ srflx generation 0\r\n"}'
+  time: 1361359744.665226
+- _id: 5124b380606ec55a21c752db
+  client_id: 23219659/86666563
+  id: 21
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    2 udp 2113937151 192.168.1.101 53074 typ host generation 0\r\n"}'
+  time: 1361359744.674518
+- _id: 5124b380606ec55a228fd754
+  client_id: 23219659/86666563
+  id: 22
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:2275481920
+    2 udp 1677729535 122.82.46.36 15326 typ srflx generation 0\r\n"}'
+  time: 1361359744.683255
+- _id: 5124b382606ec55a21c752dc
+  client_id: 23219659/86666563
+  id: 23
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:1167774669
+    2 tcp 1509957375 192.168.1.101 59494 typ host generation 0\r\n"}'
+  time: 1361359746.520374
+- _id: 5124b382606ec55a228fd755
+  client_id: 23219659/86666563
+  id: 23
+  msg: '{"type":"candidate","label":0,"id":"audio","candidate":"a=candidate:1167774669
+    1 tcp 1509957375 192.168.1.101 59494 typ host generation 0\r\n"}'
+  time: 1361359746.522858
+- _id: 5124b382606ec55a21c752dd
+  client_id: 23219659/86666563
+  id: 25
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:1167774669
+    1 tcp 1509957375 192.168.1.101 59494 typ host generation 0\r\n"}'
+  time: 1361359746.538303
+- _id: 5124b382606ec55a228fd756
+  client_id: 23219659/86666563
+  id: 25
+  msg: '{"type":"candidate","label":1,"id":"video","candidate":"a=candidate:1167774669
+    2 tcp 1509957375 192.168.1.101 59494 typ host generation 0\r\n"}'
+  time: 1361359746.540687

@@ -37,9 +37,14 @@ def back_data():
     with cd('/var/www/anwen/db'):   # 切换到远程目录
         run('./db_in_out.py -o')
         run('tar czf aw_yaml.tar.gz *.yaml')  # 远程解压
+    with cd('/var/www/anwen/docs/shares'):
+        run('tar czf aw_md.tar.gz *.md')  # 远程解压
     with lcd('~/anwen/db/'):  # 切换到local
         get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
         local('tar zxf aw_yaml.tar.gz')
+    with lcd('~/anwen/docs/shares/'):
+        get('/var/www/anwen/docs/shares/aw_md.tar.gz', '.')
+        local('tar zxf aw_md.tar.gz')
 
 
 def test():

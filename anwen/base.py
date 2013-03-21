@@ -64,8 +64,7 @@ class BaseHandler(RequestHandler):
                 return str(obj)
             else:
                 return dict(obj)
-        s = dumps(obj, default=handler)
-        return self.write(s)
+        return self.write(dumps(obj, default=handler))
 
 
 class PageNotFoundHandler(RequestHandler):
@@ -75,22 +74,6 @@ class PageNotFoundHandler(RequestHandler):
 
 class JSONHandler(BaseHandler):
     """Every API handler should inherit from this class."""
-
-    def write_json(self, obj):
-        """Writes the JSON-formated string of the give obj
-        to the output buffer"""
-
-        self.set_header('Content-Type', 'application/json')
-        from json import dumps
-
-        def handler(obj):
-            if hasattr(obj, 'to_json'):
-                return obj.to_json()
-            elif isinstance(obj, ObjectId):
-                return str(obj)
-            else:
-                return dict(obj)
-        return self.write(dumps(obj, default=handler))
 
     def get_json_arg(self, name=None, *args):
         """Returns the value of the argument with the given name,

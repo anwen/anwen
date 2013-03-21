@@ -1,6 +1,7 @@
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
-  hitnum: 484
+  dislikenum: 0
+  hitnum: 564
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -41,7 +42,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e7
   commentnum: 1
-  hitnum: 477
+  dislikenum: 0
+  hitnum: 559
   id: 17
   likenum: 0
   markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
@@ -67,7 +69,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
-  hitnum: 235
+  dislikenum: 0
+  hitnum: 275
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -122,7 +125,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
-  hitnum: 244
+  dislikenum: 0
+  hitnum: 296
   id: 14
   likenum: 0
   markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
@@ -141,7 +145,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
-  hitnum: 264
+  dislikenum: 0
+  hitnum: 308
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
@@ -162,7 +167,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
-  hitnum: 229
+  dislikenum: 0
+  hitnum: 278
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -182,7 +188,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
-  hitnum: 185
+  dislikenum: 0
+  hitnum: 220
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
@@ -200,7 +207,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
-  hitnum: 149
+  dislikenum: 0
+  hitnum: 178
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
@@ -217,7 +225,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
-  hitnum: 390
+  dislikenum: 0
+  hitnum: 472
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -237,7 +246,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
-  hitnum: 166
+  dislikenum: 0
+  hitnum: 200
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
@@ -256,7 +266,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
-  hitnum: 159
+  dislikenum: 0
+  hitnum: 191
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
@@ -275,7 +286,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e1
   commentnum: 0
-  hitnum: 491
+  dislikenum: 0
+  hitnum: 579
   id: 11
   likenum: 0
   markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
@@ -301,7 +313,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
-  hitnum: 482
+  dislikenum: 0
+  hitnum: 565
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -348,7 +361,8 @@
   user_id: 1
 - _id: 50fc0267606ec50580ce9fe2
   commentnum: 1
-  hitnum: 164
+  dislikenum: 0
+  hitnum: 205
   id: 18
   likenum: 0
   markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
@@ -364,7 +378,8 @@
   user_id: 26
 - _id: 50e44d08606ec51c6ab042dc
   commentnum: 0
-  hitnum: 184
+  dislikenum: 0
+  hitnum: 216
   id: 6
   likenum: 0
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
@@ -415,7 +430,8 @@
   user_id: 1
 - _id: 510bcb1d606ec50bbe416844
   commentnum: 0
-  hitnum: 124
+  dislikenum: 0
+  hitnum: 163
   id: 19
   likenum: 0
   markdown: !!python/str "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
@@ -461,7 +477,8 @@
   user_id: 1
 - _id: 5117186e606ec50bbf529207
   commentnum: 0
-  hitnum: 113
+  dislikenum: 0
+  hitnum: 152
   id: 20
   likenum: 0
   markdown: !!python/str "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
@@ -505,7 +522,8 @@
   user_id: 1
 - _id: 51171b3a606ec50bbe41685e
   commentnum: 0
-  hitnum: 95
+  dislikenum: 0
+  hitnum: 139
   id: 21
   likenum: 0
   markdown: !!python/str "Stopping by Woods on a Snowy Evening    BY ROBERT FROST\r\
@@ -531,7 +549,8 @@
   user_id: 1
 - _id: 5117245c606ec50bbe416860
   commentnum: 0
-  hitnum: 129
+  dislikenum: 0
+  hitnum: 174
   id: 22
   likenum: 0
   markdown: !!python/str "<object width=\"500\" height=\"74\"><param name=\"movie\"\
@@ -563,31 +582,10 @@
   updated: 1360485891.018391
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e2
-  commentnum: 0
-  hitnum: 245
-  id: 12
-  likenum: 0
-  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
-    * 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 莱博维茨的赞歌\r\n* 真名实姓\r\n* 沧浪之水\r\n* 基地\r\n* 球状闪电\r\
-    \n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\n*\
-    \ 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n* 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\
-    \n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n\r\n* 黑客与画家\r\n\
-    * 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\
-    \n\r\n不断补充中～～～\r\n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书或者文章， anwen.in@gmail.com"
-  post_img: 20130220_151116_345433_1200.jpg
-  published: 1349432059.0
-  sharetype: book
-  slug: book-share
-  status: 0
-  tags: list
-  title: !!python/str '推荐好书'
-  updated: 1361344288.093345
-  upload_img: ''
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
-  hitnum: 206
+  dislikenum: 0
+  hitnum: 247
   id: 8
   likenum: 0
   markdown: !!python/str "### 阅读\r\n- [Solidot](http://www.solidot.org/) 奇客的资讯，重要的东西\r\
@@ -626,7 +624,8 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e0
   commentnum: 0
-  hitnum: 267
+  dislikenum: 0
+  hitnum: 318
   id: 10
   likenum: 0
   markdown: !!python/str "### 阅读\r\n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
@@ -661,5 +660,32 @@
   tags: list
   title: !!python/str '好文链接'
   updated: 1362284449.144453
+  upload_img: ''
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e2
+  commentnum: 0
+  dislikenum: 0
+  hitnum: 305
+  id: 12
+  likenum: 0
+  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
+    * 悟空传\r\n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 莱博维茨的赞歌\r\n* 真名实姓\r\n* 沧浪之水\r\n* 基地\r\
+    \n* 球状闪电\r\n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\
+    \n* 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n* 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\
+    \n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n* 黑客与画家\r\n* 重来：更为简单有效的商业思维\r\
+    \n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\
+    \n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
+    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
+    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n<https://groups.google.com/forum/?fromgroups=#!forum/skindle>\r\
+    \n\r\n\r\n不断补充中～～～\r\n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书或者文章，\
+    \ anwen.in@gmail.com"
+  post_img: 20130220_151116_345433_1200.jpg
+  published: 1349432059.0
+  sharetype: book
+  slug: book-share
+  status: 0
+  tags: list
+  title: !!python/str '推荐好书'
+  updated: 1363336996.812721
   upload_img: ''
   user_id: 1
