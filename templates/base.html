@@ -84,9 +84,7 @@
     </div>
   </div>
 </div>
-<a id="feedbackBtn" href="javascript:void(0)" data-original-title="提交反馈"> <i class="icon icon-white icon-envelope"></i>
-  <span>Feedback</span>
-</a>
+
 {% block body %}{% end %}
 <!-- Footer
 ================================================== -->
@@ -113,44 +111,13 @@
   </div>
 </footer>
 
-<div class="feedback-overlay dialog">
-  <div class="home-overlay-close">x</div>
-  <div id="base02_wrapper">
-    <header>
-      <div id="avatar">
-        <img src="http://img3.douban.com/icon/u46626916-1.jpg" alt="askender" />
-      </div>
-    </header>
-    <section id="base02_body">
-      <div class="base02_inner">
-        <div id="feedback_wrap">
-          <form id="feedbackForm" class="form-horizontal" method="post" action="/feedback">
-            <fieldset>
-              <legend>欢迎给安问提意见和建议~</legend>
-              <p style="margin-bottom:30px;color:#999">也欢迎提交任何Bug/错误</p>
-              {% if not current_user %}
-              <p style="color:#999">请您留下Email或其他联系方式方便我们给您反馈</p>
-              {% end %}
-              <div class="controls">
-                <textarea name="content" autocomplete="off" placeholder="^,^" datatype="feedback_content" class="span5" rows="5"></textarea>
-                <span class="Validform_checktip">1-500字</span>
-              </div>
-              <div class="controls">
-                <input class="btn btn-primary btn-block" type="submit" value="提交"></div>
-            </fieldset>
-          </form>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
+
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
--->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
 <!-- or use local jquery -->
 <!-- <script src="{{ static_url("js/jquery.js") }}"></script>
 -->
@@ -158,26 +125,5 @@
 <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
 <script src="{{ static_url("js/common.js") }}"></script>
 {% block bottom %}{% end %}
-<script>
-    // Toggle fullscreen button:
-    $('#toggle-fullscreen').button().click(function () {
-        var button = $(this),
-            root = document.documentElement;
-        if (!button.hasClass('active')) {
-            if (root.webkitRequestFullScreen) {
-                root.webkitRequestFullScreen(
-                    window.Element.ALLOW_KEYBOARD_INPUT
-                );
-            } else if (root.mozRequestFullScreen) {
-                root.mozRequestFullScreen();
-            }
-        } else {
-            (document.webkitCancelFullScreen ||
-                document.mozCancelFullScreen ||
-                $.noop).apply(document);
-        }
-    });
-</script>
-
 </body>
 </html>
