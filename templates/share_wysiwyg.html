@@ -4,10 +4,9 @@
 {% end %}
 {% block head %}
 <link rel="stylesheet" href="{{ static_url("css/bootstrap-wysiwyg.css") }}" type="text/css" media="screen" />
-<link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
-<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 <link href="{{ static_url("css/blog.css") }}" rel="stylesheet">
 {% end %}
+
 {% block body %}
 <div class="container">
   <form action="" method="post" class="compose">
@@ -119,12 +118,14 @@
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech=""></div>
 
-<div style="margin-bottom:5px">
-    <textarea id="editor" name="content" class="markdown" rows="30" cols="40"  >{{escape(share.content) if share else ""}}</textarea>
+  <div style="margin-bottom:5px">
+    <div id="editor" name="content" class="markdown" rows="30" cols="40"  >{{escape(share.content) if share else ""}}</div>
   </div>
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}
+    <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
+    <input type="hidden" name="sharetype" value="{{ share.sharetype if share else '' }}"/>
     <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
     {{ xsrf_form_html() }}
 
@@ -171,6 +172,7 @@
 {% block bottom %}
 <script src="{{ static_url("js/jquery.filedrop.js") }}"></script>
 <script src="{{ static_url("js/share.js") }}"></script>
+
 <script src="{{ static_url("js/bootstrap-wysiwyg.js") }}"></script>
 <script src="{{ static_url("js/wysiwyg-config.js") }}"></script>
 {% end %}

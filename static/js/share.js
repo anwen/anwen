@@ -1,7 +1,6 @@
 //---------------------------------
 //-----------图片上传-----
 //---------------------------------
-
 jQuery('#switchImgWrap').toggle(
 
 function() {
@@ -256,46 +255,47 @@ jQuery(".del_post_img").click(DeletePostImg)
 
 
 $(document).ready(function() {
-  JudgeCheck();
-  JudgeInput();
-  CheckImg();
+    JudgeCheck();
+    JudgeInput();
+    CheckImg();
 });
 
 function JudgeCheck() {
     var sharetype = $("input[name=sharetype]")[0].value;
-  $("input[name=type][value="+sharetype+"]").attr("checked",true)
+    $("input[name=type][value=" + sharetype + "]").attr("checked", true)
 }
 
 function JudgeInput() {
-  $("input[name=title]").select();
-  $("form.compose").submit(function() {
-      var required = ["title", "markdown"];
-      var form = $(this).get(0);
-      for (var i = 0; i < required.length; i++) {
-        if (!form[required[i]].value) {
-          $(form[required[i]]).select();
-          return false;
+    $("input[name=title]").select();
+    $("form.compose").submit(function() {
+        var required = ["title", "markdown"];
+        var form = $(this).get(0);
+        for (var i = 0; i < required.length; i++) {
+            if (!form[required[i]].value) {
+                $(form[required[i]]).select();
+                return false;
+            }
         }
-      }
-      return true;
-  });
+        return true;
+    });
 }
+
 function CheckImg() {
     var post_img = $("input[name=post_img]")[0].value;
-  if (post_img){
-    var post_img_path = '/static/upload/img/'+post_img;
-    jQuery('.post_image_upload').css({
-        'background-size':'cover',
-        'background-image': 'url(" '+ post_img_path +' ")'
-    })
+    if (post_img) {
+        var post_img_path = '/static/upload/img/' + post_img;
+        jQuery('.post_image_upload').css({
+            'background-size': 'cover',
+            'background-image': 'url(" ' + post_img_path + ' ")'
+        })
 
-    jQuery('#post_Img_1').val(''+ post_img);
-    jQuery(".imageHolder").css({
-      "background" : 'url("'+ post_img_path +' ") center center no-repeat',
-      'background-size' : 'cover'
-    })
-    jQuery('.message, .upload_btn').hide();
-    jQuery('.del_post_img, .save_post_img_btn').show();
+        jQuery('#post_Img_1').val('' + post_img);
+        jQuery(".imageHolder").css({
+            "background": 'url("' + post_img_path + ' ") center center no-repeat',
+            'background-size': 'cover'
+        })
+        jQuery('.message, .upload_btn').hide();
+        jQuery('.del_post_img, .save_post_img_btn').show();
 
-  }
+    }
 }
