@@ -38,7 +38,7 @@ class BaseHandler(RequestHandler):
 
     # def get_user_locale(self):
     #     if "locale" not in self.current_user.prefs:
-    #         # Use the Accept-Language header
+    #         Use the Accept-Language header
     #         return None
     #     return self.current_user.prefs["locale"]
 

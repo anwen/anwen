@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+意见反馈 -
+{% end %}
+{% block body %}
+<div class="container well">
+
+  <div class="tiny_container">
+    <form accept-charset="UTF-8" action="/advices" method="post">
+      <fieldset>
+        <legend class="form_legend">意见反馈</legend>
+
+        <div style="padding-top:10px;">
+          <span>邮箱：</span>
+          <input class="large" name="email" value="" size="30" type="text" />
+        </div>
+        <div style="padding-top:10px;">
+          <span>意见：</span>
+          <textarea  name="content" class="advice_area"></textarea>
+        </div>
+        <div>
+          <span>&nbsp;</span>
+          <input type="submit" class="btn btn-primary" value="  提 交  "></div>
+      </fieldset>
+    </form>
+  </div>
+
+</div>
+
+{% end %}
