@@ -66,6 +66,10 @@ class BaseHandler(RequestHandler):
                 return dict(obj)
         return self.write(dumps(obj, default=handler))
 
+    # def prepare(self):
+    #     if self.request.headers.get("Content-Type") == "application/json":
+    #         self.json_args = json_decode(self.request.body)
+
 
 class PageNotFoundHandler(RequestHandler):
     def get(self):

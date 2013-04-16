@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% block title %}
+分享-
+{% end %}
+{% block head %}
+<link rel="stylesheet" href="{{ static_url("css/bootstrap-wysiwyg.css") }}" type="text/css" media="screen" />
+<link href="http://twitter.github.com/bootstrap/assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+<link href="{{ static_url("css/blog.css") }}" rel="stylesheet">
+{% end %}
+{% block body %}
+<div class="container">
+  <form action="" method="post" class="compose">
+
+    <fieldset>
+      <legend>{{"修改分享" if share else "创建分享"}}</legend>
+    </fieldset>
+
+    <div style="margin-bottom:5px" class="post_header" data-id="{{share.id if share else ""}}">
+      <input name="title" type="text" class="title" value="{{escape(share.title) if share else ""}}"/>
+    </div>
+
+    <div id="alerts"></div>
+    <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"> <i class="icon-font"></i> <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu"></ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"> <i class="icon-text-height"></i>
+          &nbsp; <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a data-edit="fontSize 5"> <font size="5">Huge</font>
+            </a>
+          </li>
+          <li>
+            <a data-edit="fontSize 3"> <font size="3">Normal</font>
+            </a>
+          </li>
+          <li>
+            <a data-edit="fontSize 1">
+              <font size="1">Small</font>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)">
+          <i class="icon-bold"></i>
+        </a>
+        <a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)">
+          <i class="icon-italic"></i>
+        </a>
+        <a class="btn" data-edit="strikethrough" title="Strikethrough">
+          <i class="icon-strikethrough"></i>
+        </a>
+        <a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)">
+          <i class="icon-underline"></i>
+        </a>
+      </div>
+      <div class="btn-group">
+        <a class="btn" data-edit="insertunorderedlist" title="Bullet list">
+          <i class="icon-list-ul"></i>
+        </a>
+        <a class="btn" data-edit="insertorderedlist" title="Number list">
+          <i class="icon-list-ol"></i>
+        </a>
+        <a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)">
+          <i class="icon-indent-left"></i>
+        </a>
+        <a class="btn" data-edit="indent" title="Indent (Tab)">
+          <i class="icon-indent-right"></i>
+        </a>
+      </div>
+      <div class="btn-group">
+        <a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)">
+          <i class="icon-align-left"></i>
+        </a>
+        <a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)">
+          <i class="icon-align-center"></i>
+        </a>
+        <a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)">
+          <i class="icon-align-right"></i>
+        </a>
+        <a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)">
+          <i class="icon-align-justify"></i>
+        </a>
+      </div>
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink">
+          <i class="icon-link"></i>
+        </a>
+        <div class="dropdown-menu input-append">
+          <input class="span2" placeholder="URL" type="text" data-edit="createLink"/>
+          <button class="btn" type="button">Add</button>
+        </div>
+        <a class="btn" data-edit="unlink" title="Remove Hyperlink">
+          <i class="icon-cut"></i>
+        </a>
+
+      </div>
+
+      <div class="btn-group">
+        <a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn">
+          <i class="icon-picture"></i>
+        </a>
+        <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
+      </div>
+      <div class="btn-group">
+        <a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)">
+          <i class="icon-undo"></i>
+        </a>
+        <a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)">
+          <i class="icon-repeat"></i>
+        </a>
+      </div>
+      <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech=""></div>
+
+<div style="margin-bottom:5px">
+    <textarea id="editor" name="content" class="markdown" rows="30" cols="40"  >{{escape(share.content) if share else ""}}</textarea>
+  </div>
+    {% if share %}
+    <input type="hidden" name="id" value="{{ share.id }}"/>
+    {% end %}
+    <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
+    {{ xsrf_form_html() }}
+
+      <div style="margin-bottom:5px">
+        标签(选填，多个可用空格分隔):
+        <input name="tags" type="text" class="tags" value="{{escape(share.tags) if share else ""}}"/>
+        别名(选填，a-zA-Z0-9_-):
+        <input name="slug" type="text" class="slug" value="{{escape(share.slug) if share else ""}}"/>
+      </div>
+      <div id="switchImgWrap" class="btn" style="display: inline-block;">上传图片</div>
+
+      <div class="post_image_upload_wrap node_empty_border">
+        <div class="post_image_upload piu node_empty">
+          <a href="javascript:void(0)" class="upload_btn btn btn-info" onclick="getElementById('upload_file_hide').click()">上传图片 或 拖拽图片到这里</a>
+          <span class="message">
+            <i></i>
+            <p>拖拽图片到这里就会自动上传，请保证你上传图片的质量。</p>
+          </span>
+          <input type="file" name="uploadImg" id="upload_file_hide" />
+          <input type="hidden" datatype="post_Img" id="post_Img_1" name="post_Img" errormsg="啊哈？出错了" nullmsg="你还没有上传图片。" />
+          <span class="Validform_checktip postImgValidformChecktip"></span>
+          <a class="del_post_img btn" href="javascript:void(0)">
+            <i class="icon-remove icon-white"></i>
+            删除
+          </a>
+        </div>
+      </div>
+      <div class="form-actions">
+        <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-primary"/>
+        <input type="submit" name="dosubmit" value="保存草稿" class="btn btn-info"/>
+        {% if share %}
+        <a href="/share/{{share.id}}" target="_blank">预览</a>
+        {% end %}
+        <div style="float:right">
+          <a href="/markdown" target="_blank">Markdown漫游</a>
+          <a href="/edit" target="_blank">Markdown编辑器</a>
+        </div>
+      </div>
+
+  </form>
+</div>
+{% end %}
+
+{% block bottom %}
+<script src="{{ static_url("js/jquery.filedrop.js") }}"></script>
+<script src="{{ static_url("js/share.js") }}"></script>
+<script src="{{ static_url("js/bootstrap-wysiwyg.js") }}"></script>
+<script src="{{ static_url("js/wysiwyg-config.js") }}"></script>
+{% end %}

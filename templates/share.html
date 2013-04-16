@@ -9,11 +9,11 @@
     <fieldset>
       <legend>{{"修改分享" if share else "创建分享"}}</legend>
     </fieldset>
-    <div style="margin-bottom:5px" class="post_header" data-id="">
+    <div style="margin-bottom:5px" class="post_header" data-id="{{share.id if share else ""}}">
       <input name="title" type="text" class="title" value="{{escape(share.title) if share else ""}}"/>
     </div>
     <div style="margin-bottom:5px">
-      <textarea name="markdown" rows="30" cols="40" class="markdown">{{escape(share.markdown) if share else ""}}</textarea>
+      <textarea name="markdown" rows="30" cols="40" id="editor">{{escape(share.markdown) if share else ""}}</textarea>
     </div>
     <div>
 
@@ -92,6 +92,9 @@
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}
+    <input type="hidden" name="sharetype" value="{{ share.sharetype if share else '' }}"/>
+    <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
+
     {{ xsrf_form_html() }}
   </form>
 </div>
@@ -103,49 +106,6 @@
 
 <script type="text/javascript">
   //<![CDATA[
-$(document).ready(function() {
-  JudgeCheck();
-  JudgeInput();
-  CheckImg();
-});
 
-function JudgeCheck() {
-  var sharetype = '{{share.sharetype if share else "" }}';
-  $("input[name=type][value="+sharetype+"]").attr("checked",true)
-}
-
-function JudgeInput() {
-  $("input[name=title]").select();
-  $("form.compose").submit(function() {
-      var required = ["title", "markdown"];
-      var form = $(this).get(0);
-      for (var i = 0; i < required.length; i++) {
-        if (!form[required[i]].value) {
-          $(form[required[i]]).select();
-          return false;
-        }
-      }
-      return true;
-  });
-}
-function CheckImg() {
-  var post_img = '{{ share.post_img if share else "" }}';
-  if (post_img){
-    var post_img_path = '/static/upload/img/'+post_img;
-    jQuery('.post_image_upload').css({
-        'background-size':'cover',
-        'background-image': 'url(" '+ post_img_path +' ")'
-    })
-
-    jQuery('#post_Img_1').val(''+ post_img);
-    jQuery(".imageHolder").css({
-      "background" : 'url("'+ post_img_path +' ") center center no-repeat',
-      'background-size' : 'cover'
-    })
-    jQuery('.message, .upload_btn').hide();
-    jQuery('.del_post_img, .save_post_img_btn').show();
-
-  }
-}
   //]]></script>
 {% end %}

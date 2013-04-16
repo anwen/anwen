@@ -22,7 +22,11 @@ class ShareHandler(BaseHandler):
         share = None
         if share_id:
             share = Share.by_sid(share_id)
-        self.render("share.html", share=share)
+        editor = self.get_argument("editor", None)
+        if editor:
+            self.render("share_wysiwyg.html", share=share)
+        else:
+            self.render("share.html", share=share)
 
     @tornado.web.authenticated
     def post(self):

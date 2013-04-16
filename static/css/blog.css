@@ -20,13 +20,11 @@
 	font-size:14pt
 }
 
-.compose .title,.compose .markdown
+.compose .title,.compose #editor
 {
 	width:100%
 }
 
-.compose .markdown
-{
+#editor {
 	height:500px;
-	line-height:16pt
 }
