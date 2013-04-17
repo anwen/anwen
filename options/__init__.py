@@ -1,4 +1,32 @@
 # -*- coding: utf-8 -*-
+
+# site_domain = 'http://0.0.0.0:8080'  # 本地开发测试用
+# site_domain = 'http://anwensf.com/'  # 域名
+
+site_info = {
+    'title': 'Anwen',
+    'subtitle': 'create and share something nice',
+    'author': 'Anwen',
+    'email': 'anwen.in@gmail.com',  # optional
+    'weibo': 'http://weibo.com/askender',  # optional
+    'douban': 'http://site.douban.com/askender/',  # optional
+    'description': 'freedom and open-source dream world, \
+which try to create and share things touch your soul',
+
+    'bottom_info': '''
+<div class="pull-right">
+    <a href="https://github.com/askender/anwen.in">开源@github</a>
+    <a href="/about">关于安问</a>
+    <a href="/help">帮助中心</a>
+    <a href="/changelog">行动日志</a>
+</div>
+<div class="pull-left copyleft">
+    Copyleft © 2011-2013 安问
+</div>
+''',
+
+}
+
 debug = True
 
 port = 8888

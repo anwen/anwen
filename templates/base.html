@@ -3,12 +3,10 @@
 <head>
   <!-- <meta charset="utf-8"> -->
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>{% block title %}{% end %}{{_('Anwen')}}{% block titlemore %}{% end %}</title> 
+  <title>{% block title %}{% end %}{{_(site_info['title'])}}{% block titlemore %}{% end %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <meta name="description" content="{{_('Anwen')}} - 创造和分享美好">
-  <meta name="author" content="anwen">
+  <meta name="author" content="{{_(site_info['author'])}}">
+  <meta name="description" content="{{_(site_info['description'])}}">
   <link rel="alternate" href="/feed" type="application/atom+xml" title="安问feed"/>
 
   <!-- Le styles -->
@@ -43,7 +41,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="brand" href="/">{{_('Anwen')}}<sup style="font-size:12px;">&nbsp;创造和分享美好</sup></a>
+        <a class="brand" href="/">{{_(site_info['title'])}}<sup style="font-size:12px;">&nbsp;{{_(site_info['subtitle'])}}</sup></a>
         {{ modules.Useradmin() }}
         <div class="nav-collapse collapse">
           <ul class="nav">
@@ -93,24 +91,7 @@
 ================================================== -->
 <footer class="footer">
   <div class="container">
-    <h3>安问是什么</h3>
-    <p>
-      一个高质量的内容社区，只分享最打动你的东西，保证内容的长久有趣，号召理想主义黑客共同开发的开源项目（包含一个人工智能子项目和推进互联网信息自由的子项目）
-    </p>
-    <p>特色：多人协作分享，也能通过github提交；每一分贡献都会得到十倍以上的回报，为创造和分享者带来更多价值</p>
-    <p>
-      实验室：
-      <a href="/edit">编辑器</a>
-      <a href="/ande">人工智能安德（近期恢复）</a>
-    </p>
-    <p>
-      copyleft ^_^ 2012 安问 创造和分享美好 v0.0.2 自由的理想主义社区与创造平台
-      <a href="https://github.com/askender/anwen.in">开源@github</a>
-
-      <a href="/about" title="关于我们的一切">关于我们</a>
-      <a href="/help" title="提建议或咨询">提建议或咨询</a>
-      <a href="/changelog" title="查看行动日志">行动日志</a>
-    </p>
+    {{site_info['bottom_info']}}
   </div>
 </footer>
 

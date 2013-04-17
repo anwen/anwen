@@ -13,7 +13,7 @@ class EditHandler(BaseHandler):
 
 class ErrHandler(BaseHandler):
     def get(self):
-        self.render("404.html")
+        self.render('error.html', status_code=404)
 
 
 class FeedbackHandler(CommonResourceHandler):

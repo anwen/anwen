@@ -15,7 +15,7 @@ VideoMsg.yaml
 *.tar.gz
 
 # temp files
-nouse
+tmp.md
 .gitmodules
 
 #upload img

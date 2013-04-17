@@ -5,11 +5,18 @@ from bson import ObjectId
 from tornado.escape import json_decode
 from tornado.web import RequestHandler, HTTPError
 from pymongo import ASCENDING, DESCENDING
-
+from options import site_info
 from log import logger
 
 
 class BaseHandler(RequestHandler):
+
+    def get_template_namespace(self):
+        ns = super(BaseHandler, self).get_template_namespace()
+        ns.update({
+            'site_info': site_info,
+        })
+        return ns
 
     def get_current_user(self):
         user_json = self.get_secure_cookie("user")
@@ -43,10 +50,7 @@ class BaseHandler(RequestHandler):
     #     return self.current_user.prefs["locale"]
 
     def write_error(self, status_code, **kwargs):
-        if status_code == 404:
-            self.render('404.html')
-        else:
-            self.render('error.html', status_code=status_code)
+        self.render('error.html', status_code=status_code)
         # else:
         #     super(RequestHandler, self).write_error(status_code, **kwargs)
 
@@ -66,17 +70,20 @@ class BaseHandler(RequestHandler):
                 return dict(obj)
         return self.write(dumps(obj, default=handler))
 
+
     # def prepare(self):
     #     if self.request.headers.get("Content-Type") == "application/json":
     #         self.json_args = json_decode(self.request.body)
 
 
 class PageNotFoundHandler(RequestHandler):
+
     def get(self):
         raise HTTPError(404)
 
 
 class JSONHandler(BaseHandler):
+
     """Every API handler should inherit from this class."""
 
     def get_json_arg(self, name=None, *args):

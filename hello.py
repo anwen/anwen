@@ -12,7 +12,7 @@ from anwen.uimodules import EntryModule, UseradminModule
 
 __author__ = 'anwen team'
 
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 options.web_server.update(
     dict(ui_modules={"Entry": EntryModule, "Useradmin": UseradminModule},))

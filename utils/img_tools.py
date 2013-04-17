@@ -13,7 +13,7 @@ def dict_remove(d, *keys):
 
 
 class MyGaussianBlur(ImageFilter.Filter):
-    #高斯模糊
+    # 高斯模糊
     name = "GaussianBlur"
 
     def __init__(self, radius=2, bounds=None):
@@ -29,7 +29,7 @@ class MyGaussianBlur(ImageFilter.Filter):
             return image.gaussian_blur(self.radius)
 
 
-#生成头像缩略图 （供裁剪用）
+# 生成头像缩略图 （供裁剪用）
 # def make_thumb(path, sizes=[(160,160)]):
 def make_thumb(path):
     """
@@ -60,7 +60,7 @@ def make_thumb(path):
 
 
 def make_thumb_crop(path, x, y, w, h):
-    #裁剪缩略图
+    # 裁剪缩略图
     base = os.path.splitext(path)[0][:-4]
     im = Image.open(path)
     filename = base + "_48.jpg"
@@ -76,7 +76,7 @@ def make_thumb_crop(path, x, y, w, h):
 
 
 def make_node_thumb(path):
-    #生成node 75x75 缩略图
+    # 生成node 75x75 缩略图
     base, ext = os.path.splitext(path)
     try:
         im = Image.open(path)
@@ -150,7 +150,7 @@ def make_post_thumb(path, sizes=[(1200, 550), (750, 230), (365, 230)]):
             region = newimg.crop(box)
             region.save(filename, quality=100)
         if float(width) / float(height) < float(size[0]) / float(size[1]):
-            #如果是高图，先把原图重设到size宽
+            # 如果是高图，先把原图重设到size宽
             newimg = im.resize((int(size[0]), int(float(
                 height) / (float(width) / float(size[0])))), Image.ANTIALIAS)
             newimg_width, newimg_height = newimg.size
@@ -159,7 +159,7 @@ def make_post_thumb(path, sizes=[(1200, 550), (750, 230), (365, 230)]):
             region = newimg.crop(box)
             region.save(filename, quality=100)
         if float(width) / float(height) > float(size[0]) / float(size[1]):
-            #如果是宽图，先把原图重设到size高
+            # 如果是宽图，先把原图重设到size高
             newimg = im.resize((int(float(width) / (float(
                 height) / float(size[1]))), int(size[1])), Image.ANTIALIAS)
             newimg_width, newimg_height = newimg.size
