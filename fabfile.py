@@ -60,7 +60,10 @@ def test():
 
 
 def commit():
-    local("git add -p && git add . && git commit -a")
+    try:
+        local("git add -p && git add . && git commit -a")
+    except:
+        pass
 
 
 def push():
