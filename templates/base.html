@@ -45,36 +45,11 @@
         {{ modules.Useradmin() }}
         <div class="nav-collapse collapse">
           <ul class="nav">
-            <li id="home">
-              <a href="/">{{_('Home')}}</a>
+            {% for k in node_list %}
+            <li id="{{k}}">
+              <a href="/node/{{k}}">{{_(node_about[k]['name'])}}</a>
             </li>
-            <li id="pencil">
-              <a href="/node/pencil">{{_('Create')}}</a>
-            </li>
-            <li id="music">
-              <a href="/node/music">{{_('Music')}}</a>
-            </li>
-            <li id="film">
-              <a href="/node/film">{{_('Video')}}</a>
-            </li>
-            <li id="book">
-              <a href="/node/book">{{_('Book')}}</a>
-            </li>
-            <li id="eyeopen">
-              <a href="/node/eyeopen">{{_('Eyeopen')}}</a>
-            </li>
-            <li id="ask">
-              <a href="/node/ask">{{_('Asks')}}</a>
-            </li>
-            <li id="sf">
-              <a href="/node/sf">{{_('SF')}}</a>
-            </li>
-            <li id="fire">
-              <a href="/node/fire">{{_('Actions')}}</a>
-            </li>
-            <li id="nodes">
-              <a href="/nodes">{{_('Nodes')}}</a>
-            </li>
+            {% end %}
           </ul>
 
           <!-- <form action="/search" class="navbar-search pull-right">

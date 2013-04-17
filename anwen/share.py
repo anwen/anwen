@@ -22,7 +22,7 @@ class ShareHandler(BaseHandler):
         share = None
         if share_id:
             share = Share.by_sid(share_id)
-        editor = self.get_argument("editor", None)
+        editor = self.get_argument("editor", options.default_editor)
         if editor:
             self.render("share_wysiwyg.html", share=share)
         else:
@@ -30,7 +30,7 @@ class ShareHandler(BaseHandler):
 
     @tornado.web.authenticated
     def post(self):
-        print self.request.arguments
+        # print self.request.arguments
         share_id = self.get_argument("id", None)
         title = self.get_argument("title", '')
         markdown = self.get_argument("markdown", '')

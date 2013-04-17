@@ -123,6 +123,14 @@
       <span class="Validform_checktip"></span>
     </div>
 
+    <div class="controls">
+      {% for k in node_list %}
+      <label class="radio inline">
+        <input type="radio" name="type" id="{{k}}" value="{{k}}" checked=""> <i class="icon-{{k}}"></i>
+        {{_(node_about[k]['name'])}}
+      </label>
+      {% end %}
+    </div>
     <div style="margin-bottom:5px">
       标签(选填，多个可用空格分隔):
       <input name="tags" type="text" class="tags" value="{{escape(share.tags) if share else ""}}"/>

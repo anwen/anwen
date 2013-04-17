@@ -18,44 +18,12 @@
     <div>
 
       <div class="controls">
+        {% for k in node_list %}
         <label class="radio inline">
-          <input type="radio" name="type" id="pencil" value="pencil" checked=""> <i class="icon-pencil"></i>
-          创造
+          <input type="radio" name="type" id="{{k}}" value="{{k}}" checked=""> <i class="icon-{{k}}"></i>
+          {{_(node_about[k]['name'])}}
         </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="music" value="music" checked=""> <i class="icon-music"></i>
-          音乐
-        </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="film" value="film" checked="">
-          <i class="icon-film"></i>
-          视频
-        </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="book" value="book" checked="">
-          <i class="icon-book"></i>
-          读书
-        </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="eyeopen" value="eyeopen" checked="">
-          <i class="icon-eyeopen"></i>
-          新闻
-        </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="ask" value="ask" checked="">
-          <i class="icon-ask"></i>
-          疑问
-        </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="sf" value="sf" checked="">
-          <i class="icon-sf"></i>
-          科幻
-        </label>
-        <label class="radio inline">
-          <input type="radio" name="type" id="fire" value="fire" checked="">
-          <i class="icon-fire"></i>
-          行动
-        </label>
+        {% end %}
       </div>
       <div style="margin-bottom:5px">
         标签(选填，多个可用空格分隔):

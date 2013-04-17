@@ -30,10 +30,10 @@ class IndexHandler(BaseHandler):
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 
-        node_about = options.node_about[node]
         self.render(
             "node.html", shares=shares,
-            pagesum=pagesum, page=page, node=node, node_about=node_about)
+            pagesum=pagesum, page=page, node=node,
+        )
 
 
 class NodeHandler(BaseHandler):
@@ -55,10 +55,10 @@ class NodeHandler(BaseHandler):
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 
-        node_about = options.node_about[node]
+        node_info = options.node_about[node]
         self.render(
             "node.html", shares=shares,
-            pagesum=pagesum, page=page, node=node, node_about=node_about)
+            pagesum=pagesum, page=page, node=node, node_info=node_info)
 
 
 class TagHandler(BaseHandler):

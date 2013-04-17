@@ -5,7 +5,7 @@ from bson import ObjectId
 from tornado.escape import json_decode
 from tornado.web import RequestHandler, HTTPError
 from pymongo import ASCENDING, DESCENDING
-from options import site_info
+from options import site_info, node_list, node_about
 from log import logger
 
 
@@ -15,6 +15,8 @@ class BaseHandler(RequestHandler):
         ns = super(BaseHandler, self).get_template_namespace()
         ns.update({
             'site_info': site_info,
+            'node_list': node_list,
+            'node_about': node_about,
         })
         return ns
 

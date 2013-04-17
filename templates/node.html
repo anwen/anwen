@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block title %}
-{{ _(node_about['name']) }}-{{ _(node_about['about']) }}-
+{{ _(node_about[node]['name']) }}-{{_(node_about[node]['about']) }}-
 {% end %}
 {% block body %}
 <div class="container collection-items">
-  <h3>{{ _(node_about['name']) }}</h3>
-  <p>{{ _(node_about['about']) }}</p>
+  <h3>{{ _(node_about[node]['name']) }}</h3>
+  <p>{{ _(node_about[node]['about']) }}</p>
   {% for (offset,share) in enumerate(shares) %}
   {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}
     <div class="collection-template-mixed post-template-flex-article post-status-approved">
