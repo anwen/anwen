@@ -14,7 +14,7 @@
   <!-- Le styles -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link href="{{ static_url("css/google-code-prettify/prettify.css") }}" type="text/css" rel="stylesheet" media="screen"/>
+  <link href="{{ static_url("js/google-code-prettify/prettify.css") }}" type="text/css" rel="stylesheet" media="screen"/>
   <link href="{{ static_url("css/bootstrap-combined.no-icons.min.css") }}" type="text/css" rel="stylesheet" media="screen"/>
   <link href="{{ static_url("css/bootstrap-responsive.css") }}" type="text/css" rel="stylesheet" />
   <link href="{{ static_url("css/font-awesome.css") }}" type="text/css" rel="stylesheet" />
@@ -119,14 +119,10 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
 <!-- or use local jquery -->
-<!-- <script src="{{ static_url("js/jquery.js") }}"></script>
--->
-<script src="https://mindmup.s3.amazonaws.com/lib/jquery.hotkeys.js"></script>
-
+<script src="{{ static_url("js/jquery.min.js") }}"></script>
+<script src="{{ static_url("js/jquery.hotkeys.js") }}"></script>
 <script src="{{ static_url("js/Validform_v5.1.js") }}"></script>
 <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
 <script src="{{ static_url("js/common.js") }}"></script>

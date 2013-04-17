@@ -109,6 +109,7 @@ class Share(BaseModel):
         'title': basestring,
         'slug': basestring,
         'markdown': basestring,
+        'content': basestring,
         'sharetype': basestring,
         'tags': basestring,
         'upload_img': basestring,

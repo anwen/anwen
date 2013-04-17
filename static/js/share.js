@@ -15,7 +15,7 @@ function() {
     if (jQuery('.post_image_upload_wrap').css('display') == 'block') {
         jQuery('.post_image_upload_wrap').hide();
     }
-})
+});
 
 //---------------------------------
 //-----------拖拽上传图片-----------
@@ -44,24 +44,24 @@ dropbox.filedrop({
             jQuery(".preview").remove();
             jQuery('.post_image_upload').css({
                 'background': '#EAF5FA'
-            })
+            });
         } else if (response.status == 'o') {
             alert(response.info);
             jQuery(".preview").remove();
             jQuery('.post_image_upload').css({
                 'background': '#EAF5FA'
-            })
+            });
         } else if (response.status == 'y') {
             jQuery('#post_Img_1').val(response.pic_1200);
             jQuery(".imageHolder").css({
                 "background": 'url(" ' + "static/upload/img/" + response.pic_1200 + ' ") center center no-repeat',
                 'background-size': 'cover'
-            })
+            });
 
             jQuery('.post_image_upload').css({
                 'background-size': 'cover',
                 'background-image': 'url(" ' + "static/upload/img/" + response.pic_1200 + ' ")'
-            })
+            });
 
             jQuery.data(file).addClass('done');
             uploaded = jQuery('.uploaded', dropbox);
@@ -71,8 +71,8 @@ dropbox.filedrop({
 
             jQuery('.del_post_img, .save_post_img_btn').show();
             setTimeout(function() {
-                jQuery('.uploaded, .progressHolder').fadeOut(250)
-            }, 1000)
+                jQuery('.uploaded, .progressHolder').fadeOut(250);
+            }, 1000);
 
 
         }
@@ -106,7 +106,7 @@ dropbox.filedrop({
         createImage(file);
         jQuery(".post_image_upload_1").css({
             'background': 'none'
-        })
+        });
     },
 
     progressUpdated: function(i, file, progress) {
@@ -171,29 +171,29 @@ jQuery("#upload_file_hide").change(function() {
                 jQuery(".preview").remove();
                 jQuery('.post_image_upload').css({
                     'background': '#EAF5FA'
-                })
+                });
             } else if (response.status == 'o') {
                 alert(response.info);
                 jQuery(".preview").remove();
                 jQuery('.post_image_upload').css({
                     'background': '#EAF5FA'
-                })
+                });
             } else if (response.status == 'y') {
                 jQuery('#post_Img_1').val('' + response.pic_1200);
                 jQuery(".post_image_upload").css({
                     "background": 'url(" ' + "static/upload/img/" + response.pic_1200 + ' ") center center no-repeat',
                     'background-size': 'cover'
-                })
+                });
                 jQuery('.message, .upload_btn').hide();
-                jQuery('.del_post_img').show()
+                jQuery('.del_post_img').show();
             }
         },
         error: function() {
             alert("请检查文件格式或者文件大小，目前只支持jpg/gif/jpeg/png/bmp格式的图片。不能超过2M");
-            jQuery('.message').show()
+            jQuery('.message').show();
             jQuery('.post_image_upload').css({
                 'background': '#EAF5FA'
-            })
+            });
         }
     });
 });
@@ -203,10 +203,11 @@ jQuery("#upload_file_hide").change(function() {
 
 function DeletePostImg() {
     // 需要判断是拖拽上传还是点击上传的
+    var path = '';
     if (jQuery('.imageHolder').size() > 0) {
-        var path = jQuery(".imageHolder").css("background-image");
+        path = jQuery(".imageHolder").css("background-image");
     } else {
-        var path = jQuery(".post_image_upload").css("background-image");
+        path = jQuery(".post_image_upload").css("background-image");
     }
 
     path = path.replace(/"/g, "").replace(/url\(|\)$/ig, "");
@@ -225,16 +226,16 @@ function DeletePostImg() {
         success: function(mes) {
             if (mes == 's') {
                 //恢复上传容器的原始大小
-                jQuery('.post_image_upload_wrap').attr('style', '')
+                jQuery('.post_image_upload_wrap').attr('style', '');
                 jQuery('.input-mlarge').addClass('input-xxlarge').removeClass('input-mlarge');
                 if (jQuery('.imageHolder').size() > 0) {
                     jQuery(".preview").remove();
                 }
                 jQuery('.post_image_upload').css({
                     'background': '#eaf5fa'
-                })
-                jQuery('.upload_btn, .message').show()
-                jQuery('.del_post_img, .save_post_img_btn').hide()
+                });
+                jQuery('.upload_btn, .message').show();
+                jQuery('.del_post_img, .save_post_img_btn').hide();
                 jQuery('.change_post_image_btn').css({
                     'background-color': '#58AD69',
                     'color': '#fff'
@@ -247,38 +248,23 @@ function DeletePostImg() {
         }
     });
 
-    jQuery('#post_Img_1').val('')
+    jQuery('#post_Img_1').val('');
 }
 
 //删除更改图片是上传的图片
-jQuery(".del_post_img").click(DeletePostImg)
+jQuery(".del_post_img").click(DeletePostImg);
 
 
 $(document).ready(function() {
     JudgeCheck();
-    JudgeInput();
     CheckImg();
 });
 
 function JudgeCheck() {
     var sharetype = $("input[name=sharetype]")[0].value;
-    $("input[name=type][value=" + sharetype + "]").attr("checked", true)
+    $("input[name=type][value=" + sharetype + "]").attr("checked", true);
 }
 
-function JudgeInput() {
-    $("input[name=title]").select();
-    $("form.compose").submit(function() {
-        var required = ["title", "markdown"];
-        var form = $(this).get(0);
-        for (var i = 0; i < required.length; i++) {
-            if (!form[required[i]].value) {
-                $(form[required[i]]).select();
-                return false;
-            }
-        }
-        return true;
-    });
-}
 
 function CheckImg() {
     var post_img = $("input[name=post_img]")[0].value;
@@ -287,15 +273,53 @@ function CheckImg() {
         jQuery('.post_image_upload').css({
             'background-size': 'cover',
             'background-image': 'url(" ' + post_img_path + ' ")'
-        })
+        });
 
         jQuery('#post_Img_1').val('' + post_img);
         jQuery(".imageHolder").css({
             "background": 'url("' + post_img_path + ' ") center center no-repeat',
             'background-size': 'cover'
-        })
+        });
         jQuery('.message, .upload_btn').hide();
         jQuery('.del_post_img, .save_post_img_btn').show();
 
     }
 }
+
+
+function getCookie(name) {
+    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+    return r ? r[1] : undefined;
+}
+
+
+jQuery('#wysiwyg_post_form').Validform({
+    tipSweep : true,
+    ajaxPost:true,
+    ignoreHidden:true,
+    
+    datatype : {
+        "title": /^[\w\W]{1,2}$$/,
+        "content": /^[\w\W]{5,65535}$/
+    },
+    tiptype:function(msg,o,cssctl){
+        var objtip=o.obj.siblings(".Validform_checktip");
+        cssctl(objtip,o.type);
+        objtip.text(msg);
+    },
+    beforeCheck:function(curform){
+        var content = jQuery('#editor').html();
+        alert(content);
+        $('#hidden-content').html(content);
+        //在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
+        //这里明确return false的话将不会继续执行验证操作;    
+    },
+    beforeSubmit:function(curform){
+        curform.find('button#save').html('发布中...').removeClass('btn-info');
+    },
+    callback:function(data){
+        if(data.status=="y"){
+            window.location.href = "/share/" + data.post_id;
+        }
+    }
+});

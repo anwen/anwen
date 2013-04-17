@@ -489,17 +489,17 @@ em
 .Validform_right{
     color: #333;
     padding-left:20px;
-    background:url(/static/public/img/right.png) no-repeat left center;
+    background:url(/static/img/right.png) no-repeat left center;
 }
 .Validform_wrong{
     color: #333;
     padding-left:20px;
     white-space:nowrap;
-    background:url(/static/public/img/error.png) no-repeat left center;
+    background:url(/static/img/error.png) no-repeat left center;
 }
 .Validform_loading{
     padding-left:20px;
-    background:url(/static/public/img/onLoad.gif) no-repeat left center;
+    background:url(/static/img/onLoad.gif) no-repeat left center;
 }
 .Validform_error{
     background-color:#ffe7e7;

@@ -9,7 +9,7 @@
 
 {% block body %}
 <div class="container">
-  <form action="" method="post" class="compose">
+  <form action="" method="post" id="wysiwyg_post_form" class="compose">
 
     <fieldset>
       <legend>{{"修改分享" if share else "创建分享"}}</legend>
@@ -99,7 +99,6 @@
         <a class="btn" data-edit="unlink" title="Remove Hyperlink">
           <i class="icon-cut"></i>
         </a>
-
       </div>
 
       <div class="btn-group">
@@ -118,9 +117,37 @@
       </div>
       <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech=""></div>
 
-  <div style="margin-bottom:5px">
-    <div id="editor" name="content" class="markdown" rows="30" cols="40"  >{{escape(share.content) if share else ""}}</div>
+    <div style="margin-bottom:5px">
+      <div id="editor" name="editor-content" class="markdown input-xxlarge" rows="30" cols="40" placeholder="正文 必填" errormsg="50-6000字" nullmsg="必填">{{share.content if share else ""}}</div>
+      <textarea name="content" id="hidden-content" datatype="content" style="display:none;">{{share.content if share else ""}}</textarea>
+      <span class="Validform_checktip"></span>
+    </div>
+
+    <div style="margin-bottom:5px">
+      标签(选填，多个可用空格分隔):
+      <input name="tags" type="text" class="tags" value="{{escape(share.tags) if share else ""}}"/>
+      别名(选填，a-zA-Z0-9_-):
+      <input name="slug" type="text" class="slug" value="{{escape(share.slug) if share else ""}}"/>
+    </div>
+
+<div id="switchImgWrap" class="btn" style="display: inline-block;">上传封面{{'(already exist)' if share and share.post_img else ""}}</div>
+<div class="post_image_upload_wrap node_empty_border">
+  <div class="post_image_upload piu node_empty">
+    <a href="javascript:void(0)" class="upload_btn btn btn-info" onclick="getElementById('upload_file_hide').click()">上传图片 或 拖拽图片到这里</a>
+    <span class="message"> <i></i>
+      <p>拖拽图片到这里就会自动上传，请保证你上传图片的质量。</p>
+    </span>
+    <input type="file" name="uploadImg" id="upload_file_hide" />
+    <input type="hidden" datatype="post_Img" id="post_Img_1" name="post_Img" errormsg="啊哈？出错了" nullmsg="你还没有上传图片。" />
+    <span class="Validform_checktip postImgValidformChecktip"></span>
+    <a class="del_post_img btn" href="javascript:void(0)"> <i class="icon-remove icon-white"></i>
+      删除
+    </a>
   </div>
+</div>
+
+
+
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}
@@ -128,42 +155,17 @@
     <input type="hidden" name="sharetype" value="{{ share.sharetype if share else '' }}"/>
     <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
     {{ xsrf_form_html() }}
-
-      <div style="margin-bottom:5px">
-        标签(选填，多个可用空格分隔):
-        <input name="tags" type="text" class="tags" value="{{escape(share.tags) if share else ""}}"/>
-        别名(选填，a-zA-Z0-9_-):
-        <input name="slug" type="text" class="slug" value="{{escape(share.slug) if share else ""}}"/>
+    <div class="form-actions">
+      <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-info" id="save"/>
+      <input type="submit" name="dosubmit" value="保存草稿" class="btn btn-info"/>
+      {% if share %}
+      <a href="/share/{{share.id}}" target="_blank">预览</a>
+      {% end %}
+      <div style="float:right">
+        <a href="/markdown" target="_blank">Markdown漫游</a>
+        <a href="/edit" target="_blank">Markdown编辑器</a>
       </div>
-      <div id="switchImgWrap" class="btn" style="display: inline-block;">上传图片</div>
-
-      <div class="post_image_upload_wrap node_empty_border">
-        <div class="post_image_upload piu node_empty">
-          <a href="javascript:void(0)" class="upload_btn btn btn-info" onclick="getElementById('upload_file_hide').click()">上传图片 或 拖拽图片到这里</a>
-          <span class="message">
-            <i></i>
-            <p>拖拽图片到这里就会自动上传，请保证你上传图片的质量。</p>
-          </span>
-          <input type="file" name="uploadImg" id="upload_file_hide" />
-          <input type="hidden" datatype="post_Img" id="post_Img_1" name="post_Img" errormsg="啊哈？出错了" nullmsg="你还没有上传图片。" />
-          <span class="Validform_checktip postImgValidformChecktip"></span>
-          <a class="del_post_img btn" href="javascript:void(0)">
-            <i class="icon-remove icon-white"></i>
-            删除
-          </a>
-        </div>
-      </div>
-      <div class="form-actions">
-        <input type="submit" name="dosubmit" value="{{ "保存修改" if share else "发布分享" }}" class="btn btn-primary"/>
-        <input type="submit" name="dosubmit" value="保存草稿" class="btn btn-info"/>
-        {% if share %}
-        <a href="/share/{{share.id}}" target="_blank">预览</a>
-        {% end %}
-        <div style="float:right">
-          <a href="/markdown" target="_blank">Markdown漫游</a>
-          <a href="/edit" target="_blank">Markdown编辑器</a>
-        </div>
-      </div>
+    </div>
 
   </form>
 </div>

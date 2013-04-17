@@ -30,8 +30,13 @@ class ShareHandler(BaseHandler):
 
     @tornado.web.authenticated
     def post(self):
-        # print self.request.arguments
+        print self.request.arguments
         share_id = self.get_argument("id", None)
+        title = self.get_argument("title", '')
+        markdown = self.get_argument("markdown", '')
+        content = self.get_argument("content", '')
+        sharetype = self.get_argument("type", '')
+        slug = self.get_argument("slug", '')
         status = 1 if self.get_argument("dosubmit", None) == u'保存草稿' else 0
         tags = self.get_argument("tags", '')
         upload_img = self.get_argument("uploadImg", '')
@@ -39,10 +44,11 @@ class ShareHandler(BaseHandler):
         post_img = '' if post_img == 'None' else post_img
         user_id = self.current_user["user_id"]
         res = {
-            'title': self.get_argument("title"),
-            'markdown': self.get_argument("markdown"),
-            'sharetype': self.get_argument("type"),
-            'slug': self.get_argument("slug", ''),
+            'title': title,
+            'markdown': markdown,
+            'content': content,
+            'sharetype': sharetype,
+            'slug': slug,
             'tags': tags,
             'status': status,
             'upload_img': upload_img,
@@ -84,7 +90,8 @@ class EntryHandler(BaseHandler):
         if share:
             share.hitnum += 1
             share.save()
-            share.markdown = markdown2.markdown(share.markdown)
+            if share.markdown:
+                share.content = markdown2.markdown(share.markdown)
             user = User.by_sid(share.user_id)
             share.user_name = user.user_name
             share.user_domain = user.user_domain

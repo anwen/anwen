@@ -17,3 +17,6 @@ VideoMsg.yaml
 # temp files
 nouse
 .gitmodules
+
+#upload img
+/static/upload/img/*
