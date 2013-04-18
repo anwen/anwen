@@ -4,7 +4,7 @@
 # You can: pip install -r requirements.txt
 
 
-tornado>=2.3
+tornado>=3.0
 # Flask
 
 markdown2

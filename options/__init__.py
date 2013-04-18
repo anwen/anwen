@@ -5,6 +5,7 @@ port = 8888
 db = {
     'name': 'anwen',
 }
+default_editor = ''
 # default_editor = 'wysiwyg'
 
 web_server = {
