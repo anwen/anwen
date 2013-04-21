@@ -297,7 +297,6 @@ class ImageUploadHandler(BaseHandler):
                 msg = {"status": "y", "pic_1200": pic_1200}
         else:
             msg = '{"status": "s", "info": "目前只支持jpg/gif/png/bmp格式的图片。"}'
-        print msg
         self.write_json(msg)
 
     @tornado.web.authenticated

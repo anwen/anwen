@@ -2,9 +2,23 @@
 import time
 from mongokit import Connection
 from ext import BaseModel
+import options
+if 'host' in options.db:
+    connection = Connection(
+        host=options.db['host'],
+        port=options.db['port'],
+    )
+else:
+    connection = Connection()
+db = getattr(connection, options.db['name'])
 
+try:
+    db.authenticate(options.db['username'], options.db['password'])
+except KeyError:
+    print('KeyError: Not authenticating.')
 
-connection = Connection()
+# connection = Connection()
+# db = getattr(connection, options.db['name'])
 
 
 @connection.register

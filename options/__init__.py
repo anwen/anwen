@@ -4,7 +4,12 @@ debug = True
 port = 8888
 db = {
     'name': 'anwen',
+    'host': '127.0.0.1',
+    'port': 27017,
+    'username': 'aw',
+    'password': 'lb',
 }
+
 default_editor = ''
 # default_editor = 'wysiwyg'
 
