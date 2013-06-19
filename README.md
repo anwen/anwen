@@ -1,7 +1,7 @@
 安问 Anwen
 ========
 
-### 安问-创造和分享美好 create and share something nice
+### 创造和分享美好 Create and share something nice
 
 * 自由开源的理想主义社区与创造分享平台
 * 致力于创造和分享最打动大家的或有趣的新东西
@@ -45,4 +45,3 @@
 * Copyleft ^,^ 2011-2013 Anwen
 * Released under the MIT license:
   [www.opensource.org/licenses/MIT](http://www.opensource.org/licenses/MIT)
-

@@ -8,7 +8,7 @@
 git clone https://github.com/anwen/anwen.git
 cd anwen
 sudo pip install -r conf/requirements.txt
-sudo apt-get install mongodb  # We turn to mongodb form sql, we may use sqlite again
+sudo apt-get install mongodb  # other database will not be supported in a short time
 ```
 
 
@@ -24,6 +24,12 @@ python hello.py
 
 ```bash
 python tests.py
+```
+
+## Config
+
+```bash
+vi options/__init__.py
 ```
 
 ## set up a production enironment

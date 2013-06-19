@@ -38,11 +38,12 @@ bson
 # nose
 
 ### for db_import
-# pyyaml
+pyyaml
 
 ### for ande
-# requests
-# sympy
+requests
+sympy
 
 # other
-# fabric flake8 paramiko
+fabric
+# flake8 paramiko
