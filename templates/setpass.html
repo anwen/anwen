@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}
+重设密码-
+{% end %}
+{% block body %}
+<div class="container well">
+	<div class="row">
+		<div class="span8">
+			<div class="mod login">
+				<form id="login" method="post" name="login" class="form form-horizontal">
+					{{ xsrf_form_html() }}
+					<fieldset>
+						<legend>重设密码</legend>
+
+						<div class="control-group">
+							<label for="password" class="control-label">密码</label>
+							<div class="controls">
+								<div class="input-prepend">
+									<span class="add-on"> <i class="icon-key"></i>
+									</span>
+									<input type="password" name="password" id="password" class="input" minlength="8" required/>
+								</div>
+							</div>
+						</div>
+						<div class="form-actions">
+							<input type="submit" value="提交" name="dosubmit" class="btn btn-primary"/>
+						</div>
+						<div class="control-group"></div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+		<div class="span4">
+			<div class="mod side-relation">
+				<h2>关于</h2>
+				<ul>
+					<li>
+						<a href="/about">关于安问</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 	<a href="/googlelogin">Login with google</a>
+-->
+
+{% end %}
+
+{% block bottom %}
+<!-- 
+<script src="{{ static_url("js/jqBootstrapValidation.js") }}"></script>
+<script>
+  $(function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } );
+</script>
+-->
+{% end %}

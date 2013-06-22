@@ -3,7 +3,9 @@
 from anwen.index import IndexHandler, NodeHandler, TagHandler
 from anwen.index import WelcomeHandler, RecommendedHandler, CollectionsHandler
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
+from anwen.user import GoogleLoginHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
+from anwen.user import ForgotPassHandler, SetPassHandler
 from anwen.user import SettingHandler, ChangePassHandler, UsersHandler
 from anwen.share import ShareHandler, EntryHandler, CommentHandler, LikeHandler
 from anwen.share import FeedHandler, SharesHandler, CommentsHandler
@@ -42,10 +44,13 @@ handlers = [
     (r"/comments/([0-9a-f]{24})", CommentsHandler),
 
     (r"/login", LoginHandler),
+    (r"/google_login", GoogleLoginHandler),
     (r"/joinus", JoinusHandler),
     (r"/logout", LogoutHandler),
     (r'/setting', SettingHandler),
     (r'/changepass', ChangePassHandler),
+    (r'/forgotpass', ForgotPassHandler),
+    (r'/setpass', SetPassHandler),
 
     (r'/ande', AndeHandler),
     (r'/videomeet', VideoMeetHandler),

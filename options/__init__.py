@@ -104,11 +104,26 @@ log = {
 
 MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 2
 
-# site_domain = 'http://0.0.0.0:8080'  # 本地开发测试用
-# site_domain = 'http://anwensf.com/'  # 域名
 
+ssaalltt = 'wvk238%@BHYAM*$!Z)^#%!PIAMXIZ+!soan_^AP'
+
+
+# 本网站域名  email激活用地址
+# site_url = 'http://0.0.0.0:8888'  # 本地开发测试用
+site_url = 'http://anwensf.com'
+
+EMAIL_HOST = 'smtp.exmail.qq.com'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'hello@anwensf.com'
+EMAIL_HOST_PASSWORD = 'naw130621'
+EMAIL_HOST_NICK = '安问'
+SERVICE_EMAIL = 'hello@anwensf.com'
+msg_footer = ''.join([
+    '<p>如果你有任何疑问，可以回复这封邮件向我们提问。</p>',
+])
 
 try:
-    from server_setting import *
+    from .server_setting import *
 except:
     pass

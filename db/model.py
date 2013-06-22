@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 from mongokit import Connection
-from ext import BaseModel
+from .ext import BaseModel
 import options
 if 'host' in options.db:
     connection = Connection(
@@ -56,6 +56,7 @@ class User(BaseModel):
         'user_url': basestring,
         'user_city': basestring,
         'user_say': basestring,
+        'emailverify': basestring,
         'id': int,
         'user_leaf': int,
         'user_status': int,
@@ -66,16 +67,14 @@ class User(BaseModel):
         'user_url': '',
         'user_city': '',
         'user_say': '',
+        'emailverify': '',
         'user_leaf': 20,
         'user_status': 0,
         'user_jointime': time.time,
     }
 
-    def by_username(self, username):
-        return self.find_one({'username': username})
-
-    def by_useremail(self, useremail):
-        return self.find_one({'useremail': useremail})
+    def by_email(self, email):
+        return self.find_one({'user_email': email})
 
     def by_name_pass(self, username, userpass):
         if username and userpass:
@@ -85,6 +84,19 @@ class User(BaseModel):
     def by_email_pass(self, email, userpass):
         if email and userpass:
             return self.find_one({'user_email': email, 'user_pass': userpass})
+
+    def by_email_verify(self, email, verify):
+        if email and verify:
+            return self.find_one({'user_email': email, 'emailverify': verify})
+
+    def reset_pass(self, email, verify, userpass):
+        if email and verify:
+            doc = self.find_one({'user_email': email, 'emailverify': verify})
+            doc.user_pass = userpass
+            doc.emailverify = '1'
+            doc.save()
+            return True
+        return False
 
     # def delete(self):
     #     pass
