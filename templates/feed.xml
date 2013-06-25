@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   {% set date_format = "%Y-%m-%dT%H:%M:%SZ" %}
   <title>anwen</title>
-  {% if len(entries) > 0 %}
-  <updated>{{ max(e.updated for e in entries).strftime(date_format) }}</updated>
+  {% if len(shares) > 0 %}
+  <updated>{{ max(e.updated for e in shares).strftime(date_format) }}</updated>
   {% else %}
   <updated>{{ datetime.datetime.utcnow().strftime(date_format) }}</updated>
   {% end %}
@@ -13,15 +13,16 @@
   <author>
     <name>anwen</name>
   </author>
-  {% for entry in entries %}
+
+  {% for share in shares %}
   <entry>
-    <id>http://{{ request.host }}/entry/{{ entry.slug }}</id>
-    <title type="text">{{ escape(entry.title) }}</title>
-    <link href="http://{{ request.host }}/entry/{{ entry.slug }}" rel="alternate" type="text/html"/>
-    <updated>{{ entry.updated.strftime(date_format) }}</updated>
-    <published>{{ entry.published.strftime(date_format) }}</published>
+    <id>http://{{ request.host }}/share/{{ share.id }}</id>
+    <title type="text">{{ escape(share.title) }}</title>
+    <link href="http://{{ request.host }}/share/{{ share.slug }}" rel="alternate" type="text/html"/>
+    <updated>{{ share.updated.strftime(date_format) }}</updated>
+    <published>{{ share.published.strftime(date_format) }}</published>
     <content type="xhtml" xml:base="http://{{ request.host }}/">
-      <div xmlns="http://www.w3.org/1999/xhtml">{{ entry.html }}</div>
+      <div xmlns="http://www.w3.org/1999/xhtml">{{ share.content }}</div>
     </content>
   </entry>
   {% end %}

@@ -249,7 +249,17 @@ class LikeHandler(BaseHandler):
 
 class FeedHandler(BaseHandler):
     def get(self):
-        shares = Share.find()
+        share_res = Share.find()
+        shares = []
+        for share in share_res:
+            user = User.by_sid(share.user_id)
+            share.name = user.user_name
+            share.published = datetime.datetime.fromtimestamp(share.published)
+            share.updated = datetime.datetime.fromtimestamp(share.updated)
+            share.domain = user.user_domain
+            share.content = markdown2.markdown(share.markdown)
+            shares.append(share)
+
         self.set_header("Content-Type", "application/atom+xml")
         self.render("feed.xml", shares=shares)
 
