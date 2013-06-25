@@ -161,11 +161,7 @@ em
 	font-style: italic;
 }
 
-.liking .icon-heart { background-position: -48px -167px; }
-/* 投票 */
-/*.icon-thumbs-up.on { background-position: 0px -167px; }*/
-.disliking .icon-thumbs-down { background-position: -24px -167px; }
-/* END */
+.liking .icon-heart { color: red; }
 
 .user-show
 {

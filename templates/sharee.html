@@ -9,8 +9,7 @@
 {% if share.post_img %}
 <div class="post_image_wrap">
 	<span class="post_image" style="background-image:url(/static/upload/img/{{ share.post_img }})">
-		<img src="/static/upload/img/{{ share.post_img }}" alt="" style="display:none">
-	</span>
+		<img src="/static/upload/img/{{ share.post_img }}" alt="" style="display:none"></span>
 </div>
 {% end %}
 <div class="container post_field">
@@ -21,36 +20,51 @@
 				<div id="content">
 					<div class="share">
 
-<header class="post_header" data-id="{{share.id}}">
-    <h1 class="post_title" itemprop="name">
-    	{{ escape(share.title) }}
-    </h1>
-            
-    <div class="post_meta clearfix">
-        <div class="post_meta_info">
-            <a class="post_author" title="{{share.user_name}}" href="/user/{{share.user_domain}}">{{share.user_name}}</a>
-            <time class="post_date">{{ locale.format_date(share.published, full_format=True, shorter=True) }}</time>
-<div id="resizer">
-<span id="f_text">字号：</span>
-<span id="f_s"><a href="javascript:void(0)">小</a></span>
-<span id="f_m"><a href="javascript:void(0)">中</a></span>
-<span id="f_l"><a href="javascript:void(0)">大</a></span>
-</div>
-        </div>
-    </div>
-</header>
+						<header class="post_header" data-id="{{share.id}}">
+							<h1 class="post_title" itemprop="name">{{ escape(share.title) }}</h1>
+
+							<div class="post_meta clearfix">
+								<div class="post_meta_info">
+									<a class="post_author" title="{{share.user_name}}" href="/user/{{share.user_domain}}">{{share.user_name}}</a>
+									<time class="post_date">
+										{{ locale.format_date(share.published, full_format=True, shorter=True) }}
+									</time>
+									<div id="resizer">
+										<span id="f_text">字号：</span>
+										<span id="f_s">
+											<a href="javascript:void(0)">小</a>
+										</span>
+										<span id="f_m">
+											<a href="javascript:void(0)">中</a>
+										</span>
+										<span id="f_l">
+											<a href="javascript:void(0)">大</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</header>
 
 						<div class="body entry">{{ share.content }}</div>
 						<div class="tags">{{ share.tags }}</div>
-<p class="some">
-	<a href="javascript:" class="spread"><i class="icon-retweet"></i>扩散</a>
-	<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}"><i class="icon-heart"></i><span>喜欢 {{ share.likenum }}</span></a>
-<!-- 	<a href="javascript:" class="do-up" rel="tooltip" data-placement="right" data-original-title="顶起来"><i class="icon-thumbs-up"></i><span>顶</span></a>
- -->
-	<a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}" rel="tooltip" data-placement="right" data-original-title="踩下去，不会显示你的表态"><i class="icon-thumbs-down"></i><span>踩 {{ share.dislikenum }}</span></a>
-</p>
-<div>
-
+						<p class="some">
+							<a href="javascript:" class="spread"> <i class="icon-retweet"></i>
+								扩散
+							</a>
+							<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}"> <i class="icon-heart"></i>
+								<span>喜欢 {{ share.likenum }}</span>
+							</a>
+							<!-- 	<a href="javascript:" class="do-up" rel="tooltip" data-placement="right" data-original-title="顶起来">
+							<i class="icon-thumbs-up"></i>
+							<span>顶</span>
+						</a>
+						-->
+						<a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}" rel="tooltip" data-placement="right" data-original-title="踩下去，不会显示你的表态">
+							<i class="icon-thumbs-down"></i>
+							<span>踩 {{ share.dislikenum }}</span>
+						</a>
+					</p>
+					<div>
 						{% if not current_user %}
 需要
 						<a href="/login?next={{ url_escape(request.uri) }}" class="btn btn-primary">登录</a>
@@ -76,60 +90,60 @@
 						</a>
 						{% end %}
 						<a data-toggle="modal" href="#myModal" class="btn btn-primary pull-right">推荐</a>
-</div>
-						<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								<h3 id="myModalLabel">为您推荐~</h3>
-							</div>
-							<div class="modal-body">
-								{% for post in suggest %}
-								<h4>
-									<a href="/share/{{ post['id'] }}">{{ post['title'] }}</a>
-								</h4>
-								{% end %}
-							</div>
-							<div class="modal-footer">
-								<button class="btn" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-
 					</div>
-				</div>
+					<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h3 id="myModalLabel">为您推荐~</h3>
+						</div>
+						<div class="modal-body">
+							{% for post in suggest %}
+							<h4>
+								<a href="/share/{{ post['id'] }}">{{ post['title'] }}</a>
+							</h4>
+							{% end %}
+						</div>
+						<div class="modal-footer">
+							<button class="btn" data-dismiss="modal">Close</button>
+						</div>
+					</div>
 
+				</div>
 			</div>
 
-			<div class="hero-unit">
-				<div id="commentmain">
-					{% if comments %}
+		</div>
+
+		<div class="hero-unit">
+			<div id="commentmain">
+				{% if comments %}
 {% for comment in comments %}
-					<div class="comment">
-						<div class="avatar">
-							<img src="{{comment.gravatar}}" />
-						</div>
-						<div class="name">{{comment.name}}</div>
-						<div class="date" title="写于{{comment.commenttime}}">{{comment.commenttime}}</div>
-						<p>{{comment.commentbody}}</p>
+				<div class="comment">
+					<div class="avatar">
+						<img src="{{comment.gravatar}}" />
 					</div>
-					{% end %}
+					<div class="name">{{comment.name}}</div>
+					<div class="date" title="写于{{comment.commenttime}}">{{comment.commenttime}}</div>
+					<p>{{comment.commentbody}}</p>
+				</div>
+				{% end %}
 {% end %}
 {% if current_user %}
-					<div id="addCommentContainer">
-						<form id="addCommentForm"  >
-							{{ xsrf_form_html() }}
-							<div>
-								<label for="commentbody">评论：</label>
-								<textarea name="commentbody" id="commentbody" rows="5" cols="40" autocomplete="off"></textarea>
-								<input type="submit" id="submit" value="提交" />
-							</div>
-							<input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
-						</form>
-					</div>
-					{% end %}
+				<div id="addCommentContainer">
+					<form id="addCommentForm"  >
+						{{ xsrf_form_html() }}
+						<div>
+							<label for="commentbody">评论：</label>
+							<textarea name="commentbody" id="commentbody" rows="5" cols="40" autocomplete="off"></textarea>
+							<input type="submit" id="submit" value="提交" />
+						</div>
+						<input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
+					</form>
 				</div>
+				{% end %}
 			</div>
 		</div>
 	</div>
+</div>
 </div>
 {% end %}
 
