@@ -15,6 +15,7 @@ VideoMsg.yaml
 *.tar.gz
 
 # temp files
+douban*
 tmp.md
 .gitmodules
 

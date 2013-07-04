@@ -26,6 +26,10 @@ weather
 - http://flash.weather.com.cn/sk2/shikuang.swf?id=101220607
 - http://www.weather.com.cn/static/custom/search3.htm
 - http://www.weather.com.cn/html/weather/101010200.shtml
+- http://www.7timer.com/doc.php?lang=zh-CN
+
+geo
+- http://www.geonames.org/
 
 music
 - http://box.baidu.com/widget/flash/song.swf?name='name'&artist='artist'&autoPlay=true

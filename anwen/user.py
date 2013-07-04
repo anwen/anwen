@@ -1,12 +1,11 @@
 # -*- coding:utf-8 -*-
 
+import time
 import hashlib
 import markdown2
-import time
 import tornado.escape
 import tornado.auth
 from tornado import gen
-
 import options
 import utils
 from utils.avatar import get_avatar

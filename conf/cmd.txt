@@ -20,7 +20,7 @@ windows：
 I:\tools\mongo\mongod.exe --logpath I:\tools\mongo\logs\mongodb.log --logappend --dbpath I:\tools\mongo\data --directoryperdb --serviceName MongoDB --install
 net start MongoDB
 linux:
-mongod --dbpath=/var/lib/mongo/ --smallfiles --fork --logpath=/data/db/log --auth
+mongod --dbpath=/var/lib/mongodb/ --smallfiles --fork --logpath=/data/db/log --auth
 
 mongoexport -d dba22 -c foo -f x,y,a,b,c --csv -o ./result.csv
 
@@ -98,3 +98,7 @@ Host github.com
 install python-imaging
 
 use admin
+use anwen
+db.addUser("aw", "11")
+db.auth("aw", "11")
+db.system.users.find()

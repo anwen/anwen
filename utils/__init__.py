@@ -48,3 +48,22 @@ def send_email(receiver, subject, msg_body):
     except Exception as e:
         print(str(e))
         return False
+
+
+import base64
+import uuid as uuid_module
+import hashlib
+
+hasher = hashlib.sha1
+
+
+def uuid():
+    return webencode(uuid_module.uuid4().bytes)
+
+
+def hash(value):
+    return webencode(hasher(value).digest())
+
+
+def webencode(value):
+    return base64.b64encode(value, ('-', '_')).rstrip('=')

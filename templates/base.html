@@ -47,7 +47,7 @@
           <ul class="nav">
             {% for k in node_list %}
             <li id="{{k}}">
-              <a href="/node/{{k}}">{{_(node_about[k]['name'])}}</a>
+              <a href="/node/{{k}}" title="{{ _(node_about[k]['about']) }}">{{_(node_about[k]['name'])}}</a>
             </li>
             {% end %}
           </ul>

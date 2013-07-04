@@ -49,33 +49,29 @@ which try to create and share things touch your soul',
 }
 
 node_list = [
-    'pencil', 'music', 'film', 'book',
-    'eyeopen', 'ask', 'sf', 'fire',
+    'eyeopen', 'music', 'film', 'book',
+    'ask', 'sf', 'pencil', 'fire',
 ]
 node_about = {
     'home': {
         'name': 'Newest Share',
         'about': 'Create and Share, which can hit your heart~'
     },
-    'pencil': {
-        'name': 'Create',
-        'about': 'Those created, we will cherish years later~'
+    'eyeopen': {
+        'name': 'Eyeopen',
+        'about': 'feel and know yourself and the world'
     },
     'music': {
         'name': 'Music',
         'about': 'Music which touch heart~'
     },
-    'film': {
-        'name': 'Video',
-        'about': 'Light and shadow fragment record every inch sensation'
-    },
     'book': {
         'name': 'Book',
         'about': 'Books, book reviews or essays'
     },
-    'eyeopen': {
-        'name': 'Eyeopen',
-        'about': 'feel and change the world'
+    'film': {
+        'name': 'Video',
+        'about': 'Light and shadow fragment record every inch sensation'
     },
     'ask': {
         'name': 'Asks',
@@ -84,6 +80,10 @@ node_about = {
     'sf': {
         'name': 'SF',
         'about': 'Science Fiction is a life style, stars and ocean'
+    },
+    'pencil': {
+        'name': 'Create',
+        'about': 'Those created, we will cherish years later~'
     },
     'fire': {
         'name': 'Actions',

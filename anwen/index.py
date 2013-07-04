@@ -1,22 +1,33 @@
 # -*- coding:utf-8 -*-
 
-import markdown2
 import time
+import markdown2
+from pymongo import DESCENDING  # ASCENDING
 from utils.fliter import filter_tags
 from utils.avatar import get_avatar
-from base import BaseHandler
+from .base import BaseHandler
 import options
 from db import User, Share, Tag
-from pymongo import DESCENDING  # ASCENDING
+
+
+class WelcomeHandler(BaseHandler):
+    # home page before login
+    def get(self):
+        if self.current_user:
+            self.redirect('/')
+            return
+        self.render("pages/welcome.html")
 
 
 class IndexHandler(BaseHandler):
-    # will make home-page different form node-page  todo
+    # home page after login
     def get(self, node='home'):
+        if not self.current_user:
+            self.redirect('/welcome')
+            return
         page = self.get_argument("page", 1)
         share_res = Share.find({'status': 0}).sort(
             'score', DESCENDING).limit(11).skip((int(page) - 1) * 11)
-
         pagesum = (share_res.count() + 10) / 11
         shares = []
         for share in share_res:
@@ -29,7 +40,6 @@ class IndexHandler(BaseHandler):
                 markdown2.markdown(share.markdown))[:400]
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
-
         self.render(
             "node.html", shares=shares,
             pagesum=pagesum, page=page, node=node,
@@ -37,6 +47,7 @@ class IndexHandler(BaseHandler):
 
 
 class NodeHandler(BaseHandler):
+
     def get(self, node):
         page = self.get_argument("page", 1)
         share_res = Share.find({'sharetype': node}).sort(
@@ -72,7 +83,6 @@ class TagHandler(BaseHandler):
             shares = []
             for i in tag.share_ids.split(' '):
                 share = Share.by_sid(i)
-
                 user = User.by_sid(share.user_id)
                 share.name = user.user_name
                 share.published = time.strftime(
@@ -83,12 +93,6 @@ class TagHandler(BaseHandler):
                 share.gravatar = get_avatar(user.user_email, 16)
                 shares.append(share)
             self.render("tage.html", name=name, shares=shares)
-
-
-class WelcomeHandler(BaseHandler):
-
-    def get(self):
-        self.render("welcome.html")
 
 
 class RecommendedHandler(BaseHandler):
