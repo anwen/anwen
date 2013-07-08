@@ -1,0 +1,25 @@
+- _id: 50e44d08606ec51c6ab042f3
+  commentbody: !!python/str '支持！'
+  commenttime: 1350504253.0
+  id: 1
+  share_id: 3
+  user_id: 3
+- _id: 50e44d08606ec51c6ab042f4
+  commentbody: !!python/str '我是大三学生，目前也在做，有个更好的想法和人数不多的团队。正在技术实现。我就说这么多。'
+  commenttime: 1354362452.0
+  id: 2
+  share_id: 17
+  user_id: 13
+- _id: 50fd44d5606ec50581a18a86
+  commentbody: !!python/str '抱歉，安德还没完全恢复
+
+    而且现在他还是很弱
+
+
+    由于开发时间有限，bug难免，糗百未生效是由于命名改变以及编码转换的bug，已经改正。
+
+    simsimi未生效是由于 其回答不具有唯一的个性表现。与安德的成长思路不一致，安德是想成为一个具有个性发展的会进化的人工智能。现在才刚开始'
+  commenttime: 1358774759.538426
+  id: 3
+  share_id: 18
+  user_id: 1

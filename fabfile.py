@@ -43,6 +43,7 @@ def deploy_2():
 @hosts(['aw'])
 @task
 def back_data():
+    import os
     ''' backup data from aw mongo '''
     with cd('/var/www/anwen/db'):   # 切换到远程目录
         run('chmod +x db_in_out.py')
@@ -50,14 +51,14 @@ def back_data():
         run('tar czf aw_yaml.tar.gz data')  # 远程压缩
     with cd('/var/www/anwen/docs/shares'):
         run('tar czf aw_md.tar.gz *.md')  # 远程压缩
-    with lcd('~/anwen/db/data/'):  # 切换到local
+    with lcd(os.path.join(os.getcwd(), 'db/')):  # 切换到local
         get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
         local('tar zxf aw_yaml.tar.gz')
-        local('rm zxf aw_yaml.tar.gz')
-    with lcd('~/anwen/docs/shares/'):
+        local('rm aw_yaml.tar.gz')
+    with lcd(os.path.join(os.getcwd(), 'docs/shares/')):
         get('/var/www/anwen/docs/shares/aw_md.tar.gz', '.')
         local('tar zxf aw_md.tar.gz')
-        local('rm zxf aw_md.tar.gz')
+        local('rm aw_md.tar.gz')
 
 
 def whoami():
