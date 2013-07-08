@@ -3,7 +3,7 @@
 import time
 import markdown2
 from pymongo import DESCENDING  # ASCENDING
-from utils.fliter import filter_tags
+from utils.fliter import cutter
 from utils.avatar import get_avatar
 from .base import BaseHandler
 import options
@@ -40,8 +40,8 @@ class ExploreHandler(BaseHandler):
             share.published = time.strftime(
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
-            share.markdown = filter_tags(
-                markdown2.markdown(share.markdown))[:400]
+            share.markdown = cutter(
+                markdown2.markdown(share.markdown))
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
         self.render(
@@ -66,8 +66,8 @@ class NodeHandler(BaseHandler):
             share.published = time.strftime(
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
-            share.markdown = filter_tags(
-                markdown2.markdown(share.markdown))[:400]
+            share.markdown = cutter(
+                markdown2.markdown(share.markdown))
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 

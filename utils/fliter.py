@@ -1,7 +1,6 @@
 #  -*- coding: utf-8-*-
-# 更深层次的过滤，类似instapaper或者readitlater这种服务，很有意思的研究课题
 import re
-#   # 过滤HTML中的标签
+# 过滤HTML中的标签
 # 将HTML中标签等信息去掉
 # @param htmlstr HTML字符串.
 # https://gist.github.com/859717
@@ -29,7 +28,7 @@ def filter_tags(htmlstr):
     s = replaceCharEntity(s)  # 替换实体
     return s
 
-#   # 替换常用HTML字符实体.
+# 替换常用HTML字符实体.
 # 使用正常的字符替换HTML中特殊的字符实体.
 # 你可以添加新的实体字符到CHAR_ENTITIES中, 处理更多HTML字符实体.
 # @param htmlstr HTML字符串.
@@ -57,10 +56,17 @@ def replaceCharEntity(htmlstr):
     return htmlstr
 
 
-def repalce(s, re_exp, repl_string):
-    return re_exp.sub(repl_string, s)
-
-if __name__ == '__main__':
-    s = file('loc.html').read()
-    news = filter_tags(s)
-    print news
+def cutter(s):
+    re_img = re.compile(
+        '<\s*img[^>]*.*\s*>', re.I)
+    s = re_img.sub('', s)
+    # re_object = re.compile(
+    #     '<\s*object[^>]*>.*<\s*/\s*object\s*>', re.I)
+    # s = re_object.sub('', s)  # 将br转换为换行
+    re_width = re.compile(
+        'width="\d*"', re.I)
+    s = re_width.sub('width="310"', s)
+    re_height = re.compile(
+        'height="\d*"', re.I)
+    s = re_height.sub('height="260"', s)
+    return s
