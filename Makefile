@@ -36,4 +36,4 @@ deploy:
 
 backup:
 	@echo "starting backup"
-	fab backup
+	fab back_data

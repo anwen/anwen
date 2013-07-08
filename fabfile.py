@@ -45,6 +45,7 @@ def deploy_2():
 def back_data():
     ''' backup data from aw mongo '''
     with cd('/var/www/anwen/db'):   # 切换到远程目录
+        run('chmod +x db_in_out.py')
         run('./db_in_out.py -o')
         run('tar czf aw_yaml.tar.gz data')  # 远程压缩
     with cd('/var/www/anwen/docs/shares'):
