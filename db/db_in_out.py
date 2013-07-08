@@ -6,12 +6,12 @@ import yaml
 import sys
 import os
 import re
-sys.path.append('..')
-from db import User, Share, Ande, Comment, Hit, Talk, Tag, Feedback, Room, VideoMsg  # todo
 from bson import ObjectId
+sys.path.append('..')
+from db import User, Share, Comment, Hit, Talk, Tag, Feedback  # todo
 
 
-doc_list = ['User', 'Share', 'Comment', 'Ande', 'Hit', 'Talk', 'Tag', 'Feedback', 'Room', 'VideoMsg']
+doc_list = ['User', 'Share', 'Comment', 'Hit', 'Talk', 'Tag', 'Feedback']
 
 
 def make_doc():
@@ -58,13 +58,12 @@ def run_export(name):
             doc_export(doc)
     elif name in doc_list:
         doc_export(name)
-    if os.path.isfile('User.yaml'):
-        input_file = open('User.yaml')
-        output_file = open('UserSafe.yaml', 'w')
-        a = re.sub(r'  user_pass: \S*\n', '', input_file.read())
-        b = re.sub(r'  user_email: \S*\n', '', a)
-        output_file.write(b)
-        output_file.close()
+    if os.path.isfile('data/User.yaml'):
+        with open('data/User.yaml') as input_file:
+            with open('data/UserSafe.yaml', 'w') as output_file:
+                a = re.sub(r'  user_pass: \S*\n', '', input_file.read())
+                b = re.sub(r'  user_email: \S*\n', '', a)
+                output_file.write(b)
         print 'users are safe'
     make_doc()
 
@@ -79,14 +78,14 @@ def doc_export(doc):
         i['_id'] = str(i['_id'])
         i = convert(i)
         res.append(i)
-    document = open(doc + '.yaml', 'w')
-    yaml.dump(
-        res, document,
-        default_style=None, default_flow_style=False,
-        canonical=False, indent=False, width=None,
-        allow_unicode=True, line_break=None,
-        encoding='utf-8', explicit_start=None, explicit_end=None,
-        version=None, tags=None)
+    with open('data/' + doc + '.yaml', 'w') as document:
+        yaml.dump(
+            res, document,
+            default_style=None, default_flow_style=False,
+            canonical=False, indent=False, width=None,
+            allow_unicode=True, line_break=None,
+            encoding='utf-8', explicit_start=None, explicit_end=None,
+            version=None, tags=None)
 
 
 def convert(input):

@@ -2,14 +2,6 @@
 =======
 
 
-what-is-important
-
-* basic enjoy share create
-* live thought friend love travel write book tech game music movie
-
-
-目标
-
 * 为分享最优质内容提供方便  阅读器(posts-books)+电台(music-video)
 * 提供简单深入的沟通平台  极简单社交平台+html5聊天室
 * 大胆探索  sf多人游戏+线上线下活动

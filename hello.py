@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import options
+
 import argparse
 import signal
 import tornado.httpserver
@@ -9,10 +9,8 @@ import tornado.web
 from log import logger
 from options.url import handlers
 from anwen.uimodules import EntryModule, UseradminModule
+import options
 
-__author__ = 'anwen team'
-
-__version__ = '0.0.6'
 
 options.web_server.update(
     dict(ui_modules={"Entry": EntryModule, "Useradmin": UseradminModule},))
@@ -30,7 +28,6 @@ def launch(port):
 
 parser = argparse.ArgumentParser(
     description='Welcome to Anwen World')
-
 parser.add_argument(
     '-t', '--test',
     dest='run_tests',
@@ -39,7 +36,6 @@ parser.add_argument(
     default=False,
     help='run tests'
 )
-
 parser.add_argument(
     '-p', '--port',
     dest='port',
@@ -49,8 +45,6 @@ parser.add_argument(
     help='run on the given port'
 )
 
-import time
-
 
 def sig_handler(sig, frame):
     logger.warning('Caught signal: %s', sig)
@@ -58,17 +52,16 @@ def sig_handler(sig, frame):
 
 
 def shutdown():
+    import time
     logger.info('Stopping http server')
     http_server.stop()  # 不接收新的 HTTP 请求
-
-    logger.info('Will shutdown in %s seconds ...',
-                options.MAX_WAIT_SECONDS_BEFORE_SHUTDOWN)
+    logger.info(
+        'Will shutdown in %s seconds ...',
+        options.MAX_WAIT_SECONDS_BEFORE_SHUTDOWN)
     io_loop = tornado.ioloop.IOLoop.instance()
-
     deadline = time.time() + options.MAX_WAIT_SECONDS_BEFORE_SHUTDOWN
 
     def stop_loop():
-
         now = time.time()
         if now < deadline and (io_loop._callbacks or io_loop._timeouts):
             io_loop.add_timeout(now + 1, stop_loop)

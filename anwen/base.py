@@ -5,8 +5,8 @@ from bson import ObjectId
 from tornado.escape import json_decode
 from tornado.web import RequestHandler, HTTPError
 from pymongo import ASCENDING, DESCENDING
-from options import site_info, node_list, node_about
 from log import logger
+from options import site_info, node_list, node_about
 
 
 class BaseHandler(RequestHandler):
@@ -27,37 +27,33 @@ class BaseHandler(RequestHandler):
         return json_decode(user_json)
 
     def get_user_lang(self, default="en_US"):
-        if "Accept-Language" in self.request.headers:
-            languages = self.request.headers["Accept-Language"].split(",")
-            locales = []
-            for language in languages:
-                parts = language.strip().split(";")
-                if len(parts) > 1 and parts[1].startswith("q="):
-                    try:
-                        score = float(parts[1][2:])
-                    except (ValueError, TypeError):
-                        score = 0.0
-                else:
-                    score = 1.0
-                locales.append((parts[0], score))
-            if locales:
-                locales.sort(key=lambda (l, s): s, reverse=True)
-                return locales[0][0]
-        return default
-
-    # def get_user_locale(self):
-    #     if "locale" not in self.current_user.prefs:
-    #         Use the Accept-Language header
-    #         return None
-    #     return self.current_user.prefs["locale"]
+        if "lang" not in self.current_user.prefs:
+            if "Accept-Language" in self.request.headers:
+                languages = self.request.headers["Accept-Language"].split(",")
+                locales = []
+                for language in languages:
+                    parts = language.strip().split(";")
+                    if len(parts) > 1 and parts[1].startswith("q="):
+                        try:
+                            score = float(parts[1][2:])
+                        except (ValueError, TypeError):
+                            score = 0.0
+                    else:
+                        score = 1.0
+                    locales.append((parts[0], score))
+                if locales:
+                    locales.sort(key=lambda (l, s): s, reverse=True)
+                    return locales[0][0]
+            self.set_cookie('lang', default)
+            return default
+        return self.current_user.prefs
 
     def write_error(self, status_code, **kwargs):
         self.render('error.html', status_code=status_code)
-        # else:
         #     super(RequestHandler, self).write_error(status_code, **kwargs)
 
     def write_json(self, obj):
-        """Writes the JSON-formated string of the give obj
+        """Writes the JSON-formated string of the given obj
         to the output buffer"""
 
         self.set_header('Content-Type', 'application/json')
@@ -73,17 +69,6 @@ class BaseHandler(RequestHandler):
         return self.write(dumps(obj, default=handler))
 
 
-    # def prepare(self):
-    #     if self.request.headers.get("Content-Type") == "application/json":
-    #         self.json_args = json_decode(self.request.body)
-
-
-class PageNotFoundHandler(RequestHandler):
-
-    def get(self):
-        raise HTTPError(404)
-
-
 class JSONHandler(BaseHandler):
 
     """Every API handler should inherit from this class."""
@@ -96,6 +81,7 @@ class JSONHandler(BaseHandler):
         if not ('Content-Type' in headers
                 and 'application/json' in headers['Content-Type']):
             logger.warn('Content-Type is not JSON, ignored.')
+            return None
         try:
             obj = json.loads(self.request.body)
         except ValueError:
@@ -109,9 +95,9 @@ class JSONHandler(BaseHandler):
             if len(args) > 0:
                 return args[0]
             else:
-                raise HTTPError(400,
-                                'Missing argument [%s]!' % name
-                                )
+                raise HTTPError(
+                    400,
+                    'Missing argument [%s]!' % name)
 
 
 def pop_spec(args, name, default=None):
@@ -122,6 +108,7 @@ def pop_spec(args, name, default=None):
 
 
 class CommonResourceHandler(JSONHandler):
+    # patch method is deleted
     res = None
     is_array = True
 
@@ -195,25 +182,6 @@ class CommonResourceHandler(JSONHandler):
 
     def post_post(self, res_obj):
         return res_obj
-
-    def pre_patch(self, json_arg):
-        return json_arg
-
-    def post_patch(self, new_obj, change):
-        return new_obj
-
-    def patch(self, rid=None):
-        change = self.pre_patch(self.get_json_arg())
-        if not rid and not self.is_array:
-            res = self.res.first()
-            if res:
-                rid = res.id
-            else:
-                return self.res.save(change)
-        self.res.update_by_id(rid, change)
-        new_obj = self.res.by_id(rid)
-        modified = self.post_patch(new_obj, change)
-        self.write_json(modified)
 
     def delete(self, rid=None):
         rids = [rid]

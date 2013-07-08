@@ -11,7 +11,7 @@ from db import User, Share, Tag
 
 
 class WelcomeHandler(BaseHandler):
-    # home page before login
+    # first page before login
     def get(self):
         if self.current_user:
             self.redirect('/')
@@ -20,11 +20,15 @@ class WelcomeHandler(BaseHandler):
 
 
 class IndexHandler(BaseHandler):
-    # home page after login
-    def get(self, node='home'):
+    def get(self):
         if not self.current_user:
             self.redirect('/welcome')
             return
+        self.redirect('/explore')
+
+
+class ExploreHandler(BaseHandler):
+    def get(self, node='home'):
         page = self.get_argument("page", 1)
         share_res = Share.find({'status': 0}).sort(
             'score', DESCENDING).limit(11).skip((int(page) - 1) * 11)
@@ -41,7 +45,8 @@ class IndexHandler(BaseHandler):
             share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
         self.render(
-            "node.html", shares=shares,
+            "node.html",
+            shares=shares,
             pagesum=pagesum, page=page, node=node,
         )
 

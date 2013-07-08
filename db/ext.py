@@ -7,9 +7,6 @@ from mongokit import CustomType
 
 
 class DynamicType(CustomType):
-    mongo_type = unicode
-    python_type = unicode
-    init_type = unicode
 
     def __init__(self, func, base_type=unicode):
         super(DynamicType, self).__init__()
@@ -18,16 +15,9 @@ class DynamicType(CustomType):
         self.python_type = base_type
         self.init_type = base_type
 
-    def to_bson(self, value):
-        """convert type to a mongodb type"""
-        return None
-
     def to_python(self, value):
         """convert type to a python object"""
         return self.func()
-
-    def validate(self, value, path):
-        pass
 
 
 class BaseModel(Document):

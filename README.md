@@ -6,8 +6,8 @@
 * 自由开源的理想主义社区与创造分享平台
 * 致力于创造和分享最打动大家的或有趣的新东西
 * 项目网址：[安问](http://anwensf.com/)
-* 构建于tornado & mongodb，欢迎大家批评指正&fork & pull request
-* V-0.0.5 活跃开发中
+* 构建于tornado & mongodb，欢迎大家批评指正 &fork &pull request
+* V-0.0.7 活跃开发中
 
 ### 正在开发
 * 个性化智能推荐系统

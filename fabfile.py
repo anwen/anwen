@@ -9,8 +9,54 @@ env.use_ssh_config = True
 # env.key_filename = '~/.ssh/aw_rsa'
 
 
-def hello():
-    print("Hello world!")
+def test():
+    local("make test")
+
+
+def commit():
+    try:
+        local("git add -p && git add . && git commit -a")
+    except:
+        pass
+
+
+def push():
+    local("git push aw_gh")
+    local("git push prod")
+
+
+@hosts(['aw'])
+@task
+def deploy():
+    test()
+    commit()
+    push()
+
+
+def deploy_2():
+    # todo
+    code_dir = '/home/lb/'
+    with cd(code_dir):
+        run("git pull")
+
+
+@hosts(['aw'])
+@task
+def back_data():
+    ''' backup data from aw mongo '''
+    with cd('/var/www/anwen/db'):   # 切换到远程目录
+        run('./db_in_out.py -o')
+        run('tar czf aw_yaml.tar.gz data')  # 远程压缩
+    with cd('/var/www/anwen/docs/shares'):
+        run('tar czf aw_md.tar.gz *.md')  # 远程压缩
+    with lcd('~/anwen/db/data/'):  # 切换到local
+        get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
+        local('tar zxf aw_yaml.tar.gz')
+        local('rm zxf aw_yaml.tar.gz')
+    with lcd('~/anwen/docs/shares/'):
+        get('/var/www/anwen/docs/shares/aw_md.tar.gz', '.')
+        local('tar zxf aw_md.tar.gz')
+        local('rm zxf aw_md.tar.gz')
 
 
 def whoami():
@@ -38,55 +84,3 @@ def update_nginx():
 
     put('/home/ask/anwen/conf/nginx.conf', '/usr/local/nginx/conf/nginx.conf')
     sudo('/etc/init.d/nginx reload')
-
-
-@task
-def back_data():
-    ''' backup data from aw mongo '''
-    with cd('/var/www/anwen/db'):   # 切换到远程目录
-        run('./db_in_out.py -o')
-        run('tar czf aw_yaml.tar.gz *.yaml')  # 远程解压
-    with cd('/var/www/anwen/docs/shares'):
-        run('tar czf aw_md.tar.gz *.md')  # 远程解压
-    with lcd('~/anwen/db/'):  # 切换到local
-        get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
-        local('tar zxf aw_yaml.tar.gz')
-    with lcd('~/anwen/docs/shares/'):
-        get('/var/www/anwen/docs/shares/aw_md.tar.gz', '.')
-        local('tar zxf aw_md.tar.gz')
-
-
-def test():
-    local("make test")
-
-
-def commit():
-    try:
-        local("git add -p && git add . && git commit -a")
-    except:
-        pass
-
-
-def push():
-    local("git push aw_gh")
-    local("git push prod")
-
-
-@task
-def deploy():
-    test()
-    commit()
-    push()
-
-
-def deploy_2():
-    # todo
-    code_dir = '/home/lb/'
-    with cd(code_dir):
-        host_type()
-        run("git pull")
-
-
-def print_user():
-    with hide('running'):
-        run('echo "%(user)s"' % env)

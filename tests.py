@@ -6,9 +6,9 @@
 import uuid
 import random
 import unittest
-import tornado.testing
 from json import dumps as jdump
 from json import loads as jload
+import tornado.testing
 import tornado.web
 
 
@@ -42,7 +42,8 @@ def assert_similar(d1, d2):
         bigger, smaller = d1, d2
     else:
         bigger, smaller = d2, d1
-        for k, v in smaller.iteritems():
+    for k, v in smaller.iteritems():
+        if k != 'user_pass':
             assert bigger[k] == v
 
 
@@ -63,7 +64,7 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
         if self.create:
             res = self.fetch(
                 self.res_url, method='POST', body=self.jcreate_args)
-            assert res.code == 201 or 200
+            assert res.code == 201
             assert res.body
             json = jload(res.body)
             assert_similar(json, self.create_args)
@@ -81,9 +82,6 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
             assert res.code == 404
             super(HttpTest, self).tearDown()
 
-    def fetch_n(self, *args, **kwargs):
-        return super(HttpTest, self).fetch(*args, **kwargs)
-
     def fetch(self, *args, **kwargs):
         if 'headers' not in kwargs:
             kwargs.update({'headers': {'Content-Type': 'application/json'}})
@@ -95,23 +93,6 @@ def common_setup(self):
         *self.clist, **self.cdict
     )
     self.jcreate_args = jdump(self.create_args)
-    updated = random_args(self.create_args)
-    try:
-        updated.update(self.udict)
-    except:
-        pass
-    self.update_args = updated
-    self.jupdate_args = jdump(self.update_args)
-
-
-def common_update(self, url, method='PATCH'):
-    res = self.fetch(
-        url, method=method, body=jdump(self.update_args))
-    if method == 'PATCH':
-        assert res.code == 200
-    elif method == 'PUT':
-        assert res.code == 201
-    assert res.body
 
 
 def common_read(self):
@@ -148,8 +129,6 @@ class TestUsers(HttpTest):
         res = self.fetch('/login', method='GET')
         assert res.code == 200
         assert 'Set-Cookie' in res.headers
-        # assert res.headers['Set-Cookie'].startswith('_xsrf=')
-        # _xsrf = res.headers['Set-Cookie'].split(';')[0].split('=')[1]
         assert res.body
         common_setup(self)
 
@@ -158,9 +137,6 @@ class TestUsers(HttpTest):
 
     def test_read(self):
         common_read(self)
-
-    def test_update(self):
-        common_update(self, self.res_url + self.oid)
 
 
 class TestShares(HttpTest):
@@ -178,10 +154,6 @@ class TestShares(HttpTest):
 
     def test_read(self):
         common_read(self)
-
-    def test_update(self):
-        common_update(self, self.res_url + self.oid)
-
 
 TEST_MODULES = [
     'tests',

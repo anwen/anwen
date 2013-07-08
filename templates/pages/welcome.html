@@ -1,14 +1,17 @@
 {% extends "../base.html" %}
+{% block htmltype %}image{% end %}
 
 {% block titlemore %}
 -{{_(site_info['subtitle'])}}
 {% end %}
-
+{% block navbar %}
+{% end %}
 {% block body %}
-<div class="jumbotron">
+<div class="welcome">
 	<h1>{{_(site_info['title'])}}</h1>
-			<p>一起发现，欣赏，思考，分享，幻想，创造，行动~</p>
-			<p>为热爱幻想和勇于行动的人提供另一片大地与天空...</p>
+			<p></p>
+			<p>{{_(site_info['intro'])}}</p>
+			<p></p>
 	<p>
 		<a href="/explore" class="btn btn-primary btn-large">探索更多 »</a>
 	</p>
@@ -16,75 +19,9 @@
 		<li></li>
 	</ul>
 </div>
-<div class="container">
-	<div class="row">
-		<div class="span4">
-			<h2>发现</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p><a href="/share/10">好文链接</a></p>
-			<p>
-				<a class="btn" href="/node/eyeopen">更多 »</a>
-			</p>
-		</div>
-		<div class="span4">
-			<h2>音乐</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p>
-				<a class="btn" href="/node/music">更多 »</a>
-			</p>
-		</div>
-		<div class="span4">
-			<h2>读书</h2>
-			<p><a href="/share/12">推荐好书</a></p>
-			<p>
-				<a class="btn" href="/node/book">更多 »</a>
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="span4">
-			<h2>视频</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p><a href="/share/10">好文链接</a></p>
-			<p>
-				<a class="btn" href="/node/film">更多 »</a>
-			</p>
-		</div>
-		<div class="span4">
-			<h2>疑问</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p>
-				<a class="btn" href="/node/ask">更多 »</a>
-			</p>
-		</div>
-		<div class="span4">
-			<h2>科幻</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p>
-				<a class="btn" href="/node/sf">更多 »</a>
-			</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="span4">
-			<h2>创造</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p><a href="/share/10">好文链接</a></p>
-			<p>
-				<a class="btn" href="/node/pencil">更多 »</a>
-			</p>
-		</div>
-		<div class="span4">
-			<h2>行动</h2>
-			<p><a href="/share/8">站点分享</a></p>
-			<p>
-				<a class="btn" href="/node/fire">更多 »</a>
-			</p>
-		</div>
-	</div>
 
-</div>
 {% end %}
-
+{% block footer %}
+{% end %}
 {% block bottom %}
 {% end %}

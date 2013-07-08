@@ -17,33 +17,6 @@ try:
 except KeyError:
     print('KeyError: Not authenticating.')
 
-# connection = Connection()
-# db = getattr(connection, options.db['name'])
-
-
-@connection.register
-class Config(BaseModel):
-    __collection__ = 'Config_Col'
-    structure = {
-        'name': basestring,
-        'value': None,
-    }
-    required_fields = ['name', ]
-
-    def set(self, name, value):
-        c = {'name': name}
-        config = self.find_one(c) or self(c)
-        config['value'] = value
-        config.save()
-
-    def by_name(self, name):
-        return self.find_one({'name': name})
-
-    def value_of(self, name):
-        obj = self.by_name(name)
-        if obj:
-            return obj.value
-
 
 @connection.register
 class User(BaseModel):

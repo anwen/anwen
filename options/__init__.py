@@ -2,16 +2,16 @@
 
 debug = True
 port = 8888
+
 db = {
     'name': 'anwen',
     'host': '127.0.0.1',
     'port': 27017,
-    'username': 'aw',
-    'password': 'lb',
+    # 'username': 'aw',
+    # 'password': 'lb',
 }
 
-default_editor = ''
-# default_editor = 'wysiwyg'
+default_editor = ''  # wysiwyg
 
 web_server = {
     'login_url': '/login',
@@ -27,6 +27,7 @@ web_server = {
 site_info = {
     'title': 'Anwen',
     'subtitle': 'create and share something nice',
+    'intro': 'Discover, think, share, action together~',
     'author': 'Anwen',
     'email': 'anwen.in@gmail.com',  # optional
     'weibo': 'http://weibo.com/askender',  # optional
@@ -103,9 +104,6 @@ log = {
 }
 
 MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 2
-
-
-ssaalltt = 'wvk238%@BHYAM*$!Z)^#%!PIAMXIZ+!soan_^AP'
 
 
 # 本网站域名  email激活用地址

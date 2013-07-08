@@ -3,34 +3,30 @@ help:
 	@echo
 	@echo TARGET:
 	@echo "    clean    清理临时文件"
-	@echo "    test     a test"
+	@echo "    test     anwen test"
+	@echo "    docs     anwen docs"
 	@echo "    start    start anwen"
 	@echo "    deploy   deploy anwen"
 	@echo
 
 
-.PHONY: clean-pyc clean-build docs
+.PHONY: clean docs test start deploy
 
-clean: clean-build clean-pyc
-
-
-clean-build:
-	rm -fr build/
-	rm -fr dist/
-	rm -fr *.egg-info
-
-
-clean-pyc:
+clean:
 	find . -name '*.pyc' -exec rm -f {} +
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
+	find . -name '*.log' -exec rm -f {} +
 
+docs:
+	python -m SimpleHTTPServer 8004
 
 test:
 	@echo "starting test"
 	python hello.py -t
 
 start:
+	make test
 	@echo "starting anwen"
 	python hello.py
 
@@ -38,8 +34,6 @@ deploy:
 	@echo "starting deploy"
 	fab deploy
 
-docs:
-	$(MAKE) -C docs html
-
-install:
-	python setup.py install
+backup:
+	@echo "starting backup"
+	fab backup
