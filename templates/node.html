@@ -2,29 +2,33 @@
 {% block title %}
 {{ _(node_about[node]['name']) }}-{{_(node_about[node]['about']) }}-
 {% end %}
+
 {% block body %}
 <div class="container collection-items">
   <h3>{{ _(node_about[node]['name']) }}</h3>
   <p>{{ _(node_about[node]['about']) }}</p>
+
   {% for (offset,share) in enumerate(shares) %}
   {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}
     <div class="collection-template-mixed post-template-flex-article">
       <div class="span{{ 8 if offset==0 else 4 }} collection-item">
         <div class="item-link-wrap {{ "has" if share.get('post_img') else "no" }}-image">
-          <a href="/share/{{ share.id }}" class="item-link" data-action="open-post" data-action-value="">
+          
             {%if share.get('post_img') %}
             <span class="item-image-container">
               <span class="item-image" style="background-image:url(/static/upload/img/{{ share.post_img.replace('_1200', '_750') if offset==0 else  share.post_img.replace('_1200', '_365')}})"></span>
             </span>
             {% end %}
-            <div class="item-content wf">
+            <div class="item-content">
+              <a href="/share/{{ share.id }}">
               <h1>{{ share.title }}</h1>
-              <div class="snippet">{{ share.markdown }} </div>
+              </a>
+              <div class="snippet">{{ share.markdown }}</div>
             </div>
-          </a>
-          <div class="meta wf">
+          
+          <div class="meta">
             <span class="author-and-collection">
-              <a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>
+              <a href="/user/{{ share.domain }}" class="author-link">{{ share.name }}</a>
                 {{_('published in')}}
               <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{ share.sharetype }}"></i>{{ share.sharetype }}</a>
               <span class="pull-right">
@@ -39,43 +43,44 @@
   
     {{ "</div>" if offset in(1,4,7,10) else "" }}
   {% end %}
-    <div class="pagination">
-      <ul>
-        {% if int(page)>1 %}
-        <li>
-          <a href="?page={{int(page)-1}}">前一页</a>
-        </li>
-        {% end %}
-      {% if int(page)>0 and int(pagesum)>0 %}
-        <li class="active">
-          <a href="#">{{page}}</a>
-        </li>
-        {% end %}
-      {% if int(pagesum)>int(page)   %}
-        <li>
-          <a href="?page={{int(page)+1}}">{{int(page)+1}}</a>
-        </li>
-        {% end %}
-{% if int(pagesum)-int(page)-1>0   %}
-        <li>
-          <a href="?page={{int(page)+2}}">{{int(page)+2}}</a>
-        </li>
-        {% end %}
-{% if int(pagesum)-int(page)-2>0   %}
-        <li>
-          <a href="?page={{int(page)+3}}">{{int(page)+3}}</a>
-        </li>
-        {% end %}
-{% if int(pagesum)>int(page)   %}
-        <li>
-          <a href="?page={{int(page)+1}}">下一页</a>
-        </li>
-        {% end %}
-      </ul>
-    </div>
-</div>
 
+<div class="pagination">
+  <ul>
+    {% if int(page)>1 %}
+    <li>
+      <a href="?page={{int(page)-1}}">前一页</a>
+    </li>
+    {% end %}
+      {% if int(page)>0 and int(pagesum)>0 %}
+    <li class="active">
+      <a href="#">{{page}}</a>
+    </li>
+    {% end %}
+      {% if int(pagesum)>int(page)   %}
+    <li>
+      <a href="?page={{int(page)+1}}">{{int(page)+1}}</a>
+    </li>
+    {% end %}
+{% if int(pagesum)-int(page)-1>0   %}
+    <li>
+      <a href="?page={{int(page)+2}}">{{int(page)+2}}</a>
+    </li>
+    {% end %}
+{% if int(pagesum)-int(page)-2>0   %}
+    <li>
+      <a href="?page={{int(page)+3}}">{{int(page)+3}}</a>
+    </li>
+    {% end %}
+{% if int(pagesum)>int(page)   %}
+    <li>
+      <a href="?page={{int(page)+1}}">下一页</a>
+    </li>
+    {% end %}
+  </ul>
+</div>
+</div>
 {% end %}
+
 
 {% block bottom %}
 <script type="text/javascript">

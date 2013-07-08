@@ -60,13 +60,18 @@ def cutter(s):
     re_img = re.compile(
         '<\s*img[^>]*.*\s*>', re.I)
     s = re_img.sub('', s)
-    # re_object = re.compile(
-    #     '<\s*object[^>]*>.*<\s*/\s*object\s*>', re.I)
-    # s = re_object.sub('', s)  # 将br转换为换行
-    re_width = re.compile(
-        'width="\d*"', re.I)
-    s = re_width.sub('width="310"', s)
-    re_height = re.compile(
-        'height="\d*"', re.I)
-    s = re_height.sub('height="260"', s)
+    re_object = re.compile(
+        '<\s*object[^>]*>.*<\s*/\s*object\s*>', re.I)
+    s = re_object.sub('', s)
+    re_object = re.compile(
+        '<\s*embed[^>]*>.*<\s*/\s*embed\s*>', re.I)
+    s = re_object.sub('', s)
+    # re_width = re.compile(
+    #     'width="\d*"', re.I)
+    # s = re_width.sub('width="310"', s)
+    # re_height = re.compile(
+    #     'height="\d*"', re.I)
+    # s = re_height.sub('height="260"', s)
+    print 1111111111111111111111111111
+    print s
     return s

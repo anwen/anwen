@@ -8,10 +8,10 @@ import os
 import re
 from bson import ObjectId
 sys.path.append('..')
-from db import User, Share, Comment, Hit, Talk, Tag, Feedback  # todo
+from db import User, Share, Comment, Hit, Tag, Feedback  # todo
 
 
-doc_list = ['User', 'Share', 'Comment', 'Hit', 'Talk', 'Tag', 'Feedback']
+doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback']
 
 
 def make_doc():
@@ -39,10 +39,10 @@ def run_import(name):
 def doc_import(doc):
     d = eval(doc)
     if d.find().count() == 0:
-        if doc == 'User' and not os.path.isfile(doc + '.yaml'):
+        if doc == 'User' and not os.path.isfile('data/' + doc + '.yaml'):
             doc = '%sSafe' % doc
             print 'load usersafe'
-        docs = yaml.load(file(doc + '.yaml', 'r').read())
+        docs = yaml.load(file('data/' + doc + '.yaml', 'r').read())
         for i in docs:
             i['_id'] = ObjectId(i['_id'])
             if doc == 'UserSafe':
