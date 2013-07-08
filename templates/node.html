@@ -8,7 +8,7 @@
   <p>{{ _(node_about[node]['about']) }}</p>
   {% for (offset,share) in enumerate(shares) %}
   {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}
-    <div class="collection-template-mixed post-template-flex-article post-status-approved">
+    <div class="collection-template-mixed post-template-flex-article">
       <div class="span{{ 8 if offset==0 else 4 }} collection-item">
         <div class="item-link-wrap {{ "has" if share.get('post_img') else "no" }}-image">
           <a href="/share/{{ share.id }}" class="item-link" data-action="open-post" data-action-value="">
@@ -19,7 +19,7 @@
             {% end %}
             <div class="item-content wf">
               <h1>{{ share.title }}</h1>
-              <p class="snippet">{{ share.markdown }} ... </p>
+              <div class="snippet">{{ share.markdown }} </div>
             </div>
           </a>
           <div class="meta wf">
