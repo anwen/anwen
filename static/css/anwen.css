@@ -797,8 +797,7 @@ a.del_post_img:hover{
 	color: #303239;
 	font-weight: 700;
 }
-.snippet a p, .snippet p,.snippet ul a li
-{
+.snippet p{
 	font-size: 16px;
 	color: #444;
 	font-weight: 400;

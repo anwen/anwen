@@ -72,6 +72,4 @@ def cutter(s):
     # re_height = re.compile(
     #     'height="\d*"', re.I)
     # s = re_height.sub('height="260"', s)
-    print 1111111111111111111111111111
-    print s
     return s

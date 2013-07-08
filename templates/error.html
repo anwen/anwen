@@ -19,7 +19,7 @@
         </p>
         <p>
             您可以尝试前往打开
-            <a href="/">「site_info['title']」的首页</a>
+            <a href="/">「{{_(site_info['title'])}}」的首页</a>
 {{'或者直接联系我们： <a href="mailto:'+site_info['email']+'">邮件</a>' if 'email' in site_info else ''}}
 {{'<a href="'+site_info['weibo']+'">微博</a>' if 'weibo' in site_info else ''}}
 {{'<a href="'+site_info['douban']+'">豆瓣小站</a>' if 'douban' in site_info else ''}}
