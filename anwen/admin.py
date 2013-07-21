@@ -44,16 +44,16 @@ def send_become_admin_email(uid, name, key):
     verify_link = '%s/become_admin?u=%s&k=%s' % (
         options.site_url, uid, key)
     verify_a = '<a href="%s">%s</a>' % (verify_link, verify_link)
-
     subject = '申请成为安问管理者~'
     msg_body = ''.join([
         '<html>',
-        '<p>Hi ', str(name), '申请成为管理者</p>',
+        '<p>Hi ', name.encode('utf-8'), '申请成为管理者</p>',
         '<p>点击链接通过申请:</p>',
         verify_a,
         options.msg_footer,
         '</html>',
     ])
+    print(type(msg_body))
     email = options.superadmin_email
     utils.send_email(email, subject, msg_body)
 
