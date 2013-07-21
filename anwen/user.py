@@ -8,6 +8,7 @@ import tornado.auth
 from tornado import gen
 import options
 import utils
+import utils.douban_auth
 from utils.avatar import get_avatar
 from .base import BaseHandler, CommonResourceHandler
 from db import User, Share
@@ -37,6 +38,26 @@ class LoginHandler(BaseHandler):
             return
         self.authenticate_redirect()
         # self.redirect('/login')  # self.write('密码错误或用户不存在，请重新注册或登录')
+
+
+class DoubanLoginHandler(BaseHandler, utils.douban_auth.DoubanMixin):
+
+    @tornado.web.asynchronous
+    @gen.coroutine
+    def get(self):
+        if self.get_argument('code', None):
+            user = yield self.get_authenticated_user(
+                redirect_uri='http://anwensf.com',
+                client_id=options.douban['douban_api_key'],
+                client_secret=options.douban['douban_api_secret'],
+                code=self.get_argument('code'))
+            print(user)
+            self.render('/', user=user)
+        else:
+            self.authorize_redirect(
+                redirect_uri='http://anwensf.com',
+                client_id=options.douban['douban_api_key']
+            )
 
 
 class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):

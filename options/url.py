@@ -5,7 +5,7 @@ from anwen.index import RecommendedHandler, CollectionsHandler
 from anwen.index import NodeHandler, TagHandler
 
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
-from anwen.user import GoogleLoginHandler
+from anwen.user import GoogleLoginHandler, DoubanLoginHandler
 from anwen.user import ForgotPassHandler, SetPassHandler
 from anwen.user import SettingHandler, ChangePassHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
@@ -37,6 +37,7 @@ handlers = [
     (r"/joinus", JoinusHandler),
     (r"/logout", LogoutHandler),
     (r"/google_login", GoogleLoginHandler),
+    (r"/douban_login", DoubanLoginHandler),
     (r'/forgotpass', ForgotPassHandler),
     (r'/setpass', SetPassHandler),
     (r'/setting', SettingHandler),
