@@ -10,6 +10,7 @@
 # private files
 server_setting.py
 User.yaml
+Admin.yaml
 *.tar.gz
 
 # temp files

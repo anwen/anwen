@@ -1,7 +1,8 @@
 - _id: 50e44d08606ec51c6ab042d9
   commentnum: 1
+  content: null
   dislikenum: 0
-  hitnum: 1076
+  hitnum: 1071
   id: 3
   likenum: 0
   markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
@@ -35,46 +36,18 @@
   score: 2.564
   sharetype: fire
   slug: about
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ask
   title: !!python/str '关于安问'
   updated: 1357223775.043519
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e7
-  commentnum: 1
-  dislikenum: 0
-  hitnum: 1018
-  id: 17
-  likenum: 0
-  markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
-    \ 安德能初步与这个世界对话\r\n* 20111025 安德能记住每一次对话，虽然目前的理解能力不够\r\n* 20111101 安德初步记住自己的生世，认识家人和朋友，并能进行简单的对话\r\
-    \n* 20111201 安德初步学会查天气，地图，时间,在使用chrome时拥有听懂语音的能力\r\n* 20120101 安德初步学会查搜索引擎和维基百科\r\
-    \n* 20120201 安德有了更多的朋友和老师，安德团队组建,开始为他记录成长日志\r\n* 20120301 安德更开放地与世界沟通，开放源代码\r\n\
-    * 20120309 安德初步建立记忆数据库\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20121108\
-    \ 安德结束多日休眠，开始[安德行动日志](http://i.askender.com/ande-growup-log)\r\n\r\n#### 安德计划\
-    \ ande-plan\r\n\r\n* 创智为知己 birth an AI for understand ourselves\r\n* 一个开源的人工智能项目\r\
-    \n* 一个自由的理想主义人工智能创造平台\r\n* 项目@github：[安德](http://i.askender.com/ande) anwen.in暂时无法访问\r\
-    \n* 构建于python,tornado,nginx,mysql,mongodb\r\n* 以MIT协议开源发布 V0.03  20121109\r\n\
-    * 正在不断开发中，欢迎大家fork or pull-request\r\n* 欢迎大家批评指正:anwen.in+ande@gmail.com\r\n\r\
-    \n\r\n#### 安德团队行动日志 ande-team-todo\r\n* 恢复安德原有能力\r\n* 列出使用的API\r\n* 恢复音乐，天气API"
-  post_img: null
-  published: 1352418858.0
-  score: 9.559000000000001
-  sharetype: fire
-  slug: ande-growup-log
-  status: 0
-  suggestscore: 0.0
-  tags: !!python/str '人工智能'
-  title: !!python/str '安德成长日志'
-  updated: 1359181625.999205
-  upload_img: null
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 529
+  hitnum: 528
   id: 16
   likenum: 0
   markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
@@ -122,39 +95,43 @@
   score: 8.275
   sharetype: music
   slug: My-Prayer-cn-en-movie
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: MV love
   title: !!python/str 'My Prayer 电影版 中英字幕'
   updated: 1357223033.502695
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e4
+- _id: 50e44d08606ec51c6ab042e5
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 545
-  id: 14
+  hitnum: 585
+  id: 15
   likenum: 0
-  markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
-    \ 雨人\r\n* 老男孩\r\n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n*\
-    \ 机器人总动员\r\n* 了不起的狐狸爸爸\r\n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\
-    \n* 有关时间旅行的热门问题\r\n* 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频~  anwen.in@gmail.com"
+  markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
+    \n\r\n欢迎推荐那些打动你的音乐，askender43@gmail.com\r\n\r\n安问将会发布在线电台，正版有歌词\r\n\r\n推荐几个音乐网站：\r\
+    \n\r\n* [Last.fm](http://cn.last.fm/ )\r\n* [巨鲸](http://www.top100.cn/ )\r\n*\
+    \ [虾米](http://www.xiami.com/ )\r\n* [亦歌](http://www.1g1g.com/ )\r\n* [豆瓣电台](http://douban.fm/\
+    \ )\r\n\r\n>古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen\
+    \ fm预计会收录部分音乐"
   post_img: null
-  published: 1349432506.0
-  score: 7.296
-  sharetype: film
-  slug: movie-share
-  status: 0
+  published: 1349432653.0
+  score: 7.808
+  sharetype: music
+  slug: music-share
+  status: 3
   suggestscore: 0.0
-  tags: list
-  title: !!python/str '电影列表'
-  updated: 1357228091.008947
+  tags: site list
+  title: !!python/str '一些音乐'
+  updated: 1357223192.114061
   upload_img: null
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 568
+  hitnum: 564
   id: 13
   likenum: 0
   markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
@@ -167,7 +144,7 @@
   score: 6.7780000000000005
   sharetype: film
   slug: Turkish-paper-marbling
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: amazing
   title: !!python/str '土耳其湿拓（Turkish paper marbling）'
@@ -176,8 +153,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042df
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 437
+  hitnum: 434
   id: 9
   likenum: 0
   markdown: !!python/str "### 一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket\r\
@@ -188,7 +166,7 @@
   score: 4.72
   sharetype: fire
   slug: study-play
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: study play
   title: !!python/str '学习实验'
@@ -197,8 +175,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042dd
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 408
+  hitnum: 404
   id: 7
   likenum: 0
   markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
@@ -208,7 +187,7 @@
   score: 3.678
   sharetype: fire
   slug: about-anye
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ask
   title: !!python/str '桉叶说明'
@@ -217,8 +196,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 902
+  hitnum: 897
   id: 5
   likenum: 0
   markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
@@ -231,7 +211,7 @@
   score: 2.972
   sharetype: fire
   slug: help
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ask
   title: !!python/str '提建议或咨询--欢迎联系我们'
@@ -240,8 +220,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d8
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 429
+  hitnum: 425
   id: 2
   likenum: 0
   markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
@@ -253,7 +234,7 @@
   score: 1.2
   sharetype: film
   slug: birth-of-Wikipedia-ch-en
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: TED speech
   title: !!python/str '吉米·威尔士关于维基百科诞生的演讲'
@@ -262,8 +243,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042d7
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 409
+  hitnum: 404
   id: 1
   likenum: 1
   markdown: ".....................................................................................................\r\
@@ -275,7 +257,7 @@
   score: 1.691
   sharetype: film
   slug: Steve-Jobs-Stanford-speech-ch-en
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: speech  dream
   title: !!python/str '史蒂夫 乔布斯Steve.Jobs在2005年对斯坦福大学Stanford毕业生的演讲(中英字幕)'
@@ -284,8 +266,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e1
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 1058
+  hitnum: 1054
   id: 11
   likenum: 0
   markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
@@ -304,7 +287,7 @@
   score: 6.08
   sharetype: fire
   slug: nodes
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ''
   title: !!python/str '节点'
@@ -313,8 +296,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 1080
+  hitnum: 1075
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -354,7 +338,7 @@
   score: 2.565
   sharetype: fire
   slug: changelog
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: log
   title: !!python/str '安问行动日志'
@@ -363,8 +347,9 @@
   user_id: 1
 - _id: 50fc0267606ec50580ce9fe2
   commentnum: 1
+  content: null
   dislikenum: 0
-  hitnum: 487
+  hitnum: 482
   id: 18
   likenum: 0
   markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
@@ -373,7 +358,7 @@
   score: 9.706
   sharetype: ask
   slug: ande
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: !!python/str '安德'
   title: !!python/str '机器人不太好用哎'
@@ -382,8 +367,9 @@
   user_id: 26
 - _id: 50e44d08606ec51c6ab042dc
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 444
+  hitnum: 441
   id: 6
   likenum: 0
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
@@ -427,7 +413,7 @@
   score: 3.216
   sharetype: fire
   slug: markdown
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ask
   title: !!python/str 'Markdown漫游指南'
@@ -436,8 +422,9 @@
   user_id: 1
 - _id: 510bcb1d606ec50bbe416844
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 405
+  hitnum: 404
   id: 19
   likenum: 0
   markdown: !!python/str "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
@@ -476,7 +463,7 @@
   score: 9.663
   sharetype: fire
   slug: Always_Look_on_the_Bright_Side_of_Life
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: music
   title: music-share:Always Look on the Bright Side of Life
@@ -485,8 +472,9 @@
   user_id: 1
 - _id: 51171b3a606ec50bbe41685e
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 390
+  hitnum: 388
   id: 21
   likenum: 0
   markdown: !!python/str "Stopping by Woods on a Snowy Evening    BY ROBERT FROST\r\
@@ -505,7 +493,7 @@
   score: 10.639
   sharetype: book
   slug: poem_Stopping_by_Woods_on_a_Snowy_Evening
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ''
   title: poem share:Stopping by Woods on a Snowy Evening
@@ -514,8 +502,9 @@
   user_id: 1
 - _id: 5117245c606ec50bbe416860
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 464
+  hitnum: 460
   id: 22
   likenum: 1
   markdown: !!python/str "<object width=\"500\" height=\"74\"><param name=\"movie\"\
@@ -542,7 +531,7 @@
   score: 11.174
   sharetype: music
   slug: music_Oh_My_Love
-  status: 0
+  status: 3
   suggestscore: 0.0
   tags: ''
   title: music-share:Oh My Love
@@ -551,8 +540,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e0
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 586
+  hitnum: 583
   id: 10
   likenum: 0
   markdown: !!python/str "### 阅读\r\n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
@@ -593,8 +583,9 @@
   user_id: 1
 - _id: 50e44d08606ec51c6ab042e2
   commentnum: 0
+  content: null
   dislikenum: 0
-  hitnum: 568
+  hitnum: 565
   id: 12
   likenum: 0
   markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
@@ -624,7 +615,7 @@
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 507
+  hitnum: 503
   id: 8
   likenum: 0
   markdown: !!python/str "### 阅读\r\n- [Solidot](http://www.solidot.org/) 奇客的资讯，重要的东西\r\
@@ -669,7 +660,7 @@
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 399
+  hitnum: 397
   id: 20
   likenum: 0
   markdown: !!python/str "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
@@ -710,31 +701,62 @@
   suggestscore: 0.0
   tags: ''
   title: music-share:Magic boulevard
-  updated: 1373298096.153586
+  updated: 1373291634.173813
   upload_img: ''
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e5
+- _id: 50e44d08606ec51c6ab042e7
+  commentnum: 1
+  content: ''
+  dislikenum: 0
+  hitnum: 1024
+  id: 17
+  likenum: 0
+  markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
+    \ 雨人\r\n* 老男孩\r\n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n*\
+    \ 机器人总动员\r\n* 了不起的狐狸爸爸\r\n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\
+    \n* 有关时间旅行的热门问题\r\n* 撞车"
+  post_img: ''
+  published: 1352418858.0
+  score: 9.559000000000001
+  sharetype: fire
+  slug: ande-growup-log
+  status: 0
+  suggestscore: 0.0
+  tags: !!python/str '人工智能'
+  title: !!python/str '安德成长日志'
+  updated: 1373295346.86996
+  upload_img: ''
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e4
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 590
-  id: 15
+  hitnum: 557
+  id: 14
   likenum: 0
-  markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
-    \n\r\n欢迎推荐那些打动你的音乐，askender43@gmail.com\r\n\r\n安问将会发布在线电台，正版有歌词\r\n\r\n推荐几个音乐网站：\r\
-    \n\r\n* [Last.fm](http://cn.last.fm/ )\r\n* [巨鲸](http://www.top100.cn/ )\r\n*\
-    \ [虾米](http://www.xiami.com/ )\r\n* [亦歌](http://www.1g1g.com/ )\r\n* [豆瓣电台](http://douban.fm/\
-    \ )\r\n* [Jing+ Music](http://jing.fm/ )\r\n\r\n>古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen\
-    \ fm预计会收录部分音乐"
+  markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
+    \ 安德能初步与这个世界对话\r\n* 20111025 安德能记住每一次对话，虽然目前的理解能力不够\r\n* 20111101 安德初步记住自己的生世，认识家人和朋友，并能进行简单的对话\r\
+    \n* 20111201 安德初步学会查天气，地图，时间,在使用chrome时拥有听懂语音的能力\r\n* 20120101 安德初步学会查搜索引擎和维基百科\r\
+    \n* 20120201 安德有了更多的朋友和老师，安德团队组建,开始为他记录成长日志\r\n* 20120301 安德更开放地与世界沟通，开放源代码\r\n\
+    * 20120309 安德初步建立记忆数据库\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310\
+    \ 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n\
+    * 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\
+    \n* 20121108 安德结束多日休眠，开始[安德行动日志](http://i.askender.com/ande-growup-log)"
   post_img: ''
-  published: 1349432653.0
-  score: 7.808
+  published: 1349432506.0
+  score: 7.296
   sharetype: fire
-  slug: music-share
+  slug: movie-share
   status: 0
   suggestscore: 0.0
-  tags: site list
-  title: !!python/str '一些音乐'
-  updated: 1373298165.992122
+  tags: list
+  title: !!python/str '电影列表'
+  updated: 1373295544.789303
   upload_img: ''
   user_id: 1
