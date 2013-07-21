@@ -106,12 +106,12 @@ class JoinusHandler(BaseHandler):
 
 
 def send_joinus_email(email, name):
-    subject = '欢迎来到 安问'
+    subject = '欢迎来到『安问』'
     msg_body = ''.join([
         '<html>',
         '<p>Hi ', str(name), '</p>',
-        '<p>欢迎注册 安问</p>',
-        '<p>安问是一个创造和分享的社区，你将可以在这里分享打动你的东西，展示你的奇思妙想，交到志同道合的朋友，发现更多精彩</p>',
+        '<p>欢迎注册『安问』</p>',
+        '<p>『安问』是一个创造和分享的社区，你将可以在这里分享打动你的东西，展示你的奇思妙想，结交志同道合的朋友，发现更多精彩</p>',
         options.msg_footer,
         '</html>',
     ])

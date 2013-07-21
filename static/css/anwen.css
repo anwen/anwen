@@ -803,3 +803,14 @@ a.del_post_img:hover{
 	font-weight: 400;
 	overflow: hidden;
 }
+.icon-eyeopen:before
+{
+	content: "\f06e";
+}
+.icon-ask:before
+{
+	content: "\f059";
+}
+.icon-sf:before {
+  content: "\f018";
+}

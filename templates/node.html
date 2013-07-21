@@ -30,7 +30,7 @@
             <span class="author-and-collection">
               <a href="/user/{{ share.domain }}" class="author-link">{{ share.name }}</a>
                 {{_('published in')}}
-              <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{ share.sharetype }}"></i>{{ share.sharetype }}</a>
+              <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{ share.sharetype }}"></i>{{ _(share.sharetype.capitalize()) }}</a>
               <span class="pull-right">
                 {{ share.likenum }}{{_('like')}} {{ share.commentnum }}{{_('comment')}}
               </span>

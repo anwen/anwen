@@ -1,5 +1,4 @@
 {% extends "../base.html" %}
-{% block htmltype %}image{% end %}
 
 {% block titlemore %}
 -{{_(site_info['subtitle'])}}
@@ -7,17 +6,15 @@
 {% block navbar %}
 {% end %}
 {% block body %}
-<div class="welcome">
+<div class="join_admin dialog">
 	<h1>{{_(site_info['title'])}}</h1>
 			<p></p>
 			<p>{{_(site_info['intro'])}}</p>
 			<br/>
+			<p>{{_('Any user is our admin')}}</p>
 	<p>
-		<a href="/explore" class="btn btn-primary btn-large">{{_('Start explore')}} »</a>
+		<a href="/become_admin" class="btn btn-primary btn-large">{{_('Become admin')}}</a>
 	</p>
-	<ul class="masthead-links">
-		<li></li>
-	</ul>
 </div>
 
 {% end %}

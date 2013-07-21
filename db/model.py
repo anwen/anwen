@@ -119,7 +119,7 @@ class Share(BaseModel):
         'likenum': int,
         'dislikenum': int,
         'hitnum': int,
-        'status': int,
+        'status': int,  # 0=public, 1=draft, 3=deleted
         'suggestscore': float,
         'score': float,
         'published': float,

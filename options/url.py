@@ -16,6 +16,9 @@ from anwen.share import FeedHandler
 from anwen.share import ImageUploadHandler
 from anwen.share import SharesHandler, CommentsHandler
 
+from anwen.admin import AdminHandler, BecomeAdminHandler
+from anwen.admin import AdminShareHandler
+
 from anwen.other import EditHandler, ErrHandler, FeedbackHandler, ScoreHandler
 
 
@@ -54,6 +57,11 @@ handlers = [
     (r"/shares/([0-9a-f]{24})", SharesHandler),
     (r"/comments/?", CommentsHandler),
     (r"/comments/([0-9a-f]{24})", CommentsHandler),
+
+    (r"/admin/?", AdminHandler),
+    (r"/become_admin/?", BecomeAdminHandler),
+    (r"/admin_share/?", AdminShareHandler),
+
 
     (r"/score/([^/]+)", ScoreHandler),
     (r"/feedback", FeedbackHandler),

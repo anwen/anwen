@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+
+{% block titlemore %}
+-{{_(site_info['subtitle'])}}
+{% end %}
+
+{% block body %}
+<div class="span14">
+	<br/>
+	<p># 0=public, 1=draft, 3=deleted</p>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>status</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for i in shares %}
+			<tr>
+				<td>{{str(i.id)}}</td>
+				<td>
+					<a href="/share/{{ i.id }}">{{ i.title }}</a>
+				</td>
+				<td>{{str(i.status)}}</td>
+				<td>
+					<a href="/admin_share?delete={{ i.id }}" class="btn btn-danger">删除</a>
+				</td>
+			</tr>
+			{% end %}
+		</tbody>
+	</table>
+
+</div>
+{% end %}
+{% block footer %}
+{% end %}
+{% block bottom %}
+{% end %}

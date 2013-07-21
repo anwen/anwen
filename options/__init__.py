@@ -117,6 +117,7 @@ EMAIL_HOST_USER = 'hello@anwensf.com'
 EMAIL_HOST_PASSWORD = 'naw130621'
 EMAIL_HOST_NICK = '安问'
 SERVICE_EMAIL = 'hello@anwensf.com'
+superadmin_email = 'askender43@gmail.com'
 msg_footer = ''.join([
     '<p>如果你有任何疑问，可以回复这封邮件向我们提问。</p>',
 ])
