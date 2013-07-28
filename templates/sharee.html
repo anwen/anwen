@@ -27,20 +27,8 @@
 								<div class="post_meta_info">
 									<a class="post_author" title="{{share.user_name}}" href="/user/{{share.user_domain}}">{{share.user_name}}</a>
 									<time class="post_date">
-										{{ locale.format_date(share.published, full_format=True, shorter=True) }}
+										{{ locale.format_date(share.published, full_format=True, shorter=False) }}
 									</time>
-									<div id="resizer">
-										<span id="f_text">字号：</span>
-										<span id="f_s">
-											<a href="javascript:void(0)">小</a>
-										</span>
-										<span id="f_m">
-											<a href="javascript:void(0)">中</a>
-										</span>
-										<span id="f_l">
-											<a href="javascript:void(0)">大</a>
-										</span>
-									</div>
 								</div>
 							</div>
 						</header>
@@ -116,13 +104,13 @@
 		<div class="hero-unit">
 			<div id="commentmain">
 				{% if comments %}
-{% for comment in comments %}
+{% for (offset,comment) in enumerate(comments) %}
 				<div class="comment">
 					<div class="avatar">
 						<img src="{{comment.gravatar}}" />
 					</div>
 					<div class="name">{{comment.name}}</div>
-					<div class="date" title="写于{{comment.commenttime}}">{{comment.commenttime}}</div>
+					<div class="date">#{{offset+1}}  {{ locale.format_date(comment.commenttime, full_format=True, shorter=False) }}</div>
 					<p>{{comment.commentbody}}</p>
 				</div>
 				{% end %}
