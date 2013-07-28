@@ -122,6 +122,7 @@ msg_footer = ''.join([
     '<p>如果你有任何疑问，可以回复这封邮件向我们提问。</p>',
 ])
 
+douban_redirect_uri = 'http://anwensf.com/douban_login'
 douban = {
     'douban_api_key': '032288b47028601309679a1d50792039',
     'douban_api_secret': '9b29399b82721746',

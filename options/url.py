@@ -59,10 +59,9 @@ handlers = [
     (r"/comments/?", CommentsHandler),
     (r"/comments/([0-9a-f]{24})", CommentsHandler),
 
+    (r"/admin/become/?", BecomeAdminHandler),
+    (r"/admin/share/?", AdminShareHandler),
     (r"/admin/?", AdminHandler),
-    (r"/become_admin/?", BecomeAdminHandler),
-    (r"/admin_share/?", AdminShareHandler),
-
 
     (r"/score/([^/]+)", ScoreHandler),
     (r"/feedback", FeedbackHandler),

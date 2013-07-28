@@ -32,7 +32,7 @@ class User(BaseModel):
         'emailverify': basestring,
         'id': int,
         'user_leaf': int,
-        'user_status': int,
+        'user_status': int,   # 0=default, 1=veryfied
         'user_jointime': float,
     }
     required_fields = ['user_pass', 'user_email']

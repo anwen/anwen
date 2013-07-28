@@ -45,19 +45,20 @@ class DoubanLoginHandler(BaseHandler, utils.douban_auth.DoubanMixin):
     @tornado.web.asynchronous
     @gen.coroutine
     def get(self):
-        if self.get_argument('code', None):
+        redirect_uri = options.douban_redirect_uri
+        code = self.get_argument('code', None)
+        if code:
             user = yield self.get_authenticated_user(
-                redirect_uri='http://anwensf.com',
+                redirect_uri=redirect_uri,
                 client_id=options.douban['douban_api_key'],
                 client_secret=options.douban['douban_api_secret'],
-                code=self.get_argument('code'))
+                code=code)
             print(user)
-            self.render('/', user=user)
-        else:
-            self.authorize_redirect(
-                redirect_uri='http://anwensf.com',
-                client_id=options.douban['douban_api_key']
-            )
+            self.redirect('/')
+        self.authorize_redirect(
+            redirect_uri=redirect_uri,
+            client_id=options.douban['douban_api_key']
+        )
 
 
 class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):

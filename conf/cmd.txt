@@ -20,7 +20,7 @@ windows：
 I:\tools\mongo\mongod.exe --logpath I:\tools\mongo\logs\mongodb.log --logappend --dbpath I:\tools\mongo\data --directoryperdb --serviceName MongoDB --install
 net start MongoDB
 linux:
-mongod --dbpath=/var/lib/mongodb/ --smallfiles --fork --logpath=/data/db/log --auth
+mongod --dbpath=/var/lib/mongo/ --smallfiles --fork --logpath=/data/db/log --auth
 
 mongoexport -d dba22 -c foo -f x,y,a,b,c --csv -o ./result.csv
 
@@ -82,7 +82,7 @@ sudo apt-get install texlive-xetex
 
 pandoc -N --template=mytemplate.tex --variable mainfont=WenQuanYi\ Micro\ Hei\ Mono --variable fontsize=14pt --variable version=1.9 aw.md --latex-engine=xelatex --toc -o aw.pdf
 
-haproxy -f /etc/haproxy/haproxy.cfg
+/usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
 
 cd ~/.ssh 
 ssh-keygen -t rsa -C 'askender43@mail.com'

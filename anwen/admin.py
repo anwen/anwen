@@ -30,18 +30,18 @@ class BecomeAdminHandler(BaseHandler):
         if u and k:
             result = admin.add_admin(u, k, s)
             if result:
-                self.render('admin/become_admin_success.html')
+                self.render('admin/admin/become_success.html')
             return
         else:
             key = utils.make_emailverify()
             admin.apply_admin(user_id, key)
             send_become_admin_email(user_id, user_name, key)
-            self.render('admin/become_admin_sent.html')
+            self.render('admin/admin/become_sent.html')
 
 
 def send_become_admin_email(uid, name, key):
 
-    verify_link = '%s/become_admin?u=%s&k=%s' % (
+    verify_link = '%s/admin/become?u=%s&k=%s' % (
         options.site_url, uid, key)
     verify_a = '<a href="%s">%s</a>' % (verify_link, verify_link)
     subject = '申请成为安问管理者~'

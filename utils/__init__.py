@@ -20,31 +20,33 @@ def make_emailverify():
     return str(time.time()) + str(uuid.uuid4())
 
 
-def send_email(receiver, subject, msg_body):
+def send_email(receivers, subject, msg_body):
     import smtplib
     from email.mime.text import MIMEText
+    from email.Header import Header
     me = '%s<%s>' % (options.EMAIL_HOST_NICK, options.SERVICE_EMAIL)
     host = options.EMAIL_HOST
     port = options.EMAIL_PORT
     user = options.EMAIL_HOST_USER
     password = options.EMAIL_HOST_PASSWORD
     msg = MIMEText(msg_body, 'html', 'utf-8')
-    msg['Subject'] = subject
+    msg['Subject'] = Header(subject, 'utf-8')
     msg['From'] = me
-    msg['To'] = receiver  # ";".join(receivers)
+    msg['To'] = ';'.join(receivers)
     s = smtplib.SMTP()
     # s.set_debuglevel(1)  # show the debug log
-    try:
-        print(s.connect(host, port))
-    except:
-        print 'CONNECT ERROR ****'
-    if options.EMAIL_USE_TLS:
-        s.starttls()
-    try:
-        s.login(user, password)
-        s.sendmail(me, receiver, msg.as_string())
-        s.quit()
-        return True
-    except Exception as e:
-        print(str(e))
-        return False
+    s.connect(host, port)
+    s.starttls()
+    s.login(user, password)
+    s.sendmail(me, receivers, msg.as_string())
+    s.quit()
+
+
+def send_error_email(title, error_log):
+    sender = conf['smtp_user']
+    password = conf['smtp_password']
+    msg = MIMEMultipart('alternative')
+    msg['Subject'] = Header(title, "UTF-8")
+
+    part = MIMEText(error_log, 'html', _charset='UTF-8')
+    msg.attach(part)

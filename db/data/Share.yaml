@@ -314,7 +314,7 @@
 - _id: 50e44d08606ec51c6ab042da
   commentnum: 0
   dislikenum: 0
-  hitnum: 1121
+  hitnum: 1122
   id: 4
   likenum: 0
   markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
@@ -717,7 +717,7 @@
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 619
+  hitnum: 620
   id: 15
   likenum: 0
   markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\

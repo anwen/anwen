@@ -40,7 +40,7 @@ def delete_share(share_id):
         share = Share.by_sid(share_id)
         if not share:
             return False
-        share['status'] = 3  # means deleted
+        share['status'] = 3  # means hide
         share = share.save()
 
 
