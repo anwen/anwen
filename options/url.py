@@ -23,6 +23,11 @@ from anwen.other import EditHandler, ErrHandler, FeedbackHandler, ScoreHandler
 
 from ande.ande import AndeHandler
 
+from atalk.talk import TalkHandler, ChatSocketHandler
+from atalk.talk import MsgNewHandler, MsgUpdatesHandler
+
+from anwen.other import AppHandler
+
 
 handlers = [
     (r"/welcome", WelcomeHandler),
@@ -71,6 +76,18 @@ handlers = [
     (r'/404', ErrHandler),
 
     (r'/ande', AndeHandler),
+
+    (r"/chat", TalkHandler),
+    (r"/chats", TalkHandler),
+    (r"/talks", TalkHandler),
+    (r"/talk", TalkHandler),
+    (r"/chatsocket", ChatSocketHandler),
+    (r"/a/message/new", MsgNewHandler),
+    (r"/a/message/updates", MsgUpdatesHandler),
+
+    (r"/app", AppHandler),
+    # (r'/favicon.ico', tornado.web.StaticFileHandler, {'path': favicon_path}),
+    # (r'/static/(.*)', tornado.web.StaticFileHandler, {'path': static_path}),
 
     (r'/(.*)', EntryHandler),
     # Custom 404 ErrHandler, always put this at last

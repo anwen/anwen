@@ -63,3 +63,8 @@ class ScoreHandler(BaseHandler):
             display += '<p>%s  %s  %s  %s  %s  %s  %s  %s  %s</p>' % (
                 share.score, share.suggestscore, share.hitnum, share.likenum, share.dislikenum, share.commentnum, share.status, share.title, share.id)
         self.write(display)
+
+
+class AppHandler(BaseHandler):
+    def get(self):
+        self.render("app.html")

@@ -277,3 +277,19 @@ class Ande(BaseModel):
 
     def by_uid(self, uid):
         return self.find({'user_id': uid}).count()
+
+
+@connection.register
+class Talk(BaseModel):
+    __collection__ = 'Talk_Col'
+    structure = {
+        'id': int,
+        'user_id': int,
+        'body': basestring,
+        'talktime': float,
+    }
+    default_values = {
+        'user_id': 0,
+        'body': '',
+        'talktime': time.time,
+    }

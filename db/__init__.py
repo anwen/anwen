@@ -10,3 +10,4 @@ Tag = connection.Tag
 Feedback = connection.Feedback
 Admin = connection.Admin
 Ande = connection.Ande
+Talk = connection.Talk
