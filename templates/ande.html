@@ -1,0 +1,93 @@
+{% extends "andebase.html" %}
+
+{% block body %}
+<script src="{{ static_url("js/clock.js") }}"></script>
+
+<div class="span12">
+  <div id="page">
+    <form class="saybox" method="post">
+      <fieldsets>
+        <div id="andesay_box">
+          <div id="andesay">{{andesay}}</div>
+        </div>
+      </fieldsets>
+    </form>
+    <form class="saybox" id="usersayform" method="post">
+      <fieldsets>
+        <input class="inputbox" type="text" onblur="if (this.value == '') {this.value = '和我聊天吧~';}" onfocus="if (this.value == '和我聊天吧~') {this.value = '';}" id="usersay" name="ask0"  x-webkit-speech lang="zh-CN"/>
+        <input type="submit" name="dosubmit" value="说  出" class="btn btn-primary"/>
+      </fieldsets>
+    </form>
+
+  <form class="saybox" id="searchForm" method="post">
+    {{ xsrf_form_html() }}
+    <fieldset>
+      <input class="inputbox" type="text" onblur="if (this.value == '') {this.value = '搜搜更快乐~';}" onfocus="if (this.value == '搜搜更快乐~') {this.value = '';}" id="s"   x-webkit-speech />
+      <input type="submit" value="搜 索" id="submitButton" />
+      <div id="searchInContainer">
+        <input type="radio" name="check" value="web" id="searchWeb" checked />
+        <label for="searchWeb">全网</label>
+
+        <input type="radio" name="check" value="site" id="searchSite" />
+        <label for="searchSite" id="siteNameLabel">安问博客</label>
+
+        <ul class="icons">
+          <li class="web" title="Web Search" data-searchType="web">Web</li>
+          <li class="images" title="Image Search" data-searchType="images">Images</li>
+          <li class="news" title="News Search" data-searchType="news">News</li>
+          <li class="videos" title="Video Search" data-searchType="video">Videos</li>
+        </ul>
+      </div>
+    </fieldset>
+  </form>
+  <div id="resultsDiv"></div>
+</div>
+
+<p class="credit">
+  <a href="http://askender.com/ai-ender-develop-plan.html  target='_blank' ">开发计划&安德日记</a>
+</p>
+
+</div>
+{% end %}
+
+{% block bottom %}
+<script type='text/javascript'>
+function getCookie(name) {
+  var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+  return r ? r[1] : undefined;
+}
+
+$(document).ready(function(){
+    $('#usersayform').submit(function(e){
+        e.preventDefault();
+        get_andesay();
+    }); 
+}); 
+function get_andesay(){ 
+  $("#andesay").hide(); 
+  var usersay=$("#usersay").val();
+  var xsrf = getCookie("_xsrf");
+  // $("#usersay").val("");
+        $.ajax({
+          type: "POST",
+          url: "/ande",
+          data: {
+            "usersay": usersay,
+            "_xsrf": xsrf
+          },
+          dataType: "json",
+          success: function(data) {
+            if (data.andesay.length>0){
+              var node = $(data.andesay);
+              node.hide();
+              $("#andesay_box").html(node);
+              node.slideDown();
+              $("#andethink").html(data.andethink);
+              $("#usersay").val('');
+            }
+          }
+        });
+  } 
+</script>
+<script src="{{ static_url("js/googlesearch.js") }}"></script>
+{% end %}

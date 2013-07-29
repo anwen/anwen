@@ -21,6 +21,8 @@ from anwen.admin import AdminShareHandler
 
 from anwen.other import EditHandler, ErrHandler, FeedbackHandler, ScoreHandler
 
+from ande.ande import AndeHandler
+
 
 handlers = [
     (r"/welcome", WelcomeHandler),
@@ -67,6 +69,8 @@ handlers = [
     (r"/feedback", FeedbackHandler),
     (r"/edit", EditHandler),
     (r'/404', ErrHandler),
+
+    (r'/ande', AndeHandler),
 
     (r'/(.*)', EntryHandler),
     # Custom 404 ErrHandler, always put this at last

@@ -13,16 +13,15 @@
   <!-- Le styles -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<!--   <link href="{{ static_url("js/google-code-prettify/prettify.css") }}" type="text/css" rel="stylesheet" media="screen"/>
- -->
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-<!--   <link href="{{ static_url("css/bootstrap-combined.no-icons.min.css") }}" type="text/css" rel="stylesheet" media="screen"/>
- -->
-<!--   <link href="{{ static_url("css/font-awesome.css") }}" type="text/css" rel="stylesheet" />
- -->
-  <link href="{{ static_url("css/anwen.css") }}" type="text/css" rel="stylesheet" media="screen" />
+  <!--   <link href="{{ static_url("js/google-code-prettify/prettify.css") }}" type="text/css" rel="stylesheet"/>
+  -->
+  <!--   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  -->
+  <!--   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+  -->
+  <link href="{{ static_url("css/bootstrap-combined.no-icons.min.css") }}" type="text/css" rel="stylesheet"/>
+  <link href="{{ static_url("css/font-awesome.css") }}" type="text/css" rel="stylesheet" />
+  <link href="{{ static_url("css/anwen.css") }}" type="text/css" rel="stylesheet"/>
   {% block head %}{% end %}
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -36,8 +35,7 @@
   <link rel="shortcut icon" href="{{ static_url("ico/favicon.ico") }}"></head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
-
-{% block navbar %}
+  {% block navbar %}
   <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner1">
       <div class="container">
@@ -74,11 +72,13 @@
   <div class="container">{{site_info['bottom_info']}}</div>
 </footer>
 {% end %}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ static_url("js/jquery-1.9.1.min.js") }}"><\/script>')</script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-<!-- <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
- -->
+-->
+<script src="{{ static_url("js/jquery-1.9.1.min.js") }}"></script>
+<!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script -->
+<script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+
 <script src="{{ static_url("js/google-code-prettify/prettify.js") }}"></script>
 {% block bottom %}{% end %}
 </body>

@@ -9,3 +9,4 @@ Hit = connection.Hit
 Tag = connection.Tag
 Feedback = connection.Feedback
 Admin = connection.Admin
+Ande = connection.Ande

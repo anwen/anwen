@@ -26,27 +26,34 @@ class BaseHandler(RequestHandler):
             return None
         return json_decode(user_json)
 
+    def get_user_lang_by_cookie(self):
+        user_json = self.get_cookie("lang")
+        if not user_json:
+            return None
+        return json_decode(user_json)
+
     def get_user_lang(self, default="en_US"):
-        if "lang" not in self.current_user.prefs:
-            if "Accept-Language" in self.request.headers:
-                languages = self.request.headers["Accept-Language"].split(",")
-                locales = []
-                for language in languages:
-                    parts = language.strip().split(";")
-                    if len(parts) > 1 and parts[1].startswith("q="):
-                        try:
-                            score = float(parts[1][2:])
-                        except (ValueError, TypeError):
-                            score = 0.0
-                    else:
-                        score = 1.0
-                    locales.append((parts[0], score))
-                if locales:
-                    locales.sort(key=lambda (l, s): s, reverse=True)
-                    return locales[0][0]
-            self.set_cookie('lang', default)
-            return default
-        return self.current_user.prefs
+        lang_by_cookie = self.get_user_lang_by_cookie()
+        if lang_by_cookie:
+            return self.current_user
+        if "Accept-Language" in self.request.headers:
+            languages = self.request.headers["Accept-Language"].split(",")
+            locales = []
+            for language in languages:
+                parts = language.strip().split(";")
+                if len(parts) > 1 and parts[1].startswith("q="):
+                    try:
+                        score = float(parts[1][2:])
+                    except (ValueError, TypeError):
+                        score = 0.0
+                else:
+                    score = 1.0
+                locales.append((parts[0], score))
+            if locales:
+                locales.sort(key=lambda (l, s): s, reverse=True)
+                return locales[0][0]
+        self.set_cookie('lang', default)
+        return default
 
     def write_error(self, status_code, **kwargs):
         self.render('error.html', status_code=status_code)

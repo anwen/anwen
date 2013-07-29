@@ -252,3 +252,28 @@ class Admin(BaseModel):
         'issuperadmin': False,
         'join_time': time.time,
     }
+
+
+@connection.register
+class Ande(BaseModel):
+    __collection__ = 'Ande_Col'
+    use_autorefs = True
+    structure = {
+        'id': int,
+        'user_id': int,
+        'user_ip': basestring,
+        'usersay': basestring,
+        'andesay': basestring,
+        'chattime': float,
+    }
+    default_values = {
+        'user_id': 0,
+        'user_ip': '',
+        'chattime': time.time,
+    }
+
+    def by_ip(self, ip):
+        return self.find({'user_ip': ip}).count()
+
+    def by_uid(self, uid):
+        return self.find({'user_id': uid}).count()

@@ -37,3 +37,7 @@ deploy:
 backup:
 	@echo "starting backup"
 	fab back_data
+
+ask:
+	@echo "call ande"
+	python ande/ask.py
