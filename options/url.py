@@ -28,7 +28,6 @@ from atalk.talk import MsgNewHandler, MsgUpdatesHandler
 
 from anwen.other import AppHandler
 
-
 handlers = [
     (r"/welcome", WelcomeHandler),
     (r"/explore", ExploreHandler),
@@ -86,8 +85,6 @@ handlers = [
     (r"/a/message/updates", MsgUpdatesHandler),
 
     (r"/app", AppHandler),
-    # (r'/favicon.ico', tornado.web.StaticFileHandler, {'path': favicon_path}),
-    # (r'/static/(.*)', tornado.web.StaticFileHandler, {'path': static_path}),
 
     (r'/(.*)', EntryHandler),
     # Custom 404 ErrHandler, always put this at last
