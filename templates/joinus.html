@@ -2,60 +2,43 @@
 {% block title %}
 加入我们-
 {% end %}
+
 {% block body %}
 <div class="container well">
-  <div class="row">
-    <div class="span8">
-      <div class="mod register">
-        <form id="joinus" method="post" name="joinus" class="joinus form form-horizontal">
-          {{ xsrf_form_html() }}
-          <fieldset>
-            <legend>加入我们</legend>
-            <div class="control-group">
-              <label for="email" class="control-label">邮箱</label>
-              <div class="controls">
-                <input id="email" type="email" name="email" class="input" required>
-                <span class="help-inline"></span>
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="name" class="control-label">昵称</label>
-              <div class="controls">
-                <input id="name" type="text" name="name" class="span2" required/>
-                <span class="help-inline"></span>
-              </div>
-            </div>
-            <div class="control-group">
-              <label for="password" class="control-label">密码</label>
-              <div class="controls">
-                <input id="password" type="password" name="password" class="input" minlength="8" />
-                <span class="help-inline"></span>
-              </div>
-            </div>
-            <div class="form-actions">
-              <input type="submit" value="注册" name="dosubmit" class="btn btn-primary sbm"/>
-              已经拥有帐号?直接<a href="/login"> 登录</a>
-              或用<a href="/google_login">google帐号登录</a>
-            </div>
-          </fieldset>
-        </form>
-      </div>
-    </div>
-    <div class="span4">
-      <div class="mod side-relation">
-        <h2>关于</h2>
-        <ul>
-          <li>
-            <a href="/about">关于安问</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!--  <a href="/googlelogin">Login with google</a>
--->
 
+  <form class="form-horizontal" method="post">
+    <legend>加入我们</legend>
+    {{ xsrf_form_html() }}
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">{{_('Email')}}</label>
+      <div class="col-lg-4">
+        <input type="email" name="email" class="form-control" id="inputEmail" required></div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">{{_('Name')}}</label>
+      <div class="col-lg-4">
+        <input type="text" name="name" class="form-control" id="inputEmail" required></div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">{{_('Password')}}</label>
+      <div class="col-lg-4">
+        <input type="password" name="password" class="form-control" id="inputPassword" minlength="8" required></div>
+    </div>
+    <div class="form-group">
+      <label for="" class="col-lg-2 control-label"></label>
+      <div class="col-lg-4">
+        <button type="submit" class="btn btn-primary">{{_('Join us')}}</button>
+        <p>
+          已经拥有帐号?直接
+          <a href="/login">登录</a>
+          或用
+          <a href="/google_login">google帐号登录</a>
+        </p>
+      </div>
+    </div>
+  </form>
+
+</div>
 {% end %}
 
 {% block bottom %}

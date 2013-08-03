@@ -12,17 +12,23 @@ import options
 from utils.avatar import get_avatar
 from utils.img_tools import make_post_thumb
 from db import User, Share, Comment, Like, Hit, Tag
-from base import CommonResourceHandler, BaseHandler
+from .base import CommonResourceHandler, BaseHandler
 
 
 class ShareHandler(BaseHandler):
+
     @tornado.web.authenticated
     def get(self):
         share_id = self.get_argument("id", None)
+        sharetype = self.get_argument("sharetype", None)
+        editor = self.get_argument("editor", options.default_editor)
         share = None
         if share_id:
             share = Share.by_sid(share_id)
-        editor = self.get_argument("editor", options.default_editor)
+            sharetype = share.sharetype if share else None
+        print(sharetype)
+        if sharetype == 'goodlink':
+            self.render("share_link.html", share=share)
         if editor:
             self.render("share_wysiwyg.html", share=share)
         else:
@@ -35,13 +41,12 @@ class ShareHandler(BaseHandler):
         title = self.get_argument("title", '')
         markdown = self.get_argument("markdown", '')
         content = self.get_argument("content", '')
-        sharetype = self.get_argument("type", '')
+        sharetype = self.get_argument("sharetype", '')
         slug = self.get_argument("slug", '')
-        status = 1 if self.get_argument("dosubmit", None) == u'保存草稿' else 0
         tags = self.get_argument("tags", '')
         upload_img = self.get_argument("uploadImg", '')
         post_img = self.get_argument("post_Img", '')
-        post_img = '' if post_img == 'None' else post_img
+        link = self.get_argument("link", '')
         user_id = self.current_user["user_id"]
         res = {
             'title': title,
@@ -50,9 +55,9 @@ class ShareHandler(BaseHandler):
             'sharetype': sharetype,
             'slug': slug,
             'tags': tags,
-            'status': status,
             'upload_img': upload_img,
             'post_img': post_img,
+            'link': link,
             'updated': time.time(),
         }
 
@@ -75,12 +80,11 @@ class ShareHandler(BaseHandler):
                 'share_ids': share.id
             }
             Tag.new(doc)
-        if status == 1:
-            self.redirect("/share/?id=" + str(share.id))
         self.redirect("/share/" + str(share.id))
 
 
 class EntryHandler(BaseHandler):
+
     def get(self, slug):
         share = None
         if slug.isdigit():
@@ -168,6 +172,7 @@ class EntryHandler(BaseHandler):
 
 
 class CommentHandler(BaseHandler):
+
     def post(self):
         commentbody = self.get_argument("commentbody", None)
         share_id = self.get_argument("share_id", None)
@@ -201,6 +206,7 @@ class CommentsHandler(CommonResourceHandler):
 
 
 class LikeHandler(BaseHandler):
+
     def post(self, action):
         share_id = int(self.get_argument("share_id", None))
         user_id = self.current_user["user_id"]
@@ -248,6 +254,7 @@ class LikeHandler(BaseHandler):
 
 
 class FeedHandler(BaseHandler):
+
     def get(self):
         share_res = Share.find()
         shares = []

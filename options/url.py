@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from anwen.index import IndexHandler, WelcomeHandler, ExploreHandler
+from anwen.index import WelcomeHandler
+from anwen.index import IndexHandler, StartHandler, ExploreHandler
 from anwen.index import RecommendedHandler, CollectionsHandler
 from anwen.index import NodeHandler, TagHandler
 
@@ -30,8 +31,9 @@ from anwen.other import AppHandler
 
 handlers = [
     (r"/welcome", WelcomeHandler),
-    (r"/explore", ExploreHandler),
     (r"/", IndexHandler),
+    (r"/start", StartHandler),
+    (r"/explore", ExploreHandler),
     (r"/recommended", RecommendedHandler),
     (r"/collections", CollectionsHandler),
 
@@ -53,11 +55,11 @@ handlers = [
     (r"/users/?", UsersHandler),
     (r'/users/([0-9a-f]{24})', UsersHandler),
 
+    (r"/share/image_upload", ImageUploadHandler),
     (r"/share/?", ShareHandler),
     (r"/share/([^/]+)", EntryHandler),
     (r"/sharecomment", CommentHandler),
     (r"/sharelike/([^/]+)", LikeHandler),
-    (r"/share/image_upload", ImageUploadHandler),
     (r"/feed", FeedHandler),
 
     (r"/shares/?", SharesHandler),

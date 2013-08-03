@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="{% block htmltype %}{% end %}">
 <head>
-  <!-- <meta charset="utf-8">
-  -->
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8">
   <title>{% block title %}{% end %}{{_(site_info['title'])}}{% block titlemore %}{% end %}</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{_(site_info['author'])}}">
   <meta name="description" content="{{_(site_info['description'])}}">
   <link rel="alternate" href="/feed" type="application/atom+xml" title="安问feed"/>
-
-  <!-- Le styles -->
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <!--   <link href="{{ static_url("js/google-code-prettify/prettify.css") }}" type="text/css" rel="stylesheet"/>
-  -->
-  <!--   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-  -->
-  <!--   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-  -->
-  <link href="{{ static_url("css/bootstrap-combined.no-icons.min.css") }}" type="text/css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--   <link href="{{ static_url("css/bootstrap3.min.css") }}" type="text/css" rel="stylesheet"/>
   <link href="{{ static_url("css/font-awesome.css") }}" type="text/css" rel="stylesheet" />
-  <link href="{{ static_url("css/anwen.css") }}" type="text/css" rel="stylesheet"/>
+  -->
+  <!--   <link rel="stylesheet/less" type="text/css" href="{{static_url('less/main.less')}}">
+  <script type="text/javascript" src="{{static_url('js/less.js')}}"></script>
+  -->
+  <link href="{{ static_url("css/main.css") }}" type="text/css" rel="stylesheet"/>
   {% block head %}{% end %}
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -30,56 +24,43 @@
   <!--[if IE 6]>
   <script type="text/javascript" src="http://letskillie6.googlecode.com/svn/trunk/letskillie6.zh_CN.pack.js"></script>
   <![endif]-->
-
-  <!-- Le fav and touch icons -->
   <link rel="shortcut icon" href="{{ static_url("ico/favicon.ico") }}"></head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
   {% block navbar %}
-  <div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner1">
-      <div class="container">
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="/">
-          {{_(site_info['title'])}} <sup style="font-size:12px;">&nbsp;{{_(site_info['subtitle'])}}</sup>
-        </a>
-        {{ modules.Useradmin() }}
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            {% for k in node_list %}
-            <li id="{{k}}">
-              <a href="/node/{{k}}" title="{{ _(node_about[k]['about']) }}">{{_(node_about[k]['name'])}}</a>
-            </li>
-            {% end %}
-          </ul>
+  <div class="navbar navbar-inverse navbar-fixed-top aw-main-nav">
+    <div class="container">
+      {{ modules.Useradmin() }}
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".nav-collapse" pull-right>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">
+        {{_(site_info['title'])}} <sup style="font-size:12px;">&nbsp;{{_(site_info['subtitle'])}}</sup>
+      </a>
 
-          <!-- <form action="/search" class="navbar-search pull-right">
-          <input type="text" class="search-query" placeholder="search..." x-webkit-speech="" lang="zh-CN"/>
-        </form>
-        -->
+      <div class="nav-collapse collapse">
+        <ul class="nav navbar-nav">
+          {% for k in node_list %}
+          <li id="{{k}}">
+            <a href="/node/{{k}}">{{_(node_about[k]['name'])}}</a>
+          </li>
+          {% end %}
+        </ul>
       </div>
     </div>
   </div>
-</div>
-{% end %}
+  {% end %}
 {% block body %}{% end %}
-{% block footer %}
-<footer class="footer">
-  <div class="container">{{site_info['bottom_info']}}</div>
-</footer>
-{% end %}
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="{{ static_url("js/jquery-1.9.1.min.js") }}"><\/script>')</script>
--->
-<script src="{{ static_url("js/jquery-1.9.1.min.js") }}"></script>
-<!-- <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script -->
-<script src="{{ static_url("js/bootstrap.min.js") }}"></script>
 
-<script src="{{ static_url("js/google-code-prettify/prettify.js") }}"></script>
-{% block bottom %}{% end %}
+{% block footer %}
+  <footer class="footer">
+    <div class="container">{{site_info['bottom_info']}}</div>
+  </footer>
+  {% end %}
+  <script src="{{ static_url("js/jquery-1.9.1.min.js") }}"></script>
+  <script src="{{ static_url("js/bootstrap3.min.js") }}"></script>
+  {% block bottom %}{% end %}
 </body>
 </html>

@@ -1,46 +1,47 @@
-{% if current_user %}
-<div class="btn-group pull-right">
-  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    <img src="{{ gravatar }}" />
-    <!-- <i class="icon-user"></i>
-  -->
-{{ escape(name) }}
-  <span class="caret"></span>
-</a>
-<ul class="dropdown-menu">
-  <li>
-    <a href="/user/{{ escape(domain) }}"> <i class="icon-user"></i>
-      我的主页
+<div class="btn-group pull-right" style="margin-right:45px;">
+<ul class="nav navbar-nav navbar-admin">
+  {% if current_user %}
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      {{ escape(name) }} <b class="caret"></b>
     </a>
-    <a href="/setting">
-      <i class="icon-cog"></i>
-      修改资料
-    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="/user/{{ escape(domain) }}"> <i class="icon-user"></i>
+          我的主页
+        </a>
+        <a href="/setting"> <i class="icon-cog"></i>
+          修改资料
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="/share">
+          <i class="icon-leaf"></i>
+          分享
+        </a>
+      </li>
+      <li>
+        <a href="/share?sharetype=link">
+          <i class="icon-leaf"></i>
+          分享链接
+        </a>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <a href="/logout?next={{ url_escape(request.uri) }}">
+          <i class="icon-off"></i>
+          退出
+        </a>
+      </li>
+    </ul>
   </li>
-  <li class="divider"></li>
+  {% else %}
+
   <li>
-    <a href="/share">
-      <i class="icon-leaf"></i>
-      分享
-    </a>
+    <a href="/login?next={{ url_escape(request.uri) }}">{{_('Log in')}}</a>
   </li>
-  <li class="divider"></li>
-  <li>
-    <a href="/logout?next={{ url_escape(request.uri) }}">
-      <i class="icon-off"></i>
-      退出
-    </a>
-  </li>
-</ul>
-<!-- <button id="toggle-fullscreen" class="btn" data-toggle="button">Fullscreen</button> -->
-</div>
-{% else %}
-<ul class="nav pull-right">
-<li>
-  <a href="/joinus?next={{ url_escape(request.uri) }}">注册</a>
-</li>
-<li>
-  <a href="/login?next={{ url_escape(request.uri) }}">登录</a>
-</li>
-</ul>
+
 {% end %}
+</ul>
+</div>

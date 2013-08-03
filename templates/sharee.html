@@ -2,9 +2,6 @@
 {% block title %}
 {{ escape(share.title) }}-
 {% end %}
-{% block head %}
-<link href="{{ static_url("css/comment.css") }}" rel="stylesheet">
-{% end %}
 {% block body %}
 {% if share.post_img %}
 <div class="post_image_wrap">
@@ -107,7 +104,7 @@
 {% for (offset,comment) in enumerate(comments) %}
 				<div class="comment">
 					<div class="avatar">
-						<img src="{{comment.gravatar}}" />
+						<img class="img-circle" src="{{comment.gravatar}}" />
 					</div>
 					<div class="name">{{comment.name}}</div>
 					<div class="date">#{{offset+1}}  {{ locale.format_date(comment.commenttime, full_format=True, shorter=False) }}</div>

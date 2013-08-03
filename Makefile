@@ -25,7 +25,12 @@ test:
 	@echo "starting test"
 	python hello.py -t
 
+build:
+	lessc -x --yui-compress static/less/main.less > static/css/main.css
+	lessc -x --yui-compress static/less/ande.less > static/css/ande.css
+
 start:
+	make build
 	make test
 	@echo "starting anwen"
 	python hello.py

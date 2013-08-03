@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
-import query
 import ego
+import query
 import tools
 from db import Ande
 
@@ -12,21 +12,10 @@ for tool_name in tools.__all__:
     tool_modules.append(getattr(tools, tool_name))
 
 
-def test_tools(data):
-    for tool_module in tool_modules:
-        try:
-            print(tool_module)
-            if tool_module.test(data):
-                return tool_module.handle(data)
-        except:
-            continue
-    return ''
-
-
 def by_tools(data):
     for tool_module in tool_modules:
         try:
-            print(tool_module)
+            # print(tool_module)
             if tool_module.test(data):
                 return tool_module.handle(data)
         except:
@@ -52,13 +41,12 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     trans = query.trans(usersay, userlang)
     clock = query.clock(usersay)
 
-    get_tools = by_tools(data)
-    get_memo = query.search_memo(usersay, userip)
     get_ego = ego.find_ego(usersay)
-    print(get_tools, get_memo, get_ego, first, hello, song, trans, clock,)
+    get_memo = query.search_memo(usersay, userip)
+    get_tools = by_tools(data) if (get_ego or get_memo) else ''
 
     andesay = ''.join([
-        get_tools, get_memo, get_ego, first, hello, song, trans, clock,
+        get_ego, get_memo, get_tools, first, hello, song, trans, clock,
     ])
 
     doc = {

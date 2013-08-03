@@ -36,8 +36,56 @@ class LoginHandler(BaseHandler):
                 'user', tornado.escape.json_encode(user_info))
             self.redirect(self.get_argument('next', '/'))
             return
-        self.authenticate_redirect()
-        # self.redirect('/login')  # self.write('密码错误或用户不存在，请重新注册或登录')
+        self.redirect('/login')  # self.write('密码错误或用户不存在，请重新注册或登录')
+
+
+class JoinusHandler(BaseHandler):
+
+    def get(self):
+        if self.current_user:
+            self.redirect('/')
+        self.render('joinus.html')
+
+    def post(self):
+        name = self.get_argument('name', '')
+        password = self.get_argument('password', '')
+        email = self.get_argument('email', '')
+        domain = self.get_argument('domain', '')
+        password = utils.make_password(password)
+        if domain == '':
+            domain = name
+        if User.by_email(email):
+            self.redirect('/login')  # self.write('用户已经存在，请直接登录')
+        else:
+            res = User
+            res['id'] = res.find().count() + 1
+            res['user_name'] = name
+            res['user_pass'] = password
+            res['user_email'] = email
+            res['user_domain'] = domain
+            res.new(res)
+            send_joinus_email(email, name)
+            user_info = {
+                'user_id': res.id,
+                'user_name': res.user_name,
+                'user_email': res.user_email,
+                'user_domain': res.user_domain}
+            self.set_secure_cookie(
+                'user', tornado.escape.json_encode(user_info))
+            self.redirect(self.get_argument('next', '/'))
+
+
+def send_joinus_email(email, name):
+    subject = '欢迎来到『安问』'
+    msg_body = ''.join([
+        '<html>',
+        '<p>Hi ', name.encode('utf-8'), '</p>',
+        '<p>欢迎注册『安问』</p>',
+        '<p>『安问』是一个创造和分享的社区，你将可以在这里分享打动你的东西，展示你的奇思妙想，结交志同道合的朋友，发现更多精彩</p>',
+        options.msg_footer,
+        '</html>',
+    ]).encode('utf-8')
+    utils.send_email(email, subject, msg_body)
 
 
 class DoubanLoginHandler(BaseHandler, utils.douban_auth.DoubanMixin):
@@ -88,56 +136,6 @@ class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):
             self.redirect("/")
             return
         self.authenticate_redirect()
-
-
-class JoinusHandler(BaseHandler):
-
-    def get(self):
-        if self.current_user:
-            self.redirect('/')
-        self.render('joinus.html')
-
-    def post(self):
-        name = self.get_argument('name', '')
-        password = self.get_argument('password', '')
-        email = self.get_argument('email', '')
-        domain = self.get_argument('domain', '')
-        password = utils.make_password(password)
-        if domain == '':
-            domain = name
-        if User.by_email(email):
-            self.authenticate_redirect()
-            # self.redirect('/login')  # self.write('用户已经存在，请直接登录')
-        else:
-            res = User
-            res['id'] = res.find().count() + 1
-            res['user_name'] = name
-            res['user_pass'] = password
-            res['user_email'] = email
-            res['user_domain'] = domain
-            res.new(res)
-            send_joinus_email(email, name)
-            user_info = {
-                'user_id': res.id,
-                'user_name': res.user_name,
-                'user_email': res.user_email,
-                'user_domain': res.user_domain}
-            self.set_secure_cookie(
-                'user', tornado.escape.json_encode(user_info))
-            self.redirect(self.get_argument('next', '/'))
-
-
-def send_joinus_email(email, name):
-    subject = '欢迎来到『安问』'
-    msg_body = ''.join([
-        '<html>',
-        '<p>Hi ', name.encode('utf-8'), '</p>',
-        '<p>欢迎注册『安问』</p>',
-        '<p>『安问』是一个创造和分享的社区，你将可以在这里分享打动你的东西，展示你的奇思妙想，结交志同道合的朋友，发现更多精彩</p>',
-        options.msg_footer,
-        '</html>',
-    ]).encode('utf8')
-    utils.send_email(email, subject, msg_body)
 
 
 class LogoutHandler(BaseHandler):

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+分享-
+{% end %}
+{% block body %}
+<div class="container">
+  <form action="{{ request.path }}" method="post" class="compose">
+    <fieldset>
+      <legend>{{"修改分享" if share else "创建分享"}}</legend>
+    </fieldset>
+    <div>
+      链接地址:
+      <input name="link" type="url" class="form-control" value="{{escape(share.link) if share else ""}}" required/>
+    </div>
+    <div>
+      标题(选填):
+      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ""}}"/>
+    </div>
+    <div>
+      简单评论(选填):
+      <input name="markdown" type="text" class="form-control" value="{{escape(share.markdown) if share else ""}}"/>
+    </div>
+    <div>
+      标签(选填，多个可用空格分隔):
+      <input name="tags" type="text" class="form-control" value="{{escape(share.tags) if share else ""}}"/>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">{{ "保存修改" if share else "发布分享" }}</button>
+    </div>
+
+    <input type="hidden" name="sharetype" value="goodlink"/>
+    {% if share %}
+    <input type="hidden" name="id" value="{{ share.id }}"/>
+    {% end %}
+{{ xsrf_form_html() }}
+  </form>
+</div>
+{% end %}
+
+{% block bottom %}
+{% end %}

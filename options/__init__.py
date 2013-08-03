@@ -26,7 +26,7 @@ web_server = {
 
 site_info = {
     'title': 'Anwen',
-    'subtitle': 'create and share something nice',
+    'subtitle': 'share and create something nice',
     'intro': 'Discover, think, share, action together~',
     'author': 'Anwen',
     'email': 'anwen.in@gmail.com',  # optional
@@ -34,13 +34,13 @@ site_info = {
     'douban': 'http://site.douban.com/askender/',  # optional
     'description': 'freedom and open-source dream world, \
 which try to create and share things touch your soul',
-
     'bottom_info': '''
 <div class="pull-right">
     <a href="https://github.com/askender/anwen.in">开源@github</a>
     <a href="/about">关于安问</a>
     <a href="/help">帮助中心</a>
     <a href="/changelog">行动日志</a>
+    <a href="/app">移动应用</a>
 </div>
 <div class="pull-left copyleft">
     Copyleft © 2011-2013 安问
@@ -50,45 +50,53 @@ which try to create and share things touch your soul',
 }
 
 node_list = [
-    'eyeopen', 'music', 'film', 'book',
-    'ask', 'sf', 'pencil', 'fire',
+    'eyeopen', 'music', 'book', 'film', 'sf', 'goodlink', 'ask', 'fire',
 ]
 node_about = {
     'home': {
+        'icon': 'home',
         'name': 'Newest Share',
         'about': 'Create and Share, which can hit your heart~'
     },
     'eyeopen': {
+        'icon': 'eye-open',
         'name': 'Eyeopen',
         'about': 'feel and know yourself and the world'
     },
     'music': {
+        'icon': 'music',
         'name': 'Music',
         'about': 'Music which touch heart~'
     },
     'book': {
+        'icon': 'book',
         'name': 'Book',
         'about': 'Books, book reviews or essays'
     },
     'film': {
-        'name': 'Video',
+        'icon': 'film',
+        'name': 'Film',
         'about': 'Light and shadow fragment record every inch sensation'
     },
-    'ask': {
-        'name': 'Asks',
-        'about': 'Give us a question, we can make the universe more fun'
-    },
     'sf': {
+        'icon': 'road',
         'name': 'SF',
         'about': 'Science Fiction is a life style, stars and ocean'
     },
-    'pencil': {
-        'name': 'Create',
-        'about': 'Those created, we will cherish years later~'
+    'goodlink': {
+        'icon': 'link',
+        'name': 'Goodlink',
+        'about': 'nice link need share'
+    },
+    'ask': {
+        'icon': 'question-sign',
+        'name': 'Asks',
+        'about': 'Give us a question, we can make the universe more fun'
     },
     'fire': {
-        'name': 'Actions',
-        'about': 'Record move of dreamers, maybe notsogood, we are trying'
+        'icon': 'fire',
+        'name': 'Create',
+        'about': 'Record action of dreamers, maybe not so good, we are trying'
     }
 }
 

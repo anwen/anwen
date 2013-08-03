@@ -5,10 +5,11 @@ import random
 def find_ego(usersay):
     usersay_low = usersay.lower()
     ego_keys = ['you', 'ande', u'你', u'安德']
+    ego_is = ''
     for i in ego_keys:
         if i in usersay_low:
             ego_is = get_ego_is(usersay_low)
-
+    ego_is = ego_is if ego_is else ''
     andesay = ''.join([
         ego_is,
     ])

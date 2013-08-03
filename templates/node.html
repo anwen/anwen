@@ -8,29 +8,31 @@
   <h3>{{ _(node_about[node]['name']) }}</h3>
   <p>{{ _(node_about[node]['about']) }}</p>
 
-  {% for (offset,share) in enumerate(shares) %}
+  <div class="">
+    {% for (offset,share) in enumerate(shares) %}
+
   {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}
     <div class="collection-template-mixed post-template-flex-article">
-      <div class="span{{ 8 if offset==0 else 4 }} collection-item">
+      <div class="col-lg-{{ 8 if offset==0 else 4 }} collection-item">
         <div class="item-link-wrap {{ "has" if share.get('post_img') else "no" }}-image">
-          
+          <a href="/share/{{ share.id }}" class="item-link">
             {%if share.get('post_img') %}
             <span class="item-image-container">
               <span class="item-image" style="background-image:url(/static/upload/img/{{ share.post_img.replace('_1200', '_750') if offset==0 else  share.post_img.replace('_1200', '_365')}})"></span>
             </span>
             {% end %}
-            <div class="item-content">
-              <a href="/share/{{ share.id }}">
+            <div class="item-content wf">
               <h1>{{ share.title }}</h1>
-              </a>
-              <div class="snippet">{{ share.markdown }}</div>
+    {% if share.link %}
+      <i class="icon-link"></i><a href="{{ share.link }}">{{ share.title }}</a>
+      {% end %}
             </div>
-          
-          <div class="meta">
+          </a>
+          <div class="meta wf">
             <span class="author-and-collection">
-              <a href="/user/{{ share.domain }}" class="author-link">{{ share.name }}</a>
+              <a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>
                 {{_('published in')}}
-              <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{ share.sharetype }}"></i>{{ _(share.sharetype.capitalize()) }}</a>
+              <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{node_about[share.sharetype]['icon']}}"></i>{{_(node_about[share.sharetype]['name'])}}</a>
               <span class="pull-right">
                 {{ share.likenum }}{{_('like')}} {{ share.commentnum }}{{_('comment')}}
               </span>
@@ -41,43 +43,15 @@
       </div>
     </div>
   
-    {{ "</div>" if offset in(1,4,7,10) or offset==len(shares)-1 else "" }}
-  {% end %}
+    {{ "</div>" if offset in(1,4,7,10) else "" }}
 
-<div class="pagination">
-  <ul>
-    {% if int(page)>1 %}
-    <li>
-      <a href="?page={{int(page)-1}}">前一页</a>
-    </li>
+
     {% end %}
-      {% if int(page)>0 and int(pagesum)>0 %}
-    <li class="active">
-      <a href="#">{{page}}</a>
-    </li>
-    {% end %}
-      {% if int(pagesum)>int(page)   %}
-    <li>
-      <a href="?page={{int(page)+1}}">{{int(page)+1}}</a>
-    </li>
-    {% end %}
-{% if int(pagesum)-int(page)-1>0   %}
-    <li>
-      <a href="?page={{int(page)+2}}">{{int(page)+2}}</a>
-    </li>
-    {% end %}
-{% if int(pagesum)-int(page)-2>0   %}
-    <li>
-      <a href="?page={{int(page)+3}}">{{int(page)+3}}</a>
-    </li>
-    {% end %}
-{% if int(pagesum)>int(page)   %}
-    <li>
-      <a href="?page={{int(page)+1}}">下一页</a>
-    </li>
-    {% end %}
-  </ul>
-</div>
+  </div>
+
+  <div class="pagination">
+    <a href="?page={{int(page)+1}}">查看更多</a>
+  </div>
 </div>
 {% end %}
 

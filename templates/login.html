@@ -2,62 +2,38 @@
 {% block title %}
 欢迎回来-
 {% end %}
+
 {% block body %}
 <div class="container well">
-	<div class="row">
-		<div class="span8">
-			<div class="mod login">
-				<form id="login" method="post" name="login" class="form form-horizontal">
-					{{ xsrf_form_html() }}
-					<fieldset>
-						<legend>欢迎登录</legend>
-						<div class="control-group">
-							<label for="email" class="control-label">登录邮箱</label>
-							<div class="controls">
 
-								<div class="input-prepend">
-									<span class="add-on"> <i class="icon-envelope"></i>
-									</span>
-									<input type="email" name="email" id="email" class="input" required/>
-								</div>
-							</div>
-						</div>
-						<div class="control-group">
-							<label for="password" class="control-label">登录密码</label>
-							<div class="controls">
-								<div class="input-prepend">
-									<span class="add-on"> <i class="icon-key"></i>
-									</span>
-									<input type="password" name="password" id="password" class="input" minlength="8" required/>
-								</div>
-							</div>
-						</div>
-						<div class="form-actions">
-							<input type="submit" value="登录" name="dosubmit" class="btn btn-primary"/>
-							<a href="/forgotpass">忘记密码了？</a>
-							<a href="/joinus">还没有账号？</a>
-							或用<a href="/google_login">google帐号登录</a>
-						</div>
-						<div class="control-group"></div>
-					</fieldset>
-				</form>
-			</div>
-		</div>
-		<div class="span4">
-			<div class="mod side-relation">
-				<h2>关于</h2>
-				<ul>
-					<li>
-						<a href="/about">关于安问</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
+  <form class="form-horizontal" method="post">
+    <legend>欢迎登入</legend>
+    {{ xsrf_form_html() }}
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">{{_('Email')}}</label>
+      <div class="col-lg-4">
+        <input type="email" name="email" class="form-control" id="inputEmail" required></div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label">{{_('Password')}}</label>
+      <div class="col-lg-4">
+        <input type="password" name="password" class="form-control" id="inputPassword" minlength="8" required></div>
+    </div>
+    <div class="form-group">
+      <label for="inputPassword" class="col-lg-2 control-label"></label>
+      <div class="col-lg-4">
+        <button type="submit" class="btn btn-primary">{{_('Log in')}}</button>
+        <p>
+          <a href="/forgotpass">忘记密码了？</a>
+          <a href="/joinus">还没有账号？</a>
+          或用
+          <a href="/google_login">google帐号登录</a>
+        </p>
+      </div>
+    </div>
+  </form>
+
 </div>
-<!-- 	<a href="/googlelogin">Login with google</a>
--->
-
 {% end %}
 
 {% block bottom %}

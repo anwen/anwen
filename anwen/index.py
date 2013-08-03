@@ -12,6 +12,7 @@ from db import User, Share, Tag
 
 class WelcomeHandler(BaseHandler):
     # first page before login
+
     def get(self):
         if self.current_user:
             self.redirect('/')
@@ -20,14 +21,23 @@ class WelcomeHandler(BaseHandler):
 
 
 class IndexHandler(BaseHandler):
+
     def get(self):
         if not self.current_user:
             self.redirect('/welcome')
             return
+        # self.redirect('/start')
         self.redirect('/explore')
 
 
+class StartHandler(BaseHandler):
+
+    def get(self):
+        pass
+
+
 class ExploreHandler(BaseHandler):
+
     def get(self, node='home'):
         page = self.get_argument("page", 1)
         share_res = Share.find({'status': 0}).sort(

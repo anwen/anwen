@@ -1,21 +1,33 @@
+$.fn.toggleClick = function(){
+
+    var functions = arguments ;
+
+    return this.click(function(){
+            var iteration = $(this).data('iteration') || 0;
+            functions[iteration].apply(this, arguments);
+            iteration = (iteration + 1) % functions.length ;
+            $(this).data('iteration', iteration);
+    });
+};
 //---------------------------------
 //-----------图片上传-----
 //---------------------------------
-jQuery('#switchImgWrap').toggle(
+$('#switchImgWrap').toggleClick(
 
-function() {
-    jQuery(this).html('取消上传');
-    if (jQuery('.post_image_upload_wrap').css('display') == 'none') {
-        jQuery('.post_image_upload_wrap').show();
-    }
-},
+    function () {
+        $(this).html('取消上传');
+        if ($('.post_image_upload_wrap').css('display') == 'none') {
+            $('.post_image_upload_wrap').show();
+        }
+    },
 
-function() {
-    jQuery(this).html('上传图片');
-    if (jQuery('.post_image_upload_wrap').css('display') == 'block') {
-        jQuery('.post_image_upload_wrap').hide();
+    function () {
+        $(this).html('上传图片');
+        if ($('.post_image_upload_wrap').css('display') == 'block') {
+            $('.post_image_upload_wrap').hide();
+        }
     }
-});
+);
 
 //---------------------------------
 //-----------拖拽上传图片-----------
@@ -38,7 +50,7 @@ dropbox.filedrop({
     maxfiles: 1,
     maxfilesize: 2, //最大2M
     url: '/share/image_upload',
-    uploadFinished: function(i, file, response) {
+    uploadFinished: function (i, file, response) {
         if (response.status == 's') {
             alert(response.info);
             jQuery(".preview").remove();
@@ -70,7 +82,7 @@ dropbox.filedrop({
             jQuery('.upload_btn').hide();
 
             jQuery('.del_post_img, .save_post_img_btn').show();
-            setTimeout(function() {
+            setTimeout(function () {
                 jQuery('.uploaded, .progressHolder').fadeOut(250);
             }, 1000);
 
@@ -79,37 +91,37 @@ dropbox.filedrop({
 
     },
 
-    error: function(err, file) {
+    error: function (err, file) {
         switch (err) {
-            case 'BrowserNotSupported':
-                showMessage('你的浏览器不支持HTML5上传');
-                break;
-            case 'TooManyFiles':
-                alert('添加一张就可以了');
-                break;
-            case 'FileTooLarge':
-                alert(file.name + ' 太大了，请上传不超过2M的');
-                break;
-            default:
-                break;
+        case 'BrowserNotSupported':
+            showMessage('你的浏览器不支持HTML5上传');
+            break;
+        case 'TooManyFiles':
+            alert('添加一张就可以了');
+            break;
+        case 'FileTooLarge':
+            alert(file.name + ' 太大了，请上传不超过2M的');
+            break;
+        default:
+            break;
         }
     },
 
-    beforeEach: function(file) {
+    beforeEach: function (file) {
         if (!file.type.match(/^image\//)) {
             alert('Only images are allowed!');
             return false;
         }
     },
 
-    uploadStarted: function(i, file, len) {
+    uploadStarted: function (i, file, len) {
         createImage(file);
         jQuery(".post_image_upload_1").css({
             'background': 'none'
         });
     },
 
-    progressUpdated: function(i, file, progress) {
+    progressUpdated: function (i, file, progress) {
         jQuery.data(file).find('.progress').width(progress);
     }
 
@@ -122,7 +134,7 @@ function createImage(file) {
 
     var reader = new FileReader();
 
-    reader.onload = function(e) {
+    reader.onload = function (e) {
 
     };
 
@@ -146,11 +158,11 @@ function showMessage(msg) {
 //---------------------------------
 //-----------点击上传图片-----------
 //---------------------------------
-jQuery("#upload_file_hide").change(function() {
+jQuery("#upload_file_hide").change(function () {
     //创建FormData对象
     var data = new FormData();
     //为FormData对象添加数据
-    jQuery.each(jQuery('#upload_file_hide')[0].files, function(i, file) {
+    jQuery.each(jQuery('#upload_file_hide')[0].files, function (i, file) {
         data.append('uploadImg', file);
     });
     jQuery(".post_image_upload").css({
@@ -164,7 +176,7 @@ jQuery("#upload_file_hide").change(function() {
         contentType: false, //不可缺
         processData: false, //不可缺
         dataType: "json",
-        success: function(response) {
+        success: function (response) {
 
             if (response.status == 's') {
                 alert(response.info);
@@ -188,7 +200,7 @@ jQuery("#upload_file_hide").change(function() {
                 jQuery('.del_post_img').show();
             }
         },
-        error: function() {
+        error: function () {
             alert("请检查文件格式或者文件大小，目前只支持jpg/gif/jpeg/png/bmp格式的图片。不能超过2M");
             jQuery('.message').show();
             jQuery('.post_image_upload').css({
@@ -223,7 +235,7 @@ function DeletePostImg() {
             img_name: d
         },
         dataType: "text",
-        success: function(mes) {
+        success: function (mes) {
             if (mes == 's') {
                 //恢复上传容器的原始大小
                 jQuery('.post_image_upload_wrap').attr('style', '');
@@ -243,7 +255,7 @@ function DeletePostImg() {
 
             }
         },
-        error: function() {
+        error: function () {
             alert('出错，可能是服务器那边出问题了，请联系管理员');
         }
     });
@@ -255,7 +267,7 @@ function DeletePostImg() {
 jQuery(".del_post_img").click(DeletePostImg);
 
 
-$(document).ready(function() {
+$(document).ready(function () {
     JudgeCheck();
     CheckImg();
 });
@@ -285,41 +297,3 @@ function CheckImg() {
 
     }
 }
-
-
-function getCookie(name) {
-    var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
-    return r ? r[1] : undefined;
-}
-
-
-jQuery('#wysiwyg_post_form').Validform({
-    tipSweep : true,
-    ajaxPost:true,
-    ignoreHidden:true,
-    
-    datatype : {
-        "title": /^[\w\W]{1,2}$$/,
-        "content": /^[\w\W]{5,65535}$/
-    },
-    tiptype:function(msg,o,cssctl){
-        var objtip=o.obj.siblings(".Validform_checktip");
-        cssctl(objtip,o.type);
-        objtip.text(msg);
-    },
-    beforeCheck:function(curform){
-        var content = jQuery('#editor').html();
-        alert(content);
-        $('#hidden-content').html(content);
-        //在表单提交执行验证之前执行的函数，curform参数是当前表单对象。
-        //这里明确return false的话将不会继续执行验证操作;    
-    },
-    beforeSubmit:function(curform){
-        curform.find('button#save').html('发布中...').removeClass('btn-info');
-    },
-    callback:function(data){
-        if(data.status=="y"){
-            window.location.href = "/share/" + data.post_id;
-        }
-    }
-});

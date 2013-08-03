@@ -33,9 +33,7 @@ class AndeHandler(BaseHandler):
         andesay, andethink = get_andesay(
             usersay, userip, userlang, user_id, method)
 
-        # print andesay
-        # print andethink
-        andesay = markdown(andesay)
+        # print(andesay, andethink)
         andesay = {
             'andesay': andesay,
             'andethink': andethink,

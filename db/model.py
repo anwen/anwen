@@ -88,6 +88,7 @@ class Share(BaseModel):
         'tags': basestring,
         'upload_img': basestring,
         'post_img': basestring,
+        'link': basestring,
         'id': int,
         'user_id': int,
         'commentnum': int,
@@ -102,6 +103,7 @@ class Share(BaseModel):
     }
     default_values = {
         'tags': '',
+        'link': '',
         'id': 0,
         'commentnum': 0,
         'likenum': 0,
