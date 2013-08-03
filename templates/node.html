@@ -4,11 +4,11 @@
 {% end %}
 
 {% block body %}
-<div class="container collection-items">
+<div class="container">
   <h3>{{ _(node_about[node]['name']) }}</h3>
   <p>{{ _(node_about[node]['about']) }}</p>
 
-  <div class="">
+  <div class="collection-items">
     {% for (offset,share) in enumerate(shares) %}
 
   {{ "<div class=\"row\">" if offset in (0,2,5,8) else "" }}

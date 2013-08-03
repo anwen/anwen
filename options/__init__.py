@@ -86,7 +86,7 @@ node_about = {
     'goodlink': {
         'icon': 'link',
         'name': 'Goodlink',
-        'about': 'nice link need share'
+        'about': 'nice things need share'
     },
     'ask': {
         'icon': 'question-sign',
