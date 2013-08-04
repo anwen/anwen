@@ -36,14 +36,19 @@ site_info = {
 which try to create and share things touch your soul',
     'bottom_info': '''
 <div class="pull-right">
-    <a href="https://github.com/askender/anwen.in">开源@github</a>
     <a href="/about">关于安问</a>
-    <a href="/help">帮助中心</a>
+    <a href="/help">帮助</a>
     <a href="/changelog">行动日志</a>
-    <a href="/app">移动应用</a>
+    <a href="/app">应用</a>
+    <a href="https://github.com/askender/anwen.in">
+    <i class="icon-github"></i>
+    </a>
+    <a href="https://plus.google.com/112193997643841667020" rel="publisher">
+    <i class="icon-google-plus"></i>
+    </a>
 </div>
 <div class="pull-left copyleft">
-    Copyleft © 2011-2013 安问
+    © 2013 安问
 </div>
 ''',
 
