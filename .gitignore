@@ -13,9 +13,6 @@ User.yaml
 Admin.yaml
 *.tar.gz
 
-# temp files
-tmp.md
-.gitmodules
-
-#upload img
+#upload-img avatar
 /static/upload/img/*
+/static/avatar/*.jpg

@@ -11,7 +11,7 @@ import utils
 import utils.douban_auth
 from utils.avatar import get_avatar
 from .base import BaseHandler, CommonResourceHandler
-from db import User, Share
+from db import User, Share, Like
 
 
 class LoginHandler(BaseHandler):
@@ -149,6 +149,7 @@ class UserhomeHandler(BaseHandler):
 
     def get(self, name):
         user = User.find_one({'user_domain': name})
+        print(name, user.user_jointime)
         user.user_say = markdown2.markdown(user.user_say)
         user.user_jointime = time.strftime(
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
@@ -163,13 +164,15 @@ class UserlikeHandler(BaseHandler):
         user = User.find_one({'user_domain': name})
         user.user_jointime = time.strftime(
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
-        likes = User.find({'user_id': user._id})
-        likenum = likes.count()
-        for like in likes:
-            share = Share.by_id(like.share_id)
+        like_res = Like.find({'user_id': user.id})
+        likenum = like_res.count()
+        likes = []
+        for like in like_res:
+            share = Share.by_sid(like.share_id)
             like.title = share.title
             like.id = share.id
             like.type = share.sharetype
+            likes.append(like)
         user.gravatar = get_avatar(user.user_email, 100)
         self.render('userlike.html', user=user, likenum=likenum, likes=likes)
 

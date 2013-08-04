@@ -3,46 +3,46 @@ $(document).tooltip({
 });
 
 
-jQuery(function(){
+$(function(){
     //goTop
-    jQuery(window).scroll(function() {
-        var t = jQuery(window).scrollTop();
+    $(window).scroll(function() {
+        var t = $(window).scrollTop();
         if(t >= 1024){
-            jQuery('#goTop').removeClass('invisible')
+            $('#goTop').removeClass('invisible')
         }
         if (t < 1024){
-            jQuery('#goTop').addClass('invisible')
+            $('#goTop').addClass('invisible')
         }
     })
     
     // 回顶端 
-    jQuery('#goTop').click(function(){
-        jQuery(document).stop().scrollTo(0, 400);
+    $('#goTop').click(function(){
+        $(document).stop().scrollTo(0, 400);
     })
 
     //打开feedback层
-    jQuery('#feedbackBtn').tooltip({
+    $('#feedbackBtn').tooltip({
         placement : 'left'
     }).click(openFeedback)
 
     function openFeedback(){
-        jQuery('#feedback_wrap h3').remove();
-        jQuery('body').addClass('feedback-overlay-enabled');
-        jQuery('#feedbackForm input:submit').removeClass('disabled').removeAttr('disabled');
-        jQuery('#feedbackForm').fadeIn();
+        $('#feedback_wrap h3').remove();
+        $('body').addClass('feedback-overlay-enabled');
+        $('#feedbackForm input:submit').removeClass('disabled').removeAttr('disabled');
+        $('#feedbackForm').fadeIn();
     }
 
     function closeFeedback(){
-        jQuery('#feedbackForm').hide().after('<h3>提交成功，感谢你的反馈,我们会尽快处理 :) <span class="show" style="font-size:12px;font-weight:normal">本窗口会自动关闭</span></h3>');
-        jQuery('#feedbackForm textarea').val('');
-        jQuery('#feedbackForm input:submit').addClass('disabled').attr('disabled','disabled');
+        $('#feedbackForm').hide().after('<h3>提交成功，感谢你的反馈,我们会尽快处理 :) <span class="show" style="font-size:12px;font-weight:normal">本窗口会自动关闭</span></h3>');
+        $('#feedbackForm textarea').val('');
+        $('#feedbackForm input:submit').addClass('disabled').attr('disabled','disabled');
         setTimeout(function(){
-            jQuery('body').removeClass('feedback-overlay-enabled');
+            $('body').removeClass('feedback-overlay-enabled');
         },3000)
     }
 
     //feedback 表单验证
-    jQuery('#feedbackForm').Validform({
+    $('#feedbackForm').Validform({
         tipSweep : true,
         ajaxPost:true,
         datatype : {

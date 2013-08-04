@@ -30,7 +30,12 @@
 							</div>
 						</header>
 
-						<div class="body entry">{{ share.content }}</div>
+						<div class="body entry">
+{% if share.link %}
+<i class="icon-link"></i><a href="{{ share.link }}">{{ share.title }} {{ share.link }}</a>
+{% end %}
+
+							{{ share.content }}</div>
 						<div class="tags">{{ share.tags }}</div>
 						<p class="some">
 							<a href="javascript:" class="spread"> <i class="icon-retweet"></i>

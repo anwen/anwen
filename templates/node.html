@@ -21,13 +21,17 @@
               <span class="item-image" style="background-image:url(/static/upload/img/{{ share.post_img.replace('_1200', '_750') if offset==0 else  share.post_img.replace('_1200', '_365')}})"></span>
             </span>
             {% end %}
-            <div class="item-content wf">
-              <h1>{{ share.title }}</h1>
-    {% if share.link %}
-      <i class="icon-link"></i><a href="{{ share.link }}">{{ share.title }}</a>
-      {% end %}
-            </div>
           </a>
+            <div class="item-content wf">
+              <a href="/share/{{ share.id }}" class="item-link">
+              <h1>{{ share.title }}</h1>
+              </a>
+{% if share.link %}
+<i class="icon-link"></i><a href="{{ share.link }}">{{ share.title }}</a>
+{% end %}
+<div class="snippet">{{ share.markdown }} ... </div>
+            </div>
+          
           <div class="meta wf">
             <span class="author-and-collection">
               <a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>

@@ -1,6 +1,9 @@
 .liking .icon-heart {
   color:red;
 }
+.disliking .icon-thumbs-down {
+  color:black;
+}
 .copyleft {
   color:#aaaaa8;
 }
@@ -48,10 +51,11 @@
 }
 
 .item-content {
+overflow: hidden;
   box-sizing:border-box;
   moz-box-sizing:border-box;
   overflow:hidden;
-  padding:20px 10px;
+  padding:20px;
   position:relative;
   webkit-box-sizing:border-box;
   h1 {
@@ -156,4 +160,35 @@
   }
 }
 
+.collection-template-mixed.post-template-flex-article .collection-item h1{
+  font-size: 30px;
+  line-height: 39px;
+  margin: 8px 0 13px 0;
+}
+.collection-template-mixed.post-template-flex-article .collection-item .has-image h1 {
+color: #303239;
+font-size: 20px;
+line-height: 25px;
+margin-bottom: 0;
+margin-top: 0;
+}
 
+.snippet p {
+font-size: 16px;
+color: #444;
+font-weight: 400;
+overflow: hidden;
+}
+.no-image .item-content {
+  height: 285px;
+}
+.has-image .item-content {
+  height: 20px;
+}
+
+.user-show .info p em {
+color: #999;
+float: left;
+font-style: normal;
+width: 6em;
+}

@@ -17,7 +17,7 @@
 <div class="user-feeds">
   <ul class="unstyled">
     {% for like in likes %}
-    <li> <i class="icon-{{ like.type }}"></i>
+    <li> <i class="icon-{{ node_about[like.type]['icon'] }}"></i>
       <a href="/share/{{ like.id }}" title="{{ escape(like.title) }}">{{escape(like.title)}}</a>
     </li>
     {% end %}
