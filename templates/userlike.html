@@ -3,7 +3,7 @@
 {{user.user_name}}-喜欢的-
 {% end %}
 {% block usermain %}
-<ul class="unstyled nav nav-tabs">
+<ul class="nav nav-tabs">
   <li class="">
     <a href="/user/{{user.user_domain}}">主页</a>
   </li>
@@ -15,7 +15,7 @@
   </li>
 </ul>
 <div class="user-feeds">
-  <ul class="unstyled">
+  <ul class="list-unstyled">
     {% for like in likes %}
     <li> <i class="icon-{{ node_about[like.type]['icon'] }}"></i>
       <a href="/share/{{ like.id }}" title="{{ escape(like.title) }}">{{escape(like.title)}}</a>

@@ -3,7 +3,7 @@
 import time
 import markdown2
 from pymongo import DESCENDING  # ASCENDING
-from utils.fliter import cutter
+from utils.fliter import cutter, filter_tags
 from utils.avatar import get_avatar
 from .base import BaseHandler
 import options
@@ -52,7 +52,6 @@ class ExploreHandler(BaseHandler):
             share.domain = user.user_domain
             share.markdown = cutter(
                 markdown2.markdown(share.markdown))
-            share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
         self.render(
             "node.html",
@@ -78,7 +77,6 @@ class NodeHandler(BaseHandler):
             share.domain = user.user_domain
             share.markdown = cutter(
                 markdown2.markdown(share.markdown))
-            share.gravatar = get_avatar(user.user_email, 16)
             shares.append(share)
 
         node_info = options.node_about[node]
@@ -105,18 +103,5 @@ class TagHandler(BaseHandler):
                 share.domain = user.user_domain
                 share.markdown = filter_tags(
                     markdown2.markdown(share.markdown))[:100]
-                share.gravatar = get_avatar(user.user_email, 16)
                 shares.append(share)
             self.render("tage.html", name=name, shares=shares)
-
-
-class RecommendedHandler(BaseHandler):
-
-    def get(self):
-        self.render("recommended.html")
-
-
-class CollectionsHandler(BaseHandler):
-
-    def get(self):
-        self.render("collections.html")

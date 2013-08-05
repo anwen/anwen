@@ -19,7 +19,6 @@ class UseradminModule(tornado.web.UIModule):
                 self.current_user["user_email"])
             domain = tornado.escape.xhtml_escape(
                 self.current_user["user_domain"])
-            gravatar = get_avatar(email, 16)
         return self.render_string(
             "modules/useradmin.html", name=name,
             gravatar=gravatar, domain=domain)

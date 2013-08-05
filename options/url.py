@@ -2,7 +2,6 @@
 
 from anwen.index import WelcomeHandler
 from anwen.index import IndexHandler, StartHandler, ExploreHandler
-from anwen.index import RecommendedHandler, CollectionsHandler
 from anwen.index import NodeHandler, TagHandler
 
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
@@ -34,8 +33,6 @@ handlers = [
     (r"/", IndexHandler),
     (r"/start", StartHandler),
     (r"/explore", ExploreHandler),
-    (r"/recommended", RecommendedHandler),
-    (r"/collections", CollectionsHandler),
 
     (r"/node/([^/]+)", NodeHandler),
     (r"/tag/?", TagHandler),

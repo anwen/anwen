@@ -2,13 +2,15 @@
 
 # sudo apt-get install build-essential python-dev
 # You can: pip install -r requirements.txt
+# sudo apt-get install install python-imaging
+
 
 
 tornado>=3.0
-# Flask
 
 markdown2
 # markdown
+
 # Jinja2
 # misaka
 # pygments
@@ -19,29 +21,20 @@ mongokit>=0.8
 bson
 
 # MySQL-python
-# peewee<2.0.0
-# SQLAlchemy
+# peewee
 
-
-
-### for db_import
+### for db_import_backup
 pyyaml
-
 
 # other
 fabric
-# flake8 paramiko
-# pillow
+pillow
 
 ### cache support
 # python-memcached
 
-### form support
-# -e hg+https://bitbucket.org/simplecodes/wtforms#egg=WTForms
+### ande
+requests
 
-### mail support
-# Flask-Mail
-# tornadomail
 
-### testing
-# nose
+# flake8 paramiko

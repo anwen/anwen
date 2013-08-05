@@ -260,7 +260,7 @@ class ForgotPassHandler(BaseHandler):
             doc.emailverify = emailverify
             doc.save()
             self.send_resetpass_email(emailverify, email)
-        self.render('forgotpass.html')
+        self.render('forgotpass_sent.html')
 
     def send_resetpass_email(self, verifystring, email):
         subject = 'Anwen 密码找回'

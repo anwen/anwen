@@ -8,14 +8,14 @@ Tag:{{ escape(name) }} -
 		<div class="span8">
 			<div class="mod user-feeds">
 				<h2>Tag:{{ escape(name) }}</h2>
-				<ul class="unstyled">
+				<ul class="list-unstyled">
 					{% for share in shares %}
 					<li>
-						<h3> <i class="icon-{{ share.sharetype }}"></i>
+						<h3> <i class="icon-{{node_about[share.sharetype]['icon']}}"></i>
 							<a href="/share/{{ share.id }}" title="{{ escape(share.title) }}">{{ escape(share.title) }}</a>
 							<span class="bull">&bull;</span>
 							<span>
-								<a href="/share/{{ share.id }}#comments">{{ share.commentnum }}</a>
+								<a href="/share/{{ share.id }}#comments">comments:{{ share.commentnum }}</a>
 							</span>
 						</h3>
 						<p class="user clearfix">
@@ -23,7 +23,7 @@ Tag:{{ escape(name) }} -
 							<span class="who">
 								<a href="/user/{{ share.domain }}" title="{{ share.name }}">{{ share.name }}</a>
 							</span>
-							<span data-time='' class="date">{{ share.published }}</span>
+							<span class="date">{{ share.published }}</span>
 						</p>
 						<p class="info">{{ escape(share.markdown) }} ...</p>
 					</li>

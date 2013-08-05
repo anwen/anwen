@@ -40,7 +40,7 @@ which try to create and share things touch your soul',
     <a href="/help">帮助</a>
     <a href="/changelog">行动日志</a>
     <a href="/app">应用</a>
-    <a href="https://github.com/askender/anwen.in">
+    <a href="https://github.com/anwen/anwen">
     <i class="icon-github"></i>
     </a>
     <a href="https://plus.google.com/112193997643841667020" rel="publisher">
@@ -127,7 +127,7 @@ EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 25
 EMAIL_USE_TLS = False
 EMAIL_HOST_USER = 'hello@anwensf.com'
-EMAIL_HOST_PASSWORD = 'naw130621'
+EMAIL_HOST_PASSWORD = 'set in server_setting'
 EMAIL_HOST_NICK = '安问'
 SERVICE_EMAIL = 'hello@anwensf.com'
 superadmin_email = 'askender43@gmail.com'

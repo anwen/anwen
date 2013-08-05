@@ -32,11 +32,11 @@ def send_email(receivers, subject, msg_body):
     msg = MIMEText(msg_body, 'html', 'utf-8')
     msg['Subject'] = Header(subject, 'utf-8')
     msg['From'] = me
-    msg['To'] = ';'.join(receivers)
+    msg['To'] = receivers
     s = smtplib.SMTP()
-    # s.set_debuglevel(1)  # show the debug log
+    s.set_debuglevel(1)  # show the debug log
     s.connect(host, port)
-    s.starttls()
+    # s.starttls()
     s.login(user, password)
     s.sendmail(me, receivers, msg.as_string())
     s.quit()

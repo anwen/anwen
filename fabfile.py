@@ -89,6 +89,6 @@ def nginx(todo):
 @task
 def update_nginx():
     ''' update_nginx '''
-
-    put('/home/ask/anwen/conf/nginx.conf', '/usr/local/nginx/conf/nginx.conf')
+    nginx_file = os.path.join(os.getcwd(), 'conf/nginx.conf')
+    put(nginx_file, '/usr/local/nginx/conf/nginx.conf')
     sudo('/etc/init.d/nginx reload')
