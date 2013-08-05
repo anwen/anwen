@@ -9,13 +9,18 @@
   <link rel="alternate" href="/feed" type="application/atom+xml" title="安问feed"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--   <link href="{{ static_url("css/bootstrap3.min.css") }}" type="text/css" rel="stylesheet"/>
+  <!--
+  <link href="{{ static_url("css/bootstrap3.min.css") }}" type="text/css" rel="stylesheet"/>
   <link href="{{ static_url("css/font-awesome.css") }}" type="text/css" rel="stylesheet" />
   -->
-  <!--   <link rel="stylesheet/less" type="text/css" href="{{static_url('less/main.less')}}">
+  <!--
+  <link rel="stylesheet/less" type="text/css" href="{{static_url('less/main.less')}}">
   <script type="text/javascript" src="{{static_url('js/less.js')}}"></script>
   -->
-  <link href="{{ static_url("css/main.css") }}" type="text/css" rel="stylesheet"/>
+  <link href="{{ static_url("css/main.css") }}" rel="stylesheet"/>
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="{{ static_url("css/font-awesome-ie7.min.css") }}">
+  <![endif]-->
   {% block head %}{% end %}
   <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -56,7 +61,30 @@
 
 {% block footer %}
   <footer class="footer">
-    <div class="container">{{site_info['bottom_info']}}</div>
+    <div class="container">
+      <div class="pull-right">
+        <a href="/about">关于</a>
+        <a href="/help">帮助</a>
+        <a href="/changelog">行动</a>
+        <a href="/app"> <i class="icon-android icon-2x"></i>
+        </a>
+        <a href="https://twitter.com/askenderlee">
+          <i class="icon-twitter icon-2x"></i>
+        </a>
+        <a href="https://plus.google.com/112193997643841667020" rel="publisher">
+          <i class="icon-google-plus icon-2x"></i>
+        </a>
+        <a href="https://github.com/anwen/anwen"> <i class="icon-github icon-2x"></i>
+        </a>
+        <a href="https://trello.com/b/dNStnhTo/anwen-dev"> <i class="icon-trello icon-2x"></i>
+        </a>
+      </div>
+      <div class="pull-left copyleft">
+        2013 安问
+        <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
+      </div>
+
+    </div>
   </footer>
   {% end %}
   <script src="{{ static_url("js/jquery-1.9.1.min.js") }}"></script>

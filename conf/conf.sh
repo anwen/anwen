@@ -1,5 +1,7 @@
-scp ~/develop/anwen_begin/conf/nginx.conf aw:/usr/local/nginx/conf/nginx.conf
+scp conf/nginx.conf aw:/usr/local/nginx/conf/nginx.conf
 /etc/init.d/nginx reload
+scp aw:/var/www/anwen/options/server_setting.py ~/
+scp ~/develop/anwen_begin/options/server_setting.py aw:/var/www/anwen/options/server_setting.py 
 
 
 
