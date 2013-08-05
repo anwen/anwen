@@ -1,3 +1,8 @@
+# config
+sudo npm install -g less
+sudo npm install -g uglify-js
+
+
 scp conf/nginx.conf aw:/usr/local/nginx/conf/nginx.conf
 /etc/init.d/nginx reload
 scp aw:/var/www/anwen/options/server_setting.py ~/
