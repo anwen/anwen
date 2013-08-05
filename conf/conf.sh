@@ -44,6 +44,9 @@ mongoexport
 cd /var/www/anwen
 ./db_in_out -o
 mongo
+use admin
+db.system.users.find()
+db.addUser('sa','sa')   
 use anwen
 db.auth("aw", "")
 db.getCollectionNames()

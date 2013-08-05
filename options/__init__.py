@@ -3,13 +3,6 @@
 debug = True
 port = 8888
 
-db = {
-    'name': 'anwen',
-    'host': '127.0.0.1',
-    'port': 27017,
-    # 'username': 'aw',
-    # 'password': 'lb',
-}
 
 default_editor = ''  # wysiwyg
 
@@ -127,7 +120,5 @@ douban = {
     'douban_api_secret': '9b29399b82721746',
 }
 
-try:
-    from .server_setting import *
-except:
-    pass
+
+from server_setting import *
