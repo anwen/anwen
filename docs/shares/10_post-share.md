@@ -3,6 +3,7 @@
 
 
 ### 阅读
+- [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)
 - [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html )
 - [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)
 - [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)

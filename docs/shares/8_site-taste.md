@@ -3,12 +3,18 @@
 
 
 ### 阅读
+- [中国三明治](http://www.china30s.com/)
 - [Solidot](http://www.solidot.org/) 奇客的资讯，重要的东西
 - [阅FM](http://yue.fm/)
+- [简书](http://jianshu.io/) 在这里写作 在这里阅读 在这里，慢下来
+- [爱看豆happy书店](http://ikandou.com/)
 - [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/)
+- [Rochester Made](http://rochestermade.com/) 
 
 ### 阅读工具
-- [Google 阅读器](https://www.google.com/reader/ ) 
+- [feedly](http://cloud.feedly.com/)
+- [Digg](http://digg.com/)
+- [Google 阅读器](https://www.google.com/reader/)  130701已经关闭
 
 ### 视频
 - [Vimeo](http://vimeo.com/)  需要翻越长城

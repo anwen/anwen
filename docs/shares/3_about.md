@@ -76,3 +76,4 @@ If there are real evils,why should we kill ants?
 * 我们期待提供最佳用户体验，专心将一件事做到极致
 * 安问是一生的故事，生命短暂，我们期待改进和迭代更新越快越好，不断提供有价值的内容和体验
 * 打算构建CC版权的分享维基，可以给文章pull request，协作打造精简的分享
+* 本站默认采用<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/cn/">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a>进行许可。

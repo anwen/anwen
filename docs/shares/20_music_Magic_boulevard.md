@@ -2,8 +2,7 @@ music-share:Magic boulevard
 ========
 
 
-<embed type="application/x-shockwave-flash" src="http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF" height="27" width="207" quality="best" wmode="opaque">
-</embed>
+<embed type="application/x-shockwave-flash" src="http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF" height="27" width="207" quality="best" wmode="opaque"></embed>
 
 Magic boulevard（魔力大道）    作曲／演唱：Fran&ccedil;ois Feldman 
 

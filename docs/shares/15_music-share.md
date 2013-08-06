@@ -17,5 +17,6 @@ eagles  beatles  coldplay
 * [虾米](http://www.xiami.com/ )
 * [亦歌](http://www.1g1g.com/ )
 * [豆瓣电台](http://douban.fm/ )
+* [Jing+ Music](http://jing.fm/ )
 
 >古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen fm预计会收录部分音乐
