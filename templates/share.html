@@ -28,7 +28,7 @@
       {% for k in node_list %}
       {% if k != 'goodlink' %}
       <label class="radio-inline">
-        <input type="radio" name="sharetype" id="{{k}}" value="{{k}}" checked="{{'checked' if share and share.sharetype == K else ""}}"> <i class="icon-{{node_about[k]['icon']}}"></i>
+        <input type="radio" name="sharetype" id="{{k}}" value="{{k}}" checked="{{'checked' if share and share.sharetype == k else ""}}"> <i class="icon-{{node_about[k]['icon']}}"></i>
         {{_(node_about[k]['name'])}}
       </label>
       {% end %}
