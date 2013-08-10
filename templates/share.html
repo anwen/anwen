@@ -22,13 +22,13 @@
     </div>
     <div>
       别名(选填，a-zA-Z0-9_-):
-      <input name="tags" type="text" class="form-control" value="{{escape(share.slug) if share else ""}}"/>
+      <input name="slug" type="text" class="form-control" value="{{escape(share.slug) if share else ""}}"/>
     </div>
     <div>
       {% for k in node_list %}
       {% if k != 'goodlink' %}
       <label class="radio-inline">
-        <input type="radio" name="sharetype" id="{{k}}" value="{{k}}" checked=""> <i class="icon-{{node_about[k]['icon']}}"></i>
+        <input type="radio" name="sharetype" id="{{k}}" value="{{k}}" checked="{{'checked' if share and share.sharetype == K else ""}}"> <i class="icon-{{node_about[k]['icon']}}"></i>
         {{_(node_about[k]['name'])}}
       </label>
       {% end %}
