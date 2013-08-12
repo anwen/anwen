@@ -28,6 +28,7 @@ test:
 build:
 	lessc -x --yui-compress static/less/main.less > static/css/main.css
 	lessc -x --yui-compress static/less/ande.less > static/css/ande.css
+	uglifyjs static/js/share.js -mc -o static/js/share.min.js
 
 start:
 	make build
