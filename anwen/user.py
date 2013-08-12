@@ -84,7 +84,7 @@ def send_joinus_email(email, name):
         '<p>『安问』是一个创造和分享的社区，你将可以在这里分享打动你的东西，展示你的奇思妙想，结交志同道合的朋友，发现更多精彩</p>',
         options.msg_footer,
         '</html>',
-    ]).encode('utf-8')
+    ])
     utils.send_email(email, subject, msg_body)
 
 
@@ -149,7 +149,6 @@ class UserhomeHandler(BaseHandler):
 
     def get(self, name):
         user = User.find_one({'user_domain': name})
-        print(name, user.user_jointime)
         user.user_say = markdown2.markdown(user.user_say)
         user.user_jointime = time.strftime(
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
@@ -271,7 +270,7 @@ class ForgotPassHandler(BaseHandler):
             '<html>',
             '<p>Hi,</p>',
             '<p>请点击下面链接进行密码重设：</p>',
-            str(verify_a),
+            verify_a.encode('utf-8'),
             options.msg_footer,
             '</html>',
         ])

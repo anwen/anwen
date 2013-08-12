@@ -17,6 +17,14 @@ web_server = {
     'debug': debug,
 }
 
+db = {
+    'name': 'anwen',
+    'host': '127.0.0.1',
+    'port': 27017,
+    'username': '',
+    'password': '',
+}
+
 site_info = {
     'title': 'Anwen',
     'subtitle': 'share and create something nice',

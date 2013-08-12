@@ -35,6 +35,10 @@ start:
 	@echo "starting anwen"
 	python hello.py
 
+commit:
+	@echo "starting commit"
+	fab commit
+
 deploy:
 	@echo "starting deploy"
 	fab deploy

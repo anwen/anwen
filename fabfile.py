@@ -13,6 +13,7 @@ def test():
     local("make test")
 
 
+@task
 def commit():
     try:
         local("git add -p && git add . && git commit -a")
