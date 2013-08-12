@@ -10,7 +10,7 @@
     </fieldset>
     <div>
       标题:
-      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ""}}"/>
+      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ""}}" required/>
     </div>
     <div>
       正文:
@@ -28,7 +28,7 @@
       {% for k in node_list %}
       {% if k != 'goodlink' %}
       <label class="radio-inline">
-        <input type="radio" name="sharetype" id="{{k}}" {{'checked' if share and share.sharetype == k else ""}}> <i class="icon-{{node_about[k]['icon']}}"></i>
+        <input type="radio" name="sharetype" id="{{k}}" value="{{k}}" {{'checked' if share and share.sharetype == k else ""}}> <i class="icon-{{node_about[k]['icon']}}"></i>
         {{_(node_about[k]['name'])}}
       </label>
       {% end %}
@@ -62,7 +62,6 @@
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}
-    <input type="hidden" name="sharetype" value="{{ share.sharetype if share else '' }}"/>
     <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
     {{ xsrf_form_html() }}
   </form>
