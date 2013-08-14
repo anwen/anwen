@@ -1,5 +1,4 @@
 *.pyc
-share.min.js
 
 # tmp files
 /log/files/*.log
