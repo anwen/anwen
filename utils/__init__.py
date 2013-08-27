@@ -40,13 +40,3 @@ def send_email(receivers, subject, msg_body):
     s.login(user, password)
     s.sendmail(me, receivers, msg.as_string())
     s.quit()
-
-
-def send_error_email(title, error_log):
-    sender = conf['smtp_user']
-    password = conf['smtp_password']
-    msg = MIMEMultipart('alternative')
-    msg['Subject'] = Header(title, "UTF-8")
-
-    part = MIMEText(error_log, 'html', _charset='UTF-8')
-    msg.attach(part)

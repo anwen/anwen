@@ -285,6 +285,7 @@ class SharesHandler(CommonResourceHandler):
 
 
 class ImageUploadHandler(BaseHandler):
+
     @tornado.web.authenticated
     def post(self):
         img = None

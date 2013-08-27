@@ -102,8 +102,8 @@ def cal(exp):
         return '(´･д･`) 这明显有问题嘛！！你确定没写错？'
     except TokenError:
         return '(´･д･`) 这明显有问题嘛！！你确定没写错？'
-    except Exception, e:
-        #TODO:
+    except Exception as e:
+        # TODO:
         #    Any logging convention in this project? We should log the
         #    error for further investigation
         print e

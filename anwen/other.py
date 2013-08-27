@@ -7,11 +7,13 @@ from pymongo import DESCENDING
 
 
 class EditHandler(BaseHandler):
+
     def get(self):
         self.render("edit.html")
 
 
 class ErrHandler(BaseHandler):
+
     def get(self):
         self.render('error.html', status_code=404)
 
@@ -58,13 +60,22 @@ class ScoreHandler(BaseHandler):
         # DESCENDING))})
         share_res = Share.find().sort('score', DESCENDING)
         display = ''
-        display += '<p>score  suggest hit like dislike comment status title id </p>'
+        display += '<p>score sugg hit like dis comment status title id</p>'
         for share in share_res:
             display += '<p>%s  %s  %s  %s  %s  %s  %s  %s  %s</p>' % (
-                share.score, share.suggestscore, share.hitnum, share.likenum, share.dislikenum, share.commentnum, share.status, share.title, share.id)
+                share.score,
+                share.suggestscore,
+                share.hitnum,
+                share.likenum,
+                share.dislikenum,
+                share.commentnum,
+                share.status,
+                share.title,
+                share.id)
         self.write(display)
 
 
 class AppHandler(BaseHandler):
+
     def get(self):
         self.render("app.html")

@@ -77,10 +77,12 @@ def remove(s):
 def wikipedia(title):
     url = 'http://zh.wikipedia.org/w/index.php?%s' % urllib.urlencode(
         {'title': title, 'printable': 'yes', 'variant': 'zh-cn'})
-    req = urllib2.Request(url, headers={'User-Agent': "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-US) AppleWebKit/533.3 (KHTML, like Gecko) Chrome/5.0.354.0 Safari/533.3"})
+    req = urllib2.Request(
+        url,
+        headers={'User-Agent': "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_2; en-US) AppleWebKit/533.3 (KHTML, like Gecko) Chrome/5.0.354.0 Safari/533.3"})
     wp = urllib2.urlopen(req, timeout=10)
     html = wp.read()
-    #防止404，实际上似乎py会直接在urlopen的时候发现404并抛异常
+    # 防止404，实际上似乎py会直接在urlopen的时候发现404并抛异常
     if html.find('维基百科目前还没有与上述标题相同的条目') >= 0:
         raise Exception
     i = html.find('mw-content-text')

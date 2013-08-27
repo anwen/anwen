@@ -8,7 +8,7 @@ import os
 import re
 from bson import ObjectId
 sys.path.append('..')
-from db import User, Share, Comment, Hit, Tag, Feedback, Admin  # todo
+from db import User, Share, Comment, Hit, Tag, Feedback, Admin
 
 
 doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin']
@@ -140,6 +140,7 @@ parser.add_argument(
 
 if __name__ == '__main__':
     args = parser.parse_args()
+    print(User, Share, Comment, Hit, Tag, Feedback, Admin)
     if args.run_import:
         run_import(args.name)
     elif args.run_export:

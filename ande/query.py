@@ -120,7 +120,7 @@ def get_song(songname, artist):
         http_client = httpclient.HTTPClient()
         try:
             response = http_client.fetch(image_url)
-        except httpclient.HTTPError, e:
+        except httpclient.HTTPError as e:
             print "Error:", e
         if response.code == 200:
             res = jload(response.body)
@@ -141,7 +141,7 @@ def get_song(songname, artist):
         ])
         try:
             response = http_client.fetch(lyric_url)
-        except httpclient.HTTPError, e:
+        except httpclient.HTTPError as e:
             print "Error:", e
 
         if response.code == 200:

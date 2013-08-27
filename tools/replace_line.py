@@ -6,17 +6,17 @@ import os
 
 
 def replace_linesep(file_name):
-    if type(file_name) != str:
+    if not isinstance(file_name, str):
         raise ValueError
     new_lines = []
 
-    #以读模式打开文件
+    # 以读模式打开文件
     try:
         fobj_original = open(file_name, 'r')
     except IOError:
         print('Cannot read file %s!' % file_name)
         return False
-    #逐行读取原始脚本
+    # 逐行读取原始脚本
     print('Reading file %s' % file_name)
     line = fobj_original.readline()
     while line:
@@ -27,13 +27,13 @@ def replace_linesep(file_name):
         line = fobj_original.readline()
     fobj_original.close()
 
-    #以写模式打开文件
+    # 以写模式打开文件
     try:
         fobj_new = open(file_name, 'w')
     except IOError:
         print('Cannot write file %s!' % file_name)
         return False
-    #逐行写入新脚本
+    # 逐行写入新脚本
     print('Writing file %s' % file_name)
     for new_line in new_lines:
         fobj_new.write(new_line)

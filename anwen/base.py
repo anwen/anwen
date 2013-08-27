@@ -50,7 +50,7 @@ class BaseHandler(RequestHandler):
                     score = 1.0
                 locales.append((parts[0], score))
             if locales:
-                locales.sort(key=lambda (l, s): s, reverse=True)
+                locales.sort(key=lambda l_s: l_s[1], reverse=True)
                 return locales[0][0]
         self.set_cookie('lang', default)
         return default

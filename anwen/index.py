@@ -4,14 +4,12 @@ import time
 import markdown2
 from pymongo import DESCENDING  # ASCENDING
 from utils.fliter import cutter, filter_tags
-from utils.avatar import get_avatar
 from .base import BaseHandler
 import options
 from db import User, Share, Tag
 
 
 class WelcomeHandler(BaseHandler):
-    # first page before login
 
     def get(self):
         if self.current_user:
@@ -26,14 +24,7 @@ class IndexHandler(BaseHandler):
         if not self.current_user:
             self.redirect('/welcome')
             return
-        # self.redirect('/start')
         self.redirect('/explore')
-
-
-class StartHandler(BaseHandler):
-
-    def get(self):
-        pass
 
 
 class ExploreHandler(BaseHandler):

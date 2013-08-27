@@ -25,10 +25,7 @@ function get_andesay() {
     dataType: "json",
     success: function(data) {
       if (data.andesay.length > 0) {
-        var node = $(data.andesay);
-        node.hide();
-        $("#andesay_box").html(node);
-        node.slideDown();
+        $("#andesay_box").html(data.andesay);
         $("#andethink").html(data.andethink);
         $("#usersay").val('');
       }

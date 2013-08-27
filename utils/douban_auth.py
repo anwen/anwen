@@ -57,7 +57,7 @@ class DoubanMixin(OAuth2Mixin):
                    body=urllib_parse.urlencode(args),
                    callback=self.async_callback(
                        self._on_access_token, redirect_uri,
-                   client_id, client_secret, callback, fields))
+                       client_id, client_secret, callback, fields))
 
     def _oauth_requeset_token_url(self, rediret_uri=None, client_id=None,
                                   client_secret=None, code=None,

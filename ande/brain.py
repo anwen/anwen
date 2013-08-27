@@ -31,7 +31,6 @@ def get_andesay(usersay, userip, userlang, user_id, method):
         'user_id': user_id,
         'method': method,
     }
-
     # usersay_en = translate(usersay, '', 'en')
     # is_firstmeet = query.is_firstmeet(userip, user_id)
     # print(usersay_en, is_firstmeet)
@@ -43,10 +42,10 @@ def get_andesay(usersay, userip, userlang, user_id, method):
 
     get_ego = ego.find_ego(usersay)
     get_memo = query.search_memo(usersay, userip)
-    get_tools = by_tools(data) if (get_ego or get_memo) else ''
+    # get_tools = by_tools(data) if (get_ego or get_memo) else ''
 
     andesay = ''.join([
-        get_ego, get_memo, get_tools, first, hello, song, trans, clock,
+        get_ego, get_memo, first, hello, song, trans, clock,
     ])
 
     doc = {
@@ -57,5 +56,6 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     }
 
     Ande.new(doc)
+    print(11111111111111111111, andesay)
 
     return andesay, ''

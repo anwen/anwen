@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-from fabric.api import *
+import os
+from fabric.api import task, env, local, hosts, cd, run, lcd, get, sudo, put
 
 env.use_ssh_config = True
-# env.hosts = ['aw']
-# env.user = 'root'
-# env.key_filename = '~/.ssh/aw_rsa'
 
 
 def test():
@@ -34,27 +31,19 @@ def deploy():
     push()
 
 
-def deploy_2():
-    # todo
-    code_dir = '/home/lb/'
-    with cd(code_dir):
-        run("git pull")
-
-
 @hosts(['aw'])
 @task
 def back_data():
-    import os
     ''' backup data from aw mongo '''
-    with cd('/var/www/anwen/db'):   # 切换到远程目录
+    with cd('/var/www/anwen/db'):
         run('chmod +x db_in_out.py')
         run('./db_in_out.py -o')
-        run('tar czf aw_yaml.tar.gz data')  # 远程压缩
+        run('tar czf aw_yaml.tar.gz data')
     with cd('/var/www/anwen/docs/shares'):
-        run('tar czf aw_md.tar.gz *.md')  # 远程压缩
+        run('tar czf aw_md.tar.gz *.md')
     with cd('/var/www/anwen/static/upload/'):
-        run('tar czf upload.tar.gz *')  # 远程压缩
-    with lcd(os.path.join(os.getcwd(), 'db/')):  # 切换到local
+        run('tar czf upload.tar.gz *')
+    with lcd(os.path.join(os.getcwd(), 'db/')):
         get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
         local('tar zxf aw_yaml.tar.gz')
         local('rm aw_yaml.tar.gz')
@@ -66,18 +55,6 @@ def back_data():
         get('/var/www/anwen/static/upload/upload.tar.gz', '.')
         local('tar zxf upload.tar.gz')
         local('rm upload.tar.gz')
-
-
-def whoami():
-    run('whoami')
-
-
-def pwd():
-    run('pwd')
-
-
-def host_type():
-    run('uname -s')
 
 
 @task

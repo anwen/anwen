@@ -129,4 +129,5 @@ douban = {
 }
 
 
-from server_setting import *
+from server_setting import debug, web_server, db, EMAIL_HOST_PASSWORD
+a = (debug, web_server, db, EMAIL_HOST_PASSWORD)

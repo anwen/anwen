@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from anwen.index import WelcomeHandler
-from anwen.index import IndexHandler, StartHandler, ExploreHandler
+from anwen.index import IndexHandler, ExploreHandler
 from anwen.index import NodeHandler, TagHandler
 
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
@@ -31,7 +31,6 @@ from anwen.other import AppHandler
 handlers = [
     (r"/welcome", WelcomeHandler),
     (r"/", IndexHandler),
-    (r"/start", StartHandler),
     (r"/explore", ExploreHandler),
 
     (r"/node/([^/]+)", NodeHandler),

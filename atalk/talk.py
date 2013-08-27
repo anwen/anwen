@@ -27,6 +27,7 @@ from db import Talk
 
 
 class TalkHandler(BaseHandler):
+
     def get(self):
         self.render("talk.html")
 
@@ -69,6 +70,7 @@ class MessageMixin(object):
 
 
 class MsgNewHandler(BaseHandler, MessageMixin):
+
     def post(self):
         if self.current_user:
             user_name = self.current_user["user_name"]
@@ -92,6 +94,7 @@ class MsgNewHandler(BaseHandler, MessageMixin):
 
 
 class MsgUpdatesHandler(BaseHandler, MessageMixin):
+
     @tornado.web.asynchronous
     def post(self):
         cursor = self.get_argument("cursor", None)

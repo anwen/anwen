@@ -45,7 +45,6 @@ SIMSIMI_KEY = ''
 workerhostname = socket.gethostname()
 
 
-
 class SimSimi:
 
     def __init__(self):
@@ -59,7 +58,8 @@ class SimSimi:
             self.initSimSimiCookie()
 
     def initSimSimiCookie(self):
-        self.session.headers.update({'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:18.0) Gecko/20100101 Firefox/18.0'})
+        self.session.headers.update(
+            {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:18.0) Gecko/20100101 Firefox/18.0'})
         self.session.get('http://www.simsimi.com/talk.htm')
         self.session.headers.update(
             {'Referer': 'http://www.simsimi.com/talk.htm'})
