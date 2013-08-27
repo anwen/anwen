@@ -40,7 +40,7 @@ yum install mongo-10gen-server
 # I:\tools\mongo\mongod.exe --logpath I:\tools\mongo\logs\mongodb.log --logappend --dbpath I:\tools\mongo\data --directoryperdb --serviceName MongoDB --install
 # net start MongoDB
 # linux:
-mongod --dbpath=/var/lib/mongo/ --smallfiles --fork --logpath=/data/db/log --auth
+mongod --dbpath=/var/lib/mongodb/ --smallfiles --fork --logpath=/data/db/log --auth
 mongoexport
 
 

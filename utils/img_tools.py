@@ -6,12 +6,6 @@ import Image
 import ImageFilter
 
 
-def dict_remove(d, *keys):
-    for k in keys:
-        if k in d:
-            del d[k]
-
-
 class MyGaussianBlur(ImageFilter.Filter):
     # 高斯模糊
     name = "GaussianBlur"

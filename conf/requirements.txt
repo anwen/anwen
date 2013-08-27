@@ -2,7 +2,7 @@
 
 # sudo apt-get install build-essential python-dev
 # You can: pip install -r requirements.txt
-# sudo apt-get install install python-imaging
+# sudo apt-get install python-imaging
 
 
 
