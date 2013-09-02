@@ -4,6 +4,7 @@
 
 ### 阅读
 - [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)
+- [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)
 - [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html )
 - [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)
 - [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)
@@ -29,6 +30,8 @@
 - [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)
 
 ### 短篇小说
+- [日暮](http://www.douban.com/group/topic/15321855/)
+- [漫长的消逝](www.douban.com/group/topic/12341290/)
 - [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)
 - [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)
 
@@ -39,6 +42,8 @@
 - [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)
 
 ### 生活
+- [那些应该时刻牢记的事](http://heikezhi.com/yuanyi/5-things-you-should-always-remember)
+- [橙汁配料表的秘密](http://heikezhi.com/yuanyi/secret-ingredient-your-orange-juice)
 - [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)
 
 ### 技术

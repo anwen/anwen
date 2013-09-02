@@ -26,7 +26,7 @@
 >豺狼当道，安问狐狸——《后汉书·张纲传》
 
 * 话说东汉末年，外戚诸梁姻族满朝，大将军梁冀专权。朝廷派遣张纲等八人分道巡按各州郡，纠察收审贪官污吏。张纲衔命出洛阳，叹道：“豺狼当道，安问狐狸？”遂将车轮埋于都亭，起草弹劾梁冀的奏章。用豺狼比喻祸国殃民的人，用狐狸比喻小偷等小坏蛋，就是说国家祸国殃民的人还没除净，（却派我）去查那些小贪小污的小官。
-* Origin: askender.com is a website all about creating and sharing nice things. We provide valuable messages and passages for everyone,money for every creator and sharer. We believe everyone’s creativity and spirit of sharing have the power of promoting a better world.
+* Origin: Anwen is a website all about creating and sharing nice things. We provide valuable messages and passages for everyone,money for every creator and sharer. We believe everyone’s creativity and spirit of sharing have the power of promoting a better world.
 If there are real evils,why should we kill ants?
 * 当然安问的名字也来源于屈原的《天问》以及奥森·斯科特·卡德（Orson Scott Card）的《安德的游戏》
 
@@ -51,9 +51,11 @@ If there are real evils,why should we kill ants?
 * 月  从前的巴菲就是愤青，将不能创作的理由推给“经费、人力、胶卷和市场”。现在的巴菲只是个单纯的说书人，一支笔、一张纸、几句话，简简单单，不为其它  “我”的总合借由潜意识转化为梦境，巴菲印刻就是将梦境造出的出版社。
 
 ### 联系我们
-* 邮箱：askender43@gmail.com
-* 微博：http://weibo.com/askender
-* github: https://github.com/askender
+* 邮箱：anwen.in@gmail.com askender43@gmail.com
+* twitter: <https://twitter.com/askenderlee>
+* 微博：<http://weibo.com/askender>
+* github: <https://github.com/anwen/anwen>
+* gurudigger: <http://gurudigger.com/ideas/696>
 
 ### 安问策划
 * 成为优质内容发布、阅读与分享的一个独特和独立平台，作者收入更多，读者阅读体验更好，交流互动更有意思。我们会与资源版权方深度合作，让正版资源能够以方便、低价，互动性更强的方式呈现于读者面前。

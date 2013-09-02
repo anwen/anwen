@@ -10,6 +10,7 @@
 - [爱看豆happy书店](http://ikandou.com/)
 - [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/)
 - [Rochester Made](http://rochestermade.com/) 
+- [拇指阅读 深阅读社区](http://www.mzread.com/)
 
 ### 阅读工具
 - [feedly](http://cloud.feedly.com/)
@@ -19,6 +20,7 @@
 ### 视频
 - [Vimeo](http://vimeo.com/)  需要翻越长城
 - [YouTube](https://www.youtube.com/)  需要翻越长城
+- [Coursera](https://www.coursera.org/) Take the world's best courses, online, for free. <http://www.douban.com/group/Coursera-er/> <http://www.gemag.com.cn/9/33078_1.html> <http://www.douban.com/group/xmooc/> <http://coursera.yeeyan.org/>
 
 ### 社区
 - [豆瓣](http://www.douban.com/) 

@@ -2,7 +2,7 @@
   commentnum: 1
   content: null
   dislikenum: 0
-  hitnum: 1102
+  hitnum: 1223
   id: 17
   likenum: 0
   link: ''
@@ -33,7 +33,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 593
+  hitnum: 669
   id: 16
   likenum: 0
   link: ''
@@ -93,7 +93,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 608
+  hitnum: 686
   id: 14
   likenum: 0
   link: ''
@@ -117,7 +117,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 632
+  hitnum: 722
   id: 13
   likenum: 0
   link: ''
@@ -142,7 +142,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 490
+  hitnum: 559
   id: 9
   likenum: 0
   link: ''
@@ -165,7 +165,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 470
+  hitnum: 539
   id: 7
   likenum: 0
   link: ''
@@ -187,7 +187,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 1013
+  hitnum: 1153
   id: 5
   likenum: 0
   link: ''
@@ -212,7 +212,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 492
+  hitnum: 567
   id: 2
   likenum: 0
   link: ''
@@ -236,7 +236,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 479
+  hitnum: 557
   id: 1
   likenum: 1
   link: ''
@@ -260,7 +260,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 1135
+  hitnum: 1219
   id: 11
   likenum: 0
   link: ''
@@ -291,7 +291,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 1190
+  hitnum: 1320
   id: 4
   likenum: 0
   link: ''
@@ -343,7 +343,7 @@
   commentnum: 1
   content: null
   dislikenum: 0
-  hitnum: 589
+  hitnum: 678
   id: 18
   likenum: 0
   link: ''
@@ -364,9 +364,9 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 495
+  hitnum: 576
   id: 6
-  likenum: 0
+  likenum: 1
   link: ''
   markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
     * Markdown 的语法非常简单，全由一些精挑细选的符号所组成，其作用一目了然。\r\n* 它实际上非常简单、容易学习。大家都可以在5分钟以内学会。是为数不多，你真地可以彻底学会的语言。\r\
@@ -420,7 +420,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 470
+  hitnum: 535
   id: 19
   likenum: 0
   link: ''
@@ -471,7 +471,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 445
+  hitnum: 509
   id: 21
   likenum: 0
   link: ''
@@ -502,7 +502,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 525
+  hitnum: 603
   id: 22
   likenum: 1
   link: ''
@@ -537,42 +537,11 @@
   updated: 1360485891.018391
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e2
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 634
-  id: 12
-  likenum: 0
-  link: ''
-  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
-    * 悟空传\r\n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 莱博维茨的赞歌\r\n* 真名实姓\r\n* 沧浪之水\r\n* 基地\r\
-    \n* 球状闪电\r\n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\
-    \n* 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n* 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\
-    \n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n* 黑客与画家\r\n* 重来：更为简单有效的商业思维\r\
-    \n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\
-    \n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
-    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
-    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n<https://groups.google.com/forum/?fromgroups=#!forum/skindle>\r\
-    \n\r\n\r\n不断补充中～～～\r\n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书或者文章，\
-    \ anwen.in@gmail.com"
-  post_img: 20130220_151116_345433_1200.jpg
-  published: 1349432059.0
-  score: 6.306
-  sharetype: book
-  slug: book-share
-  status: 0
-  suggestscore: 0.0
-  tags: list
-  title: !!python/str '推荐好书'
-  updated: 1363336996.812721
-  upload_img: ''
-  user_id: 1
 - _id: 5117186e606ec50bbf529207
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 465
+  hitnum: 526
   id: 20
   likenum: 0
   link: ''
@@ -621,7 +590,7 @@
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 664
+  hitnum: 736
   id: 15
   likenum: 0
   link: ''
@@ -643,15 +612,97 @@
   updated: 1373298165.992122
   upload_img: ''
   user_id: 1
+- _id: 50e44d08606ec51c6ab042d9
+  commentnum: 1
+  content: ''
+  dislikenum: 0
+  hitnum: 1363
+  id: 3
+  likenum: 0
+  link: ''
+  markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
+    \n* 人生要有趣~我们将用这个平台，记录平凡但坚定的智慧和创举，分享敢于行动勇于付出的精神和理想。\r\n* 我们相信真诚的创造与分享可以让世界更漂亮。\r\
+    \n\r\n>安问工作室是一个致力于在大众文化层面传播美好的东西的非营利机构，成立于2011年3月4日。团队汇聚了一批愿意创造和分享的年轻人，旨在“用创造和分享的力量将世界变得更漂亮”。欢迎认同我们理念的人加入~\r\
+    \n\r\n* 我们会为那些真诚的贡献者实现更多的价值\r\n* 投给安问的优秀稿件都会有稿费以及更多回报\r\n* 原创文章每篇1~10元起，被阅读更多收获也更多\r\
+    \n* 推荐文章和给我们的好的建议，即使来稿未选中也有稿费\r\n* 稿酬会不断增多\r\n\r\n### 为什么要建立安问？\r\n\r\n* 面对信息爆炸，安问将致力于提供最精简最有价值的资讯，在快节奏的生活中为大家带来一方安静的网络空间和交流平台\r\
+    \n* 读更多的好书，看更多的美景，认识更多志同道合的朋友。和更多的人分享有价值有趣的东西。相互交流，分享发现\r\n\r\n### 安问名字的来源：\r\n\
+    \r\n>豺狼当道，安问狐狸——《后汉书·张纲传》\r\n\r\n* 话说东汉末年，外戚诸梁姻族满朝，大将军梁冀专权。朝廷派遣张纲等八人分道巡按各州郡，纠察收审贪官污吏。张纲衔命出洛阳，叹道：“豺狼当道，安问狐狸？”遂将车轮埋于都亭，起草弹劾梁冀的奏章。用豺狼比喻祸国殃民的人，用狐狸比喻小偷等小坏蛋，就是说国家祸国殃民的人还没除净，（却派我）去查那些小贪小污的小官。\r\
+    \n* Origin: Anwen is a website all about creating and sharing nice things. We\
+    \ provide valuable messages and passages for everyone,money for every creator\
+    \ and sharer. We believe everyone’s creativity and spirit of sharing have the\
+    \ power of promoting a better world.\r\nIf there are real evils,why should we\
+    \ kill ants?\r\n* 当然安问的名字也来源于屈原的《天问》以及奥森·斯科特·卡德（Orson Scott Card）的《安德的游戏》\r\n\r\
+    \n\r\n### 加入安问\r\n\r\n* 安问的每个开发管理者和写作者也都是安问每日的用户，分享着自己心爱的发现，也从大家的创造和分享中受益。\r\n\
+    * Google论坛&邮件列表：https://groups.google.com/d/forum/our-anwen \r\n* 邮箱：askender43@gmail.com\r\
+    \n* 安问工作室用户群：127343260\r\n* 安问工作室核心群：148673816\r\n\r\n### 安问团队介绍：\r\n\r\n* 柏舟(askender)，物理学转互联网，热爱科幻，阅读，围棋...大学刚毕业，理想没死，希望靠自己的力量改变一些什么\r\
+    \n* 刘超（kelvin），主修通信，喜欢折腾与被折腾，热爱互联网，爱好巨多，这里写不下\r\n* sailor\r\n* 郭伟楠，荆州，专业地球化学，不成形geek一枚，未修成正果松鼠一只，爱好不计其数，以科幻，米奇，古典文化最甚，琴棋书画皆略懂，鬼点子多，可家养，可外放\r\
+    \n* 都磊(石头儿)，湖北襄樊，专科毕业，计算机专业，之后参加了北大青鸟2年的培训，热爱互联网，10年4月来到上海，参加工作。目前在一家私营企业做高级软件工程师，主要是用.Net开发一些管理系统\r\
+    \n* anti,魏景亮,周潇粤,Yungstedt,盲眼A,青青子矜\r\n* ireading,A-cat,盲眼A,林子,H1K9\r\n* 月  从前的巴菲就是愤青，将不能创作的理由推给“经费、人力、胶卷和市场”。现在的巴菲只是个单纯的说书人，一支笔、一张纸、几句话，简简单单，不为其它\
+    \  “我”的总合借由潜意识转化为梦境，巴菲印刻就是将梦境造出的出版社。\r\n\r\n### 联系我们\r\n* 邮箱：anwen.in@gmail.com\
+    \ askender43@gmail.com\r\n* twitter: <https://twitter.com/askenderlee>\r\n* 微博：<http://weibo.com/askender>\r\
+    \n* github: <https://github.com/anwen/anwen>\r\n* gurudigger: <http://gurudigger.com/ideas/696>\r\
+    \n\r\n### 安问策划\r\n* 成为优质内容发布、阅读与分享的一个独特和独立平台，作者收入更多，读者阅读体验更好，交流互动更有意思。我们会与资源版权方深度合作，让正版资源能够以方便、低价，互动性更强的方式呈现于读者面前。\r\
+    \n* 创建一个氛围独特的优质互动社区，使网站内容的质量保持在高水平。\r\n* 研发智能推荐算法，提供更好的用户体验和用户价值实现。\r\n\r\n###\
+    \ 安问分支\r\n* 全新 安问 anwen.in（域名备案被取消，稍后恢复访问）\r\n* 多人独立博客平台：[安问网](http://askender.com/)、[安问科幻网](http://anwensf.com/),其中安问科幻网吸引高校众多科幻社团参与，立志打造有趣的科幻网站。\r\
+    \n* 人工智能Ender\r\n\r\n### 期待有新的成员加入~@@\r\n\r\n* 一个开源的分享最打动大家东西的微型社区项目\r\n* [anwen.in@github](https://github.com/askender/anwen.in)正在不断开发中，欢迎大家fork\r\
+    \n* 构建于tornado，欢迎大家批评指正，askender43@gmail.com\r\n\r\n### 补充\r\n\r\n* 我们期待提供最佳用户体验，专心将一件事做到极致\r\
+    \n* 安问是一生的故事，生命短暂，我们期待改进和迭代更新越快越好，不断提供有价值的内容和体验\r\n* 打算构建CC版权的分享维基，可以给文章pull request，协作打造精简的分享\r\
+    \n* 本站默认采用<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/cn/\"\
+    >知识共享署名-相同方式共享 3.0 中国大陆许可协议</a>进行许可。"
+  post_img: ''
+  published: 1349429689.0
+  score: 2.564
+  sharetype: fire
+  slug: about
+  status: 0
+  suggestscore: 0.0
+  tags: ask
+  title: !!python/str '关于安问'
+  updated: 1376306742.522177
+  upload_img: ''
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e2
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 720
+  id: 12
+  likenum: 0
+  link: ''
+  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
+    * 悟空传\r\n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 莱博维茨的赞歌\r\n* 真名实姓\r\n* 沧浪之水\r\n* 基地\r\
+    \n* 球状闪电\r\n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\
+    \n* 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n* 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\
+    \n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n* [「想想」创刊号 简书官方提供epub](http://jianshu.io/p/vJRdKw)\r\
+    \n* 黑客与画家\r\n* 重来：更为简单有效的商业思维 <http://37signals.com/rework>(官方提供英文pdf版，网站在墙外，这个也墙？)\
+    \ <http://www.v2ex.com/rework>(中文翻译版)\r\n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\
+    \n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
+    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
+    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n<https://groups.google.com/forum/?fromgroups=#!forum/skindle>\r\
+    \n\r\n\r\n不断补充中～～～\r\n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书或者文章，\
+    \ anwen.in@gmail.com"
+  post_img: 20130814_193147_736898_1200.jpg
+  published: 1349432059.0
+  score: 6.306
+  sharetype: book
+  slug: book-share
+  status: 0
+  suggestscore: 0.0
+  tags: list
+  title: !!python/str '推荐好书'
+  updated: 1376479938.754998
+  upload_img: ''
+  user_id: 1
 - _id: 50e44d08606ec51c6ab042e0
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 649
+  hitnum: 729
   id: 10
   likenum: 0
   link: ''
   markdown: !!python/str "### 阅读\r\n- [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)\r\
+    \n- [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)\r\
     \n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
     \ )\r\n- [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
     \n- [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
@@ -668,31 +719,34 @@
     \n- [Michael S. Hart去世了](http://www.ruanyifeng.com/blog/2011/09/michael_s_hart_passed_away.html)\r\
     \n- [自由引导网络，我们即将到来](http://www.solidot.org/story?sid=12063)\r\n- [不会沉没的海盗湾](http://www.ruanyifeng.com/blog/2010/05/an_unsinkable_tpb.html)\r\
     \n- [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)\r\n\r\n### 短篇小说\r\n\
-    - [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
+    - [日暮](http://www.douban.com/group/topic/15321855/)\r\n- [漫长的消逝](www.douban.com/group/topic/12341290/)\r\
+    \n- [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
     \n- [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
     \n\r\n### 视频\r\n- [自然纪录片《Mythos Wald》](http://www.biubiubiubiu.com/post/227)\r\
     \n\r\n### 图片\r\n- [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)\r\
-    \n\r\n### 生活\r\n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n\
-    - [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\
-    \n- [程序员能力矩阵 Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n### 生活\r\n- [那些应该时刻牢记的事](http://heikezhi.com/yuanyi/5-things-you-should-always-remember)\r\
+    \n- [橙汁配料表的秘密](http://heikezhi.com/yuanyi/secret-ingredient-your-orange-juice)\r\
+    \n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n- [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
+    \n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n- [程序员能力矩阵 Programmer\
+    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
     \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
   post_img: ''
   published: 1349430399.0
   score: 5.318
-  sharetype: fire
+  sharetype: eyeopen
   slug: post-share
   status: 0
   suggestscore: 0.0
-  tags: list
+  tags: ''
   title: !!python/str '好文链接'
-  updated: 1374996436.392213
+  updated: 1377708919.066176
   upload_img: ''
   user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 579
+  hitnum: 660
   id: 8
   likenum: 0
   link: ''
@@ -700,11 +754,14 @@
     \ 奇客的资讯，重要的东西\r\n- [阅FM](http://yue.fm/)\r\n- [简书](http://jianshu.io/) 在这里写作 在这里阅读\
     \ 在这里，慢下来\r\n- [爱看豆happy书店](http://ikandou.com/)\r\n- [卡尔维诺中文站 - Italo Calvino\
     \ in China](http://www.ruanyifeng.com/calvino/)\r\n- [Rochester Made](http://rochestermade.com/)\
-    \ \r\n\r\n### 阅读工具\r\n- [feedly](http://cloud.feedly.com/)\r\n- [Digg](http://digg.com/)\r\
-    \n- [Google 阅读器](https://www.google.com/reader/)  130701已经关闭\r\n\r\n### 视频\r\n\
-    - [Vimeo](http://vimeo.com/)  需要翻越长城\r\n- [YouTube](https://www.youtube.com/)\
-    \  需要翻越长城\r\n\r\n### 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/\
-    \  \"创意工作者们的社区\") \r\n- [知乎](http://www.zhihu.com/ )\r\n\r\n### 写\r\n- [OhLife](http://ohlife.com/\
+    \ \r\n- [拇指阅读 深阅读社区](http://www.mzread.com/)\r\n\r\n### 阅读工具\r\n- [feedly](http://cloud.feedly.com/)\r\
+    \n- [Digg](http://digg.com/)\r\n- [Google 阅读器](https://www.google.com/reader/)\
+    \  130701已经关闭\r\n\r\n### 视频\r\n- [Vimeo](http://vimeo.com/)  需要翻越长城\r\n- [YouTube](https://www.youtube.com/)\
+    \  需要翻越长城\r\n- [Coursera](https://www.coursera.org/) Take the world's best courses,\
+    \ online, for free. <http://www.douban.com/group/Coursera-er/> <http://www.gemag.com.cn/9/33078_1.html>\
+    \ <http://www.douban.com/group/xmooc/> <http://coursera.yeeyan.org/>\r\n\r\n###\
+    \ 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/  \"创意工作者们的社区\"\
+    ) \r\n- [知乎](http://www.zhihu.com/ )\r\n\r\n### 写\r\n- [OhLife](http://ohlife.com/\
     \ \"OhLife helps you remember what's happened in your life\")\r\n- [notepad.cc](http://notepad.cc/)\
     \ \r\n\r\n### 音乐\r\n- [Last.fm](http://cn.last.fm/ )\r\n- [巨鲸](http://www.top100.cn/\
     \ )\r\n- [虾米](http://www.xiami.com/ )\r\n- [亦歌](http://www.1g1g.com/ )\r\n- [豆瓣电台](http://douban.fm/\
@@ -732,54 +789,6 @@
   suggestscore: 0.0
   tags: list site
   title: !!python/str '站点分享'
-  updated: 1375069916.589452
-  upload_img: ''
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042d9
-  commentnum: 1
-  content: ''
-  dislikenum: 0
-  hitnum: 1205
-  id: 3
-  likenum: 0
-  link: ''
-  markdown: !!python/str "### 安问致力于创造和分享有趣有价值东西\r\n\r\n* 我们专注于为大家提供有意思的互联网，文学，影音，生活等方面的资讯、文字，并期待以此引发大家的思考，给大家带来快乐。\r\
-    \n* 人生要有趣~我们将用这个平台，记录平凡但坚定的智慧和创举，分享敢于行动勇于付出的精神和理想。\r\n* 我们相信真诚的创造与分享可以让世界更漂亮。\r\
-    \n\r\n>安问工作室是一个致力于在大众文化层面传播美好的东西的非营利机构，成立于2011年3月4日。团队汇聚了一批愿意创造和分享的年轻人，旨在“用创造和分享的力量将世界变得更漂亮”。欢迎认同我们理念的人加入~\r\
-    \n\r\n* 我们会为那些真诚的贡献者实现更多的价值\r\n* 投给安问的优秀稿件都会有稿费以及更多回报\r\n* 原创文章每篇1~10元起，被阅读更多收获也更多\r\
-    \n* 推荐文章和给我们的好的建议，即使来稿未选中也有稿费\r\n* 稿酬会不断增多\r\n\r\n### 为什么要建立安问？\r\n\r\n* 面对信息爆炸，安问将致力于提供最精简最有价值的资讯，在快节奏的生活中为大家带来一方安静的网络空间和交流平台\r\
-    \n* 读更多的好书，看更多的美景，认识更多志同道合的朋友。和更多的人分享有价值有趣的东西。相互交流，分享发现\r\n\r\n### 安问名字的来源：\r\n\
-    \r\n>豺狼当道，安问狐狸——《后汉书·张纲传》\r\n\r\n* 话说东汉末年，外戚诸梁姻族满朝，大将军梁冀专权。朝廷派遣张纲等八人分道巡按各州郡，纠察收审贪官污吏。张纲衔命出洛阳，叹道：“豺狼当道，安问狐狸？”遂将车轮埋于都亭，起草弹劾梁冀的奏章。用豺狼比喻祸国殃民的人，用狐狸比喻小偷等小坏蛋，就是说国家祸国殃民的人还没除净，（却派我）去查那些小贪小污的小官。\r\
-    \n* Origin: askender.com is a website all about creating and sharing nice things.\
-    \ We provide valuable messages and passages for everyone,money for every creator\
-    \ and sharer. We believe everyone’s creativity and spirit of sharing have the\
-    \ power of promoting a better world.\r\nIf there are real evils,why should we\
-    \ kill ants?\r\n* 当然安问的名字也来源于屈原的《天问》以及奥森·斯科特·卡德（Orson Scott Card）的《安德的游戏》\r\n\r\
-    \n\r\n### 加入安问\r\n\r\n* 安问的每个开发管理者和写作者也都是安问每日的用户，分享着自己心爱的发现，也从大家的创造和分享中受益。\r\n\
-    * Google论坛&邮件列表：https://groups.google.com/d/forum/our-anwen \r\n* 邮箱：askender43@gmail.com\r\
-    \n* 安问工作室用户群：127343260\r\n* 安问工作室核心群：148673816\r\n\r\n### 安问团队介绍：\r\n\r\n* 柏舟(askender)，物理学转互联网，热爱科幻，阅读，围棋...大学刚毕业，理想没死，希望靠自己的力量改变一些什么\r\
-    \n* 刘超（kelvin），主修通信，喜欢折腾与被折腾，热爱互联网，爱好巨多，这里写不下\r\n* sailor\r\n* 郭伟楠，荆州，专业地球化学，不成形geek一枚，未修成正果松鼠一只，爱好不计其数，以科幻，米奇，古典文化最甚，琴棋书画皆略懂，鬼点子多，可家养，可外放\r\
-    \n* 都磊(石头儿)，湖北襄樊，专科毕业，计算机专业，之后参加了北大青鸟2年的培训，热爱互联网，10年4月来到上海，参加工作。目前在一家私营企业做高级软件工程师，主要是用.Net开发一些管理系统\r\
-    \n* anti,魏景亮,周潇粤,Yungstedt,盲眼A,青青子矜\r\n* ireading,A-cat,盲眼A,林子,H1K9\r\n* 月  从前的巴菲就是愤青，将不能创作的理由推给“经费、人力、胶卷和市场”。现在的巴菲只是个单纯的说书人，一支笔、一张纸、几句话，简简单单，不为其它\
-    \  “我”的总合借由潜意识转化为梦境，巴菲印刻就是将梦境造出的出版社。\r\n\r\n### 联系我们\r\n* 邮箱：askender43@gmail.com\r\
-    \n* 微博：http://weibo.com/askender\r\n* github: https://github.com/askender\r\n\r\
-    \n### 安问策划\r\n* 成为优质内容发布、阅读与分享的一个独特和独立平台，作者收入更多，读者阅读体验更好，交流互动更有意思。我们会与资源版权方深度合作，让正版资源能够以方便、低价，互动性更强的方式呈现于读者面前。\r\
-    \n* 创建一个氛围独特的优质互动社区，使网站内容的质量保持在高水平。\r\n* 研发智能推荐算法，提供更好的用户体验和用户价值实现。\r\n\r\n###\
-    \ 安问分支\r\n* 全新 安问 anwen.in（域名备案被取消，稍后恢复访问）\r\n* 多人独立博客平台：[安问网](http://askender.com/)、[安问科幻网](http://anwensf.com/),其中安问科幻网吸引高校众多科幻社团参与，立志打造有趣的科幻网站。\r\
-    \n* 人工智能Ender\r\n\r\n### 期待有新的成员加入~@@\r\n\r\n* 一个开源的分享最打动大家东西的微型社区项目\r\n* [anwen.in@github](https://github.com/askender/anwen.in)正在不断开发中，欢迎大家fork\r\
-    \n* 构建于tornado，欢迎大家批评指正，askender43@gmail.com\r\n\r\n### 补充\r\n\r\n* 我们期待提供最佳用户体验，专心将一件事做到极致\r\
-    \n* 安问是一生的故事，生命短暂，我们期待改进和迭代更新越快越好，不断提供有价值的内容和体验\r\n* 打算构建CC版权的分享维基，可以给文章pull request，协作打造精简的分享\r\
-    \n* 本站默认采用<a rel=\"license\" href=\"http://creativecommons.org/licenses/by-sa/3.0/cn/\"\
-    >知识共享署名-相同方式共享 3.0 中国大陆许可协议</a>进行许可。"
-  post_img: ''
-  published: 1349429689.0
-  score: 2.564
-  sharetype: fire
-  slug: about
-  status: 0
-  suggestscore: 0.0
-  tags: ask
-  title: !!python/str '关于安问'
-  updated: 1375443757.391847
+  updated: 1377962652.766398
   upload_img: ''
   user_id: 1
