@@ -208,12 +208,15 @@ class Tag(BaseModel):
 
     def new(self, doc):
         tag = doc['name']
+        if not tag:
+            return
         share_id = doc['share_ids']
         res = self.find_one({'name': tag})
         if res:
             share_list = res.share_ids.split(' ')
             if share_id not in share_list:
                 res.share_ids = '%s %s' % (res.share_ids, share_id)
+                res.save()
         else:
             res = self()
             doc = {}
