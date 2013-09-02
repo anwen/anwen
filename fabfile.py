@@ -42,7 +42,7 @@ def back_data():
     with cd('/var/www/anwen/docs/shares'):
         run('tar czf aw_md.tar.gz *.md')
     with cd('/var/www/anwen/static/upload/'):
-        run('tar czf upload.tar.gz *')
+        run('tar czf upload.tar.gz img')
     with lcd(os.path.join(os.getcwd(), 'db/')):
         get('/var/www/anwen/db/aw_yaml.tar.gz', '.')
         local('tar zxf aw_yaml.tar.gz')
@@ -53,7 +53,7 @@ def back_data():
         local('rm aw_md.tar.gz')
     with lcd(os.path.join(os.getcwd(), 'static/upload/')):
         get('/var/www/anwen/static/upload/upload.tar.gz', '.')
-        local('tar zxf upload.tar.gz')
+        local('tar zxf upload.tar.gz img')
         local('rm upload.tar.gz')
 
 
