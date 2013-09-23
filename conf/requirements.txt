@@ -1,40 +1,34 @@
-# This requirements is for development
-
 # sudo apt-get install build-essential python-dev
 # You can: pip install -r requirements.txt
 # sudo apt-get install python-imaging
-
-
 
 tornado>=3.0
 
 markdown2
 # markdown
 
-# Jinja2
-# misaka
-# pygments
-
-### database
+bson
 pymongo>=2.2.1
 mongokit>=0.8
-bson
 
 # MySQL-python
 # peewee
+# Jinja2
+# misaka
+# pygments
 
 ### for db_import_backup
 pyyaml
 
 # other
 fabric
-pillow
+# pillow
 
 ### cache support
 # python-memcached
 
-### ande
+### other
 requests
 
-
-# flake8 paramiko
+### dev
+# flake8

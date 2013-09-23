@@ -58,7 +58,7 @@
 						{% if not current_user %}
 需要
 						<a href="/login?next={{ url_escape(request.uri) }}" class="btn btn-primary">登录</a>
-						后回复方可回复或收藏和个性化推荐, 如果还没有账号您可以
+						后方可回复,收藏和个性化推荐.如果还没有账号您可以
 						<a href="/joinus?next={{ url_escape(request.uri) }}" class="btn btn-danger">注册</a>
 						一个帐号。
 {% else %}

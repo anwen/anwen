@@ -17,13 +17,11 @@ def commit():
     except:
         pass
 
-
 def push():
     local("git push aw_gh")
     local("git push prod")
 
 
-@hosts(['aw'])
 @task
 def deploy():
     test()
@@ -64,6 +62,7 @@ def nginx(todo):
     sudo('/etc/init.d/nginx %s' % todo)
 
 
+@hosts(['aw'])
 @task
 def update_nginx():
     ''' update_nginx '''
