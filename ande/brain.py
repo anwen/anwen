@@ -1,8 +1,8 @@
 # -*- coding:utf-8 -*-
 
-import ego
-import query
-import tools
+from . import ego
+from . import query
+from . import tools
 from db import Ande
 
 
@@ -15,7 +15,6 @@ for tool_name in tools.__all__:
 def by_tools(data):
     for tool_module in tool_modules:
         try:
-            # print(tool_module)
             if tool_module.test(data):
                 return tool_module.handle(data)
         except:
@@ -44,8 +43,11 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     get_memo = query.search_memo(usersay, userip)
     # get_tools = by_tools(data) if (get_ego or get_memo) else ''
 
+    from .skills import search
+    search = search.search(usersay)
+
     andesay = ''.join([
-        get_ego, get_memo, first, hello, song, trans, clock,
+        get_ego, get_memo, first, hello, song, trans, clock, search,
     ])
 
     doc = {
@@ -56,6 +58,4 @@ def get_andesay(usersay, userip, userlang, user_id, method):
     }
 
     Ande.new(doc)
-    print(11111111111111111111, andesay)
-
     return andesay, ''

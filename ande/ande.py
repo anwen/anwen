@@ -39,5 +39,4 @@ class AndeHandler(BaseHandler):
             'andethink': andethink,
         }
         andesay = dumps(andesay)
-        print(andesay)
         self.write(andesay)

@@ -31,7 +31,6 @@ build:
 	uglifyjs static/js/share.js -mc -o static/js/share.min.js
 
 start:
-	make build
 	make test
 	@echo "starting anwen"
 	python hello.py
