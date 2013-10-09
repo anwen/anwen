@@ -42,3 +42,25 @@
     </div>
   </form>
 {% end %}
+
+{% block bottom %}
+<script type="text/javascript">
+  //<![CDATA[
+
+    $(function() {
+      $("input[name=title]").select();
+      $("form.compose").submit(function() {
+          var required = ["name","city","say"];
+          var form = $(this).get(0);
+          for (var i = 0; i < required.length; i++) {
+              if (!form[required[i]].value) {
+                  $(form[required[i]]).select();
+                  return false;
+              }
+          }
+          return true;
+      });
+    });
+
+  //]]></script>
+{% end %}
