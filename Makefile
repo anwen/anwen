@@ -35,7 +35,7 @@ start:
 	@echo "starting anwen"
 	python hello.py
 
-commit:
+co:
 	@echo "starting commit"
 	fab commit
 
@@ -50,3 +50,7 @@ backup:
 ask:
 	@echo "call ande"
 	python ande/ask.py
+
+add:
+	@echo "starting add"
+	git add .

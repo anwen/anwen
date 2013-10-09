@@ -2,7 +2,7 @@
 ========
 
 
-### 阅读
+### 各种文章
 - [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)
 - [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)
 - [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html )
@@ -51,4 +51,9 @@
 - [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)
 - [程序员能力矩阵 Programmer Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)
 
-不断补充中，欢迎大家的推荐，anwen.in@gmail.com
+### 大千世界的故事&新闻
+- [极客流浪汉与比特币的故事](http://www.ifanr.com/350210)
+
+不断补充中～～～
+欢迎推荐那些打动你的好文章 anwen.in@gmail.com
+另外，好书分享在<http://anwensf.com/share/12>

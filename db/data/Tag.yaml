@@ -1,8 +1,3 @@
-- _id: 51fe5630606ec52b951bb144
-  hittime: 1375622704.372741
-  id: 1
-  name: list
-  share_ids: '8'
 - _id: 51fe5630606ec52b951bb145
   hittime: 1375622704.37614
   id: 2
@@ -38,3 +33,13 @@
   id: 8
   name: post-share
   share_ids: '10'
+- _id: 51fe5630606ec52b951bb144
+  hittime: 1375622704.372741
+  id: 1
+  name: list
+  share_ids: 8 12 12 10
+- _id: 52468bfd606ec5050a91b7e5
+  hittime: 1380355069.632609
+  id: 9
+  name: book
+  share_ids: '12'

@@ -2,7 +2,7 @@
   commentnum: 1
   content: null
   dislikenum: 0
-  hitnum: 1223
+  hitnum: 1315
   id: 17
   likenum: 0
   link: ''
@@ -33,7 +33,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 669
+  hitnum: 714
   id: 16
   likenum: 0
   link: ''
@@ -93,7 +93,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 686
+  hitnum: 740
   id: 14
   likenum: 0
   link: ''
@@ -113,11 +113,33 @@
   updated: 1357228091.008947
   upload_img: null
   user_id: 1
+- _id: 50e44d08606ec51c6ab042dd
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 580
+  id: 7
+  likenum: 0
+  link: ''
+  markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
+    评论：1叶（todo）"
+  post_img: null
+  published: 1349430154.0
+  score: 3.678
+  sharetype: fire
+  slug: about-anye
+  status: 0
+  suggestscore: 0.0
+  tags: ask
+  title: !!python/str '桉叶说明'
+  updated: 1357223662.862296
+  upload_img: null
+  user_id: 1
 - _id: 50e44d08606ec51c6ab042e3
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 722
+  hitnum: 783
   id: 13
   likenum: 0
   link: ''
@@ -142,7 +164,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 559
+  hitnum: 627
   id: 9
   likenum: 0
   link: ''
@@ -161,33 +183,11 @@
   updated: 1357223468.495826
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042dd
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 539
-  id: 7
-  likenum: 0
-  link: ''
-  markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
-    评论：1叶（todo）"
-  post_img: null
-  published: 1349430154.0
-  score: 3.678
-  sharetype: fire
-  slug: about-anye
-  status: 0
-  suggestscore: 0.0
-  tags: ask
-  title: !!python/str '桉叶说明'
-  updated: 1357223662.862296
-  upload_img: null
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042db
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 1153
+  hitnum: 1279
   id: 5
   likenum: 0
   link: ''
@@ -212,7 +212,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 567
+  hitnum: 607
   id: 2
   likenum: 0
   link: ''
@@ -236,7 +236,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 557
+  hitnum: 605
   id: 1
   likenum: 1
   link: ''
@@ -260,7 +260,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 1219
+  hitnum: 1275
   id: 11
   likenum: 0
   link: ''
@@ -291,7 +291,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 1320
+  hitnum: 1422
   id: 4
   likenum: 0
   link: ''
@@ -343,7 +343,7 @@
   commentnum: 1
   content: null
   dislikenum: 0
-  hitnum: 678
+  hitnum: 728
   id: 18
   likenum: 0
   link: ''
@@ -364,7 +364,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 576
+  hitnum: 630
   id: 6
   likenum: 1
   link: ''
@@ -420,7 +420,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 535
+  hitnum: 580
   id: 19
   likenum: 0
   link: ''
@@ -471,7 +471,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 509
+  hitnum: 561
   id: 21
   likenum: 0
   link: ''
@@ -502,7 +502,7 @@
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 603
+  hitnum: 653
   id: 22
   likenum: 1
   link: ''
@@ -541,7 +541,7 @@
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 526
+  hitnum: 566
   id: 20
   likenum: 0
   link: ''
@@ -590,7 +590,7 @@
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 736
+  hitnum: 789
   id: 15
   likenum: 0
   link: ''
@@ -616,7 +616,7 @@
   commentnum: 1
   content: ''
   dislikenum: 0
-  hitnum: 1363
+  hitnum: 1492
   id: 3
   likenum: 0
   link: ''
@@ -661,92 +661,11 @@
   updated: 1376306742.522177
   upload_img: ''
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e2
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 720
-  id: 12
-  likenum: 0
-  link: ''
-  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍\r\n\r\n### 小说\r\n\
-    * 悟空传\r\n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 莱博维茨的赞歌\r\n* 真名实姓\r\n* 沧浪之水\r\n* 基地\r\
-    \n* 球状闪电\r\n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n\r\n### 短篇小说\r\n* 当生命气息逗留\r\
-    \n* 闪光的生命\r\n* 一日囚\r\n* 朝闻道\r\n* 诗云\r\n* 春日泽・云梦山\r\n* 伤心者\r\n* 带上她的眼睛\r\n* 地球大炮\r\
-    \n* 圆圆的肥皂泡\r\n* 废楼十三层\r\n\r\n### 小说集\r\n大师的盛宴\r\n\r\n### 杂文集\r\n* [「想想」创刊号 简书官方提供epub](http://jianshu.io/p/vJRdKw)\r\
-    \n* 黑客与画家\r\n* 重来：更为简单有效的商业思维 <http://37signals.com/rework>(官方提供英文pdf版，网站在墙外，这个也墙？)\
-    \ <http://www.v2ex.com/rework>(中文翻译版)\r\n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\
-    \n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
-    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
-    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n<https://groups.google.com/forum/?fromgroups=#!forum/skindle>\r\
-    \n\r\n\r\n不断补充中～～～\r\n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书或者文章，\
-    \ anwen.in@gmail.com"
-  post_img: 20130814_193147_736898_1200.jpg
-  published: 1349432059.0
-  score: 6.306
-  sharetype: book
-  slug: book-share
-  status: 0
-  suggestscore: 0.0
-  tags: list
-  title: !!python/str '推荐好书'
-  updated: 1376479938.754998
-  upload_img: ''
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042e0
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 729
-  id: 10
-  likenum: 0
-  link: ''
-  markdown: !!python/str "### 阅读\r\n- [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)\r\
-    \n- [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)\r\
-    \n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
-    \ )\r\n- [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
-    \n- [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
-    \n- [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
-    \n- [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n- [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
-    \n- [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n- [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
-    \n- [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
-    \n- [纪录片《Minecraft：Mojang的故事》](http://www.ruanyifeng.com/blog/2012/12/minecraft_the_story_of_mojang.html)\r\
-    \n- [提高效率的秘诀 by Aaron Swartz](http://www.yesen.org/?p=171)\r\n- [给我未来的孩子](http://yue.fm/p9pdw)\r\
-    \n- [Graph Search能成为Facebook的杀手锏么？](http://www.yesen.org/?p=211)\r\n- [打破信息的牢笼](http://www.yesen.org/?p=204)\r\
-    \n- [空气有毒：PM 2.5、健康和科学松鼠会](http://www.yesen.org/?p=156)\r\n- [沉浮于江湖–读野夫《乡关何处》](http://www.yesen.org/?p=151)\r\
-    \n- [Kindle vs iPad：电子书将何去何从？](http://www.yesen.org/?p=146)\r\n- [旅行，写作，编程](http://www.aqee.net/traveling-writing-programming/)\r\
-    \n- [《Linus Torvalds自传》摘录](http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html)\r\
-    \n- [Michael S. Hart去世了](http://www.ruanyifeng.com/blog/2011/09/michael_s_hart_passed_away.html)\r\
-    \n- [自由引导网络，我们即将到来](http://www.solidot.org/story?sid=12063)\r\n- [不会沉没的海盗湾](http://www.ruanyifeng.com/blog/2010/05/an_unsinkable_tpb.html)\r\
-    \n- [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)\r\n\r\n### 短篇小说\r\n\
-    - [日暮](http://www.douban.com/group/topic/15321855/)\r\n- [漫长的消逝](www.douban.com/group/topic/12341290/)\r\
-    \n- [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
-    \n- [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
-    \n\r\n### 视频\r\n- [自然纪录片《Mythos Wald》](http://www.biubiubiubiu.com/post/227)\r\
-    \n\r\n### 图片\r\n- [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)\r\
-    \n\r\n### 生活\r\n- [那些应该时刻牢记的事](http://heikezhi.com/yuanyi/5-things-you-should-always-remember)\r\
-    \n- [橙汁配料表的秘密](http://heikezhi.com/yuanyi/secret-ingredient-your-orange-juice)\r\
-    \n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n- [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
-    \n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n- [程序员能力矩阵 Programmer\
-    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
-    \n\r\n不断补充中，欢迎大家的推荐，anwen.in@gmail.com"
-  post_img: ''
-  published: 1349430399.0
-  score: 5.318
-  sharetype: eyeopen
-  slug: post-share
-  status: 0
-  suggestscore: 0.0
-  tags: ''
-  title: !!python/str '好文链接'
-  updated: 1377708919.066176
-  upload_img: ''
-  user_id: 1
 - _id: 50e44d08606ec51c6ab042de
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 660
+  hitnum: 707
   id: 8
   likenum: 0
   link: ''
@@ -790,5 +709,93 @@
   tags: list site
   title: !!python/str '站点分享'
   updated: 1377962652.766398
+  upload_img: ''
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e2
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 772
+  id: 12
+  likenum: 0
+  link: ''
+  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍, 欢迎补充\r\n\r\n###\
+    \ 小说\r\n* 悟空传\r\n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 真名实姓\r\n* 莱博维茨的赞歌\r\n* 基地\r\n\
+    * 球状闪电\r\n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n* 沧浪之水\r\n- [Alice in Wonderland](http://www.magicscroll.net/#reader;md5=f97887c911bd1da2b07ea9b2eea3fdad)\r\
+    \n\r\n### 中篇小说\r\n- [博上灯 - 斩鞍](http://read.douban.com/ebook/2856/) 豆瓣阅读免费作品\r\n\
+    - [中国式青春 - 今何在](http://read.douban.com/ebook/3341/) 豆瓣阅读免费作品\r\n- [The Algorithms\
+    \ For Love - 刘宇昆](http://read.douban.com/ebook/311371/) 豆瓣阅读免费作品\r\n- [春日泽·云梦山·仲昆\
+    \ - 拉拉](http://read.douban.com/ebook/367102/)\r\n- [真空跳跃 - 拉拉](http://read.douban.com/ebook/369403/)\r\
+    \n- [Single-bit Error](http://read.douban.com/ebook/311646/)\r\n\r\n### 小说集\r\n\
+    大师的盛宴\r\n\r\n### 设计\r\n* 设计中的设计 书评：<http://sofish.de/2243>\r\n\r\n### 科技\r\n*\
+    \ Creative Commons - A Shared Culture <http://github.readium.org/viewer.html?book=shared_culture#>\r\
+    \n\r\n### 杂文集\r\n* 黑客与画家\r\n* 重来：更为简单有效的商业思维 <http://37signals.com/rework>(官方提供英文pdf版，网站在墙外，这个也墙？)\
+    \ <http://www.v2ex.com/rework>(中文翻译版)\r\n* 失控：机器、社会与经济的新生物学\r\n* 数学之美\r\n* 暗时间\r\
+    \n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n* 「想想」创刊号 [简书官方提供epub](http://jianshu.io/p/vJRdKw)\r\
+    \n\r\n### 杂志\r\n- [新幻界 VOL.31 给岁月以幻想给幻想以未来](http://read.douban.com/ebook/575705/)\
+    \ 豆瓣阅读免费作品\r\n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
+    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
+    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n不断补充中～～～\r\
+    \n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书 anwen.in@gmail.com\r\n另外，好文分享在<http://anwensf.com/share/10>"
+  post_img: 20130814_193147_736898_1200.jpg
+  published: 1349432059.0
+  score: 6.306
+  sharetype: book
+  slug: book-share
+  status: 0
+  suggestscore: 0.0
+  tags: list book
+  title: !!python/str '推荐好书'
+  updated: 1380355069.5916
+  upload_img: ''
+  user_id: 1
+- _id: 50e44d08606ec51c6ab042e0
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 793
+  id: 10
+  likenum: 0
+  link: ''
+  markdown: !!python/str "### 各种文章\r\n- [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)\r\
+    \n- [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)\r\
+    \n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n- [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
+    \n- [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
+    \n- [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
+    \n- [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n- [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
+    \n- [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n- [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
+    \n- [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
+    \n- [纪录片《Minecraft：Mojang的故事》](http://www.ruanyifeng.com/blog/2012/12/minecraft_the_story_of_mojang.html)\r\
+    \n- [提高效率的秘诀 by Aaron Swartz](http://www.yesen.org/?p=171)\r\n- [给我未来的孩子](http://yue.fm/p9pdw)\r\
+    \n- [Graph Search能成为Facebook的杀手锏么？](http://www.yesen.org/?p=211)\r\n- [打破信息的牢笼](http://www.yesen.org/?p=204)\r\
+    \n- [空气有毒：PM 2.5、健康和科学松鼠会](http://www.yesen.org/?p=156)\r\n- [沉浮于江湖–读野夫《乡关何处》](http://www.yesen.org/?p=151)\r\
+    \n- [Kindle vs iPad：电子书将何去何从？](http://www.yesen.org/?p=146)\r\n- [旅行，写作，编程](http://www.aqee.net/traveling-writing-programming/)\r\
+    \n- [《Linus Torvalds自传》摘录](http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html)\r\
+    \n- [Michael S. Hart去世了](http://www.ruanyifeng.com/blog/2011/09/michael_s_hart_passed_away.html)\r\
+    \n- [自由引导网络，我们即将到来](http://www.solidot.org/story?sid=12063)\r\n- [不会沉没的海盗湾](http://www.ruanyifeng.com/blog/2010/05/an_unsinkable_tpb.html)\r\
+    \n- [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)\r\n\r\n### 短篇小说\r\n\
+    - [日暮](http://www.douban.com/group/topic/15321855/)\r\n- [漫长的消逝](www.douban.com/group/topic/12341290/)\r\
+    \n- [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
+    \n- [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
+    \n\r\n### 视频\r\n- [自然纪录片《Mythos Wald》](http://www.biubiubiubiu.com/post/227)\r\
+    \n\r\n### 图片\r\n- [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)\r\
+    \n\r\n### 生活\r\n- [那些应该时刻牢记的事](http://heikezhi.com/yuanyi/5-things-you-should-always-remember)\r\
+    \n- [橙汁配料表的秘密](http://heikezhi.com/yuanyi/secret-ingredient-your-orange-juice)\r\
+    \n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n- [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
+    \n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n- [程序员能力矩阵 Programmer\
+    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n### 大千世界的故事&新闻\r\n- [极客流浪汉与比特币的故事](http://www.ifanr.com/350210)\r\n\r\n\
+    不断补充中～～～\r\n欢迎推荐那些打动你的好文章 anwen.in@gmail.com\r\n另外，好书分享在<http://anwensf.com/share/12>"
+  post_img: ''
+  published: 1349430399.0
+  score: 5.318
+  sharetype: eyeopen
+  slug: post-share
+  status: 0
+  suggestscore: 0.0
+  tags: list
+  title: !!python/str '好文链接'
+  updated: 1380355126.756333
   upload_img: ''
   user_id: 1
