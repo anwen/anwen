@@ -14,25 +14,6 @@ s_hellos = ['你好', 'hello', 'hi']
 e_happys = [':)', '^_^', 'O(∩_∩)O', '(◕‿‿◕)']
 
 
-def modal(id, info):
-    modal = ''.join([
-        '<div id="', id, '" class="modal hide fade" tabindex="-1" '
-        'role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'
-        '<div class="modal-header">',
-        '<button type="button" class="close" data-dismiss="modal" ',
-        'aria-hidden="true">',
-        '&times;</button>',
-        '</div>',
-        '<div class="modal-body" background-color="#eee"><pre>', info,
-        '</pre></div>',
-        '<div class="modal-footer">',
-        '<button class="btn" data-dismiss="modal">Close</button>',
-        '</div>',
-        '</div>',
-    ])
-    return modal
-
-
 def firstface():
     firsthello_list = ['Hello', 'Hi']
     firsthello = random.choice(firsthello_list)
@@ -112,9 +93,10 @@ def song(usersay):
 
 
 def get_song(songname, artist):
+        q = '%s+%s'.encode('utf-8') % (songname,artist)
         image_url = ''.join([
             'http://api.douban.com/music/subjects?q=',
-            urllib.quote(songname.encode('utf-8')),
+            q,
             '&alt=json&start-index=1&max-results=1',
         ])
         http_client = httpclient.HTTPClient()
@@ -132,26 +114,6 @@ def get_song(songname, artist):
         singer = ''
         if artist:
             singer = '&singer=' + urllib.quote(artist.encode('gbk'))
-        lyric_url = ''.join([
-            'http://cgi.music.soso.com/fcgi-bin/'
-            'fcg_download_lrc.q?song=',
-            urllib.quote(songname.encode('gbk')),
-            singer,
-            '&down=1',
-        ])
-        try:
-            response = http_client.fetch(lyric_url)
-        except httpclient.HTTPError as e:
-            print "Error:", e
-
-        if response.code == 200:
-            lyric = response.body.decode('gbk')  # .encode('utf-8')
-            lyric_link = ''.join([
-                u'<a data-toggle="modal" href="#lyric">',
-                u'<span>查看歌词</span></a>',
-            ])
-            lyric = modal('lyric', lyric)
-            lyric_link += lyric
 
         artist_u = ''
         if artist:
@@ -165,7 +127,8 @@ def get_song(songname, artist):
             artist_u,
             '" type="application/x-shockwave-flash"></p>'
         ])
-        return music_image, lyric_link, songbox
+        link = '<br/>'
+        return music_image, link, songbox
 
 
 def trans(usersay, userlang):

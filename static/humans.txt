@@ -1,0 +1,36 @@
+/* About */
+	Aim: Create and share something nice
+
+
+/* TEAM */
+	Name: Anwen
+	Twitter: @
+	Contact: anwen.in[@]gmail.com
+	From: Some Nebula
+
+	Chef: Askender and anyone help anwen 
+	Contact: askender43[@]gmail.com
+	Twitter: @askender
+	From: Wuhan, China, Earth
+
+	UI developer: Waiting for you
+	Twitter: @
+	From: 
+
+	Web Designer: Waiting for you
+	Twitter: @
+	From: 
+
+
+/* THANKS */
+	Thanks China, Thanks communist party. (black joke)
+	Thank people who make wonder
+
+
+/* SITE */
+	Last update:2013/10/14
+	Language: Chinese / English
+	Doctype:HTML5
+	Standards: HTML5, CSS3, Restful, KISS, DRY
+	Technology: Python, Mongodb
+	Tools: Sublime Text, vim, Chromium, Mint
