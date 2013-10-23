@@ -6,12 +6,12 @@
 *.log
 *~
 *.swp
+*.tar.gz
 
 # private files
 server_setting.py
 User.yaml
 Admin.yaml
-*.tar.gz
 
 #upload-img avatar
 /static/upload/img/*

@@ -51,9 +51,9 @@ cd /var/www/anwen
 mongo
 use admin
 db.system.users.find()
-db.addUser('sa','sa')   
+db.addUser('sa','key')   
 use anwen
-db.auth("aw", "")
+db.auth("aw", "key")
 db.getCollectionNames()
 db.Admin_Col.drop()
 db.Comment_Col.drop()
@@ -69,15 +69,8 @@ df -lh
 ls -sSh
 du -s ./*|sort -rn
 
-
-# LNMP状态管理： /root/lnmp {start|stop|reload|restart|kill|status}
-# Nginx状态管理：/etc/init.d/nginx {start|stop|reload|restart}
-# PHP-FPM状态管理：/etc/init.d/php-fpm {start|stop|quit|restart|reload|logrotate}
-# PureFTPd状态管理： /etc/init.d/pureftpd {start|stop|restart|kill|status}
-# MySQL状态管理：/etc/init.d/mysql {start|stop|restart|reload|force-reload|status}
-# Memcached状态管理：/etc/init.d/memcached {start|stop|restart}
-
-deploy at server:
+# deploy at server:
+mkdir /var/www/anwen
 cd /var/www/anwen
 git init .
 git config receive.denyCurrentBranch ignore
@@ -90,7 +83,11 @@ cd ../..
 git checkout master
 
 at local:
-git remote rm prod
-git remote add prod root@113.11.199.77:/var/www/anwen/
-git push prod
+git remote rm pro
+git remote add pro aaw:/var/www/anwen/
+git push pro
 
+scp conf/nginx.conf aaw:/etc/nginx
+scp options/server_setting.py aaw:/var/www/anwen/options
+
+export LC_ALL="C"

@@ -32,3 +32,6 @@ requests
 
 ### dev
 # flake8
+
+### ande
+sympy

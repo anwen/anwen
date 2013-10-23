@@ -17,9 +17,10 @@ def commit():
     except:
         pass
 
+
 def push():
-    local("git push aw_gh")
-    local("git push prod")
+    local("git push origin master")
+    local("git push pro")
 
 
 @task
