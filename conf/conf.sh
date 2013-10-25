@@ -2,14 +2,6 @@
 sudo npm install -g less
 sudo npm install -g uglify-js
 
-
-scp conf/nginx.conf aw:/usr/local/nginx/conf/nginx.conf
-/etc/init.d/nginx reload
-scp aw:/var/www/anwen/options/server_setting.py ~/
-scp ~/develop/anwen_begin/options/server_setting.py aw:/var/www/anwen/options/server_setting.py 
-
-
-
 # 由于使用了webservice，nginx需要重新编译新的模块才能支持，使用了haproxy。
 # haproxy来监听80端口，将http请求转发至82端口并由nginx来监听。
 
@@ -19,11 +11,6 @@ rpm -ivh http://dl.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 yum -y install haproxy
 scp ~/develop/anwen/conf/haproxy.cfg aw:/etc/haproxy/haproxy.cfg
 /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
-
-scp ~/develop/anwen/conf/supervisord.conf aw:/etc/supervisord.conf
-for i in {6..9}
-    do supervisorctl -c supervisord.conf restart anwen:myapp$i
-done
 
 # For 64-bit yum源配置：
 vi /etc/yum.repos.d/10gen.repo
@@ -87,7 +74,19 @@ git remote rm pro
 git remote add pro aaw:/var/www/anwen/
 git push pro
 
-scp conf/nginx.conf aaw:/etc/nginx
 scp options/server_setting.py aaw:/var/www/anwen/options
+scp -r static/upload/img aaw:/var/www/anwen/static/upload/
+scp db/data/User.yaml aaw:/var/www/anwen/db/data/
+scp db/data/Admin.yaml aaw:/var/www/anwen/db/data/
 
-export LC_ALL="C"
+# scp conf/nginx.conf aw:/usr/local/nginx/conf/nginx.conf
+scp conf/nginx.conf aaw:/etc/nginx
+/etc/init.d/nginx reload
+
+mkdir /home/anwen
+
+scp conf/supervisord.conf aaw:/etc/supervisord.conf
+for i in {1..2}
+    do supervisorctl -c supervisord.conf restart anwen:anwen$i
+done
+supervisorctl restart all
