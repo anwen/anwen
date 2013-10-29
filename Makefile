@@ -35,7 +35,7 @@ start:
 	@echo "starting anwen"
 	python hello.py
 
-co:
+ci:
 	@echo "starting commit"
 	fab commit
 

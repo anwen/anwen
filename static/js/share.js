@@ -1,12 +1,12 @@
-$.fn.toggleClick = function(){
+$.fn.toggleClick = function() {
 
-    var functions = arguments ;
+    var functions = arguments;
 
-    return this.click(function(){
-            var iteration = $(this).data('iteration') || 0;
-            functions[iteration].apply(this, arguments);
-            iteration = (iteration + 1) % functions.length ;
-            $(this).data('iteration', iteration);
+    return this.click(function() {
+        var iteration = $(this).data('iteration') || 0;
+        functions[iteration].apply(this, arguments);
+        iteration = (iteration + 1) % functions.length;
+        $(this).data('iteration', iteration);
     });
 };
 //---------------------------------
@@ -14,14 +14,14 @@ $.fn.toggleClick = function(){
 //---------------------------------
 $('#switchImgWrap').toggleClick(
 
-    function () {
+    function() {
         $(this).html('取消上传');
         if ($('.post_image_upload_wrap').css('display') == 'none') {
             $('.post_image_upload_wrap').show();
         }
     },
 
-    function () {
+    function() {
         $(this).html('上传图片');
         if ($('.post_image_upload_wrap').css('display') == 'block') {
             $('.post_image_upload_wrap').hide();
@@ -50,7 +50,7 @@ dropbox.filedrop({
     maxfiles: 1,
     maxfilesize: 2, //最大2M
     url: '/share/image_upload',
-    uploadFinished: function (i, file, response) {
+    uploadFinished: function(i, file, response) {
         if (response.status == 's') {
             alert(response.info);
             $(".preview").remove();
@@ -82,7 +82,7 @@ dropbox.filedrop({
             $('.upload_btn').hide();
 
             $('.del_post_img, .save_post_img_btn').show();
-            setTimeout(function () {
+            setTimeout(function() {
                 $('.uploaded, .progressHolder').fadeOut(250);
             }, 1000);
 
@@ -91,37 +91,37 @@ dropbox.filedrop({
 
     },
 
-    error: function (err, file) {
+    error: function(err, file) {
         switch (err) {
-        case 'BrowserNotSupported':
-            showMessage('你的浏览器不支持HTML5上传');
-            break;
-        case 'TooManyFiles':
-            alert('添加一张就可以了');
-            break;
-        case 'FileTooLarge':
-            alert(file.name + ' 太大了，请上传不超过2M的');
-            break;
-        default:
-            break;
+            case 'BrowserNotSupported':
+                showMessage('你的浏览器不支持HTML5上传');
+                break;
+            case 'TooManyFiles':
+                alert('添加一张就可以了');
+                break;
+            case 'FileTooLarge':
+                alert(file.name + ' 太大了，请上传不超过2M的');
+                break;
+            default:
+                break;
         }
     },
 
-    beforeEach: function (file) {
+    beforeEach: function(file) {
         if (!file.type.match(/^image\//)) {
             alert('Only images are allowed!');
             return false;
         }
     },
 
-    uploadStarted: function (i, file, len) {
+    uploadStarted: function(i, file, len) {
         createImage(file);
         $(".post_image_upload_1").css({
             'background': 'none'
         });
     },
 
-    progressUpdated: function (i, file, progress) {
+    progressUpdated: function(i, file, progress) {
         $.data(file).find('.progress').width(progress);
     }
 
@@ -134,7 +134,7 @@ function createImage(file) {
 
     var reader = new FileReader();
 
-    reader.onload = function (e) {
+    reader.onload = function(e) {
 
     };
 
@@ -158,11 +158,11 @@ function showMessage(msg) {
 //---------------------------------
 //-----------点击上传图片-----------
 //---------------------------------
-$("#upload_file_hide").change(function () {
+$("#upload_file_hide").change(function() {
     //创建FormData对象
     var data = new FormData();
     //为FormData对象添加数据
-    $.each($('#upload_file_hide')[0].files, function (i, file) {
+    $.each($('#upload_file_hide')[0].files, function(i, file) {
         data.append('uploadImg', file);
     });
     $(".post_image_upload").css({
@@ -176,7 +176,7 @@ $("#upload_file_hide").change(function () {
         contentType: false, //不可缺
         processData: false, //不可缺
         dataType: "json",
-        success: function (response) {
+        success: function(response) {
 
             if (response.status == 's') {
                 alert(response.info);
@@ -200,7 +200,7 @@ $("#upload_file_hide").change(function () {
                 $('.del_post_img').show();
             }
         },
-        error: function () {
+        error: function() {
             alert("请检查文件格式或者文件大小，目前只支持jpg/gif/jpeg/png/bmp格式的图片。不能超过2M");
             $('.message').show();
             $('.post_image_upload').css({
@@ -235,7 +235,7 @@ function DeletePostImg() {
             img_name: d
         },
         dataType: "text",
-        success: function (mes) {
+        success: function(mes) {
             if (mes == 's') {
                 //恢复上传容器的原始大小
                 $('.post_image_upload_wrap').attr('style', '');
@@ -255,7 +255,7 @@ function DeletePostImg() {
 
             }
         },
-        error: function () {
+        error: function() {
             alert('出错，可能是服务器那边出问题了，请联系管理员');
         }
     });
@@ -267,7 +267,7 @@ function DeletePostImg() {
 $(".del_post_img").click(DeletePostImg);
 
 
-$(document).ready(function () {
+$(document).ready(function() {
     JudgeCheck();
     CheckImg();
 });

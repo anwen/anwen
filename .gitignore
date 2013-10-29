@@ -9,6 +9,7 @@
 *.tar.gz
 
 # private files
+.idea
 server_setting.py
 User.yaml
 Admin.yaml

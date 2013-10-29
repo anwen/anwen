@@ -81,12 +81,18 @@ function getCookie(name) {
 
 jQuery.postJSON = function(url, args, callback) {
     args._xsrf = getCookie("_xsrf");
-    $.ajax({url: url, data: $.param(args), dataType: "text", type: "POST",
-            success: function(response) {
-        if (callback) callback(eval("(" + response + ")"));
-    }, error: function(response) {
-        console.log("ERROR:", response)
-    }});
+    $.ajax({
+        url: url,
+        data: $.param(args),
+        dataType: "text",
+        type: "POST",
+        success: function(response) {
+            if (callback) callback(eval("(" + response + ")"));
+        },
+        error: function(response) {
+            console.log("ERROR:", response)
+        }
+    });
 };
 
 jQuery.fn.formToDict = function() {
@@ -120,13 +126,13 @@ var updaters = {
     start: function() {
         var url = "ws://" + location.host + "/chatsocket";
         if ("WebSocket" in window) {
-        updater.socket = new WebSocket(url);
+            updater.socket = new WebSocket(url);
         } else {
             updater.socket = new MozWebSocket(url);
         }
-    updater.socket.onmessage = function(event) {
-        updater.showMessage(JSON.parse(event.data));
-    }
+        updater.socket.onmessage = function(event) {
+            updater.showMessage(JSON.parse(event.data));
+        }
     },
 
     showMessage: function(message) {
@@ -144,11 +150,18 @@ var updater = {
     cursor: null,
 
     poll: function() {
-        var args = {"_xsrf": getCookie("_xsrf")};
+        var args = {
+            "_xsrf": getCookie("_xsrf")
+        };
         if (updater.cursor) args.cursor = updater.cursor;
-        $.ajax({url: "/a/message/updates", type: "POST", dataType: "text",
-                data: $.param(args), success: updater.onSuccess,
-                error: updater.onError});
+        $.ajax({
+            url: "/a/message/updates",
+            type: "POST",
+            dataType: "text",
+            data: $.param(args),
+            success: updater.onSuccess,
+            error: updater.onError
+        });
     },
 
     onSuccess: function(response) {
