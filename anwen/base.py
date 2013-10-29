@@ -150,7 +150,6 @@ class CommonResourceHandler(JSONHandler):
             cur = cur.sort(_sort.strip('-+'), direction)
 
         res = []
-
         res = cur
 
         if _start and _limit:

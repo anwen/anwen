@@ -33,7 +33,7 @@ def deploy():
 @hosts(['aw'])
 @task
 def back_data():
-    ''' backup data from aw mongo '''
+    """ backup data from aw mongo """
     with cd('/var/www/anwen/db'):
         run('chmod +x db_in_out.py')
         run('./db_in_out.py -o')
@@ -58,7 +58,7 @@ def back_data():
 
 @task
 def nginx(todo):
-    ''' nginx:todo= '''
+    """ nginx:todo= """
     # fab -H aw nginx:todo=start
     sudo('/etc/init.d/nginx %s' % todo)
 
@@ -66,7 +66,7 @@ def nginx(todo):
 @hosts(['aw'])
 @task
 def update_nginx():
-    ''' update_nginx '''
+    """ update_nginx """
     nginx_file = os.path.join(os.getcwd(), 'conf/nginx.conf')
     put(nginx_file, '/usr/local/nginx/conf/nginx.conf')
     sudo('/etc/init.d/nginx reload')

@@ -64,8 +64,7 @@ class DoubanMixin(OAuth2Mixin):
                                   grant_type=None, extra_params=None):
         pass
 
-    def _on_access_token(self, redirect_uri, client_id, client_secret,
-                         future, fields, response):
+    def _on_access_token(self, future, fields, response):
         if response.error:
             future.set_exception(AuthError(
                 'Douban auth error %s' % str(response)))

@@ -88,7 +88,7 @@ def cal(exp):
         i = 15
         while len(ans) > AI_ARITHMETIC_MAX_LEN_EXP:
             ans = str(ansexp.evalf(i)).replace('**', '^')
-            i = i - 1
+            i -= 1
             if i <= 0:
                 break
 
@@ -106,7 +106,7 @@ def cal(exp):
         # TODO:
         #    Any logging convention in this project? We should log the
         #    error for further investigation
-        print e
+        print(e)
         return '好复杂~不会 ╮(︶︿︶)╭'
 
 if __name__ == '__main__':
@@ -125,4 +125,4 @@ if __name__ == '__main__':
     ]
 
     for data in datas:
-        print data['usersay'], handle(data)
+        print(data['usersay'], handle(data))

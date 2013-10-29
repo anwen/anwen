@@ -46,7 +46,7 @@ parser.add_argument(
 )
 
 
-def sig_handler(sig, frame):
+def sig_handler(sig):
     logger.warning('Caught signal: %s', sig)
     tornado.ioloop.IOLoop.instance().add_callback(shutdown)
 

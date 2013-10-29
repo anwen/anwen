@@ -103,7 +103,7 @@ def get_song(songname, artist):
         try:
             response = http_client.fetch(image_url)
         except httpclient.HTTPError as e:
-            print "Error:", e
+            print("Error:", e)
         if response.code == 200:
             res = jload(response.body)
             music_image = res['entry'][0]['link'][2]['@href']

@@ -100,4 +100,4 @@ if __name__ == '__main__':
         {'usersay': '什么是薛定谔方程啊'},
     ]
     for data in datas:
-        print data['usersay'], handle(data)
+        print(data['usersay'], handle(data))

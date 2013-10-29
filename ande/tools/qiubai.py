@@ -55,6 +55,6 @@ if __name__ == '__main__':
         {'usersay': u'给我讲个笑话吧'},
     ]
     for data in datas:
-        print data['usersay']
+        print(data['usersay'])
         if test(data):
-            print handle(data)
+            print(handle(data))

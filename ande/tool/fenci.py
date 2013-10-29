@@ -27,7 +27,8 @@ def main():
     nihao = nihao.encode("utf-8")
     data = {'data': nihao}
     data = post(posturl, data).decode("utf-8")
-    print data
+    print(data)
+
 
 if __name__ == '__main__':
     main()

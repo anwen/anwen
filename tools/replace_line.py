@@ -45,7 +45,7 @@ def main():
     args = sys.argv
     if len(args) < 2:
         print('Please enter the file names as parameters follow this script.')
-        os._exit(0)
+        os.exit(0)
     else:
         file_names = args[1:]
         for file_name in file_names:
@@ -53,7 +53,7 @@ def main():
                 print('Replace for %s successfully！' % file_name)
             else:
                 print('Replace for %s failed！' % file_name)
-    os._exit(1)
+    os.exit(1)
 
 if __name__ == '__main__':
     main()

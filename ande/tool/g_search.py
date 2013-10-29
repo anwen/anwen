@@ -33,4 +33,4 @@ if __name__ == '__main__':
     usersay = u'李白'.encode("utf-8")
     usersay = u'六四wiki'.encode("utf-8")
     result = g_search(usersay)
-    print result
+    print(result)

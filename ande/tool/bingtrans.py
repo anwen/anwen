@@ -64,6 +64,6 @@ def translate(text, source='', target='zh-cn', html=False):
 # you can get your AppID at: http://www.bing.com/developers/
 
 if __name__ == '__main__':
-    print translate('hello', 'en', 'zh-cn')
+    print(translate('hello', 'en', 'zh-cn'))
     usersay = u'你好'.encode("utf-8")
-    print translate(usersay, '', 'en')
+    print(translate(usersay, '', 'en'))

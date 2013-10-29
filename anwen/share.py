@@ -166,7 +166,7 @@ class EntryHandler(BaseHandler):
             for i in options.old_links:
                 if slug in i:
                     self.redirect('%s%s' % (old, i), permanent=True)
-                    break
+                    # break
                     return
             self.redirect("/404")
 

@@ -63,7 +63,7 @@ def weather1(city):
         tmax_1 = weather['future']['forecast'][1]['TMAX']
         tmin_1 = weather['future']['forecast'][1]['TMIN']
         if wea_1a == wea_1b:
-            wea_1 = u'整天%s' % (wea_1a)
+            wea_1 = u'整天%s' % wea_1a
         else:
             wea_1 = u'%s转%s' % (wea_1a, wea_1b)
         weather = u'今天天气是%s,%s到%s摄氏度' % (wea_0, tmin_0, tmax_0)
@@ -106,4 +106,4 @@ if __name__ == '__main__':
         {'usersay': u'北京天气怎么样'},
     ]
     for data in datas:
-        print data['usersay'], test(data), handle(data)
+        print(data['usersay'], test(data), handle(data))

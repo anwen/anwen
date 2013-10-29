@@ -112,6 +112,9 @@ class MsgUpdatesHandler(BaseHandler, MessageMixin):
 
 
 class ChatSocketHandler(tornado.websocket.WebSocketHandler, BaseHandler):
+    def __init__(self):
+        pass
+
     waiters = set()
     cache = []
     cache_size = 200
@@ -159,7 +162,7 @@ def send_message(msg):
         'user_id': msg['user_id'],
         'body': msg['body'],
     }
-    talk = talk.new(doc)
+    talk.new(doc)
     for waiter in ChatSocketHandler.waiters:
         try:
             waiter.write_message(msg)

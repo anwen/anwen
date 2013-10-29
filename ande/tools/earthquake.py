@@ -68,4 +68,4 @@ if __name__ == '__main__':
         {'usersay': '最后一个问题'},
     ]
     for data in datas:
-        print data['usersay'], handle(data)
+        print(data['usersay'], handle(data))

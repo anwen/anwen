@@ -16,5 +16,5 @@ def get_ipinfo(ip=None):
 
 if __name__ == '__main__':
 
-    print get_ande_ip()
-    print get_ipinfo('')
+    print(get_ande_ip())
+    print(get_ipinfo(''))

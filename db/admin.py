@@ -41,7 +41,7 @@ def delete_share(share_id):
         if not share:
             return False
         share['status'] = 3  # means hide
-        share = share.save()
+        share.save()
 
 
 def delete_share_by_s(share_id):

@@ -45,9 +45,9 @@ def test(data):
 def get_desc(cityname, cityshort):
     r = urllib2.urlopen(
         'http://www.aqicn.info/?city=%s&lang=cn' %
-        (cityshort), timeout=60)
+        cityshort, timeout=60)
     p = r.read()
-    m = re.search('%s[^"]*的空气质量([^"]*)' % (cityname), p)
+    m = re.search('%s[^"]*的空气质量([^"]*)' % cityname, p)
     if m:
         return m.group(0)
     else:
@@ -74,4 +74,4 @@ if __name__ == '__main__':
     ]
 
     for data in datas:
-        print data['usersay'], handle(data)
+        print(data['usersay'], handle(data))
