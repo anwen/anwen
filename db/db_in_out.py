@@ -26,7 +26,7 @@ def make_doc():
                 title, re.sub(r'\r\n', r'\n', markdown))
             with open(filename, 'w') as share:
                 share.write(filebody)
-        print 'shares are markdownd'
+        print('shares are markdownd')
 
 
 def run_import(name):
@@ -42,7 +42,7 @@ def doc_import(doc):
     if d.find().count() == 0:
         if doc == 'User' and not os.path.isfile('data/' + doc + '.yaml'):
             doc = '%sSafe' % doc
-            print 'load usersafe'
+            print('load usersafe')
         docs = yaml.load(file('data/' + doc + '.yaml', 'r').read())
         for i in docs:
             i['_id'] = ObjectId(i['_id'])
@@ -50,7 +50,7 @@ def doc_import(doc):
                 i['user_email'] = ''
                 i['user_pass'] = ''
             d.new(i)
-        print '%s done' % doc
+        print('%s done' % doc)
 
 
 def run_export(name):
@@ -65,7 +65,7 @@ def run_export(name):
                 a = re.sub(r'  user_pass: \S*\n', '', input_file.read())
                 b = re.sub(r'  user_email: \S*\n', '', a)
                 output_file.write(b)
-        print 'users are safe'
+        print('users are safe')
     make_doc()
 
 

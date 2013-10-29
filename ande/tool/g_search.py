@@ -21,6 +21,7 @@ def g_search(usersay):
     # print 'Total results: %s' % data['cursor']['estimatedResultCount']
     hits = data['results']
     # print 'Top %d hits:' % len(hits)
+    r = None
     for h in hits:
         if u'。' in h['content']:
             r = h['content']  # 'via', h['url']

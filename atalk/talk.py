@@ -37,7 +37,8 @@ class MessageMixin(object):
     cache = []
     cache_size = 200
 
-    def wait_for_messages(self, callback, cursor=None):
+    @staticmethod
+    def wait_for_messages(callback, cursor=None):
         cls = MessageMixin
         if cursor:
             index = 0
@@ -51,7 +52,8 @@ class MessageMixin(object):
                 return
         cls.waiters.add(callback)
 
-    def cancel_wait(self, callback):
+    @staticmethod
+    def cancel_wait(callback):
         cls = MessageMixin
         cls.waiters.remove(callback)
 
@@ -112,6 +114,7 @@ class MsgUpdatesHandler(BaseHandler, MessageMixin):
 
 
 class ChatSocketHandler(tornado.websocket.WebSocketHandler, BaseHandler):
+
     def __init__(self):
         pass
 
@@ -119,7 +122,8 @@ class ChatSocketHandler(tornado.websocket.WebSocketHandler, BaseHandler):
     cache = []
     cache_size = 200
 
-    def allow_draft76(self):
+    @staticmethod
+    def allow_draft76():
         # for iOS 5.0 Safari
         return True
 

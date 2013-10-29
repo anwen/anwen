@@ -43,7 +43,7 @@ class FeedbackHandler(CommonResourceHandler):
 class ScoreHandler(BaseHandler):
     res = Share
 
-    def get(self, action):
+    def get(self):
         action = self.request.path[7:]
         share_res = Share.find()
         if 'add' in action:

@@ -93,18 +93,20 @@ def song(usersay):
 
 
 def get_song(songname, artist):
-        q = '%s+%s'.encode('utf-8') % (songname,artist)
+        q = '%s+%s'.encode('utf-8') % (songname, artist)
         image_url = ''.join([
             'http://api.douban.com/music/subjects?q=',
             q,
             '&alt=json&start-index=1&max-results=1',
         ])
         http_client = httpclient.HTTPClient()
+        response = None
+        music_image = None
         try:
             response = http_client.fetch(image_url)
         except httpclient.HTTPError as e:
             print("Error:", e)
-        if response.code == 200:
+        if response and response.code == 200:
             res = jload(response.body)
             music_image = res['entry'][0]['link'][2]['@href']
             music_image = '<img src="%s" style="float:left"/>' % music_image

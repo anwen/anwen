@@ -48,7 +48,7 @@ class DoubanMixin(OAuth2Mixin):
             'grant_type': grant_type,
         }
 
-        fields = set(['id', 'name', 'avatar'])
+        fields = {'id', 'name', 'avatar'}
 
         if extra_fields:
             fields.update(extra_fields)
@@ -85,7 +85,8 @@ class DoubanMixin(OAuth2Mixin):
             access_token=session['access_token'],
         )
 
-    def _on_get_user_info(self, future, session, fields, user):
+    @staticmethod
+    def _on_get_user_info(future, session, fields, user):
         if user is None:
             future.set_result(None)
             return
@@ -127,7 +128,8 @@ class DoubanMixin(OAuth2Mixin):
 
         http.fetch(request, callback=callback)
 
-    def _on_douban_request(self, future, response):
+    @staticmethod
+    def _on_douban_request(future, response):
         if response.error:
             future.set_exception(AuthError(
                 'Error response % fetching %s',
@@ -137,5 +139,6 @@ class DoubanMixin(OAuth2Mixin):
 
         future.set_result(escape.json_decode(response.body))
 
-    def get_auth_http_client(self):
+    @staticmethod
+    def get_auth_http_client():
         return httpclient.AsyncHTTPClient()

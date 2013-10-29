@@ -55,7 +55,7 @@ class BaseHandler(RequestHandler):
         self.set_cookie('lang', default)
         return default
 
-    def write_error(self, status_code, **kwargs):
+    def write_error(self, status_code):
         self.render('error.html', status_code=status_code)
         #     super(RequestHandler, self).write_error(status_code, **kwargs)
 
@@ -149,7 +149,6 @@ class CommonResourceHandler(JSONHandler):
             direction = DESCENDING if _sort.startswith('-') else ASCENDING
             cur = cur.sort(_sort.strip('-+'), direction)
 
-        res = []
         res = cur
 
         if _start and _limit:
@@ -186,7 +185,8 @@ class CommonResourceHandler(JSONHandler):
         self.set_status(201)
         self.write_json(self.post_post(res))
 
-    def post_post(self, res_obj):
+    @staticmethod
+    def post_post(res_obj):
         return res_obj
 
     def delete(self, rid=None):

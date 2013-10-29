@@ -33,7 +33,7 @@ def make_thumb(path):
     try:
         im = Image.open(path)
     except IOError:
-        print ' in  IOError'
+        print(' in  IOError')
         return
     mode = im.mode
     if mode not in ('L', 'RGB'):
@@ -75,7 +75,7 @@ def make_node_thumb(path):
     try:
         im = Image.open(path)
     except IOError:
-        print ' in  IOError'
+        print(' in  IOError')
         return
 
     mode = im.mode
@@ -110,16 +110,17 @@ def make_node_thumb(path):
     thumb.save(filename, quality=100)  # 默认 JPEG 保存质量是 75, 不太清楚。可选值(0~100)
 
 
-def make_post_thumb(path, sizes=[(1200, 550), (750, 230), (365, 230)]):
+def make_post_thumb(path, sizes=None):
     """
     生成post 1200x550 / 750x230 / 365x230 缩略图
     sizes 参数传递要生成的尺寸，可以生成多种尺寸
     """
+    if not sizes: sizes = [(1200, 550), (750, 230), (365, 230)]
     base, ext = os.path.splitext(path)
     try:
         im = Image.open(path)
     except IOError:
-        print ' in  IOError'
+        print(' in  IOError')
         return
     mode = im.mode
     if mode not in ('L', 'RGB'):

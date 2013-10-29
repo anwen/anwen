@@ -17,6 +17,7 @@ def _unicode_urlencode(params):
     A unicode aware version of urllib.urlencode.
     Borrowed from pyfacebook :: http://github.com/sciyoshi/pyfacebook/
     """
+    p = None
     if isinstance(params, dict):
         p = params.items()
     i = [(k, isinstance(v, unicode) and v.encode('utf-8') or v) for k, v in p]

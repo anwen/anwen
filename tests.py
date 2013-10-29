@@ -54,7 +54,8 @@ class HttpTest(tornado.testing.AsyncHTTPTestCase):
     cdict = {}
     data = {}
 
-    def get_app(self):
+    @staticmethod
+    def get_app():
         from hello import application
         return application
 

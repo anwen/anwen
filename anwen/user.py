@@ -261,7 +261,8 @@ class ForgotPassHandler(BaseHandler):
             self.send_resetpass_email(emailverify, email)
         self.render('forgotpass_sent.html')
 
-    def send_resetpass_email(self, verifystring, email):
+    @staticmethod
+    def send_resetpass_email(verifystring, email):
         subject = 'Anwen 密码找回'
         verify_link = '%s/setpass?e=%s&k=%s' % (
             options.site_url, email, verifystring)

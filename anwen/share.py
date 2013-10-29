@@ -86,7 +86,6 @@ class ShareHandler(BaseHandler):
 class EntryHandler(BaseHandler):
 
     def get(self, slug):
-        share = None
         if slug.isdigit():
             share = Share.by_sid(slug)
         else:
@@ -214,6 +213,7 @@ class LikeHandler(BaseHandler):
             'user_id': user_id,
             'share_id': share_id
         }
+        newlikes = None
         if action == 'addlike':
             Like.change_like(doc, 'likenum')
             share = Share.by_sid(share_id)
@@ -289,6 +289,8 @@ class ImageUploadHandler(BaseHandler):
     @tornado.web.authenticated
     def post(self):
         img = None
+        body = None
+        ext = None
         if 'uploadImg' in self.request.files:
             img = self.request.files['uploadImg'][0]
             ext = os.path.splitext(img['filename'])[1].lower()
@@ -309,7 +311,7 @@ class ImageUploadHandler(BaseHandler):
                 os.remove(img_path)  # 判断比例 删除图片
                 msg = {"status": "s", "info": "请不要上传长宽比例过大的图片"}
             else:
-                make_post_thumb(img_path)  # 创建1200x550 750x230 365x230缩略图
+                make_post_thumb(img_path, sizes=[(1200, 550), (750, 230), (365, 230)])  # 创建1200x550 750x230 365x230缩略图
                 pic_1200 = '%s_1200.jpg' % t
                 # users.save_user_avatar(user_id, avatar)#入库
                 msg = {"status": "y", "pic_1200": pic_1200}
