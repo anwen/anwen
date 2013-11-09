@@ -1,61 +1,38 @@
 # -*- coding:utf-8 -*-
 
 from . import ego
+from . import ip
 from . import query
-from . import tools
+from .skills import search
 from db import Ande
 
 
-tool_modules = []
-for tool_name in tools.__all__:
-    __import__('ande.tools.%s' % tool_name)
-    tool_modules.append(getattr(tools, tool_name))
-
-
-def by_tools(data):
-    for tool_module in tool_modules:
-        try:
-            if tool_module.test(data):
-                return tool_module.handle(data)
-        except:
-            continue
-    return ''
-
 
 def get_andesay(usersay, userip, userlang, user_id, method):
-    data = {
-        'usersay': usersay,
-        'userip': userip,
-        'userlang': userlang,
+    doc = {
         'user_id': user_id,
-        'method': method,
+        'user_ip': userip,
+        'usersay': usersay,
+        'usersay_low': usersay.lower(),
     }
     # usersay_en = translate(usersay, '', 'en')
     # is_firstmeet = query.is_firstmeet(userip, user_id)
-    # print(usersay_en, is_firstmeet)
+    ego_info = ego.find_ego(usersay)
+    ip_info = ip.find_ip(doc)
     first = query.first(usersay, userip, user_id, method)
     hello = query.hello(usersay)
     song = query.song(usersay)
     trans = query.trans(usersay, userlang)
     clock = query.clock(usersay)
-
-    get_ego = ego.find_ego(usersay)
     get_memo = query.search_memo(usersay, userip)
-    # get_tools = by_tools(data) if (get_ego or get_memo) else ''
-
-    from .skills import search
-    search = search.search(usersay)
+    #search = search.search(usersay)
 
     andesay = ''.join([
-        get_ego, get_memo, first, hello, song, trans, clock, search,
+        ego_info, ip_info, get_memo, first, hello, song, trans, clock,
+        #search,
     ])
-
-    doc = {
-        'user_id': user_id,
-        'user_ip': userip,
-        'usersay': usersay,
-        'andesay': andesay,
-    }
-
+    doc['andesay'] = andesay
+    doc.pop('usersay_low')
     Ande.new(doc)
-    return andesay, ''
+    #return doc
+    return andesay

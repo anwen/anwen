@@ -128,6 +128,7 @@ douban = {
     'douban_api_secret': '9b29399b82721746',
 }
 
-
-from server_setting import debug, web_server, db, EMAIL_HOST_PASSWORD
-a = (debug, web_server, db, EMAIL_HOST_PASSWORD)
+try:
+    from server_setting *
+except:
+    pass

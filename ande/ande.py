@@ -15,13 +15,12 @@ class AndeHandler(BaseHandler):
         userlang = self.get_user_lang()
         user_id = self.current_user['user_id'] if self.current_user else 0
         method = 'get'
-        andesay, andethink = get_andesay(
+        andesay = get_andesay(
             usersay, userip, userlang, user_id, method)
         if q:
             self.write(andesay)
         else:
-            andesay = markdown(andesay)
-            self.render('ande.html', andesay=andesay, andethink=andethink)
+            self.render('ande.html', andesay=andesay)
 
     # @tornado.web.asynchronous
     def post(self):
@@ -30,13 +29,12 @@ class AndeHandler(BaseHandler):
         userlang = self.get_user_lang()
         user_id = self.current_user['user_id'] if self.current_user else 0
         method = 'post'
-        andesay, andethink = get_andesay(
+        andesay = get_andesay(
             usersay, userip, userlang, user_id, method)
 
-        # print(andesay, andethink)
+        # print(andesay)
         andesay = {
             'andesay': andesay,
-            'andethink': andethink,
         }
         andesay = dumps(andesay)
         self.write(andesay)
