@@ -129,6 +129,6 @@ douban = {
 }
 
 try:
-    from server_setting *
+    from server_setting import *
 except:
     pass
