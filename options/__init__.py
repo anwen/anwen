@@ -27,7 +27,7 @@ db = {
 
 site_info = {
     'title': 'Anwen',
-    'subtitle': 'share and create something nice',
+    'subtitle': 'share interesting post',
     'intro': 'Discover, think, share, action together~',
     'author': 'Anwen',
     'email': 'anwen.in@gmail.com',  # optional
