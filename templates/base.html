@@ -2,7 +2,7 @@
 <html lang="en" class="{% block htmltype %}{% end %}">
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}{% end %}{{_(site_info['title'])}}{% block titlemore %}{% end %}</title> 
+  <title>{% block title %}{% end %}{{_(site_info['title'])}}{% block titlemore %}{% end %}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="{{_(site_info['author'])}}">
   <meta name="description" content="{{_(site_info['description'])}}">
@@ -63,31 +63,35 @@
 {% block footer %}
   <footer class="footer">
     <div class="container">
-      <div class="pull-right">
+      <div class="center">
+
+        <span class=" copyleft">
+          2013 安问
+          <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
+        </span>
+
         <a href="/about">关于</a>
         <a href="/help">帮助</a>
         <a href="/changelog">行动</a>
         <a href="/app"> <i class="icon-android icon-2x"></i>
         </a>
-        <a href="https://twitter.com/askenderlee">
-          <i class="icon-twitter icon-2x"></i>
+        <a href="https://twitter.com/askenderlee"> <i class="icon-twitter icon-2x"></i>
         </a>
         <a href="https://plus.google.com/112193997643841667020" rel="publisher">
           <i class="icon-google-plus icon-2x"></i>
         </a>
-        <a href="https://github.com/anwen/anwen"> <i class="icon-github icon-2x"></i>
+        <a href="https://github.com/anwen/anwen">
+          <i class="icon-github icon-2x"></i>
         </a>
-        <a href="https://trello.com/b/dNStnhTo/anwen-dev"> <i class="icon-trello icon-2x"></i>
+        <a href="https://trello.com/b/dNStnhTo/anwen-dev">
+          <i class="icon-trello icon-2x"></i>
         </a>
       </div>
-      <div class="pull-left copyleft">
-        2013 安问
-        <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
-      </div>
+      <div class="center">随机一句 欢迎贡献: {{random_sayings}}</div>
 
     </div>
   </footer>
-  {% end %}
+{% end %}
   <script src="{{ static_url("js/jquery-1.9.1.min.js") }}"></script>
   <script src="{{ static_url("js/bootstrap3.min.js") }}"></script>
   {% block bottom %}{% end %}

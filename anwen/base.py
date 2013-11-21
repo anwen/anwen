@@ -7,6 +7,7 @@ from tornado.web import RequestHandler, HTTPError
 from pymongo import ASCENDING, DESCENDING
 from log import logger
 from options import site_info, node_list, node_about
+from utils import random_sayings
 
 
 class BaseHandler(RequestHandler):
@@ -17,6 +18,7 @@ class BaseHandler(RequestHandler):
             'site_info': site_info,
             'node_list': node_list,
             'node_about': node_about,
+            'random_sayings': random_sayings(),
         })
         return ns
 

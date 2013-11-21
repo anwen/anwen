@@ -1,4 +1,3 @@
-import options
 
 
 def make_password(pw):
@@ -21,6 +20,7 @@ def make_emailverify():
 
 
 def send_email(receivers, subject, msg_body):
+    import options
     import smtplib
     from email.mime.text import MIMEText
     from email.Header import Header
@@ -40,3 +40,16 @@ def send_email(receivers, subject, msg_body):
     s.login(user, password)
     s.sendmail(me, receivers, msg.as_string())
     s.quit()
+
+
+def random_sayings():
+    file1 = 'utils/sayings.txt'
+    a = []
+    with open(file1) as f:
+        for eachline in f:
+            a.append(str(eachline.replace('\n', '')))
+    import random
+    return random.choice(a)
+
+if __name__ == '__main__':
+    print(random_sayings())
