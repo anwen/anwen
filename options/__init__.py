@@ -26,19 +26,14 @@ db = {
 }
 
 site_info = {
-    'title': 'Anwen',
-    'subtitle': 'share interesting post',
+    'title': '安问',
+    'subtitle': '分享和创造有趣的东西',
     'intro': 'Discover, think, share, action together~',
     'author': 'Anwen',
     'email': 'anwen.in@gmail.com',  # optional
     'weibo': 'http://weibo.com/askender',  # optional
     'douban': 'http://site.douban.com/askender/',  # optional
-    'description': 'freedom and open-source dream world, \
-which try to create and share things touch your soul',
-    'bottom_info': '''
-
-''',
-
+    'description': '自由开源的理想主义社区与创造分享平台,致力于创造和分享最打动大家的或有趣的东西',
 }
 
 node_list = [

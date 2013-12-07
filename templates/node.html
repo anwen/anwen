@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}
-{{ _(node_about[node]['name']) }}-{{_(node_about[node]['about']) }}-
+{% block titlemore %}
+分享和创造有趣的东西 {{ _(node_about[node]['name']) }}-{{_(node_about[node]['about']) }}
 {% end %}
 
 {% block body %}
@@ -31,7 +31,7 @@
 {% end %}
 <div class="snippet">{{ share.markdown }} ... </div>
             </div>
-          
+
           <div class="meta wf">
             <span class="author-and-collection">
               <a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-  
+
     {{ "</div>" if offset in(1,4,7,10) else "" }}
 
 
