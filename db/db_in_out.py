@@ -8,10 +8,10 @@ import os
 import re
 from bson import ObjectId
 sys.path.append('..')
-from db import User, Share, Comment, Hit, Tag, Feedback, Admin
+from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
 
 
-doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin']
+doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin', 'Like']
 
 
 def make_doc():
