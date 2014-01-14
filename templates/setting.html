@@ -12,35 +12,37 @@
   </li>
 </ul>
 
+<form class="form-horizontal" method="post">
+  {{ xsrf_form_html() }}
+  <div>
+    {{_('Name')}}:
+    <input name="name" type="text" class="col-lg-4 form-control" value="{{user.user_name}}" required/>
+  </div>
 
+  <div>
+    城市:
+    <input name="city" type="text" class="col-lg-4 form-control" value="{{user.user_city}}" />
+  </div>
 
-  <form class="form-horizontal" method="post">
-    {{ xsrf_form_html() }}
-    <div>
-      {{_('Name')}}:
-      <input name="name" type="text" class="col-lg-4 form-control" value="{{user.user_name}}" required/>
-    </div>
+  <div>
+    <p>
+      个性说明(
+      <a href="/markdown" target="_blank">支持Markdown</a>
+      <a href="/edit" target="_blank">编辑器</a>
+      ):
+    </p>
+    <textarea name="say" rows="20" class="col-lg-4 form-control">{{user.user_say}}</textarea>
+  </div>
 
-    <div>
-      城市:
-      <input name="city" type="text" class="col-lg-4 form-control" value="{{user.user_city}}" />
-    </div>
+  <div>
+    要设置头像，请前往
+    <a href="http://gravatar.com" target="_blank">Gravatar</a>
+  </div>
 
-    <div>
-      <p>个性说明(<a href="/markdown" target="_blank">支持Markdown</a>
-      <a href="/edit" target="_blank">编辑器</a>):</p>
-       <textarea name="say" rows="20" class="col-lg-4 form-control">{{user.user_say}}</textarea>
-    </div>
-
-    <div>要设置头像，请前往
-        <a href="http://gravatar.com" target="_blank">Gravatar</a></div>
-
-
-
-    <div>
-      <button type="submit" class="btn btn-primary">保存</button>
-    </div>
-  </form>
+  <div>
+    <button type="submit" class="btn btn-primary">保存</button>
+  </div>
+</form>
 {% end %}
 
 {% block bottom %}
