@@ -27,6 +27,7 @@ from atalk.talk import TalkHandler, ChatSocketHandler
 from atalk.talk import MsgNewHandler, MsgUpdatesHandler
 
 from anwen.other import AppHandler
+from anwen.other import TogetherHandler
 
 handlers = [
     (r"/welcome", WelcomeHandler),
@@ -83,6 +84,7 @@ handlers = [
     (r"/a/message/updates", MsgUpdatesHandler),
 
     (r"/app", AppHandler),
+    (r"/together", TogetherHandler),
 
     (r'/(.*)', EntryHandler),
     # Custom 404 ErrHandler, always put this at last

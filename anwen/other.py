@@ -78,4 +78,10 @@ class ScoreHandler(BaseHandler):
 class AppHandler(BaseHandler):
 
     def get(self):
-        self.render("app.html")
+        self.render("pages/app.html")
+
+class TogetherHandler(BaseHandler):
+
+    def get(self):
+        self.render("pages/together.html")
+
