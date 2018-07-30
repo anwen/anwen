@@ -1,19 +1,18 @@
 *.pyc
 
-# tmp files
-/log/files/*.log
-/log/files/*.log.*
-*.log
-*~
-*.swp
-*.tar.gz
-
 # private files
-.idea
 server_setting.py
-User.yaml
-Admin.yaml
+db/data/Admin.yaml
+db/data/User.yaml
 
-#upload-img avatar
+# upload-img avatar
 /static/upload/img/*
 /static/avatar/*.jpg
+
+# tmp files
+# /log/files/*.log
+# /log/files/*.log.*
+# *.log
+# *~
+# *.swp
+# *.tar.gz

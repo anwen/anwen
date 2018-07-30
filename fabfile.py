@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 import os
 from fabric.api import task, env, local, hosts, cd, run, lcd, get, sudo, put
-
 env.use_ssh_config = True
 
 
@@ -30,7 +29,23 @@ def deploy():
     push()
 
 
+@task
+def nginx(todo):
+    """ nginx:todo= """
+    # fab -H aw nginx:todo=start
+    sudo('/etc/init.d/nginx %s' % todo)
+
+
 @hosts(['aw'])
+@task
+def update_nginx():
+    """ update_nginx """
+    nginx_file = os.path.join(os.getcwd(), 'conf/nginx.conf')
+    put(nginx_file, '/usr/local/nginx/conf/nginx.conf')
+    sudo('/etc/init.d/nginx reload')
+
+
+@hosts(['aaw'])
 @task
 def back_data():
     """ backup data from aw mongo """
@@ -54,19 +69,3 @@ def back_data():
         get('/var/www/anwen/static/upload/upload.tar.gz', '.')
         local('tar zxf upload.tar.gz img')
         local('rm upload.tar.gz')
-
-
-@task
-def nginx(todo):
-    """ nginx:todo= """
-    # fab -H aw nginx:todo=start
-    sudo('/etc/init.d/nginx %s' % todo)
-
-
-@hosts(['aw'])
-@task
-def update_nginx():
-    """ update_nginx """
-    nginx_file = os.path.join(os.getcwd(), 'conf/nginx.conf')
-    put(nginx_file, '/usr/local/nginx/conf/nginx.conf')
-    sudo('/etc/init.d/nginx reload')
