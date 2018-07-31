@@ -26,6 +26,7 @@
 - [豆瓣](http://www.douban.com/) 
 - [V2EX](http://www.v2ex.com/  "创意工作者们的社区") 
 - [知乎](http://www.zhihu.com/ )
+- [摆摆书架](http://bookfor.us/) 社会化图书馆。可以分享自己看过的闲书，以及免费借阅他人的书籍。
 
 ### 写
 - [OhLife](http://ohlife.com/ "OhLife helps you remember what's happened in your life")
@@ -69,6 +70,9 @@
 - [德问]( http://www.dewen.org "Wiki协作与CC版权：构建高质量的专业开源知识库")
 - [Python-China](http://python-china.org/ ) 
 - [叩叮](http://codinn.com/  "联结开发者") 
+
+### 工具
+- [freebase](http://www.freebase.com/) A community-curated database of well-known people, places, and things
 
 ### 嘿，看看你的收藏夹，把你最爱的几个分享到这里来吧，多谢^,^
 

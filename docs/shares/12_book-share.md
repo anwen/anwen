@@ -40,7 +40,7 @@
 ### 杂文集
 * 黑客与画家
 * 重来：更为简单有效的商业思维 <http://37signals.com/rework>(官方提供英文pdf版，网站在墙外，这个也墙？) <http://www.v2ex.com/rework>(中文翻译版)
-* 失控：机器、社会与经济的新生物学
+* 失控：机器、社会与经济的新生物学 <http://kk.org/outofcontrol/contents.php> 
 * 数学之美
 * 暗时间
 * 苏菲的世界
