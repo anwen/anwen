@@ -874,3 +874,21 @@
   id: null
   share_id: 20
   user_id: 1
+- _id: 55d49584f252c4042fac2b4f
+  hitnum: 0
+  hittime: 1438069821.474708
+  id: null
+  share_id: 31
+  user_id: 49
+- _id: 55d495cbf252c4042e0bcdd9
+  hitnum: 0
+  hittime: 1438069821.512427
+  id: null
+  share_id: 32
+  user_id: 49
+- _id: 563b8779f252c404ed129a30
+  hitnum: 0
+  hittime: 1446168638.30693
+  id: null
+  share_id: 25
+  user_id: 51
