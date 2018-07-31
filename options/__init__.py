@@ -123,7 +123,12 @@ douban = {
     'douban_api_secret': '9b29399b82721746',
 }
 
+# try:
+#     from server_setting import *
+# except:
+#     pass
+
 try:
-    from server_setting import *
+    from local_setting import *
 except:
     pass

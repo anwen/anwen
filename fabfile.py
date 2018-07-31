@@ -36,15 +36,6 @@ def nginx(todo):
     sudo('/etc/init.d/nginx %s' % todo)
 
 
-@hosts(['aw'])
-@task
-def update_nginx():
-    """ update_nginx """
-    nginx_file = os.path.join(os.getcwd(), 'conf/nginx.conf')
-    put(nginx_file, '/usr/local/nginx/conf/nginx.conf')
-    sudo('/etc/init.d/nginx reload')
-
-
 @hosts(['aaw'])
 @task
 def back_data():
@@ -69,3 +60,12 @@ def back_data():
         get('/var/www/anwen/static/upload/upload.tar.gz', '.')
         local('tar zxf upload.tar.gz img')
         local('rm upload.tar.gz')
+
+
+@hosts(['aw'])
+@task
+def update_nginx():
+    """ update_nginx """
+    nginx_file = os.path.join(os.getcwd(), 'conf/nginx.conf')
+    put(nginx_file, '/usr/local/nginx/conf/nginx.conf')
+    sudo('/etc/init.d/nginx reload')

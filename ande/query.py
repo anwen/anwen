@@ -5,9 +5,9 @@ import urllib
 from tornado import httpclient
 from json import loads as jload
 from pymongo import DESCENDING  # ASCENDING
-from tool.bingtrans import translate
-from tool.g_search import g_search
 from db import Ande
+from ande.tool.bingtrans import translate
+from ande.tool.g_search import g_search
 
 hellos = [u'你好', u'hello', u'hi']
 s_hellos = ['你好', 'hello', 'hi']
@@ -93,44 +93,44 @@ def song(usersay):
 
 
 def get_song(songname, artist):
-        q = '%s+%s'.encode('utf-8') % (songname, artist)
-        image_url = ''.join([
-            'http://api.douban.com/music/subjects?q=',
-            q,
-            '&alt=json&start-index=1&max-results=1',
-        ])
-        http_client = httpclient.HTTPClient()
-        response = None
-        music_image = None
-        try:
-            response = http_client.fetch(image_url)
-        except httpclient.HTTPError as e:
-            print("Error:", e)
-        if response and response.code == 200:
-            res = jload(response.body)
-            music_image = res['entry'][0]['link'][2]['@href']
-            music_image = '<img src="%s" style="float:left"/>' % music_image
-            if not artist:
-                artist = res['entry'][0]['author'][0]['name']['$t']
+    q = '%s+%s'.encode('utf-8') % (songname, artist)
+    image_url = ''.join([
+        'http://api.douban.com/music/subjects?q=',
+        q,
+        '&alt=json&start-index=1&max-results=1',
+    ])
+    http_client = httpclient.HTTPClient()
+    response = None
+    music_image = None
+    try:
+        response = http_client.fetch(image_url)
+    except httpclient.HTTPError as e:
+        print("Error:", e)
+    if response and response.code == 200:
+        res = jload(response.body)
+        music_image = res['entry'][0]['link'][2]['@href']
+        music_image = '<img src="%s" style="float:left"/>' % music_image
+        if not artist:
+            artist = res['entry'][0]['author'][0]['name']['$t']
 
-        singer = ''
-        if artist:
-            singer = '&singer=' + urllib.quote(artist.encode('gbk'))
+    singer = ''
+    if artist:
+        singer = '&singer=' + urllib.quote(artist.encode('gbk'))
 
-        artist_u = ''
-        if artist:
-            artist_u = '&amp;artist=' + urllib.quote(artist.encode('utf-8'))
-            artist_u = artist_u.replace(']', ']\n')
-        songbox = ''.join([
-            '<p><embed width="550" height="75" name="plugin" ',
-            'wmode="transparent" ',
-            'src="http://box.baidu.com/widget/flash/song.swf?name=',
-            urllib.quote(songname.encode('utf-8')),
-            artist_u,
-            '" type="application/x-shockwave-flash"></p>'
-        ])
-        link = '<br/>'
-        return music_image, link, songbox
+    artist_u = ''
+    if artist:
+        artist_u = '&amp;artist=' + urllib.quote(artist.encode('utf-8'))
+        artist_u = artist_u.replace(']', ']\n')
+    songbox = ''.join([
+        '<p><embed width="550" height="75" name="plugin" ',
+        'wmode="transparent" ',
+        'src="http://box.baidu.com/widget/flash/song.swf?name=',
+        urllib.quote(songname.encode('utf-8')),
+        artist_u,
+        '" type="application/x-shockwave-flash"></p>'
+    ])
+    link = '<br/>'
+    return music_image, link, songbox
 
 
 def trans(usersay, userlang):

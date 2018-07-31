@@ -2,8 +2,8 @@
 
 from json import dumps
 from anwen.base import BaseHandler
-from brain import get_andesay
 from markdown2 import markdown
+from ande.brain import get_andesay
 
 
 class AndeHandler(BaseHandler):

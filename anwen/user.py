@@ -109,7 +109,8 @@ class DoubanLoginHandler(BaseHandler, utils.douban_auth.DoubanMixin):
         )
 
 
-class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):
+# class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):
+class GoogleLoginHandler(BaseHandler):
 
     @tornado.web.asynchronous
     @gen.coroutine

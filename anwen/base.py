@@ -92,7 +92,8 @@ class JSONHandler(BaseHandler):
             logger.warn('Content-Type is not JSON, ignored.')
             return None
         try:
-            obj = json.loads(self.request.body)
+            # obj = json.loads(self.request.body)
+            obj = json.loads(self.request.body.decode('u8'))
         except ValueError:
             logger.warn('Request body is not JSON formatted!')
             return None
@@ -130,14 +131,14 @@ class CommonResourceHandler(JSONHandler):
 
         _sort = pop_spec(args, '_sort')
 
-        for k, v in args.copy().iteritems():
+        for k, v in args.copy().items():
             try:
                 v = json.loads(v[0])
             except ValueError:
                 v = v[0]
             args[k] = v
 
-        for key, value in args.copy().iteritems():
+        for key, value in args.copy().items():
             if '_id' in key:
                 if isinstance(value, list):
                     v = {'$in': [ObjectId(x) for x in value]}

@@ -7,7 +7,7 @@ from logging.handlers import RotatingFileHandler
 tornado.log.enable_pretty_logging()
 
 
-for logger_name, path in options.log['log_path'].iteritems():
+for logger_name, path in options.log['log_path'].items():
     name = logger_name if logger_name != 'logger' else None
     logger = locals()[logger_name] = logging.getLogger(name)
     logger.setLevel(logging.NOTSET)

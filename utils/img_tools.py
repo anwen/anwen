@@ -2,8 +2,8 @@
 # coding: utf-8
 
 import os
-import Image
-import ImageFilter
+from PIL import Image
+from PIL import ImageFilter
 
 
 class MyGaussianBlur(ImageFilter.Filter):
@@ -115,7 +115,8 @@ def make_post_thumb(path, sizes=None):
     生成post 1200x550 / 750x230 / 365x230 缩略图
     sizes 参数传递要生成的尺寸，可以生成多种尺寸
     """
-    if not sizes: sizes = [(1200, 550), (750, 230), (365, 230)]
+    if not sizes:
+        sizes = [(1200, 550), (750, 230), (365, 230)]
     base, ext = os.path.splitext(path)
     try:
         im = Image.open(path)

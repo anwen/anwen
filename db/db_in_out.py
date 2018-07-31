@@ -11,13 +11,14 @@ sys.path.append('..')
 from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
 
 
-doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin', 'Like']
+doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin']
+# , 'Like'
 
 
 def make_doc():
     print(os.path)
     if os.path.isfile('data/Share.yaml'):
-        docs = yaml.load(file('data/Share.yaml', 'r').read())
+        docs = yaml.load(open('data/Share.yaml', 'r').read())
         for i in docs:
             filename = '../docs/shares/%s_%s.md' % (i['id'], i['slug'])
             title = i['title']
@@ -43,7 +44,7 @@ def doc_import(doc):
         if doc == 'User' and not os.path.isfile('data/' + doc + '.yaml'):
             doc = '%sSafe' % doc
             print('load usersafe')
-        docs = yaml.load(file('data/' + doc + '.yaml', 'r').read())
+        docs = yaml.load(open('data/' + doc + '.yaml', 'r').read())
         for i in docs:
             i['_id'] = ObjectId(i['_id'])
             if doc == 'UserSafe':

@@ -3,10 +3,10 @@
 import markdown2
 import time
 import os
-import Image
 import datetime
 from random import randint
 import tornado.web
+from PIL import Image
 
 import options
 from utils.avatar import get_avatar
@@ -311,7 +311,8 @@ class ImageUploadHandler(BaseHandler):
                 os.remove(img_path)  # 判断比例 删除图片
                 msg = {"status": "s", "info": "请不要上传长宽比例过大的图片"}
             else:
-                make_post_thumb(img_path, sizes=[(1200, 550), (750, 230), (365, 230)])  # 创建1200x550 750x230 365x230缩略图
+                # 创建1200x550 750x230 365x230缩略图
+                make_post_thumb(img_path, sizes=[(1200, 550), (750, 230), (365, 230)])
                 pic_1200 = '%s_1200.jpg' % t
                 # users.save_user_avatar(user_id, avatar)#入库
                 msg = {"status": "y", "pic_1200": pic_1200}

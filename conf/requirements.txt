@@ -1,37 +1,19 @@
-# sudo apt-get install build-essential python-dev
-# You can: pip install -r requirements.txt
-# sudo apt-get install python-imaging
-
-tornado>=3.0
-
+tornado
 markdown2
-# markdown
+pyyaml
+fabric
+requests
+flake8
+# pymongo
+pymongo==2.8
+# mongokit
+mongokit-py3
+pillow
 
-bson
-pymongo>=2.2.1
-mongokit>=0.8
 
 # MySQL-python
 # peewee
 # Jinja2
 # misaka
 # pygments
-
-### for db_import_backup
-pyyaml
-
-# other
-fabric
-# pillow
-
-### cache support
 # python-memcached
-
-### other
-requests
-
-### dev
-# flake8
-
-### ande
-sympy

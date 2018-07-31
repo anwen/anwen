@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from model import connection
+from db.model import connection
 
 User = connection.User
 Share = connection.Share
