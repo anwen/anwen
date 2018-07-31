@@ -12,11 +12,13 @@ else:
     connection = Connection()
 db = getattr(connection, options.db['name'])
 
-# if 'username' in options.db:
-#     try:
-#         db.authenticate(options.db['username'], options.db['password'])
-#     except KeyError:
-#         print('KeyError: Not authenticating.')
+
+print(options.db)
+if 'username' in options.db:
+    try:
+        db.authenticate(options.db['username'], options.db['password'])
+    except KeyError:
+        print('KeyError: Not authenticating.')
 
 
 try:

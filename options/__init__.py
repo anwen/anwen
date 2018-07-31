@@ -1,7 +1,14 @@
 # -*- coding: utf-8 -*-
-
 debug = True
 port = 8888
+
+db = {
+    'name': 'anwen',
+    'host': '127.0.0.1',
+    'port': 27017,
+    # 'username': '',
+    # 'password': '',
+}
 
 
 default_editor = ''  # wysiwyg
@@ -17,13 +24,6 @@ web_server = {
     'debug': debug,
 }
 
-db = {
-    'name': 'anwen',
-    'host': '127.0.0.1',
-    'port': 27017,
-    'username': '',
-    'password': '',
-}
 
 site_info = {
     'title': '安问',
@@ -123,12 +123,12 @@ douban = {
     'douban_api_secret': '9b29399b82721746',
 }
 
-# try:
-#     from server_setting import *
-# except:
-#     pass
+try:
+    from options.server_setting import *
+except:
+    pass
 
 try:
-    from local_setting import *
+    from options.local_setting import *
 except:
     pass
