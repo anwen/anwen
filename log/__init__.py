@@ -3,7 +3,6 @@ import logging
 import options
 import tornado.log
 from logging.handlers import RotatingFileHandler
-
 tornado.log.enable_pretty_logging()
 
 
