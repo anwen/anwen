@@ -18,10 +18,14 @@ apt-get install python3-pip
 apt-get install python3-dev
 apt-get install python-imaging
 apt-get install python3-pil
-apt install git
 apt-get build-dep python-lxml
+apt install git
+apt install nginx
+apt install supervisor
+
+# bad
 # pip3 install --upgrade pip
-curl https://bootstrap.pypa.io/get-pip.py | python3
+# curl https://bootstrap.pypa.io/get-pip.py | python3
 
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8" # zh_CN.UTF-8
@@ -45,7 +49,7 @@ python3 tests.py # Testing
 python3 hello.py -h  # you can find some help
 python3 hello.py # Start Anwen app
 
-vim options/__init__.py  ## Config
+
 ## set up a production enironment
 supervisor and nginx config files are available in conf/
 
