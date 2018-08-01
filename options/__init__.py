@@ -37,7 +37,16 @@ site_info = {
 }
 
 node_list = [
-    'eyeopen', 'music', 'book', 'film', 'sf', 'goodlink', 'ask', 'fire',
+    'book',
+    'film',
+    'music',
+    'sf',
+    'goodlink',
+
+    'ask',
+    'eyeopen',
+    'fire',
+    'deleted',
 ]
 node_about = {
     'home': {
@@ -45,16 +54,7 @@ node_about = {
         'name': 'Newest Share',
         'about': 'Create and Share, which can hit your heart~'
     },
-    'eyeopen': {
-        'icon': 'eye-open',
-        'name': 'Eyeopen',
-        'about': 'feel and know yourself and the world'
-    },
-    'music': {
-        'icon': 'music',
-        'name': 'Music',
-        'about': 'Music which touch heart~'
-    },
+
     'book': {
         'icon': 'book',
         'name': 'Book',
@@ -64,6 +64,11 @@ node_about = {
         'icon': 'film',
         'name': 'Film',
         'about': 'Light and shadow fragment record every inch sensation'
+    },
+    'music': {
+        'icon': 'music',
+        'name': 'Music',
+        'about': 'Music which touch heart~'
     },
     'sf': {
         'icon': 'road',
@@ -75,17 +80,37 @@ node_about = {
         'name': 'Goodlink',
         'about': 'nice things need share'
     },
+
+
+
+
+
+
+
     'ask': {
         'icon': 'question-sign',
         'name': 'Asks',
         'about': 'Give us a question, we can make the universe more fun'
     },
+    'eyeopen': {
+        'icon': 'eye-open',
+        'name': 'Eyeopen',
+        'about': 'feel and know yourself and the world'
+    },
+
     'fire': {
         'icon': 'fire',
         'name': 'Create',
         'about': 'Record action of dreamers, maybe not so good, we are trying'
-    }
+    },
+    'deleted': {
+        'icon': 'delete',
+        'name': 'Deleted',
+        'about': 'not good'
+    },
+
 }
+
 
 log = {
     'log_max_bytes': 5 * 1024 * 1024,  # 5M

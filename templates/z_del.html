@@ -1,0 +1,45 @@
+<a href="javascript:" class="spread"> <i class="icon-retweet"></i>
+扩散
+</a>
+
+<a data-toggle="modal" href="#myModal" class="btn btn-primary pull-right">推荐</a>
+
+
+<div class="modal fade" id="myModal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+<h4 class="modal-title">为您推荐~</h4>
+</div>
+<div class="modal-body">
+{% for post in suggest %}
+<h4>
+<a href="/share/{{ post['id'] }}">{{ post['title'] }}</a>
+</h4>
+{% end %}
+</div>
+<div class="modal-footer">
+<a href="#" class="btn btn-info" data-dismiss="modal">Close</a>
+</div>
+</div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+<div>
+{% if not current_user %}
+	需要
+	<a href="/login?next={{ url_escape(request.uri) }}" class="btn btn-primary">登录</a>
+	后方可回复,收藏和个性化推荐.如果还没有账号您可以
+	<a href="/joinus?next={{ url_escape(request.uri) }}" class="btn btn-danger">注册</a>
+	一个帐号。
+{% else %}
+	{% if current_user["user_id"]==share.user_id %}
+	<a href="/share?id={{ share.id }}">
+	<button class="btn btn-success" >编辑本文</button>
+	</a>
+	{% end %}
+{% end %}
+</div>

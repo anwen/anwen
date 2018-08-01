@@ -50,7 +50,7 @@
 
       <div class="nav-collapse collapse">
         <ul class="nav navbar-nav">
-          {% for k in node_list %}
+          {% for k in node_list[:-1] %}
           <li id="{{k}}">
             <a href="/node/{{k}}">{{_(node_about[k]['name'])}}</a>
           </li>
