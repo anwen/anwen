@@ -322,7 +322,8 @@ class ImageUploadHandler(BaseHandler):
 
     @tornado.web.authenticated
     def delete(self):
-        img_name = self.request.body.split('img_name=')[1]
+        content = self.request.body.decode('u8')
+        img_name = content.split('img_name=')[1]
         img_dir = 'static/upload/img'
         for i in os.listdir(img_dir):
             if i.startswith(img_name):
