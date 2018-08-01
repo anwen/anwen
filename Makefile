@@ -17,22 +17,33 @@ clean:
 	find . -name '*~' -exec rm -f {} +
 	find . -name '*.log' -exec rm -f {} +
 
-docs:
-	python -m SimpleHTTPServer 8004
 
 test:
 	@echo "starting test"
-	python hello.py -t
+	python3 hello.py -t
+
+start:
+	make test
+	@echo "starting anwen"
+	python3 hello.py
+
+
+
+
+
+
+
+docs:
+	python -m SimpleHTTPServer 8004
+
+
 
 build:
 	lessc -x --yui-compress static/less/main.less > static/css/main.css
 	lessc -x --yui-compress static/less/ande.less > static/css/ande.css
 	uglifyjs static/js/share.js -mc -o static/js/share.min.js
 
-start:
-	make test
-	@echo "starting anwen"
-	python hello.py
+
 
 ci:
 	@echo "starting commit"
