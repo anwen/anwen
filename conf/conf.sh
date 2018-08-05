@@ -1,5 +1,6 @@
 # config
 scp options/server_setting.py aw:/var/www/anwen/options
+scp -r options/cert aw:/var/www/anwen/options # optional
 # sync data
 scp -r static/upload/img aw:/var/www/anwen/static/upload/
 scp db/data/User.yaml aw:/var/www/anwen/db/data/
@@ -38,6 +39,8 @@ mkdir /home/anwen
 service supervisord start
 service supervisor  start
 service supervisor restart
+supervisorctl status
+supervisorctl restart all
 
 sudo killall supervisord
 scp conf/supervisord.conf aw:/etc/supervisord.conf
