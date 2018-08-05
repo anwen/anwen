@@ -30,6 +30,9 @@ parser.add_argument(
     help='run on the given port'
 )
 
+signal.signal(signal.SIGTERM, sig_handler)
+signal.signal(signal.SIGINT, sig_handler)
+args = parser.parse_args()
 
 options.web_server.update(
     dict(ui_modules={"Entry": EntryModule, "Useradmin": UseradminModule},))
@@ -78,9 +81,6 @@ def shutdown():
     stop_loop()
 
 if __name__ == '__main__':
-    signal.signal(signal.SIGTERM, sig_handler)
-    signal.signal(signal.SIGINT, sig_handler)
-    args = parser.parse_args()
     if args.run_tests:
         import tests
         import sys
