@@ -10,8 +10,8 @@
 <!-- 题图 -->
 {% if share.post_img %}
 <div class="post_image_wrap">
-	<span class="post_image" style="background-image:url(/static/upload/img/{{ share.post_img }})">
-		<img src="/static/upload/img/{{ share.post_img }}" alt="" style="display:none"></span>
+    <span class="post_image" style="background-image:url(/static/upload/img/{{ share.post_img }})">
+        <img src="/static/upload/img/{{ share.post_img }}" alt="" style="display:none"></span>
 </div>
 {% end %}
 
@@ -45,52 +45,82 @@
 <!-- 投票 分享-->
 <p class="some">
 <a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}">
-<i class="icon-heart"></i>
-<span>喜欢 {{ share.likenum }}</span>
+<i class="icon-thumbs-up"></i>
+<span> {{ share.likenum }}</span>
 </a>
 <a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}">
 <i class="icon-thumbs-down"></i>
-<span>踩 {{ share.dislikenum }}</span>
+<span> {{ share.dislikenum }}</span>
 </a>
 </p>
 </div> <!-- 内容 -->
 
 <!-- 编辑 -->
 <div>
-	{% if current_user and (current_user["user_id"]==share.user_id or current_user["user_id"]==1) %}
-	<a href="/share?id={{ share.id }}">
-	<button class="btn btn-success" >编辑本文</button>
-	</a>
-	{% end %}
+    {% if current_user and (current_user["user_id"]==share.user_id or current_user["user_id"]==1) %}
+    <a href="/share?id={{ share.id }}">
+    <button class="btn btn-success" >编辑本文</button>
+    </a>
+    {% end %}
 </div>
 
 <!-- 评论 -->
-<div class="hero-unit" id="commentmain">
-{% if comments %}
-{% for (offset,comment) in enumerate(comments) %}
-	<div class="comment">
-	<div class="avatar">
-	<img class="img-circle" src="{{comment.gravatar}}" />
-	</div>
-	<div class="name">{{comment.name}}</div>
-	<div class="date">#{{offset+1}}  {{ locale.format_date(comment.commenttime, full_format=True, shorter=False) }}</div>
-	<p>{{comment.commentbody}}</p>
-	</div>
+
+{% if share.viewpoints %}
+{% for (offset,viewpoint) in enumerate(share.viewpoints) %}
+    <p>{{viewpoint.aview}}
+
+<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{viewpoint.id}}" etype="viewpoint">
+<i class="icon-thumbs-up"></i>
+<span> {{ viewpoint.likenum }}</span>
+</a>
+    </p>
 {% end %}
 {% end %}
 
 {% if current_user %}
-	<div id="addCommentContainer">
-	<form id="addCommentForm">
-		{{ xsrf_form_html() }}
-		<div>
-		<label for="commentbody">评论：</label>
-		<textarea name="commentbody" id="commentbody" rows="5" cols="40" autocomplete="off"></textarea>
-		<input type="submit" id="submit" value="提交" />
-		</div>
-		<input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
-	</form>
-	</div>
+    <form class="form-horizontal" id="addViewPoint" >
+        {{ xsrf_form_html() }}
+
+    <div class="form-group">
+      <label for="aview" class="col-lg-2 control-label">观点</label>
+      <div class="col-lg-4">
+        <input type="text" name="aview" class="form-control" id="aview" required>
+      </div>
+      <input type="submit" id="submit" value="提交" />
+      <input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
+    </div>
+
+    </form>
+{% end %}
+
+
+<div class="hero-unit" id="commentmain">
+{% if comments %}
+{% for (offset,comment) in enumerate(comments) %}
+    <div class="comment">
+    <div class="avatar">
+    <img class="img-circle" src="{{comment.gravatar}}" />
+    </div>
+    <div class="name">{{comment.name}}</div>
+    <div class="date">#{{offset+1}}  {{ locale.format_date(comment.commenttime, full_format=True, shorter=False) }}</div>
+    <p>{{comment.commentbody}}</p>
+    </div>
+{% end %}
+{% end %}
+
+{% if current_user %}
+    <div id="addCommentContainer">
+    <form id="addCommentForm">
+        {{ xsrf_form_html() }}
+        <div>
+        <label for="commentbody">评论：</label>
+        <textarea name="commentbody" id="commentbody" rows="5" cols="40" autocomplete="off"></textarea>
+        <input type="submit" id="submit" value="提交" />
+        </div>
+        <input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
+    </form>
+    </div>
 {% end %}
 </div> <!-- 评论 -->
 

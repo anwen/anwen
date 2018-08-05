@@ -11,20 +11,80 @@ if 'host' in options.db:
 else:
     connection = Connection()
 db = getattr(connection, options.db['name'])
-
-
-print(options.db)
+# print(options.db)
 if 'username' in options.db:
     try:
         db.authenticate(options.db['username'], options.db['password'])
     except KeyError:
         print('KeyError: Not authenticating.')
 
-
 try:
     basestring
 except NameError:
     basestring = str
+
+
+@connection.register
+class Viewpoint(BaseModel):
+    __collection__ = 'Viewpoint_Col'
+    use_autorefs = True
+    structure = {
+        'id': int,
+        'user_id': int,
+        'share_id': int,
+        'likenum': int,
+        'aview': basestring,
+        'create_time': float,
+    }
+    default_values = {
+        'likenum': 0,
+        'create_time': time.time,
+    }
+
+
+@connection.register
+class Comment(BaseModel):
+    __collection__ = 'Comment_Col'
+    use_autorefs = True
+    structure = {
+        'id': int,
+        'user_id': int,
+        'share_id': int,
+        'commentbody': basestring,
+        'commenttime': float,
+    }
+    default_values = {
+        'commenttime': time.time,
+    }
+
+
+@connection.register
+class Like(BaseModel):
+    __collection__ = 'Like_Col'
+    use_autorefs = True
+    structure = {
+        'id': int,
+        'user_id': int,
+        'entity_id': int,
+        'entity_type': basestring,
+        'likenum': int,
+        'dislikenum': int,
+        'create_time': float,
+    }
+    default_values = {
+        'likenum': 0,
+        'dislikenum': 0,
+        'create_time': time.time,
+    }
+
+    def change_like(self, doc, liketype):
+        res = self.find_one(doc) or self()
+        if 'id' not in doc:
+            doc['id'] = self.find().count() + 1
+        res.update(doc)
+        res[liketype] += 1
+        res.save()
+        return res
 
 
 @connection.register
@@ -127,50 +187,6 @@ class Share(BaseModel):
 
     def by_slug(self, slug):
         return self.find_one({'slug': slug})
-
-
-@connection.register
-class Comment(BaseModel):
-    __collection__ = 'Comment_Col'
-    use_autorefs = True
-    structure = {
-        'id': int,
-        'user_id': int,
-        'share_id': int,
-        'commentbody': basestring,
-        'commenttime': float,
-    }
-    default_values = {
-        'commenttime': time.time,
-    }
-
-
-@connection.register
-class Like(BaseModel):
-    __collection__ = 'Like_Col'
-    use_autorefs = True
-    structure = {
-        'id': int,
-        'user_id': int,
-        'share_id': int,
-        'likenum': int,
-        'dislikenum': int,
-        'liketime': float,
-    }
-    default_values = {
-        'likenum': 0,
-        'dislikenum': 0,
-        'liketime': time.time,
-    }
-
-    def change_like(self, doc, liketype):
-        res = self.find_one(doc) or self()
-        if 'id' not in doc:
-            doc['id'] = self.find().count() + 1
-        res.update(doc)
-        res[liketype] += 1
-        res.save()
-        return res
 
 
 @connection.register

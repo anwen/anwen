@@ -22,6 +22,7 @@ class LoginHandler(BaseHandler):
         self.render('login.html')
 
     def post(self):
+        api = self.get_argument('api', '')
         email = self.get_argument('email', '')
         password = self.get_argument('password', '')
         password = utils.make_password(password)
@@ -34,9 +35,11 @@ class LoginHandler(BaseHandler):
                 'user_domain': doc.user_domain}
             self.set_secure_cookie(
                 'user', tornado.escape.json_encode(user_info))
-            self.redirect(self.get_argument('next', '/'))
+            if not api:
+                self.redirect(self.get_argument('next', '/'))
             return
-        self.redirect('/login')  # self.write('密码错误或用户不存在，请重新注册或登录')
+        self.redirect('/login')
+        # self.write('密码错误或用户不存在，请重新注册或登录')
 
 
 class JoinusHandler(BaseHandler):
@@ -184,7 +187,7 @@ class SettingHandler(BaseHandler):
         user = User.by_sid(self.current_user['user_id'])
         user.user_jointime = time.strftime(
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
-        user.gravatar = get_avatar(user.user_email, 100)
+        user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
         self.render('setting.html', user=user)
 
     @tornado.web.authenticated

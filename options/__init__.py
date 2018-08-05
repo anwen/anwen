@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-debug = True
 port = 8888
+debug = True
+use_ssl = False
 
 db = {
     'name': 'anwen',

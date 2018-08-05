@@ -16,6 +16,8 @@ from anwen.share import FeedHandler
 from anwen.share import ImageUploadHandler
 from anwen.share import SharesHandler, CommentsHandler
 
+from anwen.share import ViewPointHandler
+
 from anwen.admin import AdminHandler, BecomeAdminHandler
 from anwen.admin import AdminShareHandler
 
@@ -30,6 +32,8 @@ from anwen.other import AppHandler
 from anwen.other import TogetherHandler
 
 handlers = [
+    (r"/viewpoint", ViewPointHandler),
+
     (r"/welcome", WelcomeHandler),
     (r"/", IndexHandler),
     (r"/explore", ExploreHandler),

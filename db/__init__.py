@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from db.model import connection
 
+
+Viewpoint = connection.Viewpoint
+
+
 User = connection.User
 Share = connection.Share
 Comment = connection.Comment
@@ -11,3 +15,4 @@ Feedback = connection.Feedback
 Admin = connection.Admin
 Ande = connection.Ande
 Talk = connection.Talk
+# Vote = connection.Vote

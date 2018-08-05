@@ -5,7 +5,9 @@ __pycache__/
 server_setting.py
 db/data/Admin.yaml
 db/data/User.yaml
+cert
 local_*
+
 
 # upload-img avatar
 /static/upload/img/*
