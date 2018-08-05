@@ -45,7 +45,7 @@ def send_email(receivers, subject, msg_body):
 def random_sayings():
     file1 = 'utils/sayings.txt'
     a = []
-    with open(file1) as f:
+    with open(file1, 'r', encoding='u8') as f:
         for eachline in f:
             a.append(str(eachline.replace('\n', '')))
     import random
