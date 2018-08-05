@@ -10,26 +10,6 @@ from options.url import handlers
 from anwen.uimodules import EntryModule, UseradminModule
 import options
 
-options.web_server.update(
-    dict(ui_modules={"Entry": EntryModule, "Useradmin": UseradminModule},))
-application = tornado.web.Application(handlers, **options.web_server)
-
-tornado.locale.load_translations(options.web_server['locale_path'])
-http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
-
-if options.use_ssl:
-    http_server = tornado.httpserver.HTTPServer(
-        application, ssl_options=options.ssl_options)
-else:
-    http_server = tornado.httpserver.HTTPServer(application)
-
-
-def launch(port):
-    http_server.listen(port)
-
-    logger.info('Server started on %s' % port)
-    tornado.ioloop.IOLoop.instance().start()
-
 
 parser = argparse.ArgumentParser(
     description='Welcome to Anwen World')
@@ -49,6 +29,27 @@ parser.add_argument(
     default=options.port,
     help='run on the given port'
 )
+
+
+options.web_server.update(
+    dict(ui_modules={"Entry": EntryModule, "Useradmin": UseradminModule},))
+application = tornado.web.Application(handlers, **options.web_server)
+
+tornado.locale.load_translations(options.web_server['locale_path'])
+http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
+
+if options.use_ssl and args.port != 8888:
+    http_server = tornado.httpserver.HTTPServer(
+        application, ssl_options=options.ssl_options)
+else:
+    http_server = tornado.httpserver.HTTPServer(application)
+
+
+def launch(port):
+    http_server.listen(port)
+
+    logger.info('Server started on %s' % port)
+    tornado.ioloop.IOLoop.instance().start()
 
 
 def sig_handler(sig):
