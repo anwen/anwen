@@ -22,6 +22,11 @@ apt-get build-dep python-lxml
 apt install git
 apt install nginx
 apt install supervisor
+apt install zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+apt install tmux
+apt install unzip
+
 
 # bad
 # pip3 install --upgrade pip

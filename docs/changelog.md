@@ -2,6 +2,12 @@ ChangeLog
 =======
 
 
+
+## 180803
+- 重启restful接口设计
+- http://cizixs.com/2016/12/12/restful-api-design-guide
+
+
 ## 201807 done
 - 重启项目
 
