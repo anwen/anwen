@@ -1,0 +1,43 @@
+
+upstream our-anniversary {
+    server 127.0.0.1:6001;
+}
+server {
+    listen 80;
+    server_name ourlove.anwensf.com fm.anwensf.com;
+    index index.html index.htm index.php;
+    root  /var/www/our-anniversary;
+    # Allow file uploads
+    client_max_body_size 50M;
+    location ^~ /static/ {
+        if ($query_string) {
+            expires max;
+        }
+    }
+    location = /favicon.ico {
+        rewrite (.*) /static/ico/favicon.ico;
+    }
+    location = /robots.txt {
+        rewrite (.*) /static/robots.txt;
+    }
+    location = /humans.txt {
+        rewrite (.*) /static/humans.txt;
+    }
+    location / {
+        proxy_pass_header Server;
+        proxy_connect_timeout 30s;
+        proxy_send_timeout   90;
+        proxy_read_timeout   90;
+        proxy_buffer_size    32k;
+        proxy_buffers     4 32k;
+        proxy_redirect off;
+        proxy_set_header Host $host;
+        proxy_set_header   Accept-Encoding '';
+        proxy_set_header   Referer $http_referer;
+        proxy_set_header   Cookie $http_cookie;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://our-anniversary;
+    }
+}

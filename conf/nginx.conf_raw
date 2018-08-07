@@ -1,0 +1,229 @@
+user www-data;
+# worker_processes 4;
+worker_processes auto;
+# pid /var/run/nginx.pid;
+pid /run/nginx.pid;
+# error_log  /home/wwwlogs/nginx_error.log  crit;
+
+worker_rlimit_nofile 51200;
+
+events {
+    # multi_accept on;
+    # worker_connections 768;
+    use epoll;
+    worker_connections 51200;
+}
+
+http {
+    # include       mime.types;
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+
+    # server_names_hash_bucket_size 64;
+    # server_name_in_redirect off;
+    server_names_hash_bucket_size 128;
+    client_header_buffer_size 32k;
+    large_client_header_buffers 4 32k;
+    client_max_body_size 50m;
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay on;
+    keepalive_timeout 65;
+
+    types_hash_max_size 2048;
+    # server_tokens off;
+
+    fastcgi_connect_timeout 300;
+    fastcgi_send_timeout 300;
+    fastcgi_read_timeout 300;
+    fastcgi_buffer_size 64k;
+    fastcgi_buffers 4 64k;
+    fastcgi_busy_buffers_size 128k;
+    fastcgi_temp_file_write_size 256k;
+
+    # Gzip Settings
+    gzip on;
+    gzip_disable "msie6";
+    gzip_min_length  1k;
+    gzip_buffers     4 16k;
+    # gzip_http_version 1.0;
+    gzip_http_version 1.1;
+    gzip_comp_level 2;
+    gzip_types  text/plain application/x-javascript text/css application/xml application/json application/javascript   application/xml+rss text/javascript text/xml;
+
+    gzip_vary on;
+    # gzip_proxied any;
+
+
+
+    # SSL Settings
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2; # Dropping SSLv3, ref: POODLE
+    ssl_prefer_server_ciphers on;
+
+    # Logging Settings
+    access_log /var/log/nginx/access.log;
+    error_log /var/log/nginx/error.log;
+
+    # limit_zone  crawler  $binary_remote_addr  10m;
+    # log format
+    # log_format access
+    #   '$remote_addr - $remote_user [$time_local] "$request" '
+    #   '$status $body_bytes_sent "$http_referer" '
+    #   '"$http_user_agent" $http_x_forwarded_for';
+
+
+
+
+
+    # Virtual Host Configs
+    include /etc/nginx/conf.d/*.conf;
+    include /etc/nginx/sites-enabled/*;
+    # include conf.d/*.conf;
+
+    # Enumerate all the Tornado servers here
+    upstream anwen {
+        server 127.0.0.1:8001;
+        server 127.0.0.1:8002;
+    }
+    upstream anwen_test {
+        server 127.0.0.1:8888;
+    }
+    upstream our-anniversary {
+        server 127.0.0.1:6001;
+    }
+    server_tokens on;
+
+
+    server {
+        listen 80;
+        server_name anwensf.com b.anwensf.com anwen.co b.anwen.co;
+        index index.html index.htm index.php;
+        root  /var/www/anwen;
+        # Allow file uploads
+        client_max_body_size 50M;
+        location ^~ /static/ {
+            if ($query_string) {
+                expires max;
+            }
+        }
+        location = /favicon.ico {
+            rewrite (.*) /static/ico/favicon.ico;
+        }
+        location = /robots.txt {
+            rewrite (.*) /static/robots.txt;
+        }
+        location = /humans.txt {
+            rewrite (.*) /static/humans.txt;
+        }
+        location / {
+            proxy_pass_header Server;
+            proxy_connect_timeout 30s;
+            proxy_send_timeout   90;
+            proxy_read_timeout   90;
+            proxy_buffer_size    32k;
+            proxy_buffers     4 32k;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header   Accept-Encoding '';
+            proxy_set_header   Referer $http_referer;
+            proxy_set_header   Cookie $http_cookie;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Scheme $scheme;
+            proxy_pass http://anwen;
+        }
+    }
+    server {
+        listen 80;
+        server_name  www.anwensf.com;
+        rewrite ^(.*)$ http://anwensf.com$1 permanent;
+    }
+    server {
+        listen 80;
+        server_name  www.anwen.co;
+        rewrite ^(.*)$ http://anwen.co$1 permanent;
+    }
+
+    server {
+        listen 80;
+        server_name test.anwensf.com t.anwensf.com t.anwen.co;
+        index index.html index.htm index.php;
+        root  /var/www/anwen;
+        # Allow file uploads
+        client_max_body_size 50M;
+        location ^~ /static/ {
+            if ($query_string) {
+                expires max;
+            }
+        }
+        location = /favicon.ico {
+            rewrite (.*) /static/ico/favicon.ico;
+        }
+        location = /robots.txt {
+            rewrite (.*) /static/robots.txt;
+        }
+        location = /humans.txt {
+            rewrite (.*) /static/humans.txt;
+        }
+        location / {
+            proxy_pass_header Server;
+            proxy_connect_timeout 30s;
+            proxy_send_timeout   90;
+            proxy_read_timeout   90;
+            proxy_buffer_size    32k;
+            proxy_buffers     4 32k;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header   Accept-Encoding '';
+            proxy_set_header   Referer $http_referer;
+            proxy_set_header   Cookie $http_cookie;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Scheme $scheme;
+            proxy_pass http://anwen_test;
+        }
+    }
+
+    server {
+        listen 80;
+        server_name ourlove.anwensf.com fm.anwensf.com;
+        index index.html index.htm index.php;
+        root  /var/www/our-anniversary;
+        # Allow file uploads
+        client_max_body_size 50M;
+        location ^~ /static/ {
+            if ($query_string) {
+                expires max;
+            }
+        }
+        location = /favicon.ico {
+            rewrite (.*) /static/ico/favicon.ico;
+        }
+        location = /robots.txt {
+            rewrite (.*) /static/robots.txt;
+        }
+        location = /humans.txt {
+            rewrite (.*) /static/humans.txt;
+        }
+        location / {
+            proxy_pass_header Server;
+            proxy_connect_timeout 30s;
+            proxy_send_timeout   90;
+            proxy_read_timeout   90;
+            proxy_buffer_size    32k;
+            proxy_buffers     4 32k;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header   Accept-Encoding '';
+            proxy_set_header   Referer $http_referer;
+            proxy_set_header   Cookie $http_cookie;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Scheme $scheme;
+            proxy_pass http://our-anniversary;
+        }
+    }
+
+
+}

@@ -33,7 +33,11 @@ git push ol
 
 # scp conf/nginx.conf aw:/usr/local/nginx/conf/nginx.conf
 scp conf/nginx.conf aw:/etc/nginx
+scp conf/nginx_conf_* aw:/etc/nginx
 /etc/init.d/nginx reload
+/etc/init.d/nginx stop
+/etc/init.d/nginx start
+/etc/init.d/nginx restart
 
 mkdir /home/anwen
 service supervisord start
