@@ -16,8 +16,12 @@ class ShareHandler(JsonHandler):
             return
         share.hitnum += 1
         if 'vote_open' not in share:
-            share.vote_open = 0
-            share.vote_title = ''
+            # share.vote_open = 0
+            # share.vote_title = ''
+            res = {}
+            res['vote_open'] = 0
+            res['vote_title'] = 0
+            share.update(res)
         share.save()
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
