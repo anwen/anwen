@@ -22,12 +22,13 @@ class ViewPointHandler(BaseHandler):
         share_id = self.get_argument("share_id", None)
         if aview:
             doc = {}
-            doc['user_id'] = self.current_user["user_id"]
             doc['share_id'] = int(share_id)
+            doc['aview'] = aview
             if Viewpoint.find_one(doc):
                 print('repeat')
                 return
-            doc['aview'] = aview
+            doc['user_id'] = self.current_user["user_id"]
+            # doc['aview'] = aview
             Viewpoint.new(doc)
             self.write(aview)
 
