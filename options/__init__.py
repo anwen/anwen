@@ -3,6 +3,12 @@ port = 8888
 debug = True
 use_ssl = False
 
+# 本网站域名 用于: email激活
+# site_url = 'http://localhost:8888'  # 本地开发测试用
+site_url = 'https://anwensf.com'
+API = 'https://anwensf.com/api/'
+
+
 db = {
     'name': 'anwen',
     'host': '127.0.0.1',
@@ -126,10 +132,6 @@ log = {
 
 MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 2
 
-
-# 本网站域名  email激活用地址
-# site_url = 'http://0.0.0.0:8888'  # 本地开发测试用
-site_url = 'http://anwensf.com'
 
 EMAIL_HOST = 'smtp.exmail.qq.com'
 EMAIL_PORT = 25

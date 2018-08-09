@@ -20,3 +20,9 @@ local_*
 # *~
 # *.swp
 # *.tar.gz
+
+
+
+*.zip
+docs/PyGithub-master/
+docs/python-github3-master/

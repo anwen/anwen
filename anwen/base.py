@@ -24,9 +24,14 @@ class BaseHandler(RequestHandler):
 
     def get_current_user(self):
         user_json = self.get_secure_cookie("user")
-        if not user_json:
-            return None
-        return json_decode(user_json)
+        if user_json:
+            return json_decode(user_json)
+        token = self.get_argument('token', '')
+        if token:
+            user_json = self.get_secure_cookie('user', token)
+            if user_json:
+                return json_decode(user_json)
+        return None
 
     def get_user_lang_by_cookie(self):
         user_json = self.get_cookie("lang")

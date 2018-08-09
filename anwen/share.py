@@ -134,9 +134,13 @@ class ShareHandler(BaseHandler):
         share = None
         if share_id:
             share = Share.by_sid(share_id)
+            if 'vote_open' not in share:
+                share.vote_open = 0
+                share.vote_title = ''
             sharetype = share.sharetype if share else None
         if sharetype == 'goodlink':
             self.render("share_link.html", share=share)
+            return
         if editor:
             self.render("share_wysiwyg.html", share=share)
         else:
@@ -156,6 +160,12 @@ class ShareHandler(BaseHandler):
         post_img = self.get_argument("post_Img", '')
         link = self.get_argument("link", '')
         user_id = self.current_user["user_id"]
+        vote_open = self.get_argument("vote_open", '')
+        vote_title = self.get_argument("vote_title", '')
+        if vote_open.isdigit():
+            vote_open = int(vote_open)
+        else:
+            vote_open = 0
         res = {
             'title': title,
             'markdown': markdown,
@@ -166,6 +176,8 @@ class ShareHandler(BaseHandler):
             'upload_img': upload_img,
             'post_img': post_img,
             'link': link,
+            'vote_open': vote_open,
+            'vote_title': vote_title,
             'updated': time.time(),
         }
         if share_id:

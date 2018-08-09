@@ -1,5 +1,4 @@
 # -*- coding:utf-8 -*-
-
 import time
 import hashlib
 import markdown2
@@ -12,6 +11,38 @@ import utils.douban_auth
 from utils.avatar import get_avatar
 from .base import BaseHandler, CommonResourceHandler
 from db import User, Share, Like
+
+
+class SettingHandler(BaseHandler):
+
+    @tornado.web.authenticated
+    def get(self):
+        user = User.by_sid(self.current_user['user_id'])
+        user.user_jointime = time.strftime(
+            '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
+        user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
+        self.render('setting.html', user=user)
+
+    @tornado.web.authenticated
+    def post(self):
+        user = User.by_sid(self.current_user['user_id'])
+        user['user_name'] = self.get_argument('name', None)
+        user['user_city'] = self.get_argument('city', None)
+        user['user_say'] = self.get_argument('say', None)
+        user.save()
+        self.redirect('/setting')
+
+
+class UserhomeHandler(BaseHandler):
+
+    def get(self, name):
+        user = User.find_one({'user_domain': name})
+        user.user_say = markdown2.markdown(user.user_say)
+        user.user_jointime = time.strftime(
+            '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
+        likenum = User.find({'user_id': user._id}).count()
+        user.gravatar = get_avatar(user.user_email, 100)
+        self.render('userhome.html', user=user, likenum=likenum)
 
 
 class LoginHandler(BaseHandler):
@@ -149,18 +180,6 @@ class LogoutHandler(BaseHandler):
         self.redirect(self.get_argument('next', '/'))
 
 
-class UserhomeHandler(BaseHandler):
-
-    def get(self, name):
-        user = User.find_one({'user_domain': name})
-        user.user_say = markdown2.markdown(user.user_say)
-        user.user_jointime = time.strftime(
-            '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
-        likenum = User.find({'user_id': user._id}).count()
-        user.gravatar = get_avatar(user.user_email, 100)
-        self.render('userhome.html', user=user, likenum=likenum)
-
-
 class UserlikeHandler(BaseHandler):
 
     def get(self, name):
@@ -178,26 +197,6 @@ class UserlikeHandler(BaseHandler):
             likes.append(like)
         user.gravatar = get_avatar(user.user_email, 100)
         self.render('userlike.html', user=user, likenum=likenum, likes=likes)
-
-
-class SettingHandler(BaseHandler):
-
-    @tornado.web.authenticated
-    def get(self):
-        user = User.by_sid(self.current_user['user_id'])
-        user.user_jointime = time.strftime(
-            '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
-        user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
-        self.render('setting.html', user=user)
-
-    @tornado.web.authenticated
-    def post(self):
-        user = User.by_sid(self.current_user['user_id'])
-        user['user_name'] = self.get_argument('name', None)
-        user['user_city'] = self.get_argument('city', None)
-        user['user_say'] = self.get_argument('say', None)
-        user.save()
-        self.redirect('/setting')
 
 
 class ChangePassHandler(BaseHandler):

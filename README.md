@@ -24,6 +24,7 @@
 - [安得成长日志](http://anwensf.com/ande-growup-log)
 - [升级日志](http://anwensf.com/changelog )
 - 参考docs目录
+- 遵循OpenAPI V3 规范的RESTful API
 - 欢迎参与
 
 ### 联系我们 Contact Us

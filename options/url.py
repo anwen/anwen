@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
+# apis
+from anwen import api
+from anwen import api_user
+from anwen import api_share
 
+# pages
 from anwen.index import WelcomeHandler
 from anwen.index import IndexHandler, ExploreHandler
 from anwen.index import NodeHandler, TagHandler
@@ -32,6 +37,27 @@ from anwen.other import AppHandler
 from anwen.other import TogetherHandler
 
 handlers = [
+    (r"/api", api.ApiHandler),
+    (r"/api/authorizations", api_user.AuthorizationsHandler),
+    (r"/api/me", api_user.MeHandler),
+    (r"/api/share/([^/]+)", api_share.ShareHandler),
+    # (r"/api/users", api_user.UsersHandler),
+
+
+
+    (r"/share/?", ShareHandler),
+    (r"/share/([^/]+)", EntryHandler),
+    (r"/share/image_upload", ImageUploadHandler),
+    (r"/sharecomment", CommentHandler),
+    (r"/sharelike/([^/]+)", LikeHandler),
+    (r"/feed", FeedHandler),
+
+    (r"/shares/?", SharesHandler),
+    (r"/shares/([0-9a-f]{24})", SharesHandler),
+
+    (r"/comments/?", CommentsHandler),
+    (r"/comments/([0-9a-f]{24})", CommentsHandler),
+
     (r"/viewpoint", ViewPointHandler),
 
     (r"/welcome", WelcomeHandler),
@@ -56,17 +82,7 @@ handlers = [
     (r"/users/?", UsersHandler),
     (r'/users/([0-9a-f]{24})', UsersHandler),
 
-    (r"/share/image_upload", ImageUploadHandler),
-    (r"/share/?", ShareHandler),
-    (r"/share/([^/]+)", EntryHandler),
-    (r"/sharecomment", CommentHandler),
-    (r"/sharelike/([^/]+)", LikeHandler),
-    (r"/feed", FeedHandler),
 
-    (r"/shares/?", SharesHandler),
-    (r"/shares/([0-9a-f]{24})", SharesHandler),
-    (r"/comments/?", CommentsHandler),
-    (r"/comments/([0-9a-f]{24})", CommentsHandler),
 
     (r"/admin/become/?", BecomeAdminHandler),
     (r"/admin/share/?", AdminShareHandler),

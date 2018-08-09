@@ -66,6 +66,8 @@
 
 <!-- 评论 -->
 
+
+<p>{{share.vote_title}}</p>
 {% if share.viewpoints %}
 {% for (offset,viewpoint) in enumerate(share.viewpoints) %}
     <p>{{viewpoint.aview}}
@@ -83,7 +85,7 @@
         {{ xsrf_form_html() }}
 
     <div class="form-group">
-      <label for="aview" class="col-lg-2 control-label">观点</label>
+      <label for="aview" class="col-lg-2 control-label">新观点</label>
       <div class="col-lg-4">
         <input type="text" name="aview" class="form-control" id="aview" required>
       </div>
