@@ -20,7 +20,7 @@ class ShareHandler(JsonHandler):
             # share.vote_title = ''
             res = {}
             res['vote_open'] = 0
-            res['vote_title'] = 0
+            res['vote_title'] = ''
             share.update(res)
         share.save()
         user = User.by_sid(share.user_id)
