@@ -17,12 +17,9 @@ local_*
 /log/files/*.log
 /log/files/*.log.*
 # *.log
+
 # *~
 # *.swp
+
 # *.tar.gz
-
-
-
 *.zip
-docs/PyGithub-master/
-docs/python-github3-master/
