@@ -18,6 +18,7 @@
 - doc
 - test
 - code style
+- api http://cizixs.com/2016/12/12/restful-api-design-guide
 
 ## 发布规范
 - 测试和发布工作尽量做到自动化

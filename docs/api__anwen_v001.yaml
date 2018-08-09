@@ -1,0 +1,107 @@
+# this is the Anwen API API spec in YAML
+openapi: "3.0.0"
+info:
+  title: Anwen API
+  description: Make the world a better place with the Anwen API
+  version: "1.0.0"
+servers:
+  - url: https://anwensf.com/api
+paths:
+  /shares:
+    get:
+      summary: All kind of things shared by users
+      description: The Shares endpoint returns all shares. The response includes the details about each share.
+      parameters:
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            format: int32
+          description: Offset the list of returned results by this amount. Default is zero.
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            format: int32
+          description: Number of items to retrieve. Default is 10, maximum is 100.
+      security:
+        - apikey: []
+      tags:
+        - Shares
+      responses:
+        '200':
+          description: An array of shares
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ShareList"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /me:
+    get:
+      summary: User Profile
+      description: The User Profile endpoint returns information about the Anwen user that has authorized.
+      tags:
+        - User
+      responses:
+        '200':
+          description: Profile information for a user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Profile"
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  securitySchemes:
+    apikey:
+      type: apiKey
+      name: server_token
+      in: query
+  schemas:
+    Share:
+      properties:
+        id:
+          type: integer
+          format: int32
+          description: Unique identifier representing a specific share.
+        title:
+          type: string
+          description: title.
+        markdown:
+          type: string
+          description: the content with markdown format.
+    ShareList:
+      properties:
+        Shares:
+          description: Contains the list of shares
+          type: array
+          items:
+            $ref: "#/components/schemas/Share"
+    Profile:
+      properties:
+        user_name:
+          type: string
+          description: Name of the Anwen user.
+        user_email:
+          type: string
+          description: Email address of the Anwen user
+        user_pic:
+          type: string
+          description: Image URL of the Anwen user.
+    Error:
+      properties:
+        code:
+          type: string
+        message:
+          type: string
+        fields:
+          type: string
