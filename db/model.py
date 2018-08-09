@@ -63,6 +63,8 @@ class Share(BaseModel):
         'status': 0,  # 0=published,1=draft,2=deleted
         'suggestscore': 0.0,
         'score': 0.0,
+        'vote_open': 0,
+        'vote_title': '',
         'published': time.time,
         'updated': time.time,
     }

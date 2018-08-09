@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from db import Share, User, Like, Comment, Viewpoint
+from db import Share, User, Like, Comment, Viewpoint, Hit
 import markdown2
 from random import randint
 
