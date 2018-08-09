@@ -1,26 +1,8 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-# import tornado.escape
-# import tornado.web
-# import base64
-# import utils
 from db import Share, User, Like, Comment, Viewpoint
 import markdown2
 from random import randint
-# from utils.avatar import get_avatar
-
-
-# import time
-# import os
-# import datetime
-# from PIL import Image
-# import tornado.web
-# import json
-# import options
-# from utils.avatar import get_avatar
-# from utils.img_tools import make_post_thumb
-# from db import User, Share, Comment, Like, Hit, Tag, Viewpoint
-# from .base import CommonResourceHandler, BaseHandler
 
 
 class ShareHandler(JsonHandler):

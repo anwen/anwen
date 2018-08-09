@@ -22,7 +22,6 @@ function getCookie(name) {
 preAllow = true;
 
 $(document.body).on('click', '.do-like', function() {
-    alert(1);
     var t = $(this),
         action = 'addlike';
     if (t.hasClass('liking')) {
@@ -33,8 +32,8 @@ $(document.body).on('click', '.do-like', function() {
     var etype = t.attr('etype');
     if (!eid) return;
     $.ajax({
-        url: '/sharelike/' + action,
-        type: 'post',
+        url: '/api/like/' + action,
+        type: 'get',
         data: {
             "action": action,
             "entity_id": eid,
@@ -47,7 +46,7 @@ $(document.body).on('click', '.do-like', function() {
             } else if (action === 'dellike') {
                 t.removeClass('liking');
             }
-            t.find('span').text(data + ' ');
+            t.find('span').text(data['newlikes'] + ' ');
         }
     });
 });
@@ -63,8 +62,8 @@ $(document.body).on('click', '.do-dislike', function() {
         return;
     }
     $.ajax({
-        url: '/sharelike/' + action,
-        type: 'post',
+        url: '/api/like/' + action,
+        type: 'get',
         data: {
             "action": action,
             "entity_id": lid,
@@ -77,7 +76,7 @@ $(document.body).on('click', '.do-dislike', function() {
             } else if (action === 'deldislike') {
                 t.removeClass('disliking');
             }
-            t.find('span').text(data + ' ');
+            t.find('span').text(data['newlikes'] + ' ');
         }
     });
 });

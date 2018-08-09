@@ -3,6 +3,7 @@
 from anwen import api
 from anwen import api_user
 from anwen import api_share
+from anwen import api_like
 
 # pages
 from anwen.index import WelcomeHandler
@@ -16,7 +17,7 @@ from anwen.user import SettingHandler, ChangePassHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
 from anwen.user import UsersHandler
 
-from anwen.share import ShareHandler, EntryHandler, CommentHandler, LikeHandler
+from anwen.share import ShareHandler, EntryHandler, CommentHandler
 from anwen.share import FeedHandler
 from anwen.share import ImageUploadHandler
 from anwen.share import SharesHandler, CommentsHandler
@@ -43,13 +44,15 @@ handlers = [
     (r"/api/share/([^/]+)", api_share.ShareHandler),
     # (r"/api/users", api_user.UsersHandler),
 
+    # actions
+    (r"/api_like/([^/]+)", api_like.LikeHandler),
+    (r"/api/like/([^/]+)", api_like.LikeHandler),
 
 
     (r"/share/?", ShareHandler),
     (r"/share/([^/]+)", EntryHandler),
     (r"/share/image_upload", ImageUploadHandler),
     (r"/sharecomment", CommentHandler),
-    (r"/sharelike/([^/]+)", LikeHandler),
     (r"/feed", FeedHandler),
 
     (r"/shares/?", SharesHandler),
