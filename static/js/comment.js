@@ -22,6 +22,7 @@ function getCookie(name) {
 preAllow = true;
 
 $(document.body).on('click', '.do-like', function() {
+    alert(1);
     var t = $(this),
         action = 'addlike';
     if (t.hasClass('liking')) {
