@@ -79,7 +79,7 @@ def doc_export(doc):
     for i in obj:
         i['_id'] = str(i['_id'])
         i = convert(i)
-        print(i)
+        print(dict(i))
         res.append(i)
     with open('data/' + doc + '.yaml', 'w') as document:
         yaml.dump(
