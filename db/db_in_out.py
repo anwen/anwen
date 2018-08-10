@@ -96,9 +96,12 @@ def convert(input):
         return dict((convert(k), convert(v)) for k, v in input.items())
     elif isinstance(input, list):
         return [convert(element) for element in input]
+    # elif isinstance(input, byte):  # unicode
+        # return input.decode('utf-8')
     # elif isinstance(input, str):  # unicode
     #     return input.encode('utf-8')
     else:
+        print(type(input))
         return input
 
 parser = argparse.ArgumentParser(
