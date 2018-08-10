@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import argparse
@@ -92,7 +92,7 @@ def doc_export(doc):
 
 def convert(input):
     if isinstance(input, dict):
-        return dict((convert(k), convert(v)) for k, v in input.iteritems())
+        return dict((convert(k), convert(v)) for k, v in input.items())
     elif isinstance(input, list):
         return [convert(element) for element in input]
     elif isinstance(input, unicode):
