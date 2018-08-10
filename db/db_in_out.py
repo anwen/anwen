@@ -86,7 +86,8 @@ def doc_export(doc):
             default_style=None, default_flow_style=False,
             canonical=False, indent=False, width=None,
             allow_unicode=True, line_break=None,
-            encoding='utf-8', explicit_start=None, explicit_end=None,
+            # encoding='utf-8',
+            explicit_start=None, explicit_end=None,
             version=None, tags=None)
 
 
