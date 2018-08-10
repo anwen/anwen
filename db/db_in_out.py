@@ -94,17 +94,17 @@ def doc_export(doc):
             version=None, tags=None)
 
 
-def convert(input):
-    if isinstance(input, dict):
-        return dict((convert(k), convert(v)) for k, v in input.items())
-    elif isinstance(input, list):
-        return [convert(element) for element in input]
-    # elif isinstance(input, byte):  # unicode
-        # return input.decode('utf-8')
-    # elif isinstance(input, str):  # unicode
-    #     return input.encode('utf-8')
+def convert(sth):
+    if isinstance(sth, dict):
+        return dict((convert(k), convert(v)) for k, v in sth.items())
+    elif isinstance(sth, list):
+        return [convert(element) for element in sth]
+    # elif isinstance(sth, byte):  # unicode
+        # return sth.decode('utf-8')
+    elif isinstance(sth, str):  # unicode
+        return sth.encode('utf-8')
     else:
-        return input
+        return sth
 
 parser = argparse.ArgumentParser(
     description='Anwen DB in or out')
