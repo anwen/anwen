@@ -77,7 +77,9 @@ def doc_export(doc):
         return
     res = []
     for i in obj:
+        print(i)
         print(i['_id'])
+        continue
         i['_id'] = str(i['_id'])
         i = dict(i)
         print(type(i))
