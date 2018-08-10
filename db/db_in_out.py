@@ -25,7 +25,7 @@ def make_doc():
             markdown = i['markdown']
             filebody = '%s\n========\n\n\n%s' % (
                 title, re.sub(r'\r\n', r'\n', markdown))
-            with open(filename, 'w') as share:
+            with open(filename, 'wb') as share:
                 share.write(filebody)
         print('shares are markdownd')
 
