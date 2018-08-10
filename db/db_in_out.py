@@ -79,6 +79,7 @@ def doc_export(doc):
     for i in obj:
         i['_id'] = str(i['_id'])
         i = convert(i)
+        print(i)
         res.append(i)
     with open('data/' + doc + '.yaml', 'w') as document:
         yaml.dump(
@@ -101,7 +102,6 @@ def convert(input):
     # elif isinstance(input, str):  # unicode
     #     return input.encode('utf-8')
     else:
-        print(type(input))
         return input
 
 parser = argparse.ArgumentParser(
