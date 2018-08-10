@@ -101,10 +101,10 @@ def convert(sth):
         return [convert(element) for element in sth]
     # elif isinstance(sth, byte):  # unicode
         # return sth.decode('utf-8')
-    elif isinstance(sth, str):  # unicode
-        return sth.encode('utf-8')
+    # elif isinstance(sth, str):  # unicode
+    #     return sth.encode('utf-8')
     else:
-        return sth
+        return sth.encode('utf-8')
 
 parser = argparse.ArgumentParser(
     description='Anwen DB in or out')
