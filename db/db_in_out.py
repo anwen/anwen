@@ -78,6 +78,8 @@ def doc_export(doc):
     res = []
     for i in obj:
         i['_id'] = str(i['_id'])
+        print(type(i))
+        print(i)
         i = convert(i)
         print(dict(i))
         res.append(i)
