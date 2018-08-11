@@ -1,25 +1,29 @@
+# cache
 __pycache__/
 *.pyc
+
+# upload-img avatar
+/static/upload/img/*
+/static/avatar/*.jpg
+
+# log files
+/log/files/*.log
+/log/files/*.log.*
+# *.log
 
 # private files
 server_setting.py
 db/data/Admin.yaml
 db/data/User.yaml
 cert
-local_*
 
-
-# upload-img avatar
-/static/upload/img/*
-/static/avatar/*.jpg
-
-# tmp files
-/log/files/*.log
-/log/files/*.log.*
-# *.log
+# unsure files
+*_.md
+db/data/*.yaml
 
 # *~
 # *.swp
 
 # *.tar.gz
 *.zip
+local_*

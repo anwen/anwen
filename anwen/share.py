@@ -174,7 +174,7 @@ class ShareHandler(BaseHandler):
             'sharetype': sharetype,
             'slug': slug,
             'tags': tags,
-            'upload_img': upload_img,
+            # 'upload_img': upload_img,
             'post_img': post_img,
             'link': link,
             'vote_open': vote_open,

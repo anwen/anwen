@@ -5,6 +5,31 @@ import markdown2
 from random import randint
 
 
+class SharesHandler(JsonHandler):
+
+    def get(self):
+        cond = {}
+        cond['status'] = {'$gte': 0}
+        vote_open = self.get_argument("vote_open", None)
+        has_vote = self.get_argument("has_vote", None)
+        if vote_open:
+            if not vote_open.isdigit():
+                return self.write_error(422)
+            cond['vote_open'] = int(vote_open)
+        if has_vote:
+            cond['vote_title'] = {'$ne': ''}
+        shares = Share.find(
+            # {'vote_open': 1},
+            cond,
+            {'_id': 0,
+             # 'title': 1, 'id': 1, 'published': 1,
+             # 'post_img': 1, 'user_id': 1, 'vote_open': 1,
+             }).sort('_id', -1)
+        self.res = list(shares)
+        print(self.res)
+        return self.write_json()
+
+
 class ShareHandler(JsonHandler):
 
     def get(self, slug):
@@ -15,12 +40,6 @@ class ShareHandler(JsonHandler):
         if not share:
             return
         share.hitnum += 1
-        if 'vote_open' not in share:
-            # res = {}
-            # res['vote_open'] = 0
-            # res['vote_title'] = ''
-            # share.update(res)
-            share.update({})
         share.save()
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name

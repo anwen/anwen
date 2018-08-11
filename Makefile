@@ -27,11 +27,9 @@ start:
 	@echo "starting anwen"
 	python3 hello.py
 
-
-
-
-
-
+backup:
+	@echo "starting backup"
+	fab back_data
 
 docs:
 	python -m SimpleHTTPServer 8004
@@ -53,9 +51,7 @@ deploy:
 	@echo "starting deploy"
 	fab deploy
 
-backup:
-	@echo "starting backup"
-	fab back_data
+
 
 ask:
 	@echo "call ande"

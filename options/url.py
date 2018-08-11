@@ -39,9 +39,11 @@ from anwen.other import TogetherHandler
 
 handlers = [
     (r"/api", api.ApiHandler),
+    (r"/api/shares/?", api_share.SharesHandler),
+    (r"/api/shares/([^/]+)", api_share.ShareHandler),
+
     (r"/api/authorizations", api_user.AuthorizationsHandler),
     (r"/api/me", api_user.MeHandler),
-    (r"/api/share/([^/]+)", api_share.ShareHandler),
     # (r"/api/users", api_user.UsersHandler),
 
     # actions

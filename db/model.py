@@ -36,7 +36,6 @@ class Share(BaseModel):
         'content': basestring,
         'sharetype': basestring,
         'tags': basestring,
-        'upload_img': basestring,
         'post_img': basestring,
         'link': basestring,
         'user_id': int,
@@ -51,6 +50,9 @@ class Share(BaseModel):
         'updated': float,
         'vote_open': int,
         'vote_title': basestring,
+
+        # deleted
+        'upload_img': basestring,
     }
     default_values = {
         'tags': '',

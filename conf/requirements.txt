@@ -1,6 +1,7 @@
 tornado
 markdown2
 pyyaml
+# fabric==1.14.0
 fabric
 requests
 flake8

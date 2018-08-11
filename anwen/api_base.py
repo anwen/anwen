@@ -46,20 +46,21 @@ class JsonHandler(RequestHandler):
         return None
 
     def write_error(self, status_code, reason=None):
+        self.set_status(status_code)
         print('_reason', self._reason)
+        # if not self._reason:
+        #     if status_code == 422:
+        #         kwargs['message'] = 'Unprocessable Entity, miss field'
         # if 'message' not in kwargs:
         #     if status_code == 405:
         #         kwargs['message'] = 'Invalid HTTP method.'
-        #     elif status_code == 422:
-        #         kwargs['message'] = 'Unprocessable Entity, miss field'
         #     elif status_code == 401:
         #         kwargs['message'] = 'Unauthorized, wrong email or password'
         #     else:
         #         kwargs['message'] = 'Unknown error.'
         # 如果缺少必要的 filed，会返回 422 Unprocessable Entity
         # 通过 errors 给出了哪些 field 缺少了，能够方便调用方快速排错
-        self.set_status(status_code, reason)
-        self.res = {'message': reason}
+        self.res = {'message': self._reason}
         # HTTP/1.1 401 Unauthorized
         self.write_json()
 
