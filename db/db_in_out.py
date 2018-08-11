@@ -8,10 +8,11 @@ import os
 import re
 from bson import ObjectId
 sys.path.append('..')
-from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
+from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint
 
 
-doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin']
+doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
+            'Like', 'Viewpoint']
 # , 'Like'
 
 
