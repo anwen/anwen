@@ -83,7 +83,7 @@ class WxLoginHandler(JsonHandler):
             res['user_pass'] = session_key
             res['user_name'] = ''
             res['user_domain'] = ''
-            user = Share.new(res)
+            user = User.new(res)
             user_info = {
                 'user_id': user.id,
                 'user_email': user.user_email,
