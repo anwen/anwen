@@ -88,10 +88,11 @@ def doc_export(doc):
         yaml.dump(
             res, document,
             default_flow_style=False,
+            allow_unicode=True,
+            # encoding='utf-8',
             # default_style=None,
             # canonical=False, indent=False, width=None,
-            # allow_unicode=True, line_break=None,
-            # encoding='utf-8',
+            # line_break=None,
             # explicit_start=None, explicit_end=None,
             # version=None, tags=None
         )
