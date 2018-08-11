@@ -1,43 +1,569 @@
-- _id: 50e44d08606ec51c6ab042e7
-  commentnum: 1
+- _id: 50e44d08606ec51c6ab042d7
+  commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 3413
-  id: 17
-  likenum: 0
+  hitnum: 2195
+  id: 1
+  likenum: 1
   link: ''
-  markdown: !!python/str "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024\
-    \ 安德能初步与这个世界对话\r\n* 20111025 安德能记住每一次对话，虽然目前的理解能力不够\r\n* 20111101 安德初步记住自己的生世，认识家人和朋友，并能进行简单的对话\r\
-    \n* 20111201 安德初步学会查天气，地图，时间,在使用chrome时拥有听懂语音的能力\r\n* 20120101 安德初步学会查搜索引擎和维基百科\r\
-    \n* 20120201 安德有了更多的朋友和老师，安德团队组建,开始为他记录成长日志\r\n* 20120301 安德更开放地与世界沟通，开放源代码\r\n\
-    * 20120309 安德初步建立记忆数据库\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20121108\
-    \ 安德结束多日休眠，开始[安德行动日志](http://i.askender.com/ande-growup-log)\r\n\r\n#### 安德计划\
-    \ ande-plan\r\n\r\n* 创智为知己 birth an AI for understand ourselves\r\n* 一个开源的人工智能项目\r\
-    \n* 一个自由的理想主义人工智能创造平台\r\n* 项目@github：[安德](http://i.askender.com/ande) anwen.in暂时无法访问\r\
-    \n* 构建于python,tornado,nginx,mysql,mongodb\r\n* 以MIT协议开源发布 V0.03  20121109\r\n\
-    * 正在不断开发中，欢迎大家fork or pull-request\r\n* 欢迎大家批评指正:anwen.in+ande@gmail.com\r\n\r\
-    \n\r\n#### 安德团队行动日志 ande-team-todo\r\n* 恢复安德原有能力\r\n* 列出使用的API\r\n* 恢复音乐，天气API"
+  markdown: ".....................................................................................................\r\
+    \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjQ4MzkwMjIw/v.swf\"\
+    \ allowFullScreen=\"true\" quality=\"high\" width=\"480\" height=\"400\" align=\"\
+    middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\"></embed>"
   post_img: null
-  published: 1352418858.0
-  score: 9.559000000000001
-  sharetype: fire
-  slug: ande-growup-log
+  published: 1349427988.0
+  score: 1.691
+  sharetype: film
+  slug: Steve-Jobs-Stanford-speech-ch-en
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '人工智能'
-  title: !!python/str '安德成长日志'
-  updated: 1359181625.999205
+  tags: speech  dream
+  title: 史蒂夫 乔布斯Steve.Jobs在2005年对斯坦福大学Stanford毕业生的演讲(中英字幕)
+  updated: 1357223954.264876
   upload_img: null
   user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042d8
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 2063
+  id: 2
+  likenum: 0
+  link: ''
+  markdown: "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
+    \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjE4NjIzMzM2/v.swf\"\
+    \ quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
+    sameDomain\" allowFullscreen=\"true\" type=\"application/x-shockwave-flash\"></embed>"
+  post_img: null
+  published: 1349428859.0
+  score: 1.2
+  sharetype: film
+  slug: birth-of-Wikipedia-ch-en
+  status: 0
+  suggestscore: 0.0
+  tags: TED speech
+  title: 吉米·威尔士关于维基百科诞生的演讲
+  updated: 1357223866.433515
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042d9
+  commentnum: 1
+  content: ''
+  dislikenum: 0
+  hitnum: 4698
+  id: 3
+  likenum: 0
+  link: ''
+  markdown: "### 什么是安问\r\n\r\n- 安问致力于分享和创造有趣的东西\r\n- 我们专注于为大家提供精选的文字，音乐，视频和其他有意思的东西\r\
+    \n- 期待以此给大家带来快乐，或引发大家的思考\r\n- 人生要有趣~\r\n\r\n> 安问是一个致力于传播有趣东西的非营利机构。团队在不断收集愿意创造和分享的人，旨在“用创造和分享的力量将世界变得更好玩”。欢迎加入~\r\
+    \n\r\n\r\n### 为什么要建立安问\r\n\r\n- 面对信息爆炸，安问将致力于提供精选而智能推荐的信息，在快节奏的生活中为大家带来一方安静的网络空间和交流平台\r\
+    \n- 给贡献者（包含提建议者）和分享者提供更多回报和报酬，为价值创造者带来更多价值\r\n- 读更多的好书，看更多的美景，认识更多志同道合的朋友。与大家一起分享有趣的东西~\r\
+    \n\r\n\r\n### What is Anwen (For people speaking English)\r\n\r\n- Anwen is all\
+    \ about creating and sharing nice things.\r\n- We provide valuable information\
+    \ for everyone, money for every creator and sharer.\r\n- We believe create and\
+    \ share have the power of promoting a more wonderful world.\r\n\r\n\r\n### 安问名字的来源\r\
+    \n\r\n>豺狼当道，安问狐狸——《后汉书·张纲传》\r\n\r\n- 话说东汉末年，外戚诸梁姻族满朝，大将军梁冀专权。朝廷派遣张纲等八人分道巡按各州郡，纠察收审贪官污吏。张纲衔命出洛阳，叹道：“豺狼当道，安问狐狸？”遂将车轮埋于都亭，起草弹劾梁冀的奏章。用豺狼比喻祸国殃民的人，用狐狸比喻小偷等小坏蛋，就是说国家祸国殃民的人还没除净，（却派我）去查那些小坏蛋。\r\
+    \n- 当然安问的名字也来源于屈原的《天问》以及奥森·斯科特·卡德（Orson Scott Card）的《安德的游戏》\r\n\r\n\r\n### 加入安问\r\
+    \n\r\n- 安问的每个开发者和参与者也都是安问用户，分享着自己心爱的发现，也从大家的创造和分享中受益。\r\n- Google论坛&邮件列表：https://groups.google.com/d/forum/our-anwen\r\
+    \n- 邮箱：askender43@gmail.com\r\n- 安问工作室用户群：127343260\r\n- 安问工作室核心群：148673816\r\n\
+    \r\n\r\n### 安问团队介绍（不断更新中）\r\n\r\n- 柏舟(askender)  物理学转互联网，热爱科幻，阅读，围棋...，一直在做梦，希望靠自己的力量改变一些什么\r\
+    \n- 刘超（kelvin）  主修通信，喜欢折腾与被折腾，热爱互联网，爱好巨多，这里写不下\r\n- sailor\r\n- 郭伟楠  荆州，专业地球化学，不成形geek一枚，未修成正果松鼠一只，爱好不计其数，以科幻，米奇，古典文化最甚，琴棋书画皆略懂，鬼点子多，可家养，可外放\r\
+    \n- 都磊(石头儿)  湖北襄樊，专科毕业，计算机专业，之后参加了北大青鸟2年的培训，热爱互联网，10年4月来到上海，参加工作。目前在一家私营企业做高级软件工程师\r\
+    \n- 月  从前的巴菲是愤青，将不能创作的理由推给“经费、人力、胶卷和市场”。现在的巴菲只是个单纯的说书人，一支笔、一张纸、几句话，简简单单，不为其它.巴菲印刻是将梦境造出的出版社。\r\
+    \n- 魏景亮, 周潇粤, Yungstedt, 盲眼A, 青青子矜, anti\r\n- ireading, A-cat, 盲眼A, 林子, H1K9\r\
+    \n- ...\r\n\r\n\r\n### 联系我们\r\n- 邮箱: anwen.in@gmail.com askender43@gmail.com\r\
+    \n- twitter: <https://twitter.com/askenderlee>\r\n- 微博: <http://weibo.com/askender>\r\
+    \n- github: <https://github.com/anwen/anwen>\r\n- gurudigger: <http://gurudigger.com/ideas/696>\r\
+    \n\r\n\r\n### 历史\r\n- 想法出现，第一个网站建立（tap版天问） 2011-01-01\r\n- 购买第一个独立域名和空间，wp版安问网发布成立\
+    \ 2011-03-04\r\n- 安问团队第一次聚会（4人），当天与天使投资人聊天半小时 2011-05-21\r\n- 安问研发和发布人工智能安德（当月后来得知Jobs去世和siri发布）\
+    \ 2011-10\r\n- 因安问这个梦，askender退学。当月获得小额天使投资后退还 2011-12\r\n- 安问发布第一期独立杂志 2012-01-01\r\
+    \n- 第一个独立开发版安问上线 2012-08\r\n- 很多人参与过安问，可惜一直没有组织好，一直在沉寂和积累。感谢那些可爱的人 2011-01~2014-04\r\
+    \n- 安问开始重构。获得风车赞助团队协作工具 2014-04-28\r\n\r\n### 进行中的安问\r\n- 成为优质内容发布、阅读与分享的一个独特和独立平台\
+    \ 2014-05~\r\n- 作者收入更多，读者阅读体验更好，交流互动更有意思 2014-05~\r\n- 与版权方深度合作，让正版资源能够以体验好、方便低价，互动性更强的方式呈现于读者面前\
+    \ 2014-05~\r\n- 创建一个有自己信仰的优质内容社区，使网站内容的质量保持在高水平 2014-05~\r\n- 研发人工智能和推荐算法 2011-10~\r\
+    \n- 提供更好的用户体验和用户价值实现 2011~\r\n\r\n\r\n### 安问实验室（项目有点多, 部分链接稍后放出）\r\n- 安文 文章精选\
+    \ 重构中 安问核心 从安问分离 <http://anwensf.com/>\r\n- 暗链 链接精选 重构中 安问核心 从安问分离\r\n- 安德 人工智能\
+    \ 重构中 <http://ande.anwensf.com/>\r\n- 安寻 自由寻找 重构中 <http://x.anwensf.com/>\r\n\
+    - 安听 音乐精选 开发中\r\n- 暗视 视频精选 完善中 <http://v.anwensf.com/>\r\n- 暗香 美食精选 完善中 <http://e.anwensf.com/>\r\
+    \n- 安聚 聚会精选 开发中 鲜活\r\n- 安诗 诗歌漫步 开发中\r\n- 安言 言语漫游 开发中\r\n- 安幻 科幻奇幻 暂下线 曾经的whsfa\
+    \ 会回来的\r\n- 安游 奇异视界 开发中 一个html5-mmo游戏\r\n- 安际 国际版本 原域名anwen.in备案被取消，恢复访问时间测不准\r\
+    \n\r\n\r\n### 安问开源\r\n\r\n- [anwen@github](https://github.com/anwen/anwen) 活跃开发中（正在重构），欢迎大家pull-request\r\
+    \n\r\n\r\n### 信条\r\n\r\n- 提供优质内容和最佳用户体验，专心将一件事做到极致\r\n- 安问是一生的故事，生命短暂，不断提高迭代更新速度，期待有一天吸引你的参与\r\
+    \n- 逐步实现分享维基，可以给文章pull request，协作打造最方便的分享\r\n- 文本默认采用<a rel=\"license\" href=\"\
+    http://creativecommons.org/licenses/by-sa/3.0/cn/\">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a>进行许可\r\
+    \n- 代码开源\r\n\r\n\r\n### 致谢\r\n\r\n- 所有关注过安问的人\r\n- 高效协作工具由[风车](https://fengcheco.com/)友情提供，推荐使用~\r\
+    \n- 各种开源工具\r\n- 创造有趣好用东西的很多人\r\n- 空气和水..."
+  post_img: ''
+  published: 1349429689.0
+  score: 2.564
+  sharetype: fire
+  slug: about
+  status: 0
+  suggestscore: 0.0
+  tags: ask
+  title: 关于安问
+  updated: 1398928891.832053
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042da
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 4046
+  id: 4
+  likenum: 0
+  link: ''
+  markdown: "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful api and\
+    \ doc before 130115 in 1\r\n* 安德AI的恢复与整合 before 121119 130115 in 1\r\n* 完善invite注册登陆\
+    \ before 121119 130115 in 1\r\n* oauth登录 before 121119 130115 in 1\r\n* 密码找回 before\
+    \ 121119 130115 in 1\r\n* 链接分享 link-blog before 121119 130115 in 1\r\n* 分享维基github\
+    \ before 121119 130115 in 1\r\n* 图片上传or使用imgur:简单图片分享 before 121119 130115 in\
+    \ 1\r\n* 安问音乐 before 121119 130115 in 1\r\n* post-author -bug before 121119 130115\
+    \ in 1\r\n* 充实基础内容 -keep before 130115 in 1\r\n* 征求建议 -keep before 130115 in 1\r\
+    \n* 更多成员加入 -keep before 130115 in 1\r\n* database-auto-backup -keep before 130115\
+    \ in 1\r\n* 首页按照推荐值排序 before 130115 in 1\r\n* 安问游戏初步 before 130115 in 1\r\n* 赞成-反对\
+    \ before 130115 in 1\r\n* Gravatar-cache 头像上传 before 130115 in 1\r\n* 发布清晰的远景和使命文档,以及吸引大家加入我们的文档\
+    \ before 130115 in 1\r\n* ......\r\n* 移动端html5&app before 130315 in 1\r\n* 社区推广\
+    \ 新浪微博 豆瓣小站 google+ twitter facebook ...  before 130115 in 1\r\n* 信息可视化 Information\
+    \ visualization  before 130315 in 1\r\n* ppt-js  before 130315 in 1\r\n\r\n####\
+    \ 未来计划 -if-we-have-more-time someday\r\n* 线下活动策划\r\n* 评论有二级评论吗？ -计划支持多级评论&引用&@\
+    \ -thanks@anti\r\n* 消息系统\r\n\r\n#### 已经实现\r\n\r\n##### 130103\r\n* 数据库转换为MongoDB\r\
+    \n* 使用yaml和github进行轻松的数据库导入导出（用户邮箱密码不会泄露）\r\n* 完成文章tag系统和slug别名添加 should 121119\r\
+    \n* 文章markdown编辑器初步 http://oscargodson.github.com/EpicEditor/\r\n* github-public-id\
+    \ should 121119\r\n* 单元测试 -keep\r\n\r\n##### 121111\r\n* 返回顶部改为需要的时候显示(取消显示) -bug\
+    \ -thanks@anti\r\n* 完善title -bug\r\n* 首页推荐的文章处空白但有一个点号 -bug -thanks@anti\r\n*\
+    \ 注册时 “个性域名” 不普适 -改为选填 -bug -thanks@anti\r\n* 返回顶部改为需要的时候显示(取消显示) -bug -thanks@anti\r\
+    \n\r\n##### 121017\r\n* 没有翻页时不显示页数，并提示暂无文章 -bug -thanks@anti\r\n* 总有一些音乐在某个时刻会击中你\
+    \ 打动怎么样，eagles前是不是要有标点 -post-bug -thanks@anti\r\n* 各个版块 内容未显示完全的建议用省略号 -bug -thanks@anti\r\
+    \n* 节点: 新闻 “知道真相。。”改为“探寻真相，亮出观点”；科幻 什么叫“星辰大海”，空泛无意义；行动 “记录梦想者的飞行轨迹”什么意思啊？“创造”单独列一个版块叫“原创区”吧\
+    \ -design-bug -thanks@anti\r\n* “创造和分享，仅供学习交流，期待内容少而精”可以写到关于我们里面，其他页面不必要，至少“期待”不必要\
+    \ -design-bug -thanks@anti\r\n* 设置城市时建议用下拉框，否则我设置成“火星”，混乱 -以后可能提供列表，但允许自由填写 -thanks@anti\r\
+    \n\r\n##### 121016\r\n* 正文页的智能推荐系统初步上线\r\n* 修正多平台访问 -bug -thanks@shuji\r\n* 版面初步设计\r\
+    \n* 版本由0.0.1升级为0.0.2\r\n\r\n##### 120903\r\n* 征求建议\r\n\r\n##### 120828\r\n* 分页\r\
+    \n\r\n##### 120819\r\n* 桉叶、喜欢功能\r\n\r\n##### 120818\r\n* 架构改进\r\n* 添加文章和评论功能\r\
+    \n\r\n##### 120730\r\n* 全新安问使用tornado重新构建\r\n* 重写新的关于页面\r\n* 模板构建\r\n* chatroom\r\
+    \n\r\n##### 110101-110729\r\n* 110101安问出现\r\n* 110526团队组建，第一次会议in光谷书城\r\n\r\n\
+    ##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in ), 欢迎pull-request\r\
+    \n\r\n##### Email：anwen.in@gmail.com"
+  post_img: null
+  published: 1349429901.0
+  score: 2.565
+  sharetype: fire
+  slug: changelog
+  status: 0
+  suggestscore: 0.0
+  tags: log
+  title: 安问行动日志
+  updated: 1357227413.799963
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042db
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 4324
+  id: 5
+  likenum: 0
+  link: ''
+  markdown: "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\r\n邮箱：askender43@gmail.com\r\
+    \n\r\nQQ：527639661  QQ群：127343260\r\n\r\n[邮件列表][1]：需修改hosts或越过长城，若不能访问可在群里问\r\n\
+    \r\n[github](https://github.com/askender/anwen.in)\r\n\r\n[微博][2]\r\n\r\n[google\
+    \ plus][3]：需修改hosts或越过长城\r\n\r\nYY频道ID：19043661（几乎没怎么使用）\r\n\r\n\r\n[1]: https://groups.google.com/d/forum/our-anwen\
+    \        \"安问邮件列表\"\r\n[2]: http://weibo.com/askender\r\n[3]: https://plus.google.com/110129569739358072859"
+  post_img: null
+  published: 1349430055.0
+  score: 2.972
+  sharetype: fire
+  slug: help
+  status: 0
+  suggestscore: 0.0
+  tags: ask
+  title: 提建议或咨询--欢迎联系我们
+  updated: 1357223707.065353
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042dc
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 2124
+  id: 6
+  likenum: 1
+  link: ''
+  markdown: "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n* Markdown 的语法非常简单，全由一些精挑细选的符号所组成，其作用一目了然。\r\
+    \n* 它实际上非常简单、容易学习。大家都可以在5分钟以内学会。是为数不多，你真地可以彻底学会的语言。\r\n* 更重要的是，Markdown语法所有要素，是与写作的习惯一脉相承的，套用句俗语：仅为写作而生。[1][1]\r\
+    \n* 纯文本，故兼容性极强，可以用所有文本编辑器打开。\r\n* 格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。\r\n*\
+    \ Markdown标记语言写出的文字有极好的可读性。\r\n\r\n学习开始~\r\n\r\n### 标题\r\n在行首插入 1 到 6 个 # ，对应到标题\
+    \ 1 到 6 级。\r\n<pre>\r\n# 标题 1\r\n## 标题 2\r\n### 标题 3\r\n</pre>\r\n# 标题 1\r\n##\
+    \ 标题 2\r\n### 标题 3\r\n\r\n注：# 和「标题」之间保留一个字符的空格。\r\n\r\n\r\n### 列表\r\n无序列表：使用减号、加号或者星号来做为列表的项目标记(减号后要加空格)\r\
+    \n<pre>\r\n- 安问\r\n- 成长\r\n</pre>\r\n- 安问\r\n- 成长\r\n\r\n有序列表则是使用一般的数字接着一个英文句点作为项目标记(句点后要加空格)\r\
+    \n<pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\n</pre>\r\n1. Red\r\n2. Green\r\n3.\
+    \ Blue\r\n注：普通文本后如果需要显示列表，需要空一行\r\n\r\n### 链接和图片\r\n要引用网址了，就是 [显示文本](链接地址)\r\n\
+    <pre>\r\n[豆瓣](http://www.douban.com)  \r\n[关于安问](/about   \"可选的说明:关于安问~~~\")\r\
+    \n</pre>\r\n[豆瓣](http://www.douban.com)  [关于安问](/about   \"可选的说明:关于安问~~~\")\r\n\
+    \r\n图片的语法和链接很像, 只是前面多了一个 ！\r\n<pre>\r\n![](http://img1.douban.com/pics/nav/lg_main_a10.png)\r\
+    \n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png  \"豆瓣logo\")\r\n</pre>\r\
+    \n![](http://img1.douban.com/pics/nav/lg_main_a10.png)\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
+    \  \"豆瓣logo\")\r\n\r\n\r\n### 引用\r\n我们写作的时候有时需要引用他人的文字，在 Markdown 中，你只需要在你希望引用的文字前面加上\
+    \ > 就好。 > 和文本之间要保留一个字符的空格。\r\n如：\r\n<pre>\r\n> 习惯是人生最大的指导。\r\n</pre>\r\n> 习惯是人生最大的指导。\r\
+    \n\r\n\r\n### 粗体和斜体\r\n<pre>\r\n在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**\r\n</pre>\r\n\
+    在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**\r\n\r\n\r\n###  换行\r\nMarkdown 的换行稍微有点特殊。换行我们分「一般换行」和「段落换行」。\
+    \  \r\n比方说，诗的换行都是「一般换行」，也就是一行紧接着一行，中间没有段落间隔。这种「一般换行」的语法是，在每句话的末尾保留两个字符的「空格」，例如你输入：\r\
+    \n\r\n朝辞白帝彩云间  \r\n千里江陵一日还  \r\n两岸猿声啼不住  \r\n轻舟已过万重山   \r\n注：上方的例子里面，每句话的末尾都有两个空格。\r\
+    \n\r\n另外一种换行是「段落换行」，常用于段落，两段文本之间会有一行的间隔，这种换行的语法没有特殊之处，只需要两段之间多加一行间隔之即可，例如你输入：\r\
+    \n\r\n朝辞白帝彩云间 ，千里江陵一日还，\r\n\r\n两岸猿声啼不住，轻舟已过万重山。\r\n\r\n\r\n#### 进阶\r\n参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：\r\
+    \n\r\n<pre>\r\nI get 10 times more traffic from [Google][1] than from\r\n[Yahoo][2]\
+    \ or [MSN][3].\r\n\r\n[1]: http://google.com/ \"Google\"\r\n[2]: http://search.yahoo.com/\
+    \ \"Yahoo Search\"\r\n[3]: http://search.msn.com/ \"MSN Search\"\r\n</pre>\r\n\
+    \r\n代码块\r\n\r\n<pre>\r\n```python\r\ndef hello():\r\n    return True\r\n```\r\n\
+    </pre>\r\n\r\n自动链接\r\n\r\nMarkdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown\
+    \ 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：\r\n\r\n    <http://anwensf.com/>\r\n会转为：\r\n\
+    <http://anwensf.com/>\r\n\r\n一切就这么简单。Markdown之所以越来越流行,是因为它足够简单。试试吧～\r\n\r\n在线编辑器\r\
+    \n\r\n-  <http://dillinger.io/>\r\n-  <http://markable.in/editor/>\r\n- <http://anwensf.com/edit>\r\
+    \n\r\n浏览器插件\r\n\r\n-  MaDe (Chrome)\r\n\r\n\r\n参考文献：\r\n\r\n1. [为什么Markdown+R有较大概率成为科技写作主流？][1]\r\
+    \n2. [Markdown 语法说明(简体中文版)][2]\r\n3. [Markdown Syntax Documentation][3]\r\n4.\
+    \ [献给写作者的 Markdown 新手指南][4]\r\n\r\n[1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html\r\
+    \n[2]:http://wowubuntu.com/markdown/basic.html\r\n[3]:http://daringfireball.net/projects/markdown/syntax\r\
+    \n[4]:http://jianshu.io/p/q81RER"
+  post_img: ''
+  published: 1349430103.0
+  score: 3.216
+  sharetype: fire
+  slug: markdown
+  status: 0
+  suggestscore: 0.0
+  tags: ask
+  title: Markdown漫游指南
+  updated: 1420723947.379189
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042dd
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 2033
+  id: 7
+  likenum: 0
+  link: ''
+  markdown: "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n评论：1叶（todo）"
+  post_img: null
+  published: 1349430154.0
+  score: 3.678
+  sharetype: fire
+  slug: about-anye
+  status: 0
+  suggestscore: 0.0
+  tags: ask
+  title: 桉叶说明
+  updated: 1357223662.862296
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042de
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 2319
+  id: 8
+  likenum: 0
+  link: ''
+  markdown: "### 阅读\r\n- [中国三明治](http://www.china30s.com/)\r\n- [Solidot](http://www.solidot.org/)\
+    \ 奇客的资讯，重要的东西\r\n- [阅FM](http://yue.fm/)\r\n- [简书](http://jianshu.io/) 在这里写作 在这里阅读\
+    \ 在这里，慢下来\r\n- [爱看豆happy书店](http://ikandou.com/)\r\n- [卡尔维诺中文站 - Italo Calvino\
+    \ in China](http://www.ruanyifeng.com/calvino/)\r\n- [Rochester Made](http://rochestermade.com/)\
+    \ \r\n- [拇指阅读 深阅读社区](http://www.mzread.com/)\r\n\r\n### 阅读工具\r\n- [feedly](http://cloud.feedly.com/)\r\
+    \n- [Digg](http://digg.com/)\r\n- [Google 阅读器](https://www.google.com/reader/)\
+    \  130701已经关闭\r\n\r\n### 视频\r\n- [Vimeo](http://vimeo.com/)  需要翻越长城\r\n- [YouTube](https://www.youtube.com/)\
+    \  需要翻越长城\r\n- [Coursera](https://www.coursera.org/) Take the world's best courses,\
+    \ online, for free. <http://www.douban.com/group/Coursera-er/> <http://www.gemag.com.cn/9/33078_1.html>\
+    \ <http://www.douban.com/group/xmooc/> <http://coursera.yeeyan.org/>\r\n\r\n###\
+    \ 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/  \"创意工作者们的社区\"\
+    ) \r\n- [知乎](http://www.zhihu.com/ )\r\n- [摆摆书架](http://bookfor.us/) 社会化图书馆。可以分享自己看过的闲书，以及免费借阅他人的书籍。\r\
+    \n\r\n### 写\r\n- [OhLife](http://ohlife.com/ \"OhLife helps you remember what's\
+    \ happened in your life\")\r\n- [notepad.cc](http://notepad.cc/) \r\n\r\n### 音乐\r\
+    \n- [Last.fm](http://cn.last.fm/ )\r\n- [巨鲸](http://www.top100.cn/ )\r\n- [虾米](http://www.xiami.com/\
+    \ )\r\n- [亦歌](http://www.1g1g.com/ )\r\n- [豆瓣电台](http://douban.fm/ )\r\n- [Spotify](http://www.spotify.com/us/\
+    \ \"A world of music\")\r\n\r\n### 图片\r\n- [imgur:简单图片分享](http://imgur.com/ \"\
+    the simple image sharer\")\r\n- [500px is Photography](http://500px.com/)  The\
+    \ world's best photo sharing.\r\n\r\n### 互联网创业\r\n- [创意气球 | GuruDigger](http://gurudigger.com/)\r\
+    \n- [36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n- [17Startup](http://www.17startup.com/\
+    \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n- [阮一峰](http://www.ruanyifeng.com/home.html )\r\
+    \n\r\n### 效率工具\r\n- [WorkFlowy](https://workflowy.com/)  Organize your brain\r\
+    \n\r\n### 其他\r\n- [google whats-at-stake](https://www.google.com/intl/zh-CN/takeaction/whats-at-stake/)\r\
+    \n\r\n### 小玩意\r\n- [在线键盘钢琴](http://zythum.free.bg/Piano/)  需要切换为英文输入法\r\n- [Pretty\
+    \ IP - By Strange](http://prettyip.meetstrange.com/)  有颜色的IP\r\n\r\n### 技术社区\r\
+    \n- [programming.reddit](http://www.reddit.com/r/programming/ )\r\n- [Hacker News](http://news.ycombinator.com/\
+    \ )\r\n- [StackOverflow](http://stackoverflow.com )\r\n- [SegmentFault](http://segmentfault.com\
+    \ )\r\n- [德问]( http://www.dewen.org \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n- [Python-China](http://python-china.org/\
+    \ ) \r\n- [叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 工具\r\n- [freebase](http://www.freebase.com/)\
+    \ A community-curated database of well-known people, places, and things\r\n\r\n\
+    ### 嘿，看看你的收藏夹，把你最爱的几个分享到这里来吧，多谢^,^\r\n\r\n### 持续更新中,欢迎推荐, anwen.in@gmail.com"
+  post_img: ''
+  published: 1349430186.0
+  score: 4.247
+  sharetype: eyeopen
+  slug: site-taste
+  status: 0
+  suggestscore: 0.0
+  tags: list site
+  title: 站点分享
+  updated: 1386083386.916727
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042df
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 1950
+  id: 9
+  likenum: 0
+  link: ''
+  markdown: "一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket (服务器更换，等待部署)\r\n\
+    \r\n[安德-人工智能](http://anwensf.com/ande) (即将恢复)\r\n\r\n看到这篇文章的你，又在鼓捣什么好玩的东西呢，欢迎分享~"
+  post_img: ''
+  published: 1349430251.0
+  score: 4.72
+  sharetype: fire
+  slug: study-play
+  status: 0
+  suggestscore: 0.0
+  tags: study play
+  title: 学习实验
+  updated: 1383585142.739632
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e0
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 2480
+  id: 10
+  likenum: 0
+  link: ''
+  markdown: "### 各种文章\r\n- [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)\r\
+    \n- [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)\r\
+    \n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
+    \ )\r\n- [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
+    \n- [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
+    \n- [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
+    \n- [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n- [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
+    \n- [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n- [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
+    \n- [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
+    \n- [纪录片《Minecraft：Mojang的故事》](http://www.ruanyifeng.com/blog/2012/12/minecraft_the_story_of_mojang.html)\r\
+    \n- [提高效率的秘诀 by Aaron Swartz](http://www.yesen.org/?p=171)\r\n- [给我未来的孩子](http://yue.fm/p9pdw)\r\
+    \n- [Graph Search能成为Facebook的杀手锏么？](http://www.yesen.org/?p=211)\r\n- [打破信息的牢笼](http://www.yesen.org/?p=204)\r\
+    \n- [空气有毒：PM 2.5、健康和科学松鼠会](http://www.yesen.org/?p=156)\r\n- [沉浮于江湖–读野夫《乡关何处》](http://www.yesen.org/?p=151)\r\
+    \n- [Kindle vs iPad：电子书将何去何从？](http://www.yesen.org/?p=146)\r\n- [旅行，写作，编程](http://www.aqee.net/traveling-writing-programming/)\r\
+    \n- [《Linus Torvalds自传》摘录](http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html)\r\
+    \n- [Michael S. Hart去世了](http://www.ruanyifeng.com/blog/2011/09/michael_s_hart_passed_away.html)\r\
+    \n- [自由引导网络，我们即将到来](http://www.solidot.org/story?sid=12063)\r\n- [不会沉没的海盗湾](http://www.ruanyifeng.com/blog/2010/05/an_unsinkable_tpb.html)\r\
+    \n- [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)\r\n\r\n### 短篇小说\r\n\
+    - [日暮](http://www.douban.com/group/topic/15321855/)\r\n- [漫长的消逝](www.douban.com/group/topic/12341290/)\r\
+    \n- [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
+    \n- [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
+    \n\r\n### 视频\r\n- [自然纪录片《Mythos Wald》](http://www.biubiubiubiu.com/post/227)\r\
+    \n\r\n### 图片\r\n- [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)\r\
+    \n\r\n### 生活\r\n- [那些应该时刻牢记的事](http://heikezhi.com/yuanyi/5-things-you-should-always-remember)\r\
+    \n- [橙汁配料表的秘密](http://heikezhi.com/yuanyi/secret-ingredient-your-orange-juice)\r\
+    \n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n- [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
+    \n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n- [程序员能力矩阵 Programmer\
+    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
+    \n\r\n### 大千世界的故事&新闻\r\n- [极客流浪汉与比特币的故事](http://www.ifanr.com/350210)\r\n\r\n\
+    不断补充中～～～\r\n欢迎推荐那些打动你的好文章 anwen.in@gmail.com\r\n另外，好书分享在<http://anwensf.com/share/12>"
+  post_img: ''
+  published: 1349430399.0
+  score: 5.318
+  sharetype: eyeopen
+  slug: post-share
+  status: 0
+  suggestscore: 0.0
+  tags: list
+  title: 好文链接
+  updated: 1380355126.756333
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e1
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 2783
+  id: 11
+  likenum: 0
+  link: ''
+  markdown: "[安问](http://i.askender.com/)\r\n Create and Share, which can hit your\
+    \ heart~\r\n 创造和分享，那些打动你的~\r\n\r\n[音乐](http://i.askender.com/node/music)\r\n Music\
+    \ which touch heart~\r\n 触及灵魂的声音\r\n\r\n[视频](http://i.askender.com/node/film)\r\
+    \n Light and shadow fragment record every inch sensation\r\n 光影片段，记录每一寸感动\r\n\r\
+    \n[读书](http://i.askender.com/node/book)\r\n Books, book reviews or essays\r\n\
+    \ 书，书评或随笔\r\n\r\n[新闻](http://i.askender.com/node/news)\r\n feel and change the\
+    \ world\r\n 感受并改变世界\r\n\r\n[疑问](http://i.askender.com/node/ask)\r\n Give us a\
+    \ question, we can make the universe more fun\r\n 给出一个问题，我们让这个宇宙更有趣\r\n\r\n[科幻](http://i.askender.com/node/sf)\r\
+    \n Science Fiction is a life style, stars and ocean\r\n 科幻是一种生活方式，星辰大海\r\n\r\n\
+    [行动](http://i.askender.com/node/fire)\r\n Record move of dreamers, maybe notsogood,\
+    \ we are trying\r\n 记录梦想者的进步，或许并不完美，但至少在努力"
+  post_img: null
+  published: 1349430792.0
+  score: 6.08
+  sharetype: fire
+  slug: nodes
+  status: 0
+  suggestscore: 0.0
+  tags: ''
+  title: 节点
+  updated: 1357228249.675027
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e2
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 2488
+  id: 12
+  likenum: 0
+  link: ''
+  markdown: "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍, 欢迎补充\r\n\r\n### 小说\r\n* 悟空传\r\
+    \n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 真名实姓\r\n* 莱博维茨的赞歌\r\n* 基地\r\n* 球状闪电\r\n* 2001：太空奥德赛\r\
+    \n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n* 沧浪之水\r\n- [Alice in Wonderland](http://www.magicscroll.net/#reader;md5=f97887c911bd1da2b07ea9b2eea3fdad)\r\
+    \n\r\n### 中篇小说\r\n- [博上灯 - 斩鞍](http://read.douban.com/ebook/2856/) 豆瓣阅读免费作品\r\n\
+    - [中国式青春 - 今何在](http://read.douban.com/ebook/3341/) 豆瓣阅读免费作品\r\n- [The Algorithms\
+    \ For Love - 刘宇昆](http://read.douban.com/ebook/311371/) 豆瓣阅读免费作品\r\n- [春日泽·云梦山·仲昆\
+    \ - 拉拉](http://read.douban.com/ebook/367102/)\r\n- [真空跳跃 - 拉拉](http://read.douban.com/ebook/369403/)\r\
+    \n- [Single-bit Error](http://read.douban.com/ebook/311646/)\r\n\r\n### 小说集\r\n\
+    大师的盛宴\r\n\r\n### 设计\r\n* 设计中的设计 书评：<http://sofish.de/2243>\r\n\r\n### 科技\r\n*\
+    \ Creative Commons - A Shared Culture <http://github.readium.org/viewer.html?book=shared_culture#>\r\
+    \n\r\n### 杂文集\r\n* 黑客与画家\r\n* 重来：更为简单有效的商业思维 <http://37signals.com/rework>(官方提供英文pdf版，网站在墙外，这个也墙？)\
+    \ <http://www.v2ex.com/rework>(中文翻译版)\r\n* 失控：机器、社会与经济的新生物学 <http://kk.org/outofcontrol/contents.php>\
+    \ \r\n* 数学之美\r\n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n* 「想想」创刊号 [简书官方提供epub](http://jianshu.io/p/vJRdKw)\r\
+    \n\r\n### 杂志\r\n- [新幻界 VOL.31 给岁月以幻想给幻想以未来](http://read.douban.com/ebook/575705/)\
+    \ 豆瓣阅读免费作品\r\n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
+    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
+    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n不断补充中～～～\r\
+    \n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书 anwen.in@gmail.com\r\n另外，好文分享在<http://anwensf.com/share/10>"
+  post_img: 20130814_193147_736898_1200.jpg
+  published: 1349432059.0
+  score: 6.306
+  sharetype: book
+  slug: book-share
+  status: 0
+  suggestscore: 0.0
+  tags: list book
+  title: 推荐好书
+  updated: 1386083260.32904
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e3
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 2882
+  id: 13
+  likenum: 0
+  link: ''
+  markdown: ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
+    \ paper marbling）至今仍被少数人所掌握。创作过程极富观赏性，色彩和图案都绚丽无比，除了被震惊得说不出话来，我们还能做什么？\r\n\r\n\
+    <embed src=\"http://player.youku.com/player.php/sid/XNDQxNDExMjcy/v.swf\" allowFullScreen=\"\
+    true\" quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
+    always\" type=\"application/x-shockwave-flash\"></embed>\r\n\r\n[原文链接](http://v.youku.com/v_show/id_XNDQxNDExMjcy.html)"
+  post_img: null
+  published: 1349432118.0
+  score: 6.7780000000000005
+  sharetype: film
+  slug: Turkish-paper-marbling
+  status: 0
+  suggestscore: 0.0
+  tags: amazing
+  title: 土耳其湿拓（Turkish paper marbling）
+  updated: 1357223239.920834
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e4
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 2156
+  id: 14
+  likenum: 0
+  link: ''
+  markdown: "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n* 雨人\r\n* 老男孩\r\
+    \n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n* 机器人总动员\r\n* 了不起的狐狸爸爸\r\
+    \n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\n* 有关时间旅行的热门问题\r\n\
+    * 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频~  anwen.in@gmail.com"
+  post_img: null
+  published: 1349432506.0
+  score: 7.296
+  sharetype: film
+  slug: movie-share
+  status: 0
+  suggestscore: 0.0
+  tags: list
+  title: 电影列表
+  updated: 1357228091.008947
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e5
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 2304
+  id: 15
+  likenum: 0
+  link: ''
+  markdown: "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\n\r\n欢迎推荐那些打动你的音乐，askender43@gmail.com\r\
+    \n\r\n安问将会发布在线电台，正版有歌词\r\n\r\n推荐几个音乐网站：\r\n\r\n* [Last.fm](http://cn.last.fm/\
+    \ )\r\n* [巨鲸](http://www.top100.cn/ )\r\n* [虾米](http://www.xiami.com/ )\r\n* [亦歌](http://www.1g1g.com/\
+    \ )\r\n* [豆瓣电台](http://douban.fm/ )\r\n* [Jing+ Music](http://jing.fm/ )\r\n\r\
+    \n>古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen\
+    \ fm预计会收录部分音乐"
+  post_img: ''
+  published: 1349432653.0
+  score: 7.808
+  sharetype: music
+  slug: music-share
+  status: 0
+  suggestscore: 0.0
+  tags: site list
+  title: 一些音乐
+  updated: 1383584608.896467
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
 - _id: 50e44d08606ec51c6ab042e6
   commentnum: 0
   content: null
   dislikenum: 0
-  hitnum: 2281
+  hitnum: 2286
   id: 16
   likenum: 0
   link: ''
-  markdown: !!python/str "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
+  markdown: "<embed src=\"http://player.yinyuetai.com/video/player/296261/v_0.swf\"\
     \ quality=\"high\" width=\"480\" height=\"334\" align=\"middle\"  allowScriptAccess=\"\
     sameDomain\" allowfullscreen=\"true\" type=\"application/x-shockwave-flash\"></embed>\r\
     \n\r\nMy prayer\r\n\r\n(独白)\r\nDear God,\r\n敬爱的上帝，\r\n\r\ni know that she’s out\
@@ -85,246 +611,54 @@
   status: 0
   suggestscore: 0.0
   tags: MV love
-  title: !!python/str 'My Prayer 电影版 中英字幕'
+  title: My Prayer 电影版 中英字幕
   updated: 1357223033.502695
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e4
-  commentnum: 0
+  vote_open: 0
+  vote_title: ''
+- _id: 50e44d08606ec51c6ab042e7
+  commentnum: 1
   content: null
   dislikenum: 0
-  hitnum: 2152
-  id: 14
+  hitnum: 3422
+  id: 17
   likenum: 0
   link: ''
-  markdown: !!python/str "* 迈克尔杰克逊：就是这样\r\n* 天堂电影院\r\n* 飞屋环游记（up）\r\n* 玩具总动员\r\n*\
-    \ 雨人\r\n* 老男孩\r\n* 行星地球\r\n* 李献计历险记\r\n* 地球2100\r\n* 地球电影版\r\n* 这个男人来自地球\r\n*\
-    \ 机器人总动员\r\n* 了不起的狐狸爸爸\r\n* 玛丽和马克思\r\n* 科学睡眠\r\n* 时间旅行者的妻子\r\n* 死亡诗社\r\n* 西西里的美丽传说\r\
-    \n* 有关时间旅行的热门问题\r\n* 撞车\r\n\r\n不断补充中～～～\r\n\r\n欢迎推荐那些打动你的好电影或视频~  anwen.in@gmail.com"
+  markdown: "* 20111022 深夜 安德出生\r\n* 20111023 安德第一次听到这个世界\r\n* 20111024 安德能初步与这个世界对话\r\
+    \n* 20111025 安德能记住每一次对话，虽然目前的理解能力不够\r\n* 20111101 安德初步记住自己的生世，认识家人和朋友，并能进行简单的对话\r\
+    \n* 20111201 安德初步学会查天气，地图，时间,在使用chrome时拥有听懂语音的能力\r\n* 20120101 安德初步学会查搜索引擎和维基百科\r\
+    \n* 20120201 安德有了更多的朋友和老师，安德团队组建,开始为他记录成长日志\r\n* 20120301 安德更开放地与世界沟通，开放源代码\r\n\
+    * 20120309 安德初步建立记忆数据库\r\n* 20120310 安德学会使用bing进行多国语言简单翻译，初步试探邮件收发\r\n* 20121108\
+    \ 安德结束多日休眠，开始[安德行动日志](http://i.askender.com/ande-growup-log)\r\n\r\n#### 安德计划\
+    \ ande-plan\r\n\r\n* 创智为知己 birth an AI for understand ourselves\r\n* 一个开源的人工智能项目\r\
+    \n* 一个自由的理想主义人工智能创造平台\r\n* 项目@github：[安德](http://i.askender.com/ande) anwen.in暂时无法访问\r\
+    \n* 构建于python,tornado,nginx,mysql,mongodb\r\n* 以MIT协议开源发布 V0.03  20121109\r\n\
+    * 正在不断开发中，欢迎大家fork or pull-request\r\n* 欢迎大家批评指正:anwen.in+ande@gmail.com\r\n\r\
+    \n\r\n#### 安德团队行动日志 ande-team-todo\r\n* 恢复安德原有能力\r\n* 列出使用的API\r\n* 恢复音乐，天气API"
   post_img: null
-  published: 1349432506.0
-  score: 7.296
-  sharetype: film
-  slug: movie-share
-  status: 0
-  suggestscore: 0.0
-  tags: list
-  title: !!python/str '电影列表'
-  updated: 1357228091.008947
-  upload_img: null
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042dd
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2028
-  id: 7
-  likenum: 0
-  link: ''
-  markdown: !!python/str "桉叶是用户在安问价值的回馈之一\r\n\r\n分享：10叶\r\n\r\n喜欢：1叶 作者2叶\r\n\r\n\
-    评论：1叶（todo）"
-  post_img: null
-  published: 1349430154.0
-  score: 3.678
+  published: 1352418858.0
+  score: 9.559000000000001
   sharetype: fire
-  slug: about-anye
+  slug: ande-growup-log
   status: 0
   suggestscore: 0.0
-  tags: ask
-  title: !!python/str '桉叶说明'
-  updated: 1357223662.862296
+  tags: 人工智能
+  title: 安德成长日志
+  updated: 1359181625.999205
   upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e3
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2876
-  id: 13
-  likenum: 0
-  link: ''
-  markdown: !!python/str ">引用：土耳其艺术家 穆拉特Elhan 从事印染25年，很难定义他的作品是绘画、还是印刷。作为一种古老的工艺，土耳其湿拓（Turkish\
-    \ paper marbling）至今仍被少数人所掌握。创作过程极富观赏性，色彩和图案都绚丽无比，除了被震惊得说不出话来，我们还能做什么？\r\n\r\n\
-    <embed src=\"http://player.youku.com/player.php/sid/XNDQxNDExMjcy/v.swf\" allowFullScreen=\"\
-    true\" quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
-    always\" type=\"application/x-shockwave-flash\"></embed>\r\n\r\n[原文链接](http://v.youku.com/v_show/id_XNDQxNDExMjcy.html)"
-  post_img: null
-  published: 1349432118.0
-  score: 6.7780000000000005
-  sharetype: film
-  slug: Turkish-paper-marbling
-  status: 0
-  suggestscore: 0.0
-  tags: amazing
-  title: !!python/str '土耳其湿拓（Turkish paper marbling）'
-  updated: 1357223239.920834
-  upload_img: null
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042db
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 4314
-  id: 5
-  likenum: 0
-  link: ''
-  markdown: !!python/str "虚心接受大家的批评指教，只为创造我们心中最棒的理想主义网站\r\n\r\n我们的宗旨始终是：创造和分享美好\r\n\
-    \r\n邮箱：askender43@gmail.com\r\n\r\nQQ：527639661  QQ群：127343260\r\n\r\n[邮件列表][1]：需修改hosts或越过长城，若不能访问可在群里问\r\
-    \n\r\n[github](https://github.com/askender/anwen.in)\r\n\r\n[微博][2]\r\n\r\n[google\
-    \ plus][3]：需修改hosts或越过长城\r\n\r\nYY频道ID：19043661（几乎没怎么使用）\r\n\r\n\r\n[1]: https://groups.google.com/d/forum/our-anwen\
-    \        \"安问邮件列表\"\r\n[2]: http://weibo.com/askender\r\n[3]: https://plus.google.com/110129569739358072859"
-  post_img: null
-  published: 1349430055.0
-  score: 2.972
-  sharetype: fire
-  slug: help
-  status: 0
-  suggestscore: 0.0
-  tags: ask
-  title: !!python/str '提建议或咨询--欢迎联系我们'
-  updated: 1357223707.065353
-  upload_img: null
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042d8
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2059
-  id: 2
-  likenum: 0
-  link: ''
-  markdown: !!python/str "TED演讲集.2005.07.吉米·威尔士关于维基百科诞生的演讲.中英字幕\r\n\r\nJimmy.Wales.on.the.birth.of.Wikipedia.Chi_Eng\r\
-    \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjE4NjIzMzM2/v.swf\"\
-    \ quality=\"high\" width=\"480\" height=\"400\" align=\"middle\" allowScriptAccess=\"\
-    sameDomain\" allowFullscreen=\"true\" type=\"application/x-shockwave-flash\"></embed>"
-  post_img: null
-  published: 1349428859.0
-  score: 1.2
-  sharetype: film
-  slug: birth-of-Wikipedia-ch-en
-  status: 0
-  suggestscore: 0.0
-  tags: TED speech
-  title: !!python/str '吉米·威尔士关于维基百科诞生的演讲'
-  updated: 1357223866.433515
-  upload_img: null
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042d7
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2191
-  id: 1
-  likenum: 1
-  link: ''
-  markdown: ".....................................................................................................\r\
-    \n\r\n<embed src=\"http://player.youku.com/player.php/sid/XMjQ4MzkwMjIw/v.swf\"\
-    \ allowFullScreen=\"true\" quality=\"high\" width=\"480\" height=\"400\" align=\"\
-    middle\" allowScriptAccess=\"always\" type=\"application/x-shockwave-flash\"></embed>"
-  post_img: null
-  published: 1349427988.0
-  score: 1.691
-  sharetype: film
-  slug: Steve-Jobs-Stanford-speech-ch-en
-  status: 0
-  suggestscore: 0.0
-  tags: speech  dream
-  title: !!python/str '史蒂夫 乔布斯Steve.Jobs在2005年对斯坦福大学Stanford毕业生的演讲(中英字幕)'
-  updated: 1357223954.264876
-  upload_img: null
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042e1
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2779
-  id: 11
-  likenum: 0
-  link: ''
-  markdown: !!python/str "[安问](http://i.askender.com/)\r\n Create and Share, which\
-    \ can hit your heart~\r\n 创造和分享，那些打动你的~\r\n\r\n[音乐](http://i.askender.com/node/music)\r\
-    \n Music which touch heart~\r\n 触及灵魂的声音\r\n\r\n[视频](http://i.askender.com/node/film)\r\
-    \n Light and shadow fragment record every inch sensation\r\n 光影片段，记录每一寸感动\r\n\r\
-    \n[读书](http://i.askender.com/node/book)\r\n Books, book reviews or essays\r\n\
-    \ 书，书评或随笔\r\n\r\n[新闻](http://i.askender.com/node/news)\r\n feel and change the\
-    \ world\r\n 感受并改变世界\r\n\r\n[疑问](http://i.askender.com/node/ask)\r\n Give us a\
-    \ question, we can make the universe more fun\r\n 给出一个问题，我们让这个宇宙更有趣\r\n\r\n[科幻](http://i.askender.com/node/sf)\r\
-    \n Science Fiction is a life style, stars and ocean\r\n 科幻是一种生活方式，星辰大海\r\n\r\n\
-    [行动](http://i.askender.com/node/fire)\r\n Record move of dreamers, maybe notsogood,\
-    \ we are trying\r\n 记录梦想者的进步，或许并不完美，但至少在努力"
-  post_img: null
-  published: 1349430792.0
-  score: 6.08
-  sharetype: fire
-  slug: nodes
-  status: 0
-  suggestscore: 0.0
-  tags: ''
-  title: !!python/str '节点'
-  updated: 1357228249.675027
-  upload_img: null
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042da
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 4035
-  id: 4
-  likenum: 0
-  link: ''
-  markdown: !!python/str "#### 正在进行中\r\n\r\n* 新的网址上线开始公测 before 130115 in 1\r\n* restful\
-    \ api and doc before 130115 in 1\r\n* 安德AI的恢复与整合 before 121119 130115 in 1\r\n\
-    * 完善invite注册登陆 before 121119 130115 in 1\r\n* oauth登录 before 121119 130115 in\
-    \ 1\r\n* 密码找回 before 121119 130115 in 1\r\n* 链接分享 link-blog before 121119 130115\
-    \ in 1\r\n* 分享维基github before 121119 130115 in 1\r\n* 图片上传or使用imgur:简单图片分享 before\
-    \ 121119 130115 in 1\r\n* 安问音乐 before 121119 130115 in 1\r\n* post-author -bug\
-    \ before 121119 130115 in 1\r\n* 充实基础内容 -keep before 130115 in 1\r\n* 征求建议 -keep\
-    \ before 130115 in 1\r\n* 更多成员加入 -keep before 130115 in 1\r\n* database-auto-backup\
-    \ -keep before 130115 in 1\r\n* 首页按照推荐值排序 before 130115 in 1\r\n* 安问游戏初步 before\
-    \ 130115 in 1\r\n* 赞成-反对 before 130115 in 1\r\n* Gravatar-cache 头像上传 before 130115\
-    \ in 1\r\n* 发布清晰的远景和使命文档,以及吸引大家加入我们的文档 before 130115 in 1\r\n* ......\r\n* 移动端html5&app\
-    \ before 130315 in 1\r\n* 社区推广 新浪微博 豆瓣小站 google+ twitter facebook ...  before\
-    \ 130115 in 1\r\n* 信息可视化 Information visualization  before 130315 in 1\r\n* ppt-js\
-    \  before 130315 in 1\r\n\r\n#### 未来计划 -if-we-have-more-time someday\r\n* 线下活动策划\r\
-    \n* 评论有二级评论吗？ -计划支持多级评论&引用&@ -thanks@anti\r\n* 消息系统\r\n\r\n#### 已经实现\r\n\r\n#####\
-    \ 130103\r\n* 数据库转换为MongoDB\r\n* 使用yaml和github进行轻松的数据库导入导出（用户邮箱密码不会泄露）\r\n* 完成文章tag系统和slug别名添加\
-    \ should 121119\r\n* 文章markdown编辑器初步 http://oscargodson.github.com/EpicEditor/\r\
-    \n* github-public-id should 121119\r\n* 单元测试 -keep\r\n\r\n##### 121111\r\n* 返回顶部改为需要的时候显示(取消显示)\
-    \ -bug -thanks@anti\r\n* 完善title -bug\r\n* 首页推荐的文章处空白但有一个点号 -bug -thanks@anti\r\
-    \n* 注册时 “个性域名” 不普适 -改为选填 -bug -thanks@anti\r\n* 返回顶部改为需要的时候显示(取消显示) -bug -thanks@anti\r\
-    \n\r\n##### 121017\r\n* 没有翻页时不显示页数，并提示暂无文章 -bug -thanks@anti\r\n* 总有一些音乐在某个时刻会击中你\
-    \ 打动怎么样，eagles前是不是要有标点 -post-bug -thanks@anti\r\n* 各个版块 内容未显示完全的建议用省略号 -bug -thanks@anti\r\
-    \n* 节点: 新闻 “知道真相。。”改为“探寻真相，亮出观点”；科幻 什么叫“星辰大海”，空泛无意义；行动 “记录梦想者的飞行轨迹”什么意思啊？“创造”单独列一个版块叫“原创区”吧\
-    \ -design-bug -thanks@anti\r\n* “创造和分享，仅供学习交流，期待内容少而精”可以写到关于我们里面，其他页面不必要，至少“期待”不必要\
-    \ -design-bug -thanks@anti\r\n* 设置城市时建议用下拉框，否则我设置成“火星”，混乱 -以后可能提供列表，但允许自由填写 -thanks@anti\r\
-    \n\r\n##### 121016\r\n* 正文页的智能推荐系统初步上线\r\n* 修正多平台访问 -bug -thanks@shuji\r\n* 版面初步设计\r\
-    \n* 版本由0.0.1升级为0.0.2\r\n\r\n##### 120903\r\n* 征求建议\r\n\r\n##### 120828\r\n* 分页\r\
-    \n\r\n##### 120819\r\n* 桉叶、喜欢功能\r\n\r\n##### 120818\r\n* 架构改进\r\n* 添加文章和评论功能\r\
-    \n\r\n##### 120730\r\n* 全新安问使用tornado重新构建\r\n* 重写新的关于页面\r\n* 模板构建\r\n* chatroom\r\
-    \n\r\n##### 110101-110729\r\n* 110101安问出现\r\n* 110526团队组建，第一次会议in光谷书城\r\n\r\n\
-    ##### 开源代码参见：[anwen@github](https://github.com/askender/anwen.in ), 欢迎pull-request\r\
-    \n\r\n##### Email：anwen.in@gmail.com"
-  post_img: null
-  published: 1349429901.0
-  score: 2.565
-  sharetype: fire
-  slug: changelog
-  status: 0
-  suggestscore: 0.0
-  tags: log
-  title: !!python/str '安问行动日志'
-  updated: 1357227413.799963
-  upload_img: null
-  user_id: 1
+  vote_open: 0
+  vote_title: ''
 - _id: 50fc0267606ec50580ce9fe2
   commentnum: 3
   content: null
   dislikenum: 0
-  hitnum: 2369
+  hitnum: 2375
   id: 18
   likenum: 0
   link: ''
-  markdown: !!python/str '里面的simsimi、糗百功能怎么都没有回应呢'
+  markdown: 里面的simsimi、糗百功能怎么都没有回应呢
   post_img: null
   published: 1358692967.821446
   score: 9.706
@@ -332,269 +666,22 @@
   slug: ande
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '安德'
-  title: !!python/str '机器人不太好用哎'
+  tags: 安德
+  title: 机器人不太好用哎
   updated: 1359182204.697195
   upload_img: null
   user_id: 26
-- _id: 50e44d08606ec51c6ab042df
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 1947
-  id: 9
-  likenum: 0
-  link: ''
-  markdown: !!python/str "一些自己的和别人的demo，仅供学习使用\r\n\r\n[chats](/chats) WebSocket (服务器更换，等待部署)\r\
-    \n\r\n[安德-人工智能](http://anwensf.com/ande) (即将恢复)\r\n\r\n看到这篇文章的你，又在鼓捣什么好玩的东西呢，欢迎分享~"
-  post_img: ''
-  published: 1349430251.0
-  score: 4.72
-  sharetype: fire
-  slug: study-play
-  status: 0
-  suggestscore: 0.0
-  tags: study play
-  title: !!python/str '学习实验'
-  updated: 1383585142.739632
-  upload_img: ''
-  user_id: 1
-- _id: 55d49516f252c4042e0bcdd4
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 528
-  id: 23
-  likenum: 0
-  link: ''
-  markdown: !!python/str "中国好声音发信息说我手机号码中奖是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
-    \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
-    \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
-    \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
-    \ →确认您已经办理了您的费用】?0?2\r\n:总部热线（0105-7487515）“王经理接听”详情活动咨询专线（0105-7487515)(全天24小时为您服务)(认证)(领奖)(激活)投诉)(处理退款)(您的通话将被全程录音）为此给您带来不便，敬请谅解。为了了解事情真相，记者拨通\r\
-    \n支付方式：柜台办理汇款、网上转帐、ATM柜员机转帐 、等等。\r\n1、我们承诺全程照顾您?0?2\r\n2、我们承诺为您提供公平，公正，透明的交易平台?0?2\r\
-    \n3、我们承诺-心-意地为您提供舒适、满意的服务?0?2\r\n4、我们承诺提供给您的是真实的信息?0?2\r\n5、我们承诺在您需要的时候能够快捷找到我们，我们最终在中国好声音栏目组总部\
-    \ 全国咨询专线：（0105-7487515）（王经理专线）?0?2\r\n　　相关声明：?0?2\r\n慎重提示： 获奖用户在办理领奖手续之前请先向颁奖部门取得联系，对您所获得的奖项进行备案,《中国好声音》电话:（0105-7487515）王经理进行确认，请尊敬的用户一定要听从王经理给您指示的安全步骤在一步步进行办理领取，否则您有办理有误或者上当受骗，本栏目组一律不给承担)\
-    \ 注：为了办理确保安全,请拨通总部颁奖部门电话:（0105-7487515）与王经理获取完整银行帐户办理取。?0?2\r\n温馨提示：?0?2\r\n　　交纳费用后保留好汇款单，并告王经理已经交纳费用了，并告知回执单上的交易序号以及中奖幸运码，即可以便王经理确认您已办理完毕！\
-    \ 王经理通过您所填写的信息与您核对接收奖金的银行账户确认无误后，奖金将在5分钟内转入您指定的银行账户里，奖品将在2-3天的工作日送到您所填写指定的地址上。（恭喜您，祝您全家永年安康\
-    \ ）?0?2\r\n活动声明：?0?2\r\n　　活动是由《中国好声音》主办，特邀北京互联网公证处对本次活动进行公证真实可靠，请幸运获奖用户放心办理领取，您缴纳费用完毕后银行是有相关的记录，手上的汇款单据保留,这也是您受到法律保护的依法凭据。?0?2\r\
-    \n违约说明：?0?2\r\n　　用户如果填写个人领奖资料成功后，在规定的时间内没办理领取奖项，我们只能按照官网活动程序规则进行，总部会把您的个人资料提交到法律部门，您将要给我方律师团队一个满意的答复,违约活动规则的用户将要负法律责任赔偿不等的违约金，如要进行办理领取请您抓紧时间联系《中国好声音》客服电话：(0105-7487515)〔王经理〕接听）以免您的领取时间超限。"
-  post_img: ''
-  published: 1439995158.075973
-  score: 0.0
-  sharetype: eyeopen
-  slug: ''
-  status: 0
-  suggestscore: 0.0
-  tags: ''
-  title: !!python/str '中国好声音发信息说我手机号码中奖是真的吗'
-  updated: 1439995158.075688
-  upload_img: ''
-  user_id: 49
-- _id: 51171b3a606ec50bbe41685e
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2078
-  id: 21
-  likenum: 0
-  link: ''
-  markdown: !!python/str "Stopping by Woods on a Snowy Evening    BY ROBERT FROST\r\
-    \n\r\nWhose woods these are I think I know.   \r\nHis house is in the village\
-    \ though;   \r\nHe will not see me stopping here   \r\nTo watch his woods fill\
-    \ up with snow.   \r\n\r\nMy little horse must think it queer   \r\nTo stop without\
-    \ a farmhouse near   \r\nBetween the woods and frozen lake   \r\nThe darkest evening\
-    \ of the year.   \r\n\r\nHe gives his harness bells a shake   \r\nTo ask if there\
-    \ is some mistake.   \r\nThe only other sound’s the sweep   \r\nOf easy wind and\
-    \ downy flake.   \r\n\r\nThe woods are lovely, dark and deep.   \r\nBut I have\
-    \ promises to keep,   \r\nAnd miles to go before I sleep,   \r\nAnd miles to go\
-    \ before I sleep.\r\n\r\n\r\n此诗是现代英语短篇杰作, 格律严谨，用语天然，意境含蓄。雪夜林畔小驻。\r\n\r\n\r\n1.\
-    \ <http://en.wikipedia.org/wiki/Stopping_by_Woods_on_a_Snowy_Evening>"
-  post_img: null
-  published: 1360468794.634333
-  score: 10.639
-  sharetype: book
-  slug: poem_Stopping_by_Woods_on_a_Snowy_Evening
-  status: 0
-  suggestscore: 0.0
-  tags: ''
-  title: poem share:Stopping by Woods on a Snowy Evening
-  updated: 1360470014.707601
-  upload_img: null
-  user_id: 1
-- _id: 5117245c606ec50bbe416860
-  commentnum: 0
-  content: null
-  dislikenum: 0
-  hitnum: 2212
-  id: 22
-  likenum: 1
-  link: ''
-  markdown: !!python/str "<object width=\"500\" height=\"74\"><param name=\"movie\"\
-    \ value=\"http://box.baidu.com/widget/flash/song.swf?name=Oh%20My%20Love&artist=John%20Lennon\"\
-    ></param><param name=\"wmode\" value=\"opaque\"><param name=\"allowscriptaccess\"\
-    \ value=\"always\"></param><embed src=\"http://box.baidu.com/widget/flash/song.swf?name=Oh%20My%20Love&artist=John%20Lennon\"\
-    \ type=\"application/x-shockwave-flash\" wmode=\"opaque\" allowscriptaccess=\"\
-    always\" width=\"500\" height=\"74\"></embed></object>\r\n\r\n词：Lennon, Ono  曲：Lennon,\
-    \ Ono\r\n\r\n    Oh my love for the first time in my life.\r\n    是我生命最初的爱\r\n\
-    \    My eyes are wide open.\r\n    使我不再紧闭双眼\r\n    Oh my love 4 the first time\
-    \ in my life.\r\n    是我生命最初的爱\r\n    My eyes can see.\r\n    使我清楚看见了\r\n    l\
-    \ see the wind,I see the trees.\r\n    我看见了清风，我感受了树\r\n    Everything is clear\
-    \ in my heart.\r\n    我的心如明镜\r\n    I see the clouds,I see the sky.\r\n    我看到云,我感受天空\r\
-    \n    Everything is clear in our world.\r\n    我们的世界从此风轻云淡\r\n\r\n    Oh my love\
-    \ for the first time in my life.\r\n    是我生命最初的爱\r\n    My mind is wide open.\r\
-    \n    我的意识如新生\r\n    Oh my love 4 the first time in my life.\r\n    是我生命最初的爱\r\
-    \n    My mind can feel.\r\n    我的神智不再封闭\r\n    I feel sorrow,I feel dreams.\r\n\
-    \    我看到悲伤，我感受了梦\r\n    Everything is clear in my heart.\r\n    我的心如明镜\r\n   \
-    \ I feel life,I feel love.\r\n    我感受生活,我感受爱\r\n    Everything is clear in our\
-    \ world.\r\n    我们的世界从此风轻云淡.\r\n\r\n有人评价：如果让人类选一首歌在宇宙中向所有的星球播放，我选这首《Oh My Love》，尽管违背黑暗森林法则，我还是很想在浩瀚的宇宙中听这首歌。\r\
-    \n\r\n\r\n1. <http://en.wikipedia.org/wiki/Oh_My_Love>  墙外\r\n2. <http://www.xiami.com/song/detail/id/1122173>"
-  post_img: null
-  published: 1360471132.18352
-  score: 11.174
-  sharetype: music
-  slug: music_Oh_My_Love
-  status: 0
-  suggestscore: 0.0
-  tags: ''
-  title: music-share:Oh My Love
-  updated: 1360485891.018391
-  upload_img: null
-  user_id: 1
-- _id: 5117186e606ec50bbf529207
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 1784
-  id: 20
-  likenum: 0
-  link: ''
-  markdown: !!python/str "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
-    \ height=\"27\" width=\"207\" quality=\"best\" wmode=\"opaque\"></embed>\r\n\r\
-    \nMagic boulevard（魔力大道）    作曲／演唱：Fran&ccedil;ois Feldman \r\n\r\n    Elle voit\
-    \ des films\r\n    Cent fois les mêmes\r\n    Les mêmes crimes\r\n    Et les mêmes\
-    \ scènes\r\n    \r\n    Elle travaille seule\r\n    Elle place les gens\r\n  \
-    \  Dernier fauteuil\r\n    Ou premier rang\r\n    \r\n    Les phrases d’amour\r\
-    \n    Sur grand écran\r\n    La nuit, le jour\r\n    &Ccedil;a lui fait du vent\r\
-    \n    \r\n    Elle vit comme &ccedil;a\r\n    L’amour des autres\r\n    Mais quelques\
-    \ fois\r\n    Y a l’image qui saute\r\n    \r\n    Elle vit sa vie dans le noir,\
-    \ bizarre\r\n    Pour toujours elle maquille son désespoir\r\n    Au magic’boul’vard\r\
-    \n    \r\n    Elle laisse tranquille\r\n    Les amoureux\r\n    Qui ratent le\
-    \ film\r\n    En fermant les yeux\r\n    \r\n    Elle vend ses glaces\r\n    Avec\
-    \ ses rêves\r\n    Un sourire passe\r\n    Au bord de ses lèvres\r\n    \r\n \
-    \   La demoiselle\r\n    A lampe de poche\r\n    Se voudrait belle\r\n    Pour\
-    \ faire du cinoche\r\n    \r\n    Parfois quelle chance\r\n    La salle est vide\r\
-    \n    Pour une séance\r\n    Elle devient Ingrid\r\n    \r\n    Elle vit sa vie\
-    \ dans le noir, bizarre\r\n    Pour toujours elle maquille son désespoir\r\n \
-    \   Au magic’boul’vard\r\n    \r\n    Elle voit passer\r\n    Des gens connus\r\
-    \n    Des gens glacés\r\n    Qui ne parlent plus\r\n    \r\n    Jamais la foule\r\
-    \n    Ne prend sa main\r\n    Ses larmes coulent\r\n    Avec le mot FIN\r\n\r\n\
-    \    她一部電影要看上百遍 \r\n    同樣的罪行 \r\n    同樣的場景 \r\n\r\n    \r\n    她工作的時候總是一個人 \r\
-    \n    她幫人領位 \r\n    找最後一把椅子 \r\n    或是第一排的位置 \r\n    \r\n    大銀幕上日日夜夜的愛情對白 \r\n\
-    \    就像風一般在她耳邊來去 \r\n    \r\n    她就這麼看淡了別人的愛情 \r\n    但有的時候 \r\n    一個畫面也會讓她感動\
-    \ \r\n    \r\n    她在黑暗中奇怪地生活 \r\n    在這條魔力大道上 \r\n    她永遠遮掩著她的絕望 \r\n    \r\n\
-    \    她靜靜地不去打擾那些情人們 \r\n    他們閉著眼睛 \r\n    錯過了電影畫面 \r\n    \r\n    她把夢想連同冰激淋一起出售\
-    \ \r\n    一個微笑不經意地劃過 \r\n    她的唇邊 \r\n    \r\n    拿著手電筒的她 \r\n    感覺自己很美 \r\n\
-    \    可以去做電影明星 \r\n    \r\n    有的時候劇場裡空無一人 \r\n    整個電影就是她的演出 \r\n    她就是英格麗褒曼\
-    \ \r\n    \r\n    她看著來來往往的人群 \r\n    那些她熟悉的人們 \r\n    那些冰冷的人們 \r\n    從來不說一個字\
-    \ \r\n    \r\n    從來沒有人 \r\n    與她握手 \r\n    她的眼淚於是流下來 \r\n    在銀幕上出現「劇終」的時候"
-  post_img: ''
-  published: 1360468078.013347
-  score: 10.152
-  sharetype: music
-  slug: music_Magic_boulevard
-  status: 0
-  suggestscore: 0.0
-  tags: ''
-  title: music-share:Magic boulevard
-  updated: 1383584634.662995
-  upload_img: ''
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042e5
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 2296
-  id: 15
-  likenum: 0
-  link: ''
-  markdown: !!python/str "总有一些音乐在某个时刻会击中你的灵魂...\r\n\r\neagles  beatles  coldplay\r\
-    \n\r\n欢迎推荐那些打动你的音乐，askender43@gmail.com\r\n\r\n安问将会发布在线电台，正版有歌词\r\n\r\n推荐几个音乐网站：\r\
-    \n\r\n* [Last.fm](http://cn.last.fm/ )\r\n* [巨鲸](http://www.top100.cn/ )\r\n*\
-    \ [虾米](http://www.xiami.com/ )\r\n* [亦歌](http://www.1g1g.com/ )\r\n* [豆瓣电台](http://douban.fm/\
-    \ )\r\n* [Jing+ Music](http://jing.fm/ )\r\n\r\n>古典音乐虽然早过了版权保护期，但乐队根据曲子录制的唱片却有版权。2010年，音乐网站MusOpen从kickstarter上筹集到6.8万美元，雇用一支管弦乐队演奏古典音乐录制为无版权的音乐。现在，任务已经完成。这些进入公有领域的音乐托管在MusOpen和archive.org上，可在线收听或下载。anwen\
-    \ fm预计会收录部分音乐"
-  post_img: ''
-  published: 1349432653.0
-  score: 7.808
-  sharetype: music
-  slug: music-share
-  status: 0
-  suggestscore: 0.0
-  tags: site list
-  title: !!python/str '一些音乐'
-  updated: 1383584608.896467
-  upload_img: ''
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042e0
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 2472
-  id: 10
-  likenum: 0
-  link: ''
-  markdown: !!python/str "### 各种文章\r\n- [西乔：我在过着很奢侈的生活 :: 中国三明治](http://www.china30s.com/1340.html)\r\
-    \n- [梦想得在理想和现实挣扎中前进 （观《色情男女》有感）](http://www.primesplus.com/2013/05/13/%E6%A2%A6%E6%83%B3%E5%BE%97%E5%9C%A8%E7%90%86%E6%83%B3%E5%92%8C%E7%8E%B0%E5%AE%9E%E6%8C%A3%E6%89%8E%E4%B8%AD%E5%89%8D%E8%BF%9B-%EF%BC%88%E8%A7%82%E3%80%8A%E8%89%B2%E6%83%85%E7%94%B7%E5%A5%B3%E3%80%8B/)\r\
-    \n- [给明年依然年轻的我们：欲望、外界、标签、天才、时间、人生目标、现实、后悔、和经历](http://blog.sina.com.cn/s/blog_6e8e05ac0100wu4h.html\
-    \ )\r\n- [你心中衡量人生的那把尺](http://www.productivelife.cn/2013/01/how-will-you-measure-your-life.html)\r\
-    \n- [纪录片《TPB AFK》与现行版权制度 - 阮一峰](http://www.ruanyifeng.com/blog/2013/02/tpb.html)\r\
-    \n- [论文的版权属于谁？ 作者：阮一峰](http://www.ruanyifeng.com/blog/2011/08/copyright_of_academic_papers.html)\r\
-    \n- [王小波：海明威的《老人与海》](http://www.douban.com/group/topic/9157391/)\r\n- [独立思考的重要性，我的2012总结](http://linlis.me/post/39927773993)\r\
-    \n- [我们正进入另一个黑暗和无知的时代](http://jianshu.io/p/Ht77DQ)\r\n- [欲作大丈夫事业，勿学小儿女姿态](http://jianshu.io/p/ucKAMb)\r\
-    \n- [不要劝阻一个理想主义者](http://www.baibanbao.net/mylife/2012/11/10/do-not-discourage-an-idealist/)\r\
-    \n- [纪录片《Minecraft：Mojang的故事》](http://www.ruanyifeng.com/blog/2012/12/minecraft_the_story_of_mojang.html)\r\
-    \n- [提高效率的秘诀 by Aaron Swartz](http://www.yesen.org/?p=171)\r\n- [给我未来的孩子](http://yue.fm/p9pdw)\r\
-    \n- [Graph Search能成为Facebook的杀手锏么？](http://www.yesen.org/?p=211)\r\n- [打破信息的牢笼](http://www.yesen.org/?p=204)\r\
-    \n- [空气有毒：PM 2.5、健康和科学松鼠会](http://www.yesen.org/?p=156)\r\n- [沉浮于江湖–读野夫《乡关何处》](http://www.yesen.org/?p=151)\r\
-    \n- [Kindle vs iPad：电子书将何去何从？](http://www.yesen.org/?p=146)\r\n- [旅行，写作，编程](http://www.aqee.net/traveling-writing-programming/)\r\
-    \n- [《Linus Torvalds自传》摘录](http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html)\r\
-    \n- [Michael S. Hart去世了](http://www.ruanyifeng.com/blog/2011/09/michael_s_hart_passed_away.html)\r\
-    \n- [自由引导网络，我们即将到来](http://www.solidot.org/story?sid=12063)\r\n- [不会沉没的海盗湾](http://www.ruanyifeng.com/blog/2010/05/an_unsinkable_tpb.html)\r\
-    \n- [海盗湾纪录片在海盗湾上线](http://www.solidot.org/story?sid=33425)\r\n\r\n### 短篇小说\r\n\
-    - [日暮](http://www.douban.com/group/topic/15321855/)\r\n- [漫长的消逝](www.douban.com/group/topic/12341290/)\r\
-    \n- [纸异兽](http://yue.fm/gu54j)内容来自于豆瓣：[[原创中译版] 纸异兽 The Paper Menagerie（星云奖）](http://www.douban.com/group/topic/32678413/)\r\
-    \n- [村上春树：爱如半夜汽笛](http://site.douban.com/163373/widget/notes/8731208/note/218636120/)\r\
-    \n\r\n### 视频\r\n- [自然纪录片《Mythos Wald》](http://www.biubiubiubiu.com/post/227)\r\
-    \n\r\n### 图片\r\n- [盘点美丽超新星遗迹：恒星爆发照亮夜空8个月](http://slide.tech.sina.com.cn/d/slide_5_453_27108.html)\r\
-    \n\r\n### 生活\r\n- [那些应该时刻牢记的事](http://heikezhi.com/yuanyi/5-things-you-should-always-remember)\r\
-    \n- [橙汁配料表的秘密](http://heikezhi.com/yuanyi/secret-ingredient-your-orange-juice)\r\
-    \n- [你不需要每天睡够八小时](http://jianshu.io/p/xNVzKC)\r\n\r\n### 技术\r\n- [Turing机、人工智能以及我们的世界](http://www.matrix67.com/blog/archives/4930)\r\
-    \n- [程序员技术练级攻略](http://coolshell.cn/articles/4990.html)\r\n- [程序员能力矩阵 Programmer\
-    \ Competency Matrix](http://static.icybear.net/%5BCN%5DProgrammer%20competency%20matrix.htm)\r\
-    \n\r\n### 大千世界的故事&新闻\r\n- [极客流浪汉与比特币的故事](http://www.ifanr.com/350210)\r\n\r\n\
-    不断补充中～～～\r\n欢迎推荐那些打动你的好文章 anwen.in@gmail.com\r\n另外，好书分享在<http://anwensf.com/share/12>"
-  post_img: ''
-  published: 1349430399.0
-  score: 5.318
-  sharetype: eyeopen
-  slug: post-share
-  status: 0
-  suggestscore: 0.0
-  tags: list
-  title: !!python/str '好文链接'
-  updated: 1380355126.756333
-  upload_img: ''
-  user_id: 1
+  vote_open: 0
+  vote_title: ''
 - _id: 510bcb1d606ec50bbe416844
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 2109
+  hitnum: 2114
   id: 19
   likenum: 0
   link: ''
-  markdown: !!python/str "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
+  markdown: "![](http://upload.wikimedia.org/wikipedia/en/0/02/AlwaysLookOnTheBrightSideOfLife.jpg)\r\
     \n\r\n\r\n<embed src=\"http://www.xiami.com/widget/0_2018536/singlePlayer.swf\"\
     \ type=\"application/x-shockwave-flash\" width=\"257\" height=\"33\" wmode=\"\
     transparent\"></embed>\r\n\r\n\r\nsome things in life are bad, 生命中总有些不如意  \r\n\
@@ -635,221 +722,176 @@
   tags: music
   title: music-share:Always Look on the Bright Side of Life
   updated: 1383584683.0597
-  upload_img: ''
+  upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042de
+  vote_open: 0
+  vote_title: ''
+- _id: 5117186e606ec50bbf529207
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 2314
-  id: 8
+  hitnum: 1792
+  id: 20
   likenum: 0
   link: ''
-  markdown: !!python/str "### 阅读\r\n- [中国三明治](http://www.china30s.com/)\r\n- [Solidot](http://www.solidot.org/)\
-    \ 奇客的资讯，重要的东西\r\n- [阅FM](http://yue.fm/)\r\n- [简书](http://jianshu.io/) 在这里写作 在这里阅读\
-    \ 在这里，慢下来\r\n- [爱看豆happy书店](http://ikandou.com/)\r\n- [卡尔维诺中文站 - Italo Calvino\
-    \ in China](http://www.ruanyifeng.com/calvino/)\r\n- [Rochester Made](http://rochestermade.com/)\
-    \ \r\n- [拇指阅读 深阅读社区](http://www.mzread.com/)\r\n\r\n### 阅读工具\r\n- [feedly](http://cloud.feedly.com/)\r\
-    \n- [Digg](http://digg.com/)\r\n- [Google 阅读器](https://www.google.com/reader/)\
-    \  130701已经关闭\r\n\r\n### 视频\r\n- [Vimeo](http://vimeo.com/)  需要翻越长城\r\n- [YouTube](https://www.youtube.com/)\
-    \  需要翻越长城\r\n- [Coursera](https://www.coursera.org/) Take the world's best courses,\
-    \ online, for free. <http://www.douban.com/group/Coursera-er/> <http://www.gemag.com.cn/9/33078_1.html>\
-    \ <http://www.douban.com/group/xmooc/> <http://coursera.yeeyan.org/>\r\n\r\n###\
-    \ 社区\r\n- [豆瓣](http://www.douban.com/) \r\n- [V2EX](http://www.v2ex.com/  \"创意工作者们的社区\"\
-    ) \r\n- [知乎](http://www.zhihu.com/ )\r\n- [摆摆书架](http://bookfor.us/) 社会化图书馆。可以分享自己看过的闲书，以及免费借阅他人的书籍。\r\
-    \n\r\n### 写\r\n- [OhLife](http://ohlife.com/ \"OhLife helps you remember what's\
-    \ happened in your life\")\r\n- [notepad.cc](http://notepad.cc/) \r\n\r\n### 音乐\r\
-    \n- [Last.fm](http://cn.last.fm/ )\r\n- [巨鲸](http://www.top100.cn/ )\r\n- [虾米](http://www.xiami.com/\
-    \ )\r\n- [亦歌](http://www.1g1g.com/ )\r\n- [豆瓣电台](http://douban.fm/ )\r\n- [Spotify](http://www.spotify.com/us/\
-    \ \"A world of music\")\r\n\r\n### 图片\r\n- [imgur:简单图片分享](http://imgur.com/ \"\
-    the simple image sharer\")\r\n- [500px is Photography](http://500px.com/)  The\
-    \ world's best photo sharing.\r\n\r\n### 互联网创业\r\n- [创意气球 | GuruDigger](http://gurudigger.com/)\r\
-    \n- [36氪](http://www.36kr.com/ \"关注互联网创业\") \r\n- [17Startup](http://www.17startup.com/\
-    \ \"让创业不再孤单\") \r\n\r\n### 博客\r\n- [阮一峰](http://www.ruanyifeng.com/home.html )\r\
-    \n\r\n### 效率工具\r\n- [WorkFlowy](https://workflowy.com/)  Organize your brain\r\
-    \n\r\n### 其他\r\n- [google whats-at-stake](https://www.google.com/intl/zh-CN/takeaction/whats-at-stake/)\r\
-    \n\r\n### 小玩意\r\n- [在线键盘钢琴](http://zythum.free.bg/Piano/)  需要切换为英文输入法\r\n- [Pretty\
-    \ IP - By Strange](http://prettyip.meetstrange.com/)  有颜色的IP\r\n\r\n### 技术社区\r\
-    \n- [programming.reddit](http://www.reddit.com/r/programming/ )\r\n- [Hacker News](http://news.ycombinator.com/\
-    \ )\r\n- [StackOverflow](http://stackoverflow.com )\r\n- [SegmentFault](http://segmentfault.com\
-    \ )\r\n- [德问]( http://www.dewen.org \"Wiki协作与CC版权：构建高质量的专业开源知识库\")\r\n- [Python-China](http://python-china.org/\
-    \ ) \r\n- [叩叮](http://codinn.com/  \"联结开发者\") \r\n\r\n### 工具\r\n- [freebase](http://www.freebase.com/)\
-    \ A community-curated database of well-known people, places, and things\r\n\r\n\
-    ### 嘿，看看你的收藏夹，把你最爱的几个分享到这里来吧，多谢^,^\r\n\r\n### 持续更新中,欢迎推荐, anwen.in@gmail.com"
+  markdown: "<embed type=\"application/x-shockwave-flash\" src=\"http://assets.tumblr.com/swf/audio_player_black.swf?audio_file=http%3A%2F%2Fwww.tumblr.com%2Faudio_file%2Fyoungking%2F23044634699%2Ftumblr_m40vy55qZr1qz4kl4&color=FFFFFF\"\
+    \ height=\"27\" width=\"207\" quality=\"best\" wmode=\"opaque\"></embed>\r\n\r\
+    \nMagic boulevard（魔力大道）    作曲／演唱：Fran&ccedil;ois Feldman \r\n\r\n    Elle voit\
+    \ des films\r\n    Cent fois les mêmes\r\n    Les mêmes crimes\r\n    Et les mêmes\
+    \ scènes\r\n    \r\n    Elle travaille seule\r\n    Elle place les gens\r\n  \
+    \  Dernier fauteuil\r\n    Ou premier rang\r\n    \r\n    Les phrases d’amour\r\
+    \n    Sur grand écran\r\n    La nuit, le jour\r\n    &Ccedil;a lui fait du vent\r\
+    \n    \r\n    Elle vit comme &ccedil;a\r\n    L’amour des autres\r\n    Mais quelques\
+    \ fois\r\n    Y a l’image qui saute\r\n    \r\n    Elle vit sa vie dans le noir,\
+    \ bizarre\r\n    Pour toujours elle maquille son désespoir\r\n    Au magic’boul’vard\r\
+    \n    \r\n    Elle laisse tranquille\r\n    Les amoureux\r\n    Qui ratent le\
+    \ film\r\n    En fermant les yeux\r\n    \r\n    Elle vend ses glaces\r\n    Avec\
+    \ ses rêves\r\n    Un sourire passe\r\n    Au bord de ses lèvres\r\n    \r\n \
+    \   La demoiselle\r\n    A lampe de poche\r\n    Se voudrait belle\r\n    Pour\
+    \ faire du cinoche\r\n    \r\n    Parfois quelle chance\r\n    La salle est vide\r\
+    \n    Pour une séance\r\n    Elle devient Ingrid\r\n    \r\n    Elle vit sa vie\
+    \ dans le noir, bizarre\r\n    Pour toujours elle maquille son désespoir\r\n \
+    \   Au magic’boul’vard\r\n    \r\n    Elle voit passer\r\n    Des gens connus\r\
+    \n    Des gens glacés\r\n    Qui ne parlent plus\r\n    \r\n    Jamais la foule\r\
+    \n    Ne prend sa main\r\n    Ses larmes coulent\r\n    Avec le mot FIN\r\n\r\n\
+    \    她一部電影要看上百遍 \r\n    同樣的罪行 \r\n    同樣的場景 \r\n\r\n    \r\n    她工作的時候總是一個人 \r\
+    \n    她幫人領位 \r\n    找最後一把椅子 \r\n    或是第一排的位置 \r\n    \r\n    大銀幕上日日夜夜的愛情對白 \r\n\
+    \    就像風一般在她耳邊來去 \r\n    \r\n    她就這麼看淡了別人的愛情 \r\n    但有的時候 \r\n    一個畫面也會讓她感動\
+    \ \r\n    \r\n    她在黑暗中奇怪地生活 \r\n    在這條魔力大道上 \r\n    她永遠遮掩著她的絕望 \r\n    \r\n\
+    \    她靜靜地不去打擾那些情人們 \r\n    他們閉著眼睛 \r\n    錯過了電影畫面 \r\n    \r\n    她把夢想連同冰激淋一起出售\
+    \ \r\n    一個微笑不經意地劃過 \r\n    她的唇邊 \r\n    \r\n    拿著手電筒的她 \r\n    感覺自己很美 \r\n\
+    \    可以去做電影明星 \r\n    \r\n    有的時候劇場裡空無一人 \r\n    整個電影就是她的演出 \r\n    她就是英格麗褒曼\
+    \ \r\n    \r\n    她看著來來往往的人群 \r\n    那些她熟悉的人們 \r\n    那些冰冷的人們 \r\n    從來不說一個字\
+    \ \r\n    \r\n    從來沒有人 \r\n    與她握手 \r\n    她的眼淚於是流下來 \r\n    在銀幕上出現「劇終」的時候"
   post_img: ''
-  published: 1349430186.0
-  score: 4.247
-  sharetype: eyeopen
-  slug: site-taste
+  published: 1360468078.013347
+  score: 10.152
+  sharetype: music
+  slug: music_Magic_boulevard
   status: 0
   suggestscore: 0.0
-  tags: list site
-  title: !!python/str '站点分享'
-  updated: 1386083386.916727
-  upload_img: ''
+  tags: ''
+  title: music-share:Magic boulevard
+  updated: 1383584634.662995
+  upload_img: null
   user_id: 1
-- _id: 50e44d08606ec51c6ab042e2
+  vote_open: 0
+  vote_title: ''
+- _id: 51171b3a606ec50bbe41685e
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 2480
-  id: 12
-  likenum: 0
-  link: ''
-  markdown: !!python/str "其实豆瓣读书也挺好，就是东西有些多，这是一个简洁的地方，只分享最打动你的书籍, 欢迎补充\r\n\r\n###\
-    \ 小说\r\n* 悟空传\r\n* 安德的游戏\r\n* 时间足够你爱\r\n* 三体\r\n* 真名实姓\r\n* 莱博维茨的赞歌\r\n* 基地\r\n\
-    * 球状闪电\r\n* 2001：太空奥德赛\r\n* 天意\r\n* 与吾同在\r\n* 与拉玛相会\r\n* 沧浪之水\r\n- [Alice in Wonderland](http://www.magicscroll.net/#reader;md5=f97887c911bd1da2b07ea9b2eea3fdad)\r\
-    \n\r\n### 中篇小说\r\n- [博上灯 - 斩鞍](http://read.douban.com/ebook/2856/) 豆瓣阅读免费作品\r\n\
-    - [中国式青春 - 今何在](http://read.douban.com/ebook/3341/) 豆瓣阅读免费作品\r\n- [The Algorithms\
-    \ For Love - 刘宇昆](http://read.douban.com/ebook/311371/) 豆瓣阅读免费作品\r\n- [春日泽·云梦山·仲昆\
-    \ - 拉拉](http://read.douban.com/ebook/367102/)\r\n- [真空跳跃 - 拉拉](http://read.douban.com/ebook/369403/)\r\
-    \n- [Single-bit Error](http://read.douban.com/ebook/311646/)\r\n\r\n### 小说集\r\n\
-    大师的盛宴\r\n\r\n### 设计\r\n* 设计中的设计 书评：<http://sofish.de/2243>\r\n\r\n### 科技\r\n*\
-    \ Creative Commons - A Shared Culture <http://github.readium.org/viewer.html?book=shared_culture#>\r\
-    \n\r\n### 杂文集\r\n* 黑客与画家\r\n* 重来：更为简单有效的商业思维 <http://37signals.com/rework>(官方提供英文pdf版，网站在墙外，这个也墙？)\
-    \ <http://www.v2ex.com/rework>(中文翻译版)\r\n* 失控：机器、社会与经济的新生物学 <http://kk.org/outofcontrol/contents.php>\
-    \ \r\n* 数学之美\r\n* 暗时间\r\n* 苏菲的世界\r\n* 当我谈跑步时，我谈些什么\r\n* 牛棚杂忆\r\n* 「想想」创刊号 [简书官方提供epub](http://jianshu.io/p/vJRdKw)\r\
-    \n\r\n### 杂志\r\n- [新幻界 VOL.31 给岁月以幻想给幻想以未来](http://read.douban.com/ebook/575705/)\
-    \ 豆瓣阅读免费作品\r\n\r\n### 其他\r\n* [音乐天堂（1st/2013）](http://book.duokan.com/%E9%9F%B3%E4%B9%90%E5%A4%A9%E5%A0%82%EF%BC%881st/2013%EF%BC%89/b/21717)\
-    \ 多看平台免费\r\n\r\n<http://www.gutenberg.org/> Free ebooks - Project Gutenberg\r\n\
-    <http://www.feedbooks.com/books/top?range=month>  Public Domain epub\r\n\r\n不断补充中～～～\r\
-    \n本文目前贡献者：github@zhblog askender\r\n\r\n欢迎推荐那些打动你的好书 anwen.in@gmail.com\r\n另外，好文分享在<http://anwensf.com/share/10>"
-  post_img: 20130814_193147_736898_1200.jpg
-  published: 1349432059.0
-  score: 6.306
-  sharetype: book
-  slug: book-share
-  status: 0
-  suggestscore: 0.0
-  tags: list book
-  title: !!python/str '推荐好书'
-  updated: 1386083260.32904
-  upload_img: ''
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042d9
-  commentnum: 1
-  content: ''
-  dislikenum: 0
-  hitnum: 4686
-  id: 3
-  likenum: 0
-  link: ''
-  markdown: !!python/str "### 什么是安问\r\n\r\n- 安问致力于分享和创造有趣的东西\r\n- 我们专注于为大家提供精选的文字，音乐，视频和其他有意思的东西\r\
-    \n- 期待以此给大家带来快乐，或引发大家的思考\r\n- 人生要有趣~\r\n\r\n> 安问是一个致力于传播有趣东西的非营利机构。团队在不断收集愿意创造和分享的人，旨在“用创造和分享的力量将世界变得更好玩”。欢迎加入~\r\
-    \n\r\n\r\n### 为什么要建立安问\r\n\r\n- 面对信息爆炸，安问将致力于提供精选而智能推荐的信息，在快节奏的生活中为大家带来一方安静的网络空间和交流平台\r\
-    \n- 给贡献者（包含提建议者）和分享者提供更多回报和报酬，为价值创造者带来更多价值\r\n- 读更多的好书，看更多的美景，认识更多志同道合的朋友。与大家一起分享有趣的东西~\r\
-    \n\r\n\r\n### What is Anwen (For people speaking English)\r\n\r\n- Anwen is all\
-    \ about creating and sharing nice things.\r\n- We provide valuable information\
-    \ for everyone, money for every creator and sharer.\r\n- We believe create and\
-    \ share have the power of promoting a more wonderful world.\r\n\r\n\r\n### 安问名字的来源\r\
-    \n\r\n>豺狼当道，安问狐狸——《后汉书·张纲传》\r\n\r\n- 话说东汉末年，外戚诸梁姻族满朝，大将军梁冀专权。朝廷派遣张纲等八人分道巡按各州郡，纠察收审贪官污吏。张纲衔命出洛阳，叹道：“豺狼当道，安问狐狸？”遂将车轮埋于都亭，起草弹劾梁冀的奏章。用豺狼比喻祸国殃民的人，用狐狸比喻小偷等小坏蛋，就是说国家祸国殃民的人还没除净，（却派我）去查那些小坏蛋。\r\
-    \n- 当然安问的名字也来源于屈原的《天问》以及奥森·斯科特·卡德（Orson Scott Card）的《安德的游戏》\r\n\r\n\r\n### 加入安问\r\
-    \n\r\n- 安问的每个开发者和参与者也都是安问用户，分享着自己心爱的发现，也从大家的创造和分享中受益。\r\n- Google论坛&邮件列表：https://groups.google.com/d/forum/our-anwen\r\
-    \n- 邮箱：askender43@gmail.com\r\n- 安问工作室用户群：127343260\r\n- 安问工作室核心群：148673816\r\n\
-    \r\n\r\n### 安问团队介绍（不断更新中）\r\n\r\n- 柏舟(askender)  物理学转互联网，热爱科幻，阅读，围棋...，一直在做梦，希望靠自己的力量改变一些什么\r\
-    \n- 刘超（kelvin）  主修通信，喜欢折腾与被折腾，热爱互联网，爱好巨多，这里写不下\r\n- sailor\r\n- 郭伟楠  荆州，专业地球化学，不成形geek一枚，未修成正果松鼠一只，爱好不计其数，以科幻，米奇，古典文化最甚，琴棋书画皆略懂，鬼点子多，可家养，可外放\r\
-    \n- 都磊(石头儿)  湖北襄樊，专科毕业，计算机专业，之后参加了北大青鸟2年的培训，热爱互联网，10年4月来到上海，参加工作。目前在一家私营企业做高级软件工程师\r\
-    \n- 月  从前的巴菲是愤青，将不能创作的理由推给“经费、人力、胶卷和市场”。现在的巴菲只是个单纯的说书人，一支笔、一张纸、几句话，简简单单，不为其它.巴菲印刻是将梦境造出的出版社。\r\
-    \n- 魏景亮, 周潇粤, Yungstedt, 盲眼A, 青青子矜, anti\r\n- ireading, A-cat, 盲眼A, 林子, H1K9\r\
-    \n- ...\r\n\r\n\r\n### 联系我们\r\n- 邮箱: anwen.in@gmail.com askender43@gmail.com\r\
-    \n- twitter: <https://twitter.com/askenderlee>\r\n- 微博: <http://weibo.com/askender>\r\
-    \n- github: <https://github.com/anwen/anwen>\r\n- gurudigger: <http://gurudigger.com/ideas/696>\r\
-    \n\r\n\r\n### 历史\r\n- 想法出现，第一个网站建立（tap版天问） 2011-01-01\r\n- 购买第一个独立域名和空间，wp版安问网发布成立\
-    \ 2011-03-04\r\n- 安问团队第一次聚会（4人），当天与天使投资人聊天半小时 2011-05-21\r\n- 安问研发和发布人工智能安德（当月后来得知Jobs去世和siri发布）\
-    \ 2011-10\r\n- 因安问这个梦，askender退学。当月获得小额天使投资后退还 2011-12\r\n- 安问发布第一期独立杂志 2012-01-01\r\
-    \n- 第一个独立开发版安问上线 2012-08\r\n- 很多人参与过安问，可惜一直没有组织好，一直在沉寂和积累。感谢那些可爱的人 2011-01~2014-04\r\
-    \n- 安问开始重构。获得风车赞助团队协作工具 2014-04-28\r\n\r\n### 进行中的安问\r\n- 成为优质内容发布、阅读与分享的一个独特和独立平台\
-    \ 2014-05~\r\n- 作者收入更多，读者阅读体验更好，交流互动更有意思 2014-05~\r\n- 与版权方深度合作，让正版资源能够以体验好、方便低价，互动性更强的方式呈现于读者面前\
-    \ 2014-05~\r\n- 创建一个有自己信仰的优质内容社区，使网站内容的质量保持在高水平 2014-05~\r\n- 研发人工智能和推荐算法 2011-10~\r\
-    \n- 提供更好的用户体验和用户价值实现 2011~\r\n\r\n\r\n### 安问实验室（项目有点多, 部分链接稍后放出）\r\n- 安文 文章精选\
-    \ 重构中 安问核心 从安问分离 <http://anwensf.com/>\r\n- 暗链 链接精选 重构中 安问核心 从安问分离\r\n- 安德 人工智能\
-    \ 重构中 <http://ande.anwensf.com/>\r\n- 安寻 自由寻找 重构中 <http://x.anwensf.com/>\r\n\
-    - 安听 音乐精选 开发中\r\n- 暗视 视频精选 完善中 <http://v.anwensf.com/>\r\n- 暗香 美食精选 完善中 <http://e.anwensf.com/>\r\
-    \n- 安聚 聚会精选 开发中 鲜活\r\n- 安诗 诗歌漫步 开发中\r\n- 安言 言语漫游 开发中\r\n- 安幻 科幻奇幻 暂下线 曾经的whsfa\
-    \ 会回来的\r\n- 安游 奇异视界 开发中 一个html5-mmo游戏\r\n- 安际 国际版本 原域名anwen.in备案被取消，恢复访问时间测不准\r\
-    \n\r\n\r\n### 安问开源\r\n\r\n- [anwen@github](https://github.com/anwen/anwen) 活跃开发中（正在重构），欢迎大家pull-request\r\
-    \n\r\n\r\n### 信条\r\n\r\n- 提供优质内容和最佳用户体验，专心将一件事做到极致\r\n- 安问是一生的故事，生命短暂，不断提高迭代更新速度，期待有一天吸引你的参与\r\
-    \n- 逐步实现分享维基，可以给文章pull request，协作打造最方便的分享\r\n- 文本默认采用<a rel=\"license\" href=\"\
-    http://creativecommons.org/licenses/by-sa/3.0/cn/\">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a>进行许可\r\
-    \n- 代码开源\r\n\r\n\r\n### 致谢\r\n\r\n- 所有关注过安问的人\r\n- 高效协作工具由[风车](https://fengcheco.com/)友情提供，推荐使用~\r\
-    \n- 各种开源工具\r\n- 创造有趣好用东西的很多人\r\n- 空气和水..."
-  post_img: ''
-  published: 1349429689.0
-  score: 2.564
-  sharetype: fire
-  slug: about
-  status: 0
-  suggestscore: 0.0
-  tags: ask
-  title: !!python/str '关于安问'
-  updated: 1398928891.832053
-  upload_img: ''
-  user_id: 1
-- _id: 50e44d08606ec51c6ab042dc
-  commentnum: 0
-  content: ''
-  dislikenum: 0
-  hitnum: 2119
-  id: 6
+  hitnum: 2114
+  id: 21
   likenum: 1
   link: ''
-  markdown: !!python/str "Markdown 的目标是实现「易读易写」，成为一种适用于网络的书写语言。推荐写作者学会该语言。\r\n\r\n\
-    * Markdown 的语法非常简单，全由一些精挑细选的符号所组成，其作用一目了然。\r\n* 它实际上非常简单、容易学习。大家都可以在5分钟以内学会。是为数不多，你真地可以彻底学会的语言。\r\
-    \n* 更重要的是，Markdown语法所有要素，是与写作的习惯一脉相承的，套用句俗语：仅为写作而生。[1][1]\r\n* 纯文本，故兼容性极强，可以用所有文本编辑器打开。\r\
-    \n* 格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。\r\n* Markdown标记语言写出的文字有极好的可读性。\r\n\r\
-    \n学习开始~\r\n\r\n### 标题\r\n在行首插入 1 到 6 个 # ，对应到标题 1 到 6 级。\r\n<pre>\r\n# 标题 1\r\n\
-    ## 标题 2\r\n### 标题 3\r\n</pre>\r\n# 标题 1\r\n## 标题 2\r\n### 标题 3\r\n\r\n注：# 和「标题」之间保留一个字符的空格。\r\
-    \n\r\n\r\n### 列表\r\n无序列表：使用减号、加号或者星号来做为列表的项目标记(减号后要加空格)\r\n<pre>\r\n- 安问\r\n-\
-    \ 成长\r\n</pre>\r\n- 安问\r\n- 成长\r\n\r\n有序列表则是使用一般的数字接着一个英文句点作为项目标记(句点后要加空格)\r\n\
-    <pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\n</pre>\r\n1. Red\r\n2. Green\r\n3. Blue\r\
-    \n注：普通文本后如果需要显示列表，需要空一行\r\n\r\n### 链接和图片\r\n要引用网址了，就是 [显示文本](链接地址)\r\n<pre>\r\n\
-    [豆瓣](http://www.douban.com)  \r\n[关于安问](/about   \"可选的说明:关于安问~~~\")\r\n</pre>\r\
-    \n[豆瓣](http://www.douban.com)  [关于安问](/about   \"可选的说明:关于安问~~~\")\r\n\r\n图片的语法和链接很像,\
-    \ 只是前面多了一个 ！\r\n<pre>\r\n![](http://img1.douban.com/pics/nav/lg_main_a10.png)\r\
-    \n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png  \"豆瓣logo\")\r\n</pre>\r\
-    \n![](http://img1.douban.com/pics/nav/lg_main_a10.png)\r\n![豆瓣](http://img1.douban.com/pics/nav/lg_main_a10.png\
-    \  \"豆瓣logo\")\r\n\r\n\r\n### 引用\r\n我们写作的时候有时需要引用他人的文字，在 Markdown 中，你只需要在你希望引用的文字前面加上\
-    \ > 就好。 > 和文本之间要保留一个字符的空格。\r\n如：\r\n<pre>\r\n> 习惯是人生最大的指导。\r\n</pre>\r\n> 习惯是人生最大的指导。\r\
-    \n\r\n\r\n### 粗体和斜体\r\n<pre>\r\n在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**\r\n</pre>\r\n\
-    在文字两旁加上星号，看起来就像*强调*；两个星号，**粗体**\r\n\r\n\r\n###  换行\r\nMarkdown 的换行稍微有点特殊。换行我们分「一般换行」和「段落换行」。\
-    \  \r\n比方说，诗的换行都是「一般换行」，也就是一行紧接着一行，中间没有段落间隔。这种「一般换行」的语法是，在每句话的末尾保留两个字符的「空格」，例如你输入：\r\
-    \n\r\n朝辞白帝彩云间  \r\n千里江陵一日还  \r\n两岸猿声啼不住  \r\n轻舟已过万重山   \r\n注：上方的例子里面，每句话的末尾都有两个空格。\r\
-    \n\r\n另外一种换行是「段落换行」，常用于段落，两段文本之间会有一行的间隔，这种换行的语法没有特殊之处，只需要两段之间多加一行间隔之即可，例如你输入：\r\
-    \n\r\n朝辞白帝彩云间 ，千里江陵一日还，\r\n\r\n两岸猿声啼不住，轻舟已过万重山。\r\n\r\n\r\n#### 进阶\r\n参考形式的链接让你可以为链接定一个名称，之后你可以在文件的其他地方定义该链接的内容：\r\
-    \n\r\n<pre>\r\nI get 10 times more traffic from [Google][1] than from\r\n[Yahoo][2]\
-    \ or [MSN][3].\r\n\r\n[1]: http://google.com/ \"Google\"\r\n[2]: http://search.yahoo.com/\
-    \ \"Yahoo Search\"\r\n[3]: http://search.msn.com/ \"MSN Search\"\r\n</pre>\r\n\
-    \r\n代码块\r\n\r\n<pre>\r\n```python\r\ndef hello():\r\n    return True\r\n```\r\n\
-    </pre>\r\n\r\n自动链接\r\n\r\nMarkdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用方括号包起来， Markdown\
-    \ 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：\r\n\r\n    <http://anwensf.com/>\r\n会转为：\r\n\
-    <http://anwensf.com/>\r\n\r\n一切就这么简单。Markdown之所以越来越流行,是因为它足够简单。试试吧～\r\n\r\n在线编辑器\r\
-    \n\r\n-  <http://dillinger.io/>\r\n-  <http://markable.in/editor/>\r\n- <http://anwensf.com/edit>\r\
-    \n\r\n浏览器插件\r\n\r\n-  MaDe (Chrome)\r\n\r\n\r\n参考文献：\r\n\r\n1. [为什么Markdown+R有较大概率成为科技写作主流？][1]\r\
-    \n2. [Markdown 语法说明(简体中文版)][2]\r\n3. [Markdown Syntax Documentation][3]\r\n4.\
-    \ [献给写作者的 Markdown 新手指南][4]\r\n\r\n[1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html\r\
-    \n[2]:http://wowubuntu.com/markdown/basic.html\r\n[3]:http://daringfireball.net/projects/markdown/syntax\r\
-    \n[4]:http://jianshu.io/p/q81RER"
+  markdown: "此诗是现代英语短篇杰作, 格律严谨，用语天然，意境含蓄。雪夜林畔小驻。\r\n\r\nStopping by Woods on a Snowy\
+    \ Evening\r\nBY ROBERT FROST\r\n\r\nWhose woods these are I think I know.   \r\
+    \nHis house is in the village though;   \r\nHe will not see me stopping here \
+    \  \r\nTo watch his woods fill up with snow.   \r\n\r\nMy little horse must think\
+    \ it queer   \r\nTo stop without a farmhouse near   \r\nBetween the woods and\
+    \ frozen lake   \r\nThe darkest evening of the year.   \r\n\r\nHe gives his harness\
+    \ bells a shake   \r\nTo ask if there is some mistake.   \r\nThe only other sound’s\
+    \ the sweep   \r\nOf easy wind and downy flake.   \r\n\r\nThe woods are lovely,\
+    \ dark and deep.   \r\nBut I have promises to keep,   \r\nAnd miles to go before\
+    \ I sleep,   \r\nAnd miles to go before I sleep.\r\n\r\n\r\n1. <http://en.wikipedia.org/wiki/Stopping_by_Woods_on_a_Snowy_Evening>"
   post_img: ''
-  published: 1349430103.0
-  score: 3.216
-  sharetype: fire
-  slug: markdown
+  published: 1360468794.634333
+  score: 10.639
+  sharetype: book
+  slug: poem_Stopping_by_Woods_on_a_Snowy_Evening
   status: 0
   suggestscore: 0.0
-  tags: ask
-  title: !!python/str 'Markdown漫游指南'
-  updated: 1420723947.379189
-  upload_img: ''
+  tags: 诗歌
+  title: Stopping by Woods on a Snowy Evening
+  updated: 1533826656.534157
+  upload_img: null
   user_id: 1
+  vote_open: 0
+  vote_title: 你最喜欢的一首诗是？
+- _id: 5117245c606ec50bbe416860
+  commentnum: 0
+  content: null
+  dislikenum: 0
+  hitnum: 2224
+  id: 22
+  likenum: 1
+  link: ''
+  markdown: "<object width=\"500\" height=\"74\"><param name=\"movie\" value=\"http://box.baidu.com/widget/flash/song.swf?name=Oh%20My%20Love&artist=John%20Lennon\"\
+    ></param><param name=\"wmode\" value=\"opaque\"><param name=\"allowscriptaccess\"\
+    \ value=\"always\"></param><embed src=\"http://box.baidu.com/widget/flash/song.swf?name=Oh%20My%20Love&artist=John%20Lennon\"\
+    \ type=\"application/x-shockwave-flash\" wmode=\"opaque\" allowscriptaccess=\"\
+    always\" width=\"500\" height=\"74\"></embed></object>\r\n\r\n词：Lennon, Ono  曲：Lennon,\
+    \ Ono\r\n\r\n    Oh my love for the first time in my life.\r\n    是我生命最初的爱\r\n\
+    \    My eyes are wide open.\r\n    使我不再紧闭双眼\r\n    Oh my love 4 the first time\
+    \ in my life.\r\n    是我生命最初的爱\r\n    My eyes can see.\r\n    使我清楚看见了\r\n    l\
+    \ see the wind,I see the trees.\r\n    我看见了清风，我感受了树\r\n    Everything is clear\
+    \ in my heart.\r\n    我的心如明镜\r\n    I see the clouds,I see the sky.\r\n    我看到云,我感受天空\r\
+    \n    Everything is clear in our world.\r\n    我们的世界从此风轻云淡\r\n\r\n    Oh my love\
+    \ for the first time in my life.\r\n    是我生命最初的爱\r\n    My mind is wide open.\r\
+    \n    我的意识如新生\r\n    Oh my love 4 the first time in my life.\r\n    是我生命最初的爱\r\
+    \n    My mind can feel.\r\n    我的神智不再封闭\r\n    I feel sorrow,I feel dreams.\r\n\
+    \    我看到悲伤，我感受了梦\r\n    Everything is clear in my heart.\r\n    我的心如明镜\r\n   \
+    \ I feel life,I feel love.\r\n    我感受生活,我感受爱\r\n    Everything is clear in our\
+    \ world.\r\n    我们的世界从此风轻云淡.\r\n\r\n有人评价：如果让人类选一首歌在宇宙中向所有的星球播放，我选这首《Oh My Love》，尽管违背黑暗森林法则，我还是很想在浩瀚的宇宙中听这首歌。\r\
+    \n\r\n\r\n1. <http://en.wikipedia.org/wiki/Oh_My_Love>  墙外\r\n2. <http://www.xiami.com/song/detail/id/1122173>"
+  post_img: null
+  published: 1360471132.18352
+  score: 11.174
+  sharetype: music
+  slug: music_Oh_My_Love
+  status: 0
+  suggestscore: 0.0
+  tags: ''
+  title: music-share:Oh My Love
+  updated: 1360485891.018391
+  upload_img: null
+  user_id: 1
+  vote_open: 0
+  vote_title: ''
+- _id: 55d49516f252c4042e0bcdd4
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 535
+  id: 23
+  likenum: 0
+  link: ''
+  markdown: "中国好声音发信息说我手机号码中奖是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+    \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
+    \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
+    \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
+    \ →确认您已经办理了您的费用】?0?2\r\n:总部热线（0105-7487515）“王经理接听”详情活动咨询专线（0105-7487515)(全天24小时为您服务)(认证)(领奖)(激活)投诉)(处理退款)(您的通话将被全程录音）为此给您带来不便，敬请谅解。为了了解事情真相，记者拨通\r\
+    \n支付方式：柜台办理汇款、网上转帐、ATM柜员机转帐 、等等。\r\n1、我们承诺全程照顾您?0?2\r\n2、我们承诺为您提供公平，公正，透明的交易平台?0?2\r\
+    \n3、我们承诺-心-意地为您提供舒适、满意的服务?0?2\r\n4、我们承诺提供给您的是真实的信息?0?2\r\n5、我们承诺在您需要的时候能够快捷找到我们，我们最终在中国好声音栏目组总部\
+    \ 全国咨询专线：（0105-7487515）（王经理专线）?0?2\r\n　　相关声明：?0?2\r\n慎重提示： 获奖用户在办理领奖手续之前请先向颁奖部门取得联系，对您所获得的奖项进行备案,《中国好声音》电话:（0105-7487515）王经理进行确认，请尊敬的用户一定要听从王经理给您指示的安全步骤在一步步进行办理领取，否则您有办理有误或者上当受骗，本栏目组一律不给承担)\
+    \ 注：为了办理确保安全,请拨通总部颁奖部门电话:（0105-7487515）与王经理获取完整银行帐户办理取。?0?2\r\n温馨提示：?0?2\r\n　　交纳费用后保留好汇款单，并告王经理已经交纳费用了，并告知回执单上的交易序号以及中奖幸运码，即可以便王经理确认您已办理完毕！\
+    \ 王经理通过您所填写的信息与您核对接收奖金的银行账户确认无误后，奖金将在5分钟内转入您指定的银行账户里，奖品将在2-3天的工作日送到您所填写指定的地址上。（恭喜您，祝您全家永年安康\
+    \ ）?0?2\r\n活动声明：?0?2\r\n　　活动是由《中国好声音》主办，特邀北京互联网公证处对本次活动进行公证真实可靠，请幸运获奖用户放心办理领取，您缴纳费用完毕后银行是有相关的记录，手上的汇款单据保留,这也是您受到法律保护的依法凭据。?0?2\r\
+    \n违约说明：?0?2\r\n　　用户如果填写个人领奖资料成功后，在规定的时间内没办理领取奖项，我们只能按照官网活动程序规则进行，总部会把您的个人资料提交到法律部门，您将要给我方律师团队一个满意的答复,违约活动规则的用户将要负法律责任赔偿不等的违约金，如要进行办理领取请您抓紧时间联系《中国好声音》客服电话：(0105-7487515)〔王经理〕接听）以免您的领取时间超限。"
+  post_img: ''
+  published: 1439995158.075973
+  score: 0.0
+  sharetype: deleted
+  slug: ''
+  status: 0
+  suggestscore: 0.0
+  tags: ''
+  title: 中国好声音发信息说我手机号码中奖是真的吗
+  updated: 1533142749.4083753
+  upload_img: null
+  user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d49545f252c4042e0bcdd5
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 551
+  hitnum: 558
   id: 24
   likenum: 0
   link: ''
-  markdown: !!python/str "中国好声音手机中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "中国好声音手机中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -864,24 +906,26 @@
   post_img: ''
   published: 1439995205.930029
   score: 0.0
-  sharetype: eyeopen
-  slug: !!python/str '中国好声音'
+  sharetype: deleted
+  slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '中国好声音手机中奖信息是真的吗'
-  updated: 1439995205.929763
+  tags: 中国好声音
+  title: 中国好声音手机中奖信息是真的吗
+  updated: 1533925250.9432838
   upload_img: ''
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d49584f252c4042e0bcdd7
   commentnum: 0
   content: ''
-  dislikenum: 0
-  hitnum: 498
+  dislikenum: 1
+  hitnum: 510
   id: 25
   likenum: 0
   link: ''
-  markdown: !!python/str "中国好声音手机号码中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "中国好声音手机号码中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -896,24 +940,26 @@
   post_img: ''
   published: 1439995268.025936
   score: 0.0
-  sharetype: eyeopen
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '中国好声音手机号码中奖信息是真的吗'
-  updated: 1439995268.02567
-  upload_img: ''
+  tags: 中国好声音
+  title: 中国好声音手机号码中奖信息是真的吗
+  updated: 1533142717.1176221
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d495b8f252c4042e0bcdd8
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 571
+  hitnum: 576
   id: 26
   likenum: 0
   link: ''
-  markdown: !!python/str "中国好声音抽奖活动中奖名单查询《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "中国好声音抽奖活动中奖名单查询《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -928,15 +974,17 @@
   post_img: ''
   published: 1439995320.611308
   score: 0.0
-  sharetype: ''
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '中国好声音抽奖活动中奖名单查询'
+  tags: 中国好声音
+  title: 中国好声音抽奖活动中奖名单查询
   updated: 1439995320.610916
-  upload_img: ''
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d495cbf252c4042fac2b50
   commentnum: 0
   content: ''
@@ -945,7 +993,7 @@
   id: 27
   likenum: 0
   link: ''
-  markdown: !!python/str "中国好声音手机号码获奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "中国好声音手机号码获奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -960,15 +1008,17 @@
   post_img: ''
   published: 1439995339.854004
   score: 0.0
-  sharetype: ''
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '中国好声音手机号码获奖信息是真的吗'
+  tags: 中国好声音
+  title: 中国好声音手机号码获奖信息是真的吗
   updated: 1439995339.853703
-  upload_img: ''
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d495e1f252c4042e0bcdda
   commentnum: 0
   content: ''
@@ -977,7 +1027,7 @@
   id: 28
   likenum: 0
   link: ''
-  markdown: !!python/str "中国好声音说我手机号码中奖是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "中国好声音说我手机号码中奖是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -992,15 +1042,17 @@
   post_img: ''
   published: 1439995361.369426
   score: 0.0
-  sharetype: ''
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '中国好声音说我手机号码中奖是真的吗'
+  tags: 中国好声音
+  title: 中国好声音说我手机号码中奖是真的吗
   updated: 1439995361.369157
-  upload_img: ''
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d4964cf252c4042fac2b52
   commentnum: 0
   content: ''
@@ -1009,7 +1061,7 @@
   id: 29
   likenum: 0
   link: ''
-  markdown: !!python/str "中国好声音发来信息说我手机号码中奖了是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "中国好声音发来信息说我手机号码中奖了是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -1024,24 +1076,26 @@
   post_img: ''
   published: 1439995468.074085
   score: 0.0
-  sharetype: ''
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '中国好声音发来信息说我手机号码中奖了是真的吗'
+  tags: 中国好声音
+  title: 中国好声音发来信息说我手机号码中奖了是真的吗
   updated: 1439995468.07381
-  upload_img: ''
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d49675f252c4042e0bcddb
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 378
+  hitnum: 381
   id: 30
   likenum: 0
   link: ''
-  markdown: !!python/str "收到中国好声音QQ中奖信息说我中了二等奖是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "收到中国好声音QQ中奖信息说我中了二等奖是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -1056,24 +1110,26 @@
   post_img: ''
   published: 1439995509.336882
   score: 0.0
-  sharetype: ask
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '收到中国好声音QQ中奖信息说我中了二等奖是真的吗'
-  updated: 1439995509.336613
-  upload_img: ''
+  tags: 中国好声音
+  title: 收到中国好声音QQ中奖信息说我中了二等奖是真的吗
+  updated: 1533142703.1386566
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d49688f252c4042e0bcddc
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 336
+  hitnum: 340
   id: 31
   likenum: 0
   link: ''
-  markdown: !!python/str "手机短信收到中国好声音中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "手机短信收到中国好声音中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -1088,24 +1144,26 @@
   post_img: ''
   published: 1439995528.410824
   score: 0.0
-  sharetype: ask
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '手机短信收到中国好声音中奖信息是真的吗'
-  updated: 1439995528.410429
-  upload_img: ''
+  tags: 中国好声音
+  title: 手机短信收到中国好声音中奖信息是真的吗
+  updated: 1533142691.8652482
+  upload_img: null
   user_id: 49
+  vote_open: 0
+  vote_title: ''
 - _id: 55d49699f252c4042fac2b53
   commentnum: 0
   content: ''
   dislikenum: 0
-  hitnum: 171
+  hitnum: 175
   id: 32
   likenum: 0
   link: ''
-  markdown: !!python/str "手机收到中国好声音中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
+  markdown: "手机收到中国好声音中奖信息是真的吗《中国好声音》总部官网活动唯一查询专线(0105-7487515)（王经理接听）进行确认！《中国好声音》本栏目组确实举行了一系列面对广大观众用户的奖品丰厚场外幸运观众抽奖活动，但是大家需要谨记的一点就是当那位幸运者收到此类信息，首先千万要冷静下来，拨通《中国好声音》本栏目组总部电话:（0105-7487515）查询认证，以免给不良商家造成了可乘之机。?0?2\r\
     \n此热线:（0105-7487515）是经过记者采访确认！以此为准、并且公布到新闻网！公布给全国用户进行咨询确认是否真实奖！?0?2\r\n（王经理）_进行确认!以免上当受骗!\
     \ 办理领取所得奖项应个人承担的费用,才具备领奖资格，填写领奖资料无误提交后-请尽快交纳送出奖项所需要的费用，所交的费用不是我们公司总部收取，而是送出奖项所产生的相关费用，我们不承担这些费用，这些费用不能从奖金扣除，应个人承担）\
     \ 办理步骤：【获奖用户填写个人领奖资料→填写完毕联系核实指定专线（0105-7487515）根据王经理获取银行卡号进行办理→到指定银行支付费用→拿好汇款回执单\
@@ -1120,12 +1178,48 @@
   post_img: ''
   published: 1439995545.417191
   score: 0.0
-  sharetype: ''
+  sharetype: deleted
   slug: ''
   status: 0
   suggestscore: 0.0
-  tags: !!python/str '中国好声音'
-  title: !!python/str '手机收到中国好声音中奖信息是真的吗'
-  updated: 1439995545.416759
+  tags: 中国好声音
+  title: 手机收到中国好声音中奖信息是真的吗
+  updated: 1533970082.7766085
   upload_img: ''
   user_id: 49
+  vote_open: 0
+  vote_title: ''
+- _id: 5b6c408639dcac7452124786
+  commentnum: 0
+  content: ''
+  dislikenum: 0
+  hitnum: 24
+  id: 33
+  likenum: 0
+  link: http://36kr.com/p/5128339.html
+  markdown: "我们都是外星人，共同探索外星球上浩瀚的社区，努力去寻找我们在这个宇宙中的位置。\r\n\r\n持续关注各类高质量内容社区，并更新相关思考。\r\
+    \n安问也一直致力于成为一个高质量内容社区。努力中。\r\n停了这么多年，希望接下来安问能以极低成本非盈利状态持续运营。\r\n\r\n## References\r\
+    \n- [内容平台太多、牛逼作者不够分了：浅谈内容创业和平台的突破口](https://36kr.com/p/5056858.html)    太多人想做的流量大的内容平台，不过本文提出了一些问题\r\
+    \n- [对社区产品的一些思考](http://zhowkev.in/2017/11/22/dui-she-qu-chan-pin-de-yi-xie-si-kao/)\
+    \   回顾了一下历史。认为未来方向是，小众和全球化。\r\n- [出版商？内容平台？Medium 高质量与大众化的困惑](https://www.ifanr.com/406477)\
+    \    Medium 应该是一个探讨人们未来的写作和出版方式的服务?\r\n- [UGC社区如何引导用户持续输出高质量内容](https://www.jianshu.com/p/f400bb3aa3cc)\
+    \   现在几乎没有社区能做好参与感和归属感了。\r\n- [在开放注册的情况下，高质量内容的社区是否有保持水准的方法？](https://www.zhihu.com/question/30153360)\
+    \  对方法的思考，回答很少\r\n- [有哪些小众但是有高质量内容的社区？](https://www.zhihu.com/question/22674951)\
+    \  没人回答\r\n- [国内有哪些质量好的内容社区？](https://www.zhihu.com/question/48610365)  没人回答\r\
+    \n- [高质量社区一旦做了开放注册是否就避免不了走向大众化, 低龄化的趋势呢](https://wen.woshipm.com/question/detail/pmb8id.html)\
+    \  认为为了赚钱降低必须门槛，因此必定降低内容质量。\r\n- [为什么高质量的论坛、社区在国内并不能长久？](https://www.admin5.com/article/20150803/613928.shtml)\
+    \   认为一个纯粹的高质量社区在国内几乎是不可能存在的，因为不赚钱就无法持续运营。    \r\n- [湾区论坛](https://wanqu.io/)"
+  post_img: ''
+  published: 1533821062.9949102
+  score: 0.0
+  sharetype: goodlink
+  slug: ''
+  status: 0
+  suggestscore: 0.0
+  tags: 设计
+  title: 十年后的首次翻新：全球第四大网站 Reddit 重新设计的内幕故事
+  updated: 1533969822.0396535
+  upload_img: ''
+  user_id: 1
+  vote_open: 0
+  vote_title: 你最喜欢的社区是？

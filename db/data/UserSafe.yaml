@@ -4,8 +4,8 @@
   user_city: ''
   user_domain: askender
   user_jointime: 1348447398.0
-  user_leaf: 220
-  user_name: !!python/str '柏舟'
+  user_leaf: 236
+  user_name: 柏舟
   user_say: ''
   user_status: 0
   user_url: ''
@@ -16,7 +16,7 @@
   user_domain: python
   user_jointime: 1348825571.0
   user_leaf: 0
-  user_name: !!python/str '书记'
+  user_name: 书记
   user_say: ''
   user_status: 0
   user_url: ''
@@ -31,6 +31,17 @@
   user_say: ''
   user_status: 0
   user_url: ''
+- _id: 50e44d08606ec51c6ab042c8
+  emailverify: ''
+  id: 4
+  user_city: 长沙
+  user_domain: zxy
+  user_jointime: 1350769867.0
+  user_leaf: 0
+  user_name: zxy
+  user_say: ''
+  user_status: 0
+  user_url: ''
 - _id: 50e44d08606ec51c6ab042c9
   emailverify: ''
   id: 5
@@ -38,7 +49,7 @@
   user_domain: bish
   user_jointime: 1351025938.0
   user_leaf: 0
-  user_name: !!python/str '海大鱼'
+  user_name: 海大鱼
   user_say: ''
   user_status: 0
   user_url: ''
@@ -126,7 +137,7 @@
   user_domain: masquevil
   user_jointime: 1354362343.0
   user_leaf: 0
-  user_name: !!python/str '侠小然'
+  user_name: 侠小然
   user_say: ''
   user_status: 0
   user_url: ''
@@ -258,7 +269,7 @@
   user_domain: fire05
   user_jointime: 1358400074.662801
   user_leaf: 20
-  user_name: !!python/str '黑骏马'
+  user_name: 黑骏马
   user_say: ''
   user_status: 0
   user_url: ''
@@ -302,19 +313,19 @@
   user_domain: 448611004@qq.com
   user_jointime: 1363845924.692893
   user_leaf: 20
-  user_name: !!python/str '绿色之光'
+  user_name: 绿色之光
   user_say: ''
   user_status: 0
   user_url: ''
 - _id: 515bcf84606ec557b6b363bb
   emailverify: ''
   id: 30
-  user_city: !!python/str '武汉'
+  user_city: 武汉
   user_domain: niutihepan
   user_jointime: 1363845924.692893
   user_leaf: 20
   user_name: niutihepan
-  user_say: !!python/str '做自己 做更好的自己'
+  user_say: 做自己 做更好的自己
   user_status: 0
   user_url: ''
 - _id: 515ecc22606ec557b7b1ad38
@@ -325,17 +336,6 @@
   user_jointime: 1363845924.691595
   user_leaf: 20
   user_name: fdsfsf
-  user_say: ''
-  user_status: 0
-  user_url: ''
-- _id: 50e44d08606ec51c6ab042c8
-  emailverify: ''
-  id: 4
-  user_city: !!python/str '长沙'
-  user_domain: zxy
-  user_jointime: 1350769867.0
-  user_leaf: 0
-  user_name: zxy
   user_say: ''
   user_status: 0
   user_url: ''
@@ -354,10 +354,10 @@
   emailverify: ''
   id: 33
   user_city: ''
-  user_domain: !!python/str '牛嘧啶'
+  user_domain: 牛嘧啶
   user_jointime: 1371635238.66475
   user_leaf: 20
-  user_name: !!python/str '牛嘧啶'
+  user_name: 牛嘧啶
   user_say: ''
   user_status: 0
   user_url: ''
@@ -365,10 +365,10 @@
   emailverify: ''
   id: 34
   user_city: ''
-  user_domain: !!python/str '王高峰'
+  user_domain: 王高峰
   user_jointime: 1373297888.521401
   user_leaf: 40
-  user_name: !!python/str '王高峰'
+  user_name: 王高峰
   user_say: ''
   user_status: 0
   user_url: ''
@@ -376,10 +376,10 @@
   emailverify: ''
   id: 35
   user_city: ''
-  user_domain: !!python/str '苍穹'
+  user_domain: 苍穹
   user_jointime: 1373297888.521401
   user_leaf: 20
-  user_name: !!python/str '苍穹'
+  user_name: 苍穹
   user_say: ''
   user_status: 0
   user_url: ''
@@ -420,10 +420,10 @@
   emailverify: ''
   id: 39
   user_city: ''
-  user_domain: !!python/str '马甲 书记的'
+  user_domain: 马甲 书记的
   user_jointime: 1376303780.48102
   user_leaf: 20
-  user_name: !!python/str '马甲 书记的'
+  user_name: 马甲 书记的
   user_say: ''
   user_status: 0
   user_url: ''
@@ -508,10 +508,10 @@
   emailverify: ''
   id: 47
   user_city: ''
-  user_domain: !!python/str '燕子1987'
+  user_domain: 燕子1987
   user_jointime: 1430115680.289771
   user_leaf: 20
-  user_name: !!python/str '燕子1987'
+  user_name: 燕子1987
   user_say: ''
   user_status: 0
   user_url: ''
@@ -530,10 +530,10 @@
   emailverify: ''
   id: 49
   user_city: ''
-  user_domain: !!python/str '还给他机会'
+  user_domain: 还给他机会
   user_jointime: 1438069821.471195
   user_leaf: 120
-  user_name: !!python/str '还给他机会'
+  user_name: 还给他机会
   user_say: ''
   user_status: 0
   user_url: ''
@@ -563,10 +563,10 @@
   emailverify: ''
   id: 52
   user_city: ''
-  user_domain: !!python/str '素晴'
+  user_domain: 素晴
   user_jointime: 1456903057.282551
   user_leaf: 20
-  user_name: !!python/str '素晴'
+  user_name: 素晴
   user_say: ''
   user_status: 0
   user_url: ''
@@ -578,6 +578,17 @@
   user_jointime: 1472659251.355612
   user_leaf: 20
   user_name: Tlord
+  user_say: ''
+  user_status: 0
+  user_url: ''
+- _id: 5b6d98ed39dcac7ad5b57519
+  emailverify: ''
+  id: 54
+  user_city: ''
+  user_domain: 雨无
+  user_jointime: 1533827883.538452
+  user_leaf: 20
+  user_name: 雨无
   user_say: ''
   user_status: 0
   user_url: ''

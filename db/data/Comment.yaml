@@ -1,17 +1,17 @@
 - _id: 50e44d08606ec51c6ab042f3
-  commentbody: !!python/str '支持！'
+  commentbody: 支持！
   commenttime: 1350504253.0
   id: 1
   share_id: 3
   user_id: 3
 - _id: 50e44d08606ec51c6ab042f4
-  commentbody: !!python/str '我是大三学生，目前也在做，有个更好的想法和人数不多的团队。正在技术实现。我就说这么多。'
+  commentbody: 我是大三学生，目前也在做，有个更好的想法和人数不多的团队。正在技术实现。我就说这么多。
   commenttime: 1354362452.0
   id: 2
   share_id: 17
   user_id: 13
 - _id: 50fd44d5606ec50581a18a86
-  commentbody: !!python/str '抱歉，安德还没完全恢复
+  commentbody: '抱歉，安德还没完全恢复
 
     而且现在他还是很弱
 
@@ -24,13 +24,13 @@
   share_id: 18
   user_id: 1
 - _id: 5541f543f252c40409b88017
-  commentbody: !!python/str '现在怎么样了呀？'
+  commentbody: 现在怎么样了呀？
   commenttime: 1430385987.300788
   id: 4
   share_id: 18
   user_id: 47
 - _id: 5541f558f252c404083679eb
-  commentbody: !!python/str '现在怎么样了呀？'
+  commentbody: 现在怎么样了呀？
   commenttime: 1430386008.551444
   id: 5
   share_id: 18
