@@ -38,18 +38,16 @@ class ShareHandler(JsonHandler):
         else:
             share = Share.by_slug(slug)
         if not share:
-            return
+            return self.write_error(404)
         share.hitnum += 1
         share.save()
+
+        if share.markdown:
+            share.content = markdown2.markdown(share.markdown)
+
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
         share.user_domain = user.user_domain
-        tags = ''
-        if share.tags:
-            tags += 'tags:'
-            for i in share.tags.split(' '):
-                tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
-        share.tags = tags
 
         user_id = int(
             self.current_user["user_id"]) if self.current_user else None
@@ -81,32 +79,7 @@ class ShareHandler(JsonHandler):
             if not self.get_cookie(share.id):
                 self.set_cookie(str(share.id), "1")
 
-        posts = Share.find()
-        suggest = []
-        for post in posts:
-            post.score = 100 + post.id - post.user_id + post.commentnum * 3
-            post.score += post.likenum * 4 + post.hitnum * 0.01
-            post.score += randint(1, 999) * 0.001
-            common_tags = [i for i in post.tags.split(
-                ' ') if i in share.tags.split(' ')]
-            # list(set(b1) & set(b2))
-            post.score += len(common_tags)
-            if post.sharetype == share.sharetype:
-                post.score += 1  # todo
-            if self.current_user:
-                is_hitted = Hit.find(
-                    {'share_id': share._id},
-                    {'user_id': int(self.current_user["user_id"])},
-                ).count() > 0
-            else:
-                is_hitted = self.get_cookie(share.id)
-            if is_hitted:
-                post.score -= 50
-            suggest.append(post)
-        suggest.sort(key=lambda obj: obj.get('score'))
-        suggest = suggest[:5]
         viewpoints = Viewpoint.find({'share_id': share.id})
-
         l_viewpoints = []
         for j in viewpoints:
             j = dict(j)
@@ -118,3 +91,39 @@ class ShareHandler(JsonHandler):
         # comment suggest
         self.res = d_share
         self.write_json()
+
+
+def get_suggest():
+    posts = Share.find()
+    suggest = []
+    for post in posts:
+        post.score = 100 + post.id - post.user_id + post.commentnum * 3
+        post.score += post.likenum * 4 + post.hitnum * 0.01
+        post.score += randint(1, 999) * 0.001
+        common_tags = [i for i in post.tags.split(
+            ' ') if i in share.tags.split(' ')]
+        # list(set(b1) & set(b2))
+        post.score += len(common_tags)
+        if post.sharetype == share.sharetype:
+            post.score += 1  # todo
+        if self.current_user:
+            is_hitted = Hit.find(
+                {'share_id': share._id},
+                {'user_id': int(self.current_user["user_id"])},
+            ).count() > 0
+        else:
+            is_hitted = self.get_cookie(share.id)
+        if is_hitted:
+            post.score -= 50
+        suggest.append(post)
+    suggest.sort(key=lambda obj: obj.get('score'))
+    suggest = suggest[:5]
+
+
+def get_tags(share):
+    tags = ''
+    if share.tags:
+        tags += 'tags:'
+        for i in share.tags.split(' '):
+            tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
+    return tags
