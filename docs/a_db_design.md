@@ -77,3 +77,28 @@ viewpoint_1
 全平台贡献 leaf 可以任何时候统计得出
 
 share 被 喜欢，作者获得leaf
+
+
+
+Share
+title: "",
+id: 17,
+published: 1352418858,
+upload_img: null,
+user_id: 1,
+post_img: null,
+
+updated: 1359181625.999205,
+commentnum: 1,
+content: null,
+dislikenum: 0,
+hitnum: 3413
+likenum: 0,
+link: "",
+markdown: ""
+score: 9.559000000000001,
+sharetype: "fire",
+slug: "ande-growup-log",
+status: 0,
+suggestscore: 0,
+tags: "人工智能",
