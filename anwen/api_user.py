@@ -7,6 +7,7 @@ import requests
 from .api_base import JsonHandler
 from db import User
 from utils.avatar import get_avatar
+from options import WX_APPID, WX_SECRET
 
 
 class AuthorizationsHandler(JsonHandler):
