@@ -27,3 +27,5 @@ db/data/*.yaml
 # *.tar.gz
 *.zip
 local_*
+
+app/
