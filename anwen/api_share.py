@@ -3,6 +3,7 @@ from .api_base import JsonHandler
 from db import Share, User, Like, Comment, Viewpoint, Hit
 import markdown2
 from random import randint
+import random
 
 
 class SharesHandler(JsonHandler):
@@ -33,7 +34,12 @@ class SharesHandler(JsonHandler):
 class ShareHandler(JsonHandler):
 
     def get(self, slug):
-        if slug.isdigit():
+        if slug == 'random':
+            cond = {}
+            cond['status'] = {'$gte': 0}
+            shares = Share.find(cond, {'_id': 0})
+            share = random.choice(list(shares))
+        elif slug.isdigit():
             share = Share.by_sid(slug)
         else:
             share = Share.by_slug(slug)
@@ -41,6 +47,7 @@ class ShareHandler(JsonHandler):
             return self.write_error(404)
         share.hitnum += 1
         share.save()
+        share.pop('_id')
 
         if share.markdown:
             share.content = markdown2.markdown(share.markdown)
@@ -79,16 +86,11 @@ class ShareHandler(JsonHandler):
             if not self.get_cookie(share.id):
                 self.set_cookie(str(share.id), "1")
 
-        viewpoints = Viewpoint.find({'share_id': share.id})
-        l_viewpoints = []
-        for j in viewpoints:
-            j = dict(j)
-            j.pop('_id')
-            l_viewpoints.append(j)
+        viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
         d_share = dict(share)
-        d_share.pop('_id')
-        d_share['viewpoints'] = l_viewpoints
+        d_share['viewpoints'] = list(viewpoints)
         # comment suggest
+        print(d_share)
         self.res = d_share
         self.write_json()
 

@@ -15,7 +15,7 @@ class BaseModel(Document):
         return self.find_one({'_id': ObjectId(id)})
 
     def by_sid(self, id):
-        return self.find_one({'id': int(id)})
+        return self.find_one({'id': int(id)}, {'_id': 0})
 
     def new(self, doc):
         res = self()
