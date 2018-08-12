@@ -4,6 +4,7 @@ from db import Share, User, Like, Comment, Viewpoint, Hit
 import markdown2
 from random import randint
 import random
+from utils.avatar import get_avatar
 
 
 class SharesHandler(JsonHandler):
