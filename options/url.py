@@ -41,6 +41,7 @@ handlers = [
     (r"/api", api.ApiHandler),
     (r"/api/shares/?", api_share.SharesHandler),
     (r"/api/shares/([^/]+)", api_share.ShareHandler),
+    (r"/api/preview", api_share.PreviewHandler),
 
     (r"/api/authorizations", api_user.AuthorizationsHandler),
     (r"/api/wxlogin", api_user.WxLoginHandler),
