@@ -40,8 +40,9 @@ class PreviewHandler(JsonHandler):
     def get(self):
         url = self.get_argument("url", None)
         # https://www.ifanr.com/1080409
-        doc = webcache.find_one({'url': url}, {'_id': 0})
+        doc = Webcache.find_one({'url': url}, {'_id': 0})
         if doc:
+            print(type(doc))
             self.res = dict(doc)
             return self.write_json()
         sessions = requests.session()
