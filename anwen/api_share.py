@@ -42,27 +42,30 @@ class PreviewHandler(JsonHandler):
         # https://www.ifanr.com/1080409
         doc = Webcache.find_one({'url': url}, {'_id': 0})
         if doc:
-            print(type(doc))
             self.res = dict(doc)
             return self.write_json()
-        sessions = requests.session()
-        sessions.headers[
-            'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
-        response = sessions.get(url)
-        response.encoding = 'utf-8'
-        doc = Document(response.text)
-        title = doc.title()
-        summary = doc.summary()
-        markdown = html2text.html2text(summary)
-        markdown = markdown.replace('-\n', '-')
-        res = {}
-        res['url'] = url
-        res['title'] = title
-        res['markdown'] = markdown
-        webcache = Webcache
-        webcache.new(res)
-        self.res = res
-        self.write_json()
+        try:
+            sessions = requests.session()
+            sessions.headers[
+                'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
+            response = sessions.get(url)
+            response.encoding = 'utf-8'
+            doc = Document(response.text)
+            title = doc.title()
+            summary = doc.summary()
+            markdown = html2text.html2text(summary)
+            markdown = markdown.replace('-\n', '-')
+            res = {}
+            res['url'] = url
+            res['title'] = title
+            res['markdown'] = markdown
+            webcache = Webcache
+            webcache.new(res)
+            self.res = res
+            self.write_json()
+
+        except Exception as e:
+            print(e)
 
 
 class ShareHandler(JsonHandler):
