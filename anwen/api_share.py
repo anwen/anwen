@@ -14,7 +14,7 @@ class SharesHandler(JsonHandler):
 
     def get(self):
         cond = {}
-        cond['status'] = {'$gte': 0}
+        cond['status'] = {'$gte': 1}
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         if vote_open:

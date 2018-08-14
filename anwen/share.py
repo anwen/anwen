@@ -15,24 +15,6 @@ from db import User, Share, Comment, Like, Hit, Tag, Viewpoint
 from .base import CommonResourceHandler, BaseHandler
 
 
-class ViewPointHandler(BaseHandler):
-
-    def post(self):
-        aview = self.get_argument("aview", None)
-        share_id = self.get_argument("share_id", None)
-        if aview:
-            doc = {}
-            doc['share_id'] = int(share_id)
-            doc['aview'] = aview
-            if Viewpoint.find_one(doc):
-                print('repeat')
-                return
-            doc['user_id'] = self.current_user["user_id"]
-            # doc['aview'] = aview
-            Viewpoint.new(doc)
-            self.write(aview)
-
-
 class EntryHandler(BaseHandler):
 
     def get(self, slug):
@@ -188,6 +170,7 @@ class ShareHandler(BaseHandler):
             share.update(res)
             share.save()
         else:
+            return
             share = Share
             res['user_id'] = user_id
             share = share.new(res)
@@ -201,6 +184,24 @@ class ShareHandler(BaseHandler):
             }
             Tag.new(doc)
         self.redirect("/share/" + str(share.id))
+
+
+class ViewPointHandler(BaseHandler):
+
+    def post(self):
+        aview = self.get_argument("aview", None)
+        share_id = self.get_argument("share_id", None)
+        if aview:
+            doc = {}
+            doc['share_id'] = int(share_id)
+            doc['aview'] = aview
+            if Viewpoint.find_one(doc):
+                print('repeat')
+                return
+            doc['user_id'] = self.current_user["user_id"]
+            # doc['aview'] = aview
+            Viewpoint.new(doc)
+            self.write(aview)
 
 
 class CommentHandler(BaseHandler):
