@@ -136,7 +136,7 @@ class ShareHandler(JsonHandler):
         if d_share.get('link'):
             # share.url = '<a href="{}">{} {}</a>'.format(
             #     share.link, share.title, share.link)
-            d_share['url'] = '<a href="{}">{}</a>'.format(
+            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
                 share.link, share.title)
 
         d_share['viewpoints'] = list(viewpoints)
