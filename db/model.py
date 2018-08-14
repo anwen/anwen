@@ -337,7 +337,7 @@ class Talk(BaseModel):
 class Webcache(BaseModel):
     __collection__ = 'Webcache_Col'
     structure = {
-        '_id': basestring,
+        'url': basestring,
         'title': basestring,
         'markdown': basestring,
     }

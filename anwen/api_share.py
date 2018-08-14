@@ -51,10 +51,12 @@ class PreviewHandler(JsonHandler):
         markdown = html2text.html2text(summary)
         markdown = markdown.replace('-\n', '-')
         res = {}
-        res['_id'] = url
+        res['url'] = url
         res['title'] = title
         res['markdown'] = markdown
-        Webcache.save(res)
+        webcache = Webcache
+        webcache.new(res)
+        webcache.save()
         self.res = res
         self.write_json()
 
