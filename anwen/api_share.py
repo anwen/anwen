@@ -132,8 +132,8 @@ class ShareHandler(JsonHandler):
         #     share.url = '<a href="{}">{}</a>'.format(
         #         share.link, share.title)
         d_share = dict(share)
-
-        if d_share['link']:
+        print(d_share.get('link'))
+        if d_share.get('link'):
             # share.url = '<a href="{}">{} {}</a>'.format(
             #     share.link, share.title, share.link)
             d_share['url'] = '<a href="{}">{}</a>'.format(
