@@ -40,6 +40,10 @@ class PreviewHandler(JsonHandler):
     def get(self):
         url = self.get_argument("url", None)
         # https://www.ifanr.com/1080409
+        doc = webcache.find_one({'url': url}, {'_id': 0})
+        if doc:
+            self.res = dict(doc)
+            return self.write_json()
         sessions = requests.session()
         sessions.headers[
             'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
@@ -56,7 +60,6 @@ class PreviewHandler(JsonHandler):
         res['markdown'] = markdown
         webcache = Webcache
         webcache.new(res)
-        webcache.save()
         self.res = res
         self.write_json()
 
