@@ -331,3 +331,15 @@ class Talk(BaseModel):
         'body': '',
         'talktime': time.time,
     }
+
+
+@connection.register
+class Webcache(BaseModel):
+    __collection__ = 'Webcache'
+    structure = {
+        '_id': basestring,
+        'title': basestring,
+        'markdown': basestring,
+    }
+    default_values = {
+    }

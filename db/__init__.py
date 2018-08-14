@@ -16,3 +16,5 @@ Admin = connection.Admin
 Ande = connection.Ande
 Talk = connection.Talk
 # Vote = connection.Vote
+
+Webcache = connection.Webcache

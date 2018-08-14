@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from db import Share, User, Like, Comment, Viewpoint, Hit
+from db import Share, User, Like, Comment, Viewpoint, Hit, Webcache
 import markdown2
 from random import randint
 import random
@@ -51,8 +51,10 @@ class PreviewHandler(JsonHandler):
         markdown = html2text.html2text(summary)
         markdown = markdown.replace('-\n', '-')
         res = {}
+        res['_id'] = url
         res['title'] = title
         res['markdown'] = markdown
+        Webcache.save(res)
         self.res = res
         self.write_json()
 
