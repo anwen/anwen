@@ -16,7 +16,7 @@ class BaseModel(Document):
 
     def by_sid(self, id):
         # return self.find_one({'id': int(id)}, {'_id': 0})
-        # assert self.find({'id': int(id)}).count==1
+        assert self.find({'id': int(id)}).count == 1
         return self.find_one({'id': int(id)})
 
     def new(self, doc):
