@@ -78,11 +78,11 @@ class WxLoginHandler(JsonHandler):
             return self.write_json()
         else:
             res = {}
-            res['id'] = User.find().count() + 1
+            # res['id'] = User.find().count() + 1
             res['user_email'] = openid + '@wechat'
             res['user_pass'] = session_key
-            res['user_name'] = ''
-            res['user_domain'] = ''
+            # res['user_name'] = ''
+            # res['user_domain'] = ''
             user = User.new(res)
             user_info = {
                 'user_id': user.id,
@@ -120,8 +120,24 @@ class MeHandler(JsonHandler):
     @tornado.web.authenticated
     def post(self):
         user = User.by_sid(self.current_user['user_id'])
-        user['user_name'] = self.get_argument('name', None)
-        user['user_city'] = self.get_argument('city', None)
+        # do not save user info if not necessary
+        # avatarUrl   String  用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640 * 640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。
+        # gender  String  用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
+        # province    String  用户所在省份
+        # country String  用户所在国家
+        # language    String  用户的语言，简体中文为zh_CN
+        # iv
+        # signature
+        # encryptedData
+        name = self.get_argument('name', None)
+        if not name:
+            name = self.get_argument('nickName', None)
+        if name:
+            user['user_name'] = name
+        city = self.get_argument('city', None)
+        if city:
+            user['user_city'] = city
+
         user['user_say'] = self.get_argument('say', None)
         user.save()
         self.res = {'ok': 1}
