@@ -89,7 +89,9 @@ class ShareHandler(JsonHandler):
 
         if share.markdown:
             share.content = markdown2.markdown(share.markdown)
-
+        if share.link:
+            share.url = '<a href="{}">{} {}</a>'.format(
+                share.link, share.title, share.link)
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
         share.user_domain = user.user_domain
