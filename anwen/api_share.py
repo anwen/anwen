@@ -91,7 +91,7 @@ class ShareHandler(JsonHandler):
         share.is_disliking = bool(like.dislikenum % 2) if like else None
 
         comments = []
-        comment_res = Comment.find({'share_id': share.id})
+        comment_res = Comment.find({'share_id': share.id}, {'_id': 0})
         for comment in comment_res:
             user = User.by_sid(comment.user_id)
             comment.name = user.user_name
