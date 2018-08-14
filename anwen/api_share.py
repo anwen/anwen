@@ -63,7 +63,8 @@ class ShareHandler(JsonHandler):
         if slug == 'random':
             cond = {}
             cond['status'] = {'$gte': 0}
-            shares = Share.find(cond, {'_id': 0})
+            # shares = Share.find(cond, {'_id': 0})
+            shares = Share.find(cond)
             share = random.choice(list(shares))
         elif slug.isdigit():
             share = Share.by_sid(slug)
