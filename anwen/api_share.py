@@ -89,9 +89,7 @@ class ShareHandler(JsonHandler):
 
         if share.markdown:
             share.content = markdown2.markdown(share.markdown)
-        if share.link:
-            share.url = '<a href="{}">{} {}</a>'.format(
-                share.link, share.title, share.link)
+
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
         share.user_domain = user.user_domain
@@ -127,7 +125,20 @@ class ShareHandler(JsonHandler):
                 self.set_cookie(str(share.id), "1")
 
         viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
+
+        # if share.link:
+        #     # share.url = '<a href="{}">{} {}</a>'.format(
+        #     #     share.link, share.title, share.link)
+        #     share.url = '<a href="{}">{}</a>'.format(
+        #         share.link, share.title)
         d_share = dict(share)
+
+        if d_share['link']:
+            # share.url = '<a href="{}">{} {}</a>'.format(
+            #     share.link, share.title, share.link)
+            d_share['url'] = '<a href="{}">{}</a>'.format(
+                share.link, share.title)
+
         d_share['viewpoints'] = list(viewpoints)
         # comment suggest
         self.res = d_share
