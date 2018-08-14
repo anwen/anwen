@@ -62,7 +62,7 @@ class ShareHandler(JsonHandler):
     def get(self, slug):
         if slug == 'random':
             cond = {}
-            cond['status'] = {'$gte': 0}
+            cond['status'] = {'$gte': 1}
             # shares = Share.find(cond, {'_id': 0})
             shares = Share.find(cond)
             share = random.choice(list(shares))
