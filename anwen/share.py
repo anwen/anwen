@@ -170,7 +170,6 @@ class ShareHandler(BaseHandler):
             share.update(res)
             share.save()
         else:
-            return
             share = Share
             res['user_id'] = user_id
             share = share.new(res)
