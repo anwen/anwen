@@ -335,7 +335,7 @@ class Talk(BaseModel):
 
 @connection.register
 class Webcache(BaseModel):
-    __collection__ = 'Webcache'
+    __collection__ = 'Webcache_Col'
     structure = {
         '_id': basestring,
         'title': basestring,
