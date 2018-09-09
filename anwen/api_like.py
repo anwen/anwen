@@ -19,7 +19,7 @@ class LikeHandler(JsonHandler):
         newlikes = None
         assert action in 'addlike dellike adddislike deldislike'.split()
         _action = action[3:] + 'num'
-        res = Like.change_like(doc, _action)
+        res = Like.change_like(doc, _action, action[:3])
         if entity_type == 'share':
             entity = Share.by_sid(entity_id)
         elif entity_type == 'comment':

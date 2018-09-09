@@ -43,7 +43,7 @@ class Like(BaseModel):
         'create_time': time.time,
     }
 
-    def change_like(self, doc, liketype):
+    def change_like(self, doc, liketype, action):
         # res = self.find_one(doc) or self()
         res = self.find_one(doc) or self.new(doc)
         # if 'id' not in doc:
@@ -52,7 +52,10 @@ class Like(BaseModel):
         if res[liketype] > 0:
             res[liketype] = 0
         else:
-            res[liketype] += 1
+            if action == 'add':
+                res[liketype] += 1
+            else:
+                res[liketype] = 0
         res.save()
         return res
 
