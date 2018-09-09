@@ -29,7 +29,7 @@ start:
 
 backup:
 	@echo "starting backup"
-	fab back_data
+	fab backup
 
 docs:
 	python -m SimpleHTTPServer 8004

@@ -9,7 +9,7 @@ class LikeHandler(JsonHandler):
         # return self.post(action)
         entity_id = int(self.get_argument("entity_id", 0))
         entity_type = self.get_argument("entity_type", None)
-        print(action, entity_id, entity_type)
+        # print(action, entity_id, entity_type)
         user_id = self.current_user["user_id"]
         doc = {
             'user_id': user_id,
@@ -19,7 +19,7 @@ class LikeHandler(JsonHandler):
         newlikes = None
         assert action in 'addlike dellike adddislike deldislike'.split()
         _action = action[3:] + 'num'
-        Like.change_like(doc, _action)
+        res = Like.change_like(doc, _action)
         if entity_type == 'share':
             entity = Share.by_sid(entity_id)
         elif entity_type == 'comment':
@@ -29,20 +29,15 @@ class LikeHandler(JsonHandler):
         else:
             print('entity_type', entity_type, entity_id)
             return self.write_error(422, 'error params')
-        if action == 'addlike':
-            entity.likenum += 1
-            newlikes = str(entity.likenum)
-        elif action == 'dellike':
-            entity.likenum -= 1
-            newlikes = str(entity.likenum)
-        elif action == 'adddislike':
-            entity.dislikenum += 1
-            newlikes = str(entity.dislikenum)
-        elif action == 'deldislike':
-            entity.dislikenum -= 1
-            newlikes = str(entity.dislikenum)
+
+        entity.likenum += res.likenum
+        entity.dislikenum += res.dislikenum
         entity.save()
-        self.res = {'newlikes': newlikes}
+        self.res = {
+            'success': True,
+            'likenum': entity.likenum,
+            'dislikenum': entity.dislikenum,
+        }
         self.write_json()
 
     def post(self, action):
