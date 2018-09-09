@@ -46,7 +46,7 @@ $(document.body).on('click', '.do-like', function() {
             } else if (action === 'dellike') {
                 t.removeClass('liking');
             }
-            t.find('span').text(data['newlikes'] + ' ');
+            t.find('span').text(data['likenum'] + ' ');
         }
     });
 });
@@ -76,7 +76,7 @@ $(document.body).on('click', '.do-dislike', function() {
             } else if (action === 'deldislike') {
                 t.removeClass('disliking');
             }
-            t.find('span').text(data['newlikes'] + ' ');
+            t.find('span').text(data['dislikenum'] + ' ');
         }
     });
 });
