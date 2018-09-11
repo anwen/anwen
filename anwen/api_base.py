@@ -13,17 +13,17 @@ class JsonHandler(RequestHandler):
     #     self.remote_ip = self.request.headers.get('X-Forwarded-For', self.request.headers.get('X-Real-Ip', self.request.remote_ip))
     #     self.using_ssl = (self.request.headers.get('X-Scheme', 'http') == 'https')
 
-    # def prepare(self):
-    #     # Incorporate request JSON into arguments dictionary.
-    #     if self.request.body:
-    #         try:
-    #             json_data = json.loads(self.request.body.decode('u8'))
-    #             self.request.arguments.update(json_data)
-    #         except ValueError:
-    #             message = 'Unable to parse JSON.'
-    #             self.send_error(400, message=message)  # Bad Request
-    #     # Set up response dictionary. res=response
-    #     self.res = dict()
+    def prepare(self):
+        #     # Incorporate request JSON into arguments dictionary.
+        #     if self.request.body:
+        #         try:
+        #             json_data = json.loads(self.request.body.decode('u8'))
+        #             self.request.arguments.update(json_data)
+        #         except ValueError:
+        #             message = 'Unable to parse JSON.'
+        #             self.send_error(400, message=message)  # Bad Request
+        #     # Set up response dictionary. res=response
+        self.res = dict()
 
     def prepare(self):
         super().prepare()
