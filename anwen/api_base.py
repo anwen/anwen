@@ -91,10 +91,13 @@ class JsonHandler(RequestHandler):
         #         kwargs['message'] = 'Unknown error.'
         # 如果缺少必要的 filed，会返回 422 Unprocessable Entity
         # 通过 errors 给出了哪些 field 缺少了，能够方便调用方快速排错
-        self.res = {'message': self._reason}
+        self.res = {'success': False, 'message': self._reason}
         # HTTP/1.1 401 Unauthorized
         self.write_json()
 
     def write_json(self):
-        output = json.dumps(self.res)
+        out = {}
+        out['data'] = self.res
+        out['success'] = True
+        output = json.dumps(out)
         self.write(output)
