@@ -65,7 +65,11 @@ class WxLoginHandler(JsonHandler):
         # 复用email password
         doc = User.by_email(openid + '@wechat')
         if doc:
-            doc.update({'user_pass': session_key})
+            doc.update(
+                {
+                    'user_pass': session_key,
+                }
+            )
             doc.save()
             user_info = {
                 'user_id': doc.id,
