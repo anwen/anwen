@@ -146,8 +146,7 @@ class MeHandler(JsonHandler):
                 if r.status_code == 200:
                     avatar_dir = 'static/avatar'
                     size = 'raw'
-                    _id = str(user._id)
-                    avatar_path = '%s/%s_%s.jpg' % (avatar_dir, _id, size)
+                    avatar_path = '%s/%s_%s.jpg' % (avatar_dir, user.id, size)
                     with open(avatar_path, 'wb') as f:
                         for chunk in r.iter_content():
                             f.write(chunk)
