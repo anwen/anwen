@@ -59,7 +59,6 @@ Page({
                 info.encryptedData = e.detail.encryptedData
                 console.log(info)
                 console.log(app.globalData.token)
-
                 // app.globalData.token
                 // --------- 发送凭证 ------------------
                 wx.request({

@@ -17,15 +17,16 @@ App({
         // })
         wx.login({
             success: function(res) {
-                if (res.code.success===true) {
-                    var data=res.data.data
-                    console.log('获取用户登录凭证：' + code);
+              console.log(res);
+              // errMsg==="login:ok"
+                if (res) {
+                    console.log('获取用户登录凭证：' + res.code);
                     // --------- 发送凭证 ------------------
                     wx.request({
                         url: 'https://anwensf.com/api/wxlogin',
                         data: {
                             appname: 'anwen',
-                            code: data.code
+                            code: res.code
                         },
                         header: {
                             'content-type': 'application/json' // 默认值
@@ -33,7 +34,7 @@ App({
                         success: function(res) {
                             console.log(res.data);
                             console.log(getApp().globalData);
-                            getApp().globalData.token = res.data.token;
+                            getApp().globalData.token = res.data.data.token;
                         }
                     })
                     // ------------------------------------
