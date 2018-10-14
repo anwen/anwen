@@ -28,7 +28,8 @@ class JsonHandler(RequestHandler):
 
     def prepare(self):
         super().prepare()
-        self.json_data = None
+        # self.json_data = None
+        json_data = None
         self.res = dict()
         if self.request.body:
             try:
