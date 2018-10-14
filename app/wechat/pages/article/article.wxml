@@ -1,0 +1,31 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">
+            <template is="wxParse" data="{{wxParseData:title.nodes}}" />
+        </view>
+        <view class="page__desc">
+          <template is="wxParse" data="{{wxParseData:url.nodes}}" />
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+
+
+<view class="userinfo2">
+<button type="default" size="mini" bindtap="ramdonArticle"> 随机 </button>
+  <block wx:if="{{!hasUserInfo}}">
+    <button class="userinfo-button" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+    <image class="userinfo-avatar0"  src="/pages/anwen.jpg" mode="cover"></image>
+    </button>
+  </block>
+  <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  </block>
+</view>
+
+    </view>
+</view>

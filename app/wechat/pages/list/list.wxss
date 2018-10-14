@@ -1,0 +1,30 @@
+/* pages/list/list.wxss */
+
+.userinfo2 {
+	width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+}
+
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-button {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 20rpx;
+  padding: 0;
+  border-radius: 50%;
+}
+.userinfo-avatar0 {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+}

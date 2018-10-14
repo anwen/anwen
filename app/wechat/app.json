@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/article/article",
+        "pages/list/list",
+        "pages/index/index",
+        "pages/logs/logs"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "安问阅读",
+        "navigationBarBackgroundColor": "#f8f8f8",
+        "backgroundColor": "#f8f8f8"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    }
+}
