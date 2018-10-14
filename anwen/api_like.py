@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
+import tornado.web
 from db import Like, Share, Comment, Viewpoint
 
 
