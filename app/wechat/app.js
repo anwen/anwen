@@ -24,6 +24,7 @@ App({
                     wx.request({
                         url: 'https://anwensf.com/api/wxlogin',
                         data: {
+                            appname: 'anwen',
                             code: code
                         },
                         header: {

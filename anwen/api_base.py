@@ -4,6 +4,7 @@ import tornado.web
 import tornado.httpserver
 from tornado.web import RequestHandler
 from tornado.escape import json_decode
+import traceback
 
 
 class JsonHandler(RequestHandler):
@@ -65,6 +66,7 @@ class JsonHandler(RequestHandler):
             if key == 'token' and token:
                 user_json = self.get_secure_cookie('user', token)
                 if user_json:
+                    print(user_json)
                     return json_decode(user_json)
         user_json = self.get_secure_cookie("user")
         if user_json:
@@ -76,28 +78,47 @@ class JsonHandler(RequestHandler):
         #         return json_decode(user_json)
         return None
 
-    def write_error(self, status_code, reason=None):
+    def write_error(self, status_code, **kwargs):
         self.set_status(status_code)
         print('_reason', self._reason)
-        # if not self._reason:
-        #     if status_code == 422:
-        #         kwargs['message'] = 'Unprocessable Entity, miss field'
-        # if 'message' not in kwargs:
-        #     if status_code == 405:
-        #         kwargs['message'] = 'Invalid HTTP method.'
-        #     elif status_code == 401:
-        #         kwargs['message'] = 'Unauthorized, wrong email or password'
-        #     else:
-        #         kwargs['message'] = 'Unknown error.'
-        # 如果缺少必要的 filed，会返回 422 Unprocessable Entity
-        # 通过 errors 给出了哪些 field 缺少了，能够方便调用方快速排错
-        self.res = {'success': False, 'message': self._reason}
-        # HTTP/1.1 401 Unauthorized
-        self.write_json()
+        # https://blog.csdn.net/jw690114549/article/details/69394233?utm_source=copy
+        # typ, value, tb   # value PermissionError
+        error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
+        if DEBUG:
+            # in debug mode, try to send a traceback
+            self.set_header('Content-Type', 'text/plain')
+            for line in error_trace_list:
+                self.write(line)
+            self.finish()
+        else:
+            self.exception_nofity(status_code, error_trace_list)
+            # if not self._reason:
+            #     if status_code == 422:
+            #         kwargs['message'] = 'Unprocessable Entity, miss field'
 
-    def write_json(self):
+            # if 'message' not in kwargs:
+            #     if status_code == 405:
+            #         kwargs['message'] = 'Invalid HTTP method.'
+            #     elif status_code == 401:
+            #         kwargs['message'] = 'Unauthorized, wrong email or password'
+            #     else:
+            #         kwargs['message'] = 'Unknown error.'
+            # 如果缺少必要的 feild，会返回 422 Unprocessable Entity
+            # 通过 errors 给出了哪些 field 缺少了，能够方便调用方快速排错
+            # HTTP/1.1 401 Unauthorized
+            self.write_json(success=False, message=self._reason)
+        return
+
+    def write_json(self, success=True, message='err'):
         out = {}
-        out['data'] = self.res
-        out['success'] = True
+        out['success'] = success
+        if success:
+            out['data'] = self.res
+        else:
+            out['message'] = message
         output = json.dumps(out)
         self.write(output)
+
+    def exception_nofity(self, status_code, error_trace_list):
+        if SEND_ERROR_MAIL:
+            print('TODO: send mail...')
