@@ -8,6 +8,26 @@ from utils.avatar import get_avatar_by_wechat
 
 class CommentHandler(JsonHandler):
 
+    def get(self):  # list all comments of a article
+        # log api usage
+        share_id = self.get_argument("share_id", None)
+        comments = []
+        comment_res = Comment.find({'share_id': int(share_id)})
+        for comment in comment_res:
+            comment = dict(comment)
+            comment['_id'] = str(comment['_id'])
+            # user = User.by_sid(comment['user_id'])
+            # gravatar
+            # get_avatar(user.user_email, 50)
+            comment['avatar'] = get_avatar_by_wechat(comment['user_id'])
+            # comment.name = user.user_name
+            # comment.domain = user.user_domain
+            comments.append(comment)
+        self.res = {
+            'comments': comments,
+        }
+        self.write_json()
+
     @tornado.web.authenticated
     def post(self):
         commentbody = self.get_argument("commentbody", None)
@@ -27,25 +47,5 @@ class CommentHandler(JsonHandler):
         # gravatar = get_avatar(self.current_user["user_email"], 50)
         self.res = {
             'success': True,
-        }
-        self.write_json()
-
-    def get(self):
-        # log api usage
-        share_id = self.get_argument("share_id", None)
-        comments = []
-        comment_res = Comment.find({'share_id': int(share_id)})
-        for comment in comment_res:
-            comment = dict(comment)
-            comment['_id'] = str(comment['_id'])
-            # user = User.by_sid(comment['user_id'])
-            # gravatar
-            # get_avatar(user.user_email, 50)
-            comment['avatar'] = get_avatar_by_wechat(comment['user_id'])
-            # comment.name = user.user_name
-            # comment.domain = user.user_domain
-            comments.append(comment)
-        self.res = {
-            'comments': comments,
         }
         self.write_json()
