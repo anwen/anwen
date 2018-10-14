@@ -25,6 +25,23 @@ except NameError:
 
 
 @connection.register
+class Comment(BaseModel):
+    __collection__ = 'Comment_Col'
+    use_autorefs = True
+    structure = {
+        'id': int,
+        'user_id': int,
+        'share_id': int,
+        'user_name': basestring,
+        'commentbody': basestring,
+        'commenttime': float,
+    }
+    default_values = {
+        'commenttime': time.time,
+    }
+
+
+@connection.register
 class Like(BaseModel):
     __collection__ = 'Like_Col'
     use_autorefs = True
@@ -185,23 +202,6 @@ class Viewpoint(BaseModel):
     default_values = {
         'likenum': 0,
         'create_time': time.time,
-    }
-
-
-@connection.register
-class Comment(BaseModel):
-    __collection__ = 'Comment_Col'
-    use_autorefs = True
-    structure = {
-        'id': int,
-        'user_id': int,
-        'share_id': int,
-        'user_name': basestring,
-        'commentbody': basestring,
-        'commenttime': float,
-    }
-    default_values = {
-        'commenttime': time.time,
     }
 
 
