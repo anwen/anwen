@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 port = 8888
 debug = True
+SEND_ERROR_MAIL = True
 use_ssl = False
 
 # 本网站域名 用于: email激活
