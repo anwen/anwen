@@ -10,6 +10,68 @@ from readability import Document
 import html2text
 
 
+class ShareHandler(JsonHandler):  # 单篇文章
+
+    def get(self, slug):
+        if slug == 'random':
+            cond = {}
+            cond['status'] = {'$gte': 1}
+            # shares = Share.find(cond, {'_id': 0})
+            shares = Share.find(cond)
+            share = random.choice(list(shares))
+        elif slug.isdigit():
+            share = Share.by_sid(slug)
+        else:
+            share = Share.by_slug(slug)
+        if not share:
+            return self.write_error(404)
+        share.hitnum += 1
+        share.save()
+        share.pop('_id')
+        # share.content = markdown2.markdown(share.markdown)
+        user = User.by_sid(share.user_id)
+        share.user_name = user.user_name
+        share.user_domain = user.user_domain
+
+        user_id = int(
+            self.current_user["user_id"]) if self.current_user else None
+        like = Like.find_one(
+            {'share_id': share.id, 'user_id': user_id})
+        share.is_liking = bool(like.likenum % 2) if like else None
+        share.is_disliking = bool(like.dislikenum % 2) if like else None
+
+        if user_id:
+            hit = Hit.find(
+                {'share_id': share.id},
+                {'user_id': int(self.current_user["user_id"])},
+            )
+            if hit.count() == 0:
+                hit = Hit
+                hit['share_id'] = share.id
+                hit['user_id'] = int(self.current_user["user_id"])
+                hit.save()
+        else:
+            if not self.get_cookie(share.id):
+                self.set_cookie(str(share.id), "1")
+        viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
+        # if share.link:
+        #     # share.url = '<a href="{}">{} {}</a>'.format(
+        #     #     share.link, share.title, share.link)
+        #     share.url = '<a href="{}">{}</a>'.format(
+        #         share.link, share.title)
+        d_share = dict(share)
+        print(d_share.get('link'))
+        if d_share.get('link'):
+            # share.url = '<a href="{}">{} {}</a>'.format(
+            #     share.link, share.title, share.link)
+            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
+                share.link, share.title)
+        d_share['viewpoints'] = list(viewpoints)
+        # comment suggest
+        self.res = d_share
+        self.write_json()
+
+
 class SharesHandler(JsonHandler):
 
     def get(self):
@@ -23,15 +85,8 @@ class SharesHandler(JsonHandler):
             cond['vote_open'] = int(vote_open)
         if has_vote:
             cond['vote_title'] = {'$ne': ''}
-        shares = Share.find(
-            # {'vote_open': 1},
-            cond,
-            {'_id': 0,
-             # 'title': 1, 'id': 1, 'published': 1,
-             # 'post_img': 1, 'user_id': 1, 'vote_open': 1,
-             }).sort('_id', -1)
+        shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
         self.res = list(shares)
-        print(self.res)
         return self.write_json()
 
 
@@ -66,83 +121,6 @@ class PreviewHandler(JsonHandler):
 
         except Exception as e:
             print(e)
-
-
-class ShareHandler(JsonHandler):
-
-    def get(self, slug):
-        if slug == 'random':
-            cond = {}
-            cond['status'] = {'$gte': 1}
-            # shares = Share.find(cond, {'_id': 0})
-            shares = Share.find(cond)
-            share = random.choice(list(shares))
-        elif slug.isdigit():
-            share = Share.by_sid(slug)
-        else:
-            share = Share.by_slug(slug)
-        if not share:
-            return self.write_error(404)
-        share.hitnum += 1
-        share.save()
-        share.pop('_id')
-
-        if share.markdown:
-            share.content = markdown2.markdown(share.markdown)
-
-        user = User.by_sid(share.user_id)
-        share.user_name = user.user_name
-        share.user_domain = user.user_domain
-
-        user_id = int(
-            self.current_user["user_id"]) if self.current_user else None
-        like = Like.find_one(
-            {'share_id': share.id, 'user_id': user_id})
-        share.is_liking = bool(like.likenum % 2) if like else None
-        share.is_disliking = bool(like.dislikenum % 2) if like else None
-
-        comments = []
-        comment_res = Comment.find({'share_id': share.id}, {'_id': 0})
-        for comment in comment_res:
-            user = User.by_sid(comment.user_id)
-            comment.name = user.user_name
-            comment.domain = user.user_domain
-            comment.gravatar = get_avatar(user.user_email, 50)
-            comments.append(comment)
-
-        if user_id:
-            hit = Hit.find(
-                {'share_id': share.id},
-                {'user_id': int(self.current_user["user_id"])},
-            )
-            if hit.count() == 0:
-                hit = Hit
-                hit['share_id'] = share.id
-                hit['user_id'] = int(self.current_user["user_id"])
-                hit.save()
-        else:
-            if not self.get_cookie(share.id):
-                self.set_cookie(str(share.id), "1")
-
-        viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
-
-        # if share.link:
-        #     # share.url = '<a href="{}">{} {}</a>'.format(
-        #     #     share.link, share.title, share.link)
-        #     share.url = '<a href="{}">{}</a>'.format(
-        #         share.link, share.title)
-        d_share = dict(share)
-        print(d_share.get('link'))
-        if d_share.get('link'):
-            # share.url = '<a href="{}">{} {}</a>'.format(
-            #     share.link, share.title, share.link)
-            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
-                share.link, share.title)
-
-        d_share['viewpoints'] = list(viewpoints)
-        # comment suggest
-        self.res = d_share
-        self.write_json()
 
 
 def get_suggest():
