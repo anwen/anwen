@@ -38,9 +38,10 @@ class JsonHandler(RequestHandler):
                 # TODO: handle the error
                 print('json_data error')
                 pass
-                raise tornado.httpserver._BadRequestException(
-                    "Invalid JSON structure."
-                )
+                print("We only accept key value objects!")
+                # raise tornado.httpserver._BadRequestException(
+                #     "Invalid JSON structure."
+                # )
             print(json_data)
             if type(json_data) != dict:
                 # raise tornado.httpserver._BadRequestException(
