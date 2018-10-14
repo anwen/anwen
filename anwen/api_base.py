@@ -43,9 +43,11 @@ class JsonHandler(RequestHandler):
                 )
             print(json_data)
             if type(json_data) != dict:
-                raise tornado.httpserver._BadRequestException(
-                    "We only accept key value objects!"
-                )
+                # raise tornado.httpserver._BadRequestException(
+                #     "We only accept key value objects!"
+                # )
+                print("We only accept key value objects!")
+            else:
             for key, value in json_data.items():
                 self.request.arguments[key] = [value, ]
             # self.done()
