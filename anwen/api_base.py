@@ -5,6 +5,7 @@ import tornado.httpserver
 from tornado.web import RequestHandler
 from tornado.escape import json_decode
 import traceback
+import options
 
 
 class JsonHandler(RequestHandler):
@@ -84,7 +85,7 @@ class JsonHandler(RequestHandler):
         # https://blog.csdn.net/jw690114549/article/details/69394233?utm_source=copy
         # typ, value, tb   # value PermissionError
         error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
-        if DEBUG:
+        if options.debug:
             # in debug mode, try to send a traceback
             self.set_header('Content-Type', 'text/plain')
             for line in error_trace_list:
