@@ -12,6 +12,7 @@ def get_avatar_by_wechat(_id):
     if os.path.isfile(avatar_path):
         return '/%s' % avatar_path
     else:
+        print(avatar_path)
         return default_avatar_path
 
 
