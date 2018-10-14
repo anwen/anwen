@@ -62,6 +62,7 @@ class JsonHandler(RequestHandler):
 
     def get_current_user(self):
         token = self.request.headers.get('Authorization', '')
+        print(token)
         if token:
             key, token = token.split()
             if key == 'token' and token:
