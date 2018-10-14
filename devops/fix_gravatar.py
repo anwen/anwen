@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 # encoding:utf-8
-from pymongo import MongoClient
-import sys
 import os
+import hashlib
+import requests
+import sys
+from pymongo import MongoClient
 conn = MongoClient()
 sys.path.append('.')
 from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
