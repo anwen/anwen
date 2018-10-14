@@ -6,7 +6,7 @@ import utils
 import requests
 from .api_base import JsonHandler
 from db import User
-from utils.avatar import get_avatar
+from utils.avatar import get_avatar_by_gravatar
 from options import appinfo
 
 
@@ -111,7 +111,11 @@ class MeHandler(JsonHandler):
     @tornado.web.authenticated
     def get(self):
         user = User.by_sid(self.current_user['user_id'])
-        user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
+        if user.user_email.endswith('@wechat'):
+            pass
+            user.gravatar = get_avatar_by_wechat(user._id)
+        else:
+            user.gravatar = get_avatar_by_gravatar(user.user_email.encode('u8'), 100)
         user = dict(user)
         user.pop('_id')
         user.pop('user_pass')
