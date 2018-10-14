@@ -4,11 +4,11 @@ import os
 import requests
 
 
-def get_avatar_by_wechat(_id):
+def get_avatar_by_wechat(user_id):
     size = 'raw'
     avatar_dir = 'static/avatar'
     default_avatar_path = '/%s/default/default.gif' % avatar_dir
-    avatar_path = '%s/%s_%s.jpg' % (avatar_dir, str(_id), size)
+    avatar_path = '%s/%s_%s.jpg' % (avatar_dir, str(user_id), size)
     if os.path.isfile(avatar_path):
         return '/%s' % avatar_path
     else:
