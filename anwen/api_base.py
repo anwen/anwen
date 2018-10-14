@@ -121,5 +121,5 @@ class JsonHandler(RequestHandler):
         self.write(output)
 
     def exception_nofity(self, status_code, error_trace_list):
-        if SEND_ERROR_MAIL:
+        if options.SEND_ERROR_MAIL:
             print('TODO: send mail...')
