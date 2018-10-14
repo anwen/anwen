@@ -156,7 +156,6 @@ class MeHandler(JsonHandler):
         city = self.get_argument('city', None)
         if city:
             user['user_city'] = city
-
         user['user_say'] = self.get_argument('say', None)
         user.save()
         self.res = {'ok': 1}
