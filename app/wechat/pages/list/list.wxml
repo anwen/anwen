@@ -1,0 +1,33 @@
+  <view class="userinfo2">
+    <block wx:if="{{!hasUserInfo}}">
+      <button class="userinfo-button" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">
+      <image class="userinfo-avatar0"  src="/pages/anwen.jpg" mode="cover"></image>
+      </button>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    </block>
+  </view>
+
+
+<view class="container-list">
+
+<view>
+    <view class="flex-row" style="display: flex;flex-direction: row;">
+        <view class="flex-view-item">1</view>
+        <view class="flex-view-item">2</view>
+        <view class="flex-view-item">3</view>
+    </view>
+    <view class="flex-column" style="display:flex;flex-direction: column;" >
+        <view class="flex-view-item">c1</view>
+        <view class="flex-view-item">c2</view>
+        <view class="flex-view-item">c3</view>
+    </view>
+</view>
+
+
+
+  <view class="">
+    <text class=""></text>
+  </view>
+</view>
