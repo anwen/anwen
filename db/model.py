@@ -25,6 +25,42 @@ except NameError:
 
 
 @connection.register
+class Like(BaseModel):
+    __collection__ = 'Like_Col'
+    use_autorefs = True
+    structure = {
+        'id': int,
+        'user_id': int,
+        'entity_id': int,
+        'entity_type': basestring,
+        'likenum': int,
+        'dislikenum': int,
+        'create_time': float,
+    }
+    default_values = {
+        'likenum': 0,
+        'dislikenum': 0,
+        'create_time': time.time,
+    }
+
+    def change_like(self, doc, liketype, action):
+        # res = self.find_one(doc) or self()
+        res = self.find_one(doc) or self.new(doc)
+        # if 'id' not in doc:
+        # doc['id'] = self.find().count() + 1
+        # res.update(doc)
+        if res[liketype] > 0:
+            res[liketype] = 0
+        else:
+            if action == 'add':
+                res[liketype] += 1
+            else:
+                res[liketype] = 0
+        res.save()
+        return res
+
+
+@connection.register
 class Share(BaseModel):
     __collection__ = 'Share_Col'
     use_autorefs = True
@@ -166,35 +202,6 @@ class Comment(BaseModel):
     default_values = {
         'commenttime': time.time,
     }
-
-
-@connection.register
-class Like(BaseModel):
-    __collection__ = 'Like_Col'
-    use_autorefs = True
-    structure = {
-        'id': int,
-        'user_id': int,
-        'entity_id': int,
-        'entity_type': basestring,
-        'likenum': int,
-        'dislikenum': int,
-        'create_time': float,
-    }
-    default_values = {
-        'likenum': 0,
-        'dislikenum': 0,
-        'create_time': time.time,
-    }
-
-    def change_like(self, doc, liketype):
-        res = self.find_one(doc) or self()
-        if 'id' not in doc:
-            doc['id'] = self.find().count() + 1
-        res.update(doc)
-        res[liketype] += 1
-        res.save()
-        return res
 
 
 @connection.register

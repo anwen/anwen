@@ -145,8 +145,10 @@ Markdown 支持以比较简短的自动链接形式来处理网址和电子邮�
 2. [Markdown 语法说明(简体中文版)][2]
 3. [Markdown Syntax Documentation][3]
 4. [献给写作者的 Markdown 新手指南][4]
+5. [Markdown写作进阶：Pandoc入门浅谈][5]
 
 [1]:http://www.yangzhiping.com/tech/r-markdown-knitr.html
 [2]:http://wowubuntu.com/markdown/basic.html
 [3]:http://daringfireball.net/projects/markdown/syntax
 [4]:http://jianshu.io/p/q81RER
+[5]:https://www.yangzhiping.com/tech/pandoc.html
