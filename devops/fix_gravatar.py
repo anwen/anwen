@@ -22,11 +22,6 @@ def fix_ol_gravatar():
         print(email)
         user_id = i['id']
         size = 132  # use same size as wechat raw
-        # default gravatar
-        # http://www.gravatar.com/avatar/?d=404
-        # http://www.gravatar.com/avatar/?d=identicon
-        # http://www.gravatar.com/avatar
-
         avatar_dir = 'static/avatar'
         avatar_path = '%s/%s_%s.jpg' % (avatar_dir, user_id, 'raw')
         if os.path.isfile(avatar_path):
@@ -49,3 +44,9 @@ def fix_ol_gravatar():
 
 if __name__ == '__main__':
     fix_ol_gravatar()
+
+
+# default gravatar
+# http://www.gravatar.com/avatar/?d=404
+# http://www.gravatar.com/avatar/?d=identicon
+# http://www.gravatar.com/avatar
