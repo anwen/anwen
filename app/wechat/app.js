@@ -17,15 +17,15 @@ App({
         // })
         wx.login({
             success: function(res) {
-                var code = res.code;
-                if (code) {
+                if (res.code.success===true) {
+                    var data=res.data.data
                     console.log('获取用户登录凭证：' + code);
                     // --------- 发送凭证 ------------------
                     wx.request({
                         url: 'https://anwensf.com/api/wxlogin',
                         data: {
                             appname: 'anwen',
-                            code: code
+                            code: data.code
                         },
                         header: {
                             'content-type': 'application/json' // 默认值

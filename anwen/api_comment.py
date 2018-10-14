@@ -5,8 +5,10 @@ import markdown2
 import tornado.escape
 from utils.avatar import get_avatar
 
+
 class CommentHandler(JsonHandler):
 
+    @tornado.web.authenticated
     def post(self):
         commentbody = self.get_argument("commentbody", None)
         share_id = self.get_argument("share_id", None)
@@ -26,7 +28,6 @@ class CommentHandler(JsonHandler):
             'success': True,
         }
         self.write_json()
-
 
     def get(self):
         share_id = self.get_argument("share_id", None)
