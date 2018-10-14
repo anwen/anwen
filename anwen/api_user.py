@@ -7,7 +7,7 @@ import requests
 from .api_base import JsonHandler
 from db import User
 from utils.avatar import get_avatar
-from options import WX_APPID, WX_SECRET
+from options import appinfo
 
 
 class AuthorizationsHandler(JsonHandler):
@@ -48,13 +48,14 @@ class AuthorizationsHandler(JsonHandler):
 class WxLoginHandler(JsonHandler):
 
     def get(self):
-        wx_code = self.get_argument("code", None)
-        if not wx_code:
+        wx_code = self.get_argument("code", '')
+        appname = self.get_argument("appname", '')
+        if not wx_code or not appname:
             return self.write_error(401)
         wx_api = 'https://api.weixin.qq.com/sns/jscode2session'
         params = {}
-        params['appid'] = WX_APPID
-        params['secret'] = WX_SECRET
+        params['appid'] = appinfo[appname]['WX_APPID']
+        params['secret'] = appinfo[appname]['WX_SECRET']
         params['js_code'] = wx_code
         params['grant_type'] = 'authorization_code'
         r = requests.get(wx_api, params=params)
