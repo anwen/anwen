@@ -135,6 +135,21 @@ class MeHandler(JsonHandler):
             name = self.get_argument('nickName', None)
         if name:
             user['user_name'] = name
+        avatarUrl = self.get_argument('avatarUrl', None)
+        if avatarUrl:
+            try:
+                r = requests.get(avatarUrl)
+                if r.status_code == 200:
+                    avatar_dir = 'static/avatar'
+                    size = 'raw'
+                    _id = str(user._id)
+                    avatar_path = '%s/%s_%s.jpg' % (avatar_dir, _id, size)
+                    with open(avatar_path, 'wb') as f:
+                        for chunk in r.iter_content():
+                            f.write(chunk)
+                    print('saved avatar')
+            except Exception as e:
+                print('Error:', e)
         city = self.get_argument('city', None)
         if city:
             user['user_city'] = city
@@ -143,3 +158,15 @@ class MeHandler(JsonHandler):
         user.save()
         self.res = {'ok': 1}
         return self.write_json()
+
+
+# avatarUrl
+# city
+# country
+# encryptedData
+# gender
+# isignaturev
+# iv
+# language
+# nickName
+# province
