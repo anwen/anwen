@@ -165,7 +165,6 @@ class MeHandler(JsonHandler):
         self.res = {'ok': 1}
         return self.write_json()
 
-
 # avatarUrl
 # city
 # country

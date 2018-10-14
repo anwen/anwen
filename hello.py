@@ -83,7 +83,7 @@ if __name__ == '__main__':
     signal.signal(signal.SIGTERM, sig_handler)
     signal.signal(signal.SIGINT, sig_handler)
     if args.run_tests:
-        import tests
+        from tests import tests
         import sys
         locals()['all'] = tests.all
         sys.argv = sys.argv[:1]
