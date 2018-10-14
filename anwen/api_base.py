@@ -48,8 +48,8 @@ class JsonHandler(RequestHandler):
                 # )
                 print("We only accept key value objects!")
             else:
-            for key, value in json_data.items():
-                self.request.arguments[key] = [value, ]
+                for key, value in json_data.items():
+                    self.request.arguments[key] = [value, ]
             # self.done()
 
     # def get_argument(self, arg, default=None):
