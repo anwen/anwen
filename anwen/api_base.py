@@ -61,6 +61,7 @@ class JsonHandler(RequestHandler):
         self.set_header('Content-Type', 'application/json')
 
     def get_current_user(self):
+        print(self.request.headers)
         token = self.request.headers.get('Authorization', '')
         print(token)
         if token:

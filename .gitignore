@@ -29,3 +29,20 @@ db/data/*.yaml
 *.zip
 local_*
 
+
+
+
+app/wechat_bak/
+app/weui-wxss/
+app/wxParse-master/
+get_content.py
+get_md.py
+list_website.md
+zgen_html
+zgen_html2
+zgen_html3
+zgen_md
+zgen_md2
+zgen_md3
+zzz2
+.gitignore
