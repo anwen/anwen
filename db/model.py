@@ -196,6 +196,7 @@ class Comment(BaseModel):
         'id': int,
         'user_id': int,
         'share_id': int,
+        'user_name': basestring,
         'commentbody': basestring,
         'commenttime': float,
     }
