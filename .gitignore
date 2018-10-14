@@ -28,4 +28,3 @@ db/data/*.yaml
 *.zip
 local_*
 
-app/
