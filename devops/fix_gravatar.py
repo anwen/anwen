@@ -18,4 +18,4 @@ def fix_ol_gravatar():
 
 
 if __name__ == '__main__':
-    fix_ol_comment_user_name()
+    fix_ol_gravatar()
