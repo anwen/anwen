@@ -3,7 +3,7 @@ from .api_base import JsonHandler
 from db import Share, Comment, User
 import markdown2
 import tornado.escape
-from utils.avatar import get_avatar
+from utils.avatar import get_avatar_by_wechat
 
 
 class CommentHandler(JsonHandler):
@@ -16,6 +16,7 @@ class CommentHandler(JsonHandler):
         comment = Comment
         doc = {}
         doc['user_id'] = self.current_user["user_id"]
+        doc['user_name'] = self.current_user["user_name"]
         doc['share_id'] = int(share_id)
         doc['commentbody'] = commentbody
         comment.new(doc)
@@ -30,17 +31,17 @@ class CommentHandler(JsonHandler):
         self.write_json()
 
     def get(self):
+        # log api usage
         share_id = self.get_argument("share_id", None)
-        share_id = int(share_id)
-        # share.hitnum += 1
-        # share.save()
         comments = []
-        comment_res = Comment.find({'share_id': share_id})
+        comment_res = Comment.find({'share_id': int(share_id)})
         for comment in comment_res:
             comment = dict(comment)
             comment['_id'] = str(comment['_id'])
-            user = User.by_sid(comment['user_id'])
-            comment['gravatar'] = get_avatar(user.user_email, 50)
+            # user = User.by_sid(comment['user_id'])
+            # gravatar
+            # get_avatar(user.user_email, 50)
+            comment['avatar'] = get_avatar_by_wechat(comment['user_id'])
             # comment.name = user.user_name
             # comment.domain = user.user_domain
             comments.append(comment)
