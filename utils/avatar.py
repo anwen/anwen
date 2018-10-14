@@ -4,7 +4,7 @@ import os
 import requests
 
 
-def get_avatar(_id):
+def get_avatar_by_wechat(_id):
     size = 'raw'
     avatar_dir = 'static/avatar'
     default_avatar_path = '/%s/default/default.gif' % avatar_dir
