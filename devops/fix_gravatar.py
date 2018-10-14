@@ -2,6 +2,7 @@
 # encoding:utf-8
 from pymongo import MongoClient
 import sys
+import os
 conn = MongoClient()
 sys.path.append('.')
 from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
