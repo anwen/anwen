@@ -28,6 +28,9 @@ class ShareHandler(JsonHandler):  # 单篇文章
         share.hitnum += 1
         share.save()
         share.pop('_id')
+        share.published = int(share.published * 1000)
+        share.updated = int(share.updated * 1000)
+
         # share.content = markdown2.markdown(share.markdown)
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
