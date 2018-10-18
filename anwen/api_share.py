@@ -30,7 +30,6 @@ class ShareHandler(JsonHandler):  # 单篇文章
         share.pop('_id')
         share.published = int(share.published * 1000)
         share.updated = int(share.updated * 1000)
-
         # share.content = markdown2.markdown(share.markdown)
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
@@ -89,8 +88,15 @@ class SharesHandler(JsonHandler):
         if has_vote:
             cond['vote_title'] = {'$ne': ''}
         shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
+        shares = [fix_time(share) for share in shares]
         self.res = list(shares)
         return self.write_json()
+
+
+def fix_time(share):
+    share['published'] = int(share['published'] * 1000)
+    share['updated'] = int(share['updated'] * 1000)
+    return share
 
 
 class PreviewHandler(JsonHandler):

@@ -20,6 +20,7 @@ class CommentHandler(JsonHandler):
             comment['avatar'] = get_avatar_by_wechat(comment['user_id'])
             # user = User.by_sid(comment['user_id'])
             # get_avatar(user.user_email, 50)
+
             comments.append(comment)
         self.res = {
             'comments': comments,
@@ -30,11 +31,12 @@ class CommentHandler(JsonHandler):
     def post(self):
         commentbody = self.get_argument("commentbody", None)
         share_id = self.get_argument("share_id", None)
-        html = markdown2.markdown(commentbody)
         comment = Comment
         doc = {}
         doc['user_id'] = self.current_user["user_id"]
-        doc['user_name'] = self.current_user["user_name"]
+        user = User.by_sid(self.current_user["user_id"])
+        # user_name in current_user is not the newest
+        doc['user_name'] = user["user_name"]
         doc['share_id'] = int(share_id)
         doc['commentbody'] = commentbody
         comment.new(doc)

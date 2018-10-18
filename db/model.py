@@ -49,9 +49,9 @@ class Like(BaseModel):
         'id': int,
         'user_id': int,
         'entity_id': int,
-        'entity_type': basestring,
         'likenum': int,
         'dislikenum': int,
+        'entity_type': basestring,
         'create_time': float,
     }
     default_values = {
