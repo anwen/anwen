@@ -275,10 +275,13 @@ class ImageUploadHandler(BaseHandler):
         img = None
         body = None
         ext = None
+        print(self.request.files)
         if 'uploadImg' in self.request.files:
             img = self.request.files['uploadImg'][0]
             ext = os.path.splitext(img['filename'])[1].lower()
             body = img['body']
+        print(img, 'img')
+        print(ext, 'ext')
         if img and len(body) > 2 * 1024 * 1024:
             msg = {"status": "o", "info": "上传的图片不能超过2M"}
         elif ext and ext in ['.jpg', '.jpeg', '.gif', '.png', '.bmp']:
