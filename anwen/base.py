@@ -8,6 +8,8 @@ from pymongo import ASCENDING, DESCENDING
 from log import logger
 from options import site_info, node_list, node_about
 from utils import random_sayings
+import traceback
+import options
 
 
 class BaseHandler(RequestHandler):
@@ -62,9 +64,43 @@ class BaseHandler(RequestHandler):
         self.set_cookie('lang', default)
         return default
 
-    def write_error(self, status_code):
-        self.render('error.html', status_code=status_code)
-        #     super(RequestHandler, self).write_error(status_code, **kwargs)
+    # def write_error(self, status_code, **kwargs):
+    #     self.render('error.html', status_code=status_code)
+    #     #     super(RequestHandler, self).write_error(status_code, **kwargs)
+
+    def write_error(self, status_code, **kwargs):
+        self.set_status(status_code)
+        print('_reason', self._reason)
+        # https://blog.csdn.net/jw690114549/article/details/69394233?utm_source=copy
+        # typ, value, tb   # value PermissionError
+        error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
+        if options.debug:
+            # in debug mode, try to send a traceback
+            self.set_header('Content-Type', 'text/plain')
+            for line in error_trace_list:
+                self.write(line)
+            self.finish()
+        else:
+            for line in error_trace_list:
+                print(line)
+
+            self.exception_nofity(status_code, error_trace_list)
+            # if not self._reason:
+            #     if status_code == 422:
+            #         kwargs['message'] = 'Unprocessable Entity, miss field'
+
+            # if 'message' not in kwargs:
+            #     if status_code == 405:
+            #         kwargs['message'] = 'Invalid HTTP method.'
+            #     elif status_code == 401:
+            #         kwargs['message'] = 'Unauthorized, wrong email or password'
+            #     else:
+            #         kwargs['message'] = 'Unknown error.'
+            # 如果缺少必要的 feild，会返回 422 Unprocessable Entity
+            # 通过 errors 给出了哪些 field 缺少了，能够方便调用方快速排错
+            # HTTP/1.1 401 Unauthorized
+            self.write_json(success=False, message=self._reason)
+        return
 
     def write_json(self, obj):
         """Writes the JSON-formated string of the given obj
