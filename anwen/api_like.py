@@ -11,7 +11,6 @@ class LikeHandler(JsonHandler):
         # return self.post(action)
         entity_id = int(self.get_argument("entity_id", 0))
         entity_type = self.get_argument("entity_type", None)
-        # print(action, entity_id, entity_type)
         user_id = self.current_user["user_id"]
         doc = {
             'user_id': user_id,
@@ -36,7 +35,9 @@ class LikeHandler(JsonHandler):
             entity[_action] += 1
         else:
             entity[_action] = 0
+        print(entity, 111)
         entity.save()
+
         self.res = {
             'success': True,
             'likenum': entity.likenum,

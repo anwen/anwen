@@ -17,15 +17,21 @@ clean:
 	find . -name '*~' -exec rm -f {} +
 	find . -name '*.log' -exec rm -f {} +
 
+start:
+	make test
+	@echo "starting anwen"
+	python3 hello.py
+
+
+sync:
+	scp -r devops aw:/var/www/anwen
+
 
 test:
 	@echo "starting test"
 	python3 hello.py -t
 
-start:
-	make test
-	@echo "starting anwen"
-	python3 hello.py
+
 
 backup:
 	@echo "starting backup"
