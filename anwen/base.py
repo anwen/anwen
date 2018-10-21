@@ -10,6 +10,7 @@ from options import site_info, node_list, node_about
 from utils import random_sayings
 import traceback
 import options
+from json import dumps
 
 
 class BaseHandler(RequestHandler):
@@ -99,7 +100,9 @@ class BaseHandler(RequestHandler):
             # 如果缺少必要的 feild，会返回 422 Unprocessable Entity
             # 通过 errors 给出了哪些 field 缺少了，能够方便调用方快速排错
             # HTTP/1.1 401 Unauthorized
-            self.write_json(success=False, message=self._reason)
+
+            # TODO
+            # self.write_json(success=False, message=self._reason)
         return
 
     def exception_nofity(self, status_code, error_trace_list):
@@ -111,7 +114,6 @@ class BaseHandler(RequestHandler):
         to the output buffer"""
 
         self.set_header('Content-Type', 'application/json')
-        from json import dumps
 
         def handler(obj):
             if hasattr(obj, 'to_json'):
