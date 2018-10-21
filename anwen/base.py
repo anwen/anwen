@@ -102,6 +102,10 @@ class BaseHandler(RequestHandler):
             self.write_json(success=False, message=self._reason)
         return
 
+    def exception_nofity(self, status_code, error_trace_list):
+        if options.SEND_ERROR_MAIL:
+            print('TODO: send mail...')
+
     def write_json(self, obj):
         """Writes the JSON-formated string of the given obj
         to the output buffer"""
