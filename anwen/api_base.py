@@ -6,6 +6,7 @@ from tornado.web import RequestHandler
 from tornado.escape import json_decode
 import traceback
 import options
+from bson import ObjectId
 
 
 class JsonHandler(RequestHandler):
@@ -28,6 +29,7 @@ class JsonHandler(RequestHandler):
 
     def prepare(self):
         super().prepare()
+        print('prepare')
         # self.json_data = None
         json_data = None
         self.res = dict()
@@ -64,6 +66,17 @@ class JsonHandler(RequestHandler):
 
     def set_default_headers(self):
         self.set_header('Content-Type', 'application/json')
+        self.set_header('Access-Control-Allow-Origin', '*')
+        self.set_header('Access-Control-Allow-Headers', '*')
+        # self.set_header('Content-type', 'text/html')
+        # self.set_header('Access-Control-Max-Age', 1000)
+        # self.set_header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, DELETE')
+        self.set_header('Access-Control-Allow-Methods', '*')
+        self.set_header('Access-Control-Allow-Headers',
+                        'Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Headers, X-Requested-By, Access-Control-Allow-Methods')
+
+    def OPTIONS(self):
+        pass
 
     def get_current_user(self):
         print(self.request.headers)
@@ -126,6 +139,20 @@ class JsonHandler(RequestHandler):
             out['message'] = message
         output = json.dumps(out)
         self.write(output)
+
+    def write_json_raw(self, obj):
+        """Writes the JSON-formated string of the given obj
+        to the output buffer"""
+        # self.set_header('Content-Type', 'application/json')
+
+        def handler(obj):
+            if hasattr(obj, 'to_json'):
+                return obj.to_json()
+            elif isinstance(obj, ObjectId):
+                return str(obj)
+            else:
+                return dict(obj)
+        return self.write(json.dumps(obj, default=handler))
 
     def exception_nofity(self, status_code, error_trace_list):
         if options.SEND_ERROR_MAIL:

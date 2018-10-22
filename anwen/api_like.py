@@ -7,7 +7,7 @@ from db import Like, Share, Comment, Viewpoint
 class LikeHandler(JsonHandler):
 
     @tornado.web.authenticated
-    def get(self, action):
+    def post(self, action):
         # return self.post(action)
         entity_id = int(self.get_argument("entity_id", 0))
         entity_type = self.get_argument("entity_type", None)
@@ -35,19 +35,11 @@ class LikeHandler(JsonHandler):
             entity[_action] += 1
         else:
             entity[_action] = 0
-        print(entity, 111)
         entity.save()
-
         self.res = {
-            'success': True,
             'likenum': entity.likenum,
             'dislikenum': entity.dislikenum,
         }
         self.write_json()
 
-    @tornado.web.authenticated
-    def post(self, action):
-        return self.get(action)
-        self.res = {'ok': 1}
-        self.write_json()
-        return
+    get = post

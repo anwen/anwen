@@ -119,7 +119,8 @@ class MeHandler(JsonHandler):
             pass
             user.gravatar = get_avatar_by_wechat(user._id)
         else:
-            user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
+            # user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
+            user.gravatar = get_avatar(user.user_email, 100)
         user = dict(user)
         user.pop('_id')
         user.pop('user_pass')

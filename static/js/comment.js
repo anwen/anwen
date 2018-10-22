@@ -33,7 +33,7 @@ $(document.body).on('click', '.do-like', function() {
     if (!eid) return;
     $.ajax({
         url: '/api/like/' + action,
-        type: 'get',
+        type: 'post',
         data: {
             "action": action,
             "entity_id": eid,
@@ -46,7 +46,7 @@ $(document.body).on('click', '.do-like', function() {
             } else if (action === 'dellike') {
                 t.removeClass('liking');
             }
-            t.find('span').text(data['likenum'] + ' ');
+            t.find('span').text(data['data']['likenum'] + ' ');
         }
     });
 });
@@ -63,7 +63,7 @@ $(document.body).on('click', '.do-dislike', function() {
     }
     $.ajax({
         url: '/api/like/' + action,
-        type: 'get',
+        type: 'post',
         data: {
             "action": action,
             "entity_id": lid,
@@ -76,7 +76,7 @@ $(document.body).on('click', '.do-dislike', function() {
             } else if (action === 'deldislike') {
                 t.removeClass('disliking');
             }
-            t.find('span').text(data['dislikenum'] + ' ');
+            t.find('span').text(data['data']['dislikenum'] + ' ');
         }
     });
 });
