@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
-
 import os
 from PIL import Image
 from PIL import ImageFilter
+import math
 
 
 class MyGaussianBlur(ImageFilter.Filter):
@@ -152,6 +152,7 @@ def make_post_thumb(path, sizes=None):
             newimg_width, newimg_height = newimg.size
             delta = (newimg_height - int(size[1])) / 2
             box = (0, delta, int(size[0]), delta + int(size[1]))
+            box = tuple([int(math.floor(x)) for x in box])
             region = newimg.crop(box)
             region.save(filename, quality=100)
         if float(width) / float(height) > float(size[0]) / float(size[1]):
