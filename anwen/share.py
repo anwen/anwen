@@ -69,8 +69,8 @@ class EntryHandler(BaseHandler):
         posts = Share.find()
         suggest = []
         for post in posts:
-            post.score = 100 + post.id - post.user_id + post.commentnum * 3
-            post.score += post.likenum * 4 + post.hitnum * 0.01
+            post.score = 100 + post.id - post.user_id
+            # post.score += post.likenum * 4 + post.hitnum * 0.01 + post.commentnum * 3
             post.score += randint(1, 999) * 0.001
             common_tags = [i for i in post.tags.split(
                 ' ') if i in share.tags.split(' ')]
