@@ -5,6 +5,7 @@ from anwen import api_user
 from anwen import api_share
 from anwen import api_like
 from anwen import api_comment
+from anwen import api_upload
 
 # pages
 from anwen.index import WelcomeHandler
@@ -54,12 +55,13 @@ handlers = [
     (r"/api/like/([^/]+)", api_like.LikeHandler),
 
     (r"/api/comment", api_comment.CommentHandler),
+    (r"/api/image_upload", api_upload.ImageUploadHandler),
 
+    # (r"/share/image_upload", ImageUploadHandler),
 
 
     (r"/share/?", ShareHandler),
     (r"/share/([^/]+)", EntryHandler),
-    (r"/share/image_upload", ImageUploadHandler),
     (r"/sharecomment", CommentHandler),
     (r"/feed", FeedHandler),
 

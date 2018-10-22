@@ -49,7 +49,7 @@ dropbox.filedrop({
     allowedfiletypes: ['image/jpeg', 'image/png', 'image/gif', 'image/bmp'],
     maxfiles: 1,
     maxfilesize: 2, //最大2M
-    url: '/share/image_upload',
+    url: '/api/image_upload',
     uploadFinished: function(i, file, response) {
         if (response.status == 's') {
             alert(response.info);
@@ -169,7 +169,7 @@ $("#upload_file_hide").change(function() {
         'background': 'url(/static/img/onLoad.gif) center center no-repeat'
     }).find('.message').hide();
     $.ajax({
-        url: '/share/image_upload',
+        url: '/api/image_upload',
         type: 'POST',
         data: data,
         cache: false,
@@ -229,7 +229,7 @@ function DeletePostImg() {
     d = d.split('_')[0] + "_" + d.split('_')[1] + "_" + d.split('_')[2];
 
     $.ajax({
-        url: '/share/image_upload',
+        url: '/api/image_upload',
         type: 'DELETE',
         data: {
             img_name: d
