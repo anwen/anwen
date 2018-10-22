@@ -5,7 +5,7 @@ import base64
 import utils
 import requests
 from .api_base import JsonHandler
-from db import User
+from db import User, Admin
 from utils.avatar import get_avatar, get_avatar_by_wechat
 from options import appinfo
 
@@ -125,6 +125,7 @@ class MeHandler(JsonHandler):
         user.pop('_id')
         user.pop('user_pass')
         self.res = user
+        user['is_admin'] = Admin.is_admin(user['id'])
         return self.write_json()
 
     @tornado.web.authenticated
