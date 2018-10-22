@@ -44,6 +44,7 @@ def delete_share(share_id):
         share.save()
 
 
+# dangerous !
 def delete_share_by_s(share_id):
     if share_id:
         share = Share.by_sid(share_id)
