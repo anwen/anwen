@@ -36,7 +36,7 @@ class BecomeAdminHandler(BaseHandler):
             key = utils.make_emailverify()
             admin.apply_admin(user_id, key)
             send_become_admin_email(user_id, user_name, key)
-            self.render('admin/admin/become_sent.html')
+            self.render('admin/become_admin_sent.html')
 
 
 def send_become_admin_email(uid, name, key):

@@ -19,34 +19,10 @@ def make_emailverify():
     return str(time.time()) + str(uuid.uuid4())
 
 
-def send_email_2(receivers, subject, msg_body):
-    import options
-    import smtplib
-    from email.mime.text import MIMEText
-    from email.Header import Header
-    me = '%s<%s>' % (options.EMAIL_HOST_NICK, options.SERVICE_EMAIL)
-    host = options.EMAIL_HOST
-    port = options.EMAIL_PORT
-    user = options.EMAIL_HOST_USER
-    password = options.EMAIL_HOST_PASSWORD
-    msg = MIMEText(msg_body, 'html', 'utf-8')
-    msg['Subject'] = Header(subject, 'utf-8')
-    msg['From'] = me
-    msg['To'] = receivers
-    s = smtplib.SMTP()
-    s.set_debuglevel(1)  # show the debug log
-    s.connect(host, port)
-    # s.starttls()
-    s.login(user, password)
-    s.sendmail(me, receivers, msg.as_string())
-    s.quit()
-
-
 def send_email(receivers, subject, msg_body):
     import options
     import smtplib
     from email.mime.text import MIMEText
-    # from email.Header import Header
     from email.header import Header
     me = '%s<%s>' % (options.EMAIL_HOST_NICK, options.SERVICE_EMAIL)
     host = options.EMAIL_HOST
@@ -57,7 +33,6 @@ def send_email(receivers, subject, msg_body):
     msg['Subject'] = Header(subject, 'utf-8')
     msg['From'] = me
     msg['To'] = receivers
-
     try:
         # s = smtplib.SMTP()
         # s.connect(host, port)
