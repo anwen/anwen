@@ -35,7 +35,9 @@ class ImageUploadHandler(JsonHandler):
                 msg = {"status": "s", "info": "请不要上传长宽比例过大的图片"}
             else:
                 # 创建1200x550 750x230 365x230缩略图
-                make_post_thumb(img_path, sizes=[(1200, 550), (750, 230), (365, 230)])
+                make_post_thumb(img_path, sizes=[
+                    (1200, 550), (750, 230), (365, 230), (260, 160)
+                ])
                 pic_1200 = '%s_1200.jpg' % t
                 # users.save_user_avatar(user_id, avatar)#入库
                 msg = {"status": "y", "pic_1200": pic_1200}
