@@ -68,7 +68,8 @@
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}
-{{ xsrf_form_html() }}
+    <input type="hidden" name="post_img" value="{{ share.post_img if share else '' }}"/>
+    {{ xsrf_form_html() }}
   </form>
 </div>
 {% end %}
