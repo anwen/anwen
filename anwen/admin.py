@@ -30,7 +30,7 @@ class BecomeAdminHandler(BaseHandler):
         if u and k:
             result = admin.add_admin(u, k, s)
             if result:
-                self.render('admin/admin/become_success.html')
+                self.render('admin/become_admin_success.html')
             return
         else:
             key = utils.make_emailverify()
@@ -71,10 +71,10 @@ class AdminShareHandler(BaseHandler):
             if share_id and s and admin.is_superadmin(user_id):
                 admin.delete_share_by_s(share_id)
             if s:
-                shares = Share.find({'status': {'$ne': 1}})
+                shares = Share.find({'status': {'$ne': 1}}).sort('_id', -1)
                 self.render('admin/super_share.html', shares=shares)
             else:
-                shares = Share.find()
+                shares = Share.find().sort('_id', -1)
                 self.render('admin/share.html', shares=shares)
         else:
             self.render('admin/join_admin.html')
