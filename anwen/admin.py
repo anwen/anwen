@@ -73,6 +73,8 @@ class AdminShareHandler(BaseHandler):
             if delete_share_id and s and admin.is_superadmin(user_id):
                 admin.delete_share_by_s(delete_share_id)
             # shares = Share.find({'status': {'$ne': 1}}).sort('_id', -1)
+            if status == 100:
+                status = {'$gt': 3}
             shares = Share.find({'status': status}).sort('_id', -1)
             if s:
                 self.render('admin/super_share.html', shares=shares)
