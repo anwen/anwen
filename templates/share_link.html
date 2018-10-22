@@ -42,6 +42,24 @@
     </div>
 
 
+    <a id="switchImgWrap" class="btn btn-info">上传封面{{'(already exist)' if share and share.post_img else ""}}</a>
+    <div class="post_image_upload_wrap node_empty_border">
+      <div class="post_image_upload piu node_empty">
+        <a href="javascript:void(0)" class="upload_btn btn btn-info" onclick="getElementById('upload_file_hide').click()">上传图片 或 拖拽图片到这里</a>
+        <span class="message"> <i></i>
+          <p>拖拽图片到这里就会自动上传，请保证你上传图片的质量。</p>
+        </span>
+        <input type="file" name="uploadImg" id="upload_file_hide" />
+        <input type="hidden" datatype="post_Img" id="post_Img_1" name="post_Img" errormsg="啊哈？出错了" nullmsg="你还没有上传图片。" />
+        <span class="Validform_checktip postImgValidformChecktip"></span>
+        <a class="del_post_img btn" href="javascript:void(0)">
+          <i class="icon-remove icon-white"></i>
+          删除
+        </a>
+      </div>
+    </div>
+
+
     <div>
       <button type="submit" class="btn btn-primary">{{ "保存修改" if share else "发布分享" }}</button>
     </div>
@@ -56,4 +74,6 @@
 {% end %}
 
 {% block bottom %}
+<script src="{{ static_url("js/jquery.filedrop.js") }}"></script>
+<script src="{{ static_url("js/share.js") }}"></script>
 {% end %}
