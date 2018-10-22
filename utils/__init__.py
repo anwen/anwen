@@ -57,13 +57,19 @@ def send_email(receivers, subject, msg_body):
     msg['Subject'] = Header(subject, 'utf-8')
     msg['From'] = me
     msg['To'] = receivers
-    s = smtplib.SMTP()
-    s.set_debuglevel(1)  # show the debug log
-    s.connect(host, port)
-    # s.starttls()
-    s.login(user, password)
-    s.sendmail(me, receivers, msg.as_string())
-    s.quit()
+
+    try:
+        # s = smtplib.SMTP()
+        # s.connect(host, port)
+        # s.starttls()
+        s = smtplib.SMTP_SSL(host, port)
+        s.set_debuglevel(1)  # show the debug log
+        s.login(user, password)
+        s.sendmail(me, receivers, msg.as_string())
+        s.quit()
+        print('send email Success')
+    except smtplib.SMTPException as e:
+        print('send email Fail: {}'.format(e))
 
     # import smtplib
     # from email.mime.text import MIMEText
