@@ -143,6 +143,7 @@ def make_post_thumb(path, sizes=None):
         if float(width) / float(height) == float(str(size[0])) / float(str(size[1])):
             newimg = im.resize((int(size[0]), int(size[1])), Image.ANTIALIAS)
             box = (0, 0, int(size[0]), int(size[1]))
+            box = tuple([int(math.floor(x)) for x in box])
             region = newimg.crop(box)
             region.save(filename, quality=100)
         if float(width) / float(height) < float(size[0]) / float(size[1]):
@@ -162,5 +163,6 @@ def make_post_thumb(path, sizes=None):
             newimg_width, newimg_height = newimg.size
             delta = (newimg_width - int(size[0])) / 2
             box = (delta, 0, delta + int(size[0]), int(size[1]))
+            box = tuple([int(math.floor(x)) for x in box])
             region = newimg.crop(box)
             region.save(filename, quality=100)
