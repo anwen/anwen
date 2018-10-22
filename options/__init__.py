@@ -135,8 +135,9 @@ MAX_WAIT_SECONDS_BEFORE_SHUTDOWN = 2
 
 
 EMAIL_HOST = 'smtp.exmail.qq.com'
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
+EMAIL_PORT = 465
+# EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'hello@anwensf.com'
 EMAIL_HOST_PASSWORD = 'set in server_setting'
 EMAIL_HOST_NICK = '安问'
