@@ -69,7 +69,7 @@ def send_email(receivers, subject, msg_body):
         s.quit()
         print('send email Success')
     except smtplib.SMTPException as e:
-        print('send email Fail: {}'.format(e))
+        print('send email Fail: {}'.format(repr(e).decode('u8')))
 
     # import smtplib
     # from email.mime.text import MIMEText
