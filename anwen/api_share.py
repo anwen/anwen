@@ -30,6 +30,7 @@ class ShareHandler(JsonHandler):  # 单篇文章
         share.pop('_id')
         share.published = int(share.published * 1000)
         share.updated = int(share.updated * 1000)
+        share.thumb_img = 'https://anwensf.com/static/upload/img/' + share.post_img.replace('_1200.jpg', '_260.jpg')
         # share.content = markdown2.markdown(share.markdown)
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
