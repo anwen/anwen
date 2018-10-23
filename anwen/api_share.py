@@ -62,7 +62,8 @@ class ShareHandler(JsonHandler):  # 单篇文章
         #     share.url = '<a href="{}">{}</a>'.format(
         #         share.link, share.title)
         d_share = dict(share)
-        d_share['thumbnails'] = 'https://anwensf.com/static/upload/img/' + d_share['post_img'].replace('_1200.jpg', '_260.jpg')
+        # thumbnails
+        d_share['post_img'] = 'https://anwensf.com/static/upload/img/' + d_share['post_img'].replace('_1200.jpg', '_260.jpg')
 
         print(d_share.get('link'))
         if d_share.get('link'):
