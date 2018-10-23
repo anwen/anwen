@@ -66,7 +66,7 @@ class ShareHandler(JsonHandler):  # 单篇文章
             doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
             if doc and doc['markdown']:
                 d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
-
+                d_share['markdown'] += '\n\n[阅读原文]()'.format(doc['url'])
         # thumbnails
         d_share['post_img'] = 'https://anwensf.com/static/upload/img/' + d_share['post_img'].replace('_1200.jpg', '_260.jpg')
 
