@@ -69,7 +69,6 @@ class ShareHandler(JsonHandler):  # 单篇文章
                 d_share['markdown'] += '\n\n[阅读原文]()'.format(doc['url'])
         # thumbnails
         d_share['post_img'] = 'https://anwensf.com/static/upload/img/' + d_share['post_img'].replace('_1200.jpg', '_260.jpg')
-
         print(d_share.get('link'))
         if d_share.get('link'):
             # share.url = '<a href="{}">{} {}</a>'.format(
@@ -96,12 +95,13 @@ class SharesHandler(JsonHandler):
         if has_vote:
             cond['vote_title'] = {'$ne': ''}
         shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
-        shares = [fix_time(share) for share in shares]
+        shares = [fix_share(share) for share in shares]
         self.res = list(shares)
         return self.write_json()
 
 
-def fix_time(share):
+def fix_share(share):  # time
+    share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
     share['published'] = int(share['published'] * 1000)
     share['updated'] = int(share['updated'] * 1000)
     return share
