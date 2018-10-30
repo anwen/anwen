@@ -8,16 +8,30 @@ from utils.avatar import get_avatar
 import requests
 from readability import Document
 import html2text
+from tornado.escape import json_decode
 
 
 class SharesHandler(JsonHandler):
 
     # 文章列表
+    # 不同权限的用户看到的列表不同
     def get(self):
+        user = None
+        token = self.request.headers.get('Authorization', '')
+        if token:
+            key, token = token.split()
+            if key == 'token' and token:
+                user_json = self.get_secure_cookie('user', token)
+                if user_json:
+                    user = json_decode(user_json)
+
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         cond = {}
-        cond['status'] = {'$gte': 1}
+        if user and user['user_id'] in (60, 63, 64):
+            cond['status'] = {'$gte': 0}
+        else:
+            cond['status'] = {'$gte': 1}
         if vote_open:
             if not vote_open.isdigit():
                 return self.write_error(422)
