@@ -169,9 +169,12 @@ class MeHandler(JsonHandler):
         user.save()
         user['is_admin'] = admin.is_admin(user['id'])
         user.pop('_id')
+
+        auser = {}
+        auser['is_admin'] = user['is_admin']
         if user['id'] in (60, 63, 64):
-            user['is_admin'] = True
-        self.res = user
+            auser['is_admin'] = True
+        self.res = auser
         return self.write_json()
 
 # avatarUrl
