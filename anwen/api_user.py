@@ -168,6 +168,7 @@ class MeHandler(JsonHandler):
         user['user_say'] = self.get_argument('say', None)
         user.save()
         user['is_admin'] = admin.is_admin(user['id'])
+        user.pop('_id')
         if user['id'] in (60, 63, 64):
             user['is_admin'] = True
         self.res = user
