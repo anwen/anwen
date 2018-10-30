@@ -81,8 +81,7 @@ class WxLoginHandler(JsonHandler):
             token = self.create_signed_value(
                 'user', tornado.escape.json_encode(user_info))
             self.res['token'] = token.decode('u8')
-
-            self.res['is_admin'] = doc['is_admin']
+            self.res['is_admin'] = admin.is_admin(doc['id'])
             if doc['id'] in (60, 63, 64):
                 self.res['is_admin'] = True
 
