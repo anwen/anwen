@@ -167,7 +167,10 @@ class MeHandler(JsonHandler):
             user['user_city'] = city
         user['user_say'] = self.get_argument('say', None)
         user.save()
-        self.res = {'ok': 1}
+        user['is_admin'] = admin.is_admin(user['id'])
+        if user['id'] in (60, 63, 64):
+            user['is_admin'] = True
+        self.res = user
         return self.write_json()
 
 # avatarUrl
