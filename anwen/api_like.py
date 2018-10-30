@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
-from .api_base import JsonHandler
 import tornado.web
+from anwen.api_base import JsonHandler
 from db import Like, Share, Comment, Viewpoint
 
 
@@ -16,6 +16,7 @@ class LikeHandler(JsonHandler):
         _action = action[3:] + 'num'
         if entity_type == 'share':
             entity = Share.by_sid(entity_id)
+            print('user_id: {}'.format(user_id))
             # 如果是管理员，需要将status + 1
             if user_id in (60, 63, 64) and action == 'addlike':
                 entity['status'] = entity['status'] + 1
