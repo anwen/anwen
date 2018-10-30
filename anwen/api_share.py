@@ -10,6 +10,34 @@ from readability import Document
 import html2text
 
 
+class SharesHandler(JsonHandler):
+
+    # 文章列表
+    def get(self):
+        vote_open = self.get_argument("vote_open", None)
+        has_vote = self.get_argument("has_vote", None)
+        cond = {}
+        cond['status'] = {'$gte': 1}
+        if vote_open:
+            if not vote_open.isdigit():
+                return self.write_error(422)
+            cond['vote_open'] = int(vote_open)
+        if has_vote:
+            cond['vote_title'] = {'$ne': ''}
+        shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
+        shares = [fix_share(share) for share in shares]
+        self.res = list(shares)
+        return self.write_json()
+
+
+def fix_share(share):  # time
+    if share['post_img']:
+        share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
+    share['published'] = int(share['published'] * 1000)
+    share['updated'] = int(share['updated'] * 1000)
+    return share
+
+
 class ShareHandler(JsonHandler):  # 单篇文章
 
     def get(self, slug):
@@ -79,33 +107,6 @@ class ShareHandler(JsonHandler):  # 单篇文章
         # comment suggest
         self.res = d_share
         self.write_json()
-
-
-class SharesHandler(JsonHandler):
-
-    def get(self):
-        cond = {}
-        cond['status'] = {'$gte': 1}
-        vote_open = self.get_argument("vote_open", None)
-        has_vote = self.get_argument("has_vote", None)
-        if vote_open:
-            if not vote_open.isdigit():
-                return self.write_error(422)
-            cond['vote_open'] = int(vote_open)
-        if has_vote:
-            cond['vote_title'] = {'$ne': ''}
-        shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
-        shares = [fix_share(share) for share in shares]
-        self.res = list(shares)
-        return self.write_json()
-
-
-def fix_share(share):  # time
-    if share['post_img']:
-        share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
-    share['published'] = int(share['published'] * 1000)
-    share['updated'] = int(share['updated'] * 1000)
-    return share
 
 
 class PreviewHandler(JsonHandler):
