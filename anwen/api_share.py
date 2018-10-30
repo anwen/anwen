@@ -101,7 +101,8 @@ class SharesHandler(JsonHandler):
 
 
 def fix_share(share):  # time
-    share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
+    if share['post_img']:
+        share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
     share['published'] = int(share['published'] * 1000)
     share['updated'] = int(share['updated'] * 1000)
     return share
