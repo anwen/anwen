@@ -7,6 +7,7 @@ import requests
 from readability import Document
 import html2text
 from tornado.escape import json_decode
+from log import logger
 
 
 class SharesHandler(JsonHandler):
@@ -88,6 +89,7 @@ class ShareHandler(JsonHandler):
         print(d_share['is_liking'])
         print(d_share['is_disliking'])
         print('~~~~')
+        logger.info('~~~')
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
