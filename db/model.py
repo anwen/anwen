@@ -132,6 +132,8 @@ class Comment(BaseModel):
         'commenttime': float,
     }
     default_values = {
+        'likenum': 0,
+        'dislikenum': 0,
         'commenttime': time.time,
     }
 
