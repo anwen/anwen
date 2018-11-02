@@ -42,7 +42,7 @@
 </div>
 <div class="tags">{{ share.tags }}</div>
 
-<!-- 投票 分享-->
+<!-- 点赞 分享-->
 <p class="some">
 <a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{share.id}}" etype="share">
 <i class="icon-thumbs-up"></i>
@@ -53,6 +53,8 @@
 <span> {{ share.dislikenum }}</span>
 </a>
 </p>
+
+
 </div> <!-- 内容 -->
 
 <!-- 编辑 -->

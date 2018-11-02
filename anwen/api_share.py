@@ -81,11 +81,12 @@ class ShareHandler(JsonHandler):
             self.current_user["user_id"]) if self.current_user else None
         like = Like.find_one(
             {'share_id': share.id, 'user_id': user_id})
-        share.is_liking = bool(like.likenum % 2) if like else None
-        share.is_disliking = bool(like.dislikenum % 2) if like else None
 
+        share.is_liking = bool(like.likenum) if like else False
+        share.is_disliking = bool(like.dislikenum) if like else False
         d_share = dict(share)
-
+        print(d_share['is_liking'])
+        print(d_share['is_disliking'])
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
