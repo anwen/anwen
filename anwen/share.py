@@ -131,7 +131,7 @@ class OneShareHandler(BaseHandler):
         user_id = int(
             self.current_user["user_id"]) if self.current_user else None
         like = Like.find_one(
-            {'share_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
+            {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
         share.is_liking = bool(like.likenum) if like else False
         share.is_disliking = bool(like.dislikenum) if like else False
 
