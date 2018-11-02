@@ -55,7 +55,6 @@ class ShareHandler(JsonHandler):
 
     # 单篇文章
     def get(self, slug):
-        return
         # 特殊id ramdom
         if slug == 'random':
             cond = {}
@@ -89,7 +88,6 @@ class ShareHandler(JsonHandler):
         d_share = dict(share)
         print(d_share['is_liking'])
         print(d_share['is_disliking'])
-        print('~~~~')
         logger.info('~~~')
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
