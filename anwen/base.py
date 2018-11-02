@@ -111,7 +111,6 @@ class BaseHandler(RequestHandler):
     def write_json(self, obj):
         """Writes the JSON-formated string of the given obj
         to the output buffer"""
-
         self.set_header('Content-Type', 'application/json')
 
         def handler(obj):
@@ -125,16 +124,13 @@ class BaseHandler(RequestHandler):
 
 
 class JSONHandler(BaseHandler):
-
     """Every API handler should inherit from this class."""
 
     def get_json_arg(self, name=None, *args):
         """Returns the value of the argument with the given name,
         from JSON-formated body"""
-
         headers = self.request.headers
-        if not ('Content-Type' in headers
-                and 'application/json' in headers['Content-Type']):
+        if not ('Content-Type' in headers and 'application/json' in headers['Content-Type']):
             logger.warn('Content-Type is not JSON, ignored.')
             return None
         try:

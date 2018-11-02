@@ -1,111 +1,32 @@
 # -*- coding:utf-8 -*-
 import time
-import os
-import datetime
+# import os
+# from .api_base import JsonHandler
 from random import randint
 import markdown2
 import tornado.web
 import options
 from utils.avatar import get_avatar
 from db import User, Share, Comment, Like, Hit, Tag, Viewpoint
-from .base import CommonResourceHandler, BaseHandler
-from .api_base import JsonHandler
+from .base import BaseHandler
+# 网页版的接口
 
+# class SharesHandler(CommonResourceHandler):
+#     res = Share
 
-class EntryHandler(BaseHandler):
-
-    def get(self, slug):
-        if slug.isdigit():
-            share = Share.by_sid(slug)
-        else:
-            share = Share.by_slug(slug)
-        if not share:
-            return
-        share.hitnum += 1
-        share.save()
-
-        if share.markdown:
-            share.content = markdown2.markdown(share.markdown)
-        user = User.by_sid(share.user_id)
-        share.user_name = user.user_name
-        share.user_domain = user.user_domain
-        tags = ''
-        if share.tags:
-            tags += 'tags:'
-            for i in share.tags.split(' '):
-                tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
-        share.tags = tags
-
-        user_id = int(
-            self.current_user["user_id"]) if self.current_user else None
-        like = Like.find_one(
-            {'share_id': share.id, 'user_id': user_id})
-        share.is_liking = bool(like.likenum % 2) if like else None
-        share.is_disliking = bool(like.dislikenum % 2) if like else None
-
-        comments = []
-        comment_res = Comment.find({'share_id': share.id})
-        for comment in comment_res:
-            user = User.by_sid(comment.user_id)
-            comment.name = user.user_name
-            comment.domain = user.user_domain
-            comment.gravatar = get_avatar(user.user_email, 50)
-            comments.append(comment)
-
-        if user_id:
-            hit = Hit.find(
-                {'share_id': share.id},
-                {'user_id': int(self.current_user["user_id"])},
-            )
-            if hit.count() == 0:
-                hit = Hit
-                hit['share_id'] = share.id
-                hit['user_id'] = int(self.current_user["user_id"])
-                hit.save()
-        else:
-            if not self.get_cookie(share.id):
-                self.set_cookie(str(share.id), "1")
-
-        posts = Share.find()
-        suggest = []
-        for post in posts:
-            post.score = 100 + post.id - post.user_id
-            # post.score += post.likenum * 4 + post.hitnum * 0.01 + post.commentnum * 3
-            post.score += randint(1, 999) * 0.001
-            common_tags = [i for i in post.tags.split(
-                ' ') if i in share.tags.split(' ')]
-            # list(set(b1) & set(b2))
-            post.score += len(common_tags)
-            if post.sharetype == share.sharetype:
-                post.score += 1  # todo
-            if self.current_user:
-                is_hitted = Hit.find(
-                    {'share_id': share._id},
-                    {'user_id': int(self.current_user["user_id"])},
-                ).count() > 0
-            else:
-                is_hitted = self.get_cookie(share.id)
-            if is_hitted:
-                post.score -= 50
-            suggest.append(post)
-        suggest.sort(key=lambda obj: obj.get('score'))
-        suggest = suggest[:5]
-        share.viewpoints = Viewpoint.find(
-            {'share_id': share.id}
-        )
-        d_share = dict(share)
-        d_share.pop('_id')
-
-        # self.set_header('Content-Type', 'application/json')
-        # self.write(json.dumps(d_share))
-        # return
-        self.render(
-            "sharee.html", share=share, comments=comments,
-            suggest=suggest)
+#     def pre_post(self, json_arg):
+#         new_obj = self.res()
+#         new_obj.update(json_arg)
+#         if self.res.by_slug(new_obj.slug):
+#             self.send_error(409)
+#         else:
+#             new_obj.save()
+#             return new_obj
 
 
 class ShareHandler(BaseHandler):
 
+    # 编辑器
     @tornado.web.authenticated
     def get(self):
         share_id = self.get_argument("id", None)
@@ -120,12 +41,12 @@ class ShareHandler(BaseHandler):
             sharetype = share.sharetype if share else None
         if sharetype == 'goodlink':
             self.render("share_link.html", share=share)
-            return
-        if editor:
+        elif editor:
             self.render("share_wysiwyg.html", share=share)
         else:
             self.render("share.html", share=share)
 
+    # 创建或者修改分享
     @tornado.web.authenticated
     def post(self):
         # print(self.request.arguments)
@@ -136,7 +57,7 @@ class ShareHandler(BaseHandler):
         sharetype = self.get_argument("sharetype", '')
         slug = self.get_argument("slug", '')
         tags = self.get_argument("tags", '')
-        upload_img = self.get_argument("uploadImg", '')
+        # upload_img = self.get_argument("uploadImg", '')
         post_img = self.get_argument("post_Img", '')
         link = self.get_argument("link", '')
         user_id = self.current_user["user_id"]
@@ -182,91 +103,85 @@ class ShareHandler(BaseHandler):
         self.redirect("/share/" + str(share.id))
 
 
-class ViewPointHandler(BaseHandler):
+class OneShareHandler(BaseHandler):
 
-    def post(self):
-        aview = self.get_argument("aview", None)
-        share_id = self.get_argument("share_id", None)
-        if aview:
-            doc = {}
-            doc['share_id'] = int(share_id)
-            doc['aview'] = aview
-            if Viewpoint.find_one(doc):
-                print('repeat')
-                return
-            doc['user_id'] = self.current_user["user_id"]
-            # doc['aview'] = aview
-            Viewpoint.new(doc)
-            self.write(aview)
-
-
-class CommentHandler(BaseHandler):
-
-    def post(self):
-        commentbody = self.get_argument("commentbody", None)
-        share_id = self.get_argument("share_id", None)
-        html = markdown2.markdown(commentbody)
-        comment = Comment
-        doc = {}
-        doc['user_id'] = self.current_user["user_id"]
-        doc['share_id'] = int(share_id)
-        doc['commentbody'] = commentbody
-        comment.new(doc)
-        share = Share.by_sid(share_id)
-        share.commentnum += 1
-        share.save()
-        name = tornado.escape.xhtml_escape(self.current_user["user_name"])
-        gravatar = get_avatar(self.current_user["user_email"], 50)
-        newcomment = ''.join([
-            '<div class="comment">',
-            '<div class="avatar">',
-            '<img src="', gravatar,
-            '</div>',
-            '<div class="name">', name,
-            '</div>',
-            '<div class="date" title="at"></div>', html,
-            '</div>',
-        ])
-        self.write(newcomment)
-
-
-class CommentsHandler(CommonResourceHandler):
-    res = Comment
-
-
-class FeedHandler(BaseHandler):
-
-    def get(self):
-        share_res = Share.find()
-        shares = []
-        for share in share_res:
-            user = User.by_sid(share.user_id)
-            share.name = user.user_name
-            share.published = datetime.datetime.fromtimestamp(share.published)
-            share.updated = datetime.datetime.fromtimestamp(share.updated)
-            share.domain = user.user_domain
-            share.content = markdown2.markdown(share.markdown)
-            shares.append(share)
-
-        self.set_header("Content-Type", "application/atom+xml")
-        self.render("feed.xml", shares=shares)
-
-
-class SharesHandler(CommonResourceHandler):
-    res = Share
-
-    def pre_post(self, json_arg):
-        new_obj = self.res()
-        new_obj.update(json_arg)
-        if self.res.by_slug(new_obj.slug):
-            self.send_error(409)
+    # 文章正文查看
+    def get(self, slug):
+        if slug.isdigit():
+            share = Share.by_sid(slug)
         else:
-            new_obj.save()
-            return new_obj
+            share = Share.by_slug(slug)
+        if not share:
+            return
+        share.hitnum += 1
+        share.save()
+        if share.markdown:
+            share.content = markdown2.markdown(share.markdown)
+        user = User.by_sid(share.user_id)
+        share.user_name = user.user_name
+        share.user_domain = user.user_domain
+        tags = ''
+        if share.tags:
+            tags += 'tags:'
+            for i in share.tags.split(' '):
+                tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
+        share.tags = tags
 
-
-class ImageUploadHandler(JsonHandler):
-
-    def get(self):
-        self.write('1111111111')
-        return
+        user_id = int(
+            self.current_user["user_id"]) if self.current_user else None
+        like = Like.find_one(
+            {'share_id': share.id, 'user_id': user_id})
+        share.is_liking = bool(like.likenum % 2) if like else None
+        share.is_disliking = bool(like.dislikenum % 2) if like else None
+        comments = []
+        comment_res = Comment.find({'share_id': share.id})
+        for comment in comment_res:
+            user = User.by_sid(comment.user_id)
+            comment.name = user.user_name
+            comment.domain = user.user_domain
+            comment.gravatar = get_avatar(user.user_email, 50)
+            comments.append(comment)
+        if user_id:
+            hit = Hit.find(
+                {'share_id': share.id},
+                {'user_id': int(self.current_user["user_id"])},
+            )
+            if hit.count() == 0:
+                hit = Hit
+                hit['share_id'] = share.id
+                hit['user_id'] = int(self.current_user["user_id"])
+                hit.save()
+        else:
+            # 未登录用户记录cookie
+            if not self.get_cookie(share.id):
+                self.set_cookie(str(share.id), "1")
+        posts = Share.find()
+        suggest = []
+        for post in posts:
+            post.score = 100 + post.id - post.user_id
+            # post.score += post.likenum * 4 + post.hitnum * 0.01 + post.commentnum * 3
+            post.score += randint(1, 999) * 0.001
+            common_tags = [i for i in post.tags.split(
+                ' ') if i in share.tags.split(' ')]
+            # list(set(b1) & set(b2))
+            post.score += len(common_tags)
+            if post.sharetype == share.sharetype:
+                post.score += 1  # todo
+            if self.current_user:
+                is_hitted = Hit.find(
+                    {'share_id': share._id},
+                    {'user_id': int(self.current_user["user_id"])},
+                ).count() > 0
+            else:
+                is_hitted = self.get_cookie(share.id)
+            if is_hitted:
+                post.score -= 50
+            suggest.append(post)
+        suggest.sort(key=lambda obj: obj.get('score'))
+        suggest = suggest[:5]
+        share.viewpoints = Viewpoint.find(
+            {'share_id': share.id}
+        )
+        self.render(
+            "sharee.html", share=share, comments=comments,
+            suggest=suggest)
