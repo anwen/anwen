@@ -87,6 +87,7 @@ class ShareHandler(JsonHandler):
         d_share = dict(share)
         print(d_share['is_liking'])
         print(d_share['is_disliking'])
+        print('~~~~')
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
