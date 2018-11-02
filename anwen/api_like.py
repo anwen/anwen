@@ -8,11 +8,11 @@ class LikeHandler(JsonHandler):
 
     @tornado.web.authenticated
     def post(self, action):
-        assert action in 'addlike dellike adddislike deldislike'.split()
-        assert action in 'share comment viewpoint'.split()
         entity_id = int(self.get_argument("entity_id", 0))
         entity_type = self.get_argument("entity_type", None)
         user_id = self.current_user["user_id"]
+        assert action in 'addlike dellike adddislike deldislike'.split()
+        assert entity_type in 'share comment viewpoint'.split()
 
         _action = action[3:] + 'num'
         doc = {
@@ -28,7 +28,7 @@ class LikeHandler(JsonHandler):
             # 如果是管理员，需要将status + 1
             # 64=kp 65=kp email
             # 63=lb
-            # 61=xie
+            # 60=xie
             if is_changed and user_id in (1, 60, 63, 64, 65):
                 if action == 'addlike':
                     entity['status'] += 1

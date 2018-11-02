@@ -26,8 +26,28 @@ def fix_like():
             print('done')
 
     # 修正喜欢次数
+    print('like special case both 0')
     for i in adb.Like_Col.find():
-        print(i['likenum'])
+        assert i['likenum'] in (0, 1)
+        assert i['dislikenum'] in (0, 1)
+        if i['likenum'] == i['dislikenum'] == 0:
+            print(i)
+    print('like special case both 1')
+    for i in adb.Like_Col.find():
+        if i['likenum'] == i['dislikenum'] == 1:
+            print(i)
+    print('dislike')
+    for i in adb.Like_Col.find({}, {'_id': 0}):
+        if i['dislikenum']:
+            print(i)
+    print('like')
+    for i in adb.Like_Col.find({}, {'_id': 0}):
+        if i['likenum']:
+            print(i)
+    print('like share')
+    for i in adb.Like_Col.find({}, {'_id': 0}):
+        if i['likenum'] and i['entity_type'] == 'share':
+            print(i)
 
     # for i in adb.Like_Col.find():
     #     if i['entity_type'] == 'comment':
