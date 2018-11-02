@@ -45,7 +45,8 @@
 <!-- 点赞 分享-->
 <p class="some">
 <a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{share.id}}" etype="share">
-<i class="icon-thumbs-up"></i>
+<!-- <i class="icon-thumbs-up"></i> -->
+<i class="icon-heart"></i>
 <span> {{ share.likenum }}</span>
 </a>
 <a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}" eid="{{share.id}}" etype="share">
