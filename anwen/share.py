@@ -137,6 +137,8 @@ class OneShareHandler(BaseHandler):
 
         print(share.is_liking)
         print(share.is_disliking)
+        logger.info(share.is_liking)
+        logger.info(share.is_disliking)
         logger.info('~~~')
 
         comments = []
