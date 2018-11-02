@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-import options
 from options import API
 
 

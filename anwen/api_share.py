@@ -1,10 +1,8 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from db import Share, User, Like, Comment, Viewpoint, Hit, Webcache
-import markdown2
+from db import Share, User, Like, Viewpoint, Hit, Webcache
 from random import randint
 import random
-from utils.avatar import get_avatar
 import requests
 from readability import Document
 import html2text
@@ -52,9 +50,11 @@ def fix_share(share):  # time
     return share
 
 
-class ShareHandler(JsonHandler):  # 单篇文章
+class ShareHandler(JsonHandler):
 
+    # 单篇文章
     def get(self, slug):
+        # 特殊id ramdom
         if slug == 'random':
             cond = {}
             cond['status'] = {'$gte': 1}
@@ -72,7 +72,7 @@ class ShareHandler(JsonHandler):  # 单篇文章
         share.pop('_id')
         share.published = int(share.published * 1000)
         share.updated = int(share.updated * 1000)
-        # share.content = markdown2.markdown(share.markdown)
+
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
         share.user_domain = user.user_domain
@@ -84,6 +84,29 @@ class ShareHandler(JsonHandler):  # 单篇文章
         share.is_liking = bool(like.likenum % 2) if like else None
         share.is_disliking = bool(like.dislikenum % 2) if like else None
 
+        d_share = dict(share)
+
+        # 对于链接分享类，增加原文预览
+        if d_share.get('link'):
+            # Webcache should add index
+            doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
+            if doc and doc['markdown']:
+                d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
+                d_share['markdown'] += '\n\n[阅读原文]()'.format(doc['url'])
+        # thumbnails
+        d_share['post_img'] = 'https://anwensf.com/static/upload/img/' + d_share['post_img'].replace('_1200.jpg', '_260.jpg')
+        # 原文链接
+        if d_share.get('link'):
+            # share.url = '<a href="{}">{} {}</a>'.format(
+            #     share.link, share.title, share.link)
+            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
+                share.link, share.title)
+
+        viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
+        d_share['viewpoints'] = list(viewpoints)
+        self.res = d_share
+        self.write_json()
+        # 访问统计
         if user_id:
             hit = Hit.find(
                 {'share_id': share.id},
@@ -94,33 +117,6 @@ class ShareHandler(JsonHandler):  # 单篇文章
                 hit['share_id'] = share.id
                 hit['user_id'] = int(self.current_user["user_id"])
                 hit.save()
-        else:
-            if not self.get_cookie(share.id):
-                self.set_cookie(str(share.id), "1")
-        viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
-        # if share.link:
-        #     # share.url = '<a href="{}">{} {}</a>'.format(
-        #     #     share.link, share.title, share.link)
-        #     share.url = '<a href="{}">{}</a>'.format(
-        #         share.link, share.title)
-        d_share = dict(share)
-        if d_share.get('link'):
-            doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
-            if doc and doc['markdown']:
-                d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
-                d_share['markdown'] += '\n\n[阅读原文]()'.format(doc['url'])
-        # thumbnails
-        d_share['post_img'] = 'https://anwensf.com/static/upload/img/' + d_share['post_img'].replace('_1200.jpg', '_260.jpg')
-        print(d_share.get('link'))
-        if d_share.get('link'):
-            # share.url = '<a href="{}">{} {}</a>'.format(
-            #     share.link, share.title, share.link)
-            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
-                share.link, share.title)
-        d_share['viewpoints'] = list(viewpoints)
-        # comment suggest
-        self.res = d_share
-        self.write_json()
 
 
 class PreviewHandler(JsonHandler):
@@ -156,7 +152,7 @@ class PreviewHandler(JsonHandler):
             print(e)
 
 
-def get_suggest():
+def get_suggest(share, current_user):
     posts = Share.find()
     suggest = []
     for post in posts:
@@ -169,13 +165,13 @@ def get_suggest():
         post.score += len(common_tags)
         if post.sharetype == share.sharetype:
             post.score += 1  # todo
-        if self.current_user:
+        if current_user:
             is_hitted = Hit.find(
                 {'share_id': share._id},
-                {'user_id': int(self.current_user["user_id"])},
+                {'user_id': int(current_user["user_id"])},
             ).count() > 0
-        else:
-            is_hitted = self.get_cookie(share.id)
+        # else:
+            # is_hitted = self.get_cookie(share.id)
         if is_hitted:
             post.score -= 50
         suggest.append(post)

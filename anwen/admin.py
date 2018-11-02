@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import tornado.web
 from .base import BaseHandler
 from db import admin, Share

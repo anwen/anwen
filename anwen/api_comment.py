@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
 from db import Share, Comment, User
-import markdown2
 import tornado.escape
 from utils.avatar import get_avatar_by_wechat
 
