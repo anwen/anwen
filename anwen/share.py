@@ -9,6 +9,7 @@ import options
 from utils.avatar import get_avatar
 from db import User, Share, Comment, Like, Hit, Tag, Viewpoint
 from .base import BaseHandler
+from log import logger
 # 网页版的接口
 
 # class SharesHandler(CommonResourceHandler):
@@ -131,8 +132,13 @@ class OneShareHandler(BaseHandler):
             self.current_user["user_id"]) if self.current_user else None
         like = Like.find_one(
             {'share_id': share.id, 'user_id': user_id})
-        share.is_liking = bool(like.likenum % 2) if like else None
-        share.is_disliking = bool(like.dislikenum % 2) if like else None
+        share.is_liking = bool(like.likenum) if like else None
+        share.is_disliking = bool(like.dislikenum) if like else None
+
+        print(share.is_liking)
+        print(share.is_disliking)
+        logger.info('~~~')
+
         comments = []
         comment_res = Comment.find({'share_id': share.id})
         for comment in comment_res:
