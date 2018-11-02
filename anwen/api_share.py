@@ -55,6 +55,7 @@ class ShareHandler(JsonHandler):
 
     # 单篇文章
     def get(self, slug):
+        return
         # 特殊id ramdom
         if slug == 'random':
             cond = {}
