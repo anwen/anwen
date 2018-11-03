@@ -58,8 +58,7 @@ class OneShareHandler(BaseHandler):
                 md += '\n\n[阅读原文]()'.format(doc['url'])
                 share.content = markdown2.markdown(md)
 
-        user_id = int(
-            self.current_user["user_id"]) if self.current_user else None
+        user_id = self.current_user["user_id"] if self.current_user else None
         like = Like.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
         share.is_liking = bool(like.likenum) if like else False

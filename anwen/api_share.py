@@ -58,9 +58,7 @@ class ShareHandler(JsonHandler):
         share.published = int(share.published * 1000)
         share.updated = int(share.updated * 1000)
         # 暂时不显示作者
-        print(type(self.current_user["user_id"]), 'user_id')
-        user_id = int(
-            self.current_user["user_id"]) if self.current_user else None
+        user_id = self.current_user["user_id"] if self.current_user else None
         like = Like.find_one(
             {'share_id': share.id, 'user_id': user_id})
         d_share = dict(share)
