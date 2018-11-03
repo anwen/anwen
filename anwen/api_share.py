@@ -174,7 +174,7 @@ def todo_get_suggest(share, current_user):
             post.score += 1  # todo
         if current_user:
             is_hitted = Hit.find(
-                {'share_id': share._id},
+                {'share_id': share.id},
                 {'user_id': int(current_user["user_id"])},
             ).count() > 0
         # else:
