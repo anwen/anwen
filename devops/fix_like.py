@@ -25,7 +25,7 @@ def fix_like():
             adb.Comment_Col.update({'_id': i['_id']}, {'$set': {'dislikenum': 0}})
             print('done')
 
-    # 修正喜欢次数
+    # 验证喜欢次数
     print('like special case both 0')
     for i in adb.Like_Col.find():
         assert i['likenum'] in (0, 1)
@@ -48,6 +48,27 @@ def fix_like():
     for i in adb.Like_Col.find({}, {'_id': 0}):
         if i['likenum'] and i['entity_type'] == 'share':
             print(i)
+
+    print('Share_Col')
+    for i in adb.Share_Col.find():
+        # print(i['status'])
+        if i['status'] == -999:
+            continue
+        if i['status'] == 0:
+            continue
+        print(i['status'], i['title'], i['id'])
+        # if i['status'] == -1:
+        # if i['status'] < 1:
+        # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': 0}})
+        n = 0
+        for j in adb.Like_Col.find({'entity_type': 'share', 'entity_id': i['id']}):
+            if j['user_id'] in (1, 60, 63, 64, 65):
+                n += 1
+        print(n)
+        if n != i['status']:
+            adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': n}})
+
+        # print(i)
 
     # for i in adb.Like_Col.find():
     #     if i['entity_type'] == 'comment':
