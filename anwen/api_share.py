@@ -86,9 +86,6 @@ class ShareHandler(JsonHandler):
         d_share = dict(share)
         d_share['is_liking'] = bool(like.likenum) if like else False
         d_share['is_disliking'] = bool(like.dislikenum) if like else False
-        print(d_share['is_liking'])
-        print(d_share['is_disliking'])
-        logger.info('~~~')
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
@@ -110,6 +107,7 @@ class ShareHandler(JsonHandler):
         self.res = d_share
         self.write_json()
         # 访问统计
+        logger.info('stat hit')
         if user_id:
             hit = Hit.find(
                 {'share_id': share.id},
