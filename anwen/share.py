@@ -7,11 +7,31 @@ import markdown2
 import tornado.web
 import options
 from utils.avatar import get_avatar
-from db import User, Share, Comment, Like, Hit, Tag, Viewpoint
+from db import User, Share, Comment, Like, Hit, Tag, Viewpoint, Webcache
 from .base import BaseHandler
-from log import logger
-from anwen.api_share import get_share_by_slug
+from anwen.api_share import get_share_by_slug, add_hit_stat
 # 网页版的接口
+
+
+def format_tags(share):
+    tags = ''
+    if share.tags:
+        tags += 'tags:'
+        for i in share.tags.split(' '):
+            tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
+    return tags
+
+
+def get_comments(share):
+    comments = []
+    comment_res = Comment.find({'share_id': share.id})
+    for comment in comment_res:
+        user = User.by_sid(comment.user_id)
+        comment.name = user.user_name
+        comment.domain = user.user_domain
+        comment.gravatar = get_avatar(user.user_email, 50)
+        comments.append(comment)
+    return comments
 
 
 class OneShareHandler(BaseHandler):
@@ -22,17 +42,21 @@ class OneShareHandler(BaseHandler):
         if not share:
             return self.write_error(404)
 
+        # for web
+        user = User.by_sid(share.user_id)
+        share.author_name = user.user_name
+        share.author_domain = user.user_domain
+        share.tags = format_tags(share)
         if share.markdown:
             share.content = markdown2.markdown(share.markdown)
-        user = User.by_sid(share.user_id)
-        share.user_name = user.user_name
-        share.user_domain = user.user_domain
-        tags = ''
-        if share.tags:
-            tags += 'tags:'
-            for i in share.tags.split(' '):
-                tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
-        share.tags = tags
+        # 对于链接分享类，增加原文预览
+        if share.link:
+            # Webcache should add index
+            doc = Webcache.find_one({'url': share.link}, {'_id': 0})
+            if doc and doc['markdown']:
+                md = '\n\n--预览--\n\n' + doc['markdown']
+                md += '\n\n[阅读原文]()'.format(doc['url'])
+                share.content = markdown2.markdown(md)
 
         user_id = int(
             self.current_user["user_id"]) if self.current_user else None
@@ -41,17 +65,21 @@ class OneShareHandler(BaseHandler):
         share.is_liking = bool(like.likenum) if like else False
         share.is_disliking = bool(like.dislikenum) if like else False
 
-        comments = []
-        comment_res = Comment.find({'share_id': share.id})
-        for comment in comment_res:
-            user = User.by_sid(comment.user_id)
-            comment.name = user.user_name
-            comment.domain = user.user_domain
-            comment.gravatar = get_avatar(user.user_email, 50)
-            comments.append(comment)
-
-        posts = Share.find()
         suggest = []
+        comments = get_comments(share)
+
+        share.viewpoints = Viewpoint.find({'share_id': share.id})
+        # 未登录用户记录访问cookie
+        if not user_id and not self.get_cookie(share.id):
+            self.set_cookie(str(share.id), "1")
+        self.render(
+            "sharee.html", share=share, comments=comments,
+            suggest=suggest)
+        add_hit_stat(user_id, share)
+        return
+        # 文章推荐
+        suggest = []
+        posts = Share.find()
         for post in posts:
             post.score = 100 + post.id - post.user_id
             # post.score += post.likenum * 4 + post.hitnum * 0.01 + post.commentnum * 3
@@ -74,26 +102,6 @@ class OneShareHandler(BaseHandler):
             suggest.append(post)
         suggest.sort(key=lambda obj: obj.get('score'))
         suggest = suggest[:5]
-        share.viewpoints = Viewpoint.find(
-            {'share_id': share.id}
-        )
-        # 未登录用户记录cookie
-        if not user_id and not self.get_cookie(share.id):
-            self.set_cookie(str(share.id), "1")
-        self.render(
-            "sharee.html", share=share, comments=comments,
-            suggest=suggest)
-        logger.info('stat hit')
-        if user_id:
-            hit = Hit.find(
-                {'share_id': share.id},
-                {'user_id': int(self.current_user["user_id"])},
-            )
-            if hit.count() == 0:
-                hit = Hit
-                hit['share_id'] = share.id
-                hit['user_id'] = int(self.current_user["user_id"])
-                hit.save()
 
 
 class ShareHandler(BaseHandler):

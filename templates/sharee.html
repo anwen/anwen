@@ -24,7 +24,7 @@
 <h1 class="post_title" itemprop="name">{{ escape(share.title) }}</h1>
 <div class="post_meta clearfix">
 <div class="post_meta_info">
-<a class="post_author" title="{{share.user_name}}" href="/user/{{share.user_domain}}">{{share.user_name}}</a>
+<a class="post_author" title="{{share.author_name}}" href="/user/{{share.author_domain}}">{{share.author_name}}</a>
 <time class="post_date">
 {{ locale.format_date(share.published, full_format=True, shorter=False) }}
 </time>
