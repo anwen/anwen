@@ -14,7 +14,6 @@ class LikeHandler(JsonHandler):
         user_id = self.current_user["user_id"]
         assert action in 'addlike dellike adddislike deldislike'.split()
         assert entity_type in 'share comment viewpoint'.split()
-
         _action = action[3:] + 'num'
         doc = {
             'user_id': user_id,
