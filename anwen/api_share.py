@@ -11,44 +11,22 @@ from log import logger
 wx_admin_ids = (60, 63, 64)
 
 
-class SharesHandler(JsonHandler):
-
-    # 文章列表
-    # 不同权限的用户看到的列表不同
-    def get(self):
-        user = None
-        token = self.request.headers.get('Authorization', '')
-        if token:
-            key, token = token.split()
-            if key == 'token' and token:
-                user_json = self.get_secure_cookie('user', token)
-                if user_json:
-                    user = json_decode(user_json)
-
-        vote_open = self.get_argument("vote_open", None)
-        has_vote = self.get_argument("has_vote", None)
+def get_share_by_slug(slug):
+    # 特殊id ramdom
+    if slug == 'random':
         cond = {}
-        if user and user['user_id'] in wx_admin_ids:
-            cond['status'] = {'$gte': 0}
-        else:
-            cond['status'] = {'$gte': 1}
-        if vote_open:
-            if not vote_open.isdigit():
-                return self.write_error(422)
-            cond['vote_open'] = int(vote_open)
-        if has_vote:
-            cond['vote_title'] = {'$ne': ''}
-        shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
-        shares = [fix_share(share) for share in shares]
-        self.res = list(shares)
-        return self.write_json()
-
-
-def fix_share(share):  # time
-    if share['post_img']:
-        share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
-    share['published'] = int(share['published'] * 1000)
-    share['updated'] = int(share['updated'] * 1000)
+        cond['status'] = {'$gte': 1}
+        # shares = Share.find(cond, {'_id': 0})
+        shares = Share.find(cond)
+        share = random.choice(list(shares))
+    elif slug.isdigit():
+        share = Share.by_sid(slug)
+    else:
+        share = Share.by_slug(slug)
+    if share:
+        share.hitnum += 1
+        share.save()
+        share.pop('_id')
     return share
 
 
@@ -56,29 +34,15 @@ class ShareHandler(JsonHandler):
 
     # 单篇文章
     def get(self, slug):
-        # 特殊id ramdom
-        if slug == 'random':
-            cond = {}
-            cond['status'] = {'$gte': 1}
-            # shares = Share.find(cond, {'_id': 0})
-            shares = Share.find(cond)
-            share = random.choice(list(shares))
-        elif slug.isdigit():
-            share = Share.by_sid(slug)
-        else:
-            share = Share.by_slug(slug)
+        share = get_share_by_slug(slug)
         if not share:
             return self.write_error(404)
-        share.hitnum += 1
-        share.save()
-        share.pop('_id')
+
         share.published = int(share.published * 1000)
         share.updated = int(share.updated * 1000)
-
         user = User.by_sid(share.user_id)
         share.user_name = user.user_name
         share.user_domain = user.user_domain
-
         user_id = int(
             self.current_user["user_id"]) if self.current_user else None
         like = Like.find_one(
@@ -121,6 +85,47 @@ class ShareHandler(JsonHandler):
                 hit.save()
 
 
+class SharesHandler(JsonHandler):
+
+    # 文章列表
+    # 不同权限的用户看到的列表不同
+    def get(self):
+        user = None
+        token = self.request.headers.get('Authorization', '')
+        if token:
+            key, token = token.split()
+            if key == 'token' and token:
+                user_json = self.get_secure_cookie('user', token)
+                if user_json:
+                    user = json_decode(user_json)
+
+        vote_open = self.get_argument("vote_open", None)
+        has_vote = self.get_argument("has_vote", None)
+        cond = {}
+        if user and user['user_id'] in wx_admin_ids:
+            cond['status'] = {'$gte': 0}
+        else:
+            cond['status'] = {'$gte': 1}
+        if vote_open:
+            if not vote_open.isdigit():
+                return self.write_error(422)
+            cond['vote_open'] = int(vote_open)
+        if has_vote:
+            cond['vote_title'] = {'$ne': ''}
+        shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
+        shares = [fix_share(share) for share in shares]
+        self.res = list(shares)
+        return self.write_json()
+
+
+def fix_share(share):  # time
+    if share['post_img']:
+        share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
+    share['published'] = int(share['published'] * 1000)
+    share['updated'] = int(share['updated'] * 1000)
+    return share
+
+
 class PreviewHandler(JsonHandler):
 
     def get(self):
@@ -154,7 +159,7 @@ class PreviewHandler(JsonHandler):
             print(e)
 
 
-def get_suggest(share, current_user):
+def todo_get_suggest(share, current_user):
     posts = Share.find()
     suggest = []
     for post in posts:
@@ -181,7 +186,7 @@ def get_suggest(share, current_user):
     suggest = suggest[:5]
 
 
-def get_tags(share):
+def todo_get_tags(share):
     tags = ''
     if share.tags:
         tags += 'tags:'
