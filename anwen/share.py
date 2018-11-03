@@ -64,7 +64,7 @@ class OneShareHandler(BaseHandler):
                 post.score += 1  # todo
             if self.current_user:
                 is_hitted = Hit.find(
-                    {'share_id': share._id},
+                    {'share_id': share.id},
                     {'user_id': int(self.current_user["user_id"])},
                 ).count() > 0
             else:
