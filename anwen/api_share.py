@@ -83,9 +83,9 @@ class ShareHandler(JsonHandler):
         like = Like.find_one(
             {'share_id': share.id, 'user_id': user_id})
 
-        share.is_liking = bool(like.likenum) if like else False
-        share.is_disliking = bool(like.dislikenum) if like else False
         d_share = dict(share)
+        d_share['is_liking'] = bool(like.likenum) if like else False
+        d_share['is_disliking'] = bool(like.dislikenum) if like else False
         print(d_share['is_liking'])
         print(d_share['is_disliking'])
         logger.info('~~~')
