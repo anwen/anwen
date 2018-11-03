@@ -2,6 +2,7 @@
 import tornado.web
 from anwen.api_base import JsonHandler
 from db import Like, Share, Comment, Viewpoint
+admin_ids = (1, 60, 63, 64, 65, 69)
 
 
 class LikeHandler(JsonHandler):
@@ -29,7 +30,7 @@ class LikeHandler(JsonHandler):
             # 64=kp 65=kp email
             # 63=lb
             # 60=xie
-            if is_changed and user_id in (1, 60, 63, 64, 65):
+            if is_changed and user_id in admin_ids:
                 if action == 'addlike':
                     entity['status'] += 1
                 else:

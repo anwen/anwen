@@ -8,6 +8,7 @@ from readability import Document
 import html2text
 from tornado.escape import json_decode
 from log import logger
+wx_admin_ids = (60, 63, 64)
 
 
 class SharesHandler(JsonHandler):
@@ -27,7 +28,7 @@ class SharesHandler(JsonHandler):
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         cond = {}
-        if user and user['user_id'] in (60, 63, 64):
+        if user and user['user_id'] in wx_admin_ids:
             cond['status'] = {'$gte': 0}
         else:
             cond['status'] = {'$gte': 1}
