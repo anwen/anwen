@@ -1,9 +1,46 @@
 # -*- coding:utf-8 -*-
-
 import json
-from db import Feedback, Share
+from db import Feedback, Share, Viewpoint, User
 from pymongo import DESCENDING
 from anwen.base import BaseHandler, CommonResourceHandler
+import datetime
+import markdown2
+
+
+class ViewPointHandler(BaseHandler):
+
+    def post(self):
+        aview = self.get_argument("aview", None)
+        share_id = self.get_argument("share_id", None)
+        if aview:
+            doc = {}
+            doc['share_id'] = int(share_id)
+            doc['aview'] = aview
+            if Viewpoint.find_one(doc):
+                print('repeat')
+                return
+            doc['user_id'] = self.current_user["user_id"]
+            # doc['aview'] = aview
+            Viewpoint.new(doc)
+            self.write(aview)
+
+
+class FeedHandler(BaseHandler):
+
+    def get(self):
+        share_res = Share.find()
+        shares = []
+        for share in share_res:
+            user = User.by_sid(share.user_id)
+            share.name = user.user_name
+            share.published = datetime.datetime.fromtimestamp(share.published)
+            share.updated = datetime.datetime.fromtimestamp(share.updated)
+            share.domain = user.user_domain
+            share.content = markdown2.markdown(share.markdown)
+            shares.append(share)
+
+        self.set_header("Content-Type", "application/atom+xml")
+        self.render("feed.xml", shares=shares)
 
 
 class EditHandler(BaseHandler):
