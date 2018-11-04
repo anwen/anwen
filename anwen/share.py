@@ -56,7 +56,7 @@ class OneShareHandler(BaseHandler):
         if share.link:
             # Webcache should add index
             doc = Webcache.find_one({'url': share.link}, {'_id': 0})
-            if doc and doc['markdown']:
+            if doc and doc['markdown'] and '禁止转载' not in doc['markdown']:
                 md = share['markdown']
                 md += '\n\n--预览--\n\n' + doc['markdown']
                 md += '\n\n[阅读原文]({})'.format(doc['url'])
