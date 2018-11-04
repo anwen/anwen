@@ -54,8 +54,9 @@ class OneShareHandler(BaseHandler):
             # Webcache should add index
             doc = Webcache.find_one({'url': share.link}, {'_id': 0})
             if doc and doc['markdown']:
-                md = '\n\n--预览--\n\n' + doc['markdown']
-                md += '\n\n[阅读原文]()'.format(doc['url'])
+                md = share['markdown']
+                md += '\n\n--预览--\n\n' + doc['markdown']
+                md += '\n\n[阅读原文]({})'.format(doc['url'])
                 share.content = markdown2.markdown(md)
 
         user_id = self.current_user["user_id"] if self.current_user else None
