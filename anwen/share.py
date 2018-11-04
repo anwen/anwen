@@ -159,12 +159,12 @@ class ShareHandler(BaseHandler):
                 doc = Document(response.text)
                 title = doc.title()
                 summary = doc.summary()
-                markdown = html2text.html2text(summary)
-                markdown = markdown.replace('-\n', '-')
+                _markdown = html2text.html2text(summary)
+                _markdown = _markdown.replace('-\n', '-')
                 res = {}
                 res['url'] = url
                 res['title'] = title
-                res['markdown'] = markdown
+                res['markdown'] = _markdown
                 webcache = Webcache
                 webcache.new(res)
             except Exception as e:
