@@ -71,7 +71,7 @@ class ShareHandler(JsonHandler):
             doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
             if doc and doc['markdown']:
                 d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
-                d_share['markdown'] += '\n\n[阅读原文]()'.format(doc['url'])
+                d_share['markdown'] += '\n\n[阅读原文]({})'.format(doc['url'])
             # 添加原文链接
             d_share['url'] = '预览： <a href="{}">{}</a>'.format(
                 share.link, share.title)
