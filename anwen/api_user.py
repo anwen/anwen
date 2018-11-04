@@ -9,6 +9,7 @@ from db import User
 from db import admin
 from utils.avatar import get_avatar, get_avatar_by_wechat
 from options import appinfo
+wx_admin_ids = (60, 63, 64)
 
 
 class AuthorizationsHandler(JsonHandler):
@@ -82,7 +83,7 @@ class WxLoginHandler(JsonHandler):
                 'user', tornado.escape.json_encode(user_info))
             self.res['token'] = token.decode('u8')
             self.res['is_admin'] = admin.is_admin(doc['id'])
-            if doc['id'] in (60, 63, 64):
+            if doc['id'] in wx_admin_ids:
                 self.res['is_admin'] = True
 
             return self.write_json()
@@ -131,7 +132,7 @@ class MeHandler(JsonHandler):
         user.pop('_id')
         user.pop('user_pass')
         user['is_admin'] = admin.is_admin(user['id'])
-        if user['id'] in (60, 63, 64):
+        if user['id'] in wx_admin_ids:
             user['is_admin'] = True
         self.res = user
         return self.write_json()
@@ -177,7 +178,7 @@ class MeHandler(JsonHandler):
 
         auser = {}
         auser['is_admin'] = user['is_admin']
-        if user['id'] in (60, 63, 64):
+        if user['id'] in wx_admin_ids:
             auser['is_admin'] = True
         self.res = auser
         return self.write_json()

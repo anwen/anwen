@@ -7,7 +7,18 @@ from anwen import api_like
 from anwen import api_comment
 from anwen import api_upload
 
+
 # pages
+from anwen.share import ShareHandler, OneShareHandler
+from anwen.comment import CommentHandler
+from anwen.other import FeedHandler
+from anwen.other import ViewPointHandler
+
+from anwen.other import EditHandler, ErrHandler, FeedbackHandler, ScoreHandler
+from anwen.other import AppHandler
+from anwen.other import TogetherHandler
+
+
 from anwen.index import WelcomeHandler
 from anwen.index import IndexHandler, ExploreHandler
 from anwen.index import NodeHandler, TagHandler
@@ -17,27 +28,17 @@ from anwen.user import GoogleLoginHandler, DoubanLoginHandler
 from anwen.user import ForgotPassHandler, SetPassHandler
 from anwen.user import SettingHandler, ChangePassHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
-from anwen.user import UsersHandler
 
-from anwen.share import ShareHandler, EntryHandler, CommentHandler
-from anwen.share import FeedHandler
-from anwen.share import ImageUploadHandler
-from anwen.share import SharesHandler, CommentsHandler
-
-from anwen.share import ViewPointHandler
 
 from anwen.admin import AdminHandler, BecomeAdminHandler
 from anwen.admin import AdminShareHandler
 
-from anwen.other import EditHandler, ErrHandler, FeedbackHandler, ScoreHandler
 
 from ande.ande import AndeHandler
 
 from atalk.talk import TalkHandler, ChatSocketHandler
 from atalk.talk import MsgNewHandler, MsgUpdatesHandler
 
-from anwen.other import AppHandler
-from anwen.other import TogetherHandler
 
 handlers = [
     (r"/api", api.ApiHandler),
@@ -57,19 +58,16 @@ handlers = [
     (r"/api/comment", api_comment.CommentHandler),
     (r"/api/image_upload", api_upload.ImageUploadHandler),
 
-    # (r"/share/image_upload", ImageUploadHandler),
-
 
     (r"/share/?", ShareHandler),
-    (r"/share/([^/]+)", EntryHandler),
+    (r"/share/([^/]+)", OneShareHandler),
+
+
+
     (r"/sharecomment", CommentHandler),
     (r"/feed", FeedHandler),
 
-    (r"/shares/?", SharesHandler),
-    (r"/shares/([0-9a-f]{24})", SharesHandler),
 
-    (r"/comments/?", CommentsHandler),
-    (r"/comments/([0-9a-f]{24})", CommentsHandler),
 
     (r"/viewpoint", ViewPointHandler),
 
@@ -92,8 +90,6 @@ handlers = [
     (r'/changepass', ChangePassHandler),
     (r"/user/([^/]+)", UserhomeHandler),
     (r"/userlike/([^/]+)", UserlikeHandler),
-    (r"/users/?", UsersHandler),
-    (r'/users/([0-9a-f]{24})', UsersHandler),
 
 
 
@@ -119,7 +115,7 @@ handlers = [
     (r"/app", AppHandler),
     (r"/together", TogetherHandler),
 
-    (r'/(.*)', EntryHandler),
+    (r'/(.*)', OneShareHandler),
     # Custom 404 ErrHandler, always put this at last
 
 ]
