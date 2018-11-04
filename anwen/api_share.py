@@ -101,6 +101,8 @@ class SharesHandler(JsonHandler):
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         cond = {}
+
+        logger.info('token: {}'.format(token))
         if user:
             logger.info('user_id: {}'.format(user['user_id']))
         if user and user['user_id'] in wx_admin_ids:
