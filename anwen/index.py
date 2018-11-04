@@ -37,8 +37,8 @@ class ExploreHandler(BaseHandler):
         pagesum = (share_res.count() + 10) / 11
         shares = []
         for share in share_res:
-            # if share.id in (48, 47):
-            #     continue
+            if share.id in (48, 47):
+                continue
             user = User.by_sid(share.user_id)
             share.name = user.user_name
             share.published = time.strftime(
