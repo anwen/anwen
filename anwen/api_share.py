@@ -69,7 +69,7 @@ class ShareHandler(JsonHandler):
         if d_share.get('link'):
             # Webcache should add index
             doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
-            if doc and doc['markdown']:
+            if doc and doc['markdown'] and '禁止转载' not in doc['markdown']:
                 d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
                 d_share['markdown'] += '\n\n[阅读原文]({})'.format(doc['url'])
             # 添加原文链接
