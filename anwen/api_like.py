@@ -32,6 +32,10 @@ class LikeHandler(JsonHandler):
             if is_changed and user_id in admin_ids:
                 if action == 'addlike':
                     entity['status'] += 1
+                elif action == 'adddislike':
+                    entity['status'] -= 1
+                elif action == 'deldislike':
+                    entity['status'] += 1
                 else:
                     entity['status'] -= 1
         elif entity_type == 'comment':
