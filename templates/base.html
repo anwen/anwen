@@ -10,7 +10,7 @@
   <meta name="description" content="自由开源的理想主义社区与创造分享平台,致力于创造和分享最打动大家的或有趣的东西">
   <!-- <meta name="description" content="{{_(site_info['description'])}}"> -->
   <link type="text/plain" rel="author" href="/humans.txt" />
-  <link rel="alternate" href="/feed" type="application/atom+xml" title="安问feed"/>
+  <link rel="alternate" href="/feed" type="application/atom+xml" title="{{_(site_info['title'])}} feed"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--
@@ -77,8 +77,8 @@
         </span>
 
         <a href="/about">{{_('About')}}</a>
-        <a href="/help">帮助</a>
-        <a href="/changelog">更新日志</a>
+        <a href="/help">{{_('Help')}}</a>
+        <a href="/changelog">{{_('Changelog')}}</a>
         <!-- <a href="/app"> <i class="icon-android icon-2x"></i></a> -->
         <a href="https://twitter.com/askenderlee"> <i class="icon-twitter icon-2x"></i>
         </a>
@@ -92,7 +92,7 @@
           <i class="icon-trello icon-2x"></i>
         </a>
       </div>
-      <div class="center">随机一句 欢迎贡献: {{random_sayings}}</div>
+      <div class="center">{{_('Today Quote')}}: {{random_sayings}}</div>
 
     </div>
   </footer>
