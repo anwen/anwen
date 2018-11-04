@@ -102,9 +102,9 @@ class SharesHandler(JsonHandler):
         has_vote = self.get_argument("has_vote", None)
         cond = {}
         if user and user['user_id'] in wx_admin_ids:
-            cond['status'] = {'$gte': 0}
+            cond['status'] = {'$gte': -1}
         else:
-            cond['status'] = {'$gte': 1}
+            cond['status'] = {'$gte': 2}
         if vote_open:
             if not vote_open.isdigit():
                 return self.write_error(422)
