@@ -10,6 +10,9 @@ from utils.avatar import get_avatar
 from db import User, Share, Comment, Like, Hit, Tag, Viewpoint, Webcache
 from .base import BaseHandler
 from anwen.api_share import get_share_by_slug, add_hit_stat
+import requests
+import html2text
+from readability import Document
 # 网页版的接口
 
 
@@ -143,6 +146,30 @@ class ShareHandler(BaseHandler):
         user_id = self.current_user["user_id"]
         vote_open = self.get_argument("vote_open", '')
         vote_title = self.get_argument("vote_title", '')
+
+        url = link
+        doc = Webcache.find_one({'url': url}, {'_id': 0})
+        if not doc:
+            try:
+                sessions = requests.session()
+                sessions.headers[
+                    'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
+                response = sessions.get(url)
+                # response.encoding = 'utf-8'
+                doc = Document(response.text)
+                title = doc.title()
+                summary = doc.summary()
+                markdown = html2text.html2text(summary)
+                markdown = markdown.replace('-\n', '-')
+                res = {}
+                res['url'] = url
+                res['title'] = title
+                res['markdown'] = markdown
+                webcache = Webcache
+                webcache.new(res)
+            except Exception as e:
+                print(e)
+
         if vote_open.isdigit():
             vote_open = int(vote_open)
         else:
