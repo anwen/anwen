@@ -172,44 +172,46 @@ class ShareHandler(BaseHandler):
                 webcache.new(res_webcache)
             except Exception as e:
                 print(e)
+                self.redirect("/")
+                return
 
-        if vote_open.isdigit():
-            vote_open = int(vote_open)
-        else:
-            vote_open = 0
-        if not title:
-            title = doc_title
-        res = {
-            'title': title,
-            'markdown': markdown,
-            'content': content,
-            'sharetype': sharetype,
-            'slug': slug,
-            'tags': tags,
-            # 'upload_img': upload_img,
-            'post_img': post_img,
-            'link': link,
-            'vote_open': vote_open,
-            'vote_title': vote_title,
-            'updated': time.time(),
-        }
-        if share_id:
-            share = Share.by_sid(share_id)
-            if not share:
-                self.redirect("/404")
-            share.update(res)
-            share.save()
-        else:
-            share = Share
-            res['user_id'] = user_id
-            share = share.new(res)
-            user = User.by_sid(user_id)
-            user.user_leaf += 10
-            user.save()
-        for i in tags.strip().split(' '):
-            doc = {
-                'name': i,
-                'share_ids': share.id
+            if vote_open.isdigit():
+                vote_open = int(vote_open)
+            else:
+                vote_open = 0
+            if not title:
+                title = doc_title
+            res = {
+                'title': title,
+                'markdown': markdown,
+                'content': content,
+                'sharetype': sharetype,
+                'slug': slug,
+                'tags': tags,
+                # 'upload_img': upload_img,
+                'post_img': post_img,
+                'link': link,
+                'vote_open': vote_open,
+                'vote_title': vote_title,
+                'updated': time.time(),
             }
-            Tag.new(doc)
-        self.redirect("/share/" + str(share.id))
+            if share_id:
+                share = Share.by_sid(share_id)
+                if not share:
+                    self.redirect("/404")
+                share.update(res)
+                share.save()
+            else:
+                share = Share
+                res['user_id'] = user_id
+                share = share.new(res)
+                user = User.by_sid(user_id)
+                user.user_leaf += 10
+                user.save()
+            for i in tags.strip().split(' '):
+                doc = {
+                    'name': i,
+                    'share_ids': share.id
+                }
+                Tag.new(doc)
+            self.redirect("/share/" + str(share.id))
