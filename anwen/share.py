@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+u"""文章分享，非API."""
 import time
 # import os
 # from .api_base import JsonHandler
@@ -38,8 +39,8 @@ def get_comments(share):
 
 
 class OneShareHandler(BaseHandler):
+    u"""文章正文查看."""
 
-    # 文章正文查看
     def get(self, slug):
         share = get_share_by_slug(slug)
         if not share:
@@ -110,8 +111,8 @@ class OneShareHandler(BaseHandler):
 
 
 class ShareHandler(BaseHandler):
+    u"""编辑器."""
 
-    # 编辑器
     @tornado.web.authenticated
     def get(self):
         share_id = self.get_argument("id", None)
@@ -159,16 +160,16 @@ class ShareHandler(BaseHandler):
                 response = sessions.get(url)
                 # response.encoding = 'utf-8'
                 doc = Document(response.text)
-                title = doc.title()
+                doc_title = doc.title()
                 summary = doc.summary()
                 _markdown = html2text.html2text(summary)
                 _markdown = _markdown.replace('-\n', '-')
-                res = {}
-                res['url'] = url
-                res['title'] = title
-                res['markdown'] = _markdown
+                res_webcache = {}
+                res_webcache['url'] = url
+                res_webcache['title'] = doc_title
+                res_webcache['markdown'] = _markdown
                 webcache = Webcache
-                webcache.new(res)
+                webcache.new(res_webcache)
             except Exception as e:
                 print(e)
 
@@ -176,6 +177,8 @@ class ShareHandler(BaseHandler):
             vote_open = int(vote_open)
         else:
             vote_open = 0
+        if not title:
+            title = doc_title
         res = {
             'title': title,
             'markdown': markdown,
