@@ -13,8 +13,8 @@
       <input name="link" type="url" class="form-control" value="{{escape(share.link) if share else ""}}" required/>
     </div>
     <div>
-      标题:
-      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ""}}" required/>
+      标题(选填):
+      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ""}}" />
     </div>
     <div>
       简单评论(选填):
@@ -23,7 +23,7 @@
     </div>
     <div>
       标签(选填，多个可用空格分隔):
-      <input name="tags" type="text" class="form-control" value="{{escape(share.tags) if share else ""}}"/>
+      <input name="tags" type="text" class="form-control" value="{{escape(share.tags) if share else ""}}" required/>
     </div>
 
 
