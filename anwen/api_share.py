@@ -64,7 +64,6 @@ class ShareHandler(JsonHandler):
         d_share = dict(share)
         d_share['is_liking'] = bool(like.likenum) if like else False
         d_share['is_disliking'] = bool(like.dislikenum) if like else False
-
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
@@ -123,7 +122,8 @@ class SharesHandler(JsonHandler):
 
 def fix_share(share):  # time
     if share['post_img']:
-        share['post_img'] = 'https://anwensf.com/static/upload/img/' + share['post_img'].replace('_1200.jpg', '_260.jpg')
+        share['post_img'] = 'https://anwensf.com/static/upload/img/' + \
+            share['post_img'].replace('_1200.jpg', '_260.jpg')
     share['published'] = int(share['published'] * 1000)
     share['updated'] = int(share['updated'] * 1000)
     return share

@@ -203,7 +203,6 @@ class Share(BaseModel):
         'updated': float,
         'vote_open': int,
         'vote_title': basestring,
-
         # deleted
         'upload_img': basestring,
     }

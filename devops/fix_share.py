@@ -20,6 +20,7 @@ def fix_share():
     for i in adb.Share_Col.find():
         print(i['id'])
         print(i['title'])
+        print(i['link'])
         print(i['sharetype'])
 
 
