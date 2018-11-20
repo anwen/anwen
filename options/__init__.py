@@ -50,7 +50,6 @@ node_list = [
     'music',
     'sf',
     'goodlink',
-
     'ask',
     'eyeopen',
     'fire',
@@ -88,11 +87,6 @@ node_about = {
         'name': 'Goodlink',
         'about': 'nice things need share'
     },
-
-
-
-
-
 
 
     'ask': {
