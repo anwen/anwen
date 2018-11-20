@@ -58,7 +58,7 @@ class OneShareHandler(BaseHandler):
             # Webcache should add index
             doc = Webcache.find_one({'url': share.link}, {'_id': 0})
             # 此文章须经作者同意 转载 禁止转载
-            if doc and doc['markdown'] and '转载' not in doc['markdown']:
+            if doc and doc['markdown'] and '禁止转载' not in doc['markdown']:
                 doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
                 md = share['markdown']
                 md += '\n\n--预览--\n\n' + doc['markdown']
