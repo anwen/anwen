@@ -150,68 +150,69 @@ class ShareHandler(BaseHandler):
         vote_open = self.get_argument("vote_open", '')
         vote_title = self.get_argument("vote_title", '')
 
-        url = link
-        doc = Webcache.find_one({'url': url}, {'_id': 0})
-        if not doc:
-            try:
-                sessions = requests.session()
-                sessions.headers[
-                    'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
-                response = sessions.get(url)
-                # response.encoding = 'utf-8'
-                doc = Document(response.text)
-                doc_title = doc.title()
-                summary = doc.summary()
-                _markdown = html2text.html2text(summary)
-                _markdown = _markdown.replace('-\n', '-')
-                res_webcache = {}
-                res_webcache['url'] = url
-                res_webcache['title'] = doc_title
-                res_webcache['markdown'] = _markdown
-                webcache = Webcache
-                webcache.new(res_webcache)
-            except Exception as e:
-                print(e)
-                self.redirect("/")
-                return
+        if link:
+            url = link
+            doc = Webcache.find_one({'url': url}, {'_id': 0})
+            if not doc:
+                try:
+                    sessions = requests.session()
+                    sessions.headers[
+                        'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
+                    response = sessions.get(url)
+                    # response.encoding = 'utf-8'
+                    doc = Document(response.text)
+                    doc_title = doc.title()
+                    summary = doc.summary()
+                    _markdown = html2text.html2text(summary)
+                    _markdown = _markdown.replace('-\n', '-')
+                    res_webcache = {}
+                    res_webcache['url'] = url
+                    res_webcache['title'] = doc_title
+                    res_webcache['markdown'] = _markdown
+                    webcache = Webcache
+                    webcache.new(res_webcache)
+                except Exception as e:
+                    print(e)
+                    self.redirect("/")
+                    return
 
-            if vote_open.isdigit():
-                vote_open = int(vote_open)
-            else:
-                vote_open = 0
-            if not title:
-                title = doc_title
-            res = {
-                'title': title,
-                'markdown': markdown,
-                'content': content,
-                'sharetype': sharetype,
-                'slug': slug,
-                'tags': tags,
-                # 'upload_img': upload_img,
-                'post_img': post_img,
-                'link': link,
-                'vote_open': vote_open,
-                'vote_title': vote_title,
-                'updated': time.time(),
+        if vote_open.isdigit():
+            vote_open = int(vote_open)
+        else:
+            vote_open = 0
+        if not title:
+            title = doc_title
+        res = {
+            'title': title,
+            'markdown': markdown,
+            'content': content,
+            'sharetype': sharetype,
+            'slug': slug,
+            'tags': tags,
+            # 'upload_img': upload_img,
+            'post_img': post_img,
+            'link': link,
+            'vote_open': vote_open,
+            'vote_title': vote_title,
+            'updated': time.time(),
+        }
+        if share_id:
+            share = Share.by_sid(share_id)
+            if not share:
+                self.redirect("/404")
+            share.update(res)
+            share.save()
+        else:
+            share = Share
+            res['user_id'] = user_id
+            share = share.new(res)
+            user = User.by_sid(user_id)
+            user.user_leaf += 10
+            user.save()
+        for i in tags.strip().split(' '):
+            doc = {
+                'name': i,
+                'share_ids': share.id
             }
-            if share_id:
-                share = Share.by_sid(share_id)
-                if not share:
-                    self.redirect("/404")
-                share.update(res)
-                share.save()
-            else:
-                share = Share
-                res['user_id'] = user_id
-                share = share.new(res)
-                user = User.by_sid(user_id)
-                user.user_leaf += 10
-                user.save()
-            for i in tags.strip().split(' '):
-                doc = {
-                    'name': i,
-                    'share_ids': share.id
-                }
-                Tag.new(doc)
-            self.redirect("/share/" + str(share.id))
+            Tag.new(doc)
+        self.redirect("/share/" + str(share.id))
