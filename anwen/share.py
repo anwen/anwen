@@ -63,6 +63,9 @@ class OneShareHandler(BaseHandler):
                 md = share['markdown']
                 md += '\n\n--预览--\n\n' + doc['markdown']
                 md += '\n\n[阅读原文]({})'.format(doc['url'])
+                md = md.replace('\n*\n', '\n\n')
+                while '\n\n\n' in md:
+                    md = md.replace('\n\n\n', '\n\n')
                 share.content = markdown2.markdown(md)
 
         user_id = self.current_user["user_id"] if self.current_user else None
