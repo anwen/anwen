@@ -18,10 +18,11 @@ def fix_share():
 
     # 数据库修复，默认为0
     for i in adb.Share_Col.find():
-        print(i['id'])
-        print(i['title'])
-        print(i['link'])
-        print(i['sharetype'])
+        if not i['sharetype']:
+            print(i['id'])
+            print(i['title'])
+            print(i['link'])
+            print(i['sharetype'])
 
 
 if __name__ == '__main__':
