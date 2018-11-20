@@ -8,6 +8,7 @@ import sys
 from pymongo import MongoClient
 conn = MongoClient()
 sys.path.append('.')
+sys.path.append('..')
 # from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
 
 # 对于like, 冗余储存
