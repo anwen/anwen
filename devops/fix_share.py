@@ -4,14 +4,11 @@
 # import hashlib
 # import requests
 import options
-import sys
 from pymongo import MongoClient
+# import sys
 conn = MongoClient()
-sys.path.append('.')
-sys.path.append('..')
+# sys.path.append('.')
 # from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
-
-# 对于like, 冗余储存
 
 
 def fix_share():
@@ -21,6 +18,8 @@ def fix_share():
 
     # 数据库修复，默认为0
     for i in adb.Share_Col.find():
+        print(i['id'])
+        print(i['title'])
         print(i['sharetype'])
 
 
