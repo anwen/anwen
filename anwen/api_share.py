@@ -149,12 +149,14 @@ class PreviewHandler(JsonHandler):
             summary = doc.summary()
             markdown = html2text.html2text(summary)
             markdown = markdown.replace('-\n', '-')
+            markdown = markdown.strip()
             res = {}
             res['url'] = url
             res['title'] = title
             res['markdown'] = markdown
-            webcache = Webcache
-            webcache.new(res)
+            if markdown:
+                webcache = Webcache
+                webcache.new(res)
             self.res = res
             self.write_json()
 
