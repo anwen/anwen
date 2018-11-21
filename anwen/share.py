@@ -168,13 +168,14 @@ class ShareHandler(BaseHandler):
                     doc_title = doc.title()
                     summary = doc.summary()
                     _markdown = html2text.html2text(summary)
-                    _markdown = _markdown.replace('-\n', '-')
+                    _markdown = _markdown.replace('-\n', '-').strip()
                     res_webcache = {}
                     res_webcache['url'] = url
                     res_webcache['title'] = doc_title
                     res_webcache['markdown'] = _markdown
-                    webcache = Webcache
-                    webcache.new(res_webcache)
+                    if _markdown:
+                        webcache = Webcache
+                        webcache.new(res_webcache)
                 except Exception as e:
                     print(e)
                     self.redirect("/")
@@ -200,6 +201,9 @@ class ShareHandler(BaseHandler):
             'vote_title': vote_title,
             'updated': time.time(),
         }
+        if not markdown:
+            self.redirect("/")
+            return
         if share_id:
             share = Share.by_sid(share_id)
             if not share:
