@@ -154,10 +154,10 @@ class PreviewHandler(JsonHandler):
             res['url'] = url
             res['title'] = title
             res['markdown'] = markdown
-            if markdown:
+            if title and markdown:
                 webcache = Webcache
                 webcache.new(res)
-            self.res = res
+                self.res = res
             self.write_json()
 
         except Exception as e:
