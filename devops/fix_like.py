@@ -3,13 +3,10 @@
 # import os
 # import hashlib
 # import requests
-import sys
+import options
 from pymongo import MongoClient
 conn = MongoClient()
-sys.path.append('.')
 # from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
-import options
-
 # 对于like, 冗余储存
 
 
@@ -18,12 +15,13 @@ def fix_like():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
 
-    # 数据库修复，默认为0
-    for i in adb.Comment_Col.find():
-        if 'likenum' not in i:
-            adb.Comment_Col.update({'_id': i['_id']}, {'$set': {'likenum': 0}})
-            adb.Comment_Col.update({'_id': i['_id']}, {'$set': {'dislikenum': 0}})
-            print('done')
+    if 0:
+        # 数据库修复，默认为0
+        for i in adb.Comment_Col.find():
+            if 'likenum' not in i:
+                adb.Comment_Col.update({'_id': i['_id']}, {'$set': {'likenum': 0}})
+                adb.Comment_Col.update({'_id': i['_id']}, {'$set': {'dislikenum': 0}})
+                print('done')
 
     # 验证喜欢次数
     print('like special case both 0')
@@ -51,24 +49,24 @@ def fix_like():
 
     print('Share_Col')
     for i in adb.Share_Col.find():
-        # print(i['status'])
         if i['status'] == -999:
             continue
-        if i['status'] == 0:
-            continue
+        # if i['status'] == 0:
+        #     continue
         print(i['status'], i['title'], i['id'])
         # if i['status'] == -1:
         # if i['status'] < 1:
         # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': 0}})
         n = 0
         for j in adb.Like_Col.find({'entity_type': 'share', 'entity_id': i['id']}):
-            if j['user_id'] in (1, 60, 63, 64, 65):
+            if j['user_id'] in (1, 60, 63, 64, 65) and j['likenum'] > 0:
+                print(j['likenum'])
                 n += 1
         print(n)
         if n != i['status']:
-            adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': n}})
-
-        # print(i)
+            pass
+            print(n, i['status'])
+            # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': n}})
 
     # for i in adb.Like_Col.find():
     #     if i['entity_type'] == 'comment':

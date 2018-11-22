@@ -16,9 +16,8 @@ def fix_share():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
 
-    # 数据库修复，默认为0
     for i in adb.Share_Col.find():
-        if not i['sharetype']:
+        if 0 and not i['sharetype']:
             print(i['id'])
             print(i['title'])
             print(i['link'])
