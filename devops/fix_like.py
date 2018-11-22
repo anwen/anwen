@@ -59,9 +59,10 @@ def fix_like():
         # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': 0}})
         n = 0
         for j in adb.Like_Col.find({'entity_type': 'share', 'entity_id': i['id']}):
-            if j['user_id'] in (1, 60, 63, 64, 65, 69) and j['likenum'] > 0:
+            if j['user_id'] in (1, 60, 63, 64, 65, 69):
                 if j['dislikenum'] == 0:
                     adb.Like_Col.update({'_id': j['_id']}, {'$set': {'likenum': 1}})
+            if j['user_id'] in (1, 60, 63, 64, 65, 69) and j['likenum'] > 0:
                 if j['likenum']:
                     n += 1
         print(n)
