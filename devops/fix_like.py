@@ -79,6 +79,11 @@ def fix_like():
     #         d = adb.Comment_Col.find_one({'id': entity_id})
     #         print(d)
 
+    for j in adb.Like_Col.find({'entity_type': 'share', 'entity_id': i['id']}):
+        if j['user_id'] == 1 and j['likenum'] > 0:
+            doc = adb.Share_Col.find({'id': j['entity_id']})[0]
+            print(doc['title'], doc['id'])
+
 
 if __name__ == '__main__':
     fix_like()
