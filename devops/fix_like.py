@@ -53,7 +53,7 @@ def fix_like():
             continue
         # if i['status'] == 0:
         #     continue
-        print(i['status'], i['title'], i['id'])
+        # print(i['status'], i['title'], i['id'])
         # if i['status'] == -1:
         # if i['status'] < 1:
         # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': 0}})
@@ -68,7 +68,7 @@ def fix_like():
         print(n)
         if n != i['status']:
             pass
-            print(n, i['status'])
+            print(n, i['status'], i['title'], i['id'])
             # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'status': n}})
 
     # for i in adb.Like_Col.find():
