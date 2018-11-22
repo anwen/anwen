@@ -80,7 +80,7 @@ def fix_like():
     #         print(d)
 
     print('user_id 1 like:')
-    for j in adb.Like_Col.find({'entity_type': 'share', 'entity_id': i['id']}):
+    for j in adb.Like_Col.find({'entity_type': 'share'}):
         if j['user_id'] == 1 and j['likenum'] > 0:
             doc = adb.Share_Col.find({'id': j['entity_id']})[0]
             print(doc['title'], doc['id'])
