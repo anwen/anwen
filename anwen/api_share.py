@@ -105,9 +105,9 @@ class SharesHandler(JsonHandler):
         if user:
             logger.info('user_id: {}'.format(user['user_id']))
         if user and user['user_id'] in wx_admin_ids:
-            cond['status'] = {'$gt': 0}
+            cond['status'] = {'$gte': 1}
         else:
-            cond['status'] = {'$gte': 2}
+            cond['status'] = {'$gte': 1}
         if vote_open:
             if not vote_open.isdigit():
                 return self.write_error(422)
