@@ -79,6 +79,7 @@ def shutdown():
             logger.info('Shutdown')
     stop_loop()
 
+
 if __name__ == '__main__':
     signal.signal(signal.SIGTERM, sig_handler)
     signal.signal(signal.SIGINT, sig_handler)
