@@ -193,7 +193,7 @@ class ShareHandler(BaseHandler):
                     return
             else:
                 doc_title = doc.title
-                markdown = doc.markdown
+                # markdown = doc.markdown
 
         if vote_open.isdigit():
             vote_open = int(vote_open)
@@ -215,9 +215,9 @@ class ShareHandler(BaseHandler):
             'vote_title': vote_title,
             'updated': time.time(),
         }
-        if not markdown:
-            self.redirect("/")
-            return
+        # if not markdown:
+        #     self.redirect("/")
+        #     return
         if share_id:
             share = Share.by_sid(share_id)
             if not share:
