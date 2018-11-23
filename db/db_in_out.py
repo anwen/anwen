@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint
+from anwen.db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint
 import argparse
 import yaml
 import sys
