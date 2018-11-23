@@ -25,7 +25,7 @@ db/data/*.yaml
 # *~
 # *.swp
 
-# *.tar.gz
+*.tar.gz
 *.zip
 local_*
 
