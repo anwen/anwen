@@ -66,3 +66,7 @@ ask:
 add:
 	@echo "starting add"
 	git add .
+
+
+tags:
+	cp ../a_kg_d3/data/Creative_Work.md utils

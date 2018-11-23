@@ -4,6 +4,7 @@ from anwen import api
 from anwen import api_user
 from anwen import api_share
 from anwen import api_like
+from anwen import api_tag
 from anwen import api_comment
 from anwen import api_upload
 
@@ -42,6 +43,8 @@ from atalk.talk import MsgNewHandler, MsgUpdatesHandler
 
 handlers = [
     (r"/api", api.ApiHandler),
+    (r"/api/tags", api_tag.TagsHandler),
+
     (r"/api/shares/?", api_share.SharesHandler),
     (r"/api/shares/([^/]+)", api_share.ShareHandler),
     (r"/api/preview", api_share.PreviewHandler),
