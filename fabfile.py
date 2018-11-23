@@ -1,3 +1,4 @@
+import os
 from fabric import Connection
 from fabric import SerialGroup
 from fabric import task
@@ -33,8 +34,6 @@ def disk(c):
 # result = c.put('myfiles.tgz', remote='/opt/mydata/')
 # print("Uploaded {0.local} to {0.remote}".format(result))
 
-import os
-
 
 class cd:
     """Context manager for changing the current working directory"""
@@ -56,7 +55,8 @@ def backup(c):
     """ backup data from aw mongo """
     with c.cd('/var/www/anwen/db'):
         c.run('. ~/.zshrc')
-        c.run('python3 db_in_out.py -o')
+        # c.run('python3 db_in_out.py')
+        # c.run('python3 db_in_out.py -o')
         c.run('tar czf aw_yaml.tar.gz data')
     with c.cd('/var/www/anwen/docs/shares'):
         c.run('tar czf aw_md.tar.gz *.md')
