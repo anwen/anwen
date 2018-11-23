@@ -14,6 +14,12 @@ from anwen.api_share import get_share_by_slug, add_hit_stat
 import requests
 import html2text
 from readability import Document
+
+try:
+    from urllib.parse import urlparse
+except:
+    from urlparse import urlparse  # Python 2
+
 # 网页版的接口
 
 
@@ -63,6 +69,10 @@ class OneShareHandler(BaseHandler):
                 md = share['markdown']
                 md += '\n\n--预览--\n\n' + doc['markdown']
                 md += '\n\n[阅读原文]({})'.format(doc['url'])
+
+                parsed_uri = urlparse(share.link)
+                domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+                md = md.replace('![image](/', '![image]({}/'.format(domain))
                 md = md.replace('\n* \n', '\n\n')
                 md = md.replace('\n*\n', '\n\n')
                 while '\n\n\n' in md:
