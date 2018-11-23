@@ -15,11 +15,10 @@ class TagsHandler(JsonHandler):
 
     @tornado.web.authenticated
     def post(self):
-        share_id = self.get_argument("id", None)
+        share_id = self.get_argument("share_id", None)
         tags = self.get_argument("tags", '')
         # user_id = self.current_user["user_id"]
         tags = tags.strip()
-
         if share_id:
             share = Share.by_sid(share_id)
             if share and tags not in share.tags:

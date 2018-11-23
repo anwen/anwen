@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint
 import argparse
 import yaml
 import sys
@@ -8,7 +9,6 @@ import os
 import re
 from bson import ObjectId
 sys.path.append('..')
-from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint
 
 
 doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
@@ -76,6 +76,7 @@ def run_export(name):
 
 def doc_export(doc):
     d = eval(doc)
+    print(d)
     obj = d.find().sort('_id', 1)
     if obj.count() == 0:
         return
@@ -110,6 +111,7 @@ def convert(sth):
     #     return sth.encode('utf-8')
     else:
         return sth
+
 
 parser = argparse.ArgumentParser(
     description='Anwen DB in or out')
