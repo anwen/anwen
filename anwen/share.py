@@ -149,6 +149,7 @@ class ShareHandler(BaseHandler):
     # 创建或者修改分享
     @tornado.web.authenticated
     def post(self):
+        # TODO
         # print(self.request.arguments)
         share_id = self.get_argument("id", None)
         title = self.get_argument("title", '')
@@ -190,6 +191,9 @@ class ShareHandler(BaseHandler):
                     print(e)
                     self.redirect("/")
                     return
+            else:
+                doc_title = doc.title
+                markdown = doc.markdown
 
         if vote_open.isdigit():
             vote_open = int(vote_open)
