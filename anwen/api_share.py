@@ -8,6 +8,7 @@ from readability import Document
 import html2text
 from tornado.escape import json_decode
 from log import logger
+from utils import get_charset
 wx_admin_ids = (60, 63, 64)
 
 
@@ -143,7 +144,8 @@ class PreviewHandler(JsonHandler):
             sessions.headers[
                 'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
             response = sessions.get(url)
-            response.encoding = 'utf-8'  # TODO
+            # response.encoding = 'utf-8'  # TODO
+            response.encoding = get_charset(response)
             doc = Document(response.text)
             title = doc.title()
             summary = doc.summary()

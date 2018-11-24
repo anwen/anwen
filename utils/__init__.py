@@ -1,4 +1,16 @@
 import random
+import requests
+
+
+def get_charset(res):
+    _charset = requests.utils.get_encoding_from_headers(res.headers)
+    if _charset == 'ISO-8859-1':
+        __charset = requests.utils.get_encodings_from_content(res.content)[0]
+        if __charset:
+            _charset = __charset
+        else:
+            _charset = res.apparent_encoding
+    return _charset
 
 
 def make_password(pw):
