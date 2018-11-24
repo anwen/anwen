@@ -46,6 +46,7 @@ class ExploreHandler(BaseHandler):
             share.domain = user.user_domain
             share.markdown = cutter(
                 markdown2.markdown(share.markdown))
+            share.title = share.title.split('_')[0]
             shares.append(share)
         self.render(
             "node.html",
@@ -71,6 +72,7 @@ class NodeHandler(BaseHandler):
             share.domain = user.user_domain
             share.markdown = cutter(
                 markdown2.markdown(share.markdown))
+            share.title = share.title.split('_')[0]
             shares.append(share)
 
         node_info = options.node_about[node]
