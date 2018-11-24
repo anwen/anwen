@@ -84,6 +84,9 @@ class OneShareHandler(BaseHandler):
         like = Like.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
         share.is_liking = bool(like.likenum) if like else False
+        print('~~~~~')
+        print(share.is_liking)
+        print(user_id)
         share.is_disliking = bool(like.dislikenum) if like else False
 
         suggest = []
