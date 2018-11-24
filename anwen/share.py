@@ -57,6 +57,7 @@ class OneShareHandler(BaseHandler):
         share.author_name = user.user_name
         share.author_domain = user.user_domain
         share.tags = format_tags(share)
+        share.title = share.title.split('_')[0]
         if share.markdown:
             share.content = markdown2.markdown(share.markdown)
         # 对于链接分享类，增加原文预览
