@@ -83,10 +83,10 @@ class OneShareHandler(BaseHandler):
         user_id = self.current_user["user_id"] if self.current_user else None
         like = Like.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
-        logger.info('user_id: {}'.format(user_id))
-        logger.info('share.is_liking: {}'.format(share.is_liking))
         share.is_liking = bool(like.likenum) if like else False
         share.is_disliking = bool(like.dislikenum) if like else False
+        # logger.info('user_id: {}'.format(user_id))
+        # logger.info('share.is_liking: {}'.format(share.is_liking))
 
         suggest = []
         comments = get_comments(share)
