@@ -19,7 +19,7 @@ try:
     from urllib.parse import urlparse
 except:
     from urlparse import urlparse  # Python 2
-
+from log import logger
 # 网页版的接口
 
 
@@ -84,9 +84,8 @@ class OneShareHandler(BaseHandler):
         like = Like.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
         share.is_liking = bool(like.likenum) if like else False
-        print('~~~~~')
-        print(share.is_liking)
-        print(user_id)
+        logger.info('user_id: {}'.format(user_id))
+        logger.info('share.is_liking: {}'.format(share.is_liking))
         share.is_disliking = bool(like.dislikenum) if like else False
 
         suggest = []
