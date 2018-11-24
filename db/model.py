@@ -158,9 +158,9 @@ class Like(BaseModel):
     }
 
     def change_like(self, doc, _action, action):
-        # return is_changed
         res = self.find_one(doc)
         if not res:
+            doc[_action] = 1
             self.new(doc)
             return True
         if action == 'add':
