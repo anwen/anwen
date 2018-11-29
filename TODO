@@ -1,3 +1,34 @@
+- 书评 SubClassOf 文学 503591
+- 杂文 SubClassOf 文学 185036 605593
+- 小说 SubClassOf 文学 1200 23902
+- 诗歌 SubClassOf 文学
+- 传记 SubClassOf 文学
+
+- 电影 SubClassOf 艺术
+- 音乐 SubClassOf 艺术  187096
+- 游戏 SubClassOf 艺术
+- 设计 SubClassOf 艺术
+
+- 运动 SubClassOf 生活
+- 旅行 SubClassOf 生活  351974
+
+- 自然科学 SubClassOf 科学
+- 数学 SubClassOf 科学
+- 应用科学 SubClassOf 科学
+
+- 工程技术 SubClassOf 技术
+- 计算机工程 SubClassOf 技术
+- 人工智能 SubClassOf 技术
+
+- 创业 SubClassOf 经济
+- 管理 SubClassOf 经济
+- 投资 SubClassOf 经济
+
+- 热点 SubClassOf 社会 129566
+- 文化 SubClassOf 社会
+- 职业发展 SubClassOf 社会
+
+
 技术
 文化
 未来
@@ -20,9 +51,17 @@
 
 统计数据需要有“浏览次数”和“深读次数” 以及时间
 
-
-
-
+douban
+音乐		187096
+读书		503591
+思想		185036
+旅行		351974
+文学		23902
+情感		605593
+热点		129566
+美食		207555
+duokan 1200
+kindle
 
 TODO
 ========
@@ -54,9 +93,6 @@ TODO
 - 个性化推送
 - 参与感
 - 不紧急：链接分享
-
-
-
 
 #### 稳定性
 - 测试
