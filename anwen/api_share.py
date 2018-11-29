@@ -92,6 +92,7 @@ class SharesHandler(JsonHandler):
     def get(self):
         user = None
         token = self.request.headers.get('Authorization', '')
+        tag = self.request.headers.get('tag', '')
         if token:
             key, token = token.split()
             if key == 'token' and token:
@@ -118,6 +119,8 @@ class SharesHandler(JsonHandler):
             cond['vote_title'] = {'$ne': ''}
         shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
         shares = [fix_share(share) for share in shares]
+        if tag:
+            shares = [share for share in shares if tag in share['tags'].split()]
         self.res = list(shares)
         return self.write_json()
 
