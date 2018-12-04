@@ -42,6 +42,8 @@ def get_share_by_slug(slug):
         share = Share.by_slug(slug)
     if share:
         share.hitnum += 1
+        if isinstance(share.tags, str):
+            share.tags = share.tags.split()
         share.save()
         share.pop('_id')
     return share
