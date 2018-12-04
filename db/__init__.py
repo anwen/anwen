@@ -16,5 +16,5 @@ Talk = connection.Talk
 Webcache = connection.Webcache
 # Vote = connection.Vote
 
-# User = connection.User
 connection.register([User])
+User = connection.User
