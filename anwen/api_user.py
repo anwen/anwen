@@ -123,10 +123,8 @@ class MeHandler(JsonHandler):
     def get(self):
         user = User.by_sid(self.current_user['user_id'])
         if user.user_email.endswith('@wechat'):
-            pass
             user.gravatar = get_avatar_by_wechat(user._id)
         else:
-            # user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
             user.gravatar = get_avatar(user.user_email, 100)
         user = dict(user)
         user.pop('_id')
@@ -140,7 +138,8 @@ class MeHandler(JsonHandler):
     @tornado.web.authenticated
     def post(self):
         user = User.by_sid(self.current_user['user_id'])
-        # do not save user info if not necessary
+        # Info from wechat
+        # Do not save user info if not necessary
         # avatarUrl   String  用户头像，最后一个数值代表正方形头像大小（有0、46、64、96、132数值可选，0代表640 * 640正方形头像），用户没有头像时该项为空。若用户更换头像，原有头像URL将失效。
         # gender  String  用户的性别，值为1时是男性，值为2时是女性，值为0时是未知
         # province    String  用户所在省份
@@ -154,10 +153,10 @@ class MeHandler(JsonHandler):
             name = self.get_argument('nickName', None)
         if name:
             user['user_name'] = name
-        avatarUrl = self.get_argument('avatarUrl', None)
-        if avatarUrl:
+        avatar_url = self.get_argument('avatarUrl', None)
+        if avatar_url:
             try:
-                r = requests.get(avatarUrl)
+                r = requests.get(avatar_url)
                 if r.status_code == 200:
                     avatar_dir = 'static/avatar'
                     size = 'raw'

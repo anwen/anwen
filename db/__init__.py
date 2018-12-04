@@ -2,9 +2,7 @@
 from db.model import connection
 
 Tag = connection.Tag
-
 Viewpoint = connection.Viewpoint
-User = connection.User
 Share = connection.Share
 Comment = connection.Comment
 Like = connection.Like
@@ -13,6 +11,9 @@ Feedback = connection.Feedback
 Admin = connection.Admin
 Ande = connection.Ande
 Talk = connection.Talk
+Webcache = connection.Webcache
 # Vote = connection.Vote
 
-Webcache = connection.Webcache
+
+# from db.model_user import connection
+User = connection.User
