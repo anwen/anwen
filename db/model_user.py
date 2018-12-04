@@ -1,47 +1,20 @@
 # -*- coding: utf-8 -*-
-# from db.model import connection
 from db.ext import BaseModel
 import time
-
-# import options
-# from bson import ObjectId
-# from mongokit import Document
-
-try:
-    basestring
-except NameError:
-    basestring = str
-
-
-# from mongokit import Connection
-# import options
-# if 'host' in options.db:
-#     connection = Connection(
-#         host=options.db['host'],
-#         port=options.db['port'],
-#     )
-# else:
-#     connection = Connection()
-# db = getattr(connection, options.db['name'])
-# if 'username' in options.db:
-#     try:
-#         db.authenticate(options.db['username'], options.db['password'])
-#     except KeyError:
-#         print('KeyError: Not authenticating.')
 
 
 # @connection.register
 class User(BaseModel):
     __collection__ = 'User_Col'
     structure = {
-        'user_name': basestring,
-        'user_email': basestring,
-        'user_pass': basestring,
-        'user_domain': basestring,
-        'user_url': basestring,
-        'user_city': basestring,
-        'user_say': basestring,
-        'emailverify': basestring,
+        'user_name': str,
+        'user_email': str,
+        'user_pass': str,
+        'user_domain': str,
+        'user_url': str,
+        'user_city': str,
+        'user_say': str,
+        'emailverify': str,
         'id': int,
         'user_leaf': int,
         'user_status': int,   # 0=default, 1=veryfied
