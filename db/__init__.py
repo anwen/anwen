@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from db.model import connection
-from db.model import User
-# from db.model_user import User
+# from db.model import User
+from db.model_user import User
 
 Tag = connection.Tag
 Viewpoint = connection.Viewpoint
