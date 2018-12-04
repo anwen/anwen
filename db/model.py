@@ -24,7 +24,7 @@ except NameError:
     basestring = str
 
 
-@connection.register
+# @connection.register
 class User(BaseModel):
     __collection__ = 'User_Col'
     structure = {

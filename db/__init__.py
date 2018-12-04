@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from db.model import connection
+from db.model import User
 # from db.model_user import User
 
 Tag = connection.Tag
@@ -15,5 +16,5 @@ Talk = connection.Talk
 Webcache = connection.Webcache
 # Vote = connection.Vote
 
-User = connection.User
-# connection.register([User])
+# User = connection.User
+connection.register([User])
