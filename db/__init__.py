@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from db.model_user import User
 from db.model import connection
 
 Tag = connection.Tag
@@ -15,5 +16,4 @@ Webcache = connection.Webcache
 # Vote = connection.Vote
 
 
-# from db.model_user import connection
-User = connection.User
+# User = connection.User
