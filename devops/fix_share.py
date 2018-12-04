@@ -12,7 +12,6 @@ conn = MongoClient()
 
 
 def fix_share():
-    print(options.db)
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
 
