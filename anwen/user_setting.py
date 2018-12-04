@@ -23,6 +23,6 @@ class SettingHandler(BaseHandler):
         user['user_name'] = self.get_argument('name', None)
         user['user_city'] = self.get_argument('city', None)
         user['user_say'] = self.get_argument('say', None)
-        user['user_tags'] = self.get_argument('tags', None)
+        # user['user_tags'] = self.get_argument('tags', None)
         user.save()
         self.redirect('/setting')
