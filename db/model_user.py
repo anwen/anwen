@@ -19,10 +19,10 @@ import time
 #     except KeyError:
 #         print('KeyError: Not authenticating.')
 
-# try:
-#     basestring
-# except NameError:
-#     basestring = str
+try:
+    basestring
+except NameError:
+    basestring = str
 
 
 @connection.register
