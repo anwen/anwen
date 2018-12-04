@@ -27,7 +27,7 @@ def format_tags(share):
     tags = ''
     if share.tags:
         tags += 'tags:'
-        for i in share.tags.split(' '):
+        for i in share.tags:
             tags += '<a href="/tag/%s">%s</a>  ' % (i, i)
     return tags
 
