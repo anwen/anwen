@@ -236,7 +236,7 @@ class ShareHandler(BaseHandler):
             user = User.by_sid(user_id)
             user.user_leaf += 10
             user.save()
-        for i in tags.strip().split(' '):
+        for i in tags:
             doc = {
                 'name': i,
                 'share_ids': share.id
