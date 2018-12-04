@@ -94,7 +94,8 @@ class SharesHandler(JsonHandler):
     def get(self):
         user = None
         token = self.request.headers.get('Authorization', '')
-        tag = self.request.headers.get('tag', '')
+        # tag = self.request.headers.get('tag', '')
+        tag = self.get_argument('tag', '')
         if token:
             key, token = token.split()
             if key == 'token' and token:
