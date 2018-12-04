@@ -19,7 +19,7 @@ def fix_share():
     for i in adb.Share_Col.find():
         if isinstance(i['tags'], str):
             print(i['tags'])
-            # adb.Share_Col.update({'_id': i['_id']}, {'tags': i['tags'].split()})
+            adb.Share_Col.update({'_id': i['_id']}, {'tags': i['tags'].split()})
         if 0 and not i['sharetype']:
             print(i['id'])
             print(i['title'])
