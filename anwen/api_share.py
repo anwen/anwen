@@ -122,7 +122,7 @@ class SharesHandler(JsonHandler):
         shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
         shares = [fix_share(share) for share in shares]
         if tag:
-            shares = [share for share in shares if tag in share['tags'].split()]
+            shares = [share for share in shares if tag in share['tags']]
         self.res = list(shares)
         return self.write_json()
 
