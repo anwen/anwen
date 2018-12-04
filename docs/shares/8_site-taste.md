@@ -11,6 +11,7 @@
 - [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/)
 - [Rochester Made](http://rochestermade.com/) 
 - [拇指阅读 深阅读社区](http://www.mzread.com/)
+- [免费专区_多看精品书城](http://www.duokan.com/r/%E5%85%8D%E8%B4%B9%E4%B8%93%E5%8C%BA/93)
 
 ### 阅读工具
 - [feedly](http://cloud.feedly.com/)
@@ -21,6 +22,7 @@
 - [Vimeo](http://vimeo.com/)  需要翻越长城
 - [YouTube](https://www.youtube.com/)  需要翻越长城
 - [Coursera](https://www.coursera.org/) Take the world's best courses, online, for free. <http://www.douban.com/group/Coursera-er/> <http://www.gemag.com.cn/9/33078_1.html> <http://www.douban.com/group/xmooc/> <http://coursera.yeeyan.org/>
+- [Hacker News](https://news.ycombinator.com/)
 
 ### 社区
 - [豆瓣](http://www.douban.com/) 
