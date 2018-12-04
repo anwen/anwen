@@ -1,9 +1,13 @@
 # -*- coding: utf-8 -*-
 from db.ext import BaseModel
 import time
-
-
+# try:
+#     basestring
+# except NameError:
+#     basestring = str
 # @connection.register
+
+
 class User(BaseModel):
     __collection__ = 'User_Col'
     structure = {
@@ -14,6 +18,7 @@ class User(BaseModel):
         'user_url': str,
         'user_city': str,
         'user_say': str,
+        'user_tags': list,
         'emailverify': str,
         'id': int,
         'user_leaf': int,
@@ -55,6 +60,3 @@ class User(BaseModel):
             doc.save()
             return True
         return False
-
-    # def delete(self):
-    #     pass

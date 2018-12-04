@@ -18,68 +18,6 @@ if 'username' in options.db:
     except KeyError:
         print('KeyError: Not authenticating.')
 
-try:
-    basestring
-except NameError:
-    basestring = str
-
-
-# @connection.register
-class User(BaseModel):
-    __collection__ = 'User_Col'
-    structure = {
-        'user_name': basestring,
-        'user_email': basestring,
-        'user_pass': basestring,
-        'user_domain': basestring,
-        'user_url': basestring,
-        'user_city': basestring,
-        'user_say': basestring,
-        'emailverify': basestring,
-        'id': int,
-        'user_leaf': int,
-        'user_status': int,   # 0=default, 1=veryfied
-        'user_jointime': float,
-    }
-    required_fields = ['user_pass', 'user_email']
-    default_values = {
-        'user_url': '',
-        'user_city': '',
-        'user_say': '',
-        'emailverify': '',
-        'user_leaf': 20,
-        'user_status': 0,
-        'user_jointime': time.time,
-    }
-
-    def by_email(self, email):
-        return self.find_one({'user_email': email})
-
-    def by_name_pass(self, username, userpass):
-        if username and userpass:
-            return self.find_one(
-                {'user_name': username, 'user_pass': userpass})
-
-    def by_email_pass(self, email, userpass):
-        if email and userpass:
-            return self.find_one({'user_email': email, 'user_pass': userpass})
-
-    def by_email_verify(self, email, verify):
-        if email and verify:
-            return self.find_one({'user_email': email, 'emailverify': verify})
-
-    def reset_pass(self, email, verify, userpass):
-        if email and verify:
-            doc = self.find_one({'user_email': email, 'emailverify': verify})
-            doc.user_pass = userpass
-            doc.emailverify = '1'
-            doc.save()
-            return True
-        return False
-
-    # def delete(self):
-    #     pass
-
 
 @connection.register
 class Admin(BaseModel):
@@ -88,7 +26,7 @@ class Admin(BaseModel):
         'id': int,
         'isadmin': bool,
         'issuperadmin': bool,
-        'key': basestring,
+        'key': str,
         'join_time': float,
     }
     default_values = {
@@ -108,7 +46,7 @@ class Viewpoint(BaseModel):
         'share_id': int,
         'likenum': int,
         'dislikenum': int,
-        'aview': basestring,
+        'aview': str,
         'create_time': float,
     }
     default_values = {
@@ -127,8 +65,8 @@ class Comment(BaseModel):
         'share_id': int,
         'likenum': int,
         'dislikenum': int,
-        'user_name': basestring,
-        'commentbody': basestring,
+        'user_name': str,
+        'commentbody': str,
         'commenttime': float,
     }
     default_values = {
@@ -148,7 +86,7 @@ class Like(BaseModel):
         'entity_id': int,
         'likenum': int,
         'dislikenum': int,
-        'entity_type': basestring,
+        'entity_type': str,
         'create_time': float,
     }
     default_values = {
@@ -183,14 +121,14 @@ class Share(BaseModel):
     use_autorefs = True
     structure = {
         'id': int,
-        'title': basestring,
-        'slug': basestring,
-        'markdown': basestring,
-        'content': basestring,
-        'sharetype': basestring,
-        'tags': basestring,
-        'post_img': basestring,
-        'link': basestring,
+        'title': str,
+        'slug': str,
+        'markdown': str,
+        'content': str,
+        'sharetype': str,
+        'tags': str,
+        'post_img': str,
+        'link': str,
         'user_id': int,
         'commentnum': int,
         'likenum': int,
@@ -202,9 +140,9 @@ class Share(BaseModel):
         'published': float,
         'updated': float,
         'vote_open': int,
-        'vote_title': basestring,
+        'vote_title': str,
         # deleted
-        'upload_img': basestring,
+        'upload_img': str,
     }
     default_values = {
         'tags': '',
@@ -261,8 +199,8 @@ class Feedback(BaseModel):
     __collection__ = 'Feedback_Col'
     structure = {
         'id': int,
-        'user_email': basestring,
-        'content': basestring,
+        'user_email': str,
+        'content': str,
         'time': float,
     }
     default_values = {
@@ -277,9 +215,9 @@ class Ande(BaseModel):
     structure = {
         'id': int,
         'user_id': int,
-        'user_ip': basestring,
-        'usersay': basestring,
-        'andesay': basestring,
+        'user_ip': str,
+        'usersay': str,
+        'andesay': str,
         'chattime': float,
     }
     default_values = {
@@ -301,7 +239,7 @@ class Talk(BaseModel):
     structure = {
         'id': int,
         'user_id': int,
-        'body': basestring,
+        'body': str,
         'talktime': float,
     }
     default_values = {
@@ -316,9 +254,9 @@ class Webcache(BaseModel):
     __collection__ = 'Webcache_Col'
     structure = {
         'id': int,
-        'url': basestring,
-        'title': basestring,
-        'markdown': basestring,
+        'url': str,
+        'title': str,
+        'markdown': str,
     }
     default_values = {
     }
@@ -329,8 +267,8 @@ class Tag(BaseModel):
     __collection__ = 'Tag_Col'
     structure = {
         'id': int,
-        'name': basestring,
-        'share_ids': basestring,
+        'name': str,
+        'share_ids': str,
         'hittime': float,
     }
     default_values = {
