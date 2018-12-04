@@ -167,6 +167,7 @@ class ShareHandler(BaseHandler):
         user_id = self.current_user["user_id"]
         vote_open = self.get_argument("vote_open", '')
         vote_title = self.get_argument("vote_title", '')
+        tags = tags.split()
 
         if link:
             url = link
