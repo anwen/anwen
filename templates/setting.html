@@ -25,13 +25,18 @@
   </div>
 
   <div>
+    标签:
+    <input name="tags" type="text" class="col-lg-4 form-control" value="{{user.user_tags}}" />
+  </div>
+
+  <div>
     <p>
       个性说明(
       <a href="/markdown" target="_blank">支持Markdown</a>
       <a href="/edit" target="_blank">编辑器</a>
       ):
     </p>
-    <textarea name="say" rows="20" class="col-lg-4 form-control">{{user.user_say}}</textarea>
+    <textarea name="say" rows="10" class="col-lg-4 form-control">{{user.user_say}}</textarea>
   </div>
 
   <div>
