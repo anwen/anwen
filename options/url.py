@@ -27,7 +27,8 @@ from anwen.index import NodeHandler, TagHandler
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
 from anwen.user import GoogleLoginHandler, DoubanLoginHandler
 from anwen.user import ForgotPassHandler, SetPassHandler
-from anwen.user import SettingHandler, ChangePassHandler
+from anwen.user import ChangePassHandler
+from anwen.user_setting import SettingHandler
 from anwen.user import UserhomeHandler, UserlikeHandler
 
 
