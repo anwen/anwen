@@ -4,20 +4,20 @@ from bson import ObjectId
 from mongokit import Document
 
 
+# {'_id': 0} save
 class BaseModel(Document):
     __database__ = options.db['name']
     use_dot_notation = True
+
+    def by_sid(self, id):
+        assert self.find({'id': int(id)}).count() <= 1
+        return self.find_one({'id': int(id)})
 
     def one_by(self, key_name, key):
         return self.find_one({key_name: key})
 
     def by_id(self, id):
         return self.find_one({'_id': ObjectId(id)})
-
-    def by_sid(self, id):
-        # return self.find_one({'id': int(id)}, {'_id': 0})
-        assert self.find({'id': int(id)}).count() <= 1
-        return self.find_one({'id': int(id)})
 
     def new(self, doc):
         res = self()

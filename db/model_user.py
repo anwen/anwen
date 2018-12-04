@@ -36,6 +36,8 @@ class User(BaseModel):
         'user_jointime': time.time,
     }
 
+    # TODO
+
     def by_email(self, email):
         return self.find_one({'user_email': email})
 
