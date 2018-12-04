@@ -3,6 +3,16 @@ from db.model import connection
 from db.ext import BaseModel
 import time
 
+import options
+from bson import ObjectId
+from mongokit import Document
+
+try:
+    basestring
+except NameError:
+    basestring = str
+
+
 # from mongokit import Connection
 # import options
 # if 'host' in options.db:
@@ -19,13 +29,8 @@ import time
 #     except KeyError:
 #         print('KeyError: Not authenticating.')
 
-try:
-    basestring
-except NameError:
-    basestring = str
 
-
-@connection.register
+# @connection.register
 class User(BaseModel):
     __collection__ = 'User_Col'
     structure = {
