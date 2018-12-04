@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from db.model import connection
-# from db.model import User
 from db.model_user import User
+from db.model_share import Share
 
 Tag = connection.Tag
 Viewpoint = connection.Viewpoint
-Share = connection.Share
 Comment = connection.Comment
 Like = connection.Like
 Hit = connection.Hit
@@ -17,4 +16,6 @@ Webcache = connection.Webcache
 # Vote = connection.Vote
 
 connection.register([User])
+connection.register([Share])
 User = connection.User
+Share = connection.Share

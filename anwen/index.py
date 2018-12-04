@@ -32,7 +32,7 @@ class ExploreHandler(BaseHandler):
         page = self.get_argument("page", 1)
         # share_res = Share.find({'status': 0}).sort(
         #     'score', DESCENDING).limit(11).skip((int(page) - 1) * 11)
-        share_res = Share.find({'status': {'$gte': 0}}).sort(
+        share_res = Share.find({'status': {'$gte': 1}}).sort(
             '_id', DESCENDING).limit(11).skip((int(page) - 1) * 11)
         pagesum = (share_res.count() + 10) / 11
         shares = []

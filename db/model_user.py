@@ -11,32 +11,32 @@ import time
 class User(BaseModel):
     __collection__ = 'User_Col'
     structure = {
+        'id': int,
         'user_name': str,
         'user_email': str,
         'user_pass': str,
-        'user_domain': str,
+        'user_domain': str,  # optional
         'user_url': str,
         'user_city': str,
         'user_say': str,
         'user_tags': list,
-        'emailverify': str,
-        'id': int,
         'user_leaf': int,
         'user_status': int,   # 0=default, 1=veryfied
         'user_jointime': float,
+        'emailverify': str,
     }
-    required_fields = ['user_pass', 'user_email']
+    required_fields = ['id', 'user_name', 'user_email', 'user_pass']
     default_values = {
+        # 'user_domain': '',
         'user_url': '',
         'user_city': '',
         'user_say': '',
-        'emailverify': '',
+        'user_tags': [],
         'user_leaf': 20,
         'user_status': 0,
         'user_jointime': time.time,
+        'emailverify': '',
     }
-
-    # TODO
 
     def by_email(self, email):
         return self.find_one({'user_email': email})

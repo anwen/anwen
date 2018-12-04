@@ -116,57 +116,6 @@ class Like(BaseModel):
 
 
 @connection.register
-class Share(BaseModel):
-    __collection__ = 'Share_Col'
-    use_autorefs = True
-    structure = {
-        'id': int,
-        'title': str,
-        'slug': str,
-        'markdown': str,
-        'content': str,
-        'sharetype': str,
-        'tags': str,
-        'post_img': str,
-        'link': str,
-        'user_id': int,
-        'commentnum': int,
-        'likenum': int,
-        'dislikenum': int,
-        'hitnum': int,
-        'status': int,  # 0=public, 1=draft, -1=deleted
-        'suggestscore': float,
-        'score': float,
-        'published': float,
-        'updated': float,
-        'vote_open': int,
-        'vote_title': str,
-        # deleted
-        'upload_img': str,
-    }
-    default_values = {
-        'tags': '',
-        'link': '',
-        'id': 0,
-        'commentnum': 0,
-        'likenum': 0,
-        'dislikenum': 0,
-        'hitnum': 0,
-        'status': 0,  # 0=published,1=draft,2=deleted
-        'suggestscore': 0.0,
-        'score': 0.0,
-        'vote_open': 0,
-        'vote_title': '',
-        'published': time.time,
-        'updated': time.time,
-    }
-
-    def by_slug(self, slug):
-        # return self.find_one({'slug': slug}, {'_id': 0})
-        return self.find_one({'slug': slug})
-
-
-@connection.register
 class Relationship(BaseModel):
     __collection__ = 'Relationship_Col'
     use_autorefs = True
