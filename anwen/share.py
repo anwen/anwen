@@ -194,9 +194,11 @@ class ShareHandler(BaseHandler):
                         webcache.new(res_webcache)
                 except Exception as e:
                     print(e)
+                    logger.info('e: {}'.format(e))
                     self.redirect("/")
                     return
             else:
+                logger.info('already')
                 doc_title = doc.title
                 # markdown = doc.markdown
 
