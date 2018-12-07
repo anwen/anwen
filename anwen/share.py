@@ -180,6 +180,7 @@ class ShareHandler(BaseHandler):
                     response = sessions.get(url)
                     # response.encoding = 'utf-8'  # TODO
                     response.encoding = get_charset(response)
+                    logger.info('response.encoding {}'.format(response.encoding))
                     doc = Document(response.text)
                     doc_title = doc.title()
                     summary = doc.summary()
