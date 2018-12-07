@@ -6,7 +6,7 @@ import chardet
 def get_charset(res):
     _charset = requests.utils.get_encoding_from_headers(res.headers)
     if _charset == 'ISO-8859-1':
-        __charset = requests.utils.get_encodings_from_content(res.content)[0]
+        # __charset = requests.utils.get_encodings_from_content(res.content)[0]
         # encode_type
         __charset = chardet.detect(res.content)['encoding']
         if __charset:
