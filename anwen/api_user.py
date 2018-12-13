@@ -148,6 +148,7 @@ class MeHandler(JsonHandler):
         # iv
         # signature
         # encryptedData
+        tags = self.get_argument('tags', None)
         name = self.get_argument('name', None)
         if not name:
             name = self.get_argument('nickName', None)
@@ -171,6 +172,8 @@ class MeHandler(JsonHandler):
         if city:
             user['user_city'] = city
         user['user_say'] = self.get_argument('say', None)
+        if tags:
+            user['user_tags'] = tags.strip().split()
         user.save()
         user['is_admin'] = admin.is_admin(user['id'])
         user.pop('_id')
