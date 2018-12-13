@@ -75,7 +75,8 @@ class JsonHandler(RequestHandler):
         self.set_header('Access-Control-Allow-Headers',
                         'Content-Type, Access-Control-Allow-Origin, Access-Control-Allow-Headers, X-Requested-By, Access-Control-Allow-Methods')
 
-    def OPTIONS(self):
+    # def OPTIONS(self):
+    def options(self):
         pass
 
     def get_current_user(self):
@@ -104,7 +105,10 @@ class JsonHandler(RequestHandler):
         print('_reason', self._reason)
         # https://blog.csdn.net/jw690114549/article/details/69394233?utm_source=copy
         # typ, value, tb   # value PermissionError
-        error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
+        if kwargs.get("exc_info"):
+            error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
+        else:
+            error_trace_list = [str(status_code)]
         if options.debug:
             # in debug mode, try to send a traceback
             self.set_header('Content-Type', 'text/plain')
@@ -141,8 +145,7 @@ class JsonHandler(RequestHandler):
         self.write(output)
 
     def write_json_raw(self, obj):
-        """Writes the JSON-formated string of the given obj
-        to the output buffer"""
+        """Writes the JSON-formated string of the given obj to the output buffer."""
         # self.set_header('Content-Type', 'application/json')
 
         def handler(obj):
