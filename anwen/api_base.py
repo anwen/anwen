@@ -134,9 +134,11 @@ class JsonHandler(RequestHandler):
             self.write_json(success=False, message=self._reason)
         return
 
-    def write_json(self, success=True, message='err'):
+    def write_json(self, success=True, message='err', number=None):
         out = {}
         out['success'] = success
+        if number is not None:
+            out['number'] = number
         if success:
             out['data'] = self.res
         else:

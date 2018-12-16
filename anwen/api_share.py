@@ -125,7 +125,7 @@ class SharesHandler(JsonHandler):
         if tag:
             shares = [share for share in shares if tag in share['tags']]
         self.res = list(shares)
-        return self.write_json()
+        return self.write_json(number=len(self.res))
 
 
 def fix_share(share):  # time
