@@ -173,7 +173,7 @@ class MeHandler(JsonHandler):
             user['user_city'] = city
         user['user_say'] = self.get_argument('say', None)
         if tags:
-            user['user_tags'] = tags.strip().split()
+            user['user_tags'] = tags.strip().split(',')
         user.save()
         user['is_admin'] = admin.is_admin(user['id'])
         user.pop('_id')

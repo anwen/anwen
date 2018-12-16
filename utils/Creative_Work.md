@@ -13,7 +13,6 @@ Creative Work Ontology
 ### 科学
 - 自然科学 SubClassOf 科学
 - 数学 SubClassOf 科学
-- 应用科学 SubClassOf 科学
 
 ### 技术
 - 工程技术 SubClassOf 技术
