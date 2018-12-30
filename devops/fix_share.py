@@ -20,7 +20,7 @@ def fix_share():
             print(i['tags'])
             # adb.Share_Col.update({'_id': i['_id']}, {'tags': i['tags'].split()})
             # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'tags': i['tags'].split()}})
-        if 0 and not i['sharetype']:
+        if not i['sharetype']:
             print(i['id'])
             print(i['title'])
             print(i['link'])
