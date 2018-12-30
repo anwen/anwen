@@ -2,23 +2,43 @@
 ========
 
 
-### 阅读
-- [中国三明治](http://www.china30s.com/)
-- [Solidot](http://www.solidot.org/) 奇客的资讯，重要的东西
-- [阅FM](http://yue.fm/)
-- [简书](http://jianshu.io/) 在这里写作 在这里阅读 在这里，慢下来
-- [爱看豆happy书店](http://ikandou.com/)
-- [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/)
-- [Rochester Made](http://rochestermade.com/) 
-- [拇指阅读 深阅读社区](http://www.mzread.com/)
+## 阅读
+- [电子图书 | 豆瓣阅读](https://read.douban.com/ebooks/?dcs=original-featured&dcm=normal-nav)
+- [Kindle电子书](https://www.amazon.cn/Kindle%E7%94%B5%E5%AD%90%E4%B9%A6/b/ref=sa_menu_books_l2_b116169071?ie=UTF8&node=116169071)
 - [免费专区_多看精品书城](http://www.duokan.com/r/%E5%85%8D%E8%B4%B9%E4%B8%93%E5%8C%BA/93)
+- [Solidot](http://www.solidot.org/) 奇客的资讯，重要的东西
+- [卡尔维诺中文站 - Italo Calvino in China](http://www.ruanyifeng.com/calvino/)
+- [中国三明治 非虚构写作平台](http://www.china30s.com/)
+- [简书](http://jianshu.io/)
+- [译言古登堡计划](http://g.yeeyan.org/)
+
+### 选书工具 (请支持正版)
+- [豆瓣读书](https://book.douban.com/)
+- [bookset](https://bookset.me/)
 
 ### 阅读工具
 - [feedly](http://cloud.feedly.com/)
 - [Digg](http://digg.com/)
 - [Google 阅读器](https://www.google.com/reader/)  130701已经关闭
 
+### 独立博客（creative common）
+- [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
+- [卡瓦邦噶！ | 无法自制的人得不到自由。](https://www.kawabangga.com/) 技术
+- [依云's Blog](https://blog.lilydjwg.me/)
+
+### 独立博客
+- [津雲迷渡](http://xuanchao1980.com/)
+- [卢昌海个人主页](https://www.changhai.org/)
+
+### 英文媒体
+- [Hacker News]https://news.ycombinator.com/
+
+
+
+
+
 ### 视频
+- [【AnimeTaste】品赏艾尼墨，全球动画精选](http://animetaste.net/)
 - [Vimeo](http://vimeo.com/)  需要翻越长城
 - [YouTube](https://www.youtube.com/)  需要翻越长城
 - [Coursera](https://www.coursera.org/) Take the world's best courses, online, for free. <http://www.douban.com/group/Coursera-er/> <http://www.gemag.com.cn/9/33078_1.html> <http://www.douban.com/group/xmooc/> <http://coursera.yeeyan.org/>

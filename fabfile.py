@@ -2,6 +2,7 @@ import os
 from fabric import Connection
 from fabric import task
 # from fabric import SerialGroup
+import time
 
 
 def free(c):
@@ -47,6 +48,20 @@ class CD:
 
     def __exit__(self, etype, value, traceback):
         os.chdir(self.savedPath)
+
+
+@task
+def backup_ol(c):
+    c = Connection('aw')
+    """ backup data from aw mongo """
+    t = time.time()
+    with c.cd('/var/www/anwen/db'):
+        c.run('. ~/.zshrc && python3 db_in_out.py -o')
+        c.run('tar czf aw_yaml_{}.tar.gz data'.format(t))
+    with c.cd('/var/www/anwen/docs/shares'):
+        c.run('tar czf aw_md_{}.tar.gz *.md'.format(t))
+    with c.cd('/var/www/anwen/static/upload/'):
+        c.run('tar czf upload_{}.tar.gz img'.format(t))
 
 
 @task
