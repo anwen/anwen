@@ -51,7 +51,7 @@ class CD:
 
 
 @task
-def backup_ol(c):
+def backol(c):
     c = Connection('aw')
     """ backup data from aw mongo """
     t = time.time()

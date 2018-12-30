@@ -38,9 +38,9 @@ backup:
 	@echo "starting backup"
 	fab backup
 
-backup_ol:
+backol:
 	@echo "starting backup_ol"
-	fab backup_ol
+	fab backol
 
 docs:
 	python -m SimpleHTTPServer 8004
