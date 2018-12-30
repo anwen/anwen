@@ -24,7 +24,8 @@ start:
 
 
 sync:
-	scp -r devops aw:/var/www/anwen
+	# scp
+	rsync -v -P -e ssh -r devops aw:/var/www/anwen
 
 
 test:
@@ -36,6 +37,10 @@ test:
 backup:
 	@echo "starting backup"
 	fab backup
+
+backup_ol:
+	@echo "starting backup_ol"
+	fab backup_ol
 
 docs:
 	python -m SimpleHTTPServer 8004
