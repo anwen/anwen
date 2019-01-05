@@ -26,7 +26,10 @@ def fix_share():
             for tag in tags:
                 if tag in d_parent and d_parent[tag] not in new_tags:
                     new_tags.append(d_parent[tag])
-            print(' '.join(new_tags))
+            if new_tags[-1] != '|':
+                if i['status'] >= 1:
+                    print(' '.join(new_tags))
+                    adb.Share_Col.update({'_id': i['_id']}, {'$set': {'tags': new_tags}})
     return
     for i in adb.Share_Col.find():
         if isinstance(i['tags'], str):
