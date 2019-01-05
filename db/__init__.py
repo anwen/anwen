@@ -19,3 +19,8 @@ connection.register([User])
 connection.register([Share])
 User = connection.User
 Share = connection.Share
+
+
+# db.auth(username, password)
+# db.col1.ensureIndex({'tags':1})
+db.Share_Col.ensureIndex({'tags': 1})
