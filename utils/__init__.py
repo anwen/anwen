@@ -102,6 +102,21 @@ def get_tags():
     return tags
 
 
+def get_tags_parent():
+    file1 = 'utils/Creative_Work.md'
+    tags = {}
+    with open(file1, 'r', encoding='u8') as f:
+        for line in f:
+            line = line.strip()
+            if 'SubClassOf' not in line:
+                continue
+            _, s, p, o = line.split()
+            if o == '作品':
+                continue
+            tags[s] = o
+    return tags
+
+
 if __name__ == '__main__':
     # print(random_sayings())
     print(get_tags())
