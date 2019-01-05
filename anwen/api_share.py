@@ -92,6 +92,9 @@ class SharesHandler(JsonHandler):
     # 文章列表
     # 不同权限的用户看到的列表不同
     def get(self):
+
+        page = self.get_argument("page", 1)
+
         user = None
         token = self.request.headers.get('Authorization', '')
         # tag = self.request.headers.get('tag', '')
@@ -120,10 +123,13 @@ class SharesHandler(JsonHandler):
             cond['vote_open'] = int(vote_open)
         if has_vote:
             cond['vote_title'] = {'$ne': ''}
-        shares = Share.find(cond, {'_id': 0}).sort('_id', -1)
-        shares = [fix_share(share) for share in shares]
+
         if tag:
-            shares = [share for share in shares if tag in share['tags']]
+            cond['tags'] = tag
+        shares = Share.find(cond, {'_id': 0}).sort('_id', -1).limit(10).skip((int(page) - 1) * 10)
+        shares = [fix_share(share) for share in shares]
+        # if tag:
+        #     shares = [share for share in shares if tag in share['tags']]
         self.res = list(shares)
         return self.write_json(number=len(self.res))
 
