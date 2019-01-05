@@ -23,4 +23,8 @@ Share = connection.Share
 
 # db.auth(username, password)
 # db.col1.ensureIndex({'tags':1})
-db.Share_Col.ensureIndex({'tags': 1})
+# db.getCollectionNames()
+# db.Share_Col.getIndexes()
+# db.Share_Col.ensureIndex({'tags': 1})
+# db.Share_Col.ensureIndex({'id': 1})
+# db.Share_Col.find({'tags': '科幻'})
