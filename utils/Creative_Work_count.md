@@ -49,3 +49,7 @@ delete
 ### 生活
 - 运动 SubClassOf 生活
 - 旅行 SubClassOf 生活
+
+### 生活
+- 运动 SubClassOf 生活
+- 旅行 SubClassOf 生活
