@@ -19,10 +19,6 @@ Creative Work Ontology
 - 计算机工程 SubClassOf 技术
 - 人工智能 SubClassOf 技术
 
-### 生活
-- 运动 SubClassOf 生活
-- 旅行 SubClassOf 生活
-
 ### 艺术
 - 电影 SubClassOf 艺术
 - 音乐 SubClassOf 艺术
