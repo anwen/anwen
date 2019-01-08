@@ -95,6 +95,7 @@ class SharesHandler(JsonHandler):
 
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
+        per_page = int(per_page)
 
         user = None
         token = self.request.headers.get('Authorization', '')
