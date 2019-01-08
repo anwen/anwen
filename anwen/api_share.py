@@ -94,6 +94,7 @@ class SharesHandler(JsonHandler):
     def get(self):
 
         page = self.get_argument("page", 1)
+        per_page = self.get_argument("per_page", 10)
 
         user = None
         token = self.request.headers.get('Authorization', '')
@@ -126,7 +127,8 @@ class SharesHandler(JsonHandler):
 
         if tag:
             cond['tags'] = tag
-        shares = Share.find(cond, {'_id': 0}).sort('_id', -1).limit(10).skip((int(page) - 1) * 10)
+        shares = Share.find(cond, {'_id': 0}).sort(
+            '_id', -1).limit(per_page).skip((int(page) - 1) * per_page)
         shares = [fix_share(share) for share in shares]
         # if tag:
         #     shares = [share for share in shares if tag in share['tags']]
