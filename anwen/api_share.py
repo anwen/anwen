@@ -92,7 +92,6 @@ class SharesHandler(JsonHandler):
     # 文章列表
     # 不同权限的用户看到的列表不同
     def get(self):
-
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
         per_page = int(per_page)
@@ -128,13 +127,16 @@ class SharesHandler(JsonHandler):
 
         if tag:
             cond['tags'] = tag
+
+        number = Share.find(cond, {'_id': 0}).count()
         shares = Share.find(cond, {'_id': 0}).sort(
             '_id', -1).limit(per_page).skip((int(page) - 1) * per_page)
         shares = [fix_share(share) for share in shares]
         # if tag:
         #     shares = [share for share in shares if tag in share['tags']]
         self.res = list(shares)
-        return self.write_json(number=len(self.res))
+        # return self.write_json(number=len(self.res))
+        return self.write_json(number=number)
 
 
 def fix_share(share):  # time
