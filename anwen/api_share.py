@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from db import Share, Like, Collect, Viewpoint, Hit, Webcache
+from db import Share, Like, Collect, Viewpoint, Hit, Webcache, User
 from random import randint
 import random
 import requests
@@ -11,6 +11,7 @@ from log import logger
 from utils import get_charset
 from utils import get_tags
 wx_admin_ids = (60, 63, 64)
+# logger.info('token: {}'.format(token))
 
 
 def add_hit_stat(user_id, share):
@@ -100,21 +101,44 @@ class SharesHandler(JsonHandler):
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
         meta_info = self.get_argument("meta_info", None)
+        my_tags = self.get_argument("my_tags", None)
+        tag = self.get_argument('tag', '')
+
         per_page = int(per_page)
         page = int(page)
         user = None
+        tags = None
+
         token = self.request.headers.get('Authorization', '')
-        tag = self.get_argument('tag', '')
         if token:
             key, token = token.split()
             if key == 'token' and token:
                 user_json = self.get_secure_cookie('user', token)
                 if user_json:
                     user = json_decode(user_json)
+        else:
+            user_json = self.get_secure_cookie("user")
+            if user_json:
+                user = json_decode(user_json)
+
+        print(user)
+        print(my_tags)
+        if user and my_tags:
+            d_user = User.by_sid(user['user_id'])
+            print(d_user, 1111)
+            if d_user:
+                print(d_user['user_tags'])
+                tags = d_user['user_tags']
+
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         cond = {}
-        # logger.info('token: {}'.format(token))
+        if tags:
+            print('1111111111111', tags)
+            cond['tags'] = {"$in": tags}
+
+        elif tag:
+            cond['tags'] = tag
         if user:
             logger.info('user_id: {}'.format(user['user_id']))
         if user and user['user_id'] in wx_admin_ids:
@@ -127,8 +151,7 @@ class SharesHandler(JsonHandler):
             cond['vote_open'] = int(vote_open)
         if has_vote:
             cond['vote_title'] = {'$ne': ''}
-        if tag:
-            cond['tags'] = tag
+
         number = Share.find(cond, {'_id': 0}).count()
         shares = Share.find(cond, {'_id': 0}).sort(
             '_id', -1).limit(per_page).skip((page - 1) * per_page)

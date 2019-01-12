@@ -23,10 +23,12 @@
 
 ## 目前开放的接口
 ### 文章相关
-- <https://anwensf.com/api/shares> 全部文章 GET
+- <https://anwensf.com/api/shares> 全部文章 GET page per_page
 - <https://anwensf.com/api/shares?has_vote=1> 支持投票的文章 GET
 - <https://anwensf.com/api/shares?tag=杂文> 按照tag选文章的文章 GET
 - <https://anwensf.com/api/shares/33> 具体的一篇文章 GET
+- <https://anwensf.com/api/my_like> 喜欢的文章 GET page per_page
+- <https://anwensf.com/api/my_collect> 收藏的文章 GET page per_page
 
 ### 文章相关信息
 - <https://anwensf.com/api/comment?share_id=34> GET为列出所有评论，POST为添加评论
@@ -37,6 +39,7 @@
 - <https://anwensf.com/api/wxlogin>  授权接口（微信）。目前不太规范只支持 GET
 - <https://anwensf.com/api/me>  **需授权**  获取和更新用户信息接口，支持GET  POST  字段: tags(string)
 - <https://anwensf.com/api/like/addlike>  **需授权**  POST params: `entity_id entity_type` return: newlikes   其中 entity_type为：share comment viewpoint（分别是文章、评论和观点） 其实还有取消喜欢，不喜欢和取消不喜欢的接口，应该暂时不需要
+- <https://anwensf.com/api/like/addcollect>  **需授权**  POST params: `entity_id entity_type`      其中 entity_type为：share comment viewpoint（分别是文章、评论和观点）
 
 
 ### 详细说明
