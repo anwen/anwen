@@ -1,18 +1,18 @@
 # -*- coding:utf-8 -*-
+# 收藏接口，从like接口fork而来
 import tornado.web
 from anwen.api_base import JsonHandler
-from db import Like, Share, Comment, Viewpoint
-admin_ids = (1, 60, 63, 64, 65, 69)
+from db import Collect, Share
 
 
-class LikeHandler(JsonHandler):
+class CollectHandler(JsonHandler):
 
     @tornado.web.authenticated
     def post(self, action):
         entity_id = int(self.get_argument("entity_id", 0))
         entity_type = self.get_argument("entity_type", None)
         user_id = self.current_user["user_id"]
-        assert action in 'addlike dellike adddislike deldislike'.split()
+        assert action in 'addcollect delcollect'.split()
         assert entity_type in 'share comment viewpoint'.split()
         _action = action[3:] + 'num'
         doc = {
@@ -20,37 +20,8 @@ class LikeHandler(JsonHandler):
             'entity_id': entity_id,
             'entity_type': entity_type,
         }
-        is_changed = Like.change_like(doc, _action, action[:3])
-
-        # 冗余储存 没有做成事件绑定，需要定期校验修复
-        if entity_type == 'share':
-            entity = Share.by_sid(entity_id)
-            # 如果是管理员，需要将status + 1
-            # 64=kp 65=kp email
-            # 63=lb
-            # 60=xie
-            if is_changed and user_id in admin_ids:
-                if action == 'addlike':
-                    entity['status'] += 1
-                elif action == 'adddislike':
-                    entity['status'] -= 1
-                elif action == 'deldislike':
-                    entity['status'] += 1
-                else:
-                    entity['status'] -= 1
-        elif entity_type == 'comment':
-            entity = Comment.by_sid(entity_id)
-        elif entity_type == 'viewpoint':
-            entity = Viewpoint.by_sid(entity_id)
-        if action[:3] == 'add':
-            entity[_action] += 1
-        else:
-            entity[_action] -= 1
-        entity.save()
-        self.res = {
-            'likenum': entity.likenum,
-            'dislikenum': entity.dislikenum,
-        }
+        is_changed = Collect.change_collect(doc, _action, action[:3])
+        assert is_changed
         self.write_json()
 
     # get = post
@@ -65,7 +36,7 @@ def fix_share(share):  # time
     return share
 
 
-class MyLikeHandler(JsonHandler):
+class MyCollectHandler(JsonHandler):
 
     @tornado.web.authenticated
     def get(self):
@@ -79,12 +50,13 @@ class MyLikeHandler(JsonHandler):
         cond = {
             'user_id': user_id,
             'entity_type': entity_type,
-            'likenum': 1,
+            'collectnum': 1,
         }
-        number = Like.find(cond, {'_id': 0}).count()
-        collects = Like.find(cond, {'_id': 0}).sort(
+        number = Collect.find(cond, {'_id': 0}).count()
+        collects = Collect.find(cond, {'_id': 0}).sort(
             '_id', -1).limit(per_page).skip((page - 1) * per_page)
         res = []
+        print(collects.count())
         for collect in collects:
             # 'status': {'$gte': 1},
             share = Share.find_one({'id': collect.id}, {'_id': 0})

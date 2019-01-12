@@ -4,6 +4,7 @@ from anwen import api
 from anwen import api_user
 from anwen import api_share
 from anwen import api_like
+from anwen import api_collect
 from anwen import api_tag
 from anwen import api_comment
 from anwen import api_upload
@@ -53,11 +54,14 @@ handlers = [
     (r"/api/authorizations", api_user.AuthorizationsHandler),
     (r"/api/wxlogin", api_user.WxLoginHandler),
     (r"/api/me", api_user.MeHandler),
+
+    (r"/api/my_like", api_like.MyLikeHandler),
+    (r"/api/my_collect", api_collect.MyCollectHandler),
     # (r"/api/users", api_user.UsersHandler),
 
     # actions
-    (r"/api_like/([^/]+)", api_like.LikeHandler),
     (r"/api/like/([^/]+)", api_like.LikeHandler),
+    (r"/api/collect/([^/]+)", api_collect.CollectHandler),
 
     (r"/api/comment", api_comment.CommentHandler),
     (r"/api/image_upload", api_upload.ImageUploadHandler),

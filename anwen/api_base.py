@@ -29,10 +29,10 @@ class JsonHandler(RequestHandler):
 
     def prepare(self):
         super().prepare()
-        print('prepare')
         # self.json_data = None
         json_data = None
         self.res = dict()
+        self.meta = dict()
         if self.request.body:
             try:
                 json_data = tornado.escape.json_decode(self.request.body)
@@ -82,7 +82,6 @@ class JsonHandler(RequestHandler):
     def get_current_user(self):
         print(self.request.headers)
         token = self.request.headers.get('Authorization', '')
-        print(token)
         if token:
             key, token = token.split()
             if key == 'token' and token:
@@ -143,6 +142,8 @@ class JsonHandler(RequestHandler):
             out['data'] = self.res
         else:
             out['message'] = message
+        if self.meta:
+            out['meta'] = self.meta
         output = json.dumps(out)
         self.write(output)
 

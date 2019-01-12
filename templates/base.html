@@ -21,7 +21,12 @@
   <link rel="stylesheet/less" type="text/css" href="{{static_url('less/main.less')}}">
   <script type="text/javascript" src="{{static_url('js/less.js')}}"></script>
   -->
-  <link href="{{ static_url("css/main.css") }}" rel="stylesheet"/>
+  <!-- <link href="{{ static_url("css/main.css") }}" rel="stylesheet"/> -->
+  <!-- for fast dev -->
+  <link rel="stylesheet/less" type="text/css" href="{{ static_url("less/main.less") }}" />
+  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+
   <!--[if IE 7]>
   <link rel="stylesheet" href="{{ static_url("css/font-awesome-ie7.min.css") }}">
   <![endif]-->
