@@ -172,7 +172,7 @@ class UserlikeHandler(BaseHandler):
         likenum = like_res.count()
         likes = []
         for like in like_res:
-            share = Share.by_sid(like.share_id)
+            share = Share.by_sid(like.entity_id)
             like.title = share.title
             like.id = share.id
             like.type = share.sharetype
