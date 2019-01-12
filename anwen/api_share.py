@@ -10,6 +10,7 @@ from tornado.escape import json_decode
 from log import logger
 from utils import get_charset
 from utils import get_tags
+import time
 wx_admin_ids = (60, 63, 64)
 # logger.info('token: {}'.format(token))
 
@@ -165,12 +166,13 @@ class SharesHandler(JsonHandler):
                 sub_tags = []
                 print(d_tags[tag])
                 for name in d_tags[tag]:
-                    print(name)
                     num = Share.find({'tags': name}, {'_id': 0}).count()
-                    print(num)
+                    num_recent = Share.find(
+                        {'tags': name, 'published': {'$gt': time.time()-86400*30}}, {'_id': 0}).count()
                     info = {}
                     info['name'] = name
                     info['num'] = num
+                    info['num_recent'] = num_recent
                     sub_tags.append(info)
                 meta['sub_tags'] = sub_tags
 
