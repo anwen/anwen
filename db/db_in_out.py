@@ -50,8 +50,8 @@ def doc_import(doc):
         docs = yaml.load(open('data/' + doc + '.yaml', 'r').read())
         for i in docs:
             i['_id'] = ObjectId(i['_id'])
-            if isinstance(i['tags'], str):
-                i['tags'] = i['tags'].split()
+            # if isinstance(i['tags'], str):
+            #     i['tags'] = i['tags'].split()
             if doc == 'UserSafe':
                 i['user_email'] = ''
                 i['user_pass'] = ''
