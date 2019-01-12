@@ -42,19 +42,25 @@
 </div>
 <div class="tags">{{ share.tags }}</div>
 
-<!-- 点赞 分享-->
-<p class="some">
-<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{share.id}}" etype="share">
+<!-- 点赞/喜欢/赞同 收藏 分享-->
 <!-- <i class="icon-thumbs-up"></i> -->
-<i class="icon-heart"></i>
-<span> {{ share.likenum }}</span>
+<p class="some">
+
+<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{share.id}}" etype="share">
+<i class="icon-heart"></i><span> {{ share.likenum }}</span>
 </a>
+
 <a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}" eid="{{share.id}}" etype="share">
-<i class="icon-thumbs-down"></i>
-<span> {{ share.dislikenum }}</span>
+<i class="icon-thumbs-down"></i><span> {{ share.dislikenum }}</span>
 </a>
-<span> {{ share.status }}</span>
+
+
+<a href="javascript:" class="do-collect {{'collecting' if share.is_collecting else ''}}" eid="{{share.id}}" etype="share">
+<i class="icon-star"></i><span> </span>
+</a>
+
 </p>
+<span> {{ share.status }}</span>
 
 
 </div> <!-- 内容 -->

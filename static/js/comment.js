@@ -82,6 +82,36 @@ $(document.body).on('click', '.do-dislike', function() {
 });
 
 
+$(document.body).on('click', '.do-collect', function() {
+    var t = $(this),
+        action = 'addcollect';
+    if (t.hasClass('collecting')) {
+        action = 'delcollect';
+    }
+    var argsxsrf = getCookie("_xsrf");
+    var eid = t.attr('eid');
+    var etype = t.attr('etype');
+    if (!eid) return;
+    $.ajax({
+        url: '/api/collect/' + action,
+        type: 'post',
+        data: {
+            "action": action,
+            "entity_id": eid,
+            "entity_type": etype,
+            "_xsrf": argsxsrf
+        },
+        success: function(data) {
+            if (action === 'addcollect') {
+                t.addClass('collecting');
+            } else if (action === 'delcollect') {
+                t.removeClass('collecting');
+            }
+            // t.find('span').text(data['data']['likenum'] + ' ');
+        }
+    });
+});
+
 
 
 $(function() {

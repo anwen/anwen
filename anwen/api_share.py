@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from db import Share, Like, Viewpoint, Hit, Webcache
+from db import Share, Like, Collect, Viewpoint, Hit, Webcache
 from random import randint
 import random
 import requests
@@ -9,6 +9,7 @@ import html2text
 from tornado.escape import json_decode
 from log import logger
 from utils import get_charset
+from utils import get_tags
 wx_admin_ids = (60, 63, 64)
 
 
@@ -62,11 +63,15 @@ class ShareHandler(JsonHandler):
         share.updated = int(share.updated * 1000)
         # 暂时不显示作者
         user_id = self.current_user["user_id"] if self.current_user else None
+        # if user_id:
         like = Like.find_one(
+            {'share_id': share.id, 'user_id': user_id})
+        collect = Collect.find_one(
             {'share_id': share.id, 'user_id': user_id})
         d_share = dict(share)
         d_share['is_liking'] = bool(like.likenum) if like else False
         d_share['is_disliking'] = bool(like.dislikenum) if like else False
+        d_share['is_collecting'] = bool(like.collectnum) if collect else False
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
@@ -94,11 +99,11 @@ class SharesHandler(JsonHandler):
     def get(self):
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
+        meta_info = self.get_argument("meta_info", None)
         per_page = int(per_page)
-
+        page = int(page)
         user = None
         token = self.request.headers.get('Authorization', '')
-        # tag = self.request.headers.get('tag', '')
         tag = self.get_argument('tag', '')
         if token:
             key, token = token.split()
@@ -106,12 +111,10 @@ class SharesHandler(JsonHandler):
                 user_json = self.get_secure_cookie('user', token)
                 if user_json:
                     user = json_decode(user_json)
-
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         cond = {}
-
-        logger.info('token: {}'.format(token))
+        # logger.info('token: {}'.format(token))
         if user:
             logger.info('user_id: {}'.format(user['user_id']))
         if user and user['user_id'] in wx_admin_ids:
@@ -124,18 +127,34 @@ class SharesHandler(JsonHandler):
             cond['vote_open'] = int(vote_open)
         if has_vote:
             cond['vote_title'] = {'$ne': ''}
-
         if tag:
             cond['tags'] = tag
-
         number = Share.find(cond, {'_id': 0}).count()
         shares = Share.find(cond, {'_id': 0}).sort(
-            '_id', -1).limit(per_page).skip((int(page) - 1) * per_page)
+            '_id', -1).limit(per_page).skip((page - 1) * per_page)
         shares = [fix_share(share) for share in shares]
         # if tag:
         #     shares = [share for share in shares if tag in share['tags']]
+        meta = {}
+        if meta_info and tag:
+            d_tags = get_tags()
+            if tag in d_tags:
+                sub_tags = []
+                print(d_tags[tag])
+                for name in d_tags[tag]:
+                    print(name)
+                    num = Share.find({'tags': name}, {'_id': 0}).count()
+                    print(num)
+                    info = {}
+                    info['name'] = name
+                    info['num'] = num
+                    sub_tags.append(info)
+                meta['sub_tags'] = sub_tags
+
         self.res = list(shares)
-        # return self.write_json(number=len(self.res))
+        self.meta = meta
+        print(meta)
+        # number=len(self.res)
         return self.write_json(number=number)
 
 
@@ -179,7 +198,6 @@ class PreviewHandler(JsonHandler):
                 webcache.new(res)
                 self.res = res
             self.write_json()
-
         except Exception as e:
             print(e)
 

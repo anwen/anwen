@@ -8,7 +8,8 @@ import markdown2
 import tornado.web
 import options
 from utils.avatar import get_avatar
-from db import User, Share, Comment, Like, Hit, Tag, Viewpoint, Webcache
+from db import User, Share, Comment, Hit, Tag, Viewpoint, Webcache
+from db import Like, Collect
 from .base import BaseHandler
 from anwen.api_share import get_share_by_slug, add_hit_stat
 import requests
@@ -83,10 +84,18 @@ class OneShareHandler(BaseHandler):
                 share.content = markdown2.markdown(md)
 
         user_id = self.current_user["user_id"] if self.current_user else None
+        # user_id
         like = Like.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
+        collect = Collect.find_one(
+            {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
+        print(like)
+        print(collect)
         share.is_liking = bool(like.likenum) if like else False
         share.is_disliking = bool(like.dislikenum) if like else False
+
+        share.is_collecting = bool(collect.collectnum) if collect else False
+
         # logger.info('user_id: {}'.format(user_id))
         # logger.info('share.is_liking: {}'.format(share.is_liking))
 

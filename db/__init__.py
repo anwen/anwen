@@ -2,23 +2,31 @@
 from db.model import connection
 from db.model_user import User
 from db.model_share import Share
+from db.model_collect import Collect
+from db.model_like import Like
 
-Tag = connection.Tag
-Viewpoint = connection.Viewpoint
-Comment = connection.Comment
-Like = connection.Like
-Hit = connection.Hit
-Feedback = connection.Feedback
-Admin = connection.Admin
-Ande = connection.Ande
-Talk = connection.Talk
-Webcache = connection.Webcache
-# Vote = connection.Vote
 
 connection.register([User])
 connection.register([Share])
+connection.register([Collect])
+connection.register([Like])
+
 User = connection.User
 Share = connection.Share
+Collect = connection.Collect
+Like = connection.Like
+
+
+Tag = connection.Tag
+Hit = connection.Hit
+Comment = connection.Comment
+Feedback = connection.Feedback
+Admin = connection.Admin
+Ande = connection.Ande
+Webcache = connection.Webcache
+Viewpoint = connection.Viewpoint
+Talk = connection.Talk
+# Vote = connection.Vote
 
 
 # db.auth(username, password)
