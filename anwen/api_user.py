@@ -88,12 +88,11 @@ class WxLoginHandler(JsonHandler):
 
             return self.write_json()
         else:
-            res = {}
             # res['id'] = User.find().count() + 1
+            res = {}
             res['user_email'] = openid + '@wechat'
             res['user_pass'] = session_key
-            # res['user_name'] = ''
-            # res['user_domain'] = ''
+            res['user_name'] = 'null'
             user = User.new(res)
             user_info = {
                 'user_id': user.id,
