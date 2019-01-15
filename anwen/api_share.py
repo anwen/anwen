@@ -177,9 +177,10 @@ class SharesHandler(JsonHandler):
                     info['num_recent'] = num_recent
                     sub_tags.append(info)
                 meta['sub_tags'] = sub_tags
+            meta['parent_tags'] = []
             if tag in d_tags_parent:
                 # hypernym
-                meta['parent_tag'] = d_tags_parent[tag]
+                meta['parent_tags'].append(d_tags_parent[tag])
 
         self.res = list(shares)
         self.meta = meta
