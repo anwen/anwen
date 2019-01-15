@@ -29,6 +29,7 @@ Creative Work Ontology
 - 书评 SubClassOf 文学
 - 诗歌 SubClassOf 文学
 - 小说 SubClassOf 文学
+- 科幻小说 SubClassOf 小说
 - 杂文 SubClassOf 文学
 - 传记 SubClassOf 文学
 
