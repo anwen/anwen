@@ -9,7 +9,7 @@ import html2text
 from tornado.escape import json_decode
 from log import logger
 from utils import get_charset
-from utils import get_tags
+from utils import get_tags, get_tags_parent
 import time
 wx_admin_ids = (60, 63, 64)
 # logger.info('token: {}'.format(token))
@@ -162,6 +162,8 @@ class SharesHandler(JsonHandler):
         meta = {}
         if meta_info and tag:
             d_tags = get_tags()
+            d_tags_parent = get_tags_parent()
+
             if tag in d_tags:
                 sub_tags = []
                 print(d_tags[tag])
@@ -175,6 +177,9 @@ class SharesHandler(JsonHandler):
                     info['num_recent'] = num_recent
                     sub_tags.append(info)
                 meta['sub_tags'] = sub_tags
+            if tag in d_tags_parent:
+                # hypernym
+                meta['parent_tag'] = d_tags_parent['']
 
         self.res = list(shares)
         self.meta = meta
