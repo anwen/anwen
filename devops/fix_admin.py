@@ -11,8 +11,9 @@ def fix():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
 
-    doc = adb.User_Col.find({'id': 60})
+    doc = adb.User_Col.find_one({'id': 60})
     print(doc)
+    adb.User_Col.update({'_id': doc['_id']}, {'$set': {'user_tags': []}})
 
 
 fix()
