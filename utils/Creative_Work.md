@@ -9,6 +9,7 @@ Creative Work Ontology
 - 文学 SubClassOf 作品
 - 经济 SubClassOf 作品
 - 社会 SubClassOf 作品
+- 主题 SubClassOf 作品
 
 ### 科学
 - 自然科学 SubClassOf 科学
@@ -42,3 +43,11 @@ Creative Work Ontology
 - 实时热点 SubClassOf 社会
 - 文化 SubClassOf 社会
 - 职业发展 SubClassOf 社会
+
+### 主题
+- 科幻 SubClassOf 主题
+
+### 科幻
+- 科幻小说 SubClassOf 科幻
+- 科幻电影 SubClassOf 科幻
+- 科幻画 SubClassOf 科幻
