@@ -179,7 +179,7 @@ class SharesHandler(JsonHandler):
                 meta['sub_tags'] = sub_tags
             if tag in d_tags_parent:
                 # hypernym
-                meta['parent_tag'] = d_tags_parent['']
+                meta['parent_tag'] = d_tags_parent[tag]
 
         self.res = list(shares)
         self.meta = meta
