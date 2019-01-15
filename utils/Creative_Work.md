@@ -48,6 +48,6 @@ Creative Work Ontology
 - 科幻 SubClassOf 主题
 
 ### 科幻
-- 科幻小说 SubClassOf 科幻
-- 科幻电影 SubClassOf 科幻
-- 科幻画 SubClassOf 科幻
+- 科幻小说 SubThemeOf 科幻
+- 科幻电影 SubThemeOf 科幻
+- 科幻画 SubThemeOf 科幻
