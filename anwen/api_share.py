@@ -163,7 +163,7 @@ class SharesHandler(JsonHandler):
         meta = {}
         if meta_info and tag:
             d_tags = get_tags()
-            d_tags_parent = get_tags_parent()
+            # d_tags_parent = get_tags_parent()
             d_tags_parents = get_tags_parents()
 
             if tag in d_tags:
