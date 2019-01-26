@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+    <title>Kindle4RSS Feeds</title>
+    </head>
+<body>
+<outline text="豆瓣最受欢迎的书评" title="豆瓣最受欢迎的书评" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/book_review_best.douban.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/book_review_best.douban.xml" />
+<outline text="豆瓣: 经典短篇阅读" title="豆瓣: 经典短篇阅读" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/group_classicreading.douban.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/group_classicreading.douban.xml" />
+<outline text="BBC 中国" title="BBC 中国" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/cn-bbc.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/cn-bbc.xml" />
+<outline text="FT中文网:十大热门文章" title="FT中文网:十大热门文章" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/hotstoryby7day.ftchinese.com.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/hotstoryby7day.ftchinese.com.xml" />
+<outline text="纽约时报 国际纵览" title="纽约时报 国际纵览" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/main.cn-nytimes.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/main.cn-nytimes.xml" />
+<outline text="南都周刊" title="南都周刊" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/nbweekly.weixin.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/nbweekly.weixin.xml" />
+<outline text="左岸读书" title="左岸读书" type="rss" xmlUrl="http://www.zreading.cn/feed" htmlUrl="http://www.zreading.cn/feed" />
+<outline text="环球科学" title="环球科学" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/ScientificAmerican.weixin.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/ScientificAmerican.weixin.xml" />
+<outline text="果壳网:热点" title="果壳网:热点" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/hot.guokr.com.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/hot.guokr.com.xml" />
+<outline text="张佳玮写字的地方" title="张佳玮写字的地方" type="rss" xmlUrl="http://feedmaker.kindle4rss.com/feeds/zhangjiawei_1983.weixin.xml" htmlUrl="http://feedmaker.kindle4rss.com/feeds/zhangjiawei_1983.weixin.xml" />
+<outline text="利器" title="利器" type="rss" xmlUrl="http://liqi.io/feed/" htmlUrl="http://liqi.io/feed/" />
+<outline text="湾区日报第1308期 2019/01/25" title="湾区日报第1308期 2019/01/25" type="rss" xmlUrl="http://wanqu.co/feed/" htmlUrl="http://wanqu.co/feed/" />
+</body>
+</opml>
