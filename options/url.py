@@ -12,6 +12,8 @@ from anwen import api_upload
 
 # pages
 from anwen.share import ShareHandler, OneShareHandler
+from anwen.share_by_get import ShareByGetHandler
+
 from anwen.comment import CommentHandler
 from anwen.other import FeedHandler
 from anwen.other import ViewPointHandler
@@ -67,9 +69,9 @@ handlers = [
     (r"/api/image_upload", api_upload.ImageUploadHandler),
 
 
+    (r"/share_by_get/?", ShareByGetHandler),
     (r"/share/?", ShareHandler),
     (r"/share/([^/]+)", OneShareHandler),
-
 
 
     (r"/sharecomment", CommentHandler),
