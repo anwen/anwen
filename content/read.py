@@ -28,7 +28,8 @@ def read(rss_url):
     print(len(d['entries']))
     for entry in d['entries']:
         print(entry['title'])
-        print(entry['link'])
+        url = 'https://anwensf.com/share_by_get?link='+entry['link']
+        print(url)
 
 
 assert len(outline)
