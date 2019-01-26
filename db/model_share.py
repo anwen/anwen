@@ -37,9 +37,11 @@ class Share(BaseModel):
     }
     required_fields = ['id', 'user_id', 'sharetype']
     default_values = {
+        'markdown': '',
         'tags': [],
         'link': '',
-        # 'slug': '',
+        'slug': '',
+        'post_img': '',
 
         'commentnum': 0,
         'likenum': 0,
@@ -54,6 +56,12 @@ class Share(BaseModel):
         'status': 0,  # 0=published,1=draft,2=deleted
         'published': time.time,
         'updated': time.time,
+
+        # 'title': str,
+        # 'slug': str,
+        # 'content': str,
+        # 'upload_img': str,
+
     }
 
     def by_slug(self, slug):
