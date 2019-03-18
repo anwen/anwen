@@ -2,7 +2,7 @@
 import tornado.web
 from anwen.api_base import JsonHandler
 from db import Like, Share, Comment, Viewpoint
-admin_ids = (1, 60, 63, 64, 65, 69)
+admin_ids = (1, 60, 63, 64, 65, 69, 86)
 
 
 class LikeHandler(JsonHandler):
