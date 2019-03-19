@@ -79,6 +79,7 @@ class OneShareHandler(BaseHandler):
                 md = md.replace('![image](/', '![image]({}/'.format(domain))
                 md = md.replace('\n* \n', '\n\n')
                 md = md.replace('\n*\n', '\n\n')
+                md = md.replace('>\n\n', '')
                 while '\n\n\n' in md:
                     md = md.replace('\n\n\n', '\n\n')
                 share.content = markdown2.markdown(md)
