@@ -104,7 +104,7 @@ class SharesHandler(JsonHandler):
     def get(self):
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
-        meta_info = self.get_argument("meta_info", None)
+        meta_info = self.get_argument("meta_info", 1)
         my_tags = self.get_argument("my_tags", None)
         tag = self.get_argument('tag', '')
 
