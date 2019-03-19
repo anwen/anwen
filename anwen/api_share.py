@@ -83,6 +83,8 @@ class ShareHandler(JsonHandler):
                 doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
                 d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
                 d_share['markdown'] += '\n\n[阅读原文]({})'.format(doc['url'])
+            # fix md parse
+            d_share['markdown'] = d_share['markdown'].replace('>\n\n', '')
             # 添加原文链接
             d_share['url'] = '预览： <a href="{}">{}</a>'.format(
                 share.link, share.title)
@@ -172,7 +174,7 @@ class SharesHandler(JsonHandler):
                 for name in d_tags[tag]:
                     num = Share.find({'tags': name}, {'_id': 0}).count()
                     num_recent = Share.find(
-                        {'tags': name, 'published': {'$gt': time.time()-86400*30}}, {'_id': 0}).count()
+                        {'tags': name, 'published': {'$gt': time.time() - 86400 * 30}}, {'_id': 0}).count()
                     info = {}
                     info['name'] = name
                     info['num'] = num
