@@ -21,11 +21,11 @@ Creative Work Ontology
 - 科幻小说 SubClassOf 小说
 
 ### 影音
-- 音乐 SubClassOf 文学
-- 电影 SubClassOf 娱乐
-- 电视剧 SubClassOf 娱乐
-- 纪录片 SubClassOf 娱乐
-- 动画 SubClassOf 娱乐
+- 音乐 SubClassOf 影音
+- 电影 SubClassOf 影音
+- 电视剧 SubClassOf 影音
+- 纪录片 SubClassOf 影音
+- 动画 SubClassOf 影音
 
 ### 科技
 - 效率工具 SubClassOf 科技
