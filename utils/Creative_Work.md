@@ -6,7 +6,7 @@ Creative Work Ontology
 - 影音 SubClassOf 作品 浮生偷得半日闲
 - 科技 SubClassOf 作品 在任何一项足够先进的技术和魔法之间，我们无法作出区分 
 - 商业 SubClassOf 作品 合作是一切团队繁荣的根本
-- 生活 SubClassOf 作品 志當存高遠
+- 生活 SubClassOf 作品 也无风雨也无晴
 - 游戏 SubClassOf 作品 游戏人间岁月多，痴顽将奈此翁何
 - 设计 SubClassOf 作品 我们观看世界的视角与感受世界的方法可能有千万种
 
