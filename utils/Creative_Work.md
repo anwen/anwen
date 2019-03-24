@@ -8,7 +8,7 @@ Creative Work Ontology
 - 商业 SubClassOf 作品
 - 生活 SubClassOf 作品
 - 游戏 SubClassOf 作品
-- 设计 SubClassOf 文学
+- 设计 SubClassOf 作品
 
 ### 读书
 - 书评 SubClassOf 读书
