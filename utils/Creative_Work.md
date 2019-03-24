@@ -2,55 +2,50 @@ Creative Work Ontology
 ========
 
 ## relations
-
-- 作品 SubClassOf Thing
-- 主题 SubClassOf Thing
-
-- 科学 SubClassOf 作品
-- 技术 SubClassOf 作品
+- 读书 SubClassOf 作品
+- 影音 SubClassOf 作品
+- 科技 SubClassOf 作品
+- 商业 SubClassOf 作品
 - 生活 SubClassOf 作品
-- 艺术 SubClassOf 作品
-- 文学 SubClassOf 作品
-- 经济 SubClassOf 作品
-- 社会 SubClassOf 作品
+- 游戏 SubClassOf 作品
+- 设计 SubClassOf 文学
 
-### 主题
-- 科幻 SubClassOf 主题
-
-### 科学
-- 自然科学 SubClassOf 科学
-- 数学 SubClassOf 科学
-
-### 技术
-- 工程技术 SubClassOf 技术
-- 计算机工程 SubClassOf 技术
-- 人工智能 SubClassOf 技术
-
-### 艺术
-- 电影 SubClassOf 艺术
-- 音乐 SubClassOf 艺术
-- 游戏 SubClassOf 艺术
-- 设计 SubClassOf 艺术
-
-### 文学
-- 书评 SubClassOf 文学
-- 诗歌 SubClassOf 文学
-- 杂文 SubClassOf 文学
-- 传记 SubClassOf 文学
-- 小说 SubClassOf 文学
+### 读书
+- 书评 SubClassOf 读书
+- 深度阅读 SubClassOf 读书
+- 电子书 SubClassOf 读书
+- 小说 SubClassOf 读书
+- 传记 SubClassOf 读书
+- 诗歌 SubClassOf 读书
+- 杂文 SubClassOf 读书
 - 科幻小说 SubClassOf 小说
 
-### 经济
-- 创业 SubClassOf 经济
-- 管理 SubClassOf 经济
-- 投资 SubClassOf 经济
+### 影音
+- 音乐 SubClassOf 文学
+- 电影 SubClassOf 娱乐
+- 电视剧 SubClassOf 娱乐
+- 纪录片 SubClassOf 娱乐
+- 动画 SubClassOf 娱乐
 
-### 社会
-- 实时热点 SubClassOf 社会
-- 文化 SubClassOf 社会
-- 职业发展 SubClassOf 社会
+### 科技
+- 效率工具 SubClassOf 科技
+- 自然科学 SubClassOf 科技
+- 物理 SubClassOf 自然科学
+- 化学 SubClassOf 自然科学
+- 生物 SubClassOf 自然科学
+- 数学 SubClassOf 科技
+- 人工智能 SubClassOf 科技
+- 计算机技术 SubClassOf 科技
+- 工程技术 SubClassOf 科技
 
-### 科幻
-- 科幻小说 SubThemeOf 科幻
-- 科幻电影 SubThemeOf 科幻
-- 科幻画 SubThemeOf 科幻
+### 商业
+- 创业 SubClassOf 商业
+- 投资 SubClassOf 商业
+- 管理 SubClassOf 商业
+
+### 生活
+- 运动 SubClassOf 生活
+- 旅行 SubClassOf 生活
+- 个人发展 SubClassOf 生活
+- 成长 SubClassOf 生活
+- 文化 SubClassOf 生活

@@ -144,7 +144,7 @@ def get_tags_v2():
             k_v.append((s, o))
 
     l_tag = {}
-    l_tag['Thing'] = make_tag('Thing')
+    # l_tag['Thing'] = make_tag('Thing')
     for k, v in k_v:
         l_tag[k] = make_tag(k)
 
@@ -153,7 +153,7 @@ def get_tags_v2():
         tag_v = l_tag[v]
         tag_v['subs'].append(tag_k)
 
-    return l_tag['Thing']
+    return l_tag['作品']
 
 
 def get_tags_parent():
