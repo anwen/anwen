@@ -94,7 +94,7 @@ def get_tags():
             line = line.strip()
             if 'SubClassOf' not in line:
                 continue
-            _, s, p, o = line.split()
+            _, s, p, o = line.split()[:4]
             if o == '作品':
                 l_level1.append(s)
 
@@ -103,7 +103,7 @@ def get_tags():
             line = line.strip()
             if 'SubClassOf' not in line:
                 continue
-            _, s, p, o = line.split()
+            _, s, p, o = line.split()[:4]
             if o == '作品':
                 continue
             if o not in l_level1:
@@ -124,9 +124,10 @@ class Node():
         self.subs.append(node)
 
 
-def make_tag(name):
+def make_tag(name, desc):
     tag = {}
     tag['name'] = name
+    tag['desc'] = desc
     tag['subs'] = []
     return tag
 
@@ -140,15 +141,15 @@ def get_tags_v2():
             line = line.strip()
             if 'SubClassOf' not in line:
                 continue
-            _, s, p, o = line.split()
-            k_v.append((s, o))
+            _, s, p, o, desc = line.split()[:5]
+            k_v.append((s, o, desc))
 
     l_tag = {}
-    l_tag['作品'] = make_tag('作品')
-    for k, v in k_v:
-        l_tag[k] = make_tag(k)
+    l_tag['作品'] = make_tag('作品', '江畔何人初见月')
+    for k, v, desc in k_v:
+        l_tag[k] = make_tag(k, desc)
 
-    for k, v in k_v:
+    for k, v, _ in k_v:
         tag_k = l_tag[k]
         tag_v = l_tag[v]
         tag_v['subs'].append(tag_k)
@@ -164,7 +165,7 @@ def get_tags_parent():
             line = line.strip()
             if 'SubClassOf' not in line:
                 continue
-            _, s, p, o = line.split()
+            _, s, p, o = line.split()[:4]
             if o == '作品':
                 continue
             tags[s] = o
@@ -179,7 +180,7 @@ def get_tags_parents():
             line = line.strip()
             if 'SubClassOf' not in line and 'SubThemeOf' not in line:
                 continue
-            _, s, p, o = line.split()
+            _, s, p, o = line.split()[:4]
             if o == '作品':
                 continue
             if s not in tags:
