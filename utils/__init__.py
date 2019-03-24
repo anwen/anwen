@@ -128,13 +128,14 @@ def make_tag(name, desc):
     tag = {}
     tag['name'] = name
     tag['desc'] = desc
+    # tag['img'] = '_thinking.jpg'
+    tag['img'] = 'https://anwensf.com/static/img/_thinking.jpg'
     tag['subs'] = []
     return tag
 
 
 def get_tags_v2():
     file1 = 'utils/Creative_Work.md'
-
     k_v = []
     with open(file1, 'r', encoding='u8') as f:
         for line in f:
