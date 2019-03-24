@@ -88,6 +88,16 @@ def random_sayings():
 def get_tags():
     file1 = 'utils/Creative_Work.md'
     tags = {}
+    l_level1 = []
+    with open(file1, 'r', encoding='u8') as f:
+        for line in f:
+            line = line.strip()
+            if 'SubClassOf' not in line:
+                continue
+            _, s, p, o = line.split()
+            if o == '作品':
+                l_level1.append(s)
+
     with open(file1, 'r', encoding='u8') as f:
         for line in f:
             line = line.strip()
@@ -96,10 +106,54 @@ def get_tags():
             _, s, p, o = line.split()
             if o == '作品':
                 continue
+            if o not in l_level1:
+                continue
             if o not in tags:
                 tags[o] = []
             tags[o].append(s)
     return tags
+
+
+class Node():
+
+    def __init__(self, name):
+        self.name = name
+        self.subs = []
+
+    def add_child(self, node):
+        self.subs.append(node)
+
+
+def make_tag(name):
+    tag = {}
+    tag['name'] = name
+    tag['subs'] = []
+    return tag
+
+
+def get_tags_v2():
+    file1 = 'utils/Creative_Work.md'
+
+    k_v = []
+    with open(file1, 'r', encoding='u8') as f:
+        for line in f:
+            line = line.strip()
+            if 'SubClassOf' not in line:
+                continue
+            _, s, p, o = line.split()
+            k_v.append((s, o))
+
+    l_tag = {}
+    l_tag['Thing'] = make_tag('Thing')
+    for k, v in k_v:
+        l_tag[k] = make_tag(k)
+
+    for k, v in k_v:
+        tag_k = l_tag[k]
+        tag_v = l_tag[v]
+        tag_v['subs'].append(tag_k)
+
+    return l_tag['Thing']
 
 
 def get_tags_parent():
@@ -137,3 +191,5 @@ def get_tags_parents():
 if __name__ == '__main__':
     # print(random_sayings())
     print(get_tags())
+    r = get_tags_v2()
+    print(r)

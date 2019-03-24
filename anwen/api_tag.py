@@ -1,16 +1,23 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from utils import get_tags
+from utils import get_tags, get_tags_v2
 from db import Tag, Share
 import tornado
 import time
+
+d_tags = get_tags()
+d_tags_v2 = get_tags_v2()
 
 
 class TagsHandler(JsonHandler):
 
     def get(self):
-        d_tags = get_tags()
-        self.res = d_tags
+        ver = self.get_argument("ver", 1)
+        ver = int(ver)
+        if ver == 2:
+            self.res = d_tags_v2
+        else:
+            self.res = d_tags
         self.write_json()
 
     @tornado.web.authenticated
