@@ -34,7 +34,7 @@ class ExploreHandler(BaseHandler):
         #     'score', DESCENDING).limit(11).skip((int(page) - 1) * 11)
         share_res = Share.find({'status': {'$gte': 1}}).sort(
             '_id', DESCENDING).limit(11).skip((int(page) - 1) * 11)
-        pagesum = (share_res.count() + 10) / 11
+        pagesum = int((share_res.count() + 10) / 11)
         shares = []
         for share in share_res:
             if share.id in (48, 47):
