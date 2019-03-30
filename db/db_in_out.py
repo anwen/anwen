@@ -8,7 +8,7 @@ import os
 import re
 from bson import ObjectId
 sys.path.append('..')
-
+# db.dropDatabase()
 
 doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
             'Like', 'Viewpoint']

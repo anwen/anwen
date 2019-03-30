@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
 from utils import get_tags, get_tags_v2
-from db import Tag, Share
+from db import Tag, Share, User
 import tornado
 import time
 
@@ -12,10 +12,16 @@ d_tags_v2 = get_tags_v2()
 class TagsHandler(JsonHandler):
 
     def get(self):
-        ver = self.get_argument("ver", 1)
+        ver = self.get_argument("ver", 2)
         ver = int(ver)
         if ver == 2:
             self.res = d_tags_v2
+            print(self.current_user)
+            # print(hasattr(self.current_user, 'user_id'))
+            # if hasattr(self.current_user, 'user_id'):
+            if self.current_user and 'user_id' in self.current_user:
+                user = User.by_sid(self.current_user['user_id'])
+                self.res['watched_tags'] = user['user_tags']
         else:
             self.res = d_tags
         self.write_json()

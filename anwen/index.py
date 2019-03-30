@@ -39,6 +39,7 @@ class ExploreHandler(BaseHandler):
         for share in share_res:
             if share.id in (48, 47):
                 continue
+            print(share.user_id)
             user = User.by_sid(share.user_id)
             share.name = user.user_name
             share.published = time.strftime(
