@@ -128,11 +128,10 @@ def make_tag(name, desc, eng):
     tag = {}
     tag['name'] = name
     tag['desc'] = desc
-    tag['eng'] = eng
+    # tag['eng'] = eng
     # tag['img'] = '_thinking.jpg'
     # tag['img'] = 'https://anwensf.com/static/img/_thinking.jpg'
     tag['img'] = 'https://anwensf.com/static/info/_{}.jpg'.format(eng.lower())
-
     tag['subs'] = []
     return tag
 

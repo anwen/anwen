@@ -25,7 +25,7 @@
 ### 文章相关
 - <https://anwensf.com/api/shares> 全部文章 GET page per_page
 - <https://anwensf.com/api/shares?has_vote=1> 支持投票的文章 GET
-- <https://anwensf.com/api/shares?tag=杂文> 按照tag选文章的文章 GET
+- <https://anwensf.com/api/shares?tag=杂文> 按照tag选文章 GET  （可选参数 meta_info=1， 展示其父级和子级tag，目前默认为1）
 - <https://anwensf.com/api/shares/33> 具体的一篇文章 GET
 - <https://anwensf.com/api/my_like> 喜欢的文章 GET page per_page
 - <https://anwensf.com/api/my_collect> 收藏的文章 GET page per_page
@@ -37,7 +37,7 @@
 ### 授权相关
 - <https://anwensf.com/api/authorizations>  授权接口（邮箱和密码 登录，暂未支持注册）。支持basic auth 和token auth GET
 - <https://anwensf.com/api/wxlogin>  授权接口（微信）。目前不太规范只支持 GET
-- <https://anwensf.com/api/me>  **需授权**  获取和更新用户信息接口，支持GET  POST  字段: tags(string)
+- <https://anwensf.com/api/me>  **需授权**  获取和更新用户信息接口，支持GET  POST     字段: tags(string) 逗号分隔，用于添加订阅tags   remove_tag(string) 用于删除tag
 - <https://anwensf.com/api/like/addlike>  **需授权**  POST params: `entity_id entity_type` return: newlikes   其中 entity_type为：share comment viewpoint（分别是文章、评论和观点） 其实还有取消喜欢，不喜欢和取消不喜欢的接口，应该暂时不需要
 - <https://anwensf.com/api/like/addcollect>  **需授权**  POST params: `entity_id entity_type`      其中 entity_type为：share comment viewpoint（分别是文章、评论和观点）
 
