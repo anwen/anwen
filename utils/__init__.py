@@ -124,17 +124,30 @@ class Node():
         self.subs.append(node)
 
 
-def make_tag(name, desc):
+def make_tag(name, desc, eng):
     tag = {}
     tag['name'] = name
     tag['desc'] = desc
+    tag['eng'] = eng
     # tag['img'] = '_thinking.jpg'
-    tag['img'] = 'https://anwensf.com/static/img/_thinking.jpg'
+    # tag['img'] = 'https://anwensf.com/static/img/_thinking.jpg'
+    tag['img'] = 'https://anwensf.com/static/info/_{}.jpg'.format(eng.lower())
+
     tag['subs'] = []
     return tag
 
 
 def get_tags_v2():
+    file_lang = 'utils/Creative_Work_lang.md'
+    l_lang = {}
+    with open(file_lang, 'r', encoding='u8') as f:
+        for line in f:
+            line = line.strip()
+            if 'InEnglish' not in line:
+                continue
+            _, s, p, o = line.split()[:4]
+            l_lang[s] = o
+
     file1 = 'utils/Creative_Work.md'
     k_v = []
     with open(file1, 'r', encoding='u8') as f:
@@ -146,9 +159,9 @@ def get_tags_v2():
             k_v.append((s, o, desc))
 
     l_tag = {}
-    l_tag['作品'] = make_tag('作品', '江畔何人初见月')
+    l_tag['作品'] = make_tag('作品', '江畔何人初见月', l_lang['作品'])
     for k, v, desc in k_v:
-        l_tag[k] = make_tag(k, desc)
+        l_tag[k] = make_tag(k, desc, l_lang[k])
 
     for k, v, _ in k_v:
         tag_k = l_tag[k]

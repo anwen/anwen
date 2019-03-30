@@ -31,11 +31,11 @@ Creative Work Ontology
 - 物理 SubClassOf 自然科学 我们力图尽快证明自己错了，只有这样我们才能进步。
 - 数学 SubClassOf 科技 为了人类心智的荣耀
 - 人工智能 SubClassOf 科技 你不会理解某个事物，除非你从某个角度上理解了它们
-- 计算机技术 SubClassOf 科技 预测未来最好的方式是实现它
+- 计算机 SubClassOf 科技 预测未来最好的方式是实现它
 
 ### 商业
 - 创业 SubClassOf 商业 不要被教条所限，要听从自己内心的声音，去做自己想做的事
-- 管理 SubClassOf 商业 不断打造广受欢迎的产品
+- 产品 SubClassOf 商业 不断打造广受欢迎的产品
 
 ### 生活
 - 运动 SubClassOf 生活 运动是一切生命的源泉
