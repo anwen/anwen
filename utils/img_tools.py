@@ -166,3 +166,27 @@ def make_post_thumb(path, sizes=None):
             box = tuple([int(math.floor(x)) for x in box])
             region = newimg.crop(box)
             region.save(filename, quality=100)
+
+
+def main():
+    sizes = [[100, 100]]
+    # path = 'static/info/_game.jpg'
+
+    _dir = 'static/info'
+    for root, dirs, files in os.walk(_dir, topdown=False):
+        for name in files:
+            if not name.endswith('.jpg'):
+                continue
+            if name.endswith('100.jpg'):
+                continue
+            # if not name.startswith('_'):
+            #     continue
+            path = os.path.join(root, name)
+            print(path)
+            # for name in dirs:
+            #     print(os.path.join(root, name))
+            make_post_thumb(path, sizes=sizes)
+
+
+if __name__ == '__main__':
+    main()
