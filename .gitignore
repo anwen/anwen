@@ -46,3 +46,9 @@ zgen_md2
 zgen_md3
 zzz2
 .gitignore
+
+
+
+
+local_*
+content/source.md
