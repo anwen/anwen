@@ -73,7 +73,6 @@ class JoinusHandler(BaseHandler):
         else:
             res = User
             res['id'] = res.find().count() + 1
-            print(name, type)
             res['user_name'] = name
             res['user_pass'] = password
             res['user_email'] = email

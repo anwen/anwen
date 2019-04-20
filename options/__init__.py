@@ -110,7 +110,11 @@ node_about = {
         'name': 'Deleted',
         'about': 'not good'
     },
-
+    'rss': {
+        'icon': 'filter',
+        'name': 'RSS',
+        'about': 'Long Live RSS'
+    },
 }
 
 

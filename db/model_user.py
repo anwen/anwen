@@ -17,8 +17,10 @@ class User(BaseModel):
         'user_pass': str,
         'user_domain': str,  # optional
         'user_url': str,
+        'user_rss': str,
         'user_city': str,
         'user_say': str,
+        'user_lang': str,
         'user_tags': list,
         'user_leaf': int,
         'user_status': int,   # 0=default, 1=veryfied
@@ -27,10 +29,14 @@ class User(BaseModel):
     }
     required_fields = ['id', 'user_name', 'user_email', 'user_pass']
     default_values = {
-        # 'user_domain': '',
+        # for geek and rss-user
+        'user_domain': '',
         'user_url': '',
-        'user_city': '',
+        'user_rss': '',
         'user_say': '',
+        'user_lang': '',
+
+        'user_city': '',
         'user_tags': [],
         'user_leaf': 20,
         'user_status': 0,
