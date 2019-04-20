@@ -46,8 +46,9 @@ def fix_user():
 def add_from_file():
     n = Share.find().count()
     print(n)
-    rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
-    feeds = feedparser.parse(rss_file)
+    # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
+    rss_url = 'http://www.qdaily.com/feed.xml'
+    feeds = feedparser.parse(rss_url)
     # print(feeds.feed.title)
     # print(feeds.feed.link)
     # print(feeds.feed.subtitle)
