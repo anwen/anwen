@@ -31,13 +31,13 @@ def add_from_file():
     rss_url = 'http://www.qdaily.com/feed.xml'
     rss_hostname = 'qdaily'
 
-    rss_url = 'https://www.zhihu.com/rss'
-    rss_hostname = 'zhihu'
-    rss_name = '知乎每日精选'
-
     rss_url = 'https://www.solidot.org/index.rss'
     rss_hostname = 'solidot'
     rss_name = 'Solidot'
+
+    rss_url = 'https://www.zhihu.com/rss'
+    rss_hostname = 'zhihu'
+    rss_name = '知乎每日精选'
 
     print(rss_name)
     feeds = feedparser.parse(rss_url)
@@ -62,6 +62,7 @@ def add_from_file():
         if hasattr(post, 'category_title'):
             category = post.category_title
         else:
+            print('no category')
             category = ''
 
         content = post.summary

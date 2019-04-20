@@ -34,13 +34,13 @@ def add_from_file():
     rss_hostname = 'qdaily'
     rss_name = '好奇心日报'
 
-    rss_url = 'https://www.zhihu.com/rss'
-    rss_hostname = 'zhihu'
-    rss_name = '知乎每日精选'
-
     rss_url = 'https://www.solidot.org/index.rss'
     rss_hostname = 'solidot'
     rss_name = 'Solidot'  # 奇客资讯（IT新闻）
+
+    rss_url = 'https://www.zhihu.com/rss'
+    rss_hostname = 'zhihu'
+    rss_name = '知乎每日精选'
 
     feeds = feedparser.parse(rss_url)
     assert feeds.feed.description == feeds.feed.subtitle
