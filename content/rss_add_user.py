@@ -42,6 +42,10 @@ def add_from_file():
     rss_hostname = 'zhihu'
     rss_name = '知乎每日精选'
 
+    rss_url = 'https://feedx.net/rss/huxiu.xml'
+    rss_hostname = 'huxiu'
+    rss_name = '虎嗅'
+
     feeds = feedparser.parse(rss_url)
     assert feeds.feed.description == feeds.feed.subtitle
 
@@ -59,7 +63,8 @@ def add_from_file():
         res['user_name'] = rss_name
         res['user_url'] = feeds.feed.link
         res['user_say'] = feeds.feed.subtitle
-        res['user_lang'] = feeds.feed.language.lower()  # zh-cn
+        if hasattr(feeds.feed, 'language'):
+            res['user_lang'] = feeds.feed.language.lower()  # zh-cn
 
         res['user_pass'] = random_string()
         res['user_email'] = email
