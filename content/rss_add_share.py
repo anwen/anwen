@@ -27,9 +27,10 @@ def fix_share():
 def add_from_file():
     n = Share.find().count()
     print(n)
-    rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
+    # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
+    rss_url = 'http://www.qdaily.com/feed.xml'
     rss_hostname = 'qdaily'
-    feeds = feedparser.parse(rss_file)
+    feeds = feedparser.parse(rss_url)
     for post in feeds.entries[::-1]:
         # print(published)
         assert post.summary == post.description
@@ -89,5 +90,5 @@ def add_from_file():
 
 
 if __name__ == '__main__':
-    # fix_share()
+    fix_share()
     add_from_file()

@@ -11,6 +11,7 @@
 - [中国三明治 非虚构写作平台](http://www.china30s.com/)
 - [简书](http://jianshu.io/)
 - [译言古登堡计划](http://g.yeeyan.org/)
+- <https://zh.wikihow.com/%E9%A6%96%E9%A1%B5>
 
 ### 选书工具 (请支持正版)
 - [豆瓣读书](https://book.douban.com/)
@@ -21,21 +22,8 @@
 - [Digg](http://digg.com/)
 - [Google 阅读器](https://www.google.com/reader/)  130701已经关闭
 
-### 独立博客（creative common）
-- [阮一峰的网络日志](http://www.ruanyifeng.com/blog/)
-- [卡瓦邦噶！ | 无法自制的人得不到自由。](https://www.kawabangga.com/) 技术
-- [依云's Blog](https://blog.lilydjwg.me/)
-
-### 独立博客
-- [津雲迷渡](http://xuanchao1980.com/)
-- [卢昌海个人主页](https://www.changhai.org/)
-
 ### 英文媒体
 - [Hacker News]https://news.ycombinator.com/
-
-
-
-
 
 ### 视频
 - [【AnimeTaste】品赏艾尼墨，全球动画精选](http://animetaste.net/)
