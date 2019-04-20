@@ -184,12 +184,32 @@ class ShareHandler(BaseHandler):
         if link:
             url = link
             doc = Webcache.find_one({'url': url}, {'_id': 0})
-            if not doc:
-                # try:
+            if doc:
+                logger.info('already downloaded')
+                doc_title = doc.title
+                # markdown = doc.markdown
+            else:
                 sessions = requests.session()
-                sessions.headers[
-                    'User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
-                response = sessions.get(url)
+                sessions.headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36'
+                try:
+                    # response = sessions.get(url)
+                    response = sessions.get(url, timeout=4)
+                # TODO: try to use a proxy
+                except (requests.ConnectionError, requests.Timeout) as e:
+                    print(e)
+                    self.write("GFW...")
+                    return
+                # except requests.exceptions.HTTPError as e:
+                #     if e.response.status_code == 400:
+                #         error = e.response.json()
+                #         code = error['code']
+                #         message = error['message']
+
+                except Exception as e:
+                    logger.info('e: {}'.format(e))
+                    # self.redirect("/")
+                    self.write("GFW")
+                    return
                 # response.encoding = 'utf-8'  # TODO
                 response.encoding = get_charset(response)
                 logger.info('response.encoding {}'.format(response.encoding))
@@ -205,15 +225,6 @@ class ShareHandler(BaseHandler):
                 if _markdown:
                     webcache = Webcache
                     webcache.new(res_webcache)
-                # except Exception as e:
-                #     print(e)
-                #     logger.info('e: {}'.format(e))
-                #     self.redirect("/")
-                #     return
-            else:
-                logger.info('already')
-                doc_title = doc.title
-                # markdown = doc.markdown
 
         if vote_open.isdigit():
             vote_open = int(vote_open)
