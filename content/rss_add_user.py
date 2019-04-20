@@ -1,13 +1,10 @@
 from db import User, Share
-# , Comment, Hit, Tag, Feedback, Admin, Like
 import feedparser
 import options
 import random
 import string
 from pymongo import MongoClient
 conn = MongoClient()
-# orm??
-# sys.path.append('.')
 
 
 def random_string(len=10):
@@ -28,43 +25,31 @@ def fix_user():
         if 'user_lang' not in i:
             adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_lang': ''}})
 
-# 'id': int,
-# 'user_name': str,
-# 'user_email': str,
-# 'user_pass': str,
-# 'user_domain': str,  # optional
-# 'user_url': str,
-# 'user_city': str,
-# 'user_say': str,
-# 'user_tags': list,
-# 'user_leaf': int,
-# 'user_status': int,   # 0=default, 1=veryfied
-# 'user_jointime': float,
-# 'emailverify': str,
-
 
 def add_from_file():
     n = Share.find().count()
     print(n)
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     rss_url = 'http://www.qdaily.com/feed.xml'
-    feeds = feedparser.parse(rss_url)
-    # print(feeds.feed.title)
-    # print(feeds.feed.link)
-    # print(feeds.feed.subtitle)
-    # print(feeds.feed.generator)
-    # print(feeds.feed.image)  # {}
-    # print(feeds.feed.coding)
-    # print(feeds.feed.language)
-    # print(feeds.feed.description)
-    assert feeds.feed.description == feeds.feed.subtitle
-
     rss_hostname = 'qdaily'
     rss_name = '好奇心日报'
-    rss_url = 'http://www.qdaily.com/feed.xml'
+
+    rss_url = 'https://www.zhihu.com/rss'
+    rss_hostname = 'zhihu'
+    rss_name = '知乎每日精选'
+
+    rss_url = 'https://www.solidot.org/index.rss'
+    rss_hostname = 'solidot'
+    rss_name = 'Solidot'  # 奇客资讯（IT新闻）
+
+    feeds = feedparser.parse(rss_url)
+    assert feeds.feed.description == feeds.feed.subtitle
+
     # down_rss(rss_hostname, rss_url)
     email = '{}@anwensf.com'.format(rss_hostname)
-    assert feeds.feed.title == rss_name
+    print(feeds.feed.title, rss_name)
+    # assert feeds.feed.title == rss_name
+    assert rss_name in feeds.feed.title
     if User.by_email(email):
         print(email)
         return

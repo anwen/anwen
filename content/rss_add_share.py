@@ -30,17 +30,40 @@ def add_from_file():
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     rss_url = 'http://www.qdaily.com/feed.xml'
     rss_hostname = 'qdaily'
+
+    rss_url = 'https://www.zhihu.com/rss'
+    rss_hostname = 'zhihu'
+    rss_name = '知乎每日精选'
+
+    rss_url = 'https://www.solidot.org/index.rss'
+    rss_hostname = 'solidot'
+    rss_name = 'Solidot'
+
+    print(rss_name)
     feeds = feedparser.parse(rss_url)
     for post in feeds.entries[::-1]:
         # print(published)
         assert post.summary == post.description
-        published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
+
+        # published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
+        published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
+        # Thu, 18 Apr 2019 19:32:58 +0800
         published = published.timestamp()
-        # published = int(published)
+
+        # continue
         title = post.title
         link = post.link
-        source = post.source.title
-        category = post.category_title
+        if hasattr(post, 'source'):
+            source = post.source.title
+            assert rss_name == source
+        else:
+            source = rss_name
+
+        if hasattr(post, 'category_title'):
+            category = post.category_title
+        else:
+            category = ''
+
         content = post.summary
         sharetype = 'rss'
         markdown = html2text.html2text(content)
