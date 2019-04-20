@@ -39,6 +39,10 @@ def add_from_file():
     rss_hostname = 'zhihu'
     rss_name = '知乎每日精选'
 
+    rss_url = 'https://feedx.net/rss/huxiu.xml'
+    rss_hostname = 'huxiu'
+    rss_name = '虎嗅'
+
     print(rss_name)
     feeds = feedparser.parse(rss_url)
     for post in feeds.entries[::-1]:
