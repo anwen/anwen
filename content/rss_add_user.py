@@ -42,12 +42,26 @@ def add_from_file():
     rss_hostname = 'zhihu'
     rss_name = '知乎每日精选'
 
+    # gfw
     rss_url = 'https://feedx.net/rss/huxiu.xml'
     rss_hostname = 'huxiu'
     rss_name = '虎嗅'
 
+    # 暂时放弃
+    rss_url = 'https://www.gcores.com/rss'
+    rss_hostname = 'gcores'
+    rss_name = '机核'
+
+    rss_url = 'https://www.jiqizhixin.com/rss'
+    rss_hostname = 'jiqizhixin'
+    rss_name = '机器之心'
+
     feeds = feedparser.parse(rss_url)
-    assert feeds.feed.description == feeds.feed.subtitle
+    print(feeds.keys())
+    if hasattr(feeds.feed, 'description'):
+        assert feeds.feed.description == feeds.feed.subtitle
+        print(feeds.feed.description)
+    # print(feeds.description)
 
     # down_rss(rss_hostname, rss_url)
     email = '{}@anwensf.com'.format(rss_hostname)
@@ -62,7 +76,8 @@ def add_from_file():
         res['id'] = res.find().count() + 1
         res['user_name'] = rss_name
         res['user_url'] = feeds.feed.link
-        res['user_say'] = feeds.feed.subtitle
+        if hasattr(feeds.feed, 'description'):
+            res['user_say'] = feeds.feed.description
         if hasattr(feeds.feed, 'language'):
             res['user_lang'] = feeds.feed.language.lower()  # zh-cn
 
