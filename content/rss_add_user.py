@@ -71,13 +71,15 @@ if __name__ == '__main__':
     n = 0
     for i in open('content/rss_using.txt'):
         n += 1
+        i = i.strip()
         ii = i.split()
         if len(ii) != 4:
             continue
         url, host, name, info = ii
         if 'gfw' in info:
-            print(i)
             continue
+        print(i)
+        # continue
         add_from_file(url, host, name)
         if maxnum and n >= maxnum:
             break

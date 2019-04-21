@@ -58,7 +58,9 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         if summary.startswith('<![CDATA[') and summary.endswith(']]>'):
             summary = summary[9:-3]
 
-        if ',' in post.published:
+        if 'GMT' == post.published[-3:]:
+            published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S GMT")
+        elif ',' in post.published:
             published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
             # Thu, 18 Apr 2019 19:32:58 +0800
         elif '/' in post.published:
@@ -158,13 +160,14 @@ if __name__ == '__main__':
     n = 0
     for i in open('content/rss_using.txt'):
         n += 1
+        i = i.strip()
         ii = i.split()
         if len(ii) != 4:
             continue
         url, host, name, info = ii
         if 'gfw' in info:
-            print(i)
             continue
+        print(i)
         add_from_file(url, host, name)
         if maxnum and n >= maxnum:
             break
