@@ -15,6 +15,7 @@ conn = MongoClient()
 
 # s = u"<![CDATA[ apache配置flask出现错误 ]]>";
 rgx = re.compile("\<\!\[CDATA\[(.*?)\]\]\>")
+# rgx = re.compile("<![CDATA[(.*?)]]>")
 
 
 def fix_share():
@@ -70,7 +71,7 @@ def add_from_file():
             content = post.content[0]['value']
         else:
             content = post.summary
-        if content.startswith('<![CDATA['):
+        if content.startswith('<![CDATA[') and content.endswith(']]>'):
             print(content)
             m = rgx.search(content)
             content = m.group(1)
