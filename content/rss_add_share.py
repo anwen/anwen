@@ -127,6 +127,7 @@ def add_from_file():
             # break
             if title == '刷脸背后，卷积神经网络的数学原理原来是这样的':
                 print(content)
+                print(markdown)
             continue
         else:
             print('title {} adding'.format(title))
