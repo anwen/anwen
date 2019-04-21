@@ -1,4 +1,6 @@
+http://feedmaker.kindle4rss.com/feeds/cn-all.wsj.xml wsj 华尔街日报 #
 http://www.write.org.cn/feed write 读书笔记 #
+https://rsshub.app/zhihu/hotlist
 https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
 http://feed.mifengtd.cn/
 https://www.ifanr.com/feed ifanr 爱范儿 #
