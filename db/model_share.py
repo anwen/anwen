@@ -9,26 +9,21 @@ class Share(BaseModel):
     structure = {
         # 内部使用
         'id': int,
-
-        # 与rss一致
+        # 兼容rss标准
         'title': str,
         'link': str,
-        'published': float,
-        # 兼容rss标准
         'source': str,  # source_title
         'category': str,  # category_title
-        # 'summary': str, # 复用content
+        'content': str,
+        'summary': str,
 
         'markdown': str,  # 安问
-        # 常规信息
         'sharetype': str,  # rss
-        'tags': list,
-        'user_id': int,
         'slug': str,
+        'user_id': int,
         'status': int,  # 0=public, 1=draft, -1=deleted
+        'tags': list,
 
-        # optional
-        'content': str,
         'post_img': str,
         # 冗余信息
         'commentnum': int,
@@ -41,26 +36,25 @@ class Share(BaseModel):
         'vote_open': int,
         'vote_title': str,
 
+        'published': float,
         'updated': float,
         # deleted
         'upload_img': str,
 
     }
-    required_fields = ['id', 'user_id', 'sharetype']
+    required_fields = ['id', 'user_id', 'sharetype', 'title']
     default_values = {
-        'markdown': '',
         'tags': [],
+        'markdown': '',
         'link': '',
         'slug': '',
         'post_img': '',
         'source': '',
         'category': '',
-
-
         'content': '',
+        'summary': '',
 
-        # 'title': str,
-        # 'slug': str,
+
         # 'upload_img': str,
 
         'commentnum': 0,
@@ -74,7 +68,6 @@ class Share(BaseModel):
         'vote_title': '',
 
         'status': 0,  # 0=published,1=draft,2=deleted
-        # 'published_real': 0,
         'published': time.time,  # for rss, it is real published time
         'updated': time.time,
     }
