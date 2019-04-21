@@ -30,6 +30,9 @@ def fix_share():
             adb.Share_Col.update({'_id': i['_id']}, {'$set': {'category': ''}})
         if 'content' not in i or i['content'] is None:
             adb.Share_Col.update({'_id': i['_id']}, {'$set': {'content': ''}})
+        if 'summary' not in i:
+            adb.Share_Col.update({'_id': i['_id']}, {'$set': {'summary': ''}})
+
         if 'content' in i:
             if i['content'].startswith(' '):
                 print(i['title'])
@@ -70,16 +73,23 @@ def add_from_file():
     for post in feeds.entries[::-1]:
         # print(post.keys())
         # print(post.summary) // use it
+
+        assert post.summary == post.description
+
+        # 部分rss没有content
         if hasattr(post, 'content'):
             content = post.content[0]['value']
+            summary = post.summary
         else:
             content = post.summary
+            summary = ''
+
         if content.startswith('<![CDATA[') and content.endswith(']]>'):
             # m = rgx.search(content)
             # content = m.group(1)
             content = content[9:-3]
-
-        assert post.summary == post.description
+        if summary.startswith('<![CDATA[') and summary.endswith(']]>'):
+            summary = summary[9:-3]
 
         # published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
         published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
@@ -112,6 +122,7 @@ def add_from_file():
             'source': source,
             'category': category,
             'content': content,
+            'summary': summary,
             'sharetype': sharetype,
             'tags': tags,
 
@@ -121,10 +132,16 @@ def add_from_file():
         }
         found = Share.find({'title': title})
         if found.count():
-            if found.count() == 1:
+            if found.count() == 1 and summary:
                 print(found[0].id)
-
-            print('title {} repeated'.format(title))
+                # adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_lang': ''}})
+                share = Share.by_sid(found[0].id)
+                if share:
+                    print('title {} updated'.format(title))
+                    share.update(res)
+                    share.save()
+            else:
+                print('title {} repeated'.format(title))
             # break
             continue
         else:
