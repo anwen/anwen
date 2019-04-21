@@ -72,9 +72,10 @@ def add_from_file():
         else:
             content = post.summary
         if content.startswith('<![CDATA[') and content.endswith(']]>'):
-            print(content)
-            m = rgx.search(content)
-            content = m.group(1)
+            # print(content)
+            # m = rgx.search(content)
+            # content = m.group(1)
+            content = content[9:-3]
         print(content)
 
         assert post.summary == post.description
