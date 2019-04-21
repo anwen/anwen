@@ -1,4 +1,4 @@
-from db import User, Share
+from db import User
 import feedparser
 import options
 import random
@@ -20,41 +20,14 @@ def fix_user():
     for i in adb.User_Col.find():
         # if 'user_domain' not in i:
         if 'user_rss' not in i:
-            print('add `user_rss` to Share')
+            print('add `user_rss` to User')
             adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_rss': ''}})
         if 'user_lang' not in i:
             adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_lang': ''}})
 
 
-def add_from_file():
+def add_from_file(rss_url, rss_hostname, rss_name):
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
-    rss_url = 'http://www.qdaily.com/feed.xml'
-    rss_hostname = 'qdaily'
-    rss_name = '好奇心日报'
-
-    rss_url = 'https://www.solidot.org/index.rss'
-    rss_hostname = 'solidot'
-    rss_name = 'Solidot'  # 奇客资讯（IT新闻）
-
-    rss_url = 'https://www.zhihu.com/rss'
-    rss_hostname = 'zhihu'
-    rss_name = '知乎每日精选'
-
-    # gfw
-    rss_url = 'https://feedx.net/rss/huxiu.xml'
-    rss_hostname = 'huxiu'
-    rss_name = '虎嗅'
-
-    # both summary and content
-    rss_url = 'https://www.jiqizhixin.com/rss'
-    rss_hostname = 'jiqizhixin'
-    rss_name = '机器之心'
-
-    # 暂时放弃
-    rss_url = 'https://www.gcores.com/rss'
-    rss_hostname = 'gcores'
-    rss_name = '机核'
-
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
     if hasattr(feeds.feed, 'description'):
@@ -91,4 +64,10 @@ def add_from_file():
 
 if __name__ == '__main__':
     fix_user()
-    add_from_file()
+    # add_from_file()
+    for i in open('content/rss_using.txt'):
+        url, host, name, info = i.split()
+        if 'gfw' in info:
+            print(i)
+            continue
+        add_from_file(url, host, name)

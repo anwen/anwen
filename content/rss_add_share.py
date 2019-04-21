@@ -40,34 +40,10 @@ def fix_share():
             # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'content': ''}})
 
 
-def add_from_file():
+def add_from_file(rss_url, rss_hostname, rss_name):
     n = Share.find().count()
     print(n)
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
-    rss_url = 'http://www.qdaily.com/feed.xml'
-    rss_hostname = 'qdaily'
-
-    rss_url = 'https://www.solidot.org/index.rss'
-    rss_hostname = 'solidot'
-    rss_name = 'Solidot'
-
-    rss_url = 'https://www.zhihu.com/rss'
-    rss_hostname = 'zhihu'
-    rss_name = '知乎每日精选'
-
-    rss_url = 'https://feedx.net/rss/huxiu.xml'
-    rss_hostname = 'huxiu'
-    rss_name = '虎嗅'
-
-    rss_url = 'https://www.jiqizhixin.com/rss'
-    rss_hostname = 'jiqizhixin'
-    rss_name = '机器之心'
-
-    # 暂时放弃
-    rss_url = 'https://www.gcores.com/rss'
-    rss_hostname = 'gcores'
-    rss_name = '机核'
-
     print(rss_name)
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
@@ -75,7 +51,6 @@ def add_from_file():
     for post in feeds.entries[::-1]:
         # print(post.keys())
         # print(post.summary) // use it
-
         assert post.summary == post.description
 
         # 部分rss没有content
@@ -190,4 +165,10 @@ def add_from_file():
 
 if __name__ == '__main__':
     fix_share()
-    add_from_file()
+    # add_from_file()
+    for i in open('content/rss_using.txt'):
+        url, host, name, info = i.split()
+        print(i)
+        if 'gfw' in info:
+            continue
+        add_from_file(url, host, name)

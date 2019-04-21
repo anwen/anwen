@@ -1,0 +1,6 @@
+http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
+https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
+https://www.zhihu.com/rss zhihu 知乎每日精选 #
+https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
+https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
+https://www.gcores.com/rss gcores 机核 #tags
