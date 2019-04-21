@@ -125,6 +125,8 @@ def add_from_file():
         if found.count():
             print('title {} repeated'.format(title))
             # break
+            if title == '刷脸背后，卷积神经网络的数学原理原来是这样的':
+                print(content)
             continue
         else:
             print('title {} adding'.format(title))
