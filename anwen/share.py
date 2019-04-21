@@ -60,9 +60,12 @@ class OneShareHandler(BaseHandler):
         share.tags = format_tags(share)
         share.title = share.title.split('_')[0]
         if share.markdown:
-            share.content = markdown2.markdown(share.markdown)
+            md = share.markdown
+            md = md.replace('>\n', '> ')
+            share.content = markdown2.markdown(md)
+
         # 对于链接分享类，增加原文预览
-        if share.link:
+        if share.link and share.sharetype != 'rss':
             # Webcache should add index
             doc = Webcache.find_one({'url': share.link}, {'_id': 0})
             # 此文章须经作者同意 转载 禁止转载
