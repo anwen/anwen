@@ -45,8 +45,10 @@ class ExploreHandler(BaseHandler):
             share.published = time.strftime(
                 '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
             share.domain = user.user_domain
-            share.markdown = cutter(
-                markdown2.markdown(share.markdown))
+
+            md = share.markdown
+            md = md.replace('>\n', '> ')
+            share.markdown = cutter(markdown2.markdown(md))
             share.title = share.title.split('_')[0]
             shares.append(share)
         self.render(
