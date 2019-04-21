@@ -103,15 +103,12 @@ def add_from_file(rss_url, rss_hostname, rss_name):
                 if ' ' in tag:
                     print(tag)
         else:
-            print('no category')
+            # print('no category')
             category = ''
             tags = []
-
         # print(post.author)
-
         sharetype = 'rss'
         markdown = html2text.html2text(content)
-
         res = {
             'title': title,
             'link': link,
@@ -129,34 +126,27 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         found = Share.find({'title': title})
         if found.count():
             if found.count() == 1 and summary:
-                print(found[0].id)
-                # adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_lang': ''}})
-                share = Share.by_sid(found[0].id)
-                if share:
-                    print('title {} updated'.format(title))
-                    share.update(res)
-                    share.save()
+                pass
+                # share = Share.by_sid(found[0].id)
+                # if share:
+                #     print('title {} updated'.format(title))
+                #     share.update(res)
+                #     share.save()
             else:
                 # print('title {} repeated'.format(title))
                 pass
-            # break
-            # continue
         else:
             print('title {} adding'.format(title))
-            # continue
             email = '{}@anwensf.com'.format(rss_hostname)
             auser = User.by_email(email)
             assert auser
-
             share = Share
             user_id = auser.id
             res['user_id'] = user_id  # just use 1 as default
             share = share.new(res)
-
             user = User.by_sid(user_id)
             user.user_leaf += 10
             user.save()
-            # continue
             for i in tags:
                 doc = {
                     'name': i,
@@ -167,7 +157,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
 if __name__ == '__main__':
     fix_share()
-    # add_from_file()
     for i in open('content/rss_using.txt'):
         url, host, name, info = i.split()
         print(i)
