@@ -53,6 +53,7 @@ node_list = [
     'ask',
     'eyeopen',
     'fire',
+    'rss',
     'deleted',
 ]
 node_about = {
@@ -61,7 +62,6 @@ node_about = {
         'name': 'Newest Share',
         'about': 'Create and Share, which can hit your heart~'
     },
-
     'book': {
         'icon': 'book',
         'name': 'Book',
