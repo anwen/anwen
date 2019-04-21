@@ -1,7 +1,8 @@
 https://www.ifanr.com/feed ifanr 爱范儿 #
 https://feedx.net/rss/pentitugua.xml
 http://www.zreading.cn/feed #onesentence
-https://feedx.net/rss/bingenwallpaper.xml
+http://feeds.feedburner.com/zhihu-daily # # #gfw
+https://feedx.net/rss/bingenwallpaper.xml # # #gfw
 https://feedx.net/rss/bingwallpaper.xml # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
 https://www.gcores.com/rss gcores 机核 #tags
