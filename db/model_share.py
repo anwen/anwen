@@ -56,6 +56,13 @@ class Share(BaseModel):
         'source': '',
         'category': '',
 
+
+        'content': '',
+
+        # 'title': str,
+        # 'slug': str,
+        # 'upload_img': str,
+
         'commentnum': 0,
         'likenum': 0,
         'dislikenum': 0,
@@ -70,12 +77,6 @@ class Share(BaseModel):
         # 'published_real': 0,
         'published': time.time,  # for rss, it is real published time
         'updated': time.time,
-
-        # 'title': str,
-        # 'slug': str,
-        # 'content': str,
-        # 'upload_img': str,
-
     }
 
     def by_slug(self, slug):

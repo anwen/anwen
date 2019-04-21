@@ -28,6 +28,8 @@ def fix_share():
             adb.Share_Col.update({'_id': i['_id']}, {'$set': {'source': ''}})
         if 'category' not in i:
             adb.Share_Col.update({'_id': i['_id']}, {'$set': {'category': ''}})
+        if 'content' not in i:
+            adb.Share_Col.update({'_id': i['_id']}, {'$set': {'content': ''}})
         if 'content' in i:
             if i['content'].startswith(' '):
                 print(i['title'])
