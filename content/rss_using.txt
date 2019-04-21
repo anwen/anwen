@@ -1,3 +1,4 @@
+https://wuxinhua.com/atom.xml wuxinhua Kevin's-Notes #
 https://coolshell.cn/feed coolshell 酷壳 #
 http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 #
 https://www.v2ex.com/index.xml v2ex V2EX #
