@@ -71,6 +71,7 @@ def add_from_file():
         else:
             content = post.summary
         if content.startswith('<![CDATA['):
+            print(content)
             m = rgx.search(content)
             content = m.group(1)
         print(content)
@@ -117,12 +118,12 @@ def add_from_file():
         }
         found = Share.find({'title': title})
         if found.count():
-            print('title {} is added'.format(title))
-            break
-            pass
+            print('title {} repeated'.format(title))
+            # break
+            continue
         else:
+            print('title {} adding'.format(title))
             # continue
-
             email = '{}@anwensf.com'.format(rss_hostname)
             auser = User.by_email(email)
             assert auser
