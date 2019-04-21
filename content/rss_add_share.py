@@ -80,8 +80,10 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             tags = [category]
         elif hasattr(post, 'tags'):
             tags = post.tags
-            assert len(tags) == 1
-            tags = tags[0]['term']
+            # print(tags)
+            # assert len(tags) == 1
+            # tags = tags[0]['term']
+            tags = ','.join([t['term'] for t in tags])
             category = ''
             if '-' in tags:
                 print(tags)
