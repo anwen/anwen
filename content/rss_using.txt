@@ -1,3 +1,4 @@
+https://rsshub.app/natgeo/dailyphoto natgeo 国家地理 #
 https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
 http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #
 https://wuxinhua.com/atom.xml wuxinhua Kevin's-Notes #
@@ -26,3 +27,8 @@ https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
 https://www.zhihu.com/rss zhihu 知乎每日精选 #
 https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
 http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
+
+
+https://rsshub.app/geekpark/breakingnews
+https://rsshub.app/wallstreetcn/news/global
+https://rsshub.app/dapenti/tugua
