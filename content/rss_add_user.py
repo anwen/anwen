@@ -3,6 +3,7 @@ import feedparser
 import options
 import random
 import string
+import sys
 from pymongo import MongoClient
 conn = MongoClient()
 
@@ -64,10 +65,19 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
 if __name__ == '__main__':
     fix_user()
-    # add_from_file()
+    maxnum = 0
+    if len(sys.argv) > 1:
+        maxnum = int(sys.argv[1])
+    n = 0
     for i in open('content/rss_using.txt'):
-        url, host, name, info = i.split()
+        n += 1
+        ii = i.split()
+        if len(ii) != 4:
+            continue
+        url, host, name, info = ii
         if 'gfw' in info:
             print(i)
             continue
         add_from_file(url, host, name)
+        if maxnum and n >= maxnum:
+            break

@@ -1,21 +1,17 @@
 import re
 from db import User, Share, Tag
-# , Comment, Hit, Tag, Feedback, Admin, Like
 import datetime
 import html2text
 import feedparser
 import options
 import time
-# import markdown2
+import sys
 from pymongo import MongoClient
 conn = MongoClient()
-# orm??
-# sys.path.append('.')
 
 
 # s = u"<![CDATA[ apache配置flask出现错误 ]]>";
 rgx = re.compile("\<\!\[CDATA\[(.*?)\]\]\>")
-# rgx = re.compile("<![CDATA[(.*?)]]>")
 
 
 def fix_share():
@@ -41,18 +37,13 @@ def fix_share():
 
 
 def add_from_file(rss_url, rss_hostname, rss_name):
+    # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     n = Share.find().count()
     print(n)
-    # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     print(rss_name)
     feeds = feedparser.parse(rss_url)
-    print(feeds.keys())
-    print(feeds.feed.keys())
     for post in feeds.entries[::-1]:
-        # print(post.keys())
-        # print(post.summary) // use it
         assert post.summary == post.description
-
         # 部分rss没有content
         if hasattr(post, 'content'):
             content = post.content[0]['value']
@@ -60,7 +51,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         else:
             content = post.summary
             summary = ''
-
         if content.startswith('<![CDATA[') and content.endswith(']]>'):
             # m = rgx.search(content)
             # content = m.group(1)
@@ -70,12 +60,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
         if ',' in post.published:
             published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
+            # Thu, 18 Apr 2019 19:32:58 +0800
         else:
             published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
-        # Thu, 18 Apr 2019 19:32:58 +0800
         published = published.timestamp()
 
-        # continue
         title = post.title
         link = post.link
         if hasattr(post, 'source'):
@@ -98,7 +87,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
                 print(tags)
             tags = tags.replace(' ', '-')
             tags = tags.split(',')
-            # print(tags)
             for tag in tags:
                 if ' ' in tag:
                     print(tag)
@@ -157,9 +145,19 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
 if __name__ == '__main__':
     fix_share()
+    maxnum = 0
+    if len(sys.argv) > 1:
+        maxnum = int(sys.argv[1])
+    n = 0
     for i in open('content/rss_using.txt'):
-        url, host, name, info = i.split()
-        print(i)
+        n += 1
+        ii = i.split()
+        if len(ii) != 4:
+            continue
+        url, host, name, info = ii
         if 'gfw' in info:
+            print(i)
             continue
         add_from_file(url, host, name)
+        if maxnum and n >= maxnum:
+            break
