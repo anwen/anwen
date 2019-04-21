@@ -52,6 +52,7 @@ def add_from_file():
     rss_hostname = 'gcores'
     rss_name = '机核'
 
+    # both summary and content
     rss_url = 'https://www.jiqizhixin.com/rss'
     rss_hostname = 'jiqizhixin'
     rss_name = '机器之心'
