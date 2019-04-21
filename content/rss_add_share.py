@@ -75,11 +75,9 @@ def add_from_file():
         else:
             content = post.summary
         if content.startswith('<![CDATA[') and content.endswith(']]>'):
-            # print(content)
             # m = rgx.search(content)
             # content = m.group(1)
             content = content[9:-3]
-        # print(content)
 
         assert post.summary == post.description
 
@@ -123,12 +121,11 @@ def add_from_file():
         }
         found = Share.find({'title': title})
         if found.count():
+            if found.count() == 1:
+                print(found[0].id)
+
             print('title {} repeated'.format(title))
             # break
-            if title == '刷脸背后，卷积神经网络的数学原理原来是这样的':
-                print(content)
-                print(markdown)
-                print(repr(markdown[:20]))
             continue
         else:
             print('title {} adding'.format(title))
