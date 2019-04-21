@@ -28,6 +28,11 @@ def fix_share():
             adb.Share_Col.update({'_id': i['_id']}, {'$set': {'source': ''}})
         if 'category' not in i:
             adb.Share_Col.update({'_id': i['_id']}, {'$set': {'category': ''}})
+        if 'content' in i:
+            if i['content'].startswith(' '):
+                print(i['title'])
+            pass
+            # adb.Share_Col.update({'_id': i['_id']}, {'$set': {'content': ''}})
 
 
 def add_from_file():
@@ -61,12 +66,8 @@ def add_from_file():
     print(rss_name)
     feeds = feedparser.parse(rss_url)
     for post in feeds.entries[::-1]:
-        # print(published)
-        print(dir(post))
-        print(post.keys())
-
-        print(post.summary)
-
+        # print(post.keys())
+        # print(post.summary) // use it
         if hasattr(post, 'content'):
             content = post.content[0]['value']
         else:
@@ -76,7 +77,7 @@ def add_from_file():
             # m = rgx.search(content)
             # content = m.group(1)
             content = content[9:-3]
-        print(content)
+        # print(content)
 
         assert post.summary == post.description
 
