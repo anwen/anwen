@@ -1,3 +1,4 @@
+http://www.yystv.cn/rss/feed yystv 游研社 #
 https://rsshub.app/natgeo/dailyphoto natgeo 国家地理 #
 https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
 http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #

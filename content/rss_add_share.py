@@ -79,10 +79,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         title = post.title
         link = post.link
         if hasattr(post, 'source'):
-            source = post.source.title
-            assert rss_name == source
-        else:
-            source = rss_name
+            source_title = post.source.title
+            # print(source_title)
+            assert rss_name in source_title
+            # assert rss_name == source_title
+        source = rss_name
 
         if hasattr(post, 'category_title'):
             category = post.category_title
