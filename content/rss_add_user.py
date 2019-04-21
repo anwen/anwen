@@ -40,7 +40,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     if hasattr(feeds.feed, 'title'):
         print(feeds.feed.title, rss_name)
         # assert feeds.feed.title == rss_name
-        assert rss_name in feeds.feed.title.replace(' ', '')
+        assert rss_name.replace('-', '') in feeds.feed.title.replace(' ', '')
     else:
         print('no title', rss_name)
     if User.by_email(email):
