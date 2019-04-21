@@ -63,6 +63,8 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             # Thu, 18 Apr 2019 19:32:58 +0800
         elif '/' in post.published:
             published = datetime.datetime.strptime(post.published, "%Y/%m/%d %H:%M:%S %z")
+        elif 'Z' == post.published[-1]:
+            published = datetime.datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%SZ")
         else:
             published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
         published = published.timestamp()
