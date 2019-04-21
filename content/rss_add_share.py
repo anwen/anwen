@@ -59,17 +59,19 @@ def add_from_file():
     rss_hostname = 'huxiu'
     rss_name = '虎嗅'
 
+    rss_url = 'https://www.jiqizhixin.com/rss'
+    rss_hostname = 'jiqizhixin'
+    rss_name = '机器之心'
+
     # 暂时放弃
     rss_url = 'https://www.gcores.com/rss'
     rss_hostname = 'gcores'
     rss_name = '机核'
 
-    rss_url = 'https://www.jiqizhixin.com/rss'
-    rss_hostname = 'jiqizhixin'
-    rss_name = '机器之心'
-
     print(rss_name)
     feeds = feedparser.parse(rss_url)
+    print(feeds.keys())
+    print(feeds.feed.keys())
     for post in feeds.entries[::-1]:
         # print(post.keys())
         # print(post.summary) // use it
@@ -107,14 +109,31 @@ def add_from_file():
 
         if hasattr(post, 'category_title'):
             category = post.category_title
-        else:
-            # print('no category')
+            assert ' ' not in category
+            assert ',' not in category
+            tags = [category]
+        elif hasattr(post, 'tags'):
+            tags = post.tags
+            assert len(tags) == 1
+            tags = tags[0]['term']
             category = ''
+            if '-' in tags:
+                print(tags)
+            tags = tags.replace(' ', '-')
+            tags = tags.split(',')
+            # print(tags)
+            for tag in tags:
+                if ' ' in tag:
+                    print(tag)
+        else:
+            print('no category')
+            category = ''
+            tags = []
+
+        # print(post.author)
 
         sharetype = 'rss'
         markdown = html2text.html2text(content)
-        assert ' ' not in category
-        tags = [category]
 
         res = {
             'title': title,
@@ -141,9 +160,10 @@ def add_from_file():
                     share.update(res)
                     share.save()
             else:
-                print('title {} repeated'.format(title))
+                # print('title {} repeated'.format(title))
+                pass
             # break
-            continue
+            # continue
         else:
             print('title {} adding'.format(title))
             # continue
@@ -159,13 +179,13 @@ def add_from_file():
             user = User.by_sid(user_id)
             user.user_leaf += 10
             user.save()
-        # continue
-        for i in tags:
-            doc = {
-                'name': i,
-                'share_ids': share.id
-            }
-            Tag.new(doc)
+            # continue
+            for i in tags:
+                doc = {
+                    'name': i,
+                    'share_ids': share.id
+                }
+                Tag.new(doc)
 
 
 if __name__ == '__main__':

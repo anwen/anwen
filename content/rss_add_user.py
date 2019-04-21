@@ -27,8 +27,6 @@ def fix_user():
 
 
 def add_from_file():
-    n = Share.find().count()
-    print(n)
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     rss_url = 'http://www.qdaily.com/feed.xml'
     rss_hostname = 'qdaily'
@@ -47,15 +45,15 @@ def add_from_file():
     rss_hostname = 'huxiu'
     rss_name = '虎嗅'
 
-    # 暂时放弃
-    rss_url = 'https://www.gcores.com/rss'
-    rss_hostname = 'gcores'
-    rss_name = '机核'
-
     # both summary and content
     rss_url = 'https://www.jiqizhixin.com/rss'
     rss_hostname = 'jiqizhixin'
     rss_name = '机器之心'
+
+    # 暂时放弃
+    rss_url = 'https://www.gcores.com/rss'
+    rss_hostname = 'gcores'
+    rss_name = '机核'
 
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
@@ -64,11 +62,13 @@ def add_from_file():
         print(feeds.feed.description)
     # print(feeds.description)
 
-    # down_rss(rss_hostname, rss_url)
     email = '{}@anwensf.com'.format(rss_hostname)
-    print(feeds.feed.title, rss_name)
-    # assert feeds.feed.title == rss_name
-    assert rss_name in feeds.feed.title
+    if hasattr(feeds.feed, 'title'):
+        print(feeds.feed.title, rss_name)
+        # assert feeds.feed.title == rss_name
+        assert rss_name in feeds.feed.title
+    else:
+        print('no title', rss_name)
     if User.by_email(email):
         print(email)
         return
