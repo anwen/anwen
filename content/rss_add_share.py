@@ -100,7 +100,7 @@ def add_from_file():
         if hasattr(post, 'category_title'):
             category = post.category_title
         else:
-            print('no category')
+            # print('no category')
             category = ''
 
         sharetype = 'rss'
