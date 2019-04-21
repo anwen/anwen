@@ -1,6 +1,12 @@
-http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
-https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
-https://www.zhihu.com/rss zhihu 知乎每日精选 #
-https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
-https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
+https://www.ifanr.com/feed ifanr 爱范儿 #
+https://feedx.net/rss/pentitugua.xml
+http://www.zreading.cn/feed #onesentence
+https://feedx.net/rss/bingenwallpaper.xml
+https://feedx.net/rss/bingwallpaper.xml # # #gfw
+https://feedx.net/rss/thepaper.xml # # #gfw
 https://www.gcores.com/rss gcores 机核 #tags
+https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
+https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
+https://www.zhihu.com/rss zhihu 知乎每日精选 #
+https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
+http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
