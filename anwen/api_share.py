@@ -12,6 +12,8 @@ from utils import get_charset
 from utils import get_tags, get_tags_parents
 # get_tags_parent
 import time
+from utils.avatar import get_avatar, get_avatar_by_wechat
+import options
 wx_admin_ids = (60, 63, 64)
 # logger.info('token: {}'.format(token))
 
@@ -99,14 +101,19 @@ class ShareHandler(JsonHandler):
 
 class SharesHandler(JsonHandler):
 
-    # 文章列表
+    # 文章列表API
     # 不同权限的用户看到的列表不同
+    # 来源 来源图片
+    # 内容前150个字
+
     def get(self):
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
         meta_info = self.get_argument("meta_info", 1)
         my_tags = self.get_argument("my_tags", None)
         tag = self.get_argument('tag', '')
+        user_info = self.get_argument('user_info', 1)
+        user_info = int(user_info)
 
         per_page = int(per_page)
         page = int(page)
@@ -125,20 +132,15 @@ class SharesHandler(JsonHandler):
             if user_json:
                 user = json_decode(user_json)
 
-        print(user)
-        print(my_tags)
         if user and my_tags:
             d_user = User.by_sid(user['user_id'])
-            print(d_user, 1111)
             if d_user:
-                print(d_user['user_tags'])
                 tags = d_user['user_tags']
 
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
         cond = {}
         if tags:
-            print('1111111111111', tags)
             cond['tags'] = {"$in": tags}
 
         elif tag:
@@ -159,7 +161,21 @@ class SharesHandler(JsonHandler):
         number = Share.find(cond, {'_id': 0}).count()
         shares = Share.find(cond, {'_id': 0}).sort(
             '_id', -1).limit(per_page).skip((page - 1) * per_page)
-        shares = [fix_share(share) for share in shares]
+        # shares = [fix_share(share) for share in shares]
+        new_shares = []
+        print(shares.count())
+        for share in shares:
+            share = fix_share(share)
+            user = User.by_sid(share.user_id)
+            share = dict(share)
+            share['user_name'] = user.user_name
+
+            if user.user_email.endswith('@wechat'):
+                share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
+            else:
+                share['user_img'] = options.site_url+get_avatar(user.user_email, 100)
+            new_shares.append(share)
+
         # if tag:
         #     shares = [share for share in shares if tag in share['tags']]
         meta = {}
@@ -170,7 +186,6 @@ class SharesHandler(JsonHandler):
 
             if tag in d_tags:
                 sub_tags = []
-                print(d_tags[tag])
                 for name in d_tags[tag]:
                     num = Share.find({'tags': name}, {'_id': 0}).count()
                     num_recent = Share.find(
@@ -187,9 +202,8 @@ class SharesHandler(JsonHandler):
                 # meta['parent_tags'].append(d_tags_parent[tag])
                 meta['parent_tags'] = d_tags_parents[tag]
 
-        self.res = list(shares)
+        self.res = list(new_shares)
         self.meta = meta
-        print(meta)
         # number=len(self.res)
         return self.write_json(number=number)
 
