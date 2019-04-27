@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+from utils import get_tags_info
 import tornado.escape
 import tornado.web
 import base64
@@ -10,6 +11,7 @@ from db import admin
 from utils.avatar import get_avatar, get_avatar_by_wechat
 from options import appinfo
 wx_admin_ids = (60, 63, 64)
+d_tag_desc, d_tag_lang = get_tags_info()
 
 
 class AuthorizationsHandler(JsonHandler):
@@ -138,6 +140,22 @@ class MeHandler(JsonHandler):
             user['gravatar'] = get_avatar_by_wechat(user._id)
         else:
             auser['gravatar'] = get_avatar(user.user_email, 100)
+
+        # auser['user_tags'] = []
+        auser['user_tags_info'] = []
+        for tag in auser['user_tags']:
+            info = {}
+            info['name'] = tag
+            if tag in d_tag_desc:
+                info['desc'] = d_tag_desc[tag]
+            else:
+                info['desc'] = ''
+            if tag in d_tag_lang:
+                eng = d_tag_lang[tag]
+                info['img'] = 'https://anwensf.com/static/info/_{}.jpg'.format(eng.lower())
+            else:
+                info['img'] = ''
+            auser['user_tags_info'].append(info)
         # 添加管理员信息
         auser['is_admin'] = admin.is_admin(auser['id'])
         if auser['id'] in wx_admin_ids:
