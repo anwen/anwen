@@ -30,9 +30,6 @@
 <a href="/share/{{ share.id }}" class="item-link">
 <h1>{{ share.title }}</h1>
 </a>
-{% if share.link %}
-<i class="icon-link"></i><a href="{{ share.link }}">{{ share.title }}</a>
-{% end %}
 </div>
 
 <div class="meta wf">
@@ -40,6 +37,15 @@
 <a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>
 {{_('published in')}}
 <a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{node_about[share.sharetype]['icon']}}"></i>{{_(node_about[share.sharetype]['name'])}}</a>
+
+{% if share.link %}
+<a href="{{ share.link }}">
+	<i class="icon-link"></i>
+</a>
+{% end %}
+
+
+
 <span class="pull-right">
 {{ share.likenum }}{{_('like')}} {{ share.commentnum }}{{_('comment')}}
 </span>
@@ -64,21 +70,31 @@
 
 {% if int(page)>1 %}
 <li>
-<a href="?page={{int(page)-1}}">前一页</a>
+<a href="?per_page={{per_page}}&page={{int(page)-1}}">前一页</a>
 </li>
 {% end %}
+
 {% if int(page)>0 and int(pagesum)>0 %}
 <li class="active">
 <a href="#">{{page}}</a>
 </li>
 {% end %}
+
 {% if int(pagesum)>int(page)   %}
 <li>
-<a href="?page={{int(page)+1}}">下一页</a>
+<a href="?per_page={{per_page}}&page={{int(page)+1}}">下一页</a>
 </li>
 {% end %}
-</ul>
 
+{% if int(pagesum)>int(page)   %}
+<li>
+<a href="?per_page={{per_page}}&page={{int(pagesum)}}">第{{int(pagesum)}}页</a>
+</li>
+{% end %}
+
+
+
+</ul>
 </div>
 {% end %}
 

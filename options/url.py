@@ -28,6 +28,8 @@ from anwen.index import IndexHandler, ExploreHandler
 
 # from anwen.index import NodeHandler, TagHandler
 from anwen.index import TagHandler
+from anwen.users import UsersHandler
+
 
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
 from anwen.user import GoogleLoginHandler, DoubanLoginHandler
@@ -88,6 +90,8 @@ handlers = [
 
     (r"/explore", ExploreHandler),
     (r"/node/([^/]+)", ExploreHandler),
+    (r"/users", UsersHandler),
+
     # (r"/node/([^/]+)", NodeHandler),
 
     (r"/tag/?", TagHandler),

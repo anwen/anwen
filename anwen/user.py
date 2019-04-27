@@ -22,7 +22,11 @@ class UserhomeHandler(BaseHandler):
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
         likenum = User.find({'user_id': user._id}).count()
         user.gravatar = get_avatar(user.user_email, 100)
-        self.render('userhome.html', user=user, likenum=likenum)
+
+        shares = Share.find({'user_id': user.id})
+        self.render('userhome.html', user=user,
+                    shares=shares,
+                    likenum=likenum)
 
 
 class LoginHandler(BaseHandler):

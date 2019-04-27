@@ -2,6 +2,7 @@
 {% block title %}
 {{user.user_name}}-主页-
 {% end %}
+
 {% block usermain %}
 <ul class="nav nav-tabs">
   <li class="active">
@@ -15,6 +16,23 @@
   </li>
 </ul>
 <div class="user-say">{{user.user_say}}</div>
+
+
+<div class="user-articles">
+
+{% for (offset,share) in enumerate(shares) %}
+<ul>
+	<li>
+<a href="/share/{{ share.id }}" class="item-link">
+{{ share.title }}
+</a>
+</li>
+</ul>
+
+{% end %}
+
+</div>
+
 {% end %}
 
 {% block userside %}

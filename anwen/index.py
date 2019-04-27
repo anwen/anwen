@@ -78,7 +78,9 @@ class ExploreHandler(BaseHandler):
         self.render(
             "{}.html".format(tpl_name),
             shares=shares,
-            pagesum=pagesum, page=page, node=node,
+            pagesum=pagesum, page=page,
+            per_page=per_page,
+            node=node,
         )
 
 
@@ -105,7 +107,8 @@ class NodeHandlerDelete(BaseHandler):
         node_info = options.node_about[node]
         self.render(
             "node.html", shares=shares,
-            pagesum=pagesum, page=page, node=node, node_info=node_info)
+            pagesum=pagesum, page=page,
+            node=node, node_info=node_info)
 
 
 class TagHandler(BaseHandler):
