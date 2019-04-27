@@ -25,7 +25,9 @@ from anwen.other import TogetherHandler
 
 from anwen.index import WelcomeHandler
 from anwen.index import IndexHandler, ExploreHandler
-from anwen.index import NodeHandler, TagHandler
+
+# from anwen.index import NodeHandler, TagHandler
+from anwen.index import TagHandler
 
 from anwen.user import LoginHandler, JoinusHandler, LogoutHandler
 from anwen.user import GoogleLoginHandler, DoubanLoginHandler
@@ -83,9 +85,11 @@ handlers = [
 
     (r"/welcome", WelcomeHandler),
     (r"/", IndexHandler),
-    (r"/explore", ExploreHandler),
 
-    (r"/node/([^/]+)", NodeHandler),
+    (r"/explore", ExploreHandler),
+    (r"/node/([^/]+)", ExploreHandler),
+    # (r"/node/([^/]+)", NodeHandler),
+
     (r"/tag/?", TagHandler),
     (r"/tag/([^/]+)", TagHandler),
 

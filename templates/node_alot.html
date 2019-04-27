@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block titlemore %}
+分享和创造有趣的东西 {{ _(node_about[node]['name']) }}-{{_(node_about[node]['about']) }}
+{% end %}
+
+
+
+{% block body %}
+<div class="container">
+<h3>{{ _(node_about[node]['name']) }}</h3>
+<p>{{ _(node_about[node]['about']) }}</p>
+
+
+
+<!-- <div class="collection-items"> -->
+<div>
+{% for (offset,share) in enumerate(shares) %}
+
+<div>
+  <div>
+    <div>
+
+<a href="/share/{{ share.id }}" class="item-link">
+{%if share.get('post_img') %}
+{% end %}
+</a>
+
+
+<div class="item-content wf">
+<a href="/share/{{ share.id }}" class="item-link">
+<h1>{{ share.title }}</h1>
+</a>
+{% if share.link %}
+<i class="icon-link"></i><a href="{{ share.link }}">{{ share.title }}</a>
+{% end %}
+</div>
+
+<div class="meta wf">
+<span class="author-and-collection">
+<a href="/user/{{ share.domain }}" class="author-link" data-id="48b53c45371d">{{ share.name }}</a>
+{{_('published in')}}
+<a class="collection-link" href="/node/{{ share.sharetype }}"><i class="icon-{{node_about[share.sharetype]['icon']}}"></i>{{_(node_about[share.sharetype]['name'])}}</a>
+<span class="pull-right">
+{{ share.likenum }}{{_('like')}} {{ share.commentnum }}{{_('comment')}}
+</span>
+</span>
+</div>
+
+</div>
+
+</div>
+</div>
+{% end %}
+</div>
+
+
+
+
+
+
+
+
+<ul class="pagination">
+
+{% if int(page)>1 %}
+<li>
+<a href="?page={{int(page)-1}}">前一页</a>
+</li>
+{% end %}
+{% if int(page)>0 and int(pagesum)>0 %}
+<li class="active">
+<a href="#">{{page}}</a>
+</li>
+{% end %}
+{% if int(pagesum)>int(page)   %}
+<li>
+<a href="?page={{int(page)+1}}">下一页</a>
+</li>
+{% end %}
+</ul>
+
+</div>
+{% end %}
+
+
+
+{% block bottom %}
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function() {
+JudgeActive();
+});
+function JudgeActive() {
+var node = '{{ node if node else "" }}';
+$("ul.nav li[id="+node+"]").addClass('active');
+}
+//]]></script>
+{% end %}

@@ -30,35 +30,59 @@ class ExploreHandler(BaseHandler):
 
     def get(self, node='home'):
         page = self.get_argument("page", 1)
-        # share_res = Share.find({'status': 0}).sort(
-        #     'score', DESCENDING).limit(11).skip((int(page) - 1) * 11)
-        share_res = Share.find({'status': {'$gte': 1}}).sort(
-            '_id', DESCENDING).limit(11).skip((int(page) - 1) * 11)
-        pagesum = int((share_res.count() + 10) / 11)
-        shares = []
-        for share in share_res:
-            if share.id in (48, 47):
-                continue
-            print(share.user_id)
-            user = User.by_sid(share.user_id)
-            share.name = user.user_name
-            share.published = time.strftime(
-                '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
-            share.domain = user.user_domain
+        status = self.get_argument("status", 'gte_0')
+        per_page = self.get_argument("per_page", 11)
+        per_page = int(per_page)
+        assert '_' in status
+        # status = 0
+        # status = {'$gte': 1}
+        st_type, st_num = status.split('_')
+        status = {'${}'.format(st_type): int(st_num)}
 
-            md = share.markdown
-            md = md.replace('>\n', '> ')
-            share.markdown = cutter(markdown2.markdown(md))
-            share.title = share.title.split('_')[0]
-            shares.append(share)
+        # sort type
+        # 'score', DESCENDING
+        share_res = Share.find({'status': status}).sort(
+            '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
+        pagesum = int((share_res.count() + per_page-1) / per_page)
+        shares = []
+        if per_page >= 20:
+            for share in share_res:
+                if share.id in (48, 47):  # 临时屏蔽
+                    continue
+                user = User.by_sid(share.user_id)
+                share.name = user.user_name
+                share.published = time.strftime(
+                    '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
+                share.domain = user.user_domain
+                md = share.markdown
+                md = md.replace('>\n', '> ')
+                share.markdown = cutter(markdown2.markdown(md))
+                share.title = share.title.split('_')[0]
+                shares.append(share)
+            tpl_name = 'node_alot'
+        else:
+            for share in share_res:
+                if share.id in (48, 47):  # 临时屏蔽
+                    continue
+                user = User.by_sid(share.user_id)
+                share.name = user.user_name
+                share.published = time.strftime(
+                    '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
+                share.domain = user.user_domain
+                md = share.markdown
+                md = md.replace('>\n', '> ')
+                share.markdown = cutter(markdown2.markdown(md))
+                share.title = share.title.split('_')[0]
+                shares.append(share)
+            tpl_name = 'node'
         self.render(
-            "node.html",
+            "{}.html".format(tpl_name),
             shares=shares,
             pagesum=pagesum, page=page, node=node,
         )
 
 
-class NodeHandler(BaseHandler):
+class NodeHandlerDelete(BaseHandler):
 
     def get(self, node):
         page = self.get_argument("page", 1)

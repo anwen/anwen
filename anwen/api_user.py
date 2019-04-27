@@ -128,21 +128,22 @@ class MeHandler(JsonHandler):
     @tornado.web.authenticated
     def get(self):
         user = User.by_sid(self.current_user['user_id'])
+
+        # 删除敏感信息
+        auser = dict(user)
+        auser.pop('_id')
+        auser.pop('user_pass')
         # 获取头像
         if user.user_email.endswith('@wechat'):
-            user.gravatar = get_avatar_by_wechat(user._id)
+            user['gravatar'] = get_avatar_by_wechat(user._id)
         else:
-            user.gravatar = get_avatar(user.user_email, 100)
-        # 删除敏感信息
-        user = dict(user)
-        user.pop('_id')
-        user.pop('user_pass')
+            auser['gravatar'] = get_avatar(user.user_email, 100)
         # 添加管理员信息
-        user['is_admin'] = admin.is_admin(user['id'])
-        if user['id'] in wx_admin_ids:
-            user['is_admin'] = True
+        auser['is_admin'] = admin.is_admin(auser['id'])
+        if auser['id'] in wx_admin_ids:
+            auser['is_admin'] = True
         # 输出
-        self.res = user
+        self.res = auser
         return self.write_json()
 
     @tornado.web.authenticated
