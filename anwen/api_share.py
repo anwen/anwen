@@ -171,7 +171,7 @@ class SharesHandler(JsonHandler):
             share['user_name'] = user.user_name
             share['markdown'] = ''
 
-            soup = BeautifulSoup(share['content'])
+            soup = BeautifulSoup(share['content'], "lxml")
             # kill all script and style elements
             for script in soup(["script", "style"]):
                 script.extract()    # rip it out

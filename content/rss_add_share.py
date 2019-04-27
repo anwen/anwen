@@ -7,6 +7,7 @@ import options
 import time
 import sys
 from pymongo import MongoClient
+import random
 conn = MongoClient()
 
 
@@ -73,7 +74,8 @@ def add_from_file(rss_url, rss_hostname, rss_name):
                 published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
             published = published.timestamp()
         else:
-            print('no published time')
+            if random.random() > 0.9:
+                print('no published time')
             published = time.time()
 
         title = post.title
@@ -163,16 +165,18 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         maxnum = int(sys.argv[1])
     n = 0
-    for i in open('content/rss_using.txt'):
-        n += 1
-        i = i.strip()
-        ii = i.split()
-        if len(ii) != 4:
-            continue
-        url, host, name, info = ii
-        if 'gfw' in info:
-            continue
-        print(i)
-        add_from_file(url, host, name)
-        if maxnum and n >= maxnum:
-            break
+    while True:
+        for i in open('content/rss_using.txt'):
+            n += 1
+            i = i.strip()
+            ii = i.split()
+            if len(ii) != 4:
+                continue
+            url, host, name, info = ii
+            if 'gfw' in info:
+                continue
+            print(i)
+            add_from_file(url, host, name)
+            if maxnum and n >= maxnum:
+                break
+        time.sleep(3600)
