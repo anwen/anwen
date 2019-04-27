@@ -26,6 +26,18 @@
 <a href="/share/{{ share.id }}" class="item-link">
 {{ share.title }}
 </a>
+
+
+<a href="javascript:" class="do-like" eid="{{share.id}}" etype="share">
+<i class="icon-heart"></i><span> {{ share.likenum }}</span>
+</a>
+
+<a href="javascript:" class="do-dislike" eid="{{share.id}}" etype="share">
+<i class="icon-thumbs-down"></i><span> {{ share.dislikenum }}</span>
+</a>
+
+
+
 </li>
 </ul>
 
@@ -36,4 +48,9 @@
 {% end %}
 
 {% block userside %}
+{% end %}
+
+
+{% block bottom %}
+<script src="{{ static_url("js/comment.js") }}" type="text/javascript"></script>
 {% end %}
