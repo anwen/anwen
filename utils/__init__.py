@@ -136,6 +136,30 @@ def make_tag(name, desc, eng):
     return tag
 
 
+def get_tags_info():
+    file1 = 'utils/Creative_Work.md'
+    k_v = {}
+    with open(file1, 'r', encoding='u8') as f:
+        for line in f:
+            line = line.strip()
+            if 'SubClassOf' not in line:
+                continue
+            _, s, p, o, desc = line.split()[:5]
+            k_v[s] = desc
+
+    file_lang = 'utils/Creative_Work_lang.md'
+    l_lang = {}
+    with open(file_lang, 'r', encoding='u8') as f:
+        for line in f:
+            line = line.strip()
+            if 'InEnglish' not in line:
+                continue
+            _, s, p, o = line.split()[:4]
+            l_lang[s] = o
+
+    return k_v, l_lang
+
+
 def get_tags_v2():
     file_lang = 'utils/Creative_Work_lang.md'
     l_lang = {}
