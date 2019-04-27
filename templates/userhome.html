@@ -24,6 +24,13 @@
 <ul>
 	<li>
 <a href="/share/{{ share.id }}" class="item-link">
+{{ share.id }}
+
+
+<time class="post_date">
+{{ locale.format_date(share.published, full_format=False, shorter=False) }}
+</time>
+
 {{ share.title }}
 </a>
 
