@@ -57,17 +57,20 @@ $(document.body).on('click', '.do-dislike', function() {
         action = 'deldislike';
     }
     var argsxsrf = getCookie("_xsrf");
-    var lid = $('.post_header').attr('data-id');
-    if (!lid) {
-        return;
-    }
+    // var lid = $('.post_header').attr('data-id');
+    // if (!lid) {
+    //     return;
+    // }
+    var eid = t.attr('eid');
+    var etype = t.attr('etype');
+    if (!eid) return;
     $.ajax({
         url: '/api/like/' + action,
         type: 'post',
         data: {
             "action": action,
-            "entity_id": lid,
-            "entity_type": "share",
+            "entity_id": eid,
+            "entity_type": etype,
             "_xsrf": argsxsrf
         },
         success: function(data) {
