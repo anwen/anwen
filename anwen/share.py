@@ -94,8 +94,6 @@ class OneShareHandler(BaseHandler):
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
         collect = Collect.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
-        print(like)
-        print(collect)
         share.is_liking = bool(like.likenum) if like else False
         share.is_disliking = bool(like.dislikenum) if like else False
 

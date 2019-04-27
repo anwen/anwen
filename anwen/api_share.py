@@ -70,14 +70,20 @@ class ShareHandler(JsonHandler):
         # 暂时不显示作者
         user_id = self.current_user["user_id"] if self.current_user else None
         # if user_id:
+        # like = Like.find_one(
+        #     {'share_id': share.id, 'user_id': user_id})
+        # collect = Collect.find_one(
+        #     {'share_id': share.id, 'user_id': user_id})
         like = Like.find_one(
-            {'share_id': share.id, 'user_id': user_id})
+            {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
         collect = Collect.find_one(
-            {'share_id': share.id, 'user_id': user_id})
+            {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+
         d_share = dict(share)
         d_share['is_liking'] = bool(like.likenum) if like else False
         d_share['is_disliking'] = bool(like.dislikenum) if like else False
         d_share['is_collecting'] = bool(like.collectnum) if collect else False
+
         # 对于链接分享类，增加原文预览
         if d_share.get('link'):
             # Webcache should add index
