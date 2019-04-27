@@ -23,13 +23,17 @@
 {% for (offset,share) in enumerate(shares) %}
 <ul>
 	<li>
-<a href="/share/{{ share.id }}" class="item-link">
+
 {{ share.id }}
 
 
 <time class="post_date">
 {{ locale.format_date(share.published, full_format=False, shorter=False) }}
 </time>
+
+
+
+<a href="/share/{{ share.id }}" class="item-link">
 
 {{ share.title }}
 </a>
