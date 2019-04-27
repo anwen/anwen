@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block titlemore %}
+分享和创造有趣的东西
+{% end %}
+
+
+
+{% block body %}
+<div class="container">
+
+<div>
+{% for (offset,user) in enumerate(users) %}
+
+<div>
+	<a href="/user/{{user['user_domain']}}">
+		{{user['user_name']}}
+	</a>
+ -
+
+文章数： {{user['article_num']}}
+</div>
+
+{% end %}
+</div>
+
+
+
+<div>
+发布过文章的用户数量：
+{{len(users)}}
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+{% end %}
+
+
+
+{% block bottom %}
+
+{% end %}

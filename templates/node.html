@@ -6,7 +6,10 @@
 {% block body %}
 <div class="container">
   <h3>{{ _(node_about[node]['name']) }}</h3>
-  <p>{{ _(node_about[node]['about']) }}</p>
+  <p>
+    {{ _(node_about[node]['about']) }}
+    <a href="?per_page=20"> more </a>
+  </p>
 
   <div class="collection-items">
     {% for (offset,share) in enumerate(shares) %}
