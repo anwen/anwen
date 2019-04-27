@@ -10,7 +10,7 @@ import utils
 import utils.douban_auth
 from utils.avatar import get_avatar
 from .base import BaseHandler, CommonResourceHandler
-from db import User, Share, Like
+from db import User, Share, Like, Collect
 
 
 class UserhomeHandler(BaseHandler):
@@ -24,8 +24,29 @@ class UserhomeHandler(BaseHandler):
         user.gravatar = get_avatar(user.user_email, 100)
 
         shares = Share.find({'user_id': user.id}).sort('_id', -1)
+
+        l_share = []
+        for share in shares:
+            # d_share = dict(share)
+            d_share = share
+            if self.current_user:
+                user_id = self.current_user["user_id"]
+                like = Like.find_one(
+                    {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+                collect = Collect.find_one(
+                    {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+
+                # d_share['is_liking'] = bool(like.likenum) if like else False
+                # d_share['is_disliking'] = bool(like.dislikenum) if like else False
+                # d_share['is_collecting'] = bool(like.collectnum) if collect else False
+                d_share.is_liking = bool(like.likenum) if like else False
+                d_share.is_disliking = bool(like.dislikenum) if like else False
+                d_share.is_collecting = bool(like.collectnum) if collect else False
+                print(d_share.is_liking, share.id, user_id)
+            l_share.append(d_share)
+
         self.render('userhome.html', user=user,
-                    shares=shares,
+                    shares=l_share,
                     likenum=likenum)
 
 
