@@ -1,35 +1,63 @@
-https://rsshub.app/one one 一个 #
-http://www.yystv.cn/rss/feed yystv 游研社 #
+## 图片
 https://rsshub.app/natgeo/dailyphoto natgeo 国家地理 #
-https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
-http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #
-https://wuxinhua.com/atom.xml wuxinhua Kevin's-Notes #
-https://coolshell.cn/feed coolshell 酷壳 #
-http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 #
+https://feedx.net/rss/bingenwallpaper.xml # # #gfw
+https://feedx.net/rss/bingwallpaper.xml # # #gfw
+
+## 读书
+http://www.write.org.cn/feed write 读书笔记 #
+https://rsshub.app/one one 一个 #
+https://www.zhihu.com/rss zhihu 知乎每日精选 #
+http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
+
+
+## 科技
+https://www.ifanr.com/feed ifanr 爱范儿 #
+https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
 https://www.v2ex.com/index.xml v2ex V2EX #
 https://wanqu.co/feed/ wanqu 湾区日报 #
 https://www.geekpark.net/rss geekpark 极客公园 #
 https://36kr.com/feed 36kr 36氪 #
 https://www.tmtpost.com/rss.xml tmtpost 钛媒体 #引领未来商业与生活新知
-http://feedmaker.kindle4rss.com/feeds/cn-all.wsj.xml wsj 华尔街日报 #
-http://www.write.org.cn/feed write 读书笔记 #
-https://rsshub.app/zhihu/hotlist
+https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
+https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
+https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
+
+## 商业
 https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
+
+
+## 游戏
+http://www.yystv.cn/rss/feed yystv 游研社 #
+https://www.gcores.com/rss gcores 机核 #tags
+
+## 影音
+
+
+## 生活
+
+## 设计
+
+
+## 外媒
+http://feedmaker.kindle4rss.com/feeds/cn-all.wsj.xml wsj 华尔街日报 #
+
+
+## 独立博客
+http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #
+https://wuxinhua.com/atom.xml wuxinhua Kevin's-Notes #
+https://coolshell.cn/feed coolshell 酷壳 #
+http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 #
+
+
+
+
+
+https://rsshub.app/zhihu/hotlist
 http://feed.mifengtd.cn/
-https://www.ifanr.com/feed ifanr 爱范儿 #
 https://feedx.net/rss/pentitugua.xml
 http://www.zreading.cn/feed #onesentence
 http://feeds.feedburner.com/zhihu-daily # # #gfw
-https://feedx.net/rss/bingenwallpaper.xml # # #gfw
-https://feedx.net/rss/bingwallpaper.xml # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
-https://www.gcores.com/rss gcores 机核 #tags
-https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
-https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
-https://www.zhihu.com/rss zhihu 知乎每日精选 #
-https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
-http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
-
 
 https://rsshub.app/geekpark/breakingnews
 https://rsshub.app/wallstreetcn/news/global

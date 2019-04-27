@@ -66,6 +66,11 @@ class WxLoginHandler(JsonHandler):
         r = r.json()
         session_key = r.get('session_key')
         openid = r.get('openid')
+        if not session_key or not openid:
+            print(r)
+            # return self.write_json()
+            return self.write_error(402)
+
         # 复用email password
         doc = User.by_email(openid + '@wechat')
         if doc:
