@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint
+from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint, Collect
 import argparse
 import yaml
 import sys
@@ -161,7 +161,7 @@ parser.add_argument(
 
 if __name__ == '__main__':
     args = parser.parse_args()
-    print(User, Share, Comment, Hit, Tag, Feedback, Admin)
+    print(User, Share, Comment, Hit, Tag, Feedback, Admin, Like, Viewpoint, Collect)
     if args.run_import:
         run_import(args.name)
     elif args.run_export:
