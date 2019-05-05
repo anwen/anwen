@@ -161,9 +161,14 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
 if __name__ == '__main__':
     fix_share()
-    maxnum = 0
+    # maxnum = 0
+    # if len(sys.argv) > 1:
+    #     maxnum = int(sys.argv[1])
+
+    key = ''
     if len(sys.argv) > 1:
-        maxnum = int(sys.argv[1])
+        key = sys.argv[1]
+
     n = 0
     while True:
         for i in open('content/rss_using.txt'):
@@ -176,7 +181,8 @@ if __name__ == '__main__':
             if 'gfw' in info:
                 continue
             print(i)
-            add_from_file(url, host, name)
-            if maxnum and n >= maxnum:
-                break
+            # if maxnum and n >= maxnum:
+            #     break
+            if not key or (key and key == host):
+                add_from_file(url, host, name)
         time.sleep(3600)

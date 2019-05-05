@@ -47,7 +47,7 @@ http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #
 https://wuxinhua.com/atom.xml wuxinhua Kevin's-Notes #
 https://coolshell.cn/feed coolshell 酷壳 #
 http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 #
-
+https://www.zreading.cn/feed zreading 左岸读书 #
 
 
 
