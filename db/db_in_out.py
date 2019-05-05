@@ -67,7 +67,7 @@ def run_export(name):
             doc_export(doc)
     elif name in doc_list:
         doc_export(name)
-    if os.path.isfile('data/User.yaml'):
+    if name == 'User' and os.path.isfile('data/User.yaml'):
         with open('data/User.yaml') as input_file:
             with open('data/UserSafe.yaml', 'w') as output_file:
                 a = re.sub(r'  user_pass: \S*\n', '', input_file.read())
