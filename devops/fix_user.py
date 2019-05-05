@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 # encoding:utf-8
-import copy
 import options
 from pymongo import MongoClient
-from utils import get_tags_parent
 conn = MongoClient()
 
 
@@ -18,7 +16,7 @@ def fix_user():
         n += 1
     print(adb.User_Col.find().count())
 
-    print(len(dict(adb.User_Col.find().sort('_id', 1))))
+    print(len(dict(adb.User_Col.find())))
 
 
 if __name__ == '__main__':
