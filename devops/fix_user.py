@@ -15,9 +15,9 @@ def fix_user():
         assert n == idx
         n += 1
     print(adb.User_Col.find().count())
-
     r = adb.User_Col.find()
     print(len(list(r)))
+    print(r.count())
 
 
 if __name__ == '__main__':
