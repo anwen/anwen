@@ -8,6 +8,11 @@ from pymongo import MongoClient
 conn = MongoClient()
 
 
+adb = conn.anwen
+if 'username' in options.db:
+    adb.authenticate(options.db['username'], options.db['password'])
+
+
 def random_string(len=10):
     """Generate a random string of fixed length."""
     letters = string.ascii_lowercase
@@ -15,9 +20,7 @@ def random_string(len=10):
 
 
 def fix_user():
-    adb = conn.anwen
-    if 'username' in options.db:
-        adb.authenticate(options.db['username'], options.db['password'])
+
     for i in adb.User_Col.find():
         # if 'user_domain' not in i:
         if 'user_rss' not in i:
@@ -28,6 +31,14 @@ def fix_user():
 
 
 def add_from_file(rss_url, rss_hostname, rss_name):
+    doc = adb.User_Col.find_one({'user_domain': rss_hostname})
+    if doc:
+        user_name = doc['user_name']
+        assert user_name == rss_name
+        user_url = doc['user_url']
+        assert user_url != rss_url
+        return
+
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
