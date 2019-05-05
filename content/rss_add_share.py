@@ -79,6 +79,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             published = time.time()
 
         title = post.title
+        # print('~~', title)
         link = post.link
         if hasattr(post, 'source'):
             source_title = post.source.title
