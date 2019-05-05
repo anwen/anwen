@@ -18,6 +18,7 @@ doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
 def make_doc():
     print(os.path)
     if os.path.isfile('data/Share.yaml'):
+        print('load yaml')
         docs = yaml.load(open('data/Share.yaml', 'r').read())
         for i in docs:
             filename = '../docs/shares/%s_%s.md' % (i['id'], i['slug'])
