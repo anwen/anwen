@@ -29,6 +29,7 @@ https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
 ## 游戏
 http://www.yystv.cn/rss/feed yystv 游研社 #
 https://www.gcores.com/rss gcores 机核 #tags
+http://www.chuapp.com/feed chuapp 触乐 #
 
 ## 影音
 
