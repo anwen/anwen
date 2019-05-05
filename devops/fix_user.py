@@ -14,7 +14,9 @@ def fix_user():
     for i in adb.User_Col.find().sort('_id', 1):
         idx = i['id']
         print(n, idx)
+        assert n == idx
         n += 1
+    print(adb.User_Col.find().count())
 
 
 if __name__ == '__main__':
