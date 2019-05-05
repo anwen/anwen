@@ -30,6 +30,7 @@ def make_doc():
             print(filename.encode('u8'))
             with open(filename, 'wb') as share:
                 share.write(filebody.encode('u8'))
+            print('share {} are markdownd'.format(i['id']))
         print('shares are markdownd')
 
 
