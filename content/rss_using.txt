@@ -21,6 +21,7 @@ https://www.tmtpost.com/rss.xml tmtpost 钛媒体 #引领未来商业与生活�
 https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
 https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
 https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
+https://sspai.com/feed sspai 少数派 #
 
 ## 商业
 https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
