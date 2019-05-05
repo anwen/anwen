@@ -10,9 +10,12 @@ from bson import ObjectId
 sys.path.append('..')
 # db.dropDatabase()
 
-doc_list = ['User', 'Share', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
-            'Like', 'Viewpoint']
-# , 'Like'
+doc_list = ['User', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
+            'Like', 'Viewpoint', 'Collect']
+
+
+# Webcache
+# Share
 
 
 def make_doc():
