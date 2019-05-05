@@ -1,3 +1,5 @@
+# db.User_Col.validate(true)
+
 import os
 from fabric import Connection
 from fabric import task
