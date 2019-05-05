@@ -10,8 +10,11 @@ conn = MongoClient()
 def fix_user():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
-    for i in adb.Share_Col.find().sort('_id', 1):
-        print(i['id'])
+    n = 1
+    for i in adb.User_Col.find().sort('_id', 1):
+        idx = i['id']
+        print(n, idx)
+        n += 1
 
 
 if __name__ == '__main__':
