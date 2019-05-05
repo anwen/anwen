@@ -16,7 +16,8 @@ def fix_user():
         n += 1
     print(adb.User_Col.find().count())
 
-    print(len(dict(adb.User_Col.find())))
+    r = adb.User_Col.find()
+    print(len(list(r)))
 
 
 if __name__ == '__main__':
