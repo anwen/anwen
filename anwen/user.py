@@ -41,7 +41,7 @@ class UserhomeHandler(BaseHandler):
                 # d_share['is_collecting'] = bool(like.collectnum) if collect else False
                 d_share.is_liking = bool(like.likenum) if like else False
                 d_share.is_disliking = bool(like.dislikenum) if like else False
-                d_share.is_collecting = bool(like.collectnum) if collect else False
+                d_share.is_collecting = bool(collect.collectnum) if collect else False
                 print(d_share.is_liking, share.id, user_id)
             l_share.append(d_share)
 
