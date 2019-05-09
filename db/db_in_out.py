@@ -96,7 +96,7 @@ def doc_export(doc):
     with open('data/' + doc + '.yaml', 'w') as document:
         yaml.dump(
             res, document,
-            default_flow_style=False,
+            default_flow_style=False,  # block style
             allow_unicode=True,
             # encoding='utf-8',
             # default_style=None,
