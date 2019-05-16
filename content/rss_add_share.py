@@ -187,4 +187,4 @@ if __name__ == '__main__':
             if not key or (key and key == host):
                 add_from_file(url, host, name)
         print('start sleep for 3600s')
-        time.sleep(3600)
+        time.sleep(3600*4)
