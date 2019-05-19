@@ -44,6 +44,8 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     print(feeds.keys())
     if hasattr(feeds.feed, 'description'):
         if feeds.feed.description != feeds.feed.subtitle:
+            print('!'*88)
+            print('description != subtitle')
             print(feeds.feed.description)
             print(feeds.feed.subtitle)
         # assert feeds.feed.description == feeds.feed.subtitle
