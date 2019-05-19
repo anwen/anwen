@@ -9,7 +9,6 @@ https://rsshub.app/one one 一个 #
 https://www.zhihu.com/rss zhihu 知乎每日精选 #
 http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
 
-
 ## 科技
 https://www.ifanr.com/feed ifanr 爱范儿 #
 https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
@@ -37,6 +36,8 @@ http://www.chuapp.com/feed chuapp 触乐 #
 
 ## 生活
 http://www.toodaylab.com/feed toodaylab 理想生活实验室 #
+http://feedmaker.kindle4rss.com/feeds/interest.douban.xml douban_interest 豆瓣热门精选 #
+
 
 ## 设计
 
@@ -57,12 +58,10 @@ http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
 
 
-
 https://rsshub.app/zhihu/hotlist
 http://feed.mifengtd.cn/
 https://feedx.net/rss/pentitugua.xml
 http://www.zreading.cn/feed #onesentence
-
 
 https://rsshub.app/geekpark/breakingnews
 https://rsshub.app/wallstreetcn/news/global
