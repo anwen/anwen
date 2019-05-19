@@ -13,6 +13,14 @@ sys.path.append('.')
 from db import Tag, Share  # noqa
 # User, Share, Comment, Hit, Tag, Feedback, Admin, Like
 
+# 96 zhihu
+# 120 sspai 软件
+
+# 2
+# 67 kunpeng
+# 70 alferd
+# 69 heroxie
+
 
 def get_tags(doc):
     title = doc['title']
@@ -21,8 +29,19 @@ def get_tags(doc):
         tags.append('游戏')
     if 119 == doc['user_id']:  # 触乐
         tags.append('游戏')
+    if 115 == doc['user_id']:  # one TODO 图片
+        tags.append('读书')
+    if 114 == doc['user_id']:  # youyans
+        tags.append('游戏')
     if 97 == doc['user_id']:  # 机器之心
         tags.append('科技')
+    if 105 == doc['user_id']:  # geekpark
+        tags.append('科技')
+    if 95 == doc['user_id']:  # solidot
+        tags.append('科技')
+    if 113 == doc['user_id']:  # geo
+        tags.append('图片')
+        tags.append('地理')
 
     return tags
 
