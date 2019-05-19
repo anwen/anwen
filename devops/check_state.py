@@ -5,16 +5,23 @@ import options
 from pymongo import MongoClient
 conn = MongoClient()
 
+# print(options.db)
+adb = conn.anwen
+adb.authenticate(options.db['username'], options.db['password'])
+
 
 def check():
-    print(options.db)
-    adb = conn.anwen
-    adb.authenticate(options.db['username'], options.db['password'])
-
     # for db in client.database_names()
-
     for collection in adb.collection_names():
         print(collection)
 
 
-check()
+def check2():
+    n = adb.User_Col.find().count()
+    n2 = adb.User_Col.find().sort('_id', -1)[0]['id']
+    print(n)
+    print(n2)
+
+
+# check()
+check2()
