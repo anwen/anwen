@@ -1,7 +1,8 @@
 # -*- coding:utf-8 -*-
 import tornado.web
 from anwen.api_base import JsonHandler
-from db import Share, User, Like
+from db import Share, User, Like, Hit
+import time
 # Comment, Viewpoint
 admin_ids = (1, 4, 60, 63, 64, 65, 69, 86)
 
@@ -42,6 +43,8 @@ class StatHandler(JsonHandler):
         user_rss_num = User.find({'user_rss': {'$ne': ''}}).count()
 
         like_num = Like.find().count()  # todo
+        hit_num = Hit.find().count()  # todo
+        hit_num_in_5_day = Hit.find({'hittime': {'$gt': time.time()-86400*5}}).count()
         # 日活
         self.res = {
             'share_num': share_num,
@@ -51,5 +54,7 @@ class StatHandler(JsonHandler):
             'user_rss_num': user_rss_num,
 
             'like_num': like_num,
+            'hit_num': hit_num,
+            'hit_num_in_5_day': hit_num_in_5_day,
         }
         self.write_json()
