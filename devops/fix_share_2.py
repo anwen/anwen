@@ -3,6 +3,7 @@
 # import os
 # import hashlib
 # import requests
+import time
 import copy
 import options
 from pymongo import MongoClient
@@ -43,17 +44,19 @@ def fix_share():
         doc = adb2.Share_Col_1.find_one({'id': idx})
         assert doc
         print(doc['id'])
-        adb2.Share_Col.insert(doc)
+        adb2.Share_Col_4.insert(doc)
     for idx in range(1364, 5278):
         doc = adb2.Share_Col_2.find_one({'id': idx})
         assert doc
         print(doc['id'])
-        adb2.Share_Col.insert(doc)
+        if doc['id'] > 2610:
+            time.sleep(0.01)
+        adb2.Share_Col_4.insert(doc)
     for idx in range(5277, 5694):
         doc = adb2.Share_Col_3.find_one({'id': idx})
         assert doc
         print(doc['id'])
-        adb2.Share_Col.insert(doc)
+        adb2.Share_Col_4.insert(doc)
 
 
 if __name__ == '__main__':
