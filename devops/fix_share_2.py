@@ -23,6 +23,7 @@ def fix_share():
             print(doc['id'])
         else:
             print('error: {}'.format(idx))
+        adb.Share_Col_2.insert(doc)
 
 
 if __name__ == '__main__':
