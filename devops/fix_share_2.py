@@ -20,13 +20,13 @@ def fix_share_1():
     adb2 = conn.anwen2
     adb2.authenticate(options.db['username'], options.db['password'])
     # for i in adb.Share_Col.find():
-    # for idx in range(5694):
     # for idx in range(1364, 5694):
-    for idx in range(5277, 5694):
+    # for idx in range(5277, 5694):
+    for idx in range(5694):
         doc = adb.Share_Col.find_one({'id': idx})
         if doc:
             print(doc['id'])
-            adb2.Share_Col_3.insert(doc)
+            adb2.Share_Col_10.insert(doc)
         else:
             print('error: {}'.format(idx))
 
@@ -63,4 +63,4 @@ def fix_share():
 
 
 if __name__ == '__main__':
-    fix_share()
+    fix_share_1()
