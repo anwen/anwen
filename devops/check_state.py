@@ -38,6 +38,7 @@ def check2():
     assert n == n2
     n = adb.Share_Col.find().count()
     n2 = adb.Share_Col.find().sort('_id', -1)[0]['id']
+    print('share: ', n)
     assert n == n2
     n = adb.Like_Col.find().count()
     n2 = adb.Like_Col.find().sort('_id', -1)[0]['id']
