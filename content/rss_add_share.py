@@ -176,9 +176,9 @@ if __name__ == '__main__':
             n += 1
             i = i.strip()
             ii = i.split()
-            if len(ii) != 4:
+            if len(ii) < 4:
                 continue
-            url, host, name, info = ii
+            url, host, name, info = ii[:4]
             if 'gfw' in info:
                 continue
             print(i)
