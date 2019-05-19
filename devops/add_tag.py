@@ -21,6 +21,9 @@ def get_tags(doc):
         tags.append('游戏')
     if 119 == doc['user_id']:  # 触乐
         tags.append('游戏')
+    if 97 == doc['user_id']:  # 机器之心
+        tags.append('科技')
+
     return tags
 
 
