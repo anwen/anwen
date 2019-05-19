@@ -30,6 +30,7 @@ def add_hit_stat(user_id, share):
         # TODO 增加访问次数统计
         if hit.count() == 0:
             hit = Hit
+            hit['id'] = Hit.find().count()+1
             hit['share_id'] = share.id
             hit['user_id'] = user_id
             hit.save()
