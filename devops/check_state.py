@@ -53,8 +53,18 @@ def check2():
 
     n = adb.Hit_Col.find().count()
     n2 = adb.Hit_Col.find().sort('_id', -1)[0]['id']
-    print(n, n2)
+    print('Hit_Col: ', n)
     assert n == n2
+
+    n = adb.Tag_Col.find().count()
+    n2 = adb.Tag_Col.find().sort('_id', -1)[0]['id']
+    assert n == n2
+    print('Tag_Col: ', n)
+
+    n = adb.Webcache_Col.find().count()
+    n2 = adb.Webcache_Col.find().sort('_id', -1)[0]['id']
+    assert n == n2
+    print('Webcache_Col: ', n)
 
     n = adb.Collect_Col.find().count()
     n2 = adb.Collect_Col.find().sort('_id', -1)[0]['id']
@@ -65,14 +75,8 @@ def check2():
     n = adb.Viewpoint_Col.find().count()
     n2 = adb.Viewpoint_Col.find().sort('_id', -1)[0]['id']
     assert n == n2
-    n = adb.Tag_Col.find().count()
-    n2 = adb.Tag_Col.find().sort('_id', -1)[0]['id']
-    assert n == n2
     n = adb.Feedback_Col.find().count()
     n2 = adb.Feedback_Col.find().sort('_id', -1)[0]['id']
-    assert n == n2
-    n = adb.Webcache_Col.find().count()
-    n2 = adb.Webcache_Col.find().sort('_id', -1)[0]['id']
     assert n == n2
 
 
