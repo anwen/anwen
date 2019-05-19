@@ -83,6 +83,7 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         maxnum = int(sys.argv[1])
     n = 0
+    box = []
     for i in open('content/rss_using.txt'):
         n += 1
         i = i.strip()
@@ -94,6 +95,8 @@ if __name__ == '__main__':
             continue
         print(i)
         # continue
+        box.append(url)
         add_from_file(url, host, name)
         if maxnum and n >= maxnum:
             break
+    print(len(box))
