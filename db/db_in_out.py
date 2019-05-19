@@ -91,7 +91,9 @@ def doc_export(doc):
         print(i['_id'], i['id'])
         i['_id'] = str(i['_id'])
         if doc == 'Share' and i['sharetype'] == 'rss':
+            print('skip rss')
             continue
+        print(i['_id'], i['id'])
         i = dict(i)
         i = convert(i)
         res.append(i)
