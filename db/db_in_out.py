@@ -11,7 +11,7 @@ sys.path.append('..')
 # db.dropDatabase()
 
 doc_list = ['User', 'Comment', 'Hit', 'Tag', 'Feedback', 'Admin',
-            'Like', 'Viewpoint', 'Collect']
+            'Like', 'Viewpoint', 'Collect', 'Share']
 
 
 # Webcache
@@ -90,9 +90,12 @@ def doc_export(doc):
     for i in obj:
         print(i['_id'], i['id'])
         i['_id'] = str(i['_id'])
+        if doc == 'Share' and i['sharetype'] == 'rss':
+            continue
         i = dict(i)
         i = convert(i)
         res.append(i)
+
     with open('data/' + doc + '.yaml', 'w') as document:
         yaml.dump(
             res, document,
