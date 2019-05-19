@@ -1,17 +1,50 @@
 
+https://fullrss.ddns.net/
+
+
 not full
 澎湃新闻 https://fullrss.ddns.net/rss/RSS_PengpaiNews.xml
 
 gfw
 端传媒 theinitium.com/newsfeed/
 艺术新闻 http://www.tanchinese.com/feed/
-历史上的今天" text="历史上的今天" htmlUrl="https://zh.wikipedia.org" xmlUrl="https://zh.wikipedia.org/w/api.php?action=featuredfeed&feed=onthisday&feedformat=atom" type="rss"/>
+
+
+历史上的今天 【科学上网】这一天的历史事件
+https://zh.wikipedia.org
+https://zh.wikipedia.org/w/api.php?action=featuredfeed&feed=onthisday&feedformat=atom
+
+https://fullrss.ddns.net/rss/RSS_PentiNews.xml
+
+
+Startup News
+http://news.dbanotes.net/rss
+
+TED演讲中文朗读版
+http://www.ximalaya.com/album/283518.xml
+从TED演讲开始，传递值得传播的思想。
+
+经济学人国际版
+https://www.economist.com/sections/international/rss.xml
+英文
+
+经济学人
+https://www.economist.com/sections/china/rss.xml
+中国版，英文
+
+水木社区推荐阅读
+http://www.newsmth.net/mainpage.html
+清华水木社区精选文字
+
+
+jiandan
+
+
 
 
 wait
 Mactalk  http://macshuo.com/?feed=rss2
 
-少数派" text="少数派" htmlUrl="https://sspai.com" xmlUrl="https://sspai.com/feed" type="rss"/>
 
 NASA每日一图" text="NASA每日一图" htmlUrl="https://www.nasa.gov" xmlUrl="https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss" type="rss"/>
 
