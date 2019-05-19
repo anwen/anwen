@@ -42,9 +42,9 @@ def check2():
     n = adb.Like_Col.find().count()
     n2 = adb.Like_Col.find().sort('_id', -1)[0]['id']
     assert n == n2
-    n = adb.Hit_Col.find().count()
-    n2 = adb.Hit_Col.find().sort('_id', -1)[0]['id']
-    assert n == n2
+    # n = adb.Hit_Col.find().count()
+    # n2 = adb.Hit_Col.find().sort('_id', -1)[0]['id']
+    # assert n == n2
     n = adb.Collect_Col.find().count()
     n2 = adb.Collect_Col.find().sort('_id', -1)[0]['id']
     assert n == n2
