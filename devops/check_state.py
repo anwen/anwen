@@ -57,9 +57,9 @@ def check2():
     n = adb.Tag_Col.find().count()
     n2 = adb.Tag_Col.find().sort('_id', -1)[0]['id']
     assert n == n2
-    n = adb.Admin_Col.find().count()
-    n2 = adb.Admin_Col.find().sort('_id', -1)[0]['id']
-    assert n == n2
+    # n = adb.Admin_Col.find().count()
+    # n2 = adb.Admin_Col.find().sort('_id', -1)[0]['id']
+    # assert n == n2
     n = adb.Feedback_Col.find().count()
     n2 = adb.Feedback_Col.find().sort('_id', -1)[0]['id']
     assert n == n2
