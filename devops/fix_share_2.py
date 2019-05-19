@@ -44,19 +44,22 @@ def fix_share():
         doc = adb2.Share_Col_1.find_one({'id': idx})
         assert doc
         print(doc['id'])
-        adb2.Share_Col_4.insert(doc)
+        doc['content'] = ''
+        adb2.Share_Col_5.insert(doc)
     for idx in range(1364, 5278):
-        doc = adb2.Share_Col_2.find_one({'id': idx})
+        doc = adb2.Share_Col_5.find_one({'id': idx})
         assert doc
         print(doc['id'])
         if doc['id'] > 2610:
             time.sleep(0.01)
-        adb2.Share_Col_4.insert(doc)
+        doc['content'] = ''
+        adb2.Share_Col_5.insert(doc)
     for idx in range(5277, 5694):
         doc = adb2.Share_Col_3.find_one({'id': idx})
         assert doc
         print(doc['id'])
-        adb2.Share_Col_4.insert(doc)
+        doc['content'] = ''
+        adb2.Share_Col_5.insert(doc)
 
 
 if __name__ == '__main__':
