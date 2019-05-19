@@ -14,6 +14,16 @@ conn = MongoClient()
 # from db import User, Share, Comment, Hit, Tag, Feedback, Admin, Like
 
 
+def fix_hit_1():
+    adb = conn.anwen
+    adb.authenticate(options.db['username'], options.db['password'])
+    idx = 0
+    for i in adb.Hit_Col.find().sort('_id', 1):
+        idx += 1
+        i['id'] = idx
+        adb.Hit_Col_2.insert(i)
+
+
 def fix_user_1():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
@@ -71,4 +81,5 @@ def fix_share():
 
 if __name__ == '__main__':
     # fix_share_1()
-    fix_user_1()
+    # fix_user_1()
+    fix_hit_1()
