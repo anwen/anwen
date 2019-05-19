@@ -35,6 +35,7 @@ def check2():
     # print(n, n2)
     n = adb.User_Col.find().count()
     n2 = adb.User_Col.find().sort('_id', -1)[0]['id']
+    print('User_Col: ', n)
     assert n == n2
     n = adb.Share_Col.find().count()
     n2 = adb.Share_Col.find().sort('_id', -1)[0]['id']
