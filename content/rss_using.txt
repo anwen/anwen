@@ -9,7 +9,7 @@ https://rsshub.app/one one 一个 #
 https://www.zhihu.com/rss zhihu 知乎每日精选 #
 http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
 http://feedmaker.kindle4rss.com/feeds/cn-bbc.xml bbc_cn BBC中国 #
-
+http://feedmaker.kindle4rss.com/feeds/luojisw.weixin.xml luojisw 罗辑思维 #
 
 ## 科技
 https://www.ifanr.com/feed ifanr 爱范儿 #
@@ -26,7 +26,6 @@ https://sspai.com/feed sspai 少数派 #
 
 ## 商业
 https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
-
 
 ## 游戏
 http://www.yystv.cn/rss/feed yystv 游研社 #
