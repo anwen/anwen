@@ -41,7 +41,7 @@ def fix_share():
     # for idx in range(1364, 5694):
 
     for idx in range(1, 1364):
-        doc = adb2.Share_Col_1.find_one({'id': idx})
+        doc = adb.Share_Col.find_one({'id': idx})
         assert doc
         print(doc['id'])
         doc['content'] = ''
