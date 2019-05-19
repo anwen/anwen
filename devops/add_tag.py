@@ -19,6 +19,8 @@ def get_tags(doc):
     tags = []
     if '触乐' in title:
         tags.append('游戏')
+    if 119 == doc['user_id']:  # 触乐
+        tags.append('游戏')
     return tags
 
 
