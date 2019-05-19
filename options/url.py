@@ -8,6 +8,7 @@ from anwen import api_collect
 from anwen import api_tag
 from anwen import api_comment
 from anwen import api_upload
+from anwen import api_stat
 
 
 # pages
@@ -51,6 +52,8 @@ from atalk.talk import MsgNewHandler, MsgUpdatesHandler
 
 handlers = [
     (r"/api", api.ApiHandler),
+    (r"/api/stat", api_stat.StatHandler),
+
     (r"/api/tags", api_tag.TagsHandler),
 
     (r"/api/shares/?", api_share.SharesHandler),
