@@ -7,7 +7,7 @@ import sys
 import os
 import re
 from bson import ObjectId
-import time
+# import time
 sys.path.append('..')
 # db.dropDatabase()
 
@@ -89,9 +89,6 @@ def doc_export(doc):
         return
     res = []
     for i in obj:
-        if doc == 'Share' and i['id'] > 4500:
-            time.sleep(0.01)
-            print('sleep')
         print(i['_id'], i['id'])
         i['_id'] = str(i['_id'])
         if doc == 'Share' and i['sharetype'] == 'rss':

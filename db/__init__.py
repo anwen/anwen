@@ -4,20 +4,22 @@ from db.model_user import User
 from db.model_share import Share
 from db.model_collect import Collect
 from db.model_like import Like
+from db.model_tag import Tag
 
 
 connection.register([User])
 connection.register([Share])
 connection.register([Collect])
 connection.register([Like])
+connection.register([Tag])
 
 User = connection.User
 Share = connection.Share
 Collect = connection.Collect
 Like = connection.Like
-
-
 Tag = connection.Tag
+
+
 Hit = connection.Hit
 Comment = connection.Comment
 Feedback = connection.Feedback
