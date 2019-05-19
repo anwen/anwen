@@ -35,8 +35,8 @@ def check():
         # if i['tags'] == []:
         if i['tags']:
             continue
-        print(i['id'])
-        print(i['title'])
+        # print(i['id'], i['title'])
+        print(i['user_id'])
 
         # adb.Share_Col.update().sort('_id', 1):
         tags = get_tags(i)
