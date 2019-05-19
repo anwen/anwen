@@ -193,7 +193,8 @@ class SharesHandler(JsonHandler):
             # drop blank lines
             text = '\n'.join(chunk for chunk in chunks if chunk)
             # print(text)
-            share['content'] = text[:150]
+            share['summary'] = text[:150]
+            share['content'] = ''
 
             if user.user_email.endswith('@wechat'):
                 share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
