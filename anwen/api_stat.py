@@ -39,6 +39,9 @@ class StatHandler(JsonHandler):
 
         share_num = Share.find().count()
         share_state1_num = Share.find({'status': {'$gte': 1}}).count()
+
+        share_with_tag_num = Share.find({'tags': {'$ne': ''}}).count()
+
         user_num = User.find().count()
         user_rss_num = User.find({'user_rss': {'$ne': ''}}).count()
 
@@ -49,6 +52,7 @@ class StatHandler(JsonHandler):
         self.res = {
             'share_num': share_num,
             'share_state1_num': share_state1_num,
+            'share_with_tag_num': share_state1_num,
 
             'user_num': user_num,
             'user_rss_num': user_rss_num,
