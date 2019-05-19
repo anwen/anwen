@@ -43,10 +43,10 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
     if hasattr(feeds.feed, 'description'):
-        print(feeds.feed.description)
-        print(feeds.feed.subtitle)
-        assert feeds.feed.description == feeds.feed.subtitle
-        print(feeds.feed.description)
+        if feeds.feed.description != feeds.feed.subtitle:
+            print(feeds.feed.description)
+            print(feeds.feed.subtitle)
+        # assert feeds.feed.description == feeds.feed.subtitle
     # print(feeds.description)
 
     email = '{}@anwensf.com'.format(rss_hostname)
@@ -68,7 +68,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         res['user_name'] = rss_name
         res['user_url'] = feeds.feed.link
         if hasattr(feeds.feed, 'description'):
-            res['user_say'] = feeds.feed.description
+            res['user_say'] = feeds.feed.subtitle  # feeds.feed.description
         if hasattr(feeds.feed, 'language'):
             res['user_lang'] = feeds.feed.language.lower()  # zh-cn
 
