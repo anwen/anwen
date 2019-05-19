@@ -21,9 +21,9 @@ def fix_share():
         doc = adb.Share_Col.find_one({'id': idx})
         if doc:
             print(doc['id'])
+            adb.Share_Col_2.insert(doc)
         else:
             print('error: {}'.format(idx))
-        adb.Share_Col_2.insert(doc)
 
 
 if __name__ == '__main__':
