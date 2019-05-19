@@ -6,18 +6,21 @@ https://feedx.net/rss/bingwallpaper.xml # # #gfw
 ## 读书
 http://www.write.org.cn/feed write 读书笔记 #
 https://rsshub.app/one one 一个 #
-https://www.zhihu.com/rss zhihu 知乎每日精选 #
-http://www.qdaily.com/feed.xml qdaily 好奇心日报 #
+https://www.zhihu.com/rss zhihu 知乎每日精选 # https://www.zhihu.com
+http://www.qdaily.com/feed.xml qdaily 好奇心日报 # http://www.qdaily.com
 http://feedmaker.kindle4rss.com/feeds/cn-bbc.xml bbc_cn BBC中国 #
 http://feedmaker.kindle4rss.com/feeds/luojisw.weixin.xml luojisw 罗辑思维 #
+https://jiaocha.io/feed.xml jiaocha 交差点 #科技与人文的十字路口 https://jiaocha.io
+
+
 
 ## 科技
-https://www.ifanr.com/feed ifanr 爱范儿 #
+https://www.ifanr.com/feed ifanr 爱范儿 # http://www.ifanr.com
 https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
 https://www.v2ex.com/index.xml v2ex V2EX #
 https://wanqu.co/feed/ wanqu 湾区日报 #
 https://www.geekpark.net/rss geekpark 极客公园 #
-https://36kr.com/feed 36kr 36氪 #
+https://36kr.com/feed 36kr 36氪 # http://36kr.com
 https://www.tmtpost.com/rss.xml tmtpost 钛媒体 #引领未来商业与生活新知
 https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
 https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
@@ -28,15 +31,14 @@ https://sspai.com/feed sspai 少数派 #
 https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
 
 ## 游戏
-http://www.yystv.cn/rss/feed yystv 游研社 #
-https://www.gcores.com/rss gcores 机核 #tags
+http://www.yystv.cn/rss/feed yystv 游研社 # http://www.yystv.cn
+https://www.gcores.com/rss gcores 机核 #tags https://www.gcores.com
 http://www.chuapp.com/feed chuapp 触乐 #
 
 ## 影音
 
-
 ## 生活
-http://www.toodaylab.com/feed toodaylab 理想生活实验室 #
+http://www.toodaylab.com/feed toodaylab 理想生活实验室 # http://www.toodaylab.com
 http://feedmaker.kindle4rss.com/feeds/interest.douban.xml douban_interest 豆瓣精选 #
 
 
@@ -51,7 +53,7 @@ http://feedmaker.kindle4rss.com/feeds/cn-all.wsj.xml wsj 华尔街日报 #
 http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #
 https://wuxinhua.com/atom.xml wuxinhua Kevin's-Notes #
 https://coolshell.cn/feed coolshell 酷壳 #
-http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 #
+http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 # http://www.ruanyifeng.com
 https://www.zreading.cn/feed zreading 左岸读书 #
 
 
