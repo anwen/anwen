@@ -19,7 +19,10 @@ def fix_share():
     # for i in adb.Share_Col.find():
     for idx in range(5694):
         doc = adb.Share_Col.find_one({'id': idx})
-        print(doc['id'])
+        if doc:
+            print(doc['id'])
+        else:
+            print('error: {}'.format(idx))
 
 
 if __name__ == '__main__':
