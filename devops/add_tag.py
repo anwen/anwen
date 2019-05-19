@@ -47,13 +47,12 @@ def get_tags(doc):
 
 
 def check():
-
-    share_num = Share.find().count()
+    # share_num = Share.find().count()
     # share_with_tag_num = share_num - Share.find({'tags': []}).count()
 
     for i in adb.Share_Col.find().sort('_id', 1):
-        if i['status'] < 1:
-            continue
+        # if i['status'] < 1:
+        #     continue
         # if i['tags'] == []:
         if i['tags']:
             continue
