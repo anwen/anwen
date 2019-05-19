@@ -39,9 +39,9 @@ def check():
         # adb.Share_Col.update().sort('_id', 1):
         tags = get_tags(i)
         adb.Share_Col.update({'_id': i['_id']}, {'$set': {'tags': tags}})
-        for i in tags:
+        for tag in tags:
             doc = {
-                'name': i,
+                'name': tag,
                 'share_ids': i['id']
             }
             Tag.new(doc)
