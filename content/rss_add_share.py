@@ -44,14 +44,16 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     print(rss_name)
     feeds = feedparser.parse(rss_url)
     for post in feeds.entries[::-1]:
-        assert post.summary == post.description
+        if hasattr(post, 'summary'):
+            summary = post.summary
+            assert post.summary == post.description
+        else:
+            summary = ''
         # 部分rss没有content
         if hasattr(post, 'content'):
             content = post.content[0]['value']
-            summary = post.summary
         else:
             content = post.summary
-            summary = ''
         if content.startswith('<![CDATA[') and content.endswith(']]>'):
             # m = rgx.search(content)
             # content = m.group(1)
