@@ -53,7 +53,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         if hasattr(post, 'content'):
             content = post.content[0]['value']
         else:
-            content = post.summary
+            if hasattr(post, 'summary'):
+                content = post.summary
+            else:
+                print('no content', rss_url, rss_hostname, rss_name)
+                continue
         if content.startswith('<![CDATA[') and content.endswith(']]>'):
             # m = rgx.search(content)
             # content = m.group(1)
