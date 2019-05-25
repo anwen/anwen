@@ -30,7 +30,7 @@ class ExploreHandler(BaseHandler):
 
     def get(self, node='home'):
         page = self.get_argument("page", 1)
-        status = self.get_argument("status", 'gte_0')
+        status = self.get_argument("status", 'gte_1')
         per_page = self.get_argument("per_page", 11)
         per_page = int(per_page)
         assert '_' in status
