@@ -88,7 +88,7 @@ class Relationship(BaseModel):
 
 @connection.register
 class Hit(BaseModel):
-    __collection__ = 'Hit_Col'
+    __collection__ = 'Hit_Col_v2'
     structure = {
         'id': int,
         'user_id': int,
