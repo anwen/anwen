@@ -20,12 +20,16 @@ https://www.jiqizhixin.com/rss jiqizhixin 机器之心 #summary&content
 https://www.v2ex.com/index.xml v2ex V2EX #
 https://wanqu.co/feed/ wanqu 湾区日报 #
 https://www.geekpark.net/rss geekpark 极客公园 #
-https://36kr.com/feed 36kr 36氪 # http://36kr.com
 https://www.tmtpost.com/rss.xml tmtpost 钛媒体 #引领未来商业与生活新知
 https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
 https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
 https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
 https://sspai.com/feed sspai 少数派 # https://sspai.com
+
+### 创业
+https://36kr.com/feed 36kr 36氪 # http://36kr.com
+http://www.cyzone.cn/rss cyzone 创业邦 # http://www.cyzone.cn
+
 
 ## 商业
 https://liqi.io/feed/ liqi 利器 #创造者和他们的工具
