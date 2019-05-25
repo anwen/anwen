@@ -108,8 +108,8 @@ class ShareHandler(JsonHandler):
         d_share['viewpoints'] = list(viewpoints)
         d_share['title'] = d_share['title'].split('_')[0]
         self.res = d_share
-        self.write_json()
         add_hit_stat(user_id, share)
+        self.write_json()
 
 
 class SharesHandler(JsonHandler):
