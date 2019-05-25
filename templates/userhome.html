@@ -40,7 +40,7 @@
 
 
 
-
+{{ if is_login }}
 
 <a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{share.id}}" etype="share">
 <i class="icon-heart"></i><span> {{ share.likenum }}</span>
@@ -49,6 +49,12 @@
 <a href="javascript:" class="do-dislike {{'disliking' if share.is_disliking else ''}}" eid="{{share.id}}" etype="share">
 <i class="icon-thumbs-down"></i><span> {{ share.dislikenum }}</span>
 </a>
+{% end %}
+
+
+
+
+
 
 
 </li>
