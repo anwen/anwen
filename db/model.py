@@ -88,7 +88,7 @@ class Relationship(BaseModel):
 
 @connection.register
 class Hit(BaseModel):
-    __collection__ = 'Hit_Col_v2'
+    __collection__ = 'Hit_Col'
     structure = {
         'id': int,
         'user_id': int,
@@ -99,7 +99,7 @@ class Hit(BaseModel):
     default_values = {
         'user_id': 0,
         'share_id': 0,
-        'hitnum': 0,
+        'hitnum': 1,
         'hittime': time.time,
     }
 
