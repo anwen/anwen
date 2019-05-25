@@ -85,7 +85,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             published = time.time()
 
         title = post.title
-        # print('~~', title)
         link = post.link
         if hasattr(post, 'source'):
             source_title = post.source.title
@@ -117,7 +116,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             # print('no category')
             category = ''
             tags = []
-        # print(post.author)
         sharetype = 'rss'
         try:
             markdown = html2text.html2text(content)
@@ -138,18 +136,22 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             'published': published,
             'updated': time.time(),
         }
+        print(post.author)
+        print(dir(post))
+
+        # 去重方案
+        # - 标题重复
         found = Share.find({'title': title})
         if found.count():
-            if found.count() == 1 and summary:
-                pass
-                # share = Share.by_sid(found[0].id)
-                # if share:
-                #     print('title {} updated'.format(title))
-                #     share.update(res)
-                #     share.save()
-            else:
-                # print('title {} repeated'.format(title))
-                pass
+            if found.count() > 1:
+                print('!! repeated article title: {}'.format(title))
+            elif found.count() == 1:
+                # continue
+                share = Share.by_sid(found[0].id)
+                if share and summary:
+                    print('title {} updated'.format(title))
+                    share.update(res)
+                    share.save()
         else:
             print('title {} adding'.format(title))
             email = '{}@anwensf.com'.format(rss_hostname)
@@ -159,6 +161,12 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             user_id = auser.id
             res['user_id'] = user_id  # just use 1 as default
             share = share.new(res)
+
+            # pass
+            # 修正内容
+            # <enclosure type="audio/mpeg" url="https://kernelpanic.fm/55/audio.mp3"/>
+            # <itunes:duration>6957</itunes:duration>
+
             user = User.by_sid(user_id)
             user.user_leaf += 10
             user.save()
