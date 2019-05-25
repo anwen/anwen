@@ -21,6 +21,7 @@ from db import User, Share
 
 class UsersHandler(BaseHandler):
 
+    # @tornado.web.authenticated
     def get(self):
         users = User.find()
         l_users = []

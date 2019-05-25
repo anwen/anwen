@@ -47,6 +47,7 @@ class UserhomeHandler(BaseHandler):
 
         self.render('userhome.html', user=user,
                     shares=l_share,
+                    is_login=bool(self.current_user),
                     likenum=likenum)
 
 
