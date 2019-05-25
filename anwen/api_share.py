@@ -22,15 +22,15 @@ wx_admin_ids = (60, 63, 64)
 def add_hit_stat(user_id, share):
     # 访问统计
     logger.info('hit adding')
-    print('user_id: {}'.format(user_id))
+    logger.info('user_id: {}'.format(user_id))
     if user_id:
         hit = Hit.find(
             {'share_id': share.id},
             {'user_id': user_id},
         )
-        print('share_id: {}'.format(share.id))
-        print('user_id: {}'.format(user_id))
-        print('hit.count(): {}'.format(hit.count()))
+        logger.info('share_id: {}'.format(share.id))
+        logger.info('user_id: {}'.format(user_id))
+        logger.info('hit.count(): {}'.format(hit.count()))
         # TODO 增加访问次数统计
         if hit.count() == 0:
             hit = Hit
