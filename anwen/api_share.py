@@ -25,8 +25,7 @@ def add_hit_stat(user_id, share):
     logger.info('user_id: {}'.format(user_id))
     if user_id:
         hit = Hit.find(
-            {'share_id': share.id},
-            {'user_id': user_id},
+            {'share_id': share.id, 'user_id': user_id},
         )
         logger.info('share_id: {}'.format(share.id))
         logger.info('user_id: {}'.format(user_id))
