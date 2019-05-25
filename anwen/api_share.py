@@ -33,6 +33,11 @@ def add_hit_stat(user_id, share):
             hit['user_id'] = user_id
             hit.save()
             logger.info('hit added')
+        else:
+            hit
+            hit['hitnum'] += 1
+            hit.save()
+            logger.info('hit again added')
 
 
 def get_share_by_slug(slug):
