@@ -63,6 +63,7 @@ https://coolshell.cn/feed coolshell 酷壳 #
 http://www.ruanyifeng.com/blog/atom.xml ruanyifeng 阮一峰的网络日志 # http://www.ruanyifeng.com
 https://www.zreading.cn/feed zreading 左岸读书 # https://www.zreading.cn
 http://weiwuhui.com/feed weiwuhui 扯氮集 # http://weiwuhui.com
+https://www.luanxiang.org/blog/feed luanxiang 乱象，印迹 # https://www.luanxiang.org/blog/
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
