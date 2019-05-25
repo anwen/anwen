@@ -138,6 +138,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         }
         print(post.author)
         print(dir(post))
+        print(post.keys)
 
         # 去重方案
         # - 标题重复
