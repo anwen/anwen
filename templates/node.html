@@ -59,21 +59,31 @@
 
 <ul class="pagination">
 
-        {% if int(page)>1 %}
-        <li>
-          <a href="?page={{int(page)-1}}">前一页</a>
-        </li>
-        {% end %}
-      {% if int(page)>0 and int(pagesum)>0 %}
-        <li class="active">
-          <a href="#">{{page}}</a>
-        </li>
-        {% end %}
-{% if int(pagesum)>int(page)   %}
-        <li>
-          <a href="?page={{int(page)+1}}">下一页</a>
-        </li>
-        {% end %}
+  {% if int(page)>1 %}
+  <li>
+  <a href="?page=1">第一页</a>
+  </li>
+  <li>
+  <a href="?page={{int(page)-1}}">前一页</a>
+  </li>
+  {% end %}
+
+  {% if int(page)>0 and int(pagesum)>0 %}
+  <li class="active">
+  <a href="#">{{page}}</a>
+  </li>
+  {% end %}
+
+  {% if int(pagesum)>int(page) %}
+  <li>
+  <a href="?page={{int(page)+1}}">下一页</a>
+  </li>
+  {% end %}
+  <li>
+  <a href="?page={{int(pagesum)}}">第{{pagesum}}页</a>
+  </li>
+  {% end %}
+
 </ul>
 
 
