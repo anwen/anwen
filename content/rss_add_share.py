@@ -119,7 +119,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             tags = []
         # print(post.author)
         sharetype = 'rss'
-        markdown = html2text.html2text(content)
+        try:
+            markdown = html2text.html2text(content)
+        except Exception as e:
+            print('error in html-to-markdown: {}'.format(e))
+            continue
         res = {
             'title': title,
             'link': link,
