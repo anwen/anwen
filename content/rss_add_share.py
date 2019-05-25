@@ -136,9 +136,25 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             'published': published,
             'updated': time.time(),
         }
-        print(post.author)
-        print(dir(post))
         print(post.keys())
+        if hasattr(post, 'author'):
+            print('author: ', post.author)
+            # res['author'] = post.author
+
+        # title title_detail
+        # published published_parsed
+        # summary summary_detail
+        # author
+        # link links guidislink
+        # authors
+
+        # 'itunes_title', 'itunes_episode'
+        # 'author_detail', 'id', 'itunes_duration'
+        # <itunes:duration>6957</itunes:duration>
+
+        # TODO
+        # 修正内容 目前暂时不支持
+        # <enclosure type="audio/mpeg" url="https://kernelpanic.fm/55/audio.mp3"/>
 
         # 去重方案
         # - 标题重复
@@ -162,11 +178,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             user_id = auser.id
             res['user_id'] = user_id  # just use 1 as default
             share = share.new(res)
-
-            # pass
-            # 修正内容
-            # <enclosure type="audio/mpeg" url="https://kernelpanic.fm/55/audio.mp3"/>
-            # <itunes:duration>6957</itunes:duration>
 
             user = User.by_sid(user_id)
             user.user_leaf += 10
