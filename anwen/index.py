@@ -40,8 +40,9 @@ class ExploreHandler(BaseHandler):
         status = {'${}'.format(st_type): int(st_num)}
 
         conds = {'status': status}
-        if node != 'home':
+        if node not in 'home rss'.split():
             conds['sharetype'] = node
+            conds['status'] = {'$gte': 0}
 
         # sort type
         # 'score', DESCENDING
