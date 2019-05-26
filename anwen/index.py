@@ -39,9 +39,13 @@ class ExploreHandler(BaseHandler):
         st_type, st_num = status.split('_')
         status = {'${}'.format(st_type): int(st_num)}
 
+        conds = {'status': status}
+        if node != 'home':
+            conds['sharetype'] = node
+
         # sort type
         # 'score', DESCENDING
-        share_res = Share.find({'status': status}).sort(
+        share_res = Share.find(conds).sort(
             '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
         pagesum = int((share_res.count() + per_page-1) / per_page)
         shares = []
