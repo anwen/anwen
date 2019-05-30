@@ -69,6 +69,7 @@ http://mindhacks.cn/feed/ mindhacks 刘未鹏 # http://mindhacks.cn
 http://www.mindmeters.com/feed mindmeters mindmeters # http://www.mindmeters.com
 https://ztever.com/rss/ ztever 折腾不止 # https://ztever.com
 https://www.physixfan.com/feed/ physixfan 宇宙的心弦 # https://www.physixfan.com
+https://zoomyale.com/feed zoomyale 也而的博客 # https://zoomyale.com
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
