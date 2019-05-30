@@ -73,6 +73,7 @@ https://zoomyale.com/feed zoomyale 也而的博客 # https://zoomyale.com
 https://zhiqiang.org/feed.xml zhiqiang 阅微堂 # https://zhiqiang.org
 http://www.ftchinese.com/rss/hotstoryby7day ftchinese7day FT中文网一周十大热门文章 #
 http://www.ftchinese.com/rss/feed ftchinese FT中文网 #
+https://pansci.asia/feed pansci 泛科學 #
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
