@@ -75,6 +75,7 @@ http://www.ftchinese.com/rss/hotstoryby7day ftchinese7day FT中文网一周十�
 http://www.ftchinese.com/rss/feed ftchinese FT中文网 #
 https://pansci.asia/feed pansci 泛科學 #
 http://www.mooc.cn/feed mooc_cn MOOC中国 # http://www.mooc.cn
+https://daringfireball.net/feeds/main daringfireball DaringFireball #
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
