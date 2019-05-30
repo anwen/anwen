@@ -67,6 +67,8 @@ https://www.luanxiang.org/blog/feed luanxiang 乱象，印迹 # https://www.luan
 https://yihui.name/cn/index.xml yihui_cn 谢益辉 # https://yihui.name/cn
 http://mindhacks.cn/feed/ mindhacks 刘未鹏 # http://mindhacks.cn
 http://www.mindmeters.com/feed mindmeters mindmeters # http://www.mindmeters.com
+https://ztever.com/rss/ ztever 折腾不止 # https://ztever.com
+
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
