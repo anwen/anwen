@@ -1,6 +1,6 @@
+from datetime import datetime, timedelta, tzinfo
 import re
 from db import User, Share, Tag
-import datetime
 import html2text
 import feedparser
 import options
@@ -9,6 +9,31 @@ import sys
 from pymongo import MongoClient
 import random
 conn = MongoClient()
+
+
+class FixedOffset(tzinfo):
+    """offset_str: Fixed offset in str: e.g. '-0400'"""
+
+    def __init__(self, offset_str):
+        sign, hours, minutes = offset_str[0], offset_str[1:3], offset_str[3:]
+        offset = (int(hours) * 60 + int(minutes)) * (-1 if sign == "-" else 1)
+        self.__offset = timedelta(minutes=offset)
+        # NOTE: the last part is to remind about deprecated POSIX GMT+h timezones
+        # that have the opposite sign in the name;
+        # the corresponding numeric value is not used e.g., no minutes
+        '<%+03d%02d>%+d' % (int(hours), int(minutes), int(hours)*-1)
+
+    def utcoffset(self, dt=None):
+        return self.__offset
+
+    def tzname(self, dt=None):
+        return self.__name
+
+    def dst(self, dt=None):
+        return timedelta(0)
+
+    def __repr__(self):
+        return 'FixedOffset(%d)' % (self.utcoffset().total_seconds() / 60)
 
 
 # s = u"<![CDATA[ apache配置flask出现错误 ]]>";
@@ -67,17 +92,23 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
         if hasattr(post, 'published'):
             if 'GMT' == post.published[-3:]:
-                published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S GMT")
+                published = datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S GMT")
             elif ',' in post.published:
-                published = datetime.datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
+                published = datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
                 # Thu, 18 Apr 2019 19:32:58 +0800
             elif '/' in post.published:
-                published = datetime.datetime.strptime(post.published, "%Y/%m/%d %H:%M:%S %z")
+                published = datetime.strptime(post.published, "%Y/%m/%d %H:%M:%S %z")
             elif 'Z' == post.published[-1]:
                 post.published = post.published.replace('.000Z', 'Z')
-                published = datetime.datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%SZ")
+                published = datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%SZ")
+            elif 'T' in post.published:
+                # 2019-05-24T15:05:50-04:00
+                post.published = post.published[:-6]
+                tz = post.published[:-6].replace(':', '')
+                published = datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%S")
+                published = published.replace(tzinfo=FixedOffset(tz))
             else:
-                published = datetime.datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
+                published = datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
             published = published.timestamp()
         else:
             if random.random() > 0.9:
