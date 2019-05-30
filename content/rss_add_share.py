@@ -104,7 +104,8 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             elif 'T' in post.published:
                 # 2019-05-24T15:05:50-04:00
                 post.published = post.published[:-6]
-                tz = post.published[:-6].replace(':', '')
+                tz = post.published[-6:].replace(':', '')
+
                 published = datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%S")
                 published = published.replace(tzinfo=FixedOffset(tz))
             else:
