@@ -66,7 +66,7 @@ http://weiwuhui.com/feed weiwuhui 扯氮集 # http://weiwuhui.com
 https://www.luanxiang.org/blog/feed luanxiang 乱象，印迹 # https://www.luanxiang.org/blog/
 https://yihui.name/cn/index.xml yihui_cn 谢益辉 # https://yihui.name/cn
 http://mindhacks.cn/feed/ mindhacks 刘未鹏 # http://mindhacks.cn
-
+http://www.mindmeters.com/feed mindmeters mindmeters # http://www.mindmeters.com
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
