@@ -46,11 +46,12 @@ class SharesHandler(JsonHandler):
     # 内容前150个字
 
     def get(self):
-        # get meta info
+        # get params
         filter_type = self.get_argument("my_tags", '')
 
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
+
         meta_info = self.get_argument("meta_info", 1)
         tag = self.get_argument('tag', '')
         user_info = self.get_argument('user_info', 1)
