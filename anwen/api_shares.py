@@ -66,6 +66,7 @@ class SharesHandler(JsonHandler):
         user = self.get_user_dict(token)
 
         tags = None
+        logger.info('user: {}'.format(user))
         if user and filter_type == 'my_tags':
             d_user = User.by_sid(user['user_id'])
             if d_user:
