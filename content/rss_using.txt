@@ -89,3 +89,10 @@ http://www.zreading.cn/feed #onesentence
 https://rsshub.app/geekpark/breakingnews
 https://rsshub.app/wallstreetcn/news/global
 https://rsshub.app/dapenti/tugua
+
+
+
+http://feedmaker.kindle4rss.com/feeds/clouds70.weixin.xml read-caijin
+http://feedmaker.kindle4rss.com/feeds/interest.douban.xml
+http://tvfantasy.net/feed/
+https://blog.lilydjwg.me/feed
