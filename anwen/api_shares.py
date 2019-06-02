@@ -73,6 +73,7 @@ class SharesHandler(JsonHandler):
 
         # 按照tag来过滤
         cond = {}
+        logger.info('~~~~~')
         logger.info('tags: {}'.format(tags))
         if tags:
             cond['tags'] = {"$in": tags}
