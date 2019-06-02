@@ -69,7 +69,7 @@ def backol(c):
 @task
 def backup(c):
     c = Connection('aw')
-    """ backup data from aw mongo """
+    """ backup data from aw mongo and download"""
     with c.cd('/var/www/anwen/db'):
         c.run('. ~/.zshrc && python3 db_in_out.py -o')
         c.run('tar czf aw_yaml.tar.gz data')

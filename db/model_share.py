@@ -38,6 +38,7 @@ class Share(BaseModel):
 
         'published': float,
         'updated': float,
+        'suggested': float,
         # deleted
         'upload_img': str,
 
@@ -70,6 +71,7 @@ class Share(BaseModel):
         'status': 0,  # 0=published,1=draft,2=deleted
         'published': time.time,  # for rss, it is real published time
         'updated': time.time,
+        'suggested': time.time,
     }
 
     def by_slug(self, slug):
