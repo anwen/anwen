@@ -71,12 +71,14 @@ class SharesHandler(JsonHandler):
             if d_user:
                 tags = d_user['user_tags']
 
+        # 按照tag来过滤
         cond = {}
+        logger.info('tags: {}'.format(tags))
         if tags:
             cond['tags'] = {"$in": tags}
-
         elif tag:
             cond['tags'] = tag
+
         if user:
             logger.info('user_id: {}'.format(user['user_id']))
         if user and user['user_id'] in wx_admin_ids:
