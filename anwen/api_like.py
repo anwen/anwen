@@ -2,6 +2,7 @@
 import tornado.web
 from anwen.api_base import JsonHandler
 from db import Like, Share, Comment, Viewpoint
+import time
 admin_ids = (1, 4, 60, 63, 64, 65, 69, 86)
 
 
@@ -27,10 +28,11 @@ class LikeHandler(JsonHandler):
             entity = Share.by_sid(entity_id)
             # 如果是管理员，需要将status + 1
             # 64=kp 65=kp email
-            # 63=lb
-            # 60=xie
+            # 63=lb # 60=xie
             if is_changed and user_id in admin_ids:
                 if action == 'addlike':
+                    if entity['status'] == 0:
+                        entity['suggested'] = time.time()
                     entity['status'] += 1
                 elif action == 'adddislike':
                     entity['status'] -= 1
