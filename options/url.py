@@ -3,6 +3,7 @@
 from anwen import api
 from anwen import api_user
 from anwen import api_share
+from anwen import api_shares
 from anwen import api_like
 from anwen import api_collect
 from anwen import api_tag
@@ -56,8 +57,10 @@ handlers = [
 
     (r"/api/tags", api_tag.TagsHandler),
 
-    (r"/api/shares/?", api_share.SharesHandler),
+    (r"/api/shares/?", api_shares.SharesHandler),
+
     (r"/api/shares/([^/]+)", api_share.ShareHandler),
+
     (r"/api/preview", api_share.PreviewHandler),
 
     (r"/api/authorizations", api_user.AuthorizationsHandler),
