@@ -2,7 +2,7 @@
 # 全部列表
 # 个性化列表
 from .api_base import JsonHandler
-from db import Share, User
+from db import Share, User, Hit
 from bs4 import BeautifulSoup
 from tornado.escape import json_decode
 from log import logger
@@ -47,21 +47,20 @@ class SharesHandler(JsonHandler):
 
     def get(self):
         # get params
-        filter_type = self.get_argument("filter_type", '')  # my_tags
-
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
 
-        meta_info = self.get_argument("meta_info", 1)
+        filter_type = self.get_argument("filter_type", '')  # my_tags
         tag = self.get_argument('tag', '')
+        meta_info = self.get_argument("meta_info", 1)
         last_suggested = self.get_argument("last_suggested", 0)
+        read_status = self.get_argument('read_status', 0)
 
-        user_info = self.get_argument('user_info', 1)
-        vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
+        vote_open = self.get_argument("vote_open", None)
         token = self.request.headers.get('Authorization', '')
 
-        user_info = int(user_info)
+        read_status = int(read_status)
         per_page = int(per_page)
         page = int(page)
         last_suggested = float(last_suggested)
@@ -69,7 +68,6 @@ class SharesHandler(JsonHandler):
         user = self.get_user_dict(token)
 
         tags = None
-        logger.info('filter_type: {}'.format(filter_type))
         if user and filter_type == 'my_tags':
             d_user = User.by_sid(user['user_id'])
             if d_user:
@@ -82,12 +80,16 @@ class SharesHandler(JsonHandler):
         elif tag:
             cond['tags'] = tag
 
-        if user:
-            logger.info('user_id: {}'.format(user['user_id']))
+        # 不同的用户显示不同级别的推荐
         if user and user['user_id'] in wx_admin_ids:
             cond['status'] = {'$gte': 1}
         else:
             cond['status'] = {'$gte': 1}
+        l_hitted_share_id = []
+        if user and read_status:
+            hits = Hit.find({'user_id': user['user_id']})
+            l_hitted_share_id = [i['share_id'] for i in hits]
+
         if vote_open:
             if not vote_open.isdigit():
                 return self.write_error(422)
@@ -108,6 +110,8 @@ class SharesHandler(JsonHandler):
             share = dict(share)
             share['user_name'] = user.user_name
             share['markdown'] = ''
+            if read_status:
+                share['read'] = bool(share['id'] in l_hitted_share_id)
 
             soup = BeautifulSoup(share['content'], "lxml")
             # kill all script and style elements
