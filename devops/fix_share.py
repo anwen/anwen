@@ -9,7 +9,7 @@ def fix_share_tmp1():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
     for i in adb.Share_Col.find():
-        adb.Share_Col.update({'_id': i['_id']}, {'$set': {'suggested': i['updated']}})
+        adb.Share_Col.update({'_id': i['_id']}, {'$set': {'suggested': i['published']}})
 
 
 if __name__ == '__main__':
