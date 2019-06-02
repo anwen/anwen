@@ -17,5 +17,8 @@ r = adb.Share_Col.ensure_index('tags', 1)
 print(r)
 r = adb.Share_Col.ensure_index('status', 1)
 print(r)
+r = adb.Share_Col.ensure_index('suggested', -1)
+print(r)
+
 r = adb.Share_Col.index_information()
 print(r.keys())
