@@ -93,8 +93,9 @@ class SharesHandler(JsonHandler):
             cond['vote_title'] = {'$ne': ''}
 
         number = Share.find(cond, {'_id': 0}).count()
+        # sort: _id
         shares = Share.find(cond, {'_id': 0}).sort(
-            '_id', -1).limit(per_page).skip((page - 1) * per_page)
+            'suggested', -1).limit(per_page).skip((page - 1) * per_page)
         # shares = [fix_share(share) for share in shares]
         new_shares = []
         for share in shares:
