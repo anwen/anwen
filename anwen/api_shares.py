@@ -67,10 +67,13 @@ class SharesHandler(JsonHandler):
 
         tags = None
         logger.info('user: {}'.format(user))
+        logger.info('filter_type: {}'.format(filter_type))
         if user and filter_type == 'my_tags':
             d_user = User.by_sid(user['user_id'])
+            logger.info('d_user: {}'.format(d_user))
             if d_user:
                 tags = d_user['user_tags']
+                logger.info('tags: {}'.format(tags))
 
         # 按照tag来过滤
         cond = {}
