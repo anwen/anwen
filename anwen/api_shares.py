@@ -5,11 +5,12 @@ from .api_base import JsonHandler
 from db import Share, User, Hit
 from bs4 import BeautifulSoup
 from tornado.escape import json_decode
-from log import logger
 from utils import get_tags, get_tags_parents
 import time
 from utils.avatar import get_avatar, get_avatar_by_wechat
 import options
+import copy
+# from log import logger
 wx_admin_ids = (60, 63, 64)
 # get_tags_parent
 # logger.info('token: {}'.format(token))
@@ -99,11 +100,16 @@ class SharesHandler(JsonHandler):
 
         number = Share.find(cond, {'_id': 0}).count()
         # sort: _id
+        if last_suggested:
+            cond_update = copy.deepcopy(cond)
+            cond_update['suggested'] = {'$gte': last_suggested}
+            number_of_update = Share.find(cond, {'_id': 0}).sort(
+                'suggested', -1)
+
         shares = Share.find(cond, {'_id': 0}).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
         # shares = [fix_share(share) for share in shares]
         new_shares = []
-        number_of_update = 0
         for share in shares:
             share = fix_share(share)
             user = User.by_sid(share.user_id)
@@ -135,9 +141,6 @@ class SharesHandler(JsonHandler):
                 share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
             else:
                 share['user_img'] = options.site_url+get_avatar(user.user_email, 100)
-
-            if share['suggested'] > last_suggested:
-                number_of_update += 1
             new_shares.append(share)
 
         # if tag:
