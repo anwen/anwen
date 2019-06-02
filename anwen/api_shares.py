@@ -102,7 +102,7 @@ class SharesHandler(JsonHandler):
         # sort: _id
         if last_suggested:
             cond_update = copy.deepcopy(cond)
-            cond_update['suggested'] = {'$gte': last_suggested}
+            cond_update['suggested'] = {'$gt': last_suggested}
             number_of_update = Share.find(cond_update, {'_id': 0}).sort(
                 'suggested', -1).count()
 
