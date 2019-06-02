@@ -47,7 +47,7 @@ class SharesHandler(JsonHandler):
 
     def get(self):
         # get params
-        filter_type = self.get_argument("my_tags", '')
+        filter_type = self.get_argument("filter_type", '')  # my_tags
 
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
@@ -66,19 +66,14 @@ class SharesHandler(JsonHandler):
         user = self.get_user_dict(token)
 
         tags = None
-        logger.info('user: {}'.format(user))
         logger.info('filter_type: {}'.format(filter_type))
         if user and filter_type == 'my_tags':
             d_user = User.by_sid(user['user_id'])
-            logger.info('d_user: {}'.format(d_user))
             if d_user:
                 tags = d_user['user_tags']
-                logger.info('tags: {}'.format(tags))
 
         # 按照tag来过滤
         cond = {}
-        logger.info('~~~~~')
-        logger.info('tags: {}'.format(tags))
         if tags:
             cond['tags'] = {"$in": tags}
         elif tag:
