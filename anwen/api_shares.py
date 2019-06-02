@@ -54,6 +54,8 @@ class SharesHandler(JsonHandler):
 
         meta_info = self.get_argument("meta_info", 1)
         tag = self.get_argument('tag', '')
+        last_suggested = self.get_argument("last_suggested", 0)
+
         user_info = self.get_argument('user_info', 1)
         vote_open = self.get_argument("vote_open", None)
         has_vote = self.get_argument("has_vote", None)
@@ -62,6 +64,7 @@ class SharesHandler(JsonHandler):
         user_info = int(user_info)
         per_page = int(per_page)
         page = int(page)
+        last_suggested = float(last_suggested)
 
         user = self.get_user_dict(token)
 
@@ -98,6 +101,7 @@ class SharesHandler(JsonHandler):
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
         # shares = [fix_share(share) for share in shares]
         new_shares = []
+        number_of_update = 0
         for share in shares:
             share = fix_share(share)
             user = User.by_sid(share.user_id)
@@ -127,16 +131,20 @@ class SharesHandler(JsonHandler):
                 share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
             else:
                 share['user_img'] = options.site_url+get_avatar(user.user_email, 100)
+
+            if share['suggested'] > last_suggested:
+                number_of_update += 1
             new_shares.append(share)
 
         # if tag:
         #     shares = [share for share in shares if tag in share['tags']]
         meta = {}
+        if meta_info and last_suggested:
+            meta['number_of_update'] = number_of_update
         if meta_info and tag:
             d_tags = get_tags()
             # d_tags_parent = get_tags_parent()
             d_tags_parents = get_tags_parents()
-
             if tag in d_tags:
                 sub_tags = []
                 for name in d_tags[tag]:
