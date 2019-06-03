@@ -122,11 +122,16 @@ def add_from_file(rss_url, rss_hostname, rss_name):
 
         title = post.title
         link = post.link
+        author = ''
         if hasattr(post, 'source'):
             source_title = post.source.title
             # print(source_title)
             print(rss_name, source_title)
-            assert rss_name in source_title
+            if rss_name == '虎嗅':
+                pass
+                author = source_title
+            else:
+                assert rss_name in source_title
             # assert rss_name == source_title
         source = rss_name
 
@@ -177,7 +182,9 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         if hasattr(post, 'author'):
             # TODO
             print('author: ', post.author)
-            # res['author'] = post.author
+            res['author'] = post.author
+        else:
+            res['author'] = author
 
         # title title_detail
         # published published_parsed
