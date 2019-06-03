@@ -25,6 +25,9 @@ https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
 https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
 https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
 https://sspai.com/feed sspai 少数派 # https://sspai.com
+https://www.pingwest.com/feed/original pingwest PingWest品玩 #
+
+https://www.pingwest.com/feed/all
 
 ### 创业
 https://36kr.com/feed 36kr 36氪 # http://36kr.com
@@ -77,12 +80,13 @@ https://pansci.asia/feed pansci 泛科學 #
 http://www.mooc.cn/feed mooc_cn MOOC中国 # http://www.mooc.cn
 https://flipboard.com/topic/books.rss flipboard_books Flipboard-Books #
 https://lepture.com/feed.xml lepture Just-lepture #
-http://feeds.initium.news/theinitium initium 端傳媒 #
 
 todo
 https://www.buzzfeed.com/books.xml
 https://daringfireball.net/feeds/main daringfireball DaringFireball
 
+
+http://feeds.initium.news/theinitium initium 端傳媒 # #gfw
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
 
