@@ -32,6 +32,7 @@ https://www.pingwest.com/feed/all
 ### 创业
 https://36kr.com/feed 36kr 36氪 # http://36kr.com
 http://www.cyzone.cn/rss cyzone 创业邦 # http://www.cyzone.cn
+http://www.woshipm.com/feed woshipm 人人都是产品经理 #
 
 ### 硬核
 https://kernelpanic.fm/feed kernelpanic 内核恐慌 #播客 https://kernelpanic.fm
