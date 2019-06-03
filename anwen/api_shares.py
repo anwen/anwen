@@ -171,8 +171,9 @@ class SharesHandler(JsonHandler):
                 # meta['parent_tags'].append(d_tags_parent[tag])
                 meta['parent_tags'] = d_tags_parents[tag]
 
-        print('new_shares 0 time: {}'.format(new_shares[0]['published']))
-        self.res = list(new_shares)
-        self.meta = meta
+        logger.info('last_suggested time: {}'.format(last_suggested)
+        logger.info('new_shares 0 time: {}'.format(new_shares[0]['published']))
+        self.res=list(new_shares)
+        self.meta=meta
         # number=len(self.res)
         return self.write_json(number=number)
