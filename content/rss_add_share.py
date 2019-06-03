@@ -94,7 +94,12 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             if 'GMT' == post.published[-3:]:
                 published = datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S GMT")
             elif ',' in post.published:
-                published = datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
+                if post.published.endswith('2019'):
+                    pass
+                    # May 19, 2019
+                    published = datetime.strptime(post.published, "%b %d, %Y")
+                else:
+                    published = datetime.strptime(post.published, "%a, %d %b %Y %H:%M:%S %z")
                 # Thu, 18 Apr 2019 19:32:58 +0800
             elif '/' in post.published:
                 published = datetime.strptime(post.published, "%Y/%m/%d %H:%M:%S %z")
