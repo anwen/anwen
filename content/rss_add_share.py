@@ -172,7 +172,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             'published': published,
             'updated': time.time(),
         }
-        # print(post.keys())
+        print(post.keys())
         if hasattr(post, 'author'):
             print('author: ', post.author)
             # res['author'] = post.author
@@ -191,6 +191,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         # TODO
         # 修正内容 目前暂时不支持
         # <enclosure type="audio/mpeg" url="https://kernelpanic.fm/55/audio.mp3"/>
+        # <media:content url="https://cdn.flipboard.com/telegraph.co.uk/1356d637c7438f6fcffda0d5de177b6058904de6/original.jpg" medium="image" type="image/jpeg" width="480" height="300" />
 
         # 去重方案
         # - 标题重复
