@@ -3,6 +3,7 @@ import tornado.web
 from anwen.api_base import JsonHandler
 from db import Like, Share, Comment, Viewpoint
 import time
+# from log import logger
 admin_ids = (1, 4, 60, 63, 64, 65, 69, 86)
 
 
