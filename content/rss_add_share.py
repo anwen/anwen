@@ -172,7 +172,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             'published': published,
             'updated': time.time(),
         }
-        print(post.keys())
+        # print(post.keys())
         if hasattr(post, 'author'):
             print('author: ', post.author)
             # res['author'] = post.author
