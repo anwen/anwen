@@ -78,7 +78,9 @@ http://www.mooc.cn/feed mooc_cn MOOC中国 # http://www.mooc.cn
 https://flipboard.com/topic/books.rss flipboard_books Flipboard-Books #
 
 
-# https://daringfireball.net/feeds/main daringfireball DaringFireball #
+
+todo
+https://daringfireball.net/feeds/main daringfireball DaringFireball
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
