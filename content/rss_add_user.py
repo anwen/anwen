@@ -55,7 +55,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     if hasattr(feeds.feed, 'title'):
         print(feeds.feed.title, rss_name)
         # assert feeds.feed.title == rss_name
-        if rss_name in '创业邦 国家地理'.split():
+        if rss_name in '创业邦 国家地理 Flipboard'.split():
             pass
         else:
             assert rss_name.replace('-', '') in feeds.feed.title.replace(' ', '')
