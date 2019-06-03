@@ -41,6 +41,7 @@ def get_tags(doc):
         tags.append('科技')
     if 120 == doc['user_id']:  # sspai
         tags.append('软件')
+        tags.append('效率工具')
     if 113 == doc['user_id']:  # geo
         tags.append('图片')
         tags.append('地理')
