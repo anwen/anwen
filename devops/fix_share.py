@@ -9,8 +9,20 @@ def fix_share_tmp1():
     adb = conn.anwen
     adb.authenticate(options.db['username'], options.db['password'])
     for i in adb.Share_Col.find():
+        if 'suggested' in i:
+            continue
         adb.Share_Col.update({'_id': i['_id']}, {'$set': {'suggested': i['published']}})
 
 
+def fix_share_tmp2():
+    # 增加 author
+    adb = conn.anwen
+    adb.authenticate(options.db['username'], options.db['password'])
+    for i in adb.Share_Col.find():
+        if 'author' in i:
+            continue
+        adb.Share_Col.update({'_id': i['_id']}, {'$set': {'author': ''}})
+
+
 if __name__ == '__main__':
-    fix_share_tmp1()
+    fix_share_tmp2()
