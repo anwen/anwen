@@ -10,7 +10,7 @@ import time
 from utils.avatar import get_avatar, get_avatar_by_wechat
 import options
 import copy
-# from log import logger
+from log import logger
 wx_admin_ids = (60, 63, 64)
 # get_tags_parent
 # logger.info('token: {}'.format(token))
@@ -105,6 +105,7 @@ class SharesHandler(JsonHandler):
             cond_update['suggested'] = {'$gt': last_suggested}
             number_of_update = Share.find(cond_update, {'_id': 0}).sort(
                 'suggested', -1).count()
+            logger.info('number_of_update 1: {}'.format(number_of_update))
 
         shares = Share.find(cond, {'_id': 0}).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
@@ -170,6 +171,7 @@ class SharesHandler(JsonHandler):
                 # meta['parent_tags'].append(d_tags_parent[tag])
                 meta['parent_tags'] = d_tags_parents[tag]
 
+        print('new_shares 0 time: {}'.format(new_shares[0]['published']))
         self.res = list(new_shares)
         self.meta = meta
         # number=len(self.res)
