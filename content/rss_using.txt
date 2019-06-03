@@ -54,7 +54,7 @@ http://feedmaker.kindle4rss.com/feeds/cn-all.wsj.xml wsj 华尔街日报 #
 
 ## 新闻
 https://fullrss.ddns.net/rss/RSS_PengpaiNews.xml thepaper 澎湃新闻 # https://www.thepaper.cn
-
+http://www.sixthtone.com/rss sixthtone Sixth-Tone # http://www.sixthtone.com
 
 ## 独立博客
 http://blog.topspeedsnail.com/feed topspeedsnail WTF-Daily-Blog #
