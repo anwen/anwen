@@ -41,7 +41,7 @@ class Share(BaseModel):
         'suggested': float,
         # deleted
         'upload_img': str,
-
+        # author
     }
     required_fields = ['id', 'user_id', 'sharetype', 'title']
     default_values = {
