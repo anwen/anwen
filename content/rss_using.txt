@@ -22,10 +22,10 @@ https://wanqu.co/feed/ wanqu 湾区日报 #
 https://www.geekpark.net/rss geekpark 极客公园 #
 https://www.tmtpost.com/rss.xml tmtpost 钛媒体 #引领未来商业与生活新知
 https://www.solidot.org/index.rss solidot Solidot #奇客资讯（IT新闻）
-https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw
 https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian #
 https://sspai.com/feed sspai 少数派 # https://sspai.com
 https://www.pingwest.com/feed/original pingwest PingWest品玩 #
+https://www.huxiu.com/rss/0.xml huxiu 虎嗅 #
 
 https://www.pingwest.com/feed/all
 
@@ -87,6 +87,7 @@ https://www.buzzfeed.com/books.xml
 https://daringfireball.net/feeds/main daringfireball DaringFireball
 
 
+https://feedx.net/rss/huxiu.xml huxiu 虎嗅 #gfw-done
 http://feeds.initium.news/theinitium initium 端傳媒 #gfw
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw

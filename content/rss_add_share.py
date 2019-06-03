@@ -174,6 +174,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         }
         # print(post.keys())
         if hasattr(post, 'author'):
+            # TODO
             print('author: ', post.author)
             # res['author'] = post.author
 
