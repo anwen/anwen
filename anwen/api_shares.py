@@ -22,6 +22,7 @@ def fix_share(share):  # time
             share['post_img'].replace('_1200.jpg', '_260.jpg')
     share['published'] = int(share['published'] * 1000)
     share['updated'] = int(share['updated'] * 1000)
+    share['suggested'] = int(share['suggested'] * 1000)
     return share
 
 
@@ -172,8 +173,9 @@ class SharesHandler(JsonHandler):
                 meta['parent_tags'] = d_tags_parents[tag]
 
         logger.info('last_suggested time: {}'.format(last_suggested))
-        logger.info('new_shares[0] time: {}'.format(new_shares[0]['published']))
         logger.info('new_shares[0] time: {}'.format(new_shares[0]['title']))
+        logger.info('new_shares[0] published time: {}'.format(new_shares[0]['published']))
+        logger.info('new_shares[0] suggested time: {}'.format(new_shares[0]['suggested']))
         self.res = list(new_shares)
         self.meta = meta
         # number=len(self.res)
