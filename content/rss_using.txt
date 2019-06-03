@@ -86,7 +86,7 @@ https://www.buzzfeed.com/books.xml
 https://daringfireball.net/feeds/main daringfireball DaringFireball
 
 
-http://feeds.initium.news/theinitium initium 端傳媒 # #gfw
+http://feeds.initium.news/theinitium initium 端傳媒 #gfw
 http://feeds.feedburner.com/zhihu-daily # # #gfw
 https://feedx.net/rss/thepaper.xml # # #gfw
 
