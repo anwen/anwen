@@ -42,6 +42,7 @@ class ExploreHandler(BaseHandler):
         conds = {'status': status}
         if node not in 'home'.split():
             conds['sharetype'] = node
+            conds['status'] = {'$gte': 0}
             # if node not in 'rss'.split():
             #     conds['status'] = {'$gte': 0}
 
