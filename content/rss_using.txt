@@ -76,10 +76,10 @@ http://www.ftchinese.com/rss/feed ftchinese FT中文网 #
 https://pansci.asia/feed pansci 泛科學 #
 http://www.mooc.cn/feed mooc_cn MOOC中国 # http://www.mooc.cn
 https://flipboard.com/topic/books.rss flipboard_books Flipboard-Books #
-
-
+https://lepture.com/feed.xml lepture Just-Lepture #
 
 todo
+https://www.buzzfeed.com/books.xml
 https://daringfireball.net/feeds/main daringfireball DaringFireball
 
 http://feeds.feedburner.com/zhihu-daily # # #gfw
