@@ -56,7 +56,7 @@ class SharesHandler(JsonHandler):
         tag = self.get_argument('tag', '')
         meta_info = self.get_argument("meta_info", 1)
         last_suggested = self.get_argument("last_suggested", 0)
-        read_status = self.get_argument('read_status', 0)
+        read_status = self.get_argument('read_status', 1)
 
         has_vote = self.get_argument("has_vote", None)
         vote_open = self.get_argument("vote_open", None)
