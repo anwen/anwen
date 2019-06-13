@@ -13,18 +13,24 @@ from db import Tag, Share  # noqa
 
 def check():
     for i in adb.Share_Col.find().sort('_id', 1):
-        # if i['status'] < 1:
-        if i['status'] >= 1:
-            continue
-        # i['post_img']
-        # post_img
-        # upload_img
         upload_img = i['upload_img']
         assert not upload_img
+        if i['status'] >= 1:
+            continue
         post_img = i['post_img']
         if post_img:
-            print('post_img', post_img)
+            print('not published:s', post_img)
             print('https://anwensf.com/share/{}'.format(i['id']))
+
+    for i in adb.Share_Col.find().sort('_id', 1):
+        if i['status'] < 1:
+            continue
+        post_img = i['post_img']
+        if post_img:
+            continue
+        markdown = i['markdown']
+        if not markdown:
+            print(1)
 
 
 check()
