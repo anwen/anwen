@@ -25,7 +25,7 @@ def check():
         if post_img:
             print('not published:s', post_img)
             print('https://anwensf.com/share/{}'.format(i['id']))
-
+    return
     for i in adb.Share_Col.find().sort('_id', 1):
         if i['status'] < 1:
             continue
@@ -73,5 +73,12 @@ def add():
         print('done')
 
 
+def add2():
+    fname = 'static/upload/img/20190614_010621_032739.jpg'
+    share_id = 322
+    adb.Share_Col.update({'id': share_id}, {'$set': {'tags': post_img}})
+
+
 # check()
-add()
+# add()
+check()
