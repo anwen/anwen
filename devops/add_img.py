@@ -79,7 +79,7 @@ def add():
         # post_img = '20190614_010621_032739_1200.jpg'
         # share_id = 322
         post_img = img_path.split('/')[-1]
-        post_img = post_img.replace('.', '_1200.')
+        post_img = post_img.split('.')[0] + '_1200.jpg'
         share_id = sys.argv[2]
         share_id = int(share_id)
 
