@@ -42,6 +42,8 @@ def add():
     fname = 'https://pic.001all.com/Wallpaper/Desktop%20Wallpaper/Space/FTP/2560%20x%201440/Shiny%20Star%20Wallpapers%20HD%202560%20x%201440%20Pixels%20Resolution.jpg'
     # 上传的图片不能超过2M
     ext = fname.split('.')[-1]
+    ext = '.'+ext
+    print(ext)
     assert ext in ['.jpg', '.jpeg', '.gif', '.png', '.bmp']
     img_dir = 'static/upload/img'
     now = datetime.datetime.now()
