@@ -44,7 +44,7 @@ def add():
     print(fname)
     # 上传的图片不能超过2M
     ext = fname.split('?')[0].split('.')[-1]
-    ext = '.'+ext
+    ext = '.'+ext.lower()
     print(ext)
     assert ext in ['.jpg', '.jpeg', '.gif', '.png', '.bmp']
     img_dir = 'static/upload/img'
