@@ -19,8 +19,10 @@ def check():
         # post_img
         # upload_img
         upload_img = i['upload_img']
-        if upload_img:
-            print('upload_img', upload_img)
+        assert not upload_img
+        post_img = i['post_img']
+        if post_img:
+            print('post_img', post_img)
 
 
 check()
