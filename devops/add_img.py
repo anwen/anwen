@@ -30,7 +30,8 @@ def check():
             continue
         markdown = i['markdown']
         if not markdown:
-            print(1)
+            print(1, i['title'])
+            print('https://anwensf.com/share/{}'.format(i['id']))
 
 
 check()
