@@ -74,11 +74,14 @@ def add():
 
 
 def add2():
-    fname = 'static/upload/img/20190614_010621_032739.jpg'
+    # fname = 'static/upload/img/20190614_010621_032739.jpg'
+    post_img = '20190614_010621_032739_1200.jpg'
     share_id = 322
-    adb.Share_Col.update({'id': share_id}, {'$set': {'tags': post_img}})
+    r = adb.Share_Col.update({'id': share_id}, {'$set': {'post_img': post_img}})
+    print(r)
 
 
 # check()
 # add()
 check()
+add2()
