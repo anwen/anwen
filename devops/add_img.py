@@ -52,12 +52,13 @@ def add():
     img_path = '%s/%s' % (img_dir, img_name)
     # body = ''
     print(img_path)
-    r = requests.get(fname, verify=False)  # stream=True)
+    r = requests.get(fname, verify=False, stream=True)  # stream=True)
+    chunk_size = 100
     with open(img_path, 'wb') as image:
-        image.write(r.raw.read())
+        # image.write(r.raw.read())
         # r.raw
-        # for chunk in r.iter_content(chunk_size):
-        #     fd.write(chunk)
+        for chunk in r.iter_content(chunk_size):
+            image.write(chunk)
 
     im = Image.open(img_path)
     width, height = im.size
