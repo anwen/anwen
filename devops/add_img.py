@@ -53,7 +53,7 @@ def add():
     # body = ''
     r = requests.get(fname, verify=False)  # stream=True)
     with open(img_path, 'wb') as image:
-        image.write(r.raw)
+        image.write(r.raw.read())
         # r.raw
         # for chunk in r.iter_content(chunk_size):
         #     fd.write(chunk)
