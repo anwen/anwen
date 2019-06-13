@@ -51,7 +51,7 @@ def add():
     img_name = '%s%s' % (t, ext)
     img_path = '%s/%s' % (img_dir, img_name)
     # body = ''
-    r = requests.get(fname, stream=True)
+    r = requests.get(fname, verify=False)  # stream=True)
     with open(img_path, 'wb') as image:
         image.write(r.raw)
         # r.raw
