@@ -24,7 +24,7 @@ def check():
         post_img = i['post_img']
         if post_img:
             print('post_img', post_img)
-            print('https://anwensf.com/shares/{}'.format(i['id']))
+            print('https://anwensf.com/share/{}'.format(i['id']))
 
 
 check()
