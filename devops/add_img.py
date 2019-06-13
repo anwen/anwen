@@ -41,6 +41,7 @@ def check():
 def add():
     # fname = 'https://pic.001all.com/Wallpaper/Desktop%20Wallpaper/Space/FTP/2560%20x%201440/Shiny%20Star%20Wallpapers%20HD%202560%20x%201440%20Pixels%20Resolution.jpg'
     fname = sys.argv[1]
+    print(fname)
     # 上传的图片不能超过2M
     ext = fname.split('?')[0].split('.')[-1]
     ext = '.'+ext
@@ -90,3 +91,4 @@ def add():
 # add()
 # check()
 # add2()
+add()
