@@ -39,9 +39,10 @@ def check():
 
 
 def add():
-    fname = 'https://pic.001all.com/Wallpaper/Desktop%20Wallpaper/Space/FTP/2560%20x%201440/Shiny%20Star%20Wallpapers%20HD%202560%20x%201440%20Pixels%20Resolution.jpg'
+    # fname = 'https://pic.001all.com/Wallpaper/Desktop%20Wallpaper/Space/FTP/2560%20x%201440/Shiny%20Star%20Wallpapers%20HD%202560%20x%201440%20Pixels%20Resolution.jpg'
+    fname = sys.argv[1]
     # 上传的图片不能超过2M
-    ext = fname.split('.')[-1]
+    ext = fname.split('?')[0].split('.')[-1]
     ext = '.'+ext
     print(ext)
     assert ext in ['.jpg', '.jpeg', '.gif', '.png', '.bmp']
@@ -72,16 +73,20 @@ def add():
         ])
         print('done')
 
+        # def add2():
+        # fname = 'static/upload/img/20190614_010621_032739.jpg'
+        # post_img = '20190614_010621_032739_1200.jpg'
+        # share_id = 322
+        post_img = img_path.split('/')[-1]
+        post_img = post_img.replace('.', '_1200.')
+        share_id = sys.argv[2]
+        share_id = int(share_id)
 
-def add2():
-    # fname = 'static/upload/img/20190614_010621_032739.jpg'
-    post_img = '20190614_010621_032739_1200.jpg'
-    share_id = 322
-    r = adb.Share_Col.update({'id': share_id}, {'$set': {'post_img': post_img}})
-    print(r)
+        r = adb.Share_Col.update({'id': share_id}, {'$set': {'post_img': post_img}})
+        print(r)
 
 
 # check()
 # add()
-check()
-add2()
+# check()
+# add2()
