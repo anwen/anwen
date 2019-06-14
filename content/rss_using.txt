@@ -52,6 +52,7 @@ http://www.toodaylab.com/feed toodaylab 理想生活实验室 # http://www.tooda
 http://feedmaker.kindle4rss.com/feeds/interest.douban.xml douban_interest 豆瓣精选 #
 
 ## 设计
+https://anyway.fm/rss.xml anyway_fm Anyway.FM-设计杂谈 #
 
 ## 外媒
 http://feedmaker.kindle4rss.com/feeds/cn-all.wsj.xml wsj 华尔街日报 #
