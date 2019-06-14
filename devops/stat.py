@@ -15,7 +15,7 @@ sys.path.append('.')
 from db import Tag, Share  # noqa
 
 
-def check():
+def stat_img():
     n = 0
     for i in adb.Share_Col.find().sort('_id', 1):
         assert not i['upload_img']
@@ -47,3 +47,6 @@ def check():
         if not markdown:
             print(1, i['title'])
             print('https://anwensf.com/share/{}'.format(i['id']))
+
+
+stat_img()
