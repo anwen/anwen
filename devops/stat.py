@@ -28,14 +28,17 @@ def stat_img():
             n += 1
     print('有图片但没发布的数量:', n)
     n = 0
+    n_with_tag = 0
     for i in adb.Share_Col.find().sort('_id', 1):
         if i['status'] < 1:
             continue
         post_img = i['post_img']
         if post_img:
             n += 1
-            continue
+            if i['tags']:
+                n_with_tag += 1
     print('有图片且已发布的数量:', n)
+    print('有图片且已发布且有标签的数量:', n_with_tag)
     return
     for i in adb.Share_Col.find().sort('_id', 1):
         if i['status'] < 1:
