@@ -81,6 +81,7 @@ https://pansci.asia/feed pansci 泛科學 #
 http://www.mooc.cn/feed mooc_cn MOOC中国 # http://www.mooc.cn
 https://flipboard.com/topic/books.rss flipboard_books Flipboard-Books #
 https://lepture.com/feed.xml lepture Just-lepture #gfw?
+http://iconmoon.com/blog2/feed.php iconmoon 图月志 #
 
 todo
 https://www.buzzfeed.com/books.xml
