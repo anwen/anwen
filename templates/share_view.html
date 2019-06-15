@@ -77,34 +77,35 @@
 <!-- 评论 -->
 
 
-<p>{{share.vote_title}}</p>
 {% if share.viewpoints %}
+<p>{{share.vote_title}}</p>
 {% for (offset,viewpoint) in enumerate(share.viewpoints) %}
     <p>{{viewpoint.aview}}
-
-<a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{viewpoint.id}}" etype="viewpoint">
-<i class="icon-thumbs-up"></i>
-<span> {{ viewpoint.likenum }}</span>
-</a>
+      <a href="javascript:" class="do-like {{'liking' if share.is_liking else ''}}" eid="{{viewpoint.id}}" etype="viewpoint">
+      <i class="icon-thumbs-up"></i>
+      <span> {{ viewpoint.likenum }}</span>
+      </a>
     </p>
-{% end %}
-{% end %}
 
 {% if current_user %}
     <form class="form-horizontal" id="addViewPoint" >
         {{ xsrf_form_html() }}
-
-    <div class="form-group">
-      <label for="aview" class="col-lg-2 control-label">新观点</label>
-      <div class="col-lg-4">
-        <input type="text" name="aview" class="form-control" id="aview" required>
+      <div class="form-group">
+        <label for="aview" class="col-lg-2 control-label">新观点</label>
+        <div class="col-lg-4">
+          <input type="text" name="aview" class="form-control" id="aview" required>
+        </div>
+        <input type="submit" id="submit" value="提交" />
+        <input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
       </div>
-      <input type="submit" id="submit" value="提交" />
-      <input type="hidden" name="share_id" id="share_id" value="{{ share.id }}"/>
-    </div>
-
     </form>
 {% end %}
+
+
+{% end %}
+{% end %}
+
+
 
 
 <div class="hero-unit" id="commentmain">
