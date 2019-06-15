@@ -1,8 +1,6 @@
 # -*- coding:utf-8 -*-
 u"""文章分享，非API."""
 import time
-# import os
-# from .api_base import JsonHandler
 from random import randint
 import markdown2
 import tornado.web
@@ -22,6 +20,18 @@ except:
     from urlparse import urlparse  # Python 2
 from log import logger
 # 网页版的接口
+
+from utils.img_tools import make_post_thumb
+from PIL import Image
+import datetime
+import sys
+import os
+from pymongo import MongoClient
+conn = MongoClient()
+adb = conn.anwen
+adb.authenticate(options.db['username'], options.db['password'])
+sys.path.append('.')
+from db import Tag, Share  # noqa
 
 
 def format_tags(share):
@@ -181,6 +191,8 @@ class ShareHandler(BaseHandler):
         user_id = self.current_user["user_id"]
         vote_open = self.get_argument("vote_open", '')
         vote_title = self.get_argument("vote_title", '')
+        img_url = self.get_argument("img_url", '')
+
         tags = tags.split()
 
         if link:
@@ -234,6 +246,40 @@ class ShareHandler(BaseHandler):
             vote_open = 0
         if not title:
             title = doc_title
+
+        # 处理封面链接
+
+        if img_url and not post_img:
+            ext = img_url.split('?')[0].split('.')[-1]
+            ext = '.'+ext.lower()
+            print(ext)
+            assert ext in ['.jpg', '.jpeg', '.gif', '.png', '.bmp']
+            img_dir = 'static/upload/img'
+            now = datetime.datetime.now()
+            t = now.strftime('%Y%m%d_%H%M%S_%f')
+            img_name = '%s%s' % (t, ext)
+            img_path = '%s/%s' % (img_dir, img_name)
+            print(img_path)
+            r = requests.get(img_url, verify=False, stream=True)  # stream=True)
+            chunk_size = 100
+            with open(img_path, 'wb') as image:
+                for chunk in r.iter_content(chunk_size):
+                    image.write(chunk)
+
+            im = Image.open(img_path)
+            width, height = im.size
+            if width / height > 5 or height / width > 5:
+                os.remove(img_path)  # 判断比例 删除图片
+                print('请不要上传长宽比例过大的图片')
+            else:
+                # 创建1200x550 750x230 365x230缩略图
+                make_post_thumb(img_path, sizes=[
+                    (1200, 550), (750, 230), (365, 230), (260, 160)
+                ])
+                print('done')
+                post_img = img_path.split('/')[-1]
+                post_img = post_img.split('.')[0] + '_1200.jpg'
+
         res = {
             'title': title,
             'markdown': markdown,
@@ -241,7 +287,6 @@ class ShareHandler(BaseHandler):
             'sharetype': sharetype,
             'slug': slug,
             'tags': tags,
-            # 'upload_img': upload_img,
             'post_img': post_img,
             'link': link,
             'vote_open': vote_open,
