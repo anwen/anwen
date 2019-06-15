@@ -9,19 +9,7 @@
     <fieldset>
       <legend>{{"修改分享" if share else "创建分享"}}</legend>
     </fieldset>
-    <!-- 目前有两种分享模式：分享文章和分享链接，暂时共用一个模板 -->
-    <!-- 对于分享链接，链接地址必填 -->
-
-
-    {% if share.sharetype == 'goodlink' %}
-    <div>
-      链接地址:
-      <input name="link" type="url" class="form-control" value="{{escape(share.link) if share else ''}}" required/>
-    </div>
-    {% end %}
-
-
-
+    <!-- 目前有两种分享模式：分享文章和分享链接-->
     <div>
       标题:
       <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ''}}" required/>
@@ -31,9 +19,8 @@
       <textarea name="markdown" class="form-control" rows="30" cols="40" >{{escape(share.markdown) if share else ""}}</textarea>
     </div>
     <div>
-      标签(选填，多个可用空格分隔):
-      <input name="tags" type="text" class="form-control" value="{{' '.join(share.tags) if share else ''}}" />
-      <!-- required -->
+      标签(多个可用空格分隔):
+      <input name="tags" type="text" class="form-control" value="{{' '.join(share.tags) if share else ''}}" required/>
     </div>
     <div>
       别名(选填，a-zA-Z0-9_-):
@@ -50,7 +37,6 @@
       {% end %}
       {% end %}
     </div>
-
 
     <div>
       投票：
@@ -101,6 +87,7 @@
         <a href="/edit" target="_blank">Markdown编辑器</a>
       </div>
     </div>
+
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}

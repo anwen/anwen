@@ -12,36 +12,44 @@
       链接地址:
       <input name="link" type="url" class="form-control" value="{{escape(share.link) if share else ""}}" required/>
     </div>
+
     <div>
       标题(选填):
-      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ""}}" />
+      <input name="title" type="text" class="form-control" value="{{escape(share.title) if share else ''}}" required/>
     </div>
     <div>
       简单评论(选填):
-      <!-- <input name="markdown" type="text" class="form-control" value="{{escape(share.markdown) if share else ""}}"/> -->
       <textarea name="markdown" class="form-control" rows="10" cols="40" >{{escape(share.markdown) if share else ""}}</textarea>
     </div>
     <div>
       标签(选填，多个可用空格分隔):
-      <input name="tags" type="text" class="form-control" value="{{' '.join(share.tags)  if share else ""}}" />
+      <input name="tags" type="text" class="form-control" value="{{' '.join(share.tags) if share else ''}}" />
       <!-- required -->
     </div>
+    <input type="hidden" name="sharetype" value="goodlink"/>
 
 
     <div>
       投票：
       <label class="radio-inline">
-        <input type="radio" name="vote_open" id="1" value="1" {{'checked' if share and share.vote_open == 0 else ""}}> <i class="icon-hand-up"></i>
+        <input type="radio" name="vote_open" id="0" value="0" checked="{{'checked' if share and share.vote_open == 0 else ''}}"> <i class="icon-hand-up"></i>
       </label>
       <label class="radio-inline">
-        <input type="radio" name="vote_open" id="0" value="0" {{'checked' if share and share.vote_open == 1 else ""}}> <i class="icon-off"></i>
+        <input type="radio" name="vote_open" id="1" value="1" checked="{{'checked' if share and share.vote_open == 1 else ''}}"> <i class="icon-off"></i>
       </label>
     </div>
     <div>
       投票标题：
-      <input name="vote_title" type="text" class="form-control" value="{{escape(share.vote_title) if share else ""}}"/>
+      <input name="vote_title" type="text" class="form-control" value="{{escape(share.vote_title) if share else ''}}"/>
     </div>
 
+    <div>
+      设置封面的两种方式：封面URL 或 上传封面
+    </div>
+    <div>
+      封面URL
+      <input name="img_url" type="text" class="form-control" />
+    </div>
 
     <a id="switchImgWrap" class="btn btn-info">上传封面{{'(already exist)' if share and share.post_img else ""}}</a>
     <div class="post_image_upload_wrap node_empty_border">
@@ -65,7 +73,7 @@
       <button type="submit" class="btn btn-primary">{{ "保存修改" if share else "发布分享" }}</button>
     </div>
 
-    <input type="hidden" name="sharetype" value="goodlink"/>
+
     {% if share %}
     <input type="hidden" name="id" value="{{ share.id }}"/>
     {% end %}

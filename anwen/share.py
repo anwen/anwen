@@ -157,8 +157,7 @@ class ShareHandler(BaseHandler):
                 share.vote_title = ''
             sharetype = share.sharetype if share else None
         if sharetype == 'goodlink':
-            # self.render("share_link.html", share=share)
-            self.render("share.html", share=share)
+            self.render("share_link.html", share=share)
         elif editor:
             self.render("share_wysiwyg.html", share=share)
         else:
