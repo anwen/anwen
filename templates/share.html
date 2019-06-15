@@ -13,7 +13,7 @@
     <!-- 对于分享链接，链接地址必填 -->
 
 
-    {% if share.sharetype == 'link' %}
+    {% if share.sharetype == 'goodlink' %}
     <div>
       链接地址:
       <input name="link" type="url" class="form-control" value="{{escape(share.link) if share else ''}}" required/>
