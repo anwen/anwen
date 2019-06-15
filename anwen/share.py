@@ -120,7 +120,7 @@ class OneShareHandler(BaseHandler):
         if not user_id and not self.get_cookie(share.id):
             self.set_cookie(str(share.id), "1")
         self.render(
-            "sharee.html", share=share, comments=comments,
+            "share_view.html", share=share, comments=comments,
             suggest=suggest)
         add_hit_stat(user_id, share)
         return
