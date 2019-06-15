@@ -52,6 +52,17 @@
       <input name="vote_title" type="text" class="form-control" value="{{escape(share.vote_title) if share else ''}}"/>
     </div>
 
+
+    <div>
+      设置封面的两种方式：封面URL 或 上传封面
+    </div>
+    <div>
+      封面URL
+      <input name="img_url" type="text" class="form-control" />
+    </div>
+
+
+
     <a id="switchImgWrap" class="btn btn-info">上传封面{{'(already exist)' if share and share.post_img else ""}}</a>
     <div class="post_image_upload_wrap node_empty_border">
       <div class="post_image_upload piu node_empty">
