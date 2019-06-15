@@ -41,15 +41,15 @@
     <div>
       投票：
       <label class="radio-inline">
-        <input type="radio" name="vote_open" id="0" value="0" {{'checked' if share and share.vote_open == 0 else ""}}> <i class="icon-hand-up"></i>
+        <input type="radio" name="vote_open" id="0" value="0" checked="{{'checked' if share and share.vote_open == 0 else ''}}"> <i class="icon-hand-up"></i>
       </label>
       <label class="radio-inline">
-        <input type="radio" name="vote_open" id="1" value="1" {{'checked' if share and share.vote_open == 1 else ""}}> <i class="icon-off"></i>
+        <input type="radio" name="vote_open" id="1" value="1" checked="{{'checked' if share and share.vote_open == 1 else ''}}"> <i class="icon-off"></i>
       </label>
     </div>
     <div>
       投票标题：
-      <input name="vote_title" type="text" class="form-control" value="{{escape(share.vote_title) if share else ""}}"/>
+      <input name="vote_title" type="text" class="form-control" value="{{escape(share.vote_title) if share else ''}}"/>
     </div>
 
     <a id="switchImgWrap" class="btn btn-info">上传封面{{'(already exist)' if share and share.post_img else ""}}</a>
@@ -86,7 +86,7 @@
 {% end %}
 
 {% block bottom %}
-<script src="{{ static_url("js/jquery.filedrop.js") }}"></script>
-<script src="{{ static_url("js/share.js") }}"></script>
+<script src="{{ static_url('js/jquery.filedrop.js') }}"></script>
+<script src="{{ static_url('js/share.js') }}"></script>
 <!-- <script src="{{ static_url("js/share.min.js") }}"></script> -->
 {% end %}
