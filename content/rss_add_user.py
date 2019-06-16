@@ -68,13 +68,14 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         res = User
         res['id'] = res.find().count() + 1
         res['user_name'] = rss_name
+        # podcast
         # https://anyway.fm/rss.xml
 
-        print(dir(feeds.feed))
-        print(feeds.feed.keys())
-        print(dir(feeds))
-        print(feeds.keys())
-        print(len(feeds.entries))
+        # print(dir(feeds.feed))
+        # print(feeds.feed.keys())
+        # print(dir(feeds))
+        # print(feeds.keys())
+        # print(len(feeds.entries))
         res['user_url'] = feeds.feed.link
         if hasattr(feeds.feed, 'description'):
             res['user_say'] = feeds.feed.subtitle  # feeds.feed.description
