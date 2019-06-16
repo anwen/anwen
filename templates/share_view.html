@@ -34,10 +34,17 @@
 
 <!-- 正文 标签 -->
 <div class="body entry">
+
+
 {% if share.link %}
+<div>
 <i class="icon-link"></i>
 链接分享：<a href="{{ share.link }}">{{ share.link }}</a>
+</div>
 {% end %}
+
+
+
 {{ share.content }}
 </div>
 <div class="tags">{{ share.tags }}</div>
