@@ -27,6 +27,10 @@ https://sspai.com/feed sspai 少数派 # https://sspai.com
 https://www.pingwest.com/feed/original pingwest PingWest品玩 #
 https://www.huxiu.com/rss/0.xml huxiu 虎嗅 #
 
+
+https://pincong.rocks/feed/
+https://songshuhui.net/feed
+
 https://www.pingwest.com/feed/all
 
 ### 创业
@@ -85,6 +89,7 @@ https://flipboard.com/topic/books.rss flipboard_books Flipboard-Books #
 https://lepture.com/feed.xml lepture Just-lepture #gfw?
 http://iconmoon.com/blog2/feed.php iconmoon 图月志 #
 https://www.changhai.org/feed.xml changhai 卢昌海个人主页 #
+https://jhuo.ca/index.xml jhuo HuoJu's-BLOG #
 
 # 英文独立博客
 http://rachelbythebay.com/w/atom.xml rachelbythebay Writing #
@@ -111,10 +116,37 @@ http://www.zreading.cn/feed #onesentence
 
 https://rsshub.app/wallstreetcn/news/global
 https://rsshub.app/dapenti/tugua
-
+https://www.seejoke.com/rss
 
 
 http://feedmaker.kindle4rss.com/feeds/clouds70.weixin.xml read-caijin
 http://feedmaker.kindle4rss.com/feeds/interest.douban.xml
 http://tvfantasy.net/feed/
 https://blog.lilydjwg.me/feed
+
+
+
+http://feedmaker.kindle4rss.com/feeds/lengjing_qqfinance.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/ikanlixiang.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/duhaoshu.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/businessweek.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/lifeweek.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/kesoview.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/yurii-says.weixin.xml
+http://feedmaker.kindle4rss.com/feeds/ituring_interview.weixin.xml
+https://www.zhihu.com/question/19580096/answer/119103201 rss
+
+
+
+https://blog.bloomca.me/atom.xml
+https://ioerr.github.io/posts/
+http://wuchong.me/
+http://www.wangpei.net/
+
+
+https://kalpatown.wordpress.com/
+
+tech
+https://blog.eson.org/
+https://xmfbit.github.io/
+http://jorbe.sinaapp.com/
