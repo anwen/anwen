@@ -90,6 +90,7 @@ https://lepture.com/feed.xml lepture Just-lepture #gfw?
 http://iconmoon.com/blog2/feed.php iconmoon 图月志 #
 https://www.changhai.org/feed.xml changhai 卢昌海个人主页 #
 https://jhuo.ca/index.xml jhuo HuoJu's-BLOG #
+https://webview.tech/feed/podcast/ webview WEB-VIEW #
 
 # 英文独立博客
 http://rachelbythebay.com/w/atom.xml rachelbythebay Writing #
