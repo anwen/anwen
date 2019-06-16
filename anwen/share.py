@@ -24,13 +24,7 @@ from log import logger
 from utils.img_tools import make_post_thumb
 from PIL import Image
 import datetime
-import sys
 import os
-from pymongo import MongoClient
-conn = MongoClient()
-adb = conn.anwen
-adb.authenticate(options.db['username'], options.db['password'])
-sys.path.append('.')
 from db import Tag, Share  # noqa
 
 

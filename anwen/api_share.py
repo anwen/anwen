@@ -93,6 +93,7 @@ class ShareHandler(JsonHandler):
                 d_share['markdown'] += '\n\n[阅读原文]({})'.format(doc['url'])
             # fix md parse
             d_share['markdown'] = d_share['markdown'].replace('>\n\n', '')
+            d_share['markdown'] = d_share['markdown'].replace('.jpg#)', '.jpg)')
             # 添加原文链接
             d_share['url'] = '预览： <a href="{}">{}</a>'.format(
                 share.link, share.title)
