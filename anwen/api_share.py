@@ -97,7 +97,7 @@ class ShareHandler(JsonHandler):
             d_share['markdown'] = d_share['markdown'].replace('\n]', ']')
             d_share['markdown'] = d_share['markdown'].replace('.jpg#)', '.jpg)')
             # 添加原文链接
-            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
+            d_share['url'] = '<div>预览： <a href="{}">{}</a></div>'.format(
                 share.link, share.title)
 
         viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
