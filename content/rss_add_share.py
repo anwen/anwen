@@ -106,6 +106,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             elif 'Z' == post.published[-1]:
                 post.published = post.published.replace('.000Z', 'Z')
                 published = datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%SZ")
+
+            # <pubDate>15 Jun 2019 06:30:00 EST</pubDate>
+            elif 'EST' in post.published:
+                post.published = post.published[:-4]
+                published = datetime.strptime(post.published, "%d %b %Y %H:%M:%S")
             elif 'T' in post.published:
                 # 2019-05-24T15:05:50-04:00
                 post.published = post.published[:-6]
