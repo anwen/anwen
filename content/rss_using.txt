@@ -26,7 +26,7 @@ https://www.theguardian.com/science/rss theguardian-science Science|The-Guardian
 https://sspai.com/feed sspai 少数派 # https://sspai.com
 https://www.pingwest.com/feed/original pingwest PingWest品玩 #
 https://www.huxiu.com/rss/0.xml huxiu 虎嗅 #
-
+https://feeds.appinn.com/appinns/ appinn 小众软件 #
 
 https://pincong.rocks/feed/
 https://songshuhui.net/feed
@@ -155,4 +155,6 @@ http://jorbe.sinaapp.com/
 
 
 ## podcast
-https://feeds.fireside.fm/czgx/rss fireside 迟早更新 #
+https://feeds.fireside.fm/czgx/rss fireside 迟早更新
+https://webview.tech/feed/podcast/
+https://jinjinledao.org/?feed=rss2

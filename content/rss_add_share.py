@@ -69,6 +69,33 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     print(rss_name)
     feeds = feedparser.parse(rss_url)
     for post in feeds.entries[::-1]:
+        # authors
+        # itunes_episodetype full
+        # itunes_episode
+        # itunes_explicit
+        # itunes_title
+        # itunes_duration
+        # published link subtitle id image title tags
+        # links title_detail author_detail summary_detail guidislink published_parsed summary content author
+        # subtitle_detail
+
+        # title title_detail
+        # published published_parsed
+        # summary summary_detail
+        # author
+        # link links guidislink
+        # authors
+
+        # 'itunes_title', 'itunes_episode'
+        # 'author_detail', 'id', 'itunes_duration'
+        # <itunes:duration>6957</itunes:duration>
+
+        # TODO
+        # 修正内容 目前暂时不支持
+        # <enclosure type="audio/mpeg" url="https://kernelpanic.fm/55/audio.mp3"/>
+        # <media:content url="https://cdn.flipboard.com/telegraph.co.uk/1356d637c7438f6fcffda0d5de177b6058904de6/original.jpg" medium="image" type="image/jpeg" width="480" height="300" />
+        # media_content
+
         print(post.keys())
         if hasattr(post, 'summary'):
             summary = post.summary
@@ -191,23 +218,6 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             res['author'] = post.author
         else:
             res['author'] = author
-
-        # title title_detail
-        # published published_parsed
-        # summary summary_detail
-        # author
-        # link links guidislink
-        # authors
-
-        # 'itunes_title', 'itunes_episode'
-        # 'author_detail', 'id', 'itunes_duration'
-        # <itunes:duration>6957</itunes:duration>
-
-        # TODO
-        # 修正内容 目前暂时不支持
-        # <enclosure type="audio/mpeg" url="https://kernelpanic.fm/55/audio.mp3"/>
-        # <media:content url="https://cdn.flipboard.com/telegraph.co.uk/1356d637c7438f6fcffda0d5de177b6058904de6/original.jpg" medium="image" type="image/jpeg" width="480" height="300" />
-        # media_content
 
         # 去重方案
         # - 标题重复
