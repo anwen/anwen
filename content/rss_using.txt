@@ -85,6 +85,9 @@ https://flipboard.com/topic/books.rss flipboard_books Flipboard-Books #
 https://lepture.com/feed.xml lepture Just-lepture #gfw?
 http://iconmoon.com/blog2/feed.php iconmoon 图月志 #
 
+## 博客
+http://feed.cnblogs.com/blog/u/74009/rss math 正交分解 #
+
 todo
 https://www.buzzfeed.com/books.xml
 https://daringfireball.net/feeds/main daringfireball DaringFireball
