@@ -151,3 +151,8 @@ tech
 https://blog.eson.org/
 https://xmfbit.github.io/
 http://jorbe.sinaapp.com/
+
+
+
+## podcast
+https://feeds.fireside.fm/czgx/rss fireside 迟早更新 #
