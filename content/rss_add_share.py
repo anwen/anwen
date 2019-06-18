@@ -240,7 +240,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             share = Share
             user_id = auser.id
             res['user_id'] = user_id  # just use 1 as default
-            continue
+            # continue
             share = share.new(res)
 
             user = User.by_sid(user_id)
