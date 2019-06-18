@@ -5,3 +5,7 @@ https://www.xuehua.us/2018/03/18/%E6%8F%AD%E7%A7%98%E5%A4%A9%E4%BB%B7%E7%8C%AB%E
 https://arstechnica.com/tech-policy/2019/01/a-whole-years-worth-of-works-just-fell-into-the-public-domain/
 https://threadreaderapp.com/thread/1081619342377156608.html
 http://wcy.wtf/
+https://ferrucc.io/posts/starting-a-blog/
+
+
+https://ferrucc.io/
