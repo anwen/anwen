@@ -4,7 +4,7 @@ import hashlib
 import markdown2
 import tornado.escape
 import tornado.auth
-from tornado import gen
+# from tornado import gen
 import options
 import utils
 # import utils.douban_auth
@@ -151,33 +151,33 @@ def send_joinus_email(email, name):
 
 
 # class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):
-class GoogleLoginHandler(BaseHandler):
+# class GoogleLoginHandler(BaseHandler):
 
-    @tornado.web.asynchronous
-    @gen.coroutine
-    def get(self):
-        if self.get_argument("openid.mode", None):
-            user = yield self.get_authenticated_user()
-            doc = User.by_email(user['email'])
-            if not doc:
-                doc = User
-                doc['id'] = doc.find().count() + 1
-                doc['user_name'] = user['name']
-                doc['user_pass'] = utils.make_emailverify()
-                doc['user_email'] = user['email']
-                doc['user_domain'] = user['name']
-                doc.new(doc)
-                send_joinus_email(user['email'], user['name'])
-            user_info = {
-                'user_id': doc.id,
-                'user_name': doc.user_name,
-                'user_email': doc.user_email,
-                'user_domain': doc.user_domain}
-            self.set_secure_cookie("user",
-                                   tornado.escape.json_encode(user_info))
-            self.redirect("/")
-            return
-        self.authenticate_redirect()
+#     @tornado.web.asynchronous
+#     @gen.coroutine
+#     def get(self):
+#         if self.get_argument("openid.mode", None):
+#             user = yield self.get_authenticated_user()
+#             doc = User.by_email(user['email'])
+#             if not doc:
+#                 doc = User
+#                 doc['id'] = doc.find().count() + 1
+#                 doc['user_name'] = user['name']
+#                 doc['user_pass'] = utils.make_emailverify()
+#                 doc['user_email'] = user['email']
+#                 doc['user_domain'] = user['name']
+#                 doc.new(doc)
+#                 send_joinus_email(user['email'], user['name'])
+#             user_info = {
+#                 'user_id': doc.id,
+#                 'user_name': doc.user_name,
+#                 'user_email': doc.user_email,
+#                 'user_domain': doc.user_domain}
+#             self.set_secure_cookie("user",
+#                                    tornado.escape.json_encode(user_info))
+#             self.redirect("/")
+#             return
+#         self.authenticate_redirect()
 
 
 class LogoutHandler(BaseHandler):
