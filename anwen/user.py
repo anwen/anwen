@@ -7,7 +7,7 @@ import tornado.auth
 from tornado import gen
 import options
 import utils
-import utils.douban_auth
+# import utils.douban_auth
 from utils.avatar import get_avatar
 from .base import BaseHandler, CommonResourceHandler
 from db import User, Share, Like, Collect
@@ -129,25 +129,25 @@ def send_joinus_email(email, name):
     utils.send_email(email, subject, msg_body)
 
 
-class DoubanLoginHandler(BaseHandler, utils.douban_auth.DoubanMixin):
+# class DoubanLoginHandler(BaseHandler, utils.douban_auth.DoubanMixin):
 
-    @tornado.web.asynchronous
-    @gen.coroutine
-    def get(self):
-        redirect_uri = options.douban_redirect_uri
-        code = self.get_argument('code', None)
-        if code:
-            user = yield self.get_authenticated_user(
-                redirect_uri=redirect_uri,
-                client_id=options.douban['douban_api_key'],
-                client_secret=options.douban['douban_api_secret'],
-                code=code)
-            print(user)
-            self.redirect('/')
-        self.authorize_redirect(
-            redirect_uri=redirect_uri,
-            client_id=options.douban['douban_api_key']
-        )
+#     @tornado.web.asynchronous
+#     @gen.coroutine
+#     def get(self):
+#         redirect_uri = options.douban_redirect_uri
+#         code = self.get_argument('code', None)
+#         if code:
+#             user = yield self.get_authenticated_user(
+#                 redirect_uri=redirect_uri,
+#                 client_id=options.douban['douban_api_key'],
+#                 client_secret=options.douban['douban_api_secret'],
+#                 code=code)
+#             print(user)
+#             self.redirect('/')
+#         self.authorize_redirect(
+#             redirect_uri=redirect_uri,
+#             client_id=options.douban['douban_api_key']
+#         )
 
 
 # class GoogleLoginHandler(BaseHandler, tornado.auth.GoogleMixin):

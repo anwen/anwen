@@ -10,6 +10,8 @@ pymongo==2.8
 # mongokit
 mongokit-py3
 pillow
+readability-lxml
+html2text
 
 
 # MySQL-python
