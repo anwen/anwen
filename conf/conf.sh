@@ -1,3 +1,10 @@
+service mongod restart
+# db.createUser({ user: "sa", pwd: "pwd", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
+db.createUser({ user: "sa", pwd: "pwd", roles: [{ role: "userAdminAnyDatabase", db: "admin" }] })
+db.auth("sa", "pwd")
+db.createUser({ user: "aw", pwd: "pwd", roles: [{ role: "dbOwner", db:"anwen" }] })
+
+
 # config
 scp options/server_setting.py aw:/var/www/anwen/options
 scp -r options/cert aw:/var/www/anwen/options # optional
