@@ -95,22 +95,22 @@ class MsgNewHandler(BaseHandler, MessageMixin):
         send_message(talk)
 
 
-class MsgUpdatesHandler(BaseHandler, MessageMixin):
+# class MsgUpdatesHandler(BaseHandler, MessageMixin):
 
-    @tornado.web.asynchronous
-    def post(self):
-        cursor = self.get_argument("cursor", None)
-        self.wait_for_messages(self.on_new_messages,
-                               cursor=cursor)
+#     @tornado.web.asynchronous
+#     def post(self):
+#         cursor = self.get_argument("cursor", None)
+#         self.wait_for_messages(self.on_new_messages,
+#                                cursor=cursor)
 
-    def on_new_messages(self, messages):
-        # Closed client connection
-        if self.request.connection.stream.closed():
-            return
-        self.finish(dict(messages=messages))
+#     def on_new_messages(self, messages):
+#         # Closed client connection
+#         if self.request.connection.stream.closed():
+#             return
+#         self.finish(dict(messages=messages))
 
-    def on_connection_close(self):
-        self.cancel_wait(self.on_new_messages)
+#     def on_connection_close(self):
+#         self.cancel_wait(self.on_new_messages)
 
 
 class ChatSocketHandler(tornado.websocket.WebSocketHandler, BaseHandler):
