@@ -48,7 +48,7 @@ from anwen.admin import AdminShareHandler
 from ande.ande import AndeHandler
 
 from atalk.talk import TalkHandler, ChatSocketHandler
-from atalk.talk import MsgNewHandler, MsgUpdatesHandler
+from atalk.talk import MsgNewHandler  # MsgUpdatesHandler
 
 
 handlers = [
@@ -134,7 +134,7 @@ handlers = [
     (r"/talk", TalkHandler),
     (r"/chatsocket", ChatSocketHandler),
     (r"/a/message/new", MsgNewHandler),
-    (r"/a/message/updates", MsgUpdatesHandler),
+    # (r"/a/message/updates", MsgUpdatesHandler),
 
     (r"/app", AppHandler),
     (r"/together", TogetherHandler),
