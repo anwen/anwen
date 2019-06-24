@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name anwensf.com b.anwensf.com anwen.co b.anwen.co;
+    server_name anwensf.com b.anwensf.com anwen.co b.anwen.co haoka.fun;
     index index.html index.htm index.php;
     root  /var/www/anwen;
     # Allow file uploads

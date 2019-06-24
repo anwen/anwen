@@ -25,9 +25,9 @@ cd /var/www/anwen
 git init .
 git config receive.denyCurrentBranch ignore
 git config --bool receive.denyNonFastForwards false
+scp conf/post-update aw:/var/www/anwen/.git/hooks
 cd .git/hooks
 # wget http://utsl.gen.nz/git/post-update
-scp conf/post-update aw:/var/www/anwen/.git/hooks
 chmod +x post-update
 # after push
 cd ../..
