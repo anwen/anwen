@@ -6,6 +6,10 @@ https://arstechnica.com/tech-policy/2019/01/a-whole-years-worth-of-works-just-fe
 https://threadreaderapp.com/thread/1081619342377156608.html
 http://wcy.wtf/
 https://ferrucc.io/posts/starting-a-blog/
+https://kotaku.com/for-men-who-hate-talking-on-the-phone-games-keep-frien-1835277944?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=website
 
 
 https://ferrucc.io/
+
+
+https://feedx.net/

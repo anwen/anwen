@@ -14,6 +14,9 @@ readability-lxml
 html2text
 
 
+# feedparser
+
+
 # MySQL-python
 # peewee
 # Jinja2

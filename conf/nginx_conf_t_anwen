@@ -3,7 +3,7 @@ upstream anwen_test {
 }
 server {
     listen 80;
-    server_name test.anwensf.com t.anwensf.com t.anwen.co;
+    server_name test.anwensf.com t.anwensf.com t.anwen.co haoka.fun  t.haoka.fun z.anwen.co z.anwensf.com;
     index index.html index.htm index.php;
     root  /var/www/anwen;
     # Allow file uploads
