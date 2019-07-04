@@ -93,7 +93,7 @@ http://rachelbythebay.com/w/atom.xml rachelbythebay Writing #
 
 
 ## 图片
-https://rsshub.app/natgeo/dailyphoto natgeo 国家地理 #
+https://rsshub.app/natgeo/dailyphoto natgeo 国家地理 #gfw
 https://feedx.net/rss/bingenwallpaper.xml # # #gfw
 https://feedx.net/rss/bingwallpaper.xml # # #gfw
 

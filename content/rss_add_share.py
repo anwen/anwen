@@ -1,13 +1,19 @@
+import random
+from pymongo import MongoClient
+import sys
+import time
+import options
+import feedparser
 from datetime import datetime, timedelta, tzinfo
 import re
 from db import User, Share, Tag
 import html2text
-import feedparser
-import options
-import time
-import sys
-from pymongo import MongoClient
-import random
+
+
+import socket
+# socket.setdefaulttimeout(<timeout in floating seconds>)
+socket.setdefaulttimeout(10)
+# https://www.cnblogs.com/phpfans2012/p/3995162.html
 conn = MongoClient()
 
 
@@ -96,7 +102,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         # <media:content url="https://cdn.flipboard.com/telegraph.co.uk/1356d637c7438f6fcffda0d5de177b6058904de6/original.jpg" medium="image" type="image/jpeg" width="480" height="300" />
         # media_content
 
-        print(post.keys())
+        # print(post.keys())
         if hasattr(post, 'summary'):
             summary = post.summary
             assert post.summary == post.description
