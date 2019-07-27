@@ -29,7 +29,7 @@ https://rsshub.app/one one 一个 #
 http://www.write.org.cn/feed write 读书笔记 #
 http://feedmaker.kindle4rss.com/feeds/cn-bbc.xml bbc_cn BBC中国 #
 http://feedmaker.kindle4rss.com/feeds/luojisw.weixin.xml luojisw 罗辑思维 #
-
+http://www.vice.cn/index/rss/ vice_cn VICE中国 #
 
 
 ### 创业
