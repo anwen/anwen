@@ -23,7 +23,7 @@ class UserhomeHandler(BaseHandler):
         likenum = User.find({'user_id': user._id}).count()
         user.gravatar = get_avatar(user.user_email, 100)
 
-        shares = Share.find({'user_id': user.id}).sort('_id', -1)
+        shares = Share.find({'user_id': user.id}).sort('_id', -1).limit(100)
 
         l_share = []
         for share in shares:

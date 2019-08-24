@@ -12,7 +12,7 @@
 # , CommonResourceHandler
 from .base import BaseHandler
 # , Share, Like
-from db import User, Share
+from db import User  # , Share
 
 # 用户展示
 # 发了多少文章
