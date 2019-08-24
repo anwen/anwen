@@ -64,11 +64,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         print(feeds.feed.image['href'])
         print(11)
         if feeds.feed.image.get('href'):
-            print(22)
             href = feeds.feed.image['href']
             ext = href.split('.')[-1]
             img_name = '{}.{}'.format(user_id, ext)
             r = requests.get(href)
+            print(r.status_code)
             if r.status_code == 200:
                 print(img_name)
                 with open(img_name, 'wb') as f:
