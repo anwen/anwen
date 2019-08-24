@@ -23,7 +23,7 @@ class UsersHandler(BaseHandler):
 
     # @tornado.web.authenticated
     def get(self):
-        users = User.find({'user_leaf': {'$gt': 20}})
+        users = User.find({'user_leaf': {'$gt': 20}}).sort('user_leaf', -1)
         l_users = []
         for user in users:
             # print(user)
