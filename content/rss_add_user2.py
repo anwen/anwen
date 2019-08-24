@@ -48,14 +48,15 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         size = 'raw'
         avatar_path = '%s/feed_%s_%s.jpg' % (avatar_dir, str(user_id), size)
         if os.path.isfile(avatar_path):
+            print('feed img got', avatar_path)
             return
         # return
-        print(user_id)
+        # print(user_id)
 
     # return
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     feeds = feedparser.parse(rss_url)
-    print(feeds.keys())
+    # print(feeds.keys())
     # 更新图片
 
     if hasattr(feeds.feed, 'image'):
@@ -66,17 +67,18 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         if feeds.feed.image.get('href'):
             href = feeds.feed.image['href']
             ext = href.split('.')[-1]
-            img_name = 'feed_{}.{}'.format(user_id, ext)
+            img_name = '{}/feed_{}.{}'.format(avatar_dir, user_id, ext)
             r = requests.get(href)
             href = href.replace('https', 'http')
-            print(href)
-            print(r.status_code)
             if r.status_code == 200:
-                print(img_name)
+                print(img_name, 'status_code 200')
                 with open(img_name, 'wb') as f:
                     for chunk in r.iter_content():
                         f.write(chunk)
                 make_post_thumb(img_name, sizes=[[132, 132]])
+            else:
+                print(r.status_code)
+                print('wget {} -O {}'.format(href, img_name))
 
     # <image>
     # <url>https://www.huxiu.com/static_2015/img/logo.png</url>
@@ -149,9 +151,9 @@ if __name__ == '__main__':
         if 'gfw' in info:
             continue
 
-        if host != 'huxiu':
-            continue
-        print(i)
+        # if host != 'huxiu':
+        #     continue
+        # print(i)
         box.append(url)
 
         add_from_file(url, host, name)
