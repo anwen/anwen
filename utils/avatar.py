@@ -7,7 +7,7 @@ avatar_dir = 'static/avatar'
 
 
 def get_avatar_by_feed(user_id):
-    size = 'raw'
+    size = '132'
     default_avatar_path = '/%s/default/default.gif' % avatar_dir
     avatar_path = '%s/feed_%s_%s.jpg' % (avatar_dir, str(user_id), size)
     if os.path.isfile(avatar_path):
