@@ -53,10 +53,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
     # 更新图片
-    if rss_hostname != 'huxiu':
-        return
+
     if hasattr(feeds.feed, 'image'):
         print(feeds.feed.image)
+        print(type(feeds.feed.image))
+        print(feeds.feed.image['href'])
 
     # <image>
     # <url>https://www.huxiu.com/static_2015/img/logo.png</url>
@@ -131,6 +132,10 @@ if __name__ == '__main__':
         print(i)
         # continue
         box.append(url)
+
+        if host != 'huxiu':
+            return
+
         add_from_file(url, host, name)
         if maxnum and n >= maxnum:
             break
