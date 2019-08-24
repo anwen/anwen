@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
-import time
+# import time
+# import markdown2
 # import hashlib
-import markdown2
 # import tornado.escape
 # import tornado.auth
 # from tornado import gen
@@ -23,7 +23,7 @@ class UsersHandler(BaseHandler):
 
     # @tornado.web.authenticated
     def get(self):
-        users = User.find()
+        users = User.find({'user_leaf': {'$gt': 20}})
         l_users = []
         for user in users:
             # print(user)
