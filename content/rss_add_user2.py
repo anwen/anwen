@@ -62,7 +62,9 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         print(feeds.feed.image)
         print(type(feeds.feed.image))
         print(feeds.feed.image['href'])
+        print(11)
         if feeds.feed.image.get('href'):
+            print(22)
             href = feeds.feed.image['href']
             ext = href.split('.')[-1]
             img_name = '{}.{}'.format(user_id, ext)
