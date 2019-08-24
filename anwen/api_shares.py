@@ -142,7 +142,7 @@ class SharesHandler(JsonHandler):
             if user.user_email.endswith('@wechat'):
                 share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
             if user.user_email.endswith('@anwensf.com'):
-                share['user_img'] = options.site_url+get_avatar_by_feed(user._id)
+                share['user_img'] = options.site_url+get_avatar_by_feed(user.id)
             else:
                 share['user_img'] = options.site_url+get_avatar(user.user_email, 100)
             new_shares.append(share)
