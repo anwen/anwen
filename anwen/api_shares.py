@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 from tornado.escape import json_decode
 from utils import get_tags, get_tags_parents
 import time
-from utils.avatar import get_avatar, get_avatar_by_wechat
+from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 import options
 import copy
 from log import logger
@@ -141,6 +141,8 @@ class SharesHandler(JsonHandler):
 
             if user.user_email.endswith('@wechat'):
                 share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
+            if user.user_email.endswith('@anwensf.com'):
+                share['user_img'] = options.site_url+get_avatar_by_feed(user._id)
             else:
                 share['user_img'] = options.site_url+get_avatar(user.user_email, 100)
             new_shares.append(share)
