@@ -68,6 +68,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             img_name = '{}.{}'.format(user_id, ext)
             r = requests.get(href)
             if r.status_code == 200:
+                print(img_name)
                 with open(img_name, 'wb') as f:
                     for chunk in r.iter_content():
                         f.write(chunk)
