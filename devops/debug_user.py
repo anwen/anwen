@@ -9,5 +9,5 @@ adb = conn.anwen
 adb.authenticate(options.db['username'], options.db['password'])
 
 
-r = adb.User_Col.find({'user_leaf': {'$gt': 0}}).count()
+r = adb.User_Col.find({'user_leaf': {'$gt': 20}}).count()
 print(r)
