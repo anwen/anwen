@@ -12,6 +12,10 @@
 {% for (offset,user) in enumerate(users) %}
 
 <div>
+
+	<img src="{{}user['user_img']}"/>
+
+
 	<a href="/user/{{user['user_domain']}}">
 		{{user['user_name']}}
 	</a>
