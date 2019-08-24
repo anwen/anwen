@@ -1,3 +1,4 @@
+from utils import img_tools
 from db import User
 import feedparser
 import options
@@ -5,8 +6,11 @@ import random
 import string
 import sys
 import os
+import requests
 from pymongo import MongoClient
 conn = MongoClient()
+sys.path.append('.')
+make_post_thumb = img_tools.make_post_thumb
 
 
 adb = conn.anwen
@@ -58,6 +62,16 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         print(feeds.feed.image)
         print(type(feeds.feed.image))
         print(feeds.feed.image['href'])
+        if feeds.feed.image.get('href'):
+            href = feeds.feed.image['href']
+            ext = href.split('.')[-1]
+            img_name = '{}.{}'.format(user_id, ext)
+            r = requests.get(href)
+            if r.status_code == 200:
+                with open(img_name, 'wb') as f:
+                    for chunk in r.iter_content():
+                        f.write(chunk)
+                make_post_thumb(img_name, sizes=[[132, 132]])
 
     # <image>
     # <url>https://www.huxiu.com/static_2015/img/logo.png</url>
