@@ -66,7 +66,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         if feeds.feed.image.get('href'):
             href = feeds.feed.image['href']
             ext = href.split('.')[-1]
-            img_name = '{}.{}'.format(user_id, ext)
+            img_name = 'feed_{}.{}'.format(user_id, ext)
             r = requests.get(href)
             href = href.replace('https', 'http')
             print(href)
