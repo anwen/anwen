@@ -68,6 +68,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             ext = href.split('.')[-1]
             img_name = '{}.{}'.format(user_id, ext)
             r = requests.get(href)
+            print(href)
             print(r.status_code)
             if r.status_code == 200:
                 print(img_name)
