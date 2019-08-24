@@ -32,12 +32,12 @@ class UsersHandler(BaseHandler):
             #     '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
             # likenum = User.find({'user_id': user._id}).count()
             # user.gravatar = get_avatar(user.user_email, 100)
-            contents = Share.find({'user_id': user.id})
-            if contents.count():
-                auser = {}
-                auser['user_domain'] = user.user_domain
-                auser['user_name'] = user.user_name
-                auser['article_num'] = contents.count()
-                l_users.append(auser)
+            # contents = Share.find({'user_id': user.id})
+            # if contents.count():
+            auser = {}
+            auser['user_domain'] = user.user_domain
+            auser['user_name'] = user.user_name
+            auser['article_num'] = int((user.user_leaf-20)/10)  # contents.count()
+            l_users.append(auser)
 
         self.render('users.html', users=l_users)
