@@ -5,7 +5,6 @@
 # import tornado.escape
 # import tornado.auth
 # from tornado import gen
-# import options
 # import utils
 # import utils.douban_auth
 # from utils.avatar import get_avatar
@@ -13,6 +12,8 @@
 from .base import BaseHandler
 # , Share, Like
 from db import User  # , Share
+import options
+from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 
 # 用户展示
 # 发了多少文章
@@ -38,6 +39,14 @@ class UsersHandler(BaseHandler):
             auser['user_domain'] = user.user_domain
             auser['user_name'] = user.user_name
             auser['article_num'] = int((user.user_leaf-20)/10)  # contents.count()
+
+            if user.user_email.endswith('@wechat'):
+                auser['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
+            if user.user_email.endswith('@anwensf.com'):
+                auser['user_img'] = options.site_url+get_avatar_by_feed(user._id)
+            else:
+                auser['user_img'] = options.site_url+get_avatar(user.user_email, 100)
+
             l_users.append(auser)
 
         self.render('users.html', users=l_users)
