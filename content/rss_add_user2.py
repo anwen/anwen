@@ -129,12 +129,11 @@ if __name__ == '__main__':
         url, host, name, info = ii[:4]
         if 'gfw' in info:
             continue
-        print(i)
-        # continue
-        box.append(url)
 
         if host != 'huxiu':
-            return
+            continue
+        print(i)
+        box.append(url)
 
         add_from_file(url, host, name)
         if maxnum and n >= maxnum:
