@@ -3,14 +3,27 @@ import hashlib
 import os
 import requests
 
+avatar_dir = 'static/avatar'
+
+
+def get_avatar_by_feed(user_id):
+    size = 'raw'
+    default_avatar_path = '/%s/default/default.gif' % avatar_dir
+    avatar_path = '%s/feed_%s_%s.jpg' % (avatar_dir, str(user_id), size)
+    if os.path.isfile(avatar_path):
+        return '/%s' % avatar_path
+    else:
+        print(avatar_path)
+        return default_avatar_path
+
 
 def get_avatar_by_wechat(user_id):
+    # https://anwensf.com
     size = 'raw'
-    avatar_dir = 'static/avatar'
-    default_avatar_path = 'https://anwensf.com/%s/default/default.gif' % avatar_dir
+    default_avatar_path = '/%s/default/default.gif' % avatar_dir
     avatar_path = '%s/%s_%s.jpg' % (avatar_dir, str(user_id), size)
     if os.path.isfile(avatar_path):
-        return 'https://anwensf.com/%s' % avatar_path
+        return '/%s' % avatar_path
     else:
         print(avatar_path)
         return default_avatar_path
@@ -21,7 +34,6 @@ def get_avatar(email, size=16):
     # size = str(size)
     # return "http://www.gravatar.com/avatar/%s?size=%s" % (gravatar_id, size)
     size = str(size)
-    avatar_dir = 'static/avatar'
     default_avatar_path = '/%s/default/default.gif' % avatar_dir
     avatar_path = '%s/%s_%s.jpg' % (avatar_dir, email, size)
     if os.path.isfile(avatar_path):
