@@ -43,7 +43,7 @@ class UsersHandler(BaseHandler):
             if user.user_email.endswith('@wechat'):
                 auser['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
             if user.user_email.endswith('@anwensf.com'):
-                auser['user_img'] = options.site_url+get_avatar_by_feed(user._id)
+                auser['user_img'] = options.site_url+get_avatar_by_feed(user.id)
             else:
                 auser['user_img'] = options.site_url+get_avatar(user.user_email, 100)
 
