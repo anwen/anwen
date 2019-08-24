@@ -48,10 +48,23 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         # return
         print(user_id)
 
-    return
+    # return
     # rss_file = 'content/gen/qdaily_2019-04-20 15:07:12.xml'
     feeds = feedparser.parse(rss_url)
     print(feeds.keys())
+    # 更新图片
+    if rss_hostname != 'huxiu':
+        return
+    if hasattr(feeds.feed, 'image'):
+        print(feeds.feed.image)
+
+    # <image>
+    # <url>https://www.huxiu.com/static_2015/img/logo.png</url>
+    # <title>虎嗅网</title>
+    # <link>http://www.huxiu.com</link>
+    # </image>
+
+    return
     if hasattr(feeds.feed, 'description'):
         if feeds.feed.description != feeds.feed.subtitle:
             print('!'*88)
