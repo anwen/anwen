@@ -60,10 +60,10 @@ def add_from_file(rss_url, rss_hostname, rss_name):
     # 更新图片
 
     if hasattr(feeds.feed, 'image'):
-        print(feeds.feed.image)
-        print(type(feeds.feed.image))
-        print(feeds.feed.image['href'])
-        print(11)
+        # print(feeds.feed.image)
+        # print(type(feeds.feed.image))
+        # print(feeds.feed.image['href'])
+        # print(11)
         if feeds.feed.image.get('href'):
             href = feeds.feed.image['href']
             ext = href.split('.')[-1]
