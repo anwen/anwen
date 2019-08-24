@@ -22,3 +22,7 @@ print(r)
 
 r = adb.Share_Col.index_information()
 print(r.keys())
+
+
+r = adb.User_Col.ensure_index('user_leaf', -1)
+print(r)
