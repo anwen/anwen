@@ -88,7 +88,7 @@ class NodeHandler(BaseHandler):
             node=node,
         )
         del shares, share_res
-        del tpl_name, pagesum, page, per_page, node
+        del tpl_name, pagesum, page, per_page, node, status
         # del shares
         # ns = super(BaseHandler, self).get_template_namespace()
         # del ns
@@ -98,6 +98,10 @@ class NodeHandler(BaseHandler):
 
     def on_connection_close(self):
         print('NodeHandler close')
+        gc.collect()
+
+    def on_finish(self):
+        print('NodeHandler on_finish')
         gc.collect()
 
 
