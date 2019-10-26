@@ -53,6 +53,7 @@ class NodeHandler(BaseHandler):
                 share.markdown = cutter(markdown2.markdown(md))
                 share.title = share.title.split('_')[0]
                 shares.append(share)
+                del user
             tpl_name = 'node_alot'
         else:
             for share in share_res:
@@ -70,6 +71,7 @@ class NodeHandler(BaseHandler):
                 share.markdown = cutter(markdown2.markdown(md))
                 share.title = share.title.split('_')[0]
                 shares.append(share)
+                del user
             tpl_name = 'node'
         self.render(
             "{}.html".format(tpl_name),
