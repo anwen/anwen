@@ -5,9 +5,11 @@ from pymongo import DESCENDING  # ASCENDING
 from utils.fliter import cutter, filter_tags
 from .base import BaseHandler
 from db import User, Share, Tag
-
+import gc
 
 # ExploreHandler
+
+
 class NodeHandler(BaseHandler):
 
     def get(self, node='home'):
@@ -77,8 +79,12 @@ class NodeHandler(BaseHandler):
             node=node,
         )
         del shares, share_res, user
+        return
         # https://stackoverflow.com/questions/15731024/what-state-does-self-finish-put-the-tornado-web-server-in
         # self.finish()
+
+    def on_connection_close(self):
+        gc.collect()
 
 
 class TagHandler(BaseHandler):
