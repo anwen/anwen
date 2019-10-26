@@ -73,11 +73,11 @@ class NodeHandler(BaseHandler):
                     del user
                     del share
                 tpl_name = 'node'
-        tpl_name = 'node'
-        shares = []
-        pagesum = 1
-        page = 1
-        per_page = 1
+        # tpl_name = 'node'
+        # shares = []
+        # pagesum = 1
+        # page = 1
+        # per_page = 1
         self.render(
             "{}.html".format(tpl_name),
             shares=shares,
