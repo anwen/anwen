@@ -65,6 +65,8 @@ class SharesHandler(JsonHandler):
         read_status = int(read_status)
         per_page = int(per_page)
         page = int(page)
+        if not last_suggested:
+            last_suggested = 0
         last_suggested = float(last_suggested)/1000+1
 
         user = self.get_user_dict(token)
