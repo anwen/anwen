@@ -80,7 +80,7 @@ class NodeHandler(BaseHandler):
             per_page=per_page,
             node=node,
         )
-        del shares, share_res, user
+        del shares, share_res
         return
         # https://stackoverflow.com/questions/15731024/what-state-does-self-finish-put-the-tornado-web-server-in
         # self.finish()
