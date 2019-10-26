@@ -42,9 +42,9 @@ http_server = tornado.httpserver.HTTPServer(application, xheaders=True)
 
 if options.use_ssl and args.port != 8888:
     http_server = tornado.httpserver.HTTPServer(
-        application, ssl_options=options.ssl_options)
+        application, ssl_options=options.ssl_options, no_keep_alive=True)
 else:
-    http_server = tornado.httpserver.HTTPServer(application)
+    http_server = tornado.httpserver.HTTPServer(application, no_keep_alive=True)
 
 
 def launch(port):
