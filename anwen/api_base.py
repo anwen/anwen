@@ -7,6 +7,7 @@ from tornado.escape import json_decode
 import traceback
 import options
 from bson import ObjectId
+import gc
 
 
 class JsonHandler(RequestHandler):
@@ -26,6 +27,10 @@ class JsonHandler(RequestHandler):
     #             message = 'Unable to parse JSON.'
     #             self.send_error(400, message=message)  # Bad Request
     #     # Set up response dictionary. res=response
+
+    def on_finish(self):
+        print('BaseHandler on_finish')
+        gc.collect()
 
     def prepare(self):
         super().prepare()
