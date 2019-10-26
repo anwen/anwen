@@ -19,6 +19,10 @@ class BaseHandler(RequestHandler):
         print('BaseHandler close')
         gc.collect()
 
+    def on_finish(self):
+        print('BaseHandler on_finish')
+        gc.collect()
+
     def get_template_namespace(self):
         ns = super(BaseHandler, self).get_template_namespace()
         ns.update({
