@@ -11,8 +11,17 @@ from anwen import api_comment
 from anwen import api_upload
 from anwen import api_stat
 
+from anwen import page_welcome
+
 
 # pages
+
+# from anwen.index import WelcomeHandler
+# from anwen.index import IndexHandler
+# from anwen.index import ExploreHandler
+from anwen.index import NodeHandler
+from anwen.index import TagHandler
+
 from anwen.share import ShareHandler, OneShareHandler
 from anwen.share_by_get import ShareByGetHandler
 
@@ -25,11 +34,6 @@ from anwen.other import AppHandler
 from anwen.other import TogetherHandler
 
 
-from anwen.index import WelcomeHandler
-from anwen.index import IndexHandler, ExploreHandler
-
-# from anwen.index import NodeHandler, TagHandler
-from anwen.index import TagHandler
 from anwen.users import UsersHandler
 
 
@@ -79,26 +83,25 @@ handlers = [
     (r"/api/image_upload", api_upload.ImageUploadHandler),
 
 
+    # pages
+    (r"/explore", NodeHandler),  # node=home
+    (r"/node/([^/]+)", NodeHandler),
+
+    # static or redirect
+    (r"/welcome", page_welcome.WelcomeHandler),
+    (r"/", page_welcome.IndexHandler),
+
+    # others
     (r"/share_by_get/?", ShareByGetHandler),
     (r"/share/?", ShareHandler),
     (r"/share/([^/]+)", OneShareHandler),
 
-
     (r"/sharecomment", CommentHandler),
     (r"/feed", FeedHandler),
 
-
-
     (r"/viewpoint", ViewPointHandler),
 
-    (r"/welcome", WelcomeHandler),
-    (r"/", IndexHandler),
-
-    (r"/explore", ExploreHandler),
-    (r"/node/([^/]+)", ExploreHandler),
     (r"/users", UsersHandler),
-
-    # (r"/node/([^/]+)", NodeHandler),
 
     (r"/tag/?", TagHandler),
     (r"/tag/([^/]+)", TagHandler),
@@ -114,8 +117,6 @@ handlers = [
     (r'/changepass', ChangePassHandler),
     (r"/user/([^/]+)", UserhomeHandler),
     (r"/userlike/([^/]+)", UserlikeHandler),
-
-
 
     (r"/admin/become/?", BecomeAdminHandler),
     (r"/admin/share/?", AdminShareHandler),
