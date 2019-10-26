@@ -86,7 +86,8 @@ class NodeHandler(BaseHandler):
             per_page=per_page,
             node=node,
         )
-        del shares, share_res
+        # del shares, share_res
+        del shares
         # ns = super(BaseHandler, self).get_template_namespace()
         # del ns
         return
