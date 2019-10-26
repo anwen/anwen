@@ -35,9 +35,8 @@ class NodeHandler(BaseHandler):
         share_res = Share.find(conds).sort(
             '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
         pagesum = int((share_res.count() + per_page-1) / per_page)
-        if 0:
+        if 1:
             shares = []
-
             # 另外一种显示UI
             if per_page >= 20:
                 for share in share_res:
@@ -72,6 +71,7 @@ class NodeHandler(BaseHandler):
                     share.title = share.title.split('_')[0]
                     shares.append(share)
                     del user
+                    del share
                 tpl_name = 'node'
         tpl_name = 'node'
         shares = []
