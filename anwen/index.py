@@ -96,13 +96,13 @@ class NodeHandler(BaseHandler):
         # https://stackoverflow.com/questions/15731024/what-state-does-self-finish-put-the-tornado-web-server-in
         # self.finish()
 
-    def on_connection_close(self):
-        print('NodeHandler close')
-        gc.collect()
+    # def on_connection_close(self):
+    #     print('NodeHandler close')
+    #     gc.collect()
 
-    def on_finish(self):
-        print('NodeHandler on_finish')
-        gc.collect()
+    # def on_finish(self):
+    #     print('NodeHandler on_finish')
+    #     gc.collect()
 
 
 class TagHandler(BaseHandler):
