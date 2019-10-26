@@ -84,6 +84,7 @@ class NodeHandler(BaseHandler):
         # self.finish()
 
     def on_connection_close(self):
+        print('NodeHandler close')
         gc.collect()
 
 
