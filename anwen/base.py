@@ -16,6 +16,7 @@ import gc
 class BaseHandler(RequestHandler):
 
     def on_connection_close(self):
+        print('BaseHandler close')
         gc.collect()
 
     def get_template_namespace(self):
