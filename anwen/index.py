@@ -60,6 +60,7 @@ class NodeHandler(BaseHandler):
                         continue
                     # 获取用户信息，需要多次查表!!!
                     user = User.by_sid(share.user_id)
+
                     share.name = user.user_name
                     share.domain = user.user_domain
 
@@ -87,6 +88,7 @@ class NodeHandler(BaseHandler):
             node=node,
         )
         del shares, share_res
+        del tpl_name, pagesum, page, per_page, node
         # del shares
         # ns = super(BaseHandler, self).get_template_namespace()
         # del ns
