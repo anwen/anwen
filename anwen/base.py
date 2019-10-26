@@ -10,9 +10,13 @@ from utils import random_sayings
 import traceback
 import options
 from json import dumps
+import gc
 
 
 class BaseHandler(RequestHandler):
+
+    def on_connection_close(self):
+        gc.collect()
 
     def get_template_namespace(self):
         ns = super(BaseHandler, self).get_template_namespace()
