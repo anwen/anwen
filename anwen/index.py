@@ -32,11 +32,10 @@ class NodeHandler(BaseHandler):
 
         # sort type
         # 'score', DESCENDING
+        share_res = Share.find(conds).sort(
+            '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
+        pagesum = int((share_res.count() + per_page-1) / per_page)
         if 0:
-            share_res = Share.find(conds).sort(
-                '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
-            pagesum = int((share_res.count() + per_page-1) / per_page)
-
             shares = []
 
             # 另外一种显示UI
@@ -86,8 +85,8 @@ class NodeHandler(BaseHandler):
             per_page=per_page,
             node=node,
         )
-        # del shares, share_res
-        del shares
+        del shares, share_res
+        # del shares
         # ns = super(BaseHandler, self).get_template_namespace()
         # del ns
         return
