@@ -81,6 +81,8 @@ class NodeHandler(BaseHandler):
             node=node,
         )
         del shares, share_res
+        ns = super(BaseHandler, self).get_template_namespace()
+        del ns
         return
         # https://stackoverflow.com/questions/15731024/what-state-does-self-finish-put-the-tornado-web-server-in
         # self.finish()
