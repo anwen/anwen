@@ -72,6 +72,7 @@ class NodeHandler(BaseHandler):
                     shares.append(share)
                     del user
                     del share
+                    del md
                 tpl_name = 'node'
         # tpl_name = 'node'
         # shares = []
