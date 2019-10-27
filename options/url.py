@@ -56,31 +56,31 @@ from atalk.talk import MsgNewHandler  # MsgUpdatesHandler
 
 
 handlers = [
-    (r"/api", api.ApiHandler),
-    (r"/api/stat", api_stat.StatHandler),
-
-    (r"/api/tags", api_tag.TagsHandler),
-
-    (r"/api/shares/?", api_shares.SharesHandler),
-
-    (r"/api/shares/([^/]+)", api_share.ShareHandler),
-
-    (r"/api/preview", api_share.PreviewHandler),
-
+    # auth
     (r"/api/authorizations", api_user.AuthorizationsHandler),
     (r"/api/wxlogin", api_user.WxLoginHandler),
     (r"/api/me", api_user.MeHandler),
-
+    # content
+    (r"/api/shares/?", api_shares.SharesHandler),
+    (r"/api/shares/([^/]+)", api_share.ShareHandler),
+    (r"/api/tags", api_tag.TagsHandler),
+    # actions
     (r"/api/my_like", api_like.MyLikeHandler),
     (r"/api/my_collect", api_collect.MyCollectHandler),
-    # (r"/api/users", api_user.UsersHandler),
-
-    # actions
     (r"/api/like/([^/]+)", api_like.LikeHandler),
     (r"/api/collect/([^/]+)", api_collect.CollectHandler),
-
     (r"/api/comment", api_comment.CommentHandler),
     (r"/api/image_upload", api_upload.ImageUploadHandler),
+
+    # debug
+    (r"/api/preview", api_share.PreviewHandler),
+    # stat
+    (r"/api", api.ApiHandler),
+    (r"/api/stat", api_stat.StatHandler),
+
+
+    # delete
+    # (r"/api/users", api_user.UsersHandler),
 
 
     # pages
