@@ -43,7 +43,6 @@ class JsonHandler(RequestHandler):
         return user
 
     def on_finish(self):
-        print('BaseHandler on_finish')
         gc.collect()
 
     def prepare(self):
