@@ -277,17 +277,18 @@ class SharesV2Handler(JsonHandler):
         new_shares = []
         for share in shares:
             user = User.by_sid(share.user_id)
+            share = dict(share)
             # share = dict(share)
             # 白名单里的属性才展示
             share['type'] = 1
             # if share.post_img:
-            if hasattr(share, 'post_img'):
+            # if hasattr(share, 'post_img'):
+            if share.get('post_img'):
                 share['type'] = 2
-                share['images'] = [IMG_BASE + share.post_img.replace('_1200.jpg', '_260.jpg')]
-            share['id'] = share.id
-            share['title'] = share.title
+                share['images'] = [IMG_BASE + share['post_img'].replace('_1200.jpg', '_260.jpg')]
+            else:
+                share['images'] = []
             share['author'] = user.user_name
-            share['tags'] = share.tags
             share['published'] = int(share['published'] * 1000)  # share.published
 
             if read_status:
@@ -303,7 +304,6 @@ class SharesV2Handler(JsonHandler):
                 else:
                     share['user_img'] = options.site_url + \
                         get_avatar(user.user_email, 100)
-            share = dict(share)
             # print(share)
             new_shares.append(share)
 
