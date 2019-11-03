@@ -262,6 +262,7 @@ class SharesV2Handler(JsonHandler):
             logger.info('number_of_update: {}'.format(number_of_update))
 
         filter_d = {}
+        filter_d['_id'] = 0
         filter_d['id'] = 1
         filter_d['images'] = 1
         filter_d['title'] = 1
