@@ -62,7 +62,12 @@ handlers = [
     (r"/api/me", api_user.MeHandler),
     # content
     (r"/api/shares/?", api_shares.SharesHandler),
+
     (r"/api/shares/([^/]+)", api_share.ShareHandler),
+    (r"/api/v2/shares/([^/]+)", api_share.SharesV2Handler),
+
+
+
     (r"/api/tags", api_tag.TagsHandler),
     # actions
     (r"/api/my_like", api_like.MyLikeHandler),

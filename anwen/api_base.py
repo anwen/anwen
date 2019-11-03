@@ -28,6 +28,20 @@ class JsonHandler(RequestHandler):
     #             self.send_error(400, message=message)  # Bad Request
     #     # Set up response dictionary. res=response
 
+    def get_user_dict(self, token):
+        user = None
+        if token:
+            key, token = token.split()
+            if key == 'token' and token:
+                user_json = self.get_secure_cookie('user', token)
+                if user_json:
+                    user = json_decode(user_json)
+        else:
+            user_json = self.get_secure_cookie("user")
+            if user_json:
+                user = json_decode(user_json)
+        return user
+
     def on_finish(self):
         print('BaseHandler on_finish')
         gc.collect()
@@ -109,7 +123,8 @@ class JsonHandler(RequestHandler):
         # https://blog.csdn.net/jw690114549/article/details/69394233?utm_source=copy
         # typ, value, tb   # value PermissionError
         if kwargs.get("exc_info"):
-            error_trace_list = traceback.format_exception(*kwargs.get("exc_info"))
+            error_trace_list = traceback.format_exception(
+                *kwargs.get("exc_info"))
         else:
             error_trace_list = [str(status_code)]
         if options.debug:
