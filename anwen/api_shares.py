@@ -269,6 +269,7 @@ class SharesV2Handler(JsonHandler):
         filter_d['user_id'] = 1
         filter_d['tags'] = 1
         filter_d['published'] = 1
+        filter_d['post_img'] = 1
         # {'_id': 0},
         shares = Share.find(cond, filter_d).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
@@ -284,7 +285,7 @@ class SharesV2Handler(JsonHandler):
             # if share.post_img:
             # if hasattr(share, 'post_img'):
             # if share.get('post_img'):
-            if share['post_img']:
+            if share.get('post_img'):
                 share['type'] = 2
                 share['images'] = [IMG_BASE + share['post_img'].replace('_1200.jpg', '_260.jpg')]
             else:
