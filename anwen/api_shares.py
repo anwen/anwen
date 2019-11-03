@@ -283,7 +283,8 @@ class SharesV2Handler(JsonHandler):
             share['type'] = 1
             # if share.post_img:
             # if hasattr(share, 'post_img'):
-            if share.get('post_img'):
+            # if share.get('post_img'):
+            if share['post_img']:
                 share['type'] = 2
                 share['images'] = [IMG_BASE + share['post_img'].replace('_1200.jpg', '_260.jpg')]
             else:
