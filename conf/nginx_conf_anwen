@@ -1,6 +1,7 @@
 server {
     listen 80;
-    server_name anwensf.com b.anwensf.com anwen.co b.anwen.co haoka.fun;
+    # anwen.co b.anwen.co
+    server_name anwensf.com b.anwensf.com haoka.fun;
     index index.html index.htm index.php;
     root  /var/www/anwen;
     # Allow file uploads
@@ -37,11 +38,13 @@ server {
         proxy_pass http://anwen;
     }
 }
+
 server {
     listen 80;
     server_name  www.anwensf.com;
     rewrite ^(.*)$ http://anwensf.com$1 permanent;
 }
+
 server {
     listen 80;
     server_name  www.anwen.co;
