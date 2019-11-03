@@ -40,7 +40,8 @@ class recoder:
             # 读入NUM_SAMPLES个取样
             string_audio_data = stream.read(self.NUM_SAMPLES)
             # 将读入的数据转换为数组
-            audio_data = np.fromstring(string_audio_data, dtype=np.short)
+            # audio_data = np.fromstring(string_audio_data, dtype=np.short)
+            audio_data = np.frombuffer(string_audio_data, dtype=np.short)
             # 计算大于LEVEL的取样的个数
             large_sample_count = np.sum(audio_data > self.LEVEL)
             print(np.max(audio_data))
