@@ -27,7 +27,7 @@ class FixedOffset(tzinfo):
         # NOTE: the last part is to remind about deprecated POSIX GMT+h timezones
         # that have the opposite sign in the name;
         # the corresponding numeric value is not used e.g., no minutes
-        '<%+03d%02d>%+d' % (int(hours), int(minutes), int(hours)*-1)
+        '<%+03d%02d>%+d' % (int(hours), int(minutes), int(hours) * -1)
 
     def utcoffset(self, dt=None):
         return self.__offset
@@ -151,6 +151,8 @@ def add_from_file(rss_url, rss_hostname, rss_name):
                 # tz = post.published[-6:].replace(':', '')
                 published = datetime.strptime(post.published, "%Y-%m-%dT%H:%M:%S")
                 # published = published.replace(tzinfo=FixedOffset(tz))
+            elif post.published.count(' ') == 1:
+                published = datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S")
             else:
                 published = datetime.strptime(post.published, "%Y-%m-%d %H:%M:%S %z")
             published = published.timestamp()
@@ -287,4 +289,4 @@ if __name__ == '__main__':
             if not key or (key and key == host):
                 add_from_file(url, host, name)
         print('start sleep for 3600s')
-        time.sleep(3600*1)
+        time.sleep(3600 * 1)
