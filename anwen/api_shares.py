@@ -242,7 +242,7 @@ class SharesV2Handler(JsonHandler):
         # 不同的用户显示不同级别的推荐
         # if user and user['user_id'] in wx_admin_ids:
         if user and user['user_id'] == 1:
-            cond['status'] = {'$gte': 0}
+            cond['status'] = {'$gte': 1}
         else:
             cond['status'] = {'$gte': 1}
 
