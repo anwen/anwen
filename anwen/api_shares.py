@@ -15,6 +15,8 @@ wx_admin_ids = (60, 63, 64)
 # get_tags_parent
 # logger.info('token: {}'.format(token))
 
+IMG_BASE = 'https://anwensf.com/static/upload/img/'
+
 
 def fix_share(share):  # time
     if share['post_img']:
@@ -67,7 +69,7 @@ class SharesHandler(JsonHandler):
         page = int(page)
         if not last_suggested:
             last_suggested = 0
-        last_suggested = float(last_suggested)/1000+1
+        last_suggested = float(last_suggested) / 1000 + 1
 
         user = self.get_user_dict(token)
 
@@ -134,7 +136,8 @@ class SharesHandler(JsonHandler):
             # break into lines and remove leading and trailing space on each
             lines = (line.strip() for line in text.splitlines())
             # break multi-headlines into a line each
-            chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+            chunks = (phrase.strip()
+                      for line in lines for phrase in line.split("  "))
             # drop blank lines
             text = '\n'.join(chunk for chunk in chunks if chunk)
             # print(text)
@@ -142,11 +145,14 @@ class SharesHandler(JsonHandler):
             share['content'] = ''
 
             if user.user_email.endswith('@wechat'):
-                share['user_img'] = options.site_url+get_avatar_by_wechat(user._id)
+                share['user_img'] = options.site_url + \
+                    get_avatar_by_wechat(user._id)
             if user.user_email.endswith('@anwensf.com'):
-                share['user_img'] = options.site_url+get_avatar_by_feed(user.id)
+                share['user_img'] = options.site_url + \
+                    get_avatar_by_feed(user.id)
             else:
-                share['user_img'] = options.site_url+get_avatar(user.user_email, 100)
+                share['user_img'] = options.site_url + \
+                    get_avatar(user.user_email, 100)
             new_shares.append(share)
 
         # if tag:
@@ -178,9 +184,143 @@ class SharesHandler(JsonHandler):
 
         logger.info('last_suggested time: {}'.format(last_suggested))
         logger.info('new_shares[0] time: {}'.format(new_shares[0]['title']))
-        logger.info('new_shares[0] published time: {}'.format(new_shares[0]['published']))
-        logger.info('new_shares[0] suggested time: {}'.format(new_shares[0]['suggested']))
+        logger.info('new_shares[0] published time: {}'.format(
+            new_shares[0]['published']))
+        logger.info('new_shares[0] suggested time: {}'.format(
+            new_shares[0]['suggested']))
         self.res = list(new_shares)
         self.meta = meta
         # number=len(self.res)
+        return self.write_json(number=number)
+
+
+# https://www.yuque.com/easytoknow/afi6hu/md7sld
+
+
+class SharesV2Handler(JsonHandler):
+
+    # 文章列表API v2
+    # 差异
+    # 没有summary
+    # 其他
+    # 不同权限的用户看到的列表不同
+    # 来源 来源图片
+
+    def get(self):
+        # get params
+        page = self.get_argument("page", 1)
+        per_page = self.get_argument("per_page", 10)
+        token = self.request.headers.get('Authorization', '')
+        filter_type = self.get_argument("filter_type", '')  # my_tags
+        tag = self.get_argument('tag', '')
+
+        meta_info = self.get_argument("meta_info", 1)
+
+        last_suggested = self.get_argument("last_suggested", 0)
+        read_status = self.get_argument('read_status', 1)
+
+        read_status = int(read_status)
+        per_page = int(per_page)
+        page = int(page)
+        if not last_suggested:
+            last_suggested = 0
+        last_suggested = float(last_suggested) / 1000 + 1
+
+        user = self.get_user_dict(token)
+        tags = None
+        if user and filter_type == 'my_tags':
+            d_user = User.by_sid(user['user_id'])
+            if d_user:
+                tags = d_user['user_tags']
+        # 按照tag来过滤
+        cond = {}
+        if tags:
+            cond['tags'] = {"$in": tags}
+        elif tag:
+            cond['tags'] = tag
+
+        # 不同的用户显示不同级别的推荐
+        # if user and user['user_id'] in wx_admin_ids:
+        if user and user['user_id'] == 1:
+            cond['status'] = {'$gte': 0}
+        else:
+            cond['status'] = {'$gte': 1}
+
+        # 已读列表
+        l_hitted_share_id = []
+        if user and read_status:
+            hits = Hit.find({'user_id': user['user_id']})
+            l_hitted_share_id = [i['share_id'] for i in hits]
+
+        number = Share.find(cond, {'_id': 0}).count()
+        # sort: _id
+        if last_suggested:
+            cond_update = copy.deepcopy(cond)
+            cond_update['suggested'] = {'$gt': last_suggested}
+            number_of_update = Share.find(cond_update, {'_id': 0}).sort(
+                'suggested', -1).count()
+            logger.info('number_of_update: {}'.format(number_of_update))
+
+        shares = Share.find(cond, {'_id': 0}).sort(
+            'suggested', -1).limit(per_page).skip((page - 1) * per_page)
+        # shares = [fix_share(share) for share in shares]
+        # 过滤
+        new_shares = []
+        for share in shares:
+            share = fix_share(share)
+            user = User.by_sid(share.user_id)
+            # share = dict(share)
+            # 白名单里的属性才展示
+            ashare = {}
+            ashare['type'] = 1
+            if share.post_img:
+                ashare['type'] = 2
+                ashare['images'] = [IMG_BASE + share.post_img.replace('_1200.jpg', '_260.jpg')]
+            ashare['id'] = share.id
+            ashare['title'] = share.title
+            ashare['author'] = user.user_name
+            ashare['tags'] = share.tags
+            ashare['published'] = int(share['published'] * 1000)  # share.published
+
+            if read_status:
+                ashare['read'] = bool(share['id'] in l_hitted_share_id)
+            # 来源头像
+            if 0:
+                if user.user_email.endswith('@wechat'):
+                    share['user_img'] = options.site_url + \
+                        get_avatar_by_wechat(user._id)
+                if user.user_email.endswith('@anwensf.com'):
+                    share['user_img'] = options.site_url + \
+                        get_avatar_by_feed(user.id)
+                else:
+                    share['user_img'] = options.site_url + \
+                        get_avatar(user.user_email, 100)
+            new_shares.append(share)
+
+        meta = {}
+        if meta_info and last_suggested:
+            meta['number_of_update'] = number_of_update
+        if meta_info and tag:
+            d_tags = get_tags()
+            d_tags_parents = get_tags_parents()  # get_tags_parent
+            if tag in d_tags:
+                sub_tags = []
+                for name in d_tags[tag]:
+                    num = Share.find({'tags': name}, {'_id': 0}).count()
+                    num_recent = Share.find(
+                        {'tags': name, 'published': {'$gt': time.time() - 86400 * 30}}, {'_id': 0}).count()
+                    info = {}
+                    info['name'] = name
+                    info['num'] = num
+                    info['num_recent'] = num_recent
+                    sub_tags.append(info)
+                meta['sub_tags'] = sub_tags
+            meta['parent_tags'] = []
+            if tag in d_tags_parents:
+                # hypernym
+                # meta['parent_tags'].append(d_tags_parent[tag])
+                meta['parent_tags'] = d_tags_parents[tag]
+
+        self.res = list(new_shares)
+        self.meta = meta
         return self.write_json(number=number)
