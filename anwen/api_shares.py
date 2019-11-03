@@ -288,6 +288,7 @@ class SharesV2Handler(JsonHandler):
             if share.get('post_img'):
                 share['type'] = 2
                 share['images'] = [IMG_BASE + share['post_img'].replace('_1200.jpg', '_260.jpg')]
+                share.pop('post_img')
             else:
                 share['images'] = []
             share['author'] = user.user_name
