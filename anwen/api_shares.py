@@ -267,7 +267,6 @@ class SharesV2Handler(JsonHandler):
         # 过滤
         new_shares = []
         for share in shares:
-            share = fix_share(share)
             user = User.by_sid(share.user_id)
             # share = dict(share)
             # 白名单里的属性才展示
