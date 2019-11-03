@@ -75,3 +75,6 @@ class Share(BaseModel):
 
     def by_slug(self, slug):
         return self.find_one({'slug': slug})
+
+    def by_title(self, title):
+        return self.find_one({'title': title})
