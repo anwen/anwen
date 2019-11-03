@@ -302,6 +302,7 @@ class SharesV2Handler(JsonHandler):
                 else:
                     share['user_img'] = options.site_url + \
                         get_avatar(user.user_email, 100)
+            share = dict(share)
             new_shares.append(share)
 
         meta = {}
