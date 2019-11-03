@@ -287,15 +287,15 @@ class SharesV2Handler(JsonHandler):
             # 来源头像
             if 0:
                 if user.user_email.endswith('@wechat'):
-                    share['user_img'] = options.site_url + \
+                    ashare['user_img'] = options.site_url + \
                         get_avatar_by_wechat(user._id)
                 if user.user_email.endswith('@anwensf.com'):
-                    share['user_img'] = options.site_url + \
+                    ashare['user_img'] = options.site_url + \
                         get_avatar_by_feed(user.id)
                 else:
-                    share['user_img'] = options.site_url + \
+                    ashare['user_img'] = options.site_url + \
                         get_avatar(user.user_email, 100)
-            new_shares.append(share)
+            new_shares.append(ashare)
 
         meta = {}
         if meta_info and last_suggested:
