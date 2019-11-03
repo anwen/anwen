@@ -278,32 +278,31 @@ class SharesV2Handler(JsonHandler):
             user = User.by_sid(share.user_id)
             # share = dict(share)
             # 白名单里的属性才展示
-            ashare = {}
-            ashare['type'] = 1
+            share['type'] = 1
             # if share.post_img:
             if hasattr(share, 'post_img'):
-                ashare['type'] = 2
-                ashare['images'] = [IMG_BASE + share.post_img.replace('_1200.jpg', '_260.jpg')]
-            ashare['id'] = share.id
-            ashare['title'] = share.title
-            ashare['author'] = user.user_name
-            ashare['tags'] = share.tags
-            ashare['published'] = int(share['published'] * 1000)  # share.published
+                share['type'] = 2
+                share['images'] = [IMG_BASE + share.post_img.replace('_1200.jpg', '_260.jpg')]
+            share['id'] = share.id
+            share['title'] = share.title
+            share['author'] = user.user_name
+            share['tags'] = share.tags
+            share['published'] = int(share['published'] * 1000)  # share.published
 
             if read_status:
-                ashare['read'] = bool(share['id'] in l_hitted_share_id)
+                share['read'] = bool(share['id'] in l_hitted_share_id)
             # 来源头像
             if 0:
                 if user.user_email.endswith('@wechat'):
-                    ashare['user_img'] = options.site_url + \
+                    share['user_img'] = options.site_url + \
                         get_avatar_by_wechat(user._id)
                 if user.user_email.endswith('@anwensf.com'):
-                    ashare['user_img'] = options.site_url + \
+                    share['user_img'] = options.site_url + \
                         get_avatar_by_feed(user.id)
                 else:
-                    ashare['user_img'] = options.site_url + \
+                    share['user_img'] = options.site_url + \
                         get_avatar(user.user_email, 100)
-            new_shares.append(ashare)
+            new_shares.append(share)
 
         meta = {}
         if meta_info and last_suggested:
