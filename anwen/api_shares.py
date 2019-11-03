@@ -261,7 +261,14 @@ class SharesV2Handler(JsonHandler):
                 'suggested', -1).count()
             logger.info('number_of_update: {}'.format(number_of_update))
 
-        shares = Share.find(cond, {'_id': 0}).sort(
+        filter_d = {}
+        filter_d['id'] = 1
+        filter_d['images'] = 1
+        filter_d['title'] = 1
+        filter_d['user_id'] = 1
+        filter_d['tags'] = 1
+        filter_d['published'] = 1
+        shares = Share.find(cond, {'_id': 0}, filter_d).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
         # shares = [fix_share(share) for share in shares]
         # 过滤
