@@ -160,6 +160,10 @@ def get_tags_info():
     return k_v, l_lang
 
 
+def get_tags_v3():
+    pass
+
+
 def get_tags_v2():
     file_lang = 'utils/Creative_Work_lang.md'
     l_lang = {}
@@ -223,6 +227,7 @@ def get_tags_parents():
             if s not in tags:
                 tags[s] = []
             tags[s].append(o)
+            assert len(tags[s]) == 1
     return tags
 
 
@@ -231,3 +236,6 @@ if __name__ == '__main__':
     print(get_tags())
     r = get_tags_v2()
     print(r)
+
+    print(get_tags_parent())
+    print(get_tags_parents())
