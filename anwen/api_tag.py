@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from utils import get_tags, get_tags_v2, get_tags_parents
+from utils import get_tags, get_tags_v2, get_tags_parents, get_tags_v2_by_name
 from db import Tag, Share, User
 import tornado
 import time
@@ -14,9 +14,11 @@ class TagsV2Handler(JsonHandler):
 
     def get(self):
         ver = self.get_argument("ver", 3)
+        name = self.get_argument("name", '')
         ver = int(ver)
-        if ver == 3:
-            self.res = d_tags_v2
+        if name:
+
+            self.res = get_tags_v2_by_name(name)
             self.res['parents'] = d_tags_parents.get(self.res['name'], [])
             self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
             tag = Tag.by_name(self.res['name'])
@@ -24,16 +26,24 @@ class TagsV2Handler(JsonHandler):
                 self.res['id'] = tag['id']
             else:
                 self.res['id'] = -1
-            # if self.current_user and 'user_id' in self.current_user:
-            #     user = User.by_sid(self.current_user['user_id'])
-            #     self.res['watched_tags'] = user['user_tags']
-        elif ver == 2:
-            self.res = d_tags_v2
-            if self.current_user and 'user_id' in self.current_user:
-                user = User.by_sid(self.current_user['user_id'])
-                self.res['watched_tags'] = user['user_tags']
+
         else:
-            self.res = d_tags
+            if ver == 3:
+                self.res = d_tags_v2
+                self.res['parents'] = d_tags_parents.get(self.res['name'], [])
+                self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
+                tag = Tag.by_name(self.res['name'])
+                if tag:
+                    self.res['id'] = tag['id']
+                else:
+                    self.res['id'] = -1
+            elif ver == 2:
+                self.res = d_tags_v2
+                if self.current_user and 'user_id' in self.current_user:
+                    user = User.by_sid(self.current_user['user_id'])
+                    self.res['watched_tags'] = user['user_tags']
+            else:
+                self.res = d_tags
         self.write_json()
 
 
