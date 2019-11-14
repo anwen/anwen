@@ -21,6 +21,7 @@ class TagsV2Handler(JsonHandler):
         if name or sid:
             if not name:
                 tag = Tag.by_sid(sid)
+                name = tag['name']
             self.res = get_tags_v2_by_name(name)
 
             self.res['parents'] = d_tags_parents.get(self.res['name'], [])
