@@ -24,7 +24,14 @@ class TagsV2Handler(JsonHandler):
                 name = tag['name']
             self.res = get_tags_v2_by_name(name)
 
-            self.res['parents'] = d_tags_parents.get(self.res['name'], [])
+            parents = d_tags_parents.get(self.res['name'], [])
+            self.res['parents'] = parents
+            parent_res = get_tags_v2_by_name(parents[0])
+            brothers = []
+            for sub in parent_res:
+                sub.pop('subs')
+                brothers.append(sub)
+            self.res['brothers'] = brothers
             self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
             tag = Tag.by_name(self.res['name'])
             if tag:
