@@ -38,3 +38,6 @@ class Tag(BaseModel):
             res.update(doc)
             res.save()
         return res
+
+    def by_name(self, name):
+        return self.find_one({'name': name})
