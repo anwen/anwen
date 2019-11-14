@@ -68,6 +68,7 @@ handlers = [
 
 
 
+    (r"/api/v2/tags", api_tag.TagsV2Handler),
     (r"/api/tags", api_tag.TagsHandler),
     # actions
     (r"/api/my_like", api_like.MyLikeHandler),
