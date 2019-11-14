@@ -17,7 +17,7 @@ class TagsV2Handler(JsonHandler):
         ver = int(ver)
         if ver == 3:
             self.res = d_tags_v2
-            self.res['parents'] = d_tags_parents[self.res['name']]
+            self.res['parents'] = d_tags_parents.get(self.res['name'], [])
             self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
             # if self.current_user and 'user_id' in self.current_user:
             #     user = User.by_sid(self.current_user['user_id'])
