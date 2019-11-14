@@ -15,10 +15,14 @@ class TagsV2Handler(JsonHandler):
     def get(self):
         ver = self.get_argument("ver", 3)
         name = self.get_argument("name", '')
+        sid = self.get_argument("id", '')
         ver = int(ver)
-        if name:
-
+        sid = int(sid)
+        if name or sid:
+            if not name:
+                tag = Tag.by_sid(sid)
             self.res = get_tags_v2_by_name(name)
+
             self.res['parents'] = d_tags_parents.get(self.res['name'], [])
             self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
             tag = Tag.by_name(self.res['name'])

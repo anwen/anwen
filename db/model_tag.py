@@ -41,3 +41,6 @@ class Tag(BaseModel):
 
     def by_name(self, name):
         return self.find_one({'name': name})
+
+    def by_sid(self, sid):
+        return self.find_one({'id': sid})
