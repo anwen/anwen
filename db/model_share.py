@@ -80,4 +80,4 @@ class Share(BaseModel):
         return self.find_one({'title': title})
 
     def count_by_tag(self, tag):
-        return self.find_one({'tags': tag})
+        return self.find({'tags': tag}).count()
