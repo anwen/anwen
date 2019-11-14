@@ -29,7 +29,7 @@ class TagsV2Handler(JsonHandler):
             if parents:
                 parent_res = get_tags_v2_by_name(parents[0])
                 brothers = []
-                for sub in parent_res:
+                for sub in parent_res['subs']:
                     sub.pop('subs')
                     brothers.append(sub)
                 self.res['brothers'] = brothers
