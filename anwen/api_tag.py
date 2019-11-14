@@ -17,9 +17,9 @@ class TagsV2Handler(JsonHandler):
         name = self.get_argument("name", '')
         sid = self.get_argument("id", '')
         ver = int(ver)
-        sid = int(sid)
         if name or sid:
             if not name:
+                sid = int(sid)
                 tag = Tag.by_sid(sid)
                 name = tag['name']
             self.res = get_tags_v2_by_name(name)
