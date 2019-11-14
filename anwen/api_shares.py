@@ -112,6 +112,8 @@ class SharesHandler(JsonHandler):
                 'suggested', -1).count()
             logger.info('number_of_update 1: {}'.format(number_of_update))
 
+        num_shares = Share.find(cond, {'_id': 0, 'id': 1}).count()
+
         shares = Share.find(cond, {'_id': 0}).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
         # shares = [fix_share(share) for share in shares]
@@ -158,6 +160,8 @@ class SharesHandler(JsonHandler):
         # if tag:
         #     shares = [share for share in shares if tag in share['tags']]
         meta = {}
+        meta['page'] = page
+        meta['articleNumber'] = num_shares
         if meta_info and last_suggested:
             meta['number_of_update'] = number_of_update
         if meta_info and tag:
