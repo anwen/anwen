@@ -256,8 +256,8 @@ def get_tags_parents():
             if 'SubClassOf' not in line and 'SubThemeOf' not in line:
                 continue
             _, s, p, o = line.split()[:4]
-            if o == '作品':
-                continue
+            # if o == '作品':
+            #     continue
             if s not in tags:
                 tags[s] = []
             tags[s].append(o)
