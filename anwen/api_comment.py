@@ -15,7 +15,8 @@ class CommentHandler(JsonHandler):
         for comment in comment_res:
             comment = dict(comment)
             comment['_id'] = str(comment['_id'])
-            comment['commenttime'] = int(comment['commenttime'] * 1000)
+            comment['pushlished'] = int(comment['commenttime'] * 1000)
+            comment.pop('commenttime')
             comment['avatar'] = get_avatar_by_wechat(comment['user_id'])
             # user = User.by_sid(comment['user_id'])
             # get_avatar(user.user_email, 50)
