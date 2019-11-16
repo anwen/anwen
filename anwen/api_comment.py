@@ -3,6 +3,9 @@ from .api_base import JsonHandler
 from db import Share, Comment, User
 import tornado.escape
 from utils.avatar import get_avatar_by_wechat
+# , get_avatar_by_feed, get_avatar
+import options
+# IMG_BASE = 'https://anwensf.com/static/upload/img/'
 
 
 class CommentHandler(JsonHandler):
@@ -14,12 +17,38 @@ class CommentHandler(JsonHandler):
         comment_res = Comment.find({'share_id': int(share_id)})
         for comment in comment_res:
             comment = dict(comment)
-            comment['_id'] = str(comment['_id'])
+
+            # comment['_id'] = str(comment['_id'])
+            comment.pop('_id')
             comment['pushlished'] = int(comment['commenttime'] * 1000)
-            comment.pop('commenttime')
-            comment['avatar'] = get_avatar_by_wechat(comment['user_id'])
+            comment['content'] = comment['commentbody']
+
+            user_id = comment['user_id']
+            comment['avatar'] = options.site_url+get_avatar_by_wechat(user_id)
+            # 这里节省数据库查询
             # user = User.by_sid(comment['user_id'])
             # get_avatar(user.user_email, 50)
+
+            # if user.user_email.endswith('@wechat'):
+            #     comment['avatar'] = options.site_url + \
+            #         get_avatar_by_wechat(user_id)
+            # if user.user_email.endswith('@anwensf.com'):
+            #     comment['avatar'] = options.site_url + \
+            #         get_avatar_by_feed(user_id)
+            # else:
+            #     comment['avatar'] = options.site_url + \
+            #         get_avatar(user_user_email, 100)
+
+            comment.pop('commenttime')
+            comment.pop('commentbody')
+            comment.pop('user_id')
+
+            comment['likeNum'] = comment['likenum']
+            comment['dislikeNum'] = comment['dislikenum']
+            comment['userName'] = comment['user_name']
+            comment.pop('likenum')
+            comment.pop('dislikenum')
+            comment.pop('user_name')
 
             comments.append(comment)
         self.res = {
