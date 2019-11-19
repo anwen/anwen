@@ -60,6 +60,10 @@ server {
         proxy_pass https://anwen;
         proxy_ssl_certificate     /etc/nginx/cert/anwensf.com_chain.crt;
         proxy_ssl_certificate_key /etc/nginx/cert/anwensf.com_key.key;
+
+        #proxy_ssl_certificate     /etc/nginx/cert/2568855_anwensf.com.pem;
+        #proxy_ssl_certificate_key /etc/nginx/cert/2568855_anwensf.com.key;
+
         proxy_ssl_session_reuse on;
 
     }
