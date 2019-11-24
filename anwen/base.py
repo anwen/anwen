@@ -20,7 +20,6 @@ class BaseHandler(RequestHandler):
         gc.collect()
 
     def on_finish(self):
-        print('BaseHandler on_finish')
         gc.collect()
 
     def get_template_namespace(self):
