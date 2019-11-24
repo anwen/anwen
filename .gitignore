@@ -1,63 +1,31 @@
 # cache
 .DS_Store
-__pycache__/
+__pycache__
 *.pyc
-
-# upload-img avatar
-/static/upload/img/*
-/static/avatar/*.jpg
 
 # log files
 /log/files/*.log
 /log/files/*.log.*
-# *.log
+
+
+# upload-img avatar
+static/upload/img/*
+static/avatar/*.jpg
+
 
 # private files
 server_setting.py
+local_setting.py
 db/data/Admin.yaml
 db/data/User.yaml
 cert
 
-# unsure files
-*_.md
+
+# local
+docs/shares/*_.md
+# doc/shares/99_.md
 db/data/*.yaml
 
-# *~
-# *.swp
-
-*.tar.gz
-*.zip
-local_*
-
-
-
-
-app/wechat_bak/
-app/weui-wxss/
-app/wxParse-master/
-get_content.py
-get_md.py
-list_website.md
-zgen_html
-zgen_html2
-zgen_html3
-zgen_md
-zgen_md2
-zgen_md3
-zzz2
-.gitignore
-
-
-
-
-local_*
+# todo
 content/source.md
-
-
-
-content/gen/
-TODO_local
-
-
-data_backup/
-old/
+todo/
