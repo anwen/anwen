@@ -6,7 +6,7 @@ upstream anwen {
 
 server {
     listen 443 ssl;
-    server_name anwensf.com;
+    server_name anwensf.com 119.3.100.53;
     ssl_certificate     /etc/nginx/cert/anwensf.com_chain.crt;
     ssl_certificate_key /etc/nginx/cert/anwensf.com_key.key;
 
