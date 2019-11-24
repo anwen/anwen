@@ -49,6 +49,7 @@ sudo apt-get install -y mongodb-org
 
 cd /var/www
 git clone https://github.com/anwen/anwen.git
+git clone git@bitbucket.org:askender/anwen.git
 cd anwen
 sudo pip3 install -r conf/requirements.txt
 

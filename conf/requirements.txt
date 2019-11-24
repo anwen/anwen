@@ -1,0 +1,25 @@
+tornado
+markdown2
+pyyaml
+# fabric==1.14.0
+fabric
+requests
+flake8
+# pymongo
+pymongo==2.8
+# mongokit
+mongokit-py3
+pillow
+readability-lxml
+html2text
+
+
+# feedparser
+
+
+# MySQL-python
+# peewee
+# Jinja2
+# misaka
+# pygments
+# python-memcached
