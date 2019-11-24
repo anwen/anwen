@@ -1,0 +1,10 @@
+site_name: Anwen Docs
+
+pages:
+# - Home: index.md
+- Home: index.md
+- About: about.md
+
+- Developer:
+  - coding-zh: developer/coding-guide-zh.md
+  - coding-en: developer/coding-guide-en.md

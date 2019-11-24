@@ -22,6 +22,12 @@ start:
 	@echo "starting anwen"
 	python3 hello.py
 
+docs:
+	python -m SimpleHTTPServer 8004
+
+
+
+
 
 sync:
 	# scp
@@ -42,8 +48,6 @@ backol:
 	@echo "starting backup_ol"
 	fab backol
 
-docs:
-	python -m SimpleHTTPServer 8004
 
 
 
