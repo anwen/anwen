@@ -12,6 +12,7 @@ mongokit-py3
 pillow
 readability-lxml
 html2text
+bs4
 
 
 # feedparser
