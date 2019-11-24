@@ -50,11 +50,11 @@ sudo apt-get install -y mongodb-org
 cd /var/www
 git clone https://github.com/anwen/anwen.git
 git clone git@bitbucket.org:askender/anwen.git
-cd anwen
+cd /var/www/anwen
 sudo pip3 install -r conf/requirements.txt
 
-python3 tests.py # Testing
-python3 hello.py -h  # you can find some help
+# python3 tests.py # Testing
+# python3 hello.py -h  # you can find some help
 python3 hello.py # Start Anwen app
 
 
