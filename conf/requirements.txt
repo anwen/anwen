@@ -15,7 +15,7 @@ html2text
 bs4
 
 
-# feedparser
+feedparser
 
 
 # MySQL-python
