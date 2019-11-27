@@ -315,6 +315,9 @@ class SharesV2Handler(JsonHandler):
             new_shares.append(share)
 
         meta = {}
+        if filter_type == 'my_tags':
+            meta['tags'] = tags
+
         if meta_info and last_suggested:
             meta['number_of_update'] = number_of_update
         if meta_info and tag:

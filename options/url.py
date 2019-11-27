@@ -66,8 +66,6 @@ handlers = [
 
     (r"/api/shares/([^/]+)", api_share.ShareHandler),
 
-
-
     (r"/api/v2/tags", api_tag.TagsV2Handler),
     (r"/api/tags", api_tag.TagsHandler),
     # actions

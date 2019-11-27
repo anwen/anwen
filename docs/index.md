@@ -42,3 +42,6 @@ Anwen - Create and share something nice
 ![](anwen.jpg)
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+
+
+<p>Except where otherwise <a class="subfoot" href="https://creativecommons.org/policies#license">noted</a>, content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>. </p>
