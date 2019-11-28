@@ -151,16 +151,15 @@ class JsonHandler(RequestHandler):
             self.write_json(success=False, message=self._reason)
         return
 
-    def write_json(self, success=True, message='err', number=None):
+    def write_json(self, success=True, error='', number=None):
         out = {}
         out['success'] = success
+        out['error'] = error
         out['data'] = {}
         if number is not None:
             out['data']['number'] = number
         if success:
             out['data']['articles'] = self.res
-        else:
-            out['error'] = message
         if self.meta:
             out['data']['meta'] = self.meta
         output = json.dumps(out)
