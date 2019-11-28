@@ -83,7 +83,7 @@ class CommentHandler(JsonHandler):
         share.save()
         # name = tornado.escape.xhtml_escape(self.current_user["user_name"])
         # gravatar = get_avatar(self.current_user["user_email"], 50)
-        self.res = {
-            'success': True,
-        }
+        # self.res = {
+        #     'success': True,
+        # }
         self.write_json()
