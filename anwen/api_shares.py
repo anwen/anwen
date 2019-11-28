@@ -192,7 +192,7 @@ class SharesHandler(JsonHandler):
             new_shares[0]['published']))
         logger.info('new_shares[0] suggested time: {}'.format(
             new_shares[0]['suggested']))
-        self.res = list(new_shares)
+        self.res = {'articles': list(new_shares)}
         self.meta = meta
         # number=len(self.res)
         return self.write_json(number=number)
@@ -341,6 +341,6 @@ class SharesV2Handler(JsonHandler):
                 # meta['parent_tags'].append(d_tags_parent[tag])
                 meta['parent_tags'] = d_tags_parents[tag]
 
-        self.res = list(new_shares)
+        self.res = {'articles': list(new_shares)}
         self.meta = meta
         return self.write_json(number=number)

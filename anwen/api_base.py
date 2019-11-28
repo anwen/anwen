@@ -159,7 +159,9 @@ class JsonHandler(RequestHandler):
         if number is not None:
             out['data']['number'] = number
         if success:
-            out['data']['articles'] = self.res
+            # for k in self.res:
+            #     out['data'][k] = self.res[k]
+            out['data'] = self.res
         if self.meta:
             out['data']['meta'] = self.meta
         output = json.dumps(out)
