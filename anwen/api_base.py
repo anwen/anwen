@@ -154,16 +154,31 @@ class JsonHandler(RequestHandler):
     def write_json(self, success=True, message='err', number=None):
         out = {}
         out['success'] = success
+        out['data'] = {}
         if number is not None:
-            out['number'] = number
+            out['data']['number'] = number
         if success:
-            out['data'] = self.res
+            out['data']['articles'] = self.res
         else:
-            out['message'] = message
+            out['error'] = message
         if self.meta:
-            out['meta'] = self.meta
+            out['data']['meta'] = self.meta
         output = json.dumps(out)
         self.write(output)
+
+    # def write_json(self, success=True, message='err', number=None):
+    #     out = {}
+    #     out['success'] = success
+    #     if number is not None:
+    #         out['number'] = number
+    #     if success:
+    #         out['data'] = self.res
+    #     else:
+    #         out['message'] = message
+    #     if self.meta:
+    #         out['meta'] = self.meta
+    #     output = json.dumps(out)
+    #     self.write(output)
 
     def write_json_raw(self, obj):
         """Writes the JSON-formated string of the given obj to the output buffer."""
