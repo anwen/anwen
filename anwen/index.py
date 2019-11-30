@@ -15,14 +15,13 @@ class NodeHandler(BaseHandler):
     def get(self, node='home'):
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 11)
-        per_page = int(per_page)
-
-        # 控制显示级别
         status = self.get_argument("status", 'gte_1')
+
+        per_page = int(per_page)
+        # 控制显示级别
         assert '_' in status
         st_type, st_num = status.split('_')
         status = {'${}'.format(st_type): int(st_num)}  # {'$gte': 1}
-
         # 当node不是home时，不控制显示级别
         conds = {'status': status}
         if node not in 'home'.split():
@@ -35,13 +34,12 @@ class NodeHandler(BaseHandler):
         share_res = Share.find(conds).sort(
             '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
         pagesum = int((share_res.count() + per_page-1) / per_page)
+        return
         if 1:
             shares = []
             # 另外一种显示UI
             if per_page >= 20:
                 for share in share_res:
-                    if share.id in (48, 47):  # 临时屏蔽
-                        continue
                     user = User.by_sid(share.user_id)
                     share.name = user.user_name
                     share.published = time.strftime(
@@ -56,14 +54,12 @@ class NodeHandler(BaseHandler):
                 tpl_name = 'node_alot'
             else:
                 for share in share_res:
-                    if share.id in (48, 47):  # 临时屏蔽
-                        continue
+                    # if share.id in (48, 47):  # 临时屏蔽
+                    #     continue
                     # 获取用户信息，需要多次查表!!!
                     user = User.by_sid(share.user_id)
-
                     share.name = user.user_name
                     share.domain = user.user_domain
-
                     share.published = time.strftime(
                         '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
                     md = share.markdown
@@ -75,11 +71,7 @@ class NodeHandler(BaseHandler):
                     del share
                     del md
                 tpl_name = 'node'
-        # tpl_name = 'node'
-        # shares = []
-        # pagesum = 1
-        # page = 1
-        # per_page = 1
+
         self.render(
             "{}.html".format(tpl_name),
             shares=shares,
@@ -89,11 +81,10 @@ class NodeHandler(BaseHandler):
         )
         del shares, share_res
         del tpl_name, pagesum, page, per_page, node, status
-        # del shares
-        # ns = super(BaseHandler, self).get_template_namespace()
-        # del ns
         return
         # https://stackoverflow.com/questions/15731024/what-state-does-self-finish-put-the-tornado-web-server-in
+        # ns = super(BaseHandler, self).get_template_namespace()
+        # del ns
         # self.finish()
 
     # def on_connection_close(self):
