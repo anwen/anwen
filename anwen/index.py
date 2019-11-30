@@ -106,6 +106,7 @@ class TagHandler(BaseHandler):
             share_ids = list(set(share_ids))
             cond = {}
             cond['_id'] = 0
+            cond['id'] = 1
             cond['user_id'] = 1
             cond['published'] = 1
             cond['sharetype'] = 1
