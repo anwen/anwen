@@ -86,6 +86,7 @@ class SharesV2Handler(JsonHandler):
 
         filter_d = {}
         filter_d['_id'] = 0
+        # 白名单里的属性才展示
         filter_d['id'] = 1
         filter_d['images'] = 1
         filter_d['title'] = 1
@@ -95,7 +96,36 @@ class SharesV2Handler(JsonHandler):
         filter_d['post_img'] = 1
         shares = Share.find(cond, filter_d).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
-        shares = [i for i in shares]
+        # 过滤
+        new_shares = []
+        for share in shares:
+            user = User.by_sid(share.user_id)
+            # share = dict(share)
+            share['type'] = 1
+            # if share.post_img:
+            # if hasattr(share, 'post_img'):
+            if share.get('post_img'):
+                share['type'] = 2
+                share['images'] = [IMG_BASE + share['post_img'].replace('_1200.jpg', '_260.jpg')]
+                share.pop('post_img')
+            else:
+                share['images'] = []
+            share['author'] = user.user_name
+            share['published'] = int(share['published'] * 1000)  # share.published
+            if read_status:
+                share['read'] = bool(share['id'] in l_hitted_share_id)
+
+            if 0:  # 不展示作者头像
+                if user.user_email.endswith('@wechat'):
+                    share['user_img'] = options.site_url + \
+                        get_avatar_by_wechat(user._id)
+                if user.user_email.endswith('@anwensf.com'):
+                    share['user_img'] = options.site_url + \
+                        get_avatar_by_feed(user.id)
+                else:
+                    share['user_img'] = options.site_url + \
+                        get_avatar(user.user_email, 100)
+            new_shares.append(share)
 
         # number=number
         return self.write_json()
