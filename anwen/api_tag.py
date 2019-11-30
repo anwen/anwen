@@ -1,11 +1,13 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from utils import get_tags, get_tags_v2, get_tags_parents, get_tags_v2_by_name
+from utils import get_tags, get_tags_v2, get_tags_parents, get_tags_v2_by_name, get_tags_v3
 from db import Tag, Share, User
 import tornado
 import time
 d_tags = get_tags()
 d_tags_v2 = get_tags_v2()
+d_tags_v3 = get_tags_v3()
+
 d_tags_parents = get_tags_parents()
 
 
@@ -23,42 +25,46 @@ class TagsV2Handler(JsonHandler):
             if not name and sid:
                 tag = Tag.by_sid(sid)
                 name = tag['name']
-            self.res = get_tags_v2_by_name(name)
-            parents = d_tags_parents.get(self.res['name'], {})
-            # self.res['parents'] = {'name': parents}
-            self.res['parents'] = get_tags_v2_by_name(parents)
-            self.res['parents'].pop('subs')
-            if parents:
-                parents_p = d_tags_parents.get(parents, {})
-                if parents_p:
-                    # self.res['parents']['parents'] = {'name': parents_p}
-                    self.res['parents']['parents'] = get_tags_v2_by_name(parents_p)
-                    self.res['parents']['parents'].pop('subs')
+            self.res = d_tags_v3.get(name, {})
+            if self.res:
+                parents = d_tags_parents.get(self.res['name'], {})
+                # self.res['parents'] = {'name': parents}
+                self.res['parents'] = d_tags_v3.get(parents, {})
+                # get_tags_v2_by_name(parents)
+                self.res['parents'].pop('subs')
+                if parents:
+                    parents_p = d_tags_parents.get(parents, {})
+                    if parents_p:
+                        # self.res['parents']['parents'] = {'name': parents_p}
+                        self.res['parents']['parents'] = d_tags_v3.get(parents_p, {})
+                        # get_tags_v2_by_name(parents_p)
+                        self.res['parents']['parents'].pop('subs')
 
-                    parents_pp = d_tags_parents.get(parents_p, {})
-                    if parents_pp:
-                        self.res['parents']['parents']['parents'] = get_tags_v2_by_name(parents_pp)
-                        self.res['parents']['parents']['parents'].pop('subs')
-            if parents:
-                parent_res = get_tags_v2_by_name(parents)
-                brothers = []
-                for sub in parent_res['subs']:
-                    sub.pop('subs')
-                    brothers.append(sub)
-                self.res['brothers'] = brothers
-                self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
-                self.res['followerNumber'] = User.find({'user_tags': {'$in': [name]}}).count()
-                self.res['isFollowing'] = False
-                user_id = self.current_user["user_id"] if self.current_user else None
-                if user_id:
-                    user = User.by_sid(user_id)
-                    if user:
-                        # model1
-                        self.res['isFollowing'] = name in user['user_tags']
-                        # model2 查看like 表
-                        # self.res['isFollowing'] = name in user['user_tags']
+                        parents_pp = d_tags_parents.get(parents_p, {})
+                        if parents_pp:
+                            self.res['parents']['parents']['parents'] = d_tags_v3.get(parents_pp, {})
+                            # get_tags_v2_by_name(parents_pp)
+                            self.res['parents']['parents']['parents'].pop('subs')
+                if parents:
+                    parent_res = get_tags_v2_by_name(parents)
+                    brothers = []
+                    for sub in parent_res['subs']:
+                        sub.pop('subs')
+                        brothers.append(sub)
+                    self.res['brothers'] = brothers
+                    self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
+                    self.res['followerNumber'] = User.find({'user_tags': {'$in': [name]}}).count()
+                    self.res['isFollowing'] = False
+                    user_id = self.current_user["user_id"] if self.current_user else None
+                    if user_id:
+                        user = User.by_sid(user_id)
+                        if user:
+                            # model1
+                            self.res['isFollowing'] = name in user['user_tags']
+                            # model2 查看like 表
+                            # self.res['isFollowing'] = name in user['user_tags']
 
-                print("self.res['followerNumber']", self.res['followerNumber'])
+                    print("self.res['followerNumber']", self.res['followerNumber'])
             tag = Tag.by_name(self.res['name'])
             self.res['id'] = -1
             if tag:
