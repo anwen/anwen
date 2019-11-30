@@ -21,9 +21,32 @@ def fix():
 def fix2():
     for i in adb.User_Col.find():
         tags = i['user_tags']
-        if tags:
-            print(tags)
+        if not tags:
+            continue
+        print(tags)
+        for tag in tags:
+            doc = adb.Tag_Col.find_one({'name': tag})
+            if not doc:
+                print('tag not exist:', tag)
+                continue
+            adb.Tag_Col.update({'_id': doc['_id']}, {'$inc': {'likenum': 1}})
+            n = adb.Like_Col.find().count()
+            adb.Like_Col.insert(
+                {
+                    'id': n+1,
+                    'user_id': i['id'],
+                    'entity_id': doc['id'],
+                    'likenum': 1,
+                    'entity_type': 'tag',
+                    'entity_type': 'tag',
+                }
+            )
 
+
+# tag in
+# user []
+# like likenum
+# tag  likenum
 
 if __name__ == '__main__':
     fix()
