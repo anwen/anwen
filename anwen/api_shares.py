@@ -65,7 +65,6 @@ class SharesV2Handler(JsonHandler):
         if user and read_status:
             hits = Hit.find({'user_id': user['user_id']}, {'_id': 0, 'share_id': 1})
             l_hitted_share_id = [i['share_id'] for i in hits]
-        # number = Share.find(cond, {'_id': 0}).count() # 'id': 1
 
         filter_d = {}
         filter_d['_id'] = 0
@@ -138,6 +137,10 @@ class SharesV2Handler(JsonHandler):
                 if tag in d_tags_parents:
                     # meta['parent_tags'].append(d_tags_parent[tag])
                     meta['parent_tags'] = d_tags_parents[tag]  # hypernym
+            number = Share.find(cond, {'_id': 0}).count()  # 'id': 1
+            meta['number'] = number
 
-        # number=number
+        self.res = {'articles': new_shares}
+        self.meta = meta
         return self.write_json()
+        # return self.write_json(number=number)
