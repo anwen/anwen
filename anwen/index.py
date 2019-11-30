@@ -118,7 +118,7 @@ class TagHandler(BaseHandler):
                 share.user_domain = user.user_domain
                 share.published = time.strftime(
                     '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
-                share.markdown = filter_tags(
-                    markdown2.markdown(share.markdown))[:100]
+                # share.markdown = filter_tags(
+                #     markdown2.markdown(share.markdown))[:100]
                 shares.append(share)
             self.render("tage.html", tag=tag, name=name, shares=shares)
