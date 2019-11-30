@@ -14,7 +14,7 @@ if 'username' in options.db:
 
 
 print(pymongo.ASCENDING)
-print(pymongo.DECENDING)
+print(pymongo.DESCENDING)
 # ensure_index
 
 
