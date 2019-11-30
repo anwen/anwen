@@ -15,9 +15,9 @@ class SettingHandler(BaseHandler):
         user.user_jointime = time.strftime(
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
         user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
-        print(user)
-        print(user.user_tags)
-        # self.render('setting.html', user=user)
+        # print(user)
+        # print(user.user_tags)
+        self.render('setting.html', user=user)
 
     @tornado.web.authenticated
     def post(self):
