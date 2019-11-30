@@ -32,6 +32,8 @@ def add_index():
     print(r)
     r = adb.Share_Col.create_index('published', pymongo.DESCENDING)
     print(r)
+    r = adb.Share_Col.create_index('sharetype', pymongo.DESCENDING)
+    print(r)
 
     r = adb.Share_Col.create_index('tags', 1)
     print(r)
