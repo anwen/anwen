@@ -49,37 +49,31 @@ class SharesHandler(JsonHandler):
     # 内容前150个字
 
     def get(self):
-        # get params
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
-
         filter_type = self.get_argument("filter_type", '')  # my_tags
         tag = self.get_argument('tag', '')
         meta_info = self.get_argument("meta_info", 1)
         last_suggested = self.get_argument("last_suggested", 0)
         read_status = self.get_argument('read_status', 1)
-
-        has_vote = self.get_argument("has_vote", None)
-        vote_open = self.get_argument("vote_open", None)
         token = self.request.headers.get('Authorization', '')
+        # has_vote = self.get_argument("has_vote", None)
+        # vote_open = self.get_argument("vote_open", None)
 
         read_status = int(read_status)
         per_page = int(per_page)
         page = int(page)
-        if not last_suggested:
-            last_suggested = 0
         last_suggested = float(last_suggested) / 1000 + 1
-
         user = self.get_user_dict(token)
 
+        cond = {}
+        # 按照tags来过滤
         tags = None
         if user and filter_type == 'my_tags':
             d_user = User.by_sid(user['user_id'])
             if d_user:
                 tags = d_user['user_tags']
-
         # 按照tag来过滤
-        cond = {}
         if tags:
             cond['tags'] = {"$in": tags}
         elif tag:
@@ -90,17 +84,18 @@ class SharesHandler(JsonHandler):
             cond['status'] = {'$gte': 1}
         else:
             cond['status'] = {'$gte': 1}
+
         l_hitted_share_id = []
         if user and read_status:
             hits = Hit.find({'user_id': user['user_id']})
             l_hitted_share_id = [i['share_id'] for i in hits]
 
-        if vote_open:
-            if not vote_open.isdigit():
-                return self.write_error(422)
-            cond['vote_open'] = int(vote_open)
-        if has_vote:
-            cond['vote_title'] = {'$ne': ''}
+        # if vote_open:
+        #     if not vote_open.isdigit():
+        #         return self.write_error(422)
+        #     cond['vote_open'] = int(vote_open)
+        # if has_vote:
+        #     cond['vote_title'] = {'$ne': ''}
 
         number = Share.find(cond, {'_id': 0}).count()
         # sort: _id
@@ -186,11 +181,14 @@ class SharesHandler(JsonHandler):
                 meta['parent_tags'] = d_tags_parents[tag]
 
         logger.info('last_suggested time: {}'.format(last_suggested))
-        logger.info('new_shares[0] time: {}'.format(new_shares[0]['title']))
-        logger.info('new_shares[0] published time: {}'.format(
-            new_shares[0]['published']))
-        logger.info('new_shares[0] suggested time: {}'.format(
-            new_shares[0]['suggested']))
+
+        if new_shares:
+            logger.info('new_shares[0] time: {}'.format(new_shares[0]['title']))
+            logger.info('new_shares[0] published time: {}'.format(
+                new_shares[0]['published']))
+            logger.info('new_shares[0] suggested time: {}'.format(
+                new_shares[0]['suggested']))
+
         self.res = {'articles': list(new_shares)}
         self.meta = meta
         # number=len(self.res)
