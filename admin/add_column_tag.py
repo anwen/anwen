@@ -14,7 +14,7 @@ def fix():
             adb.Tag_Col.update({'_id': i['_id']}, {'$set': {'dislikenum': 0}})
 
     for i in adb.User_Col.find():
-        if 'user_tags' not in i:
+        if 'user_tags' not in i or i['user_tags'] is None:
             adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_tags': []}})
 
 
@@ -24,6 +24,7 @@ def fix2():
         if not tags:
             continue
         print(tags)
+        continue
         for tag in tags:
             doc = adb.Tag_Col.find_one({'name': tag})
             if not doc:
@@ -50,4 +51,4 @@ def fix2():
 
 if __name__ == '__main__':
     fix()
-    fix2()
+    # fix2()

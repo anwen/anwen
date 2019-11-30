@@ -50,7 +50,7 @@ class LikeHandler(JsonHandler):
             if action == 'addlike' and entity.name not in user.user_tags:
                 user.user_tags = user.user_tags.append(entity.name)
             elif action == 'dellike' and entity.name in user.user_tags:
-                user.user_tags.remove(entity.name)
+                user.user_tags.pop(entity.name)
             user.save()
 
         if action[:3] == 'add':
