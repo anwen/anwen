@@ -105,7 +105,9 @@ class TagHandler(BaseHandler):
             share_ids = tag.share_ids.split(' ')
             share_ids = list(set(share_ids))
             for share_id in share_ids:
-                share = Share.by_sid(share_id)
+                # share = Share.by_sid(share_id)
+                share = Share.find_one({'id': share_id}, {'_id': 0, 'markdown': 0})
+                # <!-- <p class="info">{{ escape(share.markdown) }} ...</p> -->
                 user = User.by_sid(share.user_id)
                 share.user_name = user.user_name
                 share.user_domain = user.user_domain
