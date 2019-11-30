@@ -48,7 +48,9 @@ def add_index():
 
     r = adb.User_Col.create_index('id', pymongo.DESCENDING, unique=True)
     print(r)
-    # user_tags
+
+    r = adb.User_Col.create_index('user_tags', pymongo.DESCENDING)
+    print('user_tags', r)
 
     r = adb.Hit_Col.create_index('user_id', pymongo.DESCENDING)
     print(r)
