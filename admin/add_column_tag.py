@@ -44,9 +44,9 @@ def fix2():
 
 
 # tag in
-# user []
-# like likenum
-# tag  likenum
+# user []  第一个接口
+# like likenum  以这个接口为准
+# tag  likenum  冗余储存
 
 if __name__ == '__main__':
     fix()
