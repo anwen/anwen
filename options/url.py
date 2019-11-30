@@ -22,7 +22,8 @@ from anwen import page_welcome
 from anwen.index import NodeHandler
 from anwen.index import TagHandler
 
-from anwen.share import ShareHandler, OneShareHandler
+# from anwen.share import ShareHandler
+from anwen.share import OneShareHandler
 from anwen.share_by_get import ShareByGetHandler
 
 from anwen.comment import CommentHandler
@@ -148,7 +149,8 @@ handlers = [
     (r"/app", AppHandler),
     (r"/together", TogetherHandler),
 
-    (r'/(.*)', OneShareHandler),
+    # (r'/(.*)', NotfountHandler),
+    # (r'/(.*)', OneShareHandler),
     # Custom 404 ErrHandler, always put this at last
 
 ]
