@@ -8,11 +8,15 @@ class Tag(BaseModel):
     __collection__ = 'Tag_Col'
     structure = {
         'id': int,
+        'likenum': int,
+        'dislikenum': int,
         'name': str,
         'share_ids': str,
         'hittime': float,
     }
     default_values = {
+        'likenum': 0,
+        'dislikenum': 0,
         'share_ids': '',
         'hittime': time.time,
     }
