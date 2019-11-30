@@ -48,7 +48,7 @@ class TagsV2Handler(JsonHandler):
                 self.res['brothers'] = brothers
                 self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
                 # self.res['followerNumber'] = 3
-                self.res['followerNumber'] = User.find({'user_tags': {'$in': name}})
+                self.res['followerNumber'] = User.find({'user_tags': {'$in': name}}).count()
                 print("self.res['followerNumber']", self.res['followerNumber'])
             tag = Tag.by_name(self.res['name'])
             self.res['id'] = -1
