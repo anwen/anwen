@@ -126,4 +126,4 @@ class TagHandler(BaseHandler):
                 share.markdown = filter_tags(
                     markdown2.markdown(share.markdown))[:100]
                 shares.append(share)
-            self.render("tage.html", name=name, shares=shares)
+            self.render("tage.html", tag=tag, name=name, shares=shares)
