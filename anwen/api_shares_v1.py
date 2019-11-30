@@ -10,10 +10,20 @@ from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 import options
 import copy
 from log import logger
-from anwen.api_share import fix_share
+# from anwen.api_share import fix_share
 
 wx_admin_ids = (60, 63, 64)
 IMG_BASE = 'https://anwensf.com/static/upload/img/'
+
+
+def fix_share(share):  # time
+    if share['post_img']:
+        share['post_img'] = 'https://anwensf.com/static/upload/img/' + \
+            share['post_img'].replace('_1200.jpg', '_260.jpg')
+    share['published'] = int(share['published'] * 1000)
+    share['updated'] = int(share['updated'] * 1000)
+    share['suggested'] = int(share['suggested'] * 1000)
+    return share
 
 
 class SharesHandler(JsonHandler):
