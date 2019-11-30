@@ -130,7 +130,6 @@ class MeHandler(JsonHandler):
     @tornado.web.authenticated
     def get(self):
         user = User.by_sid(self.current_user['user_id'])
-
         # 删除敏感信息
         auser = dict(user)
         auser.pop('_id')
@@ -149,12 +148,16 @@ class MeHandler(JsonHandler):
             if tag in d_tag_desc:
                 info['desc'] = d_tag_desc[tag]
             else:
-                info['desc'] = ''
+                info['desc'] = '...'
             if tag in d_tag_lang:
                 eng = d_tag_lang[tag]
-                info['img'] = 'https://anwensf.com/static/info/_{}.jpg'.format(eng.lower())
+                # info['img'] = 'https://anwensf.com/static/info/_{}.jpg'.format(eng.lower())
+                info['img'] = 'https://anwen.cc/static/info/_{}_100.jpg'.format(eng.lower())
             else:
-                info['img'] = ''
+                # https://search.creativecommons.org/photos/27c13378-faf4-4d9e-ad0d-0b9459403aeb
+                # https://live.staticflickr.com/7291/11240475435_ce223d84e2_b.jpg
+                # the img is in public domain
+                info['img'] = 'https://anwen.cc/static/info/public_domain.jpg'
             auser['user_tags_info'].append(info)
         # 添加管理员信息
         auser['is_admin'] = admin.is_admin(auser['id'])
