@@ -91,7 +91,7 @@ class SharesV2Handler(JsonHandler):
             cond_update['suggested'] = {'$gt': last_suggested}
             # .sort('suggested', -1)
             number_of_update = Share.find(cond_update, {'_id': 0, 'id': 1}).count()
-            print(Share.find(cond_update, {'_id': 0})[0])
+            print(Share.find(cond_update, {'_id': 0, 'id': 1})[0])
             # logger.info('number_of_update: {}'.format(number_of_update))
 
         # number=number
