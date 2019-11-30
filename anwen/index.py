@@ -114,7 +114,9 @@ class TagHandler(BaseHandler):
         else:
             tag = Tag.find_one({'name': name})
             shares = []
-            for i in tag.share_ids.split(' '):
+            tags = tag.share_ids.split(' ')
+            tags = list(set(tags))
+            for i in tags:
                 share = Share.by_sid(i)
                 user = User.by_sid(share.user_id)
                 share.name = user.user_name
