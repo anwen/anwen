@@ -26,10 +26,10 @@ class TagsV2Handler(JsonHandler):
             parents = d_tags_parents.get(self.res['name'], {})
             self.res['parents'] = {'name': parents}
             if parents:
-                parents_p = d_tags_parents.get(parents, {})
+                parents_p = d_tags_parents.get(parents[0], {})
                 if parents_p:
                     self.res['parents']['parents'] = parents_p
-                    parents_pp = d_tags_parents.get(parents_p, {})
+                    parents_pp = d_tags_parents.get(parents_p[0], {})
                     if parents_pp:
                         self.res['parents']['parents']['parents'] = parents_pp
             if parents:
