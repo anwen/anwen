@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import tornado.web
 from anwen.api_base import JsonHandler
-from db import Like, Share, Comment, Viewpoint
+from db import Like, Share, Comment, Viewpoint, Tag
 import time
 # from log import logger
 admin_ids = (1, 4, 60, 63, 64, 65, 69, 86)
@@ -15,7 +15,7 @@ class LikeHandler(JsonHandler):
         entity_type = self.get_argument("entity_type", None)
         user_id = self.current_user["user_id"]
         assert action in 'addlike dellike adddislike deldislike'.split()
-        assert entity_type in 'share comment viewpoint'.split()
+        assert entity_type in 'share comment viewpoint tag'.split()
         _action = action[3:] + 'num'
         doc = {
             'user_id': user_id,
@@ -23,7 +23,6 @@ class LikeHandler(JsonHandler):
             'entity_type': entity_type,
         }
         is_changed = Like.change_like(doc, _action, action[:3])
-
         # 冗余储存 没有做成事件绑定，需要定期校验修复
         if entity_type == 'share':
             entity = Share.by_sid(entity_id)
@@ -45,6 +44,8 @@ class LikeHandler(JsonHandler):
             entity = Comment.by_sid(entity_id)
         elif entity_type == 'viewpoint':
             entity = Viewpoint.by_sid(entity_id)
+        elif entity_type == 'tag':
+            entity = Tag.by_sid(entity_id)
         if action[:3] == 'add':
             entity[_action] += 1
         else:

@@ -47,9 +47,7 @@ class TagsV2Handler(JsonHandler):
                     brothers.append(sub)
                 self.res['brothers'] = brothers
                 self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
-                # self.res['followerNumber'] = 3
                 self.res['followerNumber'] = User.find({'user_tags': {'$in': [name]}}).count()
-
                 self.res['isFollowing'] = False
                 user_id = self.current_user["user_id"] if self.current_user else None
                 if user_id:

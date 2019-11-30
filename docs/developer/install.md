@@ -61,4 +61,11 @@ python3 hello.py # Start Anwen app
 ## set up a production enironment
 supervisor and nginx config files are available in conf/
 
+mkdir data_backup
+mongodump -h 127.0.0.1 -d anwen -u aw -o data_backup/dbbackup_191130
+zip -r data_backup/dbbackup_191130.zip data_backup/dbbackup_191130
+
 ```
+
+
+
