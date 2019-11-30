@@ -53,7 +53,11 @@ class TagsV2Handler(JsonHandler):
                 if user_id:
                     user = User.by_sid(user_id)
                     if user:
+                        # model1
                         self.res['isFollowing'] = name in user['user_tags']
+                        # model2 查看like 表
+                        # self.res['isFollowing'] = name in user['user_tags']
+
                 print("self.res['followerNumber']", self.res['followerNumber'])
             tag = Tag.by_name(self.res['name'])
             self.res['id'] = -1

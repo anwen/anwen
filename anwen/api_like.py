@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 import tornado.web
 from anwen.api_base import JsonHandler
-from db import Like, Share, Comment, Viewpoint, Tag
+from db import Like, Share, Comment, Viewpoint, Tag, User
 import time
 # from log import logger
 admin_ids = (1, 4, 60, 63, 64, 65, 69, 86)
@@ -46,6 +46,13 @@ class LikeHandler(JsonHandler):
             entity = Viewpoint.by_sid(entity_id)
         elif entity_type == 'tag':
             entity = Tag.by_sid(entity_id)
+            user = User.by_sid(user_id)
+            if action == 'addlike' and entity.name not in user.user_tags:
+                user.user_tags = user.user_tags.append(entity.name)
+            elif action == 'dellike' and entity.name in user.user_tags:
+                user.user_tags.remove(entity.name)
+            user.save()
+
         if action[:3] == 'add':
             entity[_action] += 1
         else:
