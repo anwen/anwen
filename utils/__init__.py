@@ -60,17 +60,18 @@ def send_email(receivers, subject, msg_body):
         s.quit()
         print('send email Success')
     except smtplib.SMTPException as e:
-        print('send email Fail: {}'.format(str(e).decode('u8')).encode('u8'))
+        # print('send email Fail: {}'.format(str(e).decode('u8')).encode('u8'))
+        print('send email Fail: {}'.format(e))
 
-    # import smtplib
-    # from email.mime.text import MIMEText
-    # msg = MIMEText('hi')
-    # msg['Subject'] = 'The title'
-    # msg['From'] = 'me'
-    # msg['To'] = 'you'
-    # s = smtplib.SMTP('localhost')
-    # s.send_message(msg)
-    # s.quit()
+# import smtplib
+# from email.mime.text import MIMEText
+# msg = MIMEText('hi')
+# msg['Subject'] = 'The title'
+# msg['From'] = 'me'
+# msg['To'] = 'you'
+# s = smtplib.SMTP('localhost')
+# s.send_message(msg)
+# s.quit()
 
 
 def random_sayings():

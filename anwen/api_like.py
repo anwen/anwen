@@ -56,7 +56,7 @@ class LikeHandler(JsonHandler):
         }
         self.write_json()
 
-    # get = post
+    get = post
 
 
 def fix_share(share):  # time

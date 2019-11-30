@@ -37,7 +37,7 @@ def format_tags(share):
     return tags
 
 
-def get_comments(share):
+def get_comments(share, like_commentids, dislike_commentids):
     comments = []
     comment_res = Comment.find({'share_id': share.id})
     for comment in comment_res:
@@ -45,6 +45,10 @@ def get_comments(share):
         comment.name = user.user_name
         comment.domain = user.user_domain
         comment.gravatar = get_avatar(user.user_email, 50)
+        print(like_commentids, comment.id)
+        print(dislike_commentids, comment.id)
+        comment.is_liking = comment.id in like_commentids
+        comment.is_disliking = comment.id in dislike_commentids
         comments.append(comment)
     return comments
 
@@ -96,6 +100,7 @@ class OneShareHandler(BaseHandler):
         # user_id
         like = Like.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
+
         collect = Collect.find_one(
             {'entity_id': share.id, 'user_id': user_id, 'entity_type': 'share'})
         share.is_liking = bool(like.likenum) if like else False
@@ -107,7 +112,18 @@ class OneShareHandler(BaseHandler):
         # logger.info('share.is_liking: {}'.format(share.is_liking))
 
         suggest = []
-        comments = get_comments(share)
+
+        # is_liking = db.getCollection('Like_Col').find({'entity_id':1,'entity_type':'share','user_id':1})
+        if user_id:
+            likes = Like.find({'user_id': user_id, 'entity_type': 'comment'})
+            likes = list(likes)
+            like_commentids = [alike.entity_id for alike in likes if alike.likenum > 0]
+            dislike_commentids = [alike.entity_id for alike in likes if alike.dislikenum > 0]
+        else:
+            like_commentids = []
+            dislike_commentids = []
+
+        comments = get_comments(share, like_commentids, dislike_commentids)
 
         share.viewpoints = Viewpoint.find({'share_id': share.id})
         # 未登录用户记录访问cookie
