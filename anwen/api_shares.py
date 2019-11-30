@@ -208,33 +208,30 @@ class SharesV2Handler(JsonHandler):
     # 来源 来源图片
 
     def get(self):
-        # get params
+        token = self.request.headers.get('Authorization', '')
+
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
-        token = self.request.headers.get('Authorization', '')
-        filter_type = self.get_argument("filter_type", '')  # my_tags
         tag = self.get_argument('tag', '')
-
+        filter_type = self.get_argument("filter_type", '')  # my_tags
         meta_info = self.get_argument("meta_info", 1)
-
         last_suggested = self.get_argument("last_suggested", 0)
         read_status = self.get_argument('read_status', 1)
 
         read_status = int(read_status)
         per_page = int(per_page)
         page = int(page)
-        if not last_suggested:
-            last_suggested = 0
         last_suggested = float(last_suggested) / 1000 + 1
 
         user = self.get_user_dict(token)
+
+        cond = {}
         tags = None
         if user and filter_type == 'my_tags':
             d_user = User.by_sid(user['user_id'])
             if d_user:
                 tags = d_user['user_tags']
         # 按照tag来过滤
-        cond = {}
         if tags:
             cond['tags'] = {"$in": tags}
         elif tag:
@@ -280,7 +277,6 @@ class SharesV2Handler(JsonHandler):
         for share in shares:
             user = User.by_sid(share.user_id)
             share = dict(share)
-            # share = dict(share)
             # 白名单里的属性才展示
             share['type'] = 1
             # if share.post_img:
@@ -294,7 +290,6 @@ class SharesV2Handler(JsonHandler):
                 share['images'] = []
             share['author'] = user.user_name
             share['published'] = int(share['published'] * 1000)  # share.published
-
             if read_status:
                 share['read'] = bool(share['id'] in l_hitted_share_id)
             # 来源头像
@@ -308,7 +303,6 @@ class SharesV2Handler(JsonHandler):
                 else:
                     share['user_img'] = options.site_url + \
                         get_avatar(user.user_email, 100)
-            # print(share)
             new_shares.append(share)
 
         meta = {}
