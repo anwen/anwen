@@ -34,43 +34,40 @@ class NodeHandler(BaseHandler):
         share_res = Share.find(conds).sort(
             '_id', DESCENDING).limit(per_page).skip((int(page) - 1) * per_page)
         pagesum = int((share_res.count() + per_page-1) / per_page)
-        return
-        if 1:
-            shares = []
-            # 另外一种显示UI
-            if per_page >= 20:
-                for share in share_res:
-                    user = User.by_sid(share.user_id)
-                    share.name = user.user_name
-                    share.published = time.strftime(
-                        '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
-                    share.domain = user.user_domain
-                    md = share.markdown
-                    md = md.replace('>\n', '> ')
-                    share.markdown = cutter(markdown2.markdown(md))
-                    share.title = share.title.split('_')[0]
-                    shares.append(share)
-                    del user
-                tpl_name = 'node_alot'
-            else:
-                for share in share_res:
-                    # if share.id in (48, 47):  # 临时屏蔽
-                    #     continue
-                    # 获取用户信息，需要多次查表!!!
-                    user = User.by_sid(share.user_id)
-                    share.name = user.user_name
-                    share.domain = user.user_domain
-                    share.published = time.strftime(
-                        '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
-                    md = share.markdown
-                    md = md.replace('>\n', '> ')
-                    share.markdown = cutter(markdown2.markdown(md))
-                    share.title = share.title.split('_')[0]
-                    shares.append(share)
-                    del user
-                    del share
-                    del md
-                tpl_name = 'node'
+
+        shares = []
+        if per_page >= 20:  # 另外一种显示UI
+            for share in share_res:
+                user = User.by_sid(share.user_id)
+                share.name = user.user_name
+                share.published = time.strftime(
+                    '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
+                share.domain = user.user_domain
+                md = share.markdown
+                md = md.replace('>\n', '> ')
+                share.markdown = cutter(markdown2.markdown(md))
+                share.title = share.title.split('_')[0]
+                shares.append(share)
+                del user
+            tpl_name = 'node_alot'
+        else:
+            for share in share_res:
+                # if share.id in (48, 47):  # 临时屏蔽
+                #     continue
+                user = User.by_sid(share.user_id)  # 获取用户信息，需要多次查表!!!
+                share.name = user.user_name
+                share.domain = user.user_domain
+                share.published = time.strftime(
+                    '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
+                md = share.markdown
+                md = md.replace('>\n', '> ')
+                share.markdown = cutter(markdown2.markdown(md))
+                share.title = share.title.split('_')[0]
+                shares.append(share)
+                del user
+                del share
+                del md
+            tpl_name = 'node'
 
         self.render(
             "{}.html".format(tpl_name),
