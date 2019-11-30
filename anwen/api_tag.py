@@ -31,6 +31,8 @@ class TagsV2Handler(JsonHandler):
                 parents = d_tags_parents.get(self.res['name'], {})
                 # self.res['parents'] = {'name': parents}
                 self.res['parents'] = d_tags_v3.get(parents, {})
+                print(parents)
+                print(self.res['parents'])
                 # get_tags_v2_by_name(parents)
                 self.res['parents'].pop('subs')
                 if parents:
