@@ -7,7 +7,9 @@ from pymongo import MongoClient
 conn = MongoClient()
 adb = conn.anwen
 print(options.db)
-adb.authenticate(options.db['username'], options.db['password'])
+
+if 'username' in options.db:
+    adb.authenticate(options.db['username'], options.db['password'])
 
 
 def add_index():
