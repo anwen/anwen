@@ -3,6 +3,7 @@
 # import sys
 import options
 from pymongo import MongoClient
+import pymongo
 
 conn = MongoClient()
 adb = conn.anwen
@@ -12,11 +13,19 @@ if 'username' in options.db:
     adb.authenticate(options.db['username'], options.db['password'])
 
 
+print(pymongo.ASCENDING)
+print(pymongo.DECENDING)
 # ensure_index
+
+
 def add_index():
     print('add_index')
     r = adb.Share_Col.create_index('id', -1)
     print(r)
+
+    # result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
+    # ...                                   unique=True)
+
     r = adb.Share_Col.create_index('id', 1)
     print(r)
     r = adb.Share_Col.create_index('tags', 1)
