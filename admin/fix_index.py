@@ -18,12 +18,20 @@ print(pymongo.DESCENDING)
 # ensure_index
 
 
+# >>> from pymongo import IndexModel, ASCENDING, DESCENDING
+# >>> index1 = IndexModel([("hello", DESCENDING),
+# ...                      ("world", ASCENDING)], name="hello_world")
+# >>> index2 = IndexModel([("goodbye", DESCENDING)])
+# >>> db.test.create_indexes([index1, index2])
+
 def add_index():
     print('add_index')
     # r = adb.Share_Col.create_index('id', -1)
     # print(r)
     # r = adb.Share_Col.create_index('id', 1)
     # print(r)
+    r = adb.Share_Col.drop_index('id_1')
+    print(r)
     r = adb.Share_Col.create_index('id', pymongo.DESCENDING, unique=True)
     print(r)
     # r = adb.Share_Col.create_index('id', pymongo.ASCENDING, unique=True)
@@ -54,3 +62,5 @@ def show_index():
 
 show_index()
 add_index()
+
+# https://api.mongodb.com/python/current/api/pymongo/collection.html
