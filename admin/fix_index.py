@@ -32,7 +32,7 @@ def add_index():
 def show_index():
     print('show_index')
     r = adb.Share_Col.index_information()
-    print(r.keys())
+    print('Share', r.keys(), r.values())
 
 
 show_index()
