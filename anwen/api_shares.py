@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
-# 全部列表
-# 个性化列表
+# 文章列表
 from .api_base import JsonHandler
 from db import Share, User, Hit
 from bs4 import BeautifulSoup
