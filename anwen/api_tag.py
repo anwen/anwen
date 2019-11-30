@@ -26,6 +26,7 @@ class TagsV2Handler(JsonHandler):
                 tag = Tag.by_sid(sid)
                 name = tag['name']
             self.res = d_tags_v3.get(name, {})
+            self.res['id'] = -1
             if self.res:
                 parents = d_tags_parents.get(self.res['name'], {})
                 # self.res['parents'] = {'name': parents}
@@ -45,6 +46,7 @@ class TagsV2Handler(JsonHandler):
                             self.res['parents']['parents']['parents'] = d_tags_v3.get(parents_pp, {})
                             # get_tags_v2_by_name(parents_pp)
                             self.res['parents']['parents']['parents'].pop('subs')
+
                 if parents:
                     parent_res = get_tags_v2_by_name(parents)
                     brothers = []
@@ -65,10 +67,10 @@ class TagsV2Handler(JsonHandler):
                             # self.res['isFollowing'] = name in user['user_tags']
 
                     print("self.res['followerNumber']", self.res['followerNumber'])
-            tag = Tag.by_name(self.res['name'])
-            self.res['id'] = -1
-            if tag:
-                self.res['id'] = tag['id']
+                tag = Tag.by_name(self.res['name'])
+
+                if tag:
+                    self.res['id'] = tag['id']
         else:
             # 从根节点开始
             if ver == 3:
