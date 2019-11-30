@@ -2,31 +2,23 @@
 # 文章列表
 from .api_base import JsonHandler
 from db import Share, User, Hit
-# from bs4 import BeautifulSoup
-# from tornado.escape import json_decode
 from utils import get_tags, get_tags_parents
-import time
 from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 import options
 import copy
-from log import logger
+# from bs4 import BeautifulSoup
+# from tornado.escape import json_decode
+# import time
+# from log import logger
 wx_admin_ids = (60, 63, 64)
-
 IMG_BASE = 'https://anwensf.com/static/upload/img/'
 
-
 # https://www.yuque.com/easytoknow/afi6hu/md7sld
-
-
 # get_tags_parent
 # logger.info('token: {}'.format(token))
-
 # 文章列表API v2
-# 差异
 # 没有summary
-# 其他
 # 不同权限的用户看到的列表不同
-# 来源 来源图片
 
 
 class SharesV2Handler(JsonHandler):
@@ -36,9 +28,9 @@ class SharesV2Handler(JsonHandler):
         per_page = self.get_argument("per_page", 10)
         tag = self.get_argument('tag', '')
         filter_type = self.get_argument("filter_type", '')  # my_tags
-        meta_info = self.get_argument("meta_info", 1)
         last_suggested = self.get_argument("last_suggested", 0)
         read_status = self.get_argument('read_status', 1)
+        meta_info = self.get_argument("meta_info", 1)
 
         read_status = int(read_status)
         per_page = int(per_page)
@@ -74,15 +66,6 @@ class SharesV2Handler(JsonHandler):
             hits = Hit.find({'user_id': user['user_id']}, {'_id': 0, 'share_id': 1})
             l_hitted_share_id = [i['share_id'] for i in hits]
         # number = Share.find(cond, {'_id': 0}).count() # 'id': 1
-
-        # sort: _id
-        # .sort('suggested', -1)
-        if last_suggested:
-            cond_update = copy.deepcopy(cond)
-            cond_update['suggested'] = {'$gt': last_suggested}
-            number_of_update = Share.find(cond_update, {'_id': 0, 'id': 1}).count()
-            # print(Share.find(cond_update, {'_id': 0, 'id': 1})[0])
-            # logger.info('number_of_update: {}'.format(number_of_update))
 
         filter_d = {}
         filter_d['_id'] = 0
@@ -126,6 +109,35 @@ class SharesV2Handler(JsonHandler):
                     share['user_img'] = options.site_url + \
                         get_avatar(user.user_email, 100)
             new_shares.append(share)
+
+        if meta_info:
+            meta = {}
+            # if filter_type == 'my_tags':
+            #     meta['tags'] = tags
+            if last_suggested:
+                cond_update = copy.deepcopy(cond)
+                cond_update['suggested'] = {'$gt': last_suggested}
+                number_of_update = Share.find(cond_update, {'_id': 0, 'id': 1}).count()
+                meta['number_of_update'] = number_of_update
+            if tag:  # 子标签的文章数量
+                d_tags = get_tags()
+                d_tags_parents = get_tags_parents()  # get_tags_parent
+                if tag in d_tags:
+                    sub_tags = []
+                    for name in d_tags[tag]:
+                        info = {}
+                        info['name'] = name
+                        # num = Share.find({'tags': name}, {'_id': 0}).count()
+                        # num_recent = Share.find(
+                        #     {'tags': name, 'published': {'$gt': time.time() - 86400 * 30}}, {'_id': 0}).count()
+                        # info['num'] = num
+                        # info['num_recent'] = num_recent
+                        sub_tags.append(info)
+                    meta['sub_tags'] = sub_tags
+                meta['parent_tags'] = []
+                if tag in d_tags_parents:
+                    # meta['parent_tags'].append(d_tags_parent[tag])
+                    meta['parent_tags'] = d_tags_parents[tag]  # hypernym
 
         # number=number
         return self.write_json()
