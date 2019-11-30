@@ -30,6 +30,8 @@ def fix2():
             if not doc:
                 print('tag not exist:', tag)
                 continue
+
+            continue
             adb.Tag_Col.update({'_id': doc['_id']}, {'$inc': {'likenum': 1}})
             n = adb.Like_Col.find().count()
             adb.Like_Col.insert(
@@ -51,4 +53,4 @@ def fix2():
 
 if __name__ == '__main__':
     fix()
-    # fix2()
+    fix2()
