@@ -53,11 +53,9 @@ class TagsV2Handler(JsonHandler):
                 self.res['isFollowing'] = False
                 user_id = self.current_user["user_id"] if self.current_user else None
                 if user_id:
-                    print(user_id)
                     user = User.by_sid(user_id)
-                    print(user)
                     if user:
-                        self.res['isFollowing'] = name in user['tags']
+                        self.res['isFollowing'] = name in user['user_tags']
                 print("self.res['followerNumber']", self.res['followerNumber'])
             tag = Tag.by_name(self.res['name'])
             self.res['id'] = -1
