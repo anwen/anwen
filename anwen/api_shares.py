@@ -79,11 +79,11 @@ class SharesV2Handler(JsonHandler):
             cond['status'] = {'$gte': 1}
 
         # 已读列表
-        l_hitted_share_id = []
-        if user and read_status:
-            hits = Hit.find({'user_id': user['user_id']}, {'_id': 0, 'share_id': 1})
-            print(hits[0])
-            l_hitted_share_id = [i['share_id'] for i in hits]
+        # l_hitted_share_id = []
+        # if user and read_status:
+        #     hits = Hit.find({'user_id': user['user_id']}, {'_id': 0, 'share_id': 1})
+        #     print(hits[0])
+        #     l_hitted_share_id = [i['share_id'] for i in hits]
 
         # number=number
         return self.write_json()
