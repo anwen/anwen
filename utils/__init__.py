@@ -259,10 +259,13 @@ def get_tags_parents():
             _, s, p, o = line.split()[:4]
             # if o == '作品':
             #     continue
-            if s not in tags:
-                tags[s] = []
-            tags[s].append(o)
-            assert len(tags[s]) == 1
+            # 1 多父标签
+            # if s not in tags:
+            #     tags[s] = []
+            # tags[s].append(o)
+            # assert len(tags[s]) == 1
+            # 2 目前严格是树状结构
+            tags[s] = 0
     return tags
 
 
