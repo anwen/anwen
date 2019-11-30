@@ -26,8 +26,8 @@ def add_index():
     # print(r)
     r = adb.Share_Col.create_index('id', pymongo.DESCENDING, unique=True)
     print(r)
-    r = adb.Share_Col.create_index('id', pymongo.ASCENDING, unique=True)
-    print(r)
+    # r = adb.Share_Col.create_index('id', pymongo.ASCENDING, unique=True)
+    # print(r)
 
     # result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
     # ...                                   unique=True)
