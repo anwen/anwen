@@ -95,7 +95,7 @@ class SharesV2Handler(JsonHandler):
         filter_d['post_img'] = 1
         shares = Share.find(cond, filter_d).sort(
             'suggested', -1).limit(per_page).skip((page - 1) * per_page)
-        # shares = [i for i in shares]
+        shares = [i for i in shares]
 
         # number=number
         return self.write_json()
