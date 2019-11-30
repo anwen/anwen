@@ -13,6 +13,10 @@ def fix():
             adb.Tag_Col.update({'_id': i['_id']}, {'$set': {'likenum': 0}})
             adb.Tag_Col.update({'_id': i['_id']}, {'$set': {'dislikenum': 0}})
 
+    for i in adb.User_Col.find():
+        if 'user_tags' not in i:
+            adb.User_Col.update({'_id': i['_id']}, {'$set': {'user_tags': []}})
+
 
 def fix2():
     for i in adb.User_Col.find():
