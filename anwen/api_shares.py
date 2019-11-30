@@ -83,7 +83,16 @@ class SharesV2Handler(JsonHandler):
         if user and read_status:
             hits = Hit.find({'user_id': user['user_id']}, {'_id': 0, 'share_id': 1})
             l_hitted_share_id = [i['share_id'] for i in hits]
-        number = Share.find(cond, {'_id': 0, 'id': 1}).count()
+        # number = Share.find(cond, {'_id': 0}).count() # 'id': 1
+
+        # sort: _id
+        if last_suggested:
+            cond_update = copy.deepcopy(cond)
+            cond_update['suggested'] = {'$gt': last_suggested}
+            # .sort('suggested', -1)
+            number_of_update = Share.find(cond_update, {'_id': 0}).count()
+            print(Share.find(cond_update, {'_id': 0})[0])
+            logger.info('number_of_update: {}'.format(number_of_update))
 
         # number=number
         return self.write_json()
