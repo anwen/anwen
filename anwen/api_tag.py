@@ -37,7 +37,7 @@ class TagsV2Handler(JsonHandler):
                 self.res['parents'].pop('subs')
 
                 brothers = []
-                for sub in copy.deepcopy(node):
+                for sub in copy.deepcopy(node)['subs']:
                     sub.pop('subs')
                     brothers.append(sub)
                 self.res['brothers'] = brothers
