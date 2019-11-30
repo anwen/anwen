@@ -104,9 +104,11 @@ class TagHandler(BaseHandler):
             shares = []
             share_ids = tag.share_ids.split(' ')
             share_ids = list(set(share_ids))
+            cond = {'_id': 0, 'user_id': 1}
+            cond['published'] = 1
             for share_id in share_ids:
                 # share = Share.by_sid(share_id)
-                share = Share.find_one({'id': share_id}, {'_id': 0, 'markdown': 0})
+                share = Share.find_one({'id': share_id}, cond)
                 # <!-- <p class="info">{{ escape(share.markdown) }} ...</p> -->
                 user = User.by_sid(share.user_id)
                 share.user_name = user.user_name
