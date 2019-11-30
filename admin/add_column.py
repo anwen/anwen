@@ -16,7 +16,7 @@ def fix():
 
 def fix2():
     for i in adb.User_Col.find():
-        tags = i['User_tags']
+        tags = i['user_tags']
         if tags:
             print(tags)
 
