@@ -69,8 +69,7 @@ handlers = [
     (r"/api/v2/tags", api_tag.TagsV2Handler),
     (r"/api/tags", api_tag.TagsV2Handler),
     (r"/api/v1/tags", api_tag.TagsHandler),
-
-    (r"/api/tag", api_tag.TagHandler),
+    # (r"/api/tag", api_tag.TagHandler),
 
 
     # actions
