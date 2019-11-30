@@ -31,10 +31,14 @@ class TagsV2Handler(JsonHandler):
             if parents:
                 parents_p = d_tags_parents.get(parents, {})
                 if parents_p:
-                    self.res['parents']['parents'] = {'name': parents_p}
+                    # self.res['parents']['parents'] = {'name': parents_p}
+                    self.res['parents']['parents'] = get_tags_v2_by_name(parents_p)
+                    self.res['parents']['parents'].pop('subs')
+
                     parents_pp = d_tags_parents.get(parents_p, {})
                     if parents_pp:
-                        self.res['parents']['parents']['parents'] = {'name': parents_pp}
+                        self.res['parents']['parents']['parents'] = get_tags_v2_by_name(parents_pp)
+                        self.res['parents']['parents']['parents'].pop('subs')
             if parents:
                 parent_res = get_tags_v2_by_name(parents)
                 brothers = []
