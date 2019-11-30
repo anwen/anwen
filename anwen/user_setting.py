@@ -17,7 +17,7 @@ class SettingHandler(BaseHandler):
         user.gravatar = get_avatar(user.user_email.encode('u8'), 100)
         print(user)
         print(user.user_tags)
-        self.render('setting.html', user=user)
+        # self.render('setting.html', user=user)
 
     @tornado.web.authenticated
     def post(self):
