@@ -23,7 +23,7 @@ from anwen.index import NodeHandler
 from anwen.index import TagHandler
 
 from anwen.share import ShareHandler
-# from anwen.share import OneShareHandler
+from anwen.share import OneShareHandler
 from anwen.share_by_get import ShareByGetHandler
 
 from anwen.comment import CommentHandler
@@ -104,7 +104,7 @@ handlers = [
     (r"/share_by_get/?", ShareByGetHandler),
 
     (r"/share/?", ShareHandler),
-    # (r"/share/([^/]+)", OneShareHandler),
+    (r"/share/([^/]+)", OneShareHandler),
 
     (r"/sharecomment", CommentHandler),
     (r"/feed", FeedHandler),
