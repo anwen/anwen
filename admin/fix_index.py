@@ -46,6 +46,9 @@ def add_index():
     r = adb.User_Col.create_index('user_leaf', -1)
     print(r)
 
+    r = adb.User_Col.create_index('id', pymongo.DESCENDING, unique=True)
+    print(r)
+
 
 def show_index():
     print('show_index')
