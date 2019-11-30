@@ -48,6 +48,8 @@ def add_index():
 
     r = adb.User_Col.create_index('id', pymongo.DESCENDING, unique=True)
     print(r)
+    r = adb.Hit_Col.create_index('user_id', pymongo.DESCENDING)
+    print(r)
 
 
 def show_index():
@@ -58,6 +60,10 @@ def show_index():
         print(k, r[k]['key'])
     print('User:')
     r = adb.User_Col.index_information()
+    for k in r:
+        print(k, r[k]['key'])
+    print('Hit:')
+    r = adb.Hit_Col.index_information()
     for k in r:
         print(k, r[k]['key'])
 
