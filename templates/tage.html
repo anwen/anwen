@@ -9,10 +9,9 @@ Tag:{{ escape(name) }} -
 			<div class="mod user-feeds">
 				<h2>Tag:{{ escape(name) }}</h2>
 
-<a href="javascript:" class="do-like {{'liking' if 0 and tag.is_liking else ''}}" eid="{{tag.id}}" etype="tag">
-<i class="icon-heart"></i><span> {{ tag.likenum }}</span>
-</a>
-
+				<a href="javascript:" class="do-like {{'liking' if 0 and tag.is_liking else ''}}" eid="{{tag.id}}" etype="tag">
+				<i class="icon-heart"></i><span> {{ tag.likenum }}</span>
+				</a>
 
 
 				<ul class="list-unstyled">
@@ -27,9 +26,10 @@ Tag:{{ escape(name) }} -
 						</h3>
 						<p class="user clearfix">
 
-							<span class="who">
-								<a href="/user/{{ share.domain }}" title="{{ share.name }}">{{ share.name }}</a>
+<!-- 							<span class="who">
+								<a href="/user/{{ share.user_domain }}" title="{{ share.user_name }}">{{ share.user_name }}</a>
 							</span>
+ -->
 							<span class="date">{{ share.published }}</span>
 						</p>
 						<p class="info">{{ escape(share.markdown) }} ...</p>
@@ -39,8 +39,9 @@ Tag:{{ escape(name) }} -
 			</div>
 
 		</div>
-		<div class="span4">
 
+
+<!-- 		<div class="span4">
 			<div class="mod about">
 				<h2>安问是什么</h2>
 				<p>
@@ -58,7 +59,9 @@ Tag:{{ escape(name) }} -
 					<a href="/ande">人工智能安德（近期恢复）</a>
 				</p>
 			</div>
-		</div>
+		</div> -->
+
+
 	</div>
 </div>
 {% end %}

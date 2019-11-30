@@ -102,15 +102,15 @@ class TagHandler(BaseHandler):
         else:
             tag = Tag.find_one({'name': name})
             shares = []
-            tags = tag.share_ids.split(' ')
-            tags = list(set(tags))
-            for i in tags:
-                share = Share.by_sid(i)
-                user = User.by_sid(share.user_id)
-                share.name = user.user_name
+            share_ids = tag.share_ids.split(' ')
+            share_ids = list(set(share_ids))
+            for share_id in share_ids:
+                share = Share.by_sid(share_id)
+                # user = User.by_sid(share.user_id)
+                # share.user_name = user.user_name
+                # share.user_domain = user.user_domain
                 share.published = time.strftime(
                     '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
-                share.domain = user.user_domain
                 share.markdown = filter_tags(
                     markdown2.markdown(share.markdown))[:100]
                 shares.append(share)
