@@ -67,7 +67,6 @@
 </a>
 
 </p>
-
 <span> {{ share.status }}</span>
 
 
@@ -118,40 +117,17 @@
 
 <div class="hero-unit" id="commentmain">
 {% if comments %}
-
 {% for (offset,comment) in enumerate(comments) %}
     <div class="comment">
     <div class="avatar">
     <img class="img-circle" src="{{comment.gravatar}}" />
     </div>
     <div class="name">{{comment.name}}</div>
-
-    <div class="date">
-
-
-<a href="javascript:" class="do-like {{'liking' if  comment.is_liking else ''}}" eid="{{comment.id}}" etype="comment">
-<i class="icon-heart"></i><span> {{ comment.likenum }}</span>
-</a>
-
-<a href="javascript:" class="do-dislike {{'disliking' if comment.is_disliking else ''}}" eid="{{comment.id}}" etype="comment">
-<i class="icon-thumbs-down"></i><span> {{ comment.dislikenum }}</span>
-</a>
-
-    #{{offset+1}}  {{ locale.format_date(comment.commenttime, full_format=True, shorter=True) }}
-
-
-
-
-  </div>
+    <div class="date">#{{offset+1}}  {{ locale.format_date(comment.commenttime, full_format=True, shorter=False) }}</div>
     <p>{{comment.commentbody}}</p>
     </div>
 {% end %}
-
 {% end %}
-
-
-
-
 
 {% if current_user %}
     <div id="addCommentContainer">

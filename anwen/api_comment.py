@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from db import Share, Comment, User
+from db import Share, Comment, User, Like
 import tornado.escape
 from utils.avatar import get_avatar_by_wechat
 # , get_avatar_by_feed, get_avatar
@@ -12,6 +12,17 @@ class CommentHandler(JsonHandler):
 
     def get(self):  # list all comments of a article
         # log api usage
+
+        user_id = self.current_user["user_id"] if self.current_user else None
+        if user_id:
+            likes = Like.find({'user_id': user_id, 'entity_type': 'comment'})
+            likes = list(likes)
+            like_commentids = [alike.entity_id for alike in likes if alike.likenum > 0]
+            dislike_commentids = [alike.entity_id for alike in likes if alike.dislikenum > 0]
+        else:
+            like_commentids = []
+            dislike_commentids = []
+
         share_id = self.get_argument("share_id", None)
         comments = []
         comment_res = Comment.find({'share_id': int(share_id)})
@@ -45,6 +56,10 @@ class CommentHandler(JsonHandler):
 
             comment['likeNum'] = comment['likenum']
             comment['dislikeNum'] = comment['dislikenum']
+
+            comment['isLiking'] = comment['id'] in like_commentids
+            comment['isDisliking'] = comment['id'] in dislike_commentids
+
             comment['userName'] = comment['user_name']
             comment.pop('likenum')
             comment.pop('dislikenum')
