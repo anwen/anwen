@@ -108,6 +108,8 @@ class TagHandler(BaseHandler):
             cond['_id'] = 0
             cond['user_id'] = 1
             cond['published'] = 1
+            cond['sharetype'] = 1
+
             for share_id in share_ids:
                 # share = Share.by_sid(share_id)
                 share = Share.find_one({'id': int(share_id)}, cond)
