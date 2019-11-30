@@ -157,7 +157,7 @@ class MeHandler(JsonHandler):
                 # https://search.creativecommons.org/photos/27c13378-faf4-4d9e-ad0d-0b9459403aeb
                 # https://live.staticflickr.com/7291/11240475435_ce223d84e2_b.jpg
                 # the img is in public domain
-                info['img'] = 'https://anwen.cc/static/info/public_domain.jpg'
+                info['img'] = 'https://anwen.cc/static/info/public_domain_100.jpg'
             auser['user_tags_info'].append(info)
         # 添加管理员信息
         auser['is_admin'] = admin.is_admin(auser['id'])
