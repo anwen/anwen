@@ -110,7 +110,7 @@ class TagHandler(BaseHandler):
             cond['published'] = 1
             for share_id in share_ids:
                 # share = Share.by_sid(share_id)
-                share = Share.find_one({'id': share_id}, cond)
+                share = Share.find_one({'id': int(share_id)}, cond)
                 print(share)
                 # <!-- <p class="info">{{ escape(share.markdown) }} ...</p> -->
                 user = User.by_sid(share.user_id)
