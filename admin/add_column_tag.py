@@ -23,8 +23,8 @@ def fix2():
         tags = i['user_tags']
         if not tags:
             continue
-        print(tags)
-        continue
+        # print(tags)
+        # continue
         for tag in tags:
             doc = adb.Tag_Col.find_one({'name': tag})
             if not doc:
