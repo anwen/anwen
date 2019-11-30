@@ -33,25 +33,28 @@ def add_index():
     r = adb.Share_Col.create_index('id', pymongo.ASCENDING, unique=True)
     print(r)
 
-    # result = db.profiles.create_index([('user_id', pymongo.ASCENDING)],
-    # ...                                   unique=True)
-
+    # tags_1
+    # status_1
+    # suggested_1
+    # user_leaf_1
     r = adb.Share_Col.create_index('tags', 1)
     print(r)
     r = adb.Share_Col.create_index('status', 1)
     print(r)
     r = adb.Share_Col.create_index('suggested', -1)
     print(r)
-
     r = adb.User_Col.create_index('user_leaf', -1)
     print(r)
 
 
 def show_index():
     print('show_index')
-    r = adb.Share_Col.index_information()
-    # print('Share', r.keys(), r.values())
     print('Share:')
+    r = adb.Share_Col.index_information()
+    for k in r:
+        print(k, r[k]['key'])
+    print('User:')
+    r = adb.User_Col.index_information()
     for k in r:
         print(k, r[k]['key'])
 
