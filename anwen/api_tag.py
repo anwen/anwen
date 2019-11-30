@@ -71,8 +71,8 @@ class TagsV2Handler(JsonHandler):
 
                 if tag:
                     self.res['id'] = tag['id']
-                else:
-                    self.res['id'] = -1
+            else:
+                self.res['id'] = -1
         else:
             # 从根节点开始
             if ver == 3:
