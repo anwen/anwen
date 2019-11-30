@@ -265,7 +265,7 @@ def get_tags_parents():
             # tags[s].append(o)
             # assert len(tags[s]) == 1
             # 2 目前严格是树状结构
-            tags[s] = 0
+            tags[s] = o
     return tags
 
 
