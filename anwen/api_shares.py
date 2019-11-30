@@ -50,5 +50,39 @@ class SharesV2Handler(JsonHandler):
         last_suggested = self.get_argument("last_suggested", 0)
         read_status = self.get_argument('read_status', 1)
 
+        read_status = int(read_status)
+        per_page = int(per_page)
+        page = int(page)
+        if not last_suggested:
+            last_suggested = 0
+        last_suggested = float(last_suggested) / 1000 + 1
+
+        user = self.get_user_dict(token)
+
+        cond = {}
+        tags = None
+        if user and filter_type == 'my_tags':
+            d_user = User.by_sid(user['user_id'])
+            if d_user:
+                tags = d_user['user_tags']
+        # 按照tag来过滤
+        if tags:
+            cond['tags'] = {"$in": tags}
+        elif tag:
+            cond['tags'] = tag
+
+        # 不同的用户显示不同级别的推荐
+        # if user and user['user_id'] in wx_admin_ids:
+        if user and user['user_id'] == 1:
+            cond['status'] = {'$gte': 1}
+        else:
+            cond['status'] = {'$gte': 1}
+
+        # 已读列表
+        l_hitted_share_id = []
+        if user and read_status:
+            hits = Hit.find({'user_id': user['user_id']})
+            l_hitted_share_id = [i['share_id'] for i in hits]
+
         # number=number
         return self.write_json()
