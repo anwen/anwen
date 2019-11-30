@@ -1,9 +1,11 @@
 # -*- coding:utf-8 -*-
 from .api_base import JsonHandler
-from utils import get_tags, get_tags_v2, get_tags_parents, get_tags_v2_by_name, get_tags_v3
+from utils import get_tags, get_tags_v2, get_tags_parents, get_tags_v3
+# get_tags_v2_by_name
 from db import Tag, Share, User
 import tornado
 import time
+import copy
 d_tags = get_tags()
 d_tags_v2 = get_tags_v2()
 d_tags_v3 = get_tags_v3()
@@ -11,6 +13,7 @@ d_tags_v3 = get_tags_v3()
 d_tags_parents = get_tags_parents()
 
 
+# get_tags_v2_by_name
 class TagsV2Handler(JsonHandler):
 
     def get(self):
@@ -29,34 +32,29 @@ class TagsV2Handler(JsonHandler):
 
             if self.res:
                 parents = d_tags_parents.get(self.res['name'], {})
-                # self.res['parents'] = {'name': parents}
-                self.res['parents'] = d_tags_v3.get(parents, {})
-                print(d_tags_v3)
-                print(parents)
-                print(self.res['parents'])
-                # get_tags_v2_by_name(parents)
+                node = d_tags_v3.get(parents, {})
+                self.res['parents'] = copy.deepcopy(node)
                 self.res['parents'].pop('subs')
+
+                brothers = []
+                for sub in copy.deepcopy(node):
+                    sub.pop('subs')
+                    brothers.append(sub)
+                self.res['brothers'] = brothers
                 if parents:
                     parents_p = d_tags_parents.get(parents, {})
                     if parents_p:
-                        # self.res['parents']['parents'] = {'name': parents_p}
-                        self.res['parents']['parents'] = d_tags_v3.get(parents_p, {})
-                        # get_tags_v2_by_name(parents_p)
+                        node = d_tags_v3.get(parents_p, {})
+
+                        self.res['parents']['parents'] = copy.deepcopy(node)
                         self.res['parents']['parents'].pop('subs')
 
                         parents_pp = d_tags_parents.get(parents_p, {})
                         if parents_pp:
-                            self.res['parents']['parents']['parents'] = d_tags_v3.get(parents_pp, {})
-                            # get_tags_v2_by_name(parents_pp)
+                            node = d_tags_v3.get(parents_pp, {})
+                            self.res['parents']['parents']['parents'] = copy.deepcopy(node)
                             self.res['parents']['parents']['parents'].pop('subs')
 
-                if parents:
-                    parent_res = get_tags_v2_by_name(parents)
-                    brothers = []
-                    for sub in parent_res['subs']:
-                        sub.pop('subs')
-                        brothers.append(sub)
-                    self.res['brothers'] = brothers
                     self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
                     self.res['followerNumber'] = User.find({'user_tags': {'$in': [name]}}).count()
                     self.res['isFollowing'] = False
