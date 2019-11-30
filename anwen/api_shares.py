@@ -6,19 +6,8 @@ from utils import get_tags, get_tags_parents
 from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 import options
 import copy
-# from bs4 import BeautifulSoup
-# from tornado.escape import json_decode
-# import time
-# from log import logger
 wx_admin_ids = (60, 63, 64)
 IMG_BASE = 'https://anwensf.com/static/upload/img/'
-
-# https://www.yuque.com/easytoknow/afi6hu/md7sld
-# get_tags_parent
-# logger.info('token: {}'.format(token))
-# 文章列表API v2
-# 没有summary
-# 不同权限的用户看到的列表不同
 
 
 class SharesV2Handler(JsonHandler):
@@ -111,8 +100,6 @@ class SharesV2Handler(JsonHandler):
 
         if meta_info:
             meta = {}
-            # if filter_type == 'my_tags':
-            #     meta['tags'] = tags
             if last_suggested:
                 cond_update = copy.deepcopy(cond)
                 cond_update['suggested'] = {'$gt': last_suggested}
@@ -139,6 +126,8 @@ class SharesV2Handler(JsonHandler):
                     meta['parent_tags'] = d_tags_parents[tag]  # hypernym
             number = Share.find(cond, {'_id': 0}).count()  # 'id': 1
             meta['number'] = number
+            # if filter_type == 'my_tags':
+            #     meta['tags'] = tags
 
         self.res = {'articles': new_shares}
         self.meta = meta
