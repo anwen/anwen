@@ -28,15 +28,11 @@ def add_index():
     print('add_index')
     # r = adb.Share_Col.drop_index('id_1')
     # print(r)
-    r = adb.Share_Col.create_index('id', pymongo.DESCENDING, unique=True)
-    print(r)
     r = adb.Share_Col.create_index('id', pymongo.ASCENDING, unique=True)
     print(r)
+    r = adb.Share_Col.create_index('published', pymongo.DESCENDING)
+    print(r)
 
-    # tags_1
-    # status_1
-    # suggested_1
-    # user_leaf_1
     r = adb.Share_Col.create_index('tags', 1)
     print(r)
     r = adb.Share_Col.create_index('status', 1)

@@ -10,7 +10,18 @@ from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 import options
 import copy
 from log import logger
-# from anwen.api_share import fix_share
+
+# from bs4 import BeautifulSoup
+# from tornado.escape import json_decode
+# import time
+# from log import logger
+# https://www.yuque.com/easytoknow/afi6hu/md7sld
+# get_tags_parent
+# logger.info('token: {}'.format(token))
+# 文章列表API v2
+# 没有summary
+# 不同权限的用户看到的列表不同
+
 
 wx_admin_ids = (60, 63, 64)
 IMG_BASE = 'https://anwensf.com/static/upload/img/'
