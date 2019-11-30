@@ -47,6 +47,7 @@ class TagsV2Handler(JsonHandler):
                     brothers.append(sub)
                 self.res['brothers'] = brothers
                 self.res['articleNumber'] = Share.count_by_tag(self.res['name'])
+                self.res['followerNumber'] = 3
             tag = Tag.by_name(self.res['name'])
             self.res['id'] = -1
             if tag:
