@@ -106,9 +106,9 @@ class TagHandler(BaseHandler):
             share_ids = list(set(share_ids))
             for share_id in share_ids:
                 share = Share.by_sid(share_id)
-                # user = User.by_sid(share.user_id)
-                # share.user_name = user.user_name
-                # share.user_domain = user.user_domain
+                user = User.by_sid(share.user_id)
+                share.user_name = user.user_name
+                share.user_domain = user.user_domain
                 share.published = time.strftime(
                     '%Y-%m-%d %H:%M:%S', time.localtime(share.published))
                 share.markdown = filter_tags(
