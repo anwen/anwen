@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-Tag:{{ escape(name) }} - 
+Tag:{{ escape(name) }} -
 {% end %}
 {% block body %}
 <div class="container well">
@@ -8,6 +8,13 @@ Tag:{{ escape(name) }} -
 		<div class="span8">
 			<div class="mod user-feeds">
 				<h2>Tag:{{ escape(name) }}</h2>
+
+<a href="javascript:" class="do-like {{'liking' if 0 and tag.is_liking else ''}}" eid="{{tag.id}}" etype="tag">
+<i class="icon-heart"></i><span> {{ tag.likenum }}</span>
+</a>
+
+
+
 				<ul class="list-unstyled">
 					{% for share in shares %}
 					<li>
