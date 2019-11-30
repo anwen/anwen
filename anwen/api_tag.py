@@ -26,7 +26,7 @@ class TagsV2Handler(JsonHandler):
                 tag = Tag.by_sid(sid)
                 name = tag['name']
             self.res = d_tags_v3.get(name, {})
-            self.res['id'] = -1
+
             if self.res:
                 parents = d_tags_parents.get(self.res['name'], {})
                 # self.res['parents'] = {'name': parents}
@@ -71,6 +71,8 @@ class TagsV2Handler(JsonHandler):
 
                 if tag:
                     self.res['id'] = tag['id']
+                else:
+                    self.res['id'] = -1
         else:
             # 从根节点开始
             if ver == 3:
