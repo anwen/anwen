@@ -15,16 +15,6 @@ wx_admin_ids = (60, 63, 64)
 IMG_BASE = 'https://anwensf.com/static/upload/img/'
 
 
-def fix_share(share):  # time
-    if share['post_img']:
-        share['post_img'] = 'https://anwensf.com/static/upload/img/' + \
-            share['post_img'].replace('_1200.jpg', '_260.jpg')
-    share['published'] = int(share['published'] * 1000)
-    share['updated'] = int(share['updated'] * 1000)
-    share['suggested'] = int(share['suggested'] * 1000)
-    return share
-
-
 # https://www.yuque.com/easytoknow/afi6hu/md7sld
 
 
@@ -86,13 +76,26 @@ class SharesV2Handler(JsonHandler):
         # number = Share.find(cond, {'_id': 0}).count() # 'id': 1
 
         # sort: _id
+        # .sort('suggested', -1)
         if last_suggested:
             cond_update = copy.deepcopy(cond)
             cond_update['suggested'] = {'$gt': last_suggested}
-            # .sort('suggested', -1)
             number_of_update = Share.find(cond_update, {'_id': 0, 'id': 1}).count()
-            print(Share.find(cond_update, {'_id': 0, 'id': 1})[0])
+            # print(Share.find(cond_update, {'_id': 0, 'id': 1})[0])
             # logger.info('number_of_update: {}'.format(number_of_update))
+
+        filter_d = {}
+        filter_d['_id'] = 0
+        filter_d['id'] = 1
+        filter_d['images'] = 1
+        filter_d['title'] = 1
+        filter_d['user_id'] = 1
+        filter_d['tags'] = 1
+        filter_d['published'] = 1
+        filter_d['post_img'] = 1
+        shares = Share.find(cond, filter_d).sort(
+            'suggested', -1).limit(per_page).skip((page - 1) * per_page)
+        # shares = [i for i in shares]
 
         # number=number
         return self.write_json()
