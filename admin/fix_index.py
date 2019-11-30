@@ -12,20 +12,21 @@ if 'username' in options.db:
     adb.authenticate(options.db['username'], options.db['password'])
 
 
+# ensure_index
 def add_index():
     print('add_index')
-    r = adb.Share_Col.ensure_index('id', -1)
+    r = adb.Share_Col.create_index('id', -1)
     print(r)
-    r = adb.Share_Col.ensure_index('id', 1)
+    r = adb.Share_Col.create_index('id', 1)
     print(r)
-    r = adb.Share_Col.ensure_index('tags', 1)
+    r = adb.Share_Col.create_index('tags', 1)
     print(r)
-    r = adb.Share_Col.ensure_index('status', 1)
+    r = adb.Share_Col.create_index('status', 1)
     print(r)
-    r = adb.Share_Col.ensure_index('suggested', -1)
+    r = adb.Share_Col.create_index('suggested', -1)
     print(r)
 
-    r = adb.User_Col.ensure_index('user_leaf', -1)
+    r = adb.User_Col.create_index('user_leaf', -1)
     print(r)
 
 
