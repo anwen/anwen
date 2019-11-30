@@ -54,6 +54,7 @@ def add_index():
 
     r = adb.Hit_Col.create_index('user_id', pymongo.DESCENDING)
     print(r)
+    adb.Hit_Col.reindex()
 
 
 def show_index():
