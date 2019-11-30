@@ -17,6 +17,7 @@ class TagsV2Handler(JsonHandler):
         sid = self.get_argument("id", 0)
         ver = int(ver)
         sid = int(sid)
+        # parents [0]
         if name or sid:
             # 具体某个标签
             if not name and sid:
@@ -26,14 +27,14 @@ class TagsV2Handler(JsonHandler):
             parents = d_tags_parents.get(self.res['name'], {})
             self.res['parents'] = {'name': parents}
             if parents:
-                parents_p = d_tags_parents.get(parents[0], {})
+                parents_p = d_tags_parents.get(parents, {})
                 if parents_p:
                     self.res['parents']['parents'] = parents_p
-                    parents_pp = d_tags_parents.get(parents_p[0], {})
+                    parents_pp = d_tags_parents.get(parents_p, {})
                     if parents_pp:
                         self.res['parents']['parents']['parents'] = parents_pp
             if parents:
-                parent_res = get_tags_v2_by_name(parents[0])
+                parent_res = get_tags_v2_by_name(parents)
                 brothers = []
                 for sub in parent_res['subs']:
                     sub.pop('subs')
