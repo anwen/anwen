@@ -14,9 +14,8 @@ if 'username' in options.db:
 
 def add_index():
     print('add_index')
-
-    # r = adb.Share_Col.ensure_index('id', -1)  # ???
-    # print(r)
+    r = adb.Share_Col.ensure_index('id', -1)
+    print(r)
     r = adb.Share_Col.ensure_index('id', 1)
     print(r)
     r = adb.Share_Col.ensure_index('tags', 1)
@@ -25,6 +24,7 @@ def add_index():
     print(r)
     r = adb.Share_Col.ensure_index('suggested', -1)
     print(r)
+
     r = adb.User_Col.ensure_index('user_leaf', -1)
     print(r)
 
@@ -39,4 +39,4 @@ def show_index():
 
 
 show_index()
-# add_index()
+add_index()
