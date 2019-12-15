@@ -29,11 +29,11 @@ class UserhomeHandler(BaseHandler):
         collects = []
         if self.current_user:
             user_id = self.current_user["user_id"]
-            _likes = Like.find_one({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1})
+            _likes = Like.find({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1})
             _likes = list(_likes)
             likes = [i.id for i in _likes if i.likenum > 0]
             likes = [i.id for i in _likes if i.dislikenum > 0]
-            collects = Collect.find_one({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1})
+            collects = Collect.find({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1})
             collects = [i.id for i in collects]
 
         l_share = []
