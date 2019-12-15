@@ -4,6 +4,8 @@
 import options
 from pymongo import MongoClient
 import pymongo
+from pymongo import IndexModel, ASCENDING, DESCENDING
+# , ASCENDING, DESCENDING
 
 conn = MongoClient()
 adb = conn.anwen
@@ -54,9 +56,14 @@ def add_index():
     print(r)
     adb.Hit_Col.reindex()
 
-    r = adb.Like_Col.create_index('user_id', pymongo.DESCENDING)
+    r = adb.Like_Col.create_index('user_id', DESCENDING)
     print(r)
     # adb.Like_Col.reindex()
+
+    index1 = IndexModel([("user_id", ASCENDING), ("entity_type", ASCENDING)], name="user_id_entity_type")
+    # db.test.create_indexes([index1, index2])
+    r = adb.Like_Col.create_index(index1)
+    print(r)
 
 
 def show_index():
