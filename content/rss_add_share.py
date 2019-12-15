@@ -237,7 +237,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             elif found.count() == 1:
                 # continue
                 share = Share.by_sid(found[0].id)
-                if share and summary and link:
+                if share and summary and not share.link and link:
                     print(res['link'])
                     print('title {} updated'.format(title))
                     share.update(res)
