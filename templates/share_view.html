@@ -40,7 +40,14 @@
 <div>
 <i class="icon-link"></i>
 链接分享：<a href="{{ share.link }}">{{ share.link }}</a>
+
+{% if share.sharetype=='rss' %}
+ - 来自rss
+{% end %}
+
 </div>
+
+
 
 {% end %}
 
