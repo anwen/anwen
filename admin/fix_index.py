@@ -16,8 +16,8 @@ if 'username' in options.db:
     adb.authenticate(options.db['username'], options.db['password'])
 
 
-print(pymongo.ASCENDING)
-print(pymongo.DESCENDING)
+print(ASCENDING)
+print(DESCENDING)
 # ensure_index
 
 
@@ -33,9 +33,11 @@ def add_index():
     # print(r)
     r = adb.Share_Col.create_index('id', pymongo.ASCENDING, unique=True)
     print(r)
-    r = adb.Share_Col.create_index('published', pymongo.DESCENDING)
+    r = adb.Share_Col.create_index('published', DESCENDING)
     print(r)
-    r = adb.Share_Col.create_index('sharetype', pymongo.DESCENDING)
+    r = adb.Share_Col.create_index('sharetype', DESCENDING)
+    print(r)
+    r = adb.Share_Col.create_index('user_id', ASCENDING)
     print(r)
 
     r = adb.Share_Col.create_index('tags', 1)
@@ -47,13 +49,13 @@ def add_index():
     r = adb.User_Col.create_index('user_leaf', -1)
     print(r)
 
-    r = adb.User_Col.create_index('id', pymongo.DESCENDING, unique=True)
+    r = adb.User_Col.create_index('id', DESCENDING, unique=True)
     print(r)
 
-    r = adb.User_Col.create_index('user_tags', pymongo.DESCENDING)
+    r = adb.User_Col.create_index('user_tags', DESCENDING)
     print('user_tags', r)
 
-    r = adb.Hit_Col.create_index('user_id', pymongo.DESCENDING)
+    r = adb.Hit_Col.create_index('user_id', DESCENDING)
     print(r)
     adb.Hit_Col.reindex()
 
