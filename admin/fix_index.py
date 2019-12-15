@@ -54,6 +54,10 @@ def add_index():
     print(r)
     adb.Hit_Col.reindex()
 
+    r = adb.Like_Col.create_index('user_id', pymongo.DESCENDING)
+    print(r)
+    # adb.Like_Col.reindex()
+
 
 def show_index():
     print('show_index')
