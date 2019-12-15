@@ -39,6 +39,8 @@ def add_index():
     print(r)
     r = adb.Share_Col.create_index('user_id', ASCENDING)
     print(r)
+    r = adb.Share_Col.create_index('title', ASCENDING)
+    print(r)
 
     r = adb.Share_Col.create_index('tags', 1)
     print(r)
