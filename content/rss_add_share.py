@@ -205,6 +205,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
         except Exception as e:
             print('error in html-to-markdown: {}'.format(e))
             continue
+        assert link
         res = {
             'title': title,
             'link': link,
