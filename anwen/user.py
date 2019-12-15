@@ -41,7 +41,7 @@ class UserhomeHandler(BaseHandler):
         l_share = []
         for share in shares:
             # d_share = dict(share)
-            d_share = share
+            # d_share = share
             # if self.current_user:
             #     user_id = self.current_user["user_id"]
             #     like = Like.find_one(
@@ -52,11 +52,10 @@ class UserhomeHandler(BaseHandler):
             #     d_share.is_disliking = bool(like.dislikenum) if like else False
             #     d_share.is_collecting = bool(collect.collectnum) if collect else False
             # print(d_share.id, len(likes))
-            d_share.is_liking = True if likes and d_share.id in likes else False
-            d_share.is_disliking = True if dislikes and d_share.id in dislikes else False
-            d_share.is_collecting = True if collects and d_share.id in collects else False
-
-            l_share.append(d_share)
+            share.is_liking = True if likes and share.id in likes else False
+            share.is_disliking = True if dislikes and share.id in dislikes else False
+            share.is_collecting = True if collects and share.id in collects else False
+            l_share.append(share)
 
         self.render('userhome.html', user=user,
                     shares=l_share,
