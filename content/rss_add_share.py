@@ -238,6 +238,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
                 # continue
                 share = Share.by_sid(found[0].id)
                 if share and summary:
+                    print(res['link'])
                     print('title {} updated'.format(title))
                     # share.update(res)
                     # share.save()

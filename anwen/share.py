@@ -73,28 +73,33 @@ class OneShareHandler(BaseHandler):
             share.content = markdown2.markdown(md)
 
         # 对于链接分享类，增加原文预览
-        if share.link and share.sharetype != 'rss':
-            # Webcache should add index
-            doc = Webcache.find_one({'url': share.link}, {'_id': 0})
-            # 此文章须经作者同意 转载 禁止转载
-            # 禁止任何形式的转载
-            # ('禁止' not in doc['markdown'] and '转载' not in doc['markdown']):
-            if doc and doc['markdown'] and ('禁止转载' not in doc['markdown'] or '禁止任何形式的转载' not in doc['markdown']):
-                doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
-                md = share['markdown']
-                md += '\n\n--预览--\n\n' + doc['markdown']
-                md += '\n\n[阅读原文]({})'.format(doc['url'])
+        if share.sharetype == 'rss':
+            assert share.link
+        if share.link:
+            if share.sharetype == 'rss':
+                pass
+            else:
+                # Webcache should add index
+                doc = Webcache.find_one({'url': share.link}, {'_id': 0})
+                # 此文章须经作者同意 转载 禁止转载
+                # 禁止任何形式的转载
+                # ('禁止' not in doc['markdown'] and '转载' not in doc['markdown']):
+                if doc and doc['markdown'] and ('禁止转载' not in doc['markdown'] or '禁止任何形式的转载' not in doc['markdown']):
+                    doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
+                    md = share['markdown']
+                    md += '\n\n--预览--\n\n' + doc['markdown']
+                    md += '\n\n[阅读原文]({})'.format(doc['url'])
 
-                parsed_uri = urlparse(share.link)
-                domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
-                md = md.replace('![image](/', '![image]({}/'.format(domain))
-                md = md.replace('\n* \n', '\n\n')
-                md = md.replace('\n*\n', '\n\n')
-                md = md.replace('>\n', '> ')
-                # md = md.replace('>\n\n', '')  # ???
-                while '\n\n\n' in md:
-                    md = md.replace('\n\n\n', '\n\n')
-                share.content = markdown2.markdown(md)
+                    parsed_uri = urlparse(share.link)
+                    domain = '{uri.scheme}://{uri.netloc}/'.format(uri=parsed_uri)
+                    md = md.replace('![image](/', '![image]({}/'.format(domain))
+                    md = md.replace('\n* \n', '\n\n')
+                    md = md.replace('\n*\n', '\n\n')
+                    md = md.replace('>\n', '> ')
+                    # md = md.replace('>\n\n', '')  # ???
+                    while '\n\n\n' in md:
+                        md = md.replace('\n\n\n', '\n\n')
+                    share.content = markdown2.markdown(md)
 
         user_id = self.current_user["user_id"] if self.current_user else None
         # user_id
