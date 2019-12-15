@@ -33,7 +33,6 @@ class UserhomeHandler(BaseHandler):
                                '_id': 0, 'id': 1, 'likenum': 1, 'dislikenum': 1})
             _likes = list(_likes)
             print(_likes[0])
-
             likes = set(i.id for i in _likes if hasattr(i, 'likenum') and i.likenum > 0)
             dislikes = set(i.id for i in _likes if hasattr(i, 'dislikenum') and i.dislikenum > 0)
             collects = Collect.find({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1, 'collectnum': 1})
@@ -52,7 +51,7 @@ class UserhomeHandler(BaseHandler):
             #     d_share.is_liking = bool(like.likenum) if like else False
             #     d_share.is_disliking = bool(like.dislikenum) if like else False
             #     d_share.is_collecting = bool(collect.collectnum) if collect else False
-            print(d_share.id, likes)
+            print(d_share.id, len(likes))
             d_share.is_liking = True if likes and d_share.id in likes else False
             d_share.is_disliking = True if dislikes and d_share.id in dislikes else False
             d_share.is_collecting = True if collects and d_share.id in collects else False
