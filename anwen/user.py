@@ -39,23 +39,24 @@ class UserhomeHandler(BaseHandler):
         #     collects = set(i.id for i in collects if hasattr(i, 'collectnum') and i.collectnum > 0)
 
         l_share = []
-        for share in shares:
-            # d_share = dict(share)
-            # d_share = share
-            # if self.current_user:
-            #     user_id = self.current_user["user_id"]
-            #     like = Like.find_one(
-            #         {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
-            #     collect = Collect.find_one(
-            #         {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
-            #     d_share.is_liking = bool(like.likenum) if like else False
-            #     d_share.is_disliking = bool(like.dislikenum) if like else False
-            #     d_share.is_collecting = bool(collect.collectnum) if collect else False
-            # print(d_share.id, len(likes))
-            share.is_liking = True if likes and share.id in likes else False
-            share.is_disliking = True if dislikes and share.id in dislikes else False
-            share.is_collecting = True if collects and share.id in collects else False
-            # l_share.append(share)
+        if 0:
+            for share in shares:
+                # d_share = dict(share)
+                # d_share = share
+                # if self.current_user:
+                #     user_id = self.current_user["user_id"]
+                #     like = Like.find_one(
+                #         {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+                #     collect = Collect.find_one(
+                #         {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+                #     d_share.is_liking = bool(like.likenum) if like else False
+                #     d_share.is_disliking = bool(like.dislikenum) if like else False
+                #     d_share.is_collecting = bool(collect.collectnum) if collect else False
+                # print(d_share.id, len(likes))
+                share.is_liking = True if likes and share.id in likes else False
+                share.is_disliking = True if dislikes and share.id in dislikes else False
+                share.is_collecting = True if collects and share.id in collects else False
+                # l_share.append(share)
 
         self.render('userhome.html', user=user,
                     shares=shares,
