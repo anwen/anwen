@@ -22,7 +22,7 @@ class UserhomeHandler(BaseHandler):
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
         likenum = User.find({'user_id': user._id}).count()
         user.gravatar = get_avatar(user.user_email, 100)
-        shares = Share.find({'user_id': user.id}, {'markdown': 0}).sort('_id', -1).limit(100)
+        shares = Share.find({'user_id': user.id}, {'markdown': 0, 'summary': 0}).sort('_id', -1).limit(100)
 
         likes = set()
         dislikes = set()
