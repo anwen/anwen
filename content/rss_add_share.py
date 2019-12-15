@@ -237,11 +237,11 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             elif found.count() == 1:
                 # continue
                 share = Share.by_sid(found[0].id)
-                if share and summary:
+                if share and summary and not link:
                     print(res['link'])
                     print('title {} updated'.format(title))
-                    # share.update(res)
-                    # share.save()
+                    share.update(res)
+                    share.save()
         else:
             print('title {} adding'.format(title))
             email = '{}@anwensf.com'.format(rss_hostname)
@@ -251,6 +251,7 @@ def add_from_file(rss_url, rss_hostname, rss_name):
             user_id = auser.id
             res['user_id'] = user_id  # just use 1 as default
             # continue
+            assert res['link']
             share = share.new(res)
 
             user = User.by_sid(user_id)
