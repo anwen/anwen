@@ -55,10 +55,10 @@ class UserhomeHandler(BaseHandler):
             share.is_liking = True if likes and share.id in likes else False
             share.is_disliking = True if dislikes and share.id in dislikes else False
             share.is_collecting = True if collects and share.id in collects else False
-            l_share.append(share)
+            # l_share.append(share)
 
         self.render('userhome.html', user=user,
-                    shares=l_share,
+                    shares=shares,
                     is_login=bool(self.current_user),
                     likenum=likenum)
 
