@@ -22,27 +22,38 @@ class UserhomeHandler(BaseHandler):
             '%Y-%m-%d %H:%M:%S', time.localtime(user.user_jointime))
         likenum = User.find({'user_id': user._id}).count()
         user.gravatar = get_avatar(user.user_email, 100)
-
         shares = Share.find({'user_id': user.id}).sort('_id', -1).limit(100)
+
+        likes = []
+        dislikes = []
+        collects = []
+        if self.current_user:
+            user_id = self.current_user["user_id"]
+            _likes = Like.find_one({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1})
+            _likes = list(_likes)
+            likes = [i.id for i in _likes if i.likenum > 0]
+            likes = [i.id for i in _likes if i.dislikenum > 0]
+            collects = Collect.find_one({'entity_type': 'share', 'user_id': user_id}, {'_id': 0, 'id': 1})
+            collects = [i.id for i in collects]
 
         l_share = []
         for share in shares:
             # d_share = dict(share)
             d_share = share
-            if self.current_user:
-                user_id = self.current_user["user_id"]
-                like = Like.find_one(
-                    {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
-                collect = Collect.find_one(
-                    {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+            # if self.current_user:
+            #     user_id = self.current_user["user_id"]
+            #     like = Like.find_one(
+            #         {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+            #     collect = Collect.find_one(
+            #         {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
+            #     d_share.is_liking = bool(like.likenum) if like else False
+            #     d_share.is_disliking = bool(like.dislikenum) if like else False
+            #     d_share.is_collecting = bool(collect.collectnum) if collect else False
 
-                # d_share['is_liking'] = bool(like.likenum) if like else False
-                # d_share['is_disliking'] = bool(like.dislikenum) if like else False
-                # d_share['is_collecting'] = bool(like.collectnum) if collect else False
-                d_share.is_liking = bool(like.likenum) if like else False
-                d_share.is_disliking = bool(like.dislikenum) if like else False
-                d_share.is_collecting = bool(collect.collectnum) if collect else False
-                print(d_share.is_liking, share.id, user_id)
+            d_share.is_liking = True if likes and d_share.id in likes else False
+            d_share.is_disliking = True if dislikes and d_share.id in dislikes else False
+            d_share.is_collecting = True if collects and d_share.id in collects else False
+
             l_share.append(d_share)
 
         self.render('userhome.html', user=user,
