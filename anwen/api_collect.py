@@ -62,6 +62,6 @@ class MyCollectHandler(JsonHandler):
             share = Share.find_one({'id': collect.id}, {'_id': 0})
             share = fix_share(share)
             res.append(share)
-        self.res = {'collects': res}
+        self.res = {'articles': res}
         # number=number
         return self.write_json()
