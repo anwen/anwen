@@ -109,7 +109,7 @@ handlers = [
     (r"/share/([^/]+)", OneShareHandler),
 
     (r"/sharecomment", CommentHandler),
-    (r"/feed", FeedHandler),
+    # (r"/feed", FeedHandler),
 
     (r"/viewpoint", ViewPointHandler),
 
