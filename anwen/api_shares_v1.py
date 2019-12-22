@@ -202,4 +202,5 @@ class SharesHandler(JsonHandler):
         self.res = {'articles': list(new_shares)}
         self.meta = meta
         # number=len(self.res)
-        return self.write_json(number=number)
+        # number=number
+        return self.write_json()
