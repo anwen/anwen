@@ -64,7 +64,7 @@ class WxLoginHandler(JsonHandler):
         params['secret'] = appinfo[appname]['WX_SECRET']
         params['js_code'] = wx_code
         params['grant_type'] = 'authorization_code'
-        r = requests.get(wx_api, params=params)
+        r = requests.get(wx_api, params=params, timeout=5)
         r = r.json()
         session_key = r.get('session_key')
         openid = r.get('openid')
