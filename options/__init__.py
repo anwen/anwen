@@ -6,8 +6,10 @@ use_ssl = False
 
 # 本网站域名 用于: email激活
 # site_url = 'http://localhost:8888'  # 本地开发测试用
-site_url = 'https://anwensf.com'
-API = 'https://anwensf.com/api/'
+
+# old: anwensf.com
+site_url = 'https://anwen.cc'
+API = 'https://anwen.cc/api/'
 
 
 db = {
@@ -145,7 +147,7 @@ msg_footer = ''.join([
     '<p>如果你有任何疑问，可以回复这封邮件向我们提问。</p>',
 ])
 
-douban_redirect_uri = 'http://anwensf.com/douban_login'
+douban_redirect_uri = 'http://anwen.cc/douban_login'
 douban = {
     'douban_api_key': '032288b47028601309679a1d50792039',
     'douban_api_secret': '9b29399b82721746',
