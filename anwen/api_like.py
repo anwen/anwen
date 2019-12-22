@@ -102,4 +102,5 @@ class MyLikeHandler(JsonHandler):
             share = fix_share(share)
             res.append(share)
         self.res = {'likes': res}
-        return self.write_json(number=number)
+        # number=number
+        return self.write_json()
