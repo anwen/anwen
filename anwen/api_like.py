@@ -1,10 +1,12 @@
 # -*- coding:utf-8 -*-
 import tornado.web
+from options import site_url
 from anwen.api_base import JsonHandler
 from db import Like, Share, Comment, Viewpoint, Tag, User
 import time
 # from log import logger
 admin_ids = (1, 4, 60, 63, 64, 65, 69, 86)
+IMG_BASE = '{}/static/upload/img/'.format(site_url)
 
 
 class LikeHandler(JsonHandler):
@@ -80,7 +82,7 @@ def fix_share(share):  # time
     return share
 
 
-class MyLikeHandler(JsonHandler):
+class DeletedMyLikeHandler(JsonHandler):
 
     @tornado.web.authenticated
     def get(self):
@@ -96,7 +98,7 @@ class MyLikeHandler(JsonHandler):
             'entity_type': entity_type,
             'likenum': 1,
         }
-        number = Like.find(cond, {'_id': 0}).count()
+        # number = Like.find(cond, {'_id': 0}).count()
         collects = Like.find(cond, {'_id': 0}).sort(
             '_id', -1).limit(per_page).skip((page - 1) * per_page)
         res = []
@@ -107,4 +109,66 @@ class MyLikeHandler(JsonHandler):
             res.append(share)
         self.res = {'articles': res}
         # number=number
+        return self.write_json()
+
+
+class MyLikeHandler(JsonHandler):
+
+    @tornado.web.authenticated
+    def get(self):
+        page = self.get_argument("page", 1)
+        per_page = self.get_argument("per_page", 10)
+        per_page = int(per_page)
+        page = int(page)
+        entity_type = self.get_argument("entity_type", 'share')
+        user_id = self.current_user["user_id"]
+        assert entity_type in 'share comment viewpoint'.split()
+
+        # token = self.request.headers.get('Authorization', '')
+        # user = self.get_user_dict(token)
+        meta_info = self.get_argument("meta_info", 1)
+
+        cond = {
+            'user_id': user_id,
+            'entity_type': entity_type,
+            'likenum': 1,
+        }
+
+        likes = Like.find(cond, {'_id': 0}).sort(
+            '_id', -1).limit(per_page).skip((page - 1) * per_page)
+        new_shares = []
+
+        filter_d = {}
+        filter_d['_id'] = 0
+        # 白名单里的属性才展示
+        filter_d['id'] = 1
+        filter_d['images'] = 1
+        filter_d['title'] = 1
+        filter_d['user_id'] = 1
+        filter_d['tags'] = 1
+        filter_d['published'] = 1
+        filter_d['post_img'] = 1
+        for like in likes:
+            # 'status': {'$gte': 1},  {'_id': 0}
+            share = Share.find_one({'id': like.id}, filter_d)
+            user = User.by_sid(share.user_id)
+            share['author'] = user.user_name
+
+            share['type'] = 1
+            if share.get('post_img'):
+                share['type'] = 2
+                share['images'] = [IMG_BASE + share['post_img'].replace('_1200.jpg', '_260.jpg')]
+                share.pop('post_img')
+            else:
+                share['images'] = []
+            share['published'] = int(share['published'] * 1000)
+            new_shares.append(share)
+
+        if meta_info:
+            meta = {}
+            number = Like.find(cond, {'_id': 0}).count()
+            meta['number'] = number
+
+        self.res = {'articles': new_shares}
+        self.meta = meta
         return self.write_json()
