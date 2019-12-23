@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 # 文章列表
+from options import site_url
 from .api_base import JsonHandler
 from db import Share, User, Hit
 from utils import get_tags, get_tags_parents
@@ -7,16 +8,18 @@ from utils.avatar import get_avatar, get_avatar_by_wechat, get_avatar_by_feed
 import options
 import copy
 wx_admin_ids = (60, 63, 64)
-IMG_BASE = 'https://anwensf.com/static/upload/img/'
+IMG_BASE = '{}/static/upload/img/'.format(site_url)
+# IMG_BASE = 'https://anwensf.com/static/upload/img/'
 
 
 class SharesV2Handler(JsonHandler):
+
     def get(self):
         token = self.request.headers.get('Authorization', '')
         page = self.get_argument("page", 1)
         per_page = self.get_argument("per_page", 10)
         tag = self.get_argument('tag', '')
-        filter_type = self.get_argument("filter_type", '')  # my_tags
+        filter_type = self.get_argument("filter_type", '')  # my_tags my_likes
         last_suggested = self.get_argument("last_suggested", 0)
         read_status = self.get_argument('read_status', 1)
         meta_info = self.get_argument("meta_info", 1)
