@@ -58,6 +58,10 @@ class LikeHandler(JsonHandler):
         else:
             entity[_action] -= 1
         entity.save()
+        if entity.dislikenum < 0:
+            entity.dislikenum = 0
+        if entity.likenum < 0:
+            entity.likenum = 0
         self.res = {
             'likenum': entity.likenum,
             'dislikenum': entity.dislikenum,
