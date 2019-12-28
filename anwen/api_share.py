@@ -90,7 +90,7 @@ class ShareV2Handler(JsonHandler):
             doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
             if doc and doc['markdown'] and '禁止转载' not in doc['markdown']:
                 doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
-                d_share['markdown'] += '\n\n--预览--\n\n' + doc['markdown']
+                d_share['markdown'] += '\n\n--预览（快照）（以后会默认折叠）--\n\n' + doc['markdown']
                 d_share['markdown'] += '\n\n[阅读原文]({})'.format(doc['url'])
             # fix md parse
             d_share['markdown'] = d_share['markdown'].replace('>\n\n', '')
