@@ -55,60 +55,6 @@ def get_share_by_slug(slug):
     return share
 
 
-class ShareV2Handler(JsonHandler):
-
-    # 单篇文章
-    def get(self, slug):
-        share = get_share_by_slug(slug)
-        if not share:
-            return self.write_error(404)
-        # 小程序客户端
-        # 时间格式转换
-        share.published = int(share.published * 1000)
-        share.updated = int(share.updated * 1000)
-        # 暂时不显示作者
-        user_id = self.current_user["user_id"] if self.current_user else None
-        # if user_id:
-        # like = Like.find_one(
-        #     {'share_id': share.id, 'user_id': user_id})
-        # collect = Collect.find_one(
-        #     {'share_id': share.id, 'user_id': user_id})
-        like = Like.find_one(
-            {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
-        collect = Collect.find_one(
-            {'entity_id': share.id, 'entity_type': 'share', 'user_id': user_id})
-
-        d_share = dict(share)
-        d_share.pop('content')
-        d_share['is_liking'] = bool(like.likenum) if like else False
-        d_share['is_disliking'] = bool(like.dislikenum) if like else False
-        d_share['is_collecting'] = bool(like.collectnum) if collect else False
-
-        # 对于链接分享类，增加原文预览
-        if d_share.get('link'):
-            # Webcache should add index
-            doc = Webcache.find_one({'url': d_share['link']}, {'_id': 0})
-            if doc and doc['markdown'] and '禁止转载' not in doc['markdown']:
-                doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
-                d_share['markdown'] += '\n\n--预览（快照）（以后会默认折叠）--\n\n' + doc['markdown']
-                d_share['markdown'] += '\n\n[阅读原文]({})'.format(doc['url'])
-            # fix md parse
-            d_share['markdown'] = d_share['markdown'].replace('>\n\n', '')
-            d_share['markdown'] = d_share['markdown'].replace('\n]', ']')
-            d_share['markdown'] = d_share['markdown'].replace(
-                '.jpg#)', '.jpg)')
-            # 添加原文链接
-            d_share['url'] = '预览： <a href="{}">{}</a>'.format(
-                share.link, share.title)
-
-        viewpoints = Viewpoint.find({'share_id': share.id}, {'_id': 0})
-        d_share['viewpoints'] = list(viewpoints)
-        d_share['title'] = d_share['title'].split('_')[0]
-        self.res = d_share
-        add_hit_stat(user_id, share)
-        self.write_json()
-
-
 class ShareHandler(JsonHandler):
 
     # 单篇文章

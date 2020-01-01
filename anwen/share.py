@@ -87,7 +87,7 @@ class OneShareHandler(BaseHandler):
                 if doc and doc['markdown'] and ('禁止转载' not in doc['markdown'] or '禁止任何形式的转载' not in doc['markdown']):
                     doc['markdown'] = doc['markdown'].replace('本文授权转自', '')
                     md = share['markdown']
-                    md += '\n\n--预览--\n\n' + doc['markdown']
+                    md += '\n\n--预览（快照）（以后会默认折叠）--\n\n' + doc['markdown']
                     md += '\n\n[阅读原文]({})'.format(doc['url'])
 
                     parsed_uri = urlparse(share.link)
