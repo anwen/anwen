@@ -7,7 +7,8 @@ from pymongo import MongoClient
 conn = MongoClient()
 
 adb = conn.anwen
-adb.authenticate(options.db['username'], options.db['password'])
+if 'username' in options.db:
+    adb.authenticate(options.db['username'], options.db['password'])
 
 
 def check():
